@@ -1,5 +1,5 @@
 # Pemerograman Web Semester ganjil 24-25
-Repository untuk mata kuliah Pemrograman Web semester ganjil 2023-2024
+Repository untuk mata kuliah Pemrograman Web semester ganjil 2024-2025
 silahkan patuhi aturannya:
 1. Setiap mahasiswa silahkan melakukan clone terhadap repository **main** dengan perintah di cmd atau terminal: **git clone https://github.com/Software-Engineering-ITTS/webprog2023.git**
 2. Setiap mahasiswa setelah melakukan clone, harus membuat **branch** baru dengan format **<nim>_<nama_pendek>**
