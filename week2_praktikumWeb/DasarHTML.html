@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Pendaftaran</title>
+</head>
+
+<body>
+    <h1>Form Pendaftaran Mahasiswa</h1>
+    
+    <p>Nama Lengkap</p>
+    <input type="text" placeholder="Masukkan Nama Lengkap">
+    
+    <p>NIM</p>
+    <input type="text" placeholder="Masukkan NIM">
+    
+    <p>Prodi</p>
+    <select name="prodi" id="">
+        <option value="" disabled selected>-- Pilih Program Studi --</option>
+        <option value="software_engineering">Software Engineering</option>
+        <option value="teknik_informatika">Teknik Informatika</option>
+        <option value="teknik_informasi">Teknik Informasi</option>
+    </select>
+    
+    <p>No. Telp</p>
+    <input type="number" placeholder="Masukkan Nomor Telepon">
+    
+    <p>Fakultas</p>
+    <select name="fakultas" id="">
+        <option value="" disabled selected>-- Pilih Fakultas Anda --</option>
+        <option value="ftib">FTIB</option>
+        <option value="ftic">FTIC</option>
+    </select>
+    
+    <p>Email</p>
+    <input type="email" placeholder="Masukkan Email">
+    
+    <p>Gender</p>
+    <input type="radio" name="Gender" value="Laki-laki"> Laki-Laki
+    <input type="radio" name="Gender" value="Perempuan"> Perempuan
+    
+    <p>Alamat</p>
+    <textarea placeholder="Masukkan Alamat"></textarea>
+    
+    <br><br>
+    
+    <button type="submit">Kirim</button>
+    <br><br>
+    <div>
+        Nama (Ulang)
+        <input type="text" placeholder="Masukkan Nama Ulang">
+    </div>
+</body>
+
+</html>
