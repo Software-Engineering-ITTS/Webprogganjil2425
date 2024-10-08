@@ -1,0 +1,103 @@
+/* Import Google Fonts untuk tampilan font lebih modern */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7; /* Background abu-abu lembut */
+    color: #333; /* Warna teks */
+}
+
+/* CSS untuk logo Dunkin */
+.dunkin {
+    margin-top: 20px;
+    margin-left: 30px;
+    width: 15%;
+}
+
+/* CSS untuk navbar */
+.topbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 0;
+    background-color: #FF5722; /* Oranye minimalis */
+    color: white;
+    font-size: 18px;
+}
+
+ul li {
+    list-style: none;
+    display: inline;
+    padding: 0 40px;
+    cursor: pointer;
+}
+
+ul li:hover {
+    color: #FFD700; /* Warna highlight saat hover */
+}
+
+/* CSS untuk container gambar dan grid */
+.content-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 30px;
+    gap: 20px;
+}
+
+.donuthal {
+    width: 50%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow halus */
+}
+
+/* CSS untuk grid */
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom */
+    gap: 20px;
+    max-width: 350px;
+}
+
+.grid-item {
+    padding: 30px;
+    color: white;
+    font-size: 18px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow untuk card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.grid-item:hover {
+    transform: translateY(-5px); /* Animasi hover */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Warna berbeda untuk setiap grid item */
+.analytic { background-color: #4CAF50; } /* Hijau */
+.creative { background-color: #FF5722; } /* Oranye */
+.development { background-color: #F44336; } /* Merah */
+.marketing { background-color: #03A9F4; } /* Biru */
+.media { background-color: #FF9800; } /* Oranye cerah */
+.optimization { background-color: #8BC34A; } /* Hijau muda */
+
+/* Responsif untuk ukuran layar kecil */
+@media (max-width: 768px) {
+    .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .donuthal {
+        width: 100%;
+    }
+
+    .grid-container {
+        grid-template-columns: 1fr; /* 1 kolom untuk layar kecil */
+        width: 100%;
+    }
+}
