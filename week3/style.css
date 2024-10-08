@@ -1,0 +1,26 @@
+.menu{
+    background-color: blue;
+    color: white;
+}
+
+.menu nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+#images {
+    display: flex;
+}
+
+#imagesleft {
+    margin: auto;
+}
+
+.imagesright{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
