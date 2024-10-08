@@ -1,0 +1,95 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .header {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: white;
+  }
+  
+  .header img {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .header h1 {
+    margin: 0;
+    font-size: 24px;
+    color: #5c70e6;
+  }
+  
+  .header h1 span {
+    color: #93c994;
+  }
+  
+  .nav {
+    background-color: #007bff;
+    padding: 10px 0;
+  }
+  
+  .nav a {
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    display: inline-block;
+  }
+  
+  .content {
+    display: flex;
+    padding: 20px;
+  }
+  
+  .welcome {
+    background-color: #ffcc00;
+    color: white;
+    padding: 20px;
+    margin-right: 20px;
+    flex: 1;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .welcome img {
+    width: 150px;
+    height: auto;
+  }
+  
+  .services {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 2;
+  }
+  
+  .service {
+    width: 50%;
+    padding: 20px;
+    box-sizing: border-box;
+    color: white;
+    text-align: center;
+    font-size: 18px;
+  }
+  
+  .service i {
+    font-size: 50px;
+    margin-bottom: 10px;
+  }
+  
+  .service.analytic {
+    background-color: #28a745;
+  }
+  
+  .service.creative {
+    background-color: #fd7e14;
+  }
+  
+  .service.development {
+    background-color: #dc3545;
+  }
+  
+  .service.marketing {
+    background-color: whitesmoke;
+  }
