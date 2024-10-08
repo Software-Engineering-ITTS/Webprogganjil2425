@@ -1,0 +1,132 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blue {
+  color: #0066cc;
+}
+.yellow {
+  color: #ffcc00;
+}
+
+nav {
+  background-color: #0066cc;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+}
+
+.welcome-section {
+  flex: 1;
+  position: relative;
+}
+
+.welcome-message {
+  background-color: #ff9d00;
+  color: white;
+  padding: 20px;
+  border-radius: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.character {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  height: auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 30px; /* Adjust spacing as needed */
+}
+
+.service-item {
+  width: 350px; /* Adjust width as needed */
+  height: 300px; /* Adjust height as needed */
+  display: flex; /* Center content within each item */
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Add more specific styling if needed */
+.service-item img {
+  /* Adjust size and padding as necessary */
+  width: 80px;
+  height: 80px;
+  margin-bottom: 10px;
+}
+
+.service-item span {
+  /* Adjust font size and weight as needed */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.analytic {
+  background-color: #4caf50;
+}
+.creative {
+  background-color: #ff5722;
+}
+.development {
+  background-color: #f44336;
+}
+.marketing {
+  background-color: #2196f3;
+}
+.media {
+  background-color: #ffc107;
+}
+.optimization {
+  background-color: #8bc34a;
+}
+
+@media (max-width: 768px) {
+  main {
+    flex-direction: column;
+  }
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
