@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style>
+      body {
+        margin: 0;
+      }
+
+      ul.topnav {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #006bff;
+        display: flex;
+        justify-content: center;
+      }
+
+      ul.topnav li {
+        float: left;
+      }
+
+      ul.topnav li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+      }
+
+      ul.topnav li a:hover:not(.active) {
+        background-color: #111;
+      }
+
+      ul.topnav li.right {
+        float: right;
+      }
+
+      @media screen and (max-width: 600px) {
+        ul.topnav li.right,
+        ul.topnav li {
+          float: none;
+        }
+      }
+
+      body {
+        font-family: poppins;
+      }
+      .column {
+        float: left;
+      }
+
+      /* Left and right column */
+      .column.side {
+        width: auto;
+      }
+
+      .column.middle {
+        width: 50%;
+      }
+
+      @media screen and (max-width: 600px) {
+        .column.side,
+        .column.middle {
+          width: 100%;
+        }
+      }
+      .grid-container {
+      display: grid;
+      justify-content: auto;
+      gap: 20px; /* Jarak antar elemen grid */
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      background-color: #fff;
+      padding: auto;
+      height: auto;
+      width: 700px;
+      padding: 2%;
+      box-shadow: 0 4px 4px rgba(0, 0, 0, 0.8);
+      border-radius: 8px;
+    }
+
+    .grid-item {
+      background-color: rgba(255, 255, 255, 0.8);
+      border: 2px solid rgba(0, 0, 0, 0.8);
+      
+      padding-top: 25%;
+      font-size: 30px;
+      text-align: center;
+    }
+
+    .row{
+      display: flex;
+      justify-content: auto;
+      align-items: auto;
+      height: auto;
+      width: auto;
+      padding-top: 2%;
+      padding-inline-start: 2%;
+    }
+
+    </style>
+  </head>
+  <body>
+    <img
+      src="buzz.jpg"
+      width="350px"
+      height="100px"
+      alt="Header Image"
+      class="header-image"
+    />
+
+    <ul class="topnav">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#news">News</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li class="right"><a href="#about">About</a></li>
+    </ul>
+
+    <div class="row">
+      <div class="column side">
+        <img src="vivy 5 final2.png" height="auto" width="auto">
+      </div>
+      <div class="grid-container" height="auto" width="auto">
+        <div class="grid-item" style="background-color: red;">1</div>
+        <div class="grid-item" style="background-color: #006bff;">2</div>
+        <div class="grid-item" style="background-color: antiquewhite;">3</div>  
+        <div class="grid-item" style="background-color: bisque;">4</div>
+        <div class="grid-item" style="background-color: aquamarine;">5</div>
+        <div class="grid-item" style="background-color:azure;">6</div> 
+      </div>
+  </body>
+</html>
