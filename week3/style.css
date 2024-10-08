@@ -1,0 +1,81 @@
+body {
+    background: rgba(144, 6, 236, 0.836);
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 2px;
+    padding: 10px;
+}
+
+.logo {
+    width: 100px;
+    height: auto;
+}
+
+.logo-name {
+    font-size: 24px;
+    font-family: 'Arial', sans-serif;
+    color: #ffffff;
+    margin: 0;
+}
+  
+nav {
+    display: flex;
+    justify-content: space-around;
+    background-color: rgb(5, 161, 223);
+    padding: 15px;
+    border-radius: 5px;
+  }
+
+nav li {
+    list-style: none;
+  }
+
+nav li a {
+    text-decoration: none;
+    color: aliceblue;
+  }
+
+nav :hover {
+    background: rgba(144, 6, 236, 0.836);
+}
+
+.gambar {
+    display: flex;
+    flex-direction: row;
+  }
+
+.gambar-kiri {
+    width: 50%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.gambar-kiri img {
+    width: 600px;
+    height: 600px;
+  }
+
+.gambar-kanan {
+    width: 50%;
+    height: 800px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+.container-image {
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+    gap:10px;
+  }
+
+.container-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+  }
