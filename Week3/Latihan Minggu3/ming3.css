@@ -1,0 +1,124 @@
+* {
+    margin: 0;
+    padding: 0;
+    gap: 120px;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+}
+
+header {
+    padding: 10px;
+    /* display: flex; */    
+    justify-content: space-between;
+    align-items: center;
+}
+
+.Judul {
+    align-items: center;
+}
+
+.Judul img {
+    padding: 20px;
+    height: 200px;
+    width: 300px;
+    border-radius: 10px;
+}
+
+nav ul {
+    border-radius: 10px;
+    background-color: rgb(17, 0, 255);
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color:white;
+    font-weight: bold;
+}
+
+main {
+    padding: 20px;
+}
+
+.Deskripsi {
+    display: flex;
+    /* align-items: center; */
+    justify-content: space-between;
+}
+
+.kata2 {
+    border-radius: 10px;
+    background-color: #ffa500;
+    padding: 20px;
+    color: white;
+    font-size: 20px;
+}
+
+.Rover {
+    height: 200px;
+    width: 100px;
+}
+
+.Pilihan {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    width: 15%; 
+    justify-content: right;
+}
+
+.Pilihan img {
+    height: 80px;
+    width: 80px;
+}
+    
+.Box {
+    padding: 30px;
+    color: white;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    font-weight: bold;
+}
+
+.TierList {
+    border-radius: 10px;
+    background-color: #00ff1a;
+}
+
+.Event {
+    border-radius: 10px;
+    background-color: #ff8800d6;
+}
+
+.Guide {
+    border-radius: 10px;
+    background-color: rgb(245, 59, 59);
+}
+
+.Character {
+    border-radius: 10px;
+    background-color: rgb(0, 204, 255);
+}
+
+.World {
+    border-radius: 10px;
+    background-color: orange;
+}
+
+.Item {
+    border-radius: 10px;
+    background-color: greenyellow;
+}
