@@ -1,0 +1,131 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: white;
+  padding: 0 10px;
+}
+
+.logo {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#logo {
+  position: relative;
+  max-width: 55px;
+  top: 15px;
+}
+
+.blue { 
+  color: #0066cc; /* Adjusted to match image */ 
+}
+
+.yellow { 
+  color: #ffcc00; /* Adjusted to match image */ 
+}
+
+nav {
+  background-color: #0066cc;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 20px;
+}
+
+.welcome-section {
+  flex: 1;
+  position: relative;
+  display: center;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.welcome-message {
+  background-color: #ff9900; /* Adjusted background to match the image */
+  color: white; /* Corrected the text color */
+  padding: 30px;
+  font-size: 22px;
+  font-weight: bold;
+  border-radius: 10px;
+  max-width: 500px;
+  z-index: 1;
+  margin-left: 60px; /* Added margin to position it next to the character */
+}
+
+.character {
+  position: relative;
+  top: -70px;
+  bottom: 0;
+  left: 200px;
+  max-width: 500px; /* Adjust the width */
+  z-index: 2;
+}
+
+.services-grid {
+  flex: 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+#gambar {
+  max-width: 150px;
+}
+
+.service-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: rgb(7, 7, 7);
+  border-radius: 5px;
+  padding: 40px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  height: 160px;
+  width: 220px;
+}
+
+.analytic { background-color: #4CAF50; }
+.creative { background-color: #FF5722; }
+.development { background-color: #F44336; }
+.marketing { background-color: #2196F3; }
+.media { background-color: #FFC107; }
+.optimization { background-color: #8BC34A; }
+
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+  }
+  .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
