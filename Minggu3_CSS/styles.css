@@ -36,34 +36,35 @@ div {
   justify-content: center;
   font-size: large;
   text-align: center;
+  gap: 5px;
 }
 
 .hero .grid-container .item1 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: green;
 }
 
 .hero .grid-container .item2 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: orange;
 }
 
 .hero .grid-container .item3 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: red;
 }
 
 .hero .grid-container .item4 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: skyblue;
 }
 
 .hero .grid-container .item5 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: orange;
 }
 
 .hero .grid-container .item6 {
-  padding: 110px 0;
+  padding: 110px;
   background-color: green;
 }
