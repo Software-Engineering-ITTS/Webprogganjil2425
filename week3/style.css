@@ -1,0 +1,46 @@
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 100px;
+    align-items: center;
+    justify-content: center;
+    background-color: steelblue;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+}
+
+nav :hover{
+    background-color: skyblue;
+}
+
+hr{
+    margin: 10;
+    display: block;
+    border-style: inset;
+}
+
+#rootView{
+    display: flex;
+
+}
+
+.coloumnContainer{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.itemContainer{
+    width: 100;
+}
+
+.itemText{
+    color: white;
+}
