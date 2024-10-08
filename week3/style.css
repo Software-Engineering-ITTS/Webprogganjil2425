@@ -1,0 +1,67 @@
+.Mayora{
+    margin-top: 50px; 
+    margin-left: auto;
+    width: 20%;
+}
+
+.navbar{
+    margin:auto;
+    padding:10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: red;
+    font-size: large;
+    text-align: center;
+}
+ ul li{
+    list-style: none;
+    display: inline;
+    padding-left: 80px;
+ }
+
+ .header-container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+ }
+
+ .content-container{
+    background-color: white;
+    padding: 50px;
+    text-align: center;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+      
+ }
+
+ .karir{
+    background-color: bisque;
+    padding: 50px;
+    text-align: center;
+ }
+
+ .company{
+    background-color: rgb(74, 216, 121);
+    padding: 50px;
+    text-align: center;
+ }
+ .Brand{
+    background-color: rgb(199, 74, 216);
+    padding: 50px;
+    text-align: center;
+ }
+ .Contact{
+    background-color: rgb(242, 238, 22);
+    padding: 50px;
+    text-align: center;
+ }
+ .About{
+    background-color: rgb(110, 74, 216);
+    padding: 50px;
+    text-align: center;
+ }
+ .Subsidiary{
+    background-color: rgb(75, 240, 232);
+    padding: 50px;
+    text-align: center;
+ }
