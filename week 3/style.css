@@ -1,0 +1,111 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+  box-sizing: border-box;
+}
+
+header {
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.blue { color: #0066cc; }
+.yellow { color: #ffcc00; }
+
+nav {
+  background-color: #0066cc;
+  padding: 10px 0;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+main {
+  display: flex;
+  padding: 20px;
+  gap: 20px;
+  
+}
+
+.welcome-section {
+  flex: 1;
+  position: relative;
+}
+
+.welcome-message {
+  background-color: #ffcc00;
+  color: white;
+  padding: 20px;
+  border-radius: 20px;
+  position: relative;
+  z-index: 1;
+}
+
+.character {
+  position: absolute;
+  bottom: 0;
+  left: 20px;
+  max-width: 40px;
+  z-index: 0;
+}
+
+.services-grid {
+  flex: 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+
+.service-item {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.service-item img {
+  max-width: 50%;
+  margin-bottom: 10px;
+}
+
+.analytic { background-color: #4CAF50; }
+.creative { background-color: #FF5722; }
+.development { background-color: #F44336; }
+.marketing { background-color: #2196F3; }
+.media { background-color: #FFC107; }
+.optimization { background-color: #8BC34A; }
+
+@media (max-width: 768px) {
+  main {
+      flex-direction: column;
+  }
+  .services-grid {
+      grid-template-columns: repeat(2, 1fr);
+  }
+}
