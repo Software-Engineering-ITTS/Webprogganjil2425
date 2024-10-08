@@ -21,13 +21,17 @@ nav :hover{
 }
 
 hr{
-    margin: 10;
+    max-width: 10px;
     display: block;
     border-style: inset;
+    margin: 10px;
 }
 
 #rootView{
     display: flex;
+    
+    flex-direction: row;
+
 
 }
 
@@ -38,7 +42,24 @@ hr{
 }
 
 .itemContainer{
-    width: 100;
+    
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+    width: 260px;
+    height: 200px;
+    margin: 10px;
+}
+
+.itemContainer p{
+    margin: 10px;
+}
+
+.itemContainer img{
+    align-items: center;
+    justify-content: center;
 }
 
 .itemText{
