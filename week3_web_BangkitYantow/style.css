@@ -1,0 +1,51 @@
+.hero {
+  display: flex;
+}
+
+
+.hero .grid-container {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  color: #fff;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+  padding-left: 15%;
+  gap: 10px;
+}
+
+ .grid-container  {
+ 
+  text-align: left;
+ 
+} 
+
+
+
+#kotak1 {
+  padding: 50px 0;
+  background-color: red;
+}
+
+#kotak2 {
+  padding: 50px;
+  background-color: blue;
+}
+#kotak3 {
+  padding: 50px;
+  background-color:green;
+}
+#kotak4 {
+  padding: 50px;
+  background-color: yellow;
+}
+#kotak5 {
+  padding: 50px;
+  background-color: orange;
+}
+#kotak6 {
+  padding: 50px;
+  background-color: purple;
+}
+
