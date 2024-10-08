@@ -1,0 +1,58 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+nav ul  {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    gap: 50px;
+    padding: 30px;
+    color: white;
+    background-color: #2596be;
+    justify-content: center;
+}
+
+.hero {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+}
+
+.hero .content{
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.hero .content .analytic {
+    background-color: lightseagreen;
+    padding: 50px;
+}
+
+.hero .content .creative {
+    background-color: lightcoral;
+    padding: 50px;
+}
+.hero .content .development {
+    background-color: lightpink;
+    padding: 50px;
+}
+.hero .content .marketing {
+    background-color: lightsalmon;
+    padding: 50px;
+}
+.hero .content .media{
+    background-color: lightgoldenrodyellow;
+    padding: 50px;
+}
+.hero .content .optimitation {
+    background-color: white;
+    padding: 50px;
+}
+
+
+
+
+
