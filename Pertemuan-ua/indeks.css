@@ -1,0 +1,132 @@
+/* all stylessher */
+* {
+  margin: 0;
+  padding: 0;
+}
+/* ini untuk marque karena saya suka, hehehe */
+#aturen-dewe {
+  color: black;
+  font-size: 24px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-weight: 300;
+  background-color: rgba(255, 0, 0, 0.678);
+}
+
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: left; 
+  background-color: pink;
+  padding: 20px 0;
+  margin: 0; 
+  width: 100%; 
+}
+
+h1 {
+  color: #333;
+}
+
+/* Navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex; /* Membuat item tampil berjajar */
+    justify-content: center; /* Rapatkan ke kiri */
+    background-color: rgba(255, 0, 0, 0.678);
+}
+
+nav ul li {
+    margin: 0 5px; /* Memberikan jarak kecil antar item */
+}
+
+nav ul li a {
+    display: block;
+    padding: 8px 15px; /* Kurangi padding untuk merapatkan */
+    background-color: pink; /* Warna background kotak */
+    color: #333;
+    text-decoration: none;
+    /* border-radius: 5px; Membuat sudut kotak lebih halus */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+nav ul li a:hover {
+    background-color: #333; /* Warna background saat hover */
+    color: #fff; /* Warna teks saat hover */
+}
+
+
+
+
+/* Main Content */
+main {
+  padding: 50px;
+  background-color: pink;
+}
+/* Untuk container utama .content tetap menggunakan grid */
+.content {
+    display: grid;
+    grid-template-columns: 1fr 2px 1fr; /* 3 kolom: kiri card, tengah separator, kanan gambar */
+    gap: 10px; /* Jarak antar kolom */
+    align-items: start;
+    padding: 10px 0;
+    text-decoration: none;
+}
+
+/* Kiri: Bagian card */
+.left {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Membuat card menyesuaikan ukuran kontainer */
+    gap: 10px; /* Jarak antar card */
+}
+
+/* Style Card: Ukuran lebih kecil, tetap responsif */
+.card {
+    background-color: #ffffff; /* Warna latar belakang card */
+    border: 1px solid #ccc; /* Border pada card */
+    border-radius: 8px; /* Rounding sudut */
+    padding: 10px; /* Padding di dalam card */
+    text-align: center; /* Teks di tengah */
+    transition: box-shadow 0.3s; /* Efek transisi */
+    cursor: pointer; /* Menunjukkan bahwa ini bisa diklik */
+}
+
+.card img {
+    max-width: 100%; /* Gambar mengikuti lebar card */
+    height: auto; /* Menjaga rasio gambar */
+    border-radius: 5px 5px 0 0; /* Membulatkan sudut atas gambar */
+}
+
+/* Hover effect */
+.card:hover {
+    box-shadow: 0 10px 8px rgba(0, 0, 0, 0.2); /* Efek saat hover */
+}
+
+/* Separator di tengah */
+.separator {
+    background-color: #000000; /* Warna garis pemisah */
+    width: 2px; /* Lebar garis pemisah */
+    height: 100%; /* Tinggi penuh */
+}
+
+/* Kanan: Bagian gambar */
+.right {
+    text-align: center; /* Menyelaraskan gambar di tengah */
+}
+
+.right img {
+    max-width: 100%; /* Gambar mengikuti lebar container */
+    height: auto; /* Menjaga rasio gambar */
+}
+
+
+/* Footer */
+footer {
+  text-align: center;
+  background-color: rgba(255, 0, 0, 0.678);
+  color: white;
+  padding: 10px;
+}
