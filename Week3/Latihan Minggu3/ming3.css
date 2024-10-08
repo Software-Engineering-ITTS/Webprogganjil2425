@@ -1,17 +1,16 @@
 * {
     margin: 0;
     padding: 0;
-    gap: 120px;
     box-sizing: border-box;
 }
 
 body {
+    padding: 2%;
     font-family: sans-serif;
 }
 
 header {
-    padding: 10px;
-    /* display: flex; */    
+    padding-bottom: 2%;   
     justify-content: space-between;
     align-items: center;
 }
@@ -28,10 +27,13 @@ header {
 }
 
 nav ul {
-    border-radius: 10px;
-    background-color: rgb(17, 0, 255);
+    background-color: #0079FF;
     display: flex;
     list-style-type: none;
+    width: 100%;
+    height: 4dvh;
+    align-items: center;
+    justify-content: space-around;
 }
 
 nav ul li {
@@ -44,25 +46,45 @@ nav ul li a {
     font-weight: bold;
 }
 
-main {
-    padding: 20px;
-}
-
 .Deskripsi {
     display: flex;
     /* align-items: center; */
     justify-content: space-between;
 }
 
+.kata1 {
+    width: 50%;
+}
+
 .kata2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     border-radius: 10px;
-    background-color: #ffa500;
+    background-color: #FF9700;
     padding: 20px;
     color: white;
-    font-size: 20px;
+    font-size: 13px;
+    text-align: center;
+    height: 15dvh;
+    position: relative;
+}
+
+.kata2 ::after {
+    content: "";
+    position: absolute;
+    bottom: -20px;
+            right: 150px;
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 20px solid #FFA500;
 }
 
 .Rover {
+    margin-top: 5%;
+    margin-left: 50%;
     height: 200px;
     width: 100px;
 }
@@ -71,19 +93,17 @@ main {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 10px;
-    justify-content: center;
-    align-items: center;
-    width: 15%; 
-    justify-content: right;
+    justify-items: legacy;
+    height: 100%;
 }
 
-.Pilihan img {
+.Pilihan img {  
     height: 80px;
     width: 80px;
 }
-    
+
 .Box {
-    padding: 30px;
+    padding: 10px;
     color: white;
     font-size: 18px;
     display: flex;
@@ -93,32 +113,7 @@ main {
     font-weight: bold;
 }
 
-.TierList {
-    border-radius: 10px;
-    background-color: #00ff1a;
-}
-
-.Event {
-    border-radius: 10px;
-    background-color: #ff8800d6;
-}
-
-.Guide {
-    border-radius: 10px;
-    background-color: rgb(245, 59, 59);
-}
-
-.Character {
-    border-radius: 10px;
-    background-color: rgb(0, 204, 255);
-}
-
-.World {
-    border-radius: 10px;
-    background-color: orange;
-}
-
-.Item {
-    border-radius: 10px;
-    background-color: greenyellow;
+.Menu {
+    height: 190px;
+    width: 190px;
 }
