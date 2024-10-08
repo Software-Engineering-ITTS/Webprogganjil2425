@@ -1,15 +1,11 @@
 body {
-    margin: 0.5%;
+    margin: 0%;
 }
 
 h1 {
     color: rgb(54, 159, 220);
 }
 
-/* .navbar {
-    display: flex;
-    gap: 1000px;
-} */
 .heading {
     display: flex;
     font-size: 50px;
@@ -58,8 +54,8 @@ h1 {
 
 main {
     display: flex;
-    padding: 10px;
-    gap: 30px;
+    padding: 20px;
+    gap: 20px;
 }
 
 .welcome-section {
@@ -68,47 +64,54 @@ main {
 }
 
 .welcome-message {
-    background-color: #c4a91e;
+    background-color:darkorange;
     color: white;
     padding: 40px;
     border-radius: 40px;
-    position: absolute;
+    position: relative;
     z-index: 1;
-    width: 400px;
-    height: 250px;
     text-align: center;
+    text-size-adjust: 100px;
 }
+
 
 .character {
     position: absolute;
-    bottom: 50px;
-    left: 20px;
-    z-index: 2;
-    max-width: 150px;
-}
+    top: 50%;
+    left: 50%;
+    margin-bottom: 30%;
+    transform: translate(-50%, -50%);
+    width: 350px;
+    height:auto;
+  }
 
 .services-grid {
-    flex: 2;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 10px;
+    grid-gap: 30px; 
 }
 
 .service-item {
-    aspect-ratio: 1;
-    display: flex;
+    width: 250px; 
+    height: 200px; 
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    color: white;
-    border-radius: 5px;
-    padding: 10px;
-    text-align: center;
 }
 
+
 .service-item img {
-    max-width: 50%;
+    
+    width: 80px;
+    height: 80px;
     margin-bottom: 10px;
+}
+
+.service-item span {
+    
+    font-size: 18px;
+    font-weight: bold;
 }
 
 .analytic { background-color: #4CAF50; }
