@@ -1,0 +1,52 @@
+
+.menu{
+    background-color: rgb(111, 101, 220);
+}
+.menu nav ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+#mainShow{
+    display: flex;
+    /* background-color:rgb(108, 104, 152); */
+}
+
+.anggota{
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+#fotoKru{
+    margin: auto;
+}
+
+.item{
+    background-color: aqua;
+    
+    /* margin-bottom: 20px; */
+}
+/* .item2{
+    background-color: rgb(2, 24, 24);
+} */
+/* #tanganKanan{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#wedok{
+    display: flex;
+    justify-content: space-between;
+}
+
+#beban{
+    display: flex;
+    justify-content: space-between;
+} */
+/* 
+#mainShow hr{
+    
+} */
