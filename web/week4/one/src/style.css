@@ -34,4 +34,58 @@ p {
   text-align: center;
 }
 
+img {
+  background-color: black;
+  text-align: right;
+  margin: 100px;
+}
+
+.hero {
+  display: flex;
+}
+
+.hero .grid-container {
+  display: grid;
+  grid-template-columns: 400px 400px;
+  align-items: center;
+  justify-content: center;
+  font-size: large;
+  text-align: center;
+  color: black;
+  gap: 30px;
+}
+
+.hero .grid-container .item1 {
+  padding: 110px;
+  background-color: green;
+}
+
+.hero .grid-container .item2 {
+  padding: 110px;
+  background-color: yellow;
+}
+
+
+.hero .grid-container .item3 {
+  padding: 110px;
+  background-color: red;
+}
+
+
+.hero .grid-container .item4 {
+  padding: 110px;
+  background-color: green;
+}
+
+
+.hero .grid-container .item5 {
+  padding: 110px;
+  background-color: green;
+}
+
+
+.hero .grid-container .item6 {
+  padding: 110px;
+  background-color: green;
+}
 
