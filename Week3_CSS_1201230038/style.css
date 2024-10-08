@@ -1,0 +1,12 @@
+.header {
+    background-color: blue;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.welcomepage{
+    width: 300px;
+}
