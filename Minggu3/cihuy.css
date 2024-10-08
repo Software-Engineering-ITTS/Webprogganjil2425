@@ -1,0 +1,91 @@
+.container {
+    display: flex;
+    align-items: center;
+    font-family: monospace;
+}
+.gambar {
+    margin-right: 10px;
+    width: 50px;
+    height: 50px;
+    display: flex;
+}
+.judul1 {
+    font-size: 35px;
+    color: rgba(0, 183, 255, 0.918);
+}
+.judul2 {
+    font-size: 35px;
+    color: rgb(238, 38, 221);
+}
+
+.nav1 {
+    margin-top: 10px;
+    margin-right: 10px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(0, 183, 255, 0.918);
+
+  }
+  
+  li {
+    float: left;
+    margin-left: 5px;
+  }
+  
+  li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+
+  li a:hover{
+    color: rgb(238, 38, 221);
+    
+  }
+  .gambarbawah {
+height: 700px;
+width: 700px;
+}
+  .CARD {
+    display: flex;
+    flex-direction: row;
+}
+.kiri {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    height: 800px;
+}
+.kanan {    
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 800px;
+}
+.box {
+    color: white;
+    font-weight: bold;
+    height: 250px;
+    width: 300px;
+}
+
+.box-container {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(2, 300px);
+
+}
+.gambarbawah {
+    height: 400px;
+    width: auto; /* Changed to maintain aspect ratio */
+    margin-right: 25px;
+}
