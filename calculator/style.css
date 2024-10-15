@@ -58,10 +58,10 @@ form #output input{
     font-size: 25;
 }
 
-.btnInput{
+.btn input{
     background-color: white;
 }
-.btnResult{
+#btnResult{
     background-color: green;
     color: white;
     font-weight: bold;
