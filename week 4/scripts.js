@@ -19,6 +19,12 @@ function appendNumber(number) {
     updateDisplay();
 }
 
+function clearNumber() {
+    displayValue = 0;
+    firstOperand = null;
+    operator = null;
+    updateDisplay();
+}
 //bikin method buat hapus
 
 function setOperator(nextOperator) {
