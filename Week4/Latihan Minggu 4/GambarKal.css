@@ -1,0 +1,70 @@
+.kalkulator {
+    width: 180px;
+    margin: 0 auto;
+    padding: 20px;
+    border: px solid #000000;
+    border-radius: 10px;
+    background-color: rgb(11, 109, 109);
+}
+
+.Tampilan {
+    display: flex;
+    height: 40px;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+}
+
+.operasi {
+    display: flex;
+    margin : 10px;
+}
+
+.angka {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.tombol {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 2px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: black;
+    border-radius: 3px;
+}
+
+.tombol2 {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 2px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: rgb(48, 47, 47);
+    border-radius: 3px;
+}
+
+#hasil {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 2px;
+    font-size: 20px;
+    color: aliceblue;
+    background-color: rgb(22, 209, 94);
+    border-radius: 3px;
+}
+
+#hapus {
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin: 2px;
+    font-size: 10px;
+    color: aliceblue;
+    background-color: rgb(209, 33, 20);
+    border-radius: 3px;
+}
+
+.operator {
+    display: grid;
+    grid-template-columns: repeat(1,1fr);
+}
