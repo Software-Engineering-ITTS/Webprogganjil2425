@@ -1,0 +1,37 @@
+* {
+    padding: 0px;
+    margin: 0px;
+}
+
+.kalkulator {
+    width: 300px;
+    margin: 0 auto;
+    border: 5px solid black;
+    padding: 20px;
+    background-color: rgba(86, 33, 33, 0.837);
+
+}
+
+input {
+    width: 100%;
+    margin-bottom: 20px;
+    margin-left: -21px;
+    padding: 20px;
+    text-align: end;
+    border: 2px solid;
+    font-size: 50px;
+    background-color: gold;
+}
+
+.button button {
+    width: 23%;
+    height: 50px;
+    margin: 5px;
+    font-size: 20px;
+    margin-right: 23px;
+    
+}
+
+.item-equal {
+    background-color: lightblue;
+}
