@@ -1,0 +1,32 @@
+body{
+    padding: 200px;
+}
+
+#display {
+    
+    height: 50px;
+    width: 180px;
+}
+
+.kalkulator {
+   background-color: rgb(59, 161, 137);
+   padding: 20px;
+   width: 34.5%;
+}
+
+.button {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 5px;
+    padding-top: 4px;
+    height: 170px;
+}
+
+.button button{
+    background-color: black;
+    color: white;
+}
+
+.button>button:hover{
+    background-color: rgb(74, 176, 19);
+}
