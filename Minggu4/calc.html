@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calc</title>
+    <link rel="stylesheet" href="cilc.css"/>
+</head>
+<body>
+
+    <div class="container">
+        <div class="inputbox">
+            <input type="text" name="userinput" id="userinput">
+        </div>
+        <div class="calc-keys">
+            <button type="button" class="key-others operations" onclick="bersihkan()">AC</button>
+            <button type="button" class="key-others operations" onclick="hapus()">DEL</button>
+            <button type="button" class="key-others operations" onclick="show('%')">%</button>
+            <button type="button" class="key-operate operations" onclick="show('/')">/</button>
+            <button type="button" class="numbers" onclick="show('7')">7</button>
+            <button type="button" class="numbers" onclick="show('8')">8</button>
+            <button type="button" class="numbers" onclick="show('9')">9</button>
+            <button type="button" class="key-operate operations" onclick="show('*')">*</button>
+            <button type="button" class="numbers" onclick="show('4')">4</button>
+            <button type="button" class="numbers" onclick="show('5')">5</button>
+            <button type="button" class="numbers" onclick="show('6')">6</button>
+            <button type="button" class="key-operate operations" onclick="show('-')">-</button>
+            <button type="button" class="numbers" onclick="show('1')">1</button>
+            <button type="button" class="numbers" onclick="show('2')">2</button>
+            <button type="button" class="numbers" onclick="show('3')">3</button>
+            <button type="button" class="key-operate operations" onclick="show('+')">+</button>
+            <button type="button" class="key-zero numbers" onclick="show('0')">0</button>
+            <button type="button" class="numbers" onclick="show('.')">.</button>
+            <button type="button" class="key-operate operations" onclick="akhir()">=</button>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="colc.js"></script>
+    
+</body>
+</html>
