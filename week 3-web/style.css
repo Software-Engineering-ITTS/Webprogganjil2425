@@ -1,44 +1,44 @@
-/* Import Google Fonts untuk tampilan font lebih modern */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
 body {
-    font-family: 'Roboto', sans-serif;
+    font-family: monospace;
     margin: 0;
     padding: 0;
-    background-color: #f7f7f7; /* Background abu-abu lembut */
-    color: #333; /* Warna teks */
+    background-color: #f7f7f7;
+    color: #333;
 }
 
-/* CSS untuk logo Dunkin */
 .dunkin {
     margin-top: 20px;
     margin-left: 30px;
     width: 15%;
 }
 
-/* CSS untuk navbar */
 .topbar {
     display: flex;
     justify-content: center;
     align-items: center;
     padding: 15px 0;
-    background-color: #FF5722; /* Oranye minimalis */
+    background-color: #FF5722;
     color: white;
     font-size: 18px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+ul {
+    margin: 0;
+    padding: 0;
 }
 
 ul li {
     list-style: none;
     display: inline;
     padding: 0 40px;
-    cursor: pointer;
+    transition: color 0.3s;
 }
 
 ul li:hover {
-    color: #FFD700; /* Warna highlight saat hover */
+    color: #f1b910;
 }
 
-/* CSS untuk container gambar dan grid */
 .content-container {
     display: flex;
     justify-content: space-between;
@@ -47,45 +47,51 @@ ul li:hover {
     gap: 20px;
 }
 
-.donuthal {
-    width: 50%;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Shadow halus */
+.image-container {
+    flex: 1;
 }
 
-/* CSS untuk grid */
+.donuthal {
+    width: 100%;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
 .grid-container {
     display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom */
+    grid-template-columns: repeat(2, 1fr);
     gap: 20px;
-    max-width: 350px;
+    max-width: 500px;
+    flex: 1;
 }
 
 .grid-item {
-    padding: 30px;
-    color: white;
-    font-size: 18px;
-    text-align: center;
-    font-weight: bold;
+    background-color: #ffffff;
+    padding: 20px;
     border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Shadow untuk card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .grid-item:hover {
-    transform: translateY(-5px); /* Animasi hover */
+    transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Warna berbeda untuk setiap grid item */
-.analytic { background-color: #4CAF50; } /* Hijau */
-.creative { background-color: #FF5722; } /* Oranye */
-.development { background-color: #F44336; } /* Merah */
-.marketing { background-color: #03A9F4; } /* Biru */
-.media { background-color: #FF9800; } /* Oranye cerah */
-.optimization { background-color: #8BC34A; } /* Hijau muda */
+.grid-item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+}
 
-/* Responsif untuk ukuran layar kecil */
+.grid-item p {
+    margin-top: 10px;
+    font-weight: bold;
+    font-size: 16px;
+}
+
 @media (max-width: 768px) {
     .content-container {
         flex-direction: column;
@@ -94,10 +100,11 @@ ul li:hover {
     
     .donuthal {
         width: 100%;
+        max-width: 100%;
     }
 
     .grid-container {
-        grid-template-columns: 1fr; /* 1 kolom untuk layar kecil */
+        grid-template-columns: 1fr;
         width: 100%;
     }
 }
