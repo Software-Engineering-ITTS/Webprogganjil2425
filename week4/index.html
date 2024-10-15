@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="kalkulator">
+            <div class="output">
+                <pre id="upper"></pre>
+                <pre id="lower">0</pre>
+            </div>
+            <div class="input">
+                <button onclick="bersihkan()">AC</button>
+                <button onclick="angka(this)">0</button>
+                <button onclick="hapus()"><i class="hapus"></i>DEL</button>
+                <button onclick="operator(this)">+</button>
+                <button onclick="angka(this)">1</button>
+                <button onclick="angka(this)">2</button>
+                <button onclick="angka(this)">3</button>
+                <button onclick="operator(this)">-</button>
+                <button onclick="angka(this)">4</button>
+                <button onclick="angka(this)">5</button>
+                <button onclick="angka(this)">6</button>
+                <button onclick="operator(this)">&times;</button>
+                <button onclick="angka(this)">7</button>
+                <button onclick="angka(this)">8</button>
+                <button onclick="angka(this)">9</button>
+                <button onclick="operator(this)">&div;</button>
+                <button onclick="dot()">.</button>
+                <button onclick="kurung(this)">(</button>
+                <button onclick="kurung(this)">)</button>
+                <button onclick="equal(this)">=</button>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
