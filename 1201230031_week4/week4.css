@@ -1,0 +1,71 @@
+body {
+    background: rgb(255, 255, 255);
+}
+.Logo {
+    width: 200px;
+}
+.aha {
+    color: aliceblue;
+}
+.Navbar {
+    background-color: rgb(67, 10, 10);
+    padding: 0px;
+    margin-top: 10px;
+    list-style: none;
+    font-size: 14pt;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    height: 9%;
+    z-index: 999;
+}
+
+.NavHeader {
+    list-style: none;
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    gap: 4rem;
+    justify-content: space-between;
+    margin-left: 25px;
+    padding-left: 25px ;
+}
+
+.Navbar .NavHeader li a{
+    color: rgb(255, 255, 255);
+}
+
+.Logo3 {
+    margin-top: 10px;
+    width: 370px;
+    border-radius: 50px;
+    margin-left: 150px;
+}
+
+.table {
+    display: flex;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: auto auto;
+    margin-left: 250px;
+    width: 50%;
+    margin-right: 100px;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+.gambar {
+    width: 50%;
+}
+.s1{
+    background-color: rgba(89, 32, 27, 0.445);
+    width: 300px;
+    text-align: center;
+}
+
+.icon1 {
+    margin-top: 10px;
+    width: 100px;
+}
