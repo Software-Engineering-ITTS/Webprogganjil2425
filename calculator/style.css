@@ -4,11 +4,17 @@
 
 }
 
+
+body {
+    background-color: lightcoral;
+}
+
 .calculator{
     padding-top: 50px;
     padding-right: 700px;   
     padding-left: 700px;
 }
+
 
 
 #keys{
@@ -25,7 +31,7 @@
     font-size: 30px;
     background-color: black;
     padding: 20px;
-    border-radius:0%;
+    border-radius:4%;
     transition: 0.5s ease;
 }
 
@@ -56,6 +62,17 @@
 
 .calculator-body #keys .clearButton:hover{
     color: black;
+}
+
+.calculator-body #keys .calculateButton{
+    background-color: orange;
+    border-radius: 100%;
+    transition: 0.5s ease;
+}
+
+
+.calculator-body #keys .calculateButton:hover{
+    background-color: white;
 }
 
 
