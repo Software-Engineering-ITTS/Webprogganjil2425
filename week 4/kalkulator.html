@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Kalkulator</title>
+    <link rel="stylesheet" href="kalkulator.css" />
+  </head>
+  <body>
+    <div class="container">
+      <form>
+        <input type="text" id="inputField" value="" />
+      </form>
+      <div class="container-button">
+        <button class="angka" onclick="appendValue('7')">7</button>
+        <button class="angka" onclick="appendValue('8')">8</button>
+        <button class="angka" onclick="appendValue('9')">9</button>
+        <button class="operator" onclick="appendValue('-')">-</button>
+        <button class="angka" onclick="appendValue('4')">4</button>
+        <button class="angka" onclick="appendValue('5')">5</button>
+        <button class="angka" onclick="appendValue('6')">6</button>
+        <button class="operator" onclick="appendValue('*')">x</button>
+        <button class="angka" onclick="appendValue('1')">1</button>
+        <button class="angka" onclick="appendValue('2')">2</button>
+        <button class="angka" onclick="appendValue('3')">3</button>
+        <button class="operator" onclick="appendValue('/')">/</button>
+        <button class="angka" onclick="appendValue('0')">0</button>
+        <button class="clear" id="clear" onclick="clearDisplay()">C</button>
+        <button class="result" id="result" onclick="calculateResult()">=</button>
+        <button class="operator" onclick="appendValue('+')">+</button>
+      </div>
+    </div>
+    <script src="kalkulator.js"></script>
+  </body>
+</html>
