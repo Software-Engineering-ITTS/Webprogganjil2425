@@ -1,0 +1,53 @@
+.awalan{
+    background-color: grey;
+    height:300px;
+    width: 280px;
+}
+.Screen{
+    padding: 13px;
+    height: 20px;
+    width: 90%;
+}
+.button{
+    background-color: black;
+    height:50px;
+    width: 50px;
+    display: flex;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px;
+}
+.hasil{
+    background-color: green;
+    height:50px;
+    width: 50px;
+    display: flex;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px;
+}
+.buttonnol{
+    background-color: black;
+    height:50px;
+    width: 120px;
+    display: flex;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    align-items: center;
+    margin: 10px;
+}
+.tempatbutton{
+    flex-direction: column;
+    display: flex;
+}
+.tambahan{
+    display: flex;
+    flex-wrap:wrap;
+    width: 100%; 
+    height: 60px;
+}
