@@ -1,0 +1,49 @@
+body {
+  background-color: white;
+}
+
+.container {
+  background-color: aqua;
+}
+
+table { 
+    border: solid black; 
+  } 
+  
+  input[type="button"] { 
+    width: 100%; 
+    padding: 20px 40px; 
+    background-color: black; 
+    color: white; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+    border-color: white;
+  } 
+  
+  input[type="text"] { 
+    background-color: grey;
+    padding: 30px; 
+    font-size: 24px; 
+    font-weight: bold; 
+    border: none; 
+    border-radius: 5px; 
+    border: 5px solid black; 
+  } 
+
+  #sign-equal {
+    background-color: green;
+  }
+
+  #sign-division {
+    background-color: grey;
+  }
+
+  #sign-multiple {
+    background-color: grey;
+  }
+
+  #sign-minus {
+    background-color: grey;
+  }
