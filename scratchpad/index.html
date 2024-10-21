@@ -3,19 +3,52 @@
         h1 i {
             color: navy;
         }
-        body{
+
+        body {
             color: red;
         }
-    
     </style>
 
     <script>
-        console.log("42 == 42.0 is " , 42 == 42.0);
-        console.log("42 === 42.0 is ",  42 === 42.0 );
-        console.log(1 + "1");
+        document.addEventListener('keydown', function (event) {
+            document.getElementById('pp').innerText = event.key
+        });
+
+        console.log("ayam");
+        for (var i = 1; i <= 3; i++) {
+            setTimeout(
+                function () {
+                    console.log(i);
+                }, 0
+
+            );
+        }
+
+        var start = new Date;
+        setTimeout(function () {
+            var end = new Date();
+            console.log('Time elaspsed : ', end - start, 'ms');
+        }, 500);
+
+        while (new Date - start < 1000) {
+
+        }
+
+        var firecount = 0;
+        var start = new Date;
+        var timer = setInterval(function () {
+            if (new Date - start > 1000) {
+                clearInterval(timer); 
+                console.log(firecount); 
+                return;
+            }
+            firecount++;
+        }, 0);
     </script>
 </head>
+
 <body>
+    <p id="pp">Bebek</p>
     <h1>ayam <i>goyeng</i></h1>
 
     <span style="margin: auto; padding: 10;">
@@ -34,5 +67,5 @@
             auwireng rek
         </span>
     </span>
-    
+
 </body>

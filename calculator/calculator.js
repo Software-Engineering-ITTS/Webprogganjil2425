@@ -30,7 +30,6 @@ document.addEventListener('keydown', function(event){
 
 function calculateResult(){
     var num1 = document.getElementById('resultText').value;
-
     try{
         var num2 = eval(num1.replace('x', '*'));
         document.getElementById('resultText').value = num2;
