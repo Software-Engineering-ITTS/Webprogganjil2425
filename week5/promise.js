@@ -57,6 +57,8 @@ const janji2 = new Promise(
     }
 );
 
+// http://www.emsifa.com/api-wilayah-indonesia/
+
 Promise.all([janji1, janji2]).then(
     (values) => {
         console.log(values);
