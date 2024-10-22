@@ -28,6 +28,7 @@ function getKecamatan(kabId, kecamatanDropDown) {
             kec += `<option value="${element.id}">${element.name}</option>`
 
         });
+        kecamatanDropDown.innerHTML = "<option >Pilih Kecamatan</option>"
         kecamatanDropDown.innerHTML += kec
     });
 }
@@ -41,6 +42,7 @@ function getKabupaten(provId, kabupatenDropDown) {
                 kab += `<option value="${element.id}">${element.name}</option>`
 
             });
+            kabupatenDropDown.innerHTML = "<option >Pilih Kabupaten</option>"
             kabupatenDropDown.innerHTML += kab
         });
 }
@@ -55,6 +57,7 @@ function getProvinsi(provinsiDropDown) {
                 prov += `<option value="${element.id}">${element.name}</option>`
 
             });
+            provinsiDropDown.innerHTML = "<option >Pilih Provinsi</option>"
             provinsiDropDown.innerHTML += prov
         });
 }
