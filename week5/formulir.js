@@ -4,20 +4,40 @@ document.addEventListener("DOMContentLoaded", function () {
     const provinsiDropDown = this.getElementById("provinsi")
     const kabupatenDropDown = this.getElementById("kabupaten")
     const kecamatanDropDown = this.getElementById("kecamatan")
+    const kelurahanDropDown = this.getElementById("kelurahan")
 
     getProvinsi(provinsiDropDown);
 
     provinsiDropDown.addEventListener("change", function () {
-        let provId = provinsiDropDown.selectedOptions[0].value
+        let provId = this.selectedOptions[0].value
         getKabupaten(provId, kabupatenDropDown)
     });
 
     kabupatenDropDown.addEventListener("change", function () {
-        let kabId = kabupatenDropDown.selectedOptions[0].value
+        let kabId = this.selectedOptions[0].value
         getKecamatan(kabId, kecamatanDropDown)
     });
 
+    kecamatanDropDown.addEventListener("change", function(){
+        let kecId = this.selectedOptions[0].value
+        getKelurahan(kecId, kelurahanDropDown)
+    })
+
 })
+
+function getKelurahan(kecId, keluarahanDropdown) {
+
+    fetch(`http://www.emsifa.com/api-wilayah-indonesia/api/villages/${kecId}.json`)
+    .then(response => response.json())
+    .then(response => {
+        let kel = '';
+        response.forEach(element => {            
+            kel += `<option value="${element.id}">${element.name}</option>`
+        });
+        keluarahanDropdown.innerHTML = "<option >Pilih Kelurahan</option>"
+        keluarahanDropdown.innerHTML += kel
+    });
+}
 
 function getKecamatan(kabId, kecamatanDropDown) {
     fetch(`http://www.emsifa.com/api-wilayah-indonesia/api/districts/${kabId}.json`)
