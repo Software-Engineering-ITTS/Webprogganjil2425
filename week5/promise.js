@@ -30,7 +30,7 @@ const janji1 = new Promise(
 );
 
 console.log("mulai")
-// console.log(janji1)
+console.log(janji1)
 janji1.then(
     response => { console.log(response) }
 ).catch(
