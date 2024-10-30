@@ -26,15 +26,19 @@
         }
 
         .navbar-toggler-icon {
-            /* background-image: url("icons/ic-menu.svg"); */
+            color: rgb(18, 2, 70);
             background-image: url("icons/ic-close.svg");
         }
 
         .collapsed .navbar-toggler-icon {
-            
+            color: rgb(18, 2, 70);
             background-image: url("icons/ic-menu.svg");
         }
 
+        .dropdown-toggle {
+            border: 0;
+            border-color: white;
+        }
     </style>
 
 </head>
@@ -44,24 +48,53 @@
         integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
         crossorigin="anonymous"></script>
 
-    <head class="header">
+    <!-- <div class="social-header bg-primary text-white py-2">
+            <div class="container d-flex justify-content-between align-items-center">
+                <div>
+                    <i class="fab fa-facebook-f"></i>
+                    <i class="fab fa-twitter mx-3"></i>
+                    <i class="fab fa-linkedin-in"></i>
+                    <i class="fab fa-instagram mx-3"></i>
+                </div>
+                <div class="contact-info d-none d-md-flex">
+                    <i class="fas fa-phone-alt"></i> +1 (234) 567-8901
+                    <span class="mx-3">|</span>
+                    <i class="fas fa-envelope"></i> info@example.com
+                </div>
+            </div>
+        </div>
+         -->
 
-    </head>
-    <nav class="navbar ml-auto navbar-expand-lg bg-light shadow sm fixed-top p-3">
-        <div class="container-fluid">
-            <a href="#" class="navbar-brand">
+         <div class=" fixed-top" id="infoBanner" style="background-color: rgb(18, 2, 70); ;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul class="top-menu">
+                            <li><a href="#"><i class="fa fa-phone"></i> Phone</a></li>
+                            <li><a href="#"><i class="fa fa-envelope"></i> Email</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6 d-none d-md-block">
+                        <li><a href="#"><i class="fa fa-phone"></i> Phone</a></li>
+                        <li><a href="#"><i class="fa fa-envelope"></i> Email</a></li>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    <nav class="navbar ml-auto navbar-expand-lg bg-white shadow-sm p-t-0" data-bs-target="#infoBanner">
+        <div class="container-fluid p-3">
+            <a href="#" class="navbar-brand p-2">
                 <img src="images/IDSTB-Logo.png" width="110" alt="">
             </a>
-
-            <button class="btn collapsed" type="button" data-bs-toggle="collapse"
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-                aria-label="close">
+                aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item dropdown" aria-haspopup="true">
+                <ul class="navbar-nav me-auto mb-lg-0 text-center">
+                    <li class="nav-item dropdown p-2" aria-haspopup="true">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             About Us
@@ -70,7 +103,7 @@
                             <a class="dropdown-item" href="#">Corporates Collaborations</a>
                         </div>
                     </li>
-                    <li class="nav-item dropdown" aria-haspopup="true">
+                    <li class="nav-item dropdown p-2" aria-haspopup="true">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                             data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                             Certifications
@@ -79,20 +112,22 @@
                             <a class="dropdown-item" href="#">ISTQB ® Certification</a>
                         </div>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">News & Event</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item p-2">
                         <a class="nav-link" href="#">QA Career Path</a>
                     </li>
                 </ul>
-                <div class="nav-item d-flex flex-end" aria-expanded="false">
+                <div class="nav-item d-none d-lg-flex flex-end" aria-expanded="false">
                     <button class="btn btn-danger">
                         <p class="mb-0">Certify Now</p>
                     </button>
                 </div>
             </div>
         </div>
+
+
     </nav>
 
     <div class="bg-primary-subtle" style="width: 100vw ; height : auto">
