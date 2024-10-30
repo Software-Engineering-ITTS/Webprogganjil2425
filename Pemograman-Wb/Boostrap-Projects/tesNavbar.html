@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Information</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
+  <style>
+    body {
+      background-color: #191970;
+      color: white;
+      font-family: sans-serif;
+      display: flex;
+      flex-direction: column;
+      padding: 20px;
+      position: relative;
+    }
+
+    .contact-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 20px;
+      width: 100%;
+      justify-content: start;
+      align-items: flex-start;
+    }
+
+    .contact-info-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .contact-info {
+      display: flex;
+      align-items: center;
+    }
+
+    .icon {
+      margin-right: 10px;
+    }
+
+    .social-icons {
+      position: absolute;
+      margin: 0 50px;
+      top: 20px;
+      right: 20px;
+      display: flex;
+    }
+    
+    .social-icon a {
+        color: white;
+        margin: 0 25px;
+        margin-left: 10px;
+      font-size: 20px;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    .social-icon a:hover {
+      color: #1e90ff; /* Change to a brighter blue on hover */
+    }
+  </style>
+</head>
+<body>
+  <div class="contact-container">
+    <div class="contact-info-group">
+      <div class="contact-info">
+        <span class="icon"><i class="fas fa-phone"></i></span>
+        <span>+620812345678</span>
+      </div>
+      <div class="contact-info">
+        <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+        <span>Jakarta, Indonesia</span>
+      </div>
+    </div>
+    <div class="contact-info">
+      <span class="icon"><i class="fas fa-envelope"></i></span>
+      <span>supportme@gmail.com</span>
+    </div>
+  </div>
+  <div class="social-icons">
+    <span class="social-icon"><a href="https://www.facebook.com" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a></span>
+    <span class="social-icon"><a href="https://www.instagram.com" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a></span>
+    <span class="social-icon"><a href="https://www.twitter.com" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a></span>
+  </div>
+</body>
+</html>
