@@ -14,7 +14,7 @@
     <div style="background-color: #15114c;">
         <div class="container">
             <div class="d-flex justify-content-between ">
-                <div class="d-flex flex-column d-none d-md-inline d-lg-inline">
+                <div class="d-flex flex-column d-none d-sm-none d-md-none d-lg-flex">
                     <div class="d-flex gap-5 text-white pt-2 ">
                         <div class="d-flex gap-2 align-items-center">
                             <p class="fa-solid fa-phone-flip"></p> 
@@ -31,7 +31,7 @@
                     </div>
                 </div>
 
-                <div class="d-flex align-items-center text-white d-none d-md-flex d-lg-flex" >
+                <div class="d-flex align-items-center text-white d-none d-md-none d-lg-flex d-lg-flex" >
                     <ul class="list-unstyled d-flex gap-3" >
                         <li class="icons-search"><p class="fa-solid fa-magnifying-glass"></p></li>
                         <li class="icons-linkedin"><p class="fa-brands fa-linkedin"></p></li>
@@ -39,7 +39,7 @@
                         <li class="icons-instagram"><p class="fa-brands fa-instagram"></p></li>
                     </ul>
                 </div>
-                <div class="text-white d-lg-none d-md-none d-sm-flex d-flex justify-content-between align-items-center w-100">
+                <div class="text-white d-lg-none d-md-flex d-sm-flex d-flex justify-content-between align-items-center w-100" >
                      <ul class="list-unstyled d-flex gap-3 mt-3">
                          <li class="icons-linkedin"><p class="fa-brands fa-linkedin"></p></li>
                          <li class="icons-facebook"><p class="fa-brands fa-facebook-f"></p></li>
@@ -52,13 +52,49 @@
     </div>
 
     <!-- main nav  -->
-     <div>
-        <div>
-            <div>
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+        <div class="container">
+            <div class="d-flex w-100 justify-content-between p-2">
+                <div>
+                    <img src="/tugasBootsrap/assets/logo.png" alt="" width="90" height="38">
+                </div>
 
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                
+                <div class="" id="navbarNav">
+                      <ul class="navbar-nav gap-5">
+                            <li class="nav-item"><a class="nav-link active" aria-current="page" href="#">About Us</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">Certification</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">News & Events</a></li>
+                            <li class="nav-item"><a class="nav-link" href="#">QA Career Path</a></li>
+                      </ul>
+                </div>
+
+                <div class="">
+                    <button class="p-2 text-white border-0 text-center" style="background-color: #f14848;">
+                        Certify Now 
+                        <i class="fa-solid fa-arrow-right-long"></i>
+                    </button>
+                </div>
             </div>
         </div>
-     </div>
+      </nav>
+
+      <!-- Header -->
+       <div>
+            <div class="text-center mt-5  align-items-center d-flex flex-column">
+                <h1 class="fw-bold display-3" style="width: 35%;">
+                    Solusi Terdepan untuk Sertifikasi dan Pelatihan Software Testing
+                </h1>     
+                <button class="p-2 border-0 text-white bg-primary rounded-5" style="width: 11%;">
+                    Hubungi kami
+                </button>           
+            </div>
+       </div>
+
+       <!-- Media / Slider -->
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
