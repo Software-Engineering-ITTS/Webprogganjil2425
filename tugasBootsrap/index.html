@@ -95,9 +95,9 @@
        </div>
 
        <!-- Media / Slider -->
-        <div>
+        <div class="mt-5 ">
             <div id="carouselExampleIndicators" class="carousel slide">
-                <div class="d-flex justify-content-center mt-5">
+                <div class="d-flex justify-content-center mt-5 ">
                     <div class="carousel-inner w-50" >
                         <div class="carousel-item active">
                             <img src="/tugasBootsrap/assets/caraousel header/car1.jpeg" class="d-block w-100" alt="">
@@ -117,23 +117,133 @@
         <!-- About  -->
 
         <div class="mt-5 pt-5 px-5">
-            <div class="d-flex gap-5 justify-content-center align-items-center ">
-               <div>
-                   <img src="assets/about.jpg" alt="" width="800">
+            <div class=" gap-5 d-md-grid d-lg-flex justify-content-center align-items-center ">
+               <div >
+                   <img class="container-md  d-sm-flex d-md-flex d-lg-none" src="assets/about.jpg" alt="" width="800">
+                   <img class="d-none d-sm-none d-md-none d-lg-flex" src="assets/about.jpg" alt="" width="800">
                </div>
-                <div class="px-5 ">
-                    <h1>Tentang Kami</h1>
-                    <p>Indonesia Software Testing Board (IDSTB) 
+                <div class="px-5 mx-5 d-flex flex-column align-items-center justify-content-center">
+                    <h1 class="display-3 fw-bold text-center">Tentang Kami</h1>
+                    <p class=" mt-2 text-center">Indonesia Software Testing Board (IDSTB) 
                         adalah perkumpulan non-profit di bidang software testing di Indonesia yang bekerjasama dengan 
                         International Software Testing Qualification Board (ISTQB) dan Badan Standarisasi Nasional Indonesia (BSN).
                          Kami berkomitmen untuk meningkatkan kualitas praktik pengujian perangkat lunak melalui sertifikasi yang diakui secara internasional dan program pelatihan yang komprehensif. 
                          Misi kami adalah memberdayakan individu, universitas, dan organisasi untuk unggul dalam jaminan kualitas perangkat lunak, 
                          mendorong standar industri, dan membangun komunitas profesional yang terampil.
                     </p>
-                    <button>Pelajari Lebih Lanjut</button>
+                    <button class=" px-5 py-2 bg-primary text-white border-0 rounded-5 mt-2">Pelajari Lebih Lanjut</button>
                 </div>
             </div>
         </div>
+
+        <!-- Berita dan acara -->
+         <div style="margin-top: 10rem;">
+            <div class="bg-danger container">
+                <div class="bg-dark-subtle  container container-sm container-md">
+                    <div class="mt-5 px-5">
+                        <div>
+                            <h1 class="text-center fw-bold pt-3">Berita dan Acara</h1>
+                        </div>
+                        <div class="">
+                            <p class="text-bg-danger text-center" style="width: 10%;">RECENT POSTS</p>
+                            <div class="container-fluid bg-danger " style="height: 2px;"></div>
+                        </div>
+                    </div>
+
+                    <div class="row d-sm-grid d-md-grid d-lg-flex ">
+                         <div class="col-md-4 d-flex gap-3 mt-3 bg-white w-50">
+                             <img  src="assets/acara/be1.png" alt="" style="width: 30%;">
+                             <div class="d-flex flex-column  justify-content-center">
+                                 <a class="text-decoration-none text-black " href="">IDSTB Conference 2024: Langkah Besar untuk Pengujian Perangkat Lunak di Indonesia</a>
+                                 <p>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                     29/10/2024
+                                 </p>
+                             </div>
+                         </div>
+                         <div class=" col-md-4 d-flex gap-3 mt-3 bg-white w-50">
+                            <img  src="assets/acara/be2.png" alt="" style="width: 30%;">
+                            <div class="d-flex flex-column  justify-content-center">
+                                <a class="text-decoration-none text-black " href="">IDSTB Conference 2024: Langkah Besar untuk Pengujian Perangkat Lunak di Indonesia</a>
+                                <p>
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    17/09/2024
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 d-flex gap-3 mt-3 bg-white w-50">
+                            <img  src="assets/acara/be3.png" alt="" style="width: 30%;">
+                            <div class="d-flex flex-column  justify-content-center">
+                                <a class="text-decoration-none text-black " href="">IDSTB Conference 2024: Langkah Besar untuk Pengujian Perangkat Lunak di Indonesia</a>
+                                <p class="">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    17/09/2024
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
+
+         <!-- Product -->
+         <div>
+            <div>
+                <div style="margin-top: 10rem;">
+                    <h1 class="fw-bold display-3 text-center">Produk Kami</h1>
+                </div>
+ 
+                <div class="container bg-body-secondary">
+                    <div class="d-sm-grid d-md-grid d-lg-flex gap-3" >
+                        <img class="" src="assets/products/pro1.png" alt="" width="500">
+                        <div class="d-flex flex-column">
+                            <ul class="list-unstyled d-flex text-warning">
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                            </ul>
+                            <h2>ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia</h2>
+                            <p>
+                                ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia Version The ISTQB® Certified Tester Foundation Level (CTFL) 
+                                certification is the cornerstone of essential testing knowledge that can be applied...
+                            </p>
+                            <h3>Rp3.300.000</h3>
+
+                            <div>
+                                <button>Add to cart</button>
+                                <a href="http://">View Product</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="d-sm-grid d-md-grid d-lg-flex ">
+                        <img class="" src="assets/products/pro2.png" alt="" width="480">
+                        <div class="d-flex flex-column">
+                            <ul class="list-unstyled d-flex text-warning">
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                                <li><i class="fa-regular fa-star"></i></li>
+                            </ul>
+                            <h2>ISTQB - Certified Tester Agile Test Leadership at Scale</h2>
+                            <p>
+                                Overview The ISTQB® Agile Test Leadership at Scale (CT-ATLaS) certification focuses on 
+                                how to organize and improve quality and testing across multiple teams in an agile organization. It also covers...
+                            </p>
+                            <h3>Rp3.300.000</h3>
+
+                            <div>
+                                <button>Add to cart</button>
+                                <a href="http://">View Product</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+         </div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>    
