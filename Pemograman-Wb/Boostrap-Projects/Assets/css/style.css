@@ -7,6 +7,7 @@ body {
   flex-direction: column;
   position: relative;
   padding-top: 150px;
+  margin-bottom: 1000px;
 }
 
 /* Navbar */
@@ -25,7 +26,7 @@ body {
 .fixed-header {
   position: fixed;
   top: 0;
-  width: 100%;  
+  width: 100%;
   height: auto;
   z-index: 10;
   background-color: #fff;
@@ -50,7 +51,7 @@ header {
 }
 
 .judulAwal {
-  font-family: 'Poppins', sans-serif; /* Atur font Montserrat */
+  font-family: "Poppins", sans-serif; /* Atur font Montserrat */
   font-size: 65px; /* Ubah ukuran sesuai kebutuhan */
   font-weight: bold; /* Pilih ketebalan, bisa 400, 500, 700, dsb. */
   color: #1b234a; /* Sesuaikan warna teks */
@@ -63,6 +64,33 @@ header {
   margin-top: 90px;
 }
 
+/* Button click */
+.elementor-19 .elementor-element.elementor-element-cf07263 .elementor-button {
+  font-family: "Poppins", Sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: capitalize;
+  text-decoration: none;
+  line-height: 1em;
+  justify-content: center;
+  align-items: center;
+  color: #ffffff;
+  background-color: #467ff7;
+  border: 1px solid #467ff7;
+  border-radius: 100px;
+  padding: 16px 55px;
+  /* display: inline-block; */
+  text-align: center;
+  transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk hover */
+}
+
+/* Efek hover untuk button */
+.elementor-19
+  .elementor-element.elementor-element-cf07263
+  .elementor-button:hover {
+  background-color: #355bbf; /* Ubah warna latar saat di-hover */
+  color: #ffffff;
+}
 .custom-geser {
   margin-right: 40px;
 }
@@ -75,7 +103,7 @@ header {
   display: flex;
   flex-direction: column;
   gap: 10px;
-  margin-left: 40px; 
+  margin-left: 40px;
 }
 
 .contact-info {
