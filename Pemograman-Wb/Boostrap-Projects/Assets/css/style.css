@@ -1,11 +1,35 @@
 body {
-  background-color: red;
+  background-color: wheat;
   font-family: sans-serif;
   color: white;
   margin: 0;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding-top: 150px;
+}
+
+/* Navbar */
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  height: auto;
+  z-index: 10; /* Pastikan navbar berada di atas elemen lainnya */
+  background-color: #fff; /* Ganti warna sesuai keinginan Anda */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan agar lebih jelas */
+  /* margin-bottom: 50px; */
+}
+
+/* Fixed Header Container */
+.fixed-header {
+  position: fixed;
+  top: 0;
+  width: 100%;  
+  height: auto;
+  z-index: 10;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 header {
@@ -13,21 +37,45 @@ header {
 }
 
 .contact-container {
-  background-color: navy;
+  background-color: #161640;
   display: flex;
   flex-direction: row;
   padding: 10px;
   flex-wrap: wrap;
   gap: 20px;
   width: 100%;
+  height: auto;
   justify-content: start;
   align-items: flex-start;
+}
+
+.judulAwal {
+  font-family: 'Poppins', sans-serif; /* Atur font Montserrat */
+  font-size: 65px; /* Ubah ukuran sesuai kebutuhan */
+  font-weight: bold; /* Pilih ketebalan, bisa 400, 500, 700, dsb. */
+  color: #1b234a; /* Sesuaikan warna teks */
+  text-align: center; /* Ratakan teks ke tengah */
+  line-height: 1.4; /* Sesuaikan jarak antar baris */
+  border: none; /* Hilangkan border default */
+  /* border-top: 2px solid #333; Tambahkan garis horizontal sesuai gaya */
+  width: 60%; /* Sesuaikan lebar garis */
+  margin: 10px auto; /* Atur margin dan ratakan ke tengah */
+  margin-top: 90px;
+}
+
+.custom-geser {
+  margin-right: 40px;
+}
+
+.img-geser {
+  margin-left: 40px;
 }
 
 .contact-info-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-left: 40px; 
 }
 
 .contact-info {
