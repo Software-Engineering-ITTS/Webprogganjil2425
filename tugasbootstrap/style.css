@@ -7,3 +7,26 @@
     height: 20px;
     margin-right: 5px;
 }
+
+.product-card {
+    border-radius: 8px;
+    background-color: #f8f9fa;
+    padding: 20px;
+}
+.product-image {
+    max-width: 100%;
+    border-radius: 8px;
+}
+.product-rating {
+    color: orange;
+}
+.product-price {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+.add-to-cart-btn {
+    background-color: #6c757d;
+    color: white;
+    border-radius: 20px;
+    font-weight: 500;
+}
