@@ -1,0 +1,93 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    
+    font-family: sans-serif;
+}
+
+.play {
+    display: inline-flex;
+    text-align: center;
+    justify-content: space-between;
+    padding: 20px;
+    margin-left: 100px;
+}
+
+.Logo h1 {
+    font-weight: bold;
+    color: darkblue;
+    font-size: 24px;
+    margin: 0;
+
+}
+
+.Logo h1 .RED {
+    color: red;
+}
+
+.Logo h2 {
+    font-size: 12px;
+
+}
+
+.Menu-bar {
+    text-align: center;
+    margin-left: 75px;
+}
+
+.Menu-bar ul {
+    display: flex;
+    list-style: none;
+    color: white
+}
+
+.Menu-bar ul li {
+    width: 120px;
+    margin: 15px;
+    padding: 15px;
+}
+
+.Menu-bar ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.menu-1 {
+    display: none;
+}
+
+.Menu-bar ul li:hover .menu-1 {
+    display: block;
+     position:absolute;
+     margin-top: 15px;
+     margin-left: -30px;
+}
+
+.menu-2{
+    display: none;
+}
+.Menu-bar ul li:hover .menu-2{
+    display: block;
+    position:absolute;
+    margin-top: 15px;
+    margin-left: -30px;
+}
+.Page{
+   background: whitesmoke;
+   height: 100vh; 
+   width: auto;
+}
+.page-1 {
+    display: flex;
+    margin-top: 15px;
+    font-size: 40px;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+    padding: 20px;
+   font-family: Arial, Helvetica, sans-serif;
+}
