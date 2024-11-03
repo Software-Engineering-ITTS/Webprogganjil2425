@@ -1,4 +1,3 @@
-
 .container {
     padding-top: 5% ;
     padding-left: 5% ;
@@ -7,39 +6,25 @@
 }
 
 .top-header {
-    background-color: #1b1b3a; /* Dark navy color */
+    background-color: #1b1b3a;
     color: white;
     display: flex;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 10px 40px;
+    margin-top: -4%;
     font-family: Arial, sans-serif;
+}
+.top-header .address{
+    padding-bottom: 1%;
 }
 
 .contact-info {
-    display: flex;
-    gap: 20px;
+    /* display: flex; */
     align-items: center;
 }
 
-.info-item {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-.social-icons {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-}
-
-.social-icons i {
-    font-size: 18px;
-    cursor: pointer;
-}
-
-.fas, .fab {
-    color: white;
+.top-header .icon{
+    text-align: right;
 }
 
 .navbar-custom {
@@ -74,10 +59,6 @@
 .nav-link:hover, .certify-btn:hover {
     color: #002366;
     text-decoration: none;
-}
-
-body {
-    padding-top: 70px;
 }
 
 .landingtop1{
