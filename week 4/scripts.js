@@ -61,7 +61,7 @@ function calculate() {
         case '-':
             result = firstOperand - inputValue;
             break;
-        case '*':
+        case '*':  
             result = firstOperand * inputValue;
             break;
         case '/':
