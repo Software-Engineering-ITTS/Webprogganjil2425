@@ -1,0 +1,273 @@
+body {
+    overflow-x: hidden;
+}
+
+.header-bg {
+    background-color: #0f0f31;
+}
+
+.icon {
+    width: 16px;
+    height: 16px;
+    margin-right: 1rem;
+}
+
+.navbar-logo {
+    height: 48px;
+    width: 110px;
+    margin-right: 3vw;
+}
+
+.navbar .navbar-nav .nav-item {
+    margin-right: 3vw;
+}
+
+.certify-now {
+    background-color: #f0252b;
+    width: 150px;
+    height: 40px;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-top: 0.4vw;
+}
+
+.bigtxt h1 {
+    font-size: 60px;
+    color: #16163F;
+}
+
+.contact-us {
+    background-color: #7b9ee9;
+    width: 225px;
+    height: 50px;
+    margin-top: 1vw;
+    text-align: center;
+    color: white;
+    font-size: 16px;
+    padding-top: 0.6vw;
+}
+
+.photos3 .carousel-item img {
+    width: 100%;
+}
+
+.align-items-center {
+    text-align: center;
+}
+
+.container h1 {
+    color: #0f0f3e;
+}
+
+.contact-info span,
+.location span,
+.socmed img {
+    margin-right: 1rem;
+}
+
+.text-light {
+    color: #ffffff;
+}
+
+.container-fluid {
+    padding: 1rem 3rem;
+}
+.photos3 .carousel-row {
+    height: auto;
+}
+
+.carousel-inner img {
+    width: 100%;
+}
+
+.carousel-control-prev-icon,
+.carousel-control-next-icon {
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+.content-section {
+    padding-top: 8vw;
+}
+
+.content-text {
+    padding-left: 5vw;
+}
+
+.section-title {
+    font-size: 4vw;
+    color: #16163F;
+}
+
+.content-description {
+    font-size: 1vw;
+}
+
+.learn-more {
+    background-color: #7b9ee9;
+    width: 269px;
+    height: 50px;
+    margin-top: 1vw;
+}
+
+.learn-more-text {
+    color: white;
+    font-size: 20px;
+    padding-top: 0.4vw;
+}
+
+.content-image {
+    padding-right: 15vw;
+}
+
+.content-image img {
+    width: 45vw;
+}
+.product-heading {
+    padding-bottom: 2vw;
+    padding-top: 10vw;
+}
+
+.product-heading h1 {
+    color: #16163F;
+    font-size: 3vw;
+}
+
+.product-container {
+    background-color: #F4F5F7;
+    padding: 2vw;
+}
+
+.product-item {
+    background-color: white;
+    margin-top: 50px;
+}
+
+.imgleft img {
+    width: 20vw;
+}
+
+.product-content {
+    padding-top: 3vw;
+}
+
+.product-header {
+    padding-left: 650px;
+}
+
+.product-category {
+    color: #648138;
+}
+
+.product-title {
+    font-size: 1.4vw;
+}
+
+.product-description {
+    font-size: 0.81vw;
+}
+
+.product-price {
+    font-size: 1.4vw;
+}
+
+.add-to-cart {
+    background-color: #648138;
+    width: 130px;
+    height: 40px;
+    margin-top: 1vw;
+    text-align: center;
+}
+
+.add-to-cart span {
+    color: white;
+    font-size: 16px;
+    display: block;
+    padding-top: 0.3vw;
+}
+
+.view-product {
+    padding-top: 1.3vw;
+    padding-left: 1vw;
+}
+
+.view-product a {
+    color: #648138;
+    text-decoration-color: #648138;
+}
+.collaboration-section {
+    background-color: #F4F5F7;
+    margin-top: 10vw;
+    padding-top: 8vw;
+    padding-bottom: 8vw;
+}
+
+.collaboration-title {
+    color: #0f0f3e;
+    font-size: 4vw;
+}
+
+.collaboration-images img {
+    padding: 10px;
+}
+
+.collaboration-images img:first-child {
+    padding-left: 40px;
+}
+
+.career-section {
+    padding-top: 8vw;
+}
+
+.career-content {
+    padding-left: 3vw;
+    padding-right: 15vw;
+}
+
+.career-title {
+    font-size: 4vw;
+    color: #0f0f3e;
+}
+
+.career-description {
+    font-size: 0.9vw;
+    margin-top: 1.5vw;
+    padding-right: 14vw;
+}
+
+.start-now {
+    background-color: #7b9ee9;
+    width: 360px;
+    height: 50px;
+    margin-top: 1.5vw;
+    text-align: center;
+}
+
+.start-now-text {
+    color: white;
+    font-size: 20px;
+    padding-top: 0.4vw;
+}
+
+.career-image img {
+    width: 43vw;
+}
+.bigtxt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 2vw 0;
+}
+
+.contact-us {
+    background-color: #7b9ee9;
+    width: 225px;
+    height: 50px;
+    margin-top: 1vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 16px;
+    border-radius: 8px;
+}
