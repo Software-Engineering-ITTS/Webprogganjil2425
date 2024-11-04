@@ -1,5 +1,5 @@
 body {
-  background-color: wheat;
+  /* background-color: wheat; */
   font-family: sans-serif;
   color: white;
   margin: 0;
@@ -64,31 +64,36 @@ body {
     margin-top: 90px;
   }
 
-  /* Styling Default Button */
+  /* Styling untuk Button Default */
   .button-main {
     font-family: "Poppins", sans-serif;
     font-size: 16px;
     font-weight: 400;
     text-transform: capitalize;
-    color: #355bbf;
-    background-color: #fff;
+    color: #fff;
+    background-color: #355bbf;
     border: 2px solid #355bbf;
     border-radius: 50px;
     padding: 15px 100px;
     text-align: center;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease-in-out;
+    width: 40%; /* Menyesuaikan lebar seperti pada contoh awal */
   }
 
-  /* Hover Effect for Button */
+  /* Hover Effect untuk Button */
   .button-main:hover {
-    background-color: #355bbf;
+    /* background-color: #355bbf;
     color: #fff;
+    border: 2px solid #355bbf; */
+    /*  */
+    background-color: white;
+    border: 2px solid rgb(32, 122, 219);
+    color: #355bbf;
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-    transform: translateY(-2px);
   }
 
-  /* Active State for Button */
+  /* Active State untuk Button */
   .button-main:active {
     background-color: #fff;
     color: #355bbf;
