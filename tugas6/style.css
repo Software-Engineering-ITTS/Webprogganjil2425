@@ -1,0 +1,447 @@
+body {
+  overflow-x: hidden;
+}
+
+.navbar {
+    background-color:rgb(22, 23, 62);
+    height: 65px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    z-index: 2000;
+  }
+  
+  .navbar-logo {
+    color:rgb(22, 23, 62);
+  }
+  
+  .navbar-menu {
+    display: flex;
+    gap: 1rem;
+  }
+
+.container-fluid{
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.header{
+  position: fixed;
+  width: 100%;
+}
+
+
+.baris1 {
+    padding-left: 65px;
+}
+
+.baris2{
+    padding-left: 65px;
+}
+
+.email {
+    padding-left: 25px;
+}
+
+.logo{
+    gap: 2rem;
+    padding-right: 120px;
+}
+
+.logobrand {
+    margin-left: 60px;
+}
+
+.contact-info {
+    display: flex;
+    font-size: 12.5px;
+    flex-direction: column;
+}
+
+.contact-info ul{
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    margin-bottom: 5px;
+}
+
+.navbar-nav{
+  text-align: center;
+  align-items: center;
+}
+
+.nav-item .nav-link:hover {
+  color: goldenrod;
+}
+
+#navbar2{
+  position: fixed;
+  height: 80px;
+  z-index: 1000;
+}
+
+.certify{
+  padding-right: 115px;
+}
+
+.collapse ul li{
+  text-align: center;
+  align-items: center;
+}
+
+.certify a{
+  width: 160px;
+  height: 50px;
+  padding: 11px;
+}
+
+.certify a:hover {
+  background-color:rgb(22, 23, 62);
+}
+
+#navbarNav {
+  align-items: center;
+  text-align: center;
+}
+
+.Hubungi a:hover{
+  background-color: white;
+  color: blue;
+}
+
+.isi1 a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.isi1-1 a:hover {
+  background-color: white;
+  color: blue;
+}
+
+.contact-info li{
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+
+  .navbar-menu{
+    display: flex;
+    gap: 1rem;
+  }
+
+  .logo{
+    display: flex;
+    gap: 30px;
+  }
+  
+.judul div h1{
+  font-size: 64px;
+  font-weight: bold;
+  color: #131E47;
+}
+
+.judul div a{
+  width: 205px;
+  border-radius: 50px;
+  font-size: 16px;
+  padding-top: 12px;
+  height: 50px;
+  text-align: center;
+  align-items: center;
+}
+
+
+.halaman {
+  
+}
+
+.carousel {
+  display: flex;
+  overflow: hidden;
+}
+
+
+.carousel-inner{
+ object-fit: cover;
+ display: flex;
+ justify-content: center;
+ width: 100%;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.wrapper img {
+    width: 50%;
+    height: auto;
+}
+
+.isi1 b{
+  font-size: 70px;
+  color: rgb(22, 23, 62);
+}
+
+.isi1 p{
+  font-size: 18px;
+  font-weight: 100;
+  color: rgb(22, 23, 62);
+}
+
+.isi1 a{
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  height: 45px;
+  width: 250px;
+}
+
+#produkKami {
+  font-size: 70px;
+  color: rgb(22, 23, 62);
+}
+
+.isiProduk {
+  background-color: rgb(211, 211, 211);
+  margin-top: 50px;
+  margin-left: 100px;
+  margin-right: 100px;
+  height: auto;
+  padding: 50px;
+}
+
+.produk1 {
+  display: flex;
+  background-color: #f9fafb;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.produk2 {
+  display: flex;
+  background-color: #f9fafb;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.produk3{
+  display: flex;
+  background-color: #f9fafb;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.produk4{
+  display: flex;
+  background-color: #f9fafb;
+  padding: 50px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: 20px;
+}
+
+.gambar img {
+  width: 350px;
+  height: auto;
+  border-radius: 4px;
+  margin-right: 20px;
+}
+
+.deskripsi {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.rating {
+  color: #ffcc00;
+  font-size: 24px;
+  margin-bottom: 8px;
+}
+
+.judlProduk {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin: 0;
+  color: #333;
+}
+
+.product-description {
+  font-size: 16px;
+  color: #666;
+  margin: 8px 0;
+}
+
+.harga {
+  font-size: 28px;
+  font-weight: 500;
+  color: #333;
+  margin: 8px 0;
+}
+
+.buttonProduk {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#addtoCart {
+  background-color: #7ba42a;
+  color: #fff;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+#addtoCart button{
+  font-size: 14px;
+  color: white;
+  font-weight: 500;
+}
+
+.view-product {
+  color: #666;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.view-product:hover {
+  text-decoration: underline;
+}
+
+.collaboration {
+  background-color: rgb(211, 211, 211);
+  margin-top: 140px;
+}
+
+
+.berkolaborasi {
+  font-size: 72px;
+  margin-top: 50px;
+  color: rgb(22, 23, 62);
+}
+
+
+.pageCollabolator {
+  margin-top: 50px;
+  padding: 25px;
+  display: flex;
+  gap: 50px;
+}
+
+.pageCollabolator img{
+  width: 250px;
+}
+
+.majukan {
+  font-size: 64px;
+  font-weight: bold;
+}
+
+.isi1-1{
+  margin-left: -120px;
+}
+
+.isi1-1 h1{
+  color: rgb(22, 23, 62);
+}
+
+.isi1-1 p{
+  width: 300px;
+  color: rgb(22, 23, 62);
+  font-size: 18px;
+  font-weight: 100;
+}
+
+.isi1-1 a{
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 30px;
+  height: 45px;
+  width: 350px;
+}
+
+.gambar22 img{
+  margin-right: 70px;
+}
+
+.credits {
+  height: auto;
+}
+
+#logoContacts svg{
+  height: 22px;
+  width: 22px;
+  margin-top: 40px;
+}
+
+#rightCredits {
+  padding-left: 170px;
+  gap: 100px;
+}
+
+#rightCredits h5{
+ color: rgb(22, 23, 62);
+ font-size: 24px;
+}
+
+.copyrights {
+  background-color:rgb(22, 23, 62);
+  height: 40px;
+}
+
+  .hamburger {
+    display: none;
+  }
+  
+
+  /* untuk rensponsive */
+  @media (max-width: 768px) {
+    .navbar-menu {
+      display: none;
+    }
+  
+    .contact-info ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hamburger {
+      display: block;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+  
+    .navbar-menu.active {
+      display: block;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 1rem;
+      box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+    }
+  
+    .navbar-menu.active a {
+      display: block;
+      margin-bottom: 1rem;
+      color: #131E47;
+    }
+  
+    .certify-now {
+      position: absolute;
+      right: 1rem;
+      top: 1.5rem;
+    }
+  }
