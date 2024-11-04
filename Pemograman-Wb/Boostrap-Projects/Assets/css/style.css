@@ -64,33 +64,61 @@ header {
   margin-top: 90px;
 }
 
-/* Button click */
-.elementor-19 .elementor-element.elementor-element-cf07263 .elementor-button {
-  font-family: "Poppins", Sans-serif;
+/* Button Container */
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+/* Button Styling */
+.button-wrapper .button-main {
+  font-family: "Poppins", sans-serif;
   font-size: 16px;
   font-weight: 400;
   text-transform: capitalize;
   text-decoration: none;
   line-height: 1em;
-  justify-content: center;
-  align-items: center;
   color: #ffffff;
   background-color: #467ff7;
   border: 1px solid #467ff7;
   border-radius: 100px;
   padding: 16px 55px;
-  /* display: inline-block; */
   text-align: center;
-  transition: background-color 0.3s, color 0.3s; /* Efek transisi untuk hover */
+  transition: background-color 0.3s, color 0.3s;
 }
 
-/* Efek hover untuk button */
-.elementor-19
-  .elementor-element.elementor-element-cf07263
-  .elementor-button:hover {
-  background-color: #355bbf; /* Ubah warna latar saat di-hover */
+/* Hover Effect for Button */
+.button-wrapper .button-main:hover {
+  background-color: #355bbf;
   color: #ffffff;
 }
+
+.button-wrapper .button-main {
+  background-color: #fff;
+  color: #355bbf;
+  border: 2px solid #355bbf;
+  padding: 15px 30px;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease-in-out;
+}
+
+.button-wrapper .button-main:hover {
+  background-color: #355bbf;
+  color: #fff;
+  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+  transform: translateY(-2px);
+}
+
+.button-wrapper .button-main:active {
+  background-color: #fff;
+  color: #355bbf;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transform: translateY(2px);
+}
+
 .custom-geser {
   margin-right: 40px;
 }
@@ -99,12 +127,47 @@ header {
   margin-left: 40px;
 }
 
+/* caraousel image geser */
+/* Set maximum width and horizontal margins for carousel */
+#carouselExampleAutoplaying {
+  max-width: 80%; /* Atur lebar carousel, bisa disesuaikan */
+  margin: 0 auto; /* Menengahkan carousel */
+  padding: 0 40px; /* Jarak kanan dan kiri masing-masing 40px */
+}
+
+/* Optional: Adjust carousel images to fit within the container */
+.carousel-inner img {
+  /* width: 100%; Memastikan gambar menyesuaikan dengan lebar carousel */
+  max-width: 100%; /* Set the max-width to 100% */
+  height: auto;
+  border-radius: 8px; /* Optional: tambah radius jika ingin rounded corners */
+  /* margin-top: 35px; */
+  margin: 0 auto; /* Center it horizontally if needed */
+}
+
+/* untuk About me */
+/* Custom styles */
+/* Custom styles */
+.cta-button {
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #355bbf;
+}
+
+.image-content img {
+  border-radius: 8px;
+}
+
+
+
 .contact-info-group {
   display: flex;
   flex-direction: column;
   gap: 10px;
   margin-left: 40px;
-}
+} 
 
 .contact-info {
   display: flex;
