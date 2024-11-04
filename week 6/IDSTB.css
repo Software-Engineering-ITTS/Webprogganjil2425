@@ -91,3 +91,20 @@ body {
     padding: 20px;
    font-family: Arial, Helvetica, sans-serif;
 }
+.carousel-inner{
+    max-width: 600px ;
+    margin:  auto;
+}
+.carousel-item{
+    max-height: 400px;
+    object-fit: cover;
+    justify-content: center;
+    width: 100% ;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon{
+    background-color:blanchedalmond;
+}
+.carousel-control-prev, .carousel-control-next{
+    
+
+}
