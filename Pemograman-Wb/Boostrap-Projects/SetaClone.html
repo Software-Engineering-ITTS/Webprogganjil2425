@@ -1,307 +1,367 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Clone Website</title>
-    <!-- Bootstrap CSS CDN -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-      crossorigin="anonymous"
-    />
-    <!-- Custom CSS me-->
-    <link rel="stylesheet" href="Assets/css/style.css" />
-    <!-- Custom CSS seto-->
-    <link rel="stylesheet" href="Assets/css/Seto.css" />
 
-    <!-- Font Awesome CDN -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
-    />
-    <!-- link font goole monsterat-->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <!-- ini poppiins -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-      rel="stylesheet"
-    />
-  </head>
-  <body>
-    <div class="fixed-header">
-      <!-- Header Information -->
-      <header>
-        <div class="contact-container">
-          <div class="contact-info-group pindah-1">
-            <div class="contact-info">
-              <span class="icon"><i class="fas fa-phone"> </i></span>
-              <span>+620812345678</span>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDSTB | Indonesia Software Testing Board – ISTQB Official Certification in Indonesia – Sertifikasi ISTQB
+        Indonesia </title>
+    <link rel="icon" href="images/IDSTB-Logo.png">
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <style>
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            margin-top: 0;
+        }
+
+        .dropdown:hover .dropdown-toggle {
+            color: rgb(224, 179, 58);
+        }
+
+        .dropdown .dropdown-item:hover {
+            color: rgb(224, 179, 58);
+            background-color: white;
+        }
+
+        .interactiveButton:hover {
+            color: rgb(224, 179, 58);
+        }
+
+        .interactiveButton {
+            color: white;
+        }
+
+        .navbar-toggler-icon {
+            color: rgb(18, 2, 70);
+
+            background-image: url("icons/ic-close.svg");
+        }
+
+        .collapsed .navbar-toggler-icon {
+            color: rgb(18, 2, 70);
+
+            background-image: url("icons/ic-menu.svg");
+        }
+
+        .dropdown-toggle {
+            border: 0;
+            border-color: white;
+        }
+
+        #buttonCertifyNow {
+            background-color: rgb(242, 53, 53);
+
+        }
+
+        #buttonCertifyNow:hover {
+            background-color: rgb(18, 2, 70);
+        }
+
+        .btnHoverBlue {
+            background-color: rgb(32, 122, 219);
+            color: white;
+            border: 0px;
+            transition: 0.5s ease;
+        }
+
+        .btnHoverBlue:hover {
+            background-color: white;
+            border: 2px solid rgb(32, 122, 219);
+            color: rgb(32, 122, 219);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body class="overflow-x-hidden">
+
+
+    <!-- HEADER -->
+    <div class="fixed-top" id="infoBanner" style="background-color: rgb(18, 2, 70); ;">
+        <div class="container">
+            <div class="d-flex justify-content-between w-100 d-none pt-3 d-sm-none d-md-none d-lg-flex">
+                <div class="row-3">
+                    <div class="d-flex justify-content-start align-items-center gap-3">
+                        <div class="d-flex gap-2 align-items-center">
+                            <p class="fa-solid fa-phone-flip" style="color: white;"></p>
+                            <p style="color: white; font-weight: 100;">+62811-848-9947</p>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center mx-2">
+                            <p class="fa-solid fa-envelope gap-2 align-items-center" style="color: white;"></p>
+                            <p style="color: white; font-weight: 100;"> support@idstb.org</p>
+                        </div>
+                    </div>
+
+                    <div class="d-flex gap-2 align-items-center">
+                        <p class="fa-solid fa-location-dot gap-2" style="color: white;"></p>
+                        <p style="color: white; font-weight: 100;">Epiwalk Office Suite Level 5 Unit 529A, Jakarta,
+                            Indonesia</p>
+                    </div>
+                </div>
+
+                <div class="col col-md-3 d-flex justify-content-center">
+                    <div class="row">
+                        <div class="d-flex justify-content-start gap-2 align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <p class="fa-solid fa-magnifying-glass interactiveButton"></p>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center mx-2">
+                                <p class="fa-brands fa-linkedin-in gap-2 align-items-center interactiveButton"></p>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center mx-2">
+                                <p class="fa-brands fa-facebook-f gap-2 align-items-center interactiveButton"></p>
+                            </div>
+                            <div class="d-flex gap-2 align-items-center mx-2">
+                                <p class="fa-brands fa-instagram gap-2 align-items-center interactiveButton"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="contact-info">
-              <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
-              <span>Jakarta, Indonesia</span>
+
+            <!-- Mobile Layout -->
+            <div class="d-flex justify-content-between w-100 pt-3  d-lg-none">
+                <div class="row">
+                    <div class="d-flex justify-content-start gap-2 align-items-center">
+
+                        <div class="d-flex gap-2 align-items-center mx-2">
+                            <p class="fa-brands fa-linkedin-in gap-2 align-items-center interactiveButton"></p>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center mx-2">
+                            <p class="fa-brands fa-facebook-f gap-2 align-items-center interactiveButton"></p>
+                        </div>
+                        <div class="d-flex gap-2 align-items-center mx-2">
+                            <p class="fa-brands fa-instagram gap-2 align-items-center interactiveButton"></p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col col-md-3 d-flex justify-content-end">
+                    <div class="row">
+                        <div class="d-flex justify-content-start gap-2 align-items-center">
+                            <div class="d-flex gap-2 align-items-center">
+                                <p class="fa-solid fa-magnifying-glass interactiveButton"></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </div>
-          <div class="contact-info">
-            <span class="icon"><i class="fas fa-envelope"></i></span>
-            <span>supportme@gmail.com</span>
-          </div>
         </div>
-        <!-- Social Icons -->
-        <div class="social-icons">
-          <span class="social-icon">
-            <a href="/" target="_blank" aria-label="Search">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </a>
-          </span>
-          <span class="social-icon">
-            <a href="/" target="_blank" aria-label="LinkedIn">
-              <i class="fa-brands fa-linkedin-in"></i>
-            </a>
-          </span>
-          <span class="social-icon">
-            <a href="/" target="_blank" aria-label="Facebook">
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </span>
-          <span class="social-icon">
-            <a href="/" target="_blank" aria-label="Instagram">
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-          </span>
-        </div>
-      </header>
 
-      <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid pindah-2">
-          <a class="navbar-brand img-geser" href="#">
-            <img
-              src="Assets/images/IDSTB-Logo.png"
-              alt="Logo"
-              width="110"
-              height="48"
-              class="d-inline-block align-text-top"
-            />
-          </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarScroll"
-            aria-controls="navbarScroll"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div
-            class="collapse navbar-collapse justify-content-center"
-            id="navbarScroll"
-          >
-            <ul class="navbar-nav ms-auto custom-geser">
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  About Us
+
+        <nav class="navbar ml-auto navbar-expand-lg bg-white shadow-lg p-t-0" data-bs-target="#infoBanner">
+            <div class="container-fluid px-auto py-2">
+                <a href="#" class="navbar-brand p-2 mx-5">
+                    <img src="images/IDSTB-Logo.png" width="110" alt="">
                 </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#">Something else here</a>
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item dropdown">
-                <a
-                  class="nav-link dropdown-toggle"
-                  href="#"
-                  role="button"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                >
-                  Certification
-                </a>
-                <ul class="dropdown-menu">
-                  <li><a class="dropdown-item" href="#">Action</a></li>
-                  <li><a class="dropdown-item" href="#">Another action</a></li>
-                  <li><hr class="dropdown-divider" /></li>
-                  <li>
-                    <a class="dropdown-item" href="#"
-                      >Sombuttonething else here</a
-                    >
-                  </li>
-                </ul>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">News & Events</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">QA Career Path</a>
-              </li>
-            </ul>
-          </div>
-          <button type="button" class="btn btn-primary">
-            Certify Now <i class="fas fa-arrow-right"></i>
-          </button>
-        </div>
-      </nav>
-    </div>
-    <!-- ISI pertama teks besar -->
-    <h1 class="judulAwal">
-      Solusi Terdepan untuk
-      <br />
-      Sertifikasi dan
-      <br />
-      Pelatihan Software Testing
-    </h1>
-    <!-- Button clik wa -->
-    <div
-      class="button-container d-flex justify-content-center align-items-center mt-3"
-    >
-      <a href="#" class="btn button-main">Click Me</a>
+                <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mx-auto me-auto mb-lg-0 text-center gap-5 d-lg-flex justify-content-center">
+                        <li class="nav-item dropdown p-2" aria-haspopup="true">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                About Us
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">Corporates Collaborations</a>
+                            </div>
+                        </li>
+                        <li class="nav-item dropdown p-2" aria-haspopup="true">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Certifications
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="#">ISTQB ® Certification</a>
+                            </div>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="#">News & Event</a>
+                        </li>
+                        <li class="nav-item p-2">
+                            <a class="nav-link" href="#">QA Career Path</a>
+                        </li>
+
+                    </ul>
+                    <div class="nav-item d-none d-lg-flex flex-end" aria-expanded="false">
+                        <div class="container-fluid py-3 px-5 mx-5" id="buttonCertifyNow">
+                            <div class="row">
+                                <div class="col">
+                                    <p class="mb-0" style="color: white;">
+                                        Certify Now
+                                        <i class="fa-solid fa-arrow-right" style="color: #FFFFFF;"></i>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </nav>
     </div>
 
-    <!-- caraousell image  -->
-    <div class="container my-5">
-      <div class="carousel-container">
-        <div
-          id="carouselExampleAutoplaying"
-          class="carousel slide"
-          data-bs-ride="carousel"
-          data-bs-interval="500"
-        >
-          <div class="carousel-inner">
+
+    <div class="d-flex justify-content-center align-items-center flex-column "
+        style="height : auto; padding-top: 14rem; background-color: white;">
+
+
+        <h1 class="container-fluid d-md-none d-sm-none d-lg-flex text-center "
+            style="width: 45%;color: rgb(18, 2, 70); font-size: 45pt; font-weight: 600;">Solusi
+            Terdepan untuk Sertifikasi dan Pelatihan Software Testing</h1>
+
+        <h1 class="container-fluid d-md-flex  d-lg-none text-center  "
+            style="width: 100%;color: rgb(18, 2, 70); font-size: 25pt; font-weight: 600;">Solusi
+            Terdepan untuk Sertifikasi dan Pelatihan Software Testing</h1>
+
+        <button class="btnHoverBlue px-5 py-2 rounded-5 mb-5"> Hubungi Kami </button>
+    </div>
+
+    <div id="carouselExampleIndicators" class="carousel slide h-25 mx-3">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+
+        </div>
+        <div class="carousel-inner d-lg-flex d-md-none d-sm-none">
             <div class="carousel-item active">
-              <img
-                src="Assets/images/Slideshow1.jpeg"
-                class="d-block w-100"
-                alt="Slide 1"
-              />
+                <span class="d-flex">
+                    <img src="images/carousel2.jpeg" class="d-block " alt="..." width="500">
+                    <img src="images/carousel1.jpeg" class="d-block " alt="..." width="500">
+                    <img src="images/carousel2.jpeg" class="d-block " alt="..." width="500">
+                </span>
             </div>
             <div class="carousel-item">
-              <img
-                src="Assets/images/Slideshow2.jpeg"
-                class="d-block w-100"
-                alt="Slide 2"
-              />
+                <span class="d-flex">
+                    <img src="images/carousel2.jpeg" class="d-block" alt="..." width="500">
+                    <img src="images/carousel1.jpeg" class="d-block " alt="..." width="500">
+                    <img src="images/carousel2.jpeg" class="d-block " alt="..." width="500">
+                </span>
             </div>
-          </div>
-          <button
-            class="carousel-control-prev"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="prev"
-          >
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-          </button>
-          <button
-            class="carousel-control-next"
-            type="button"
-            data-bs-target="#carouselExampleAutoplaying"
-            data-bs-slide="next"
-          >
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-          </button>
         </div>
-      </div>
+
+        <!-- KICIK -->
+        <div class="carousel-inner d-lg-none d-md-flex d-sm-flex">
+            <div class="carousel-item active">
+                <span class="d-flex">
+                    <img src="images/carousel2.jpeg" class="d-block w-100" alt="..." >
+
+                </span>
+            </div>
+            <div class="carousel-item active">
+                <span class="d-flex">
+
+                    <img src="images/carousel1.jpeg" class="d-block w-100" alt="..." >
+
+                </span>
+            </div>
+        </div>
+        <!-- <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button> -->
+    </div>
+    <!-- Carousel -->
+    <!-- <div class="container-fluid">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                    <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                </ol>
+                <div class="d-flex justify-content-center align-items-center">
+                    <div class="w-50 carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="images/carousel1.jpeg" alt="First slide">
+                            
+                        </div>
+                        <div class="carousel-item ">
+                            <img class="d-block w-100" src="images/carousel2.jpeg" alt="First slide">
+                        </div>
+                    
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div> -->
+
+
+
+    <!-- CONTENT Tentang Kami -->
+    <div class=" bg-white">
+        <div class="row d-flex flex-row-reverse justify-content-center align-items-center p-5">
+            <div class="row d-md-flex d-lg-none justify-content-center align-items-center">
+                <h1 class="w-100 d-flex text-center justify-content-center"
+                    style="text-align:center ;color: rgb(18, 2, 70); font-size: 30px;">Tentang Kami</h1>
+                <p class=" d-flex px-3 my-2 text-center"
+                    style="color: rgb(18, 2, 70); width: 98%;font-weight: 150;font-size: 14px; font-style: normal;">
+                    Indonesia
+                    Software Testing Board (IDSTB) adalah perkumpulan non-profit di bidang software testing di Indonesia
+                    yang bekerjasama dengan International Software Testing Qualification Board (ISTQB) dan Badan
+                    Standarisasi Nasional Indonesia (BSN). Kami berkomitmen untuk meningkatkan kualitas praktik
+                    pengujian perangkat lunak melalui sertifikasi yang diakui secara internasional dan program pelatihan
+                    yang komprehensif. Misi kami adalah memberdayakan individu, universitas, dan organisasi untuk unggul
+                    dalam jaminan kualitas perangkat lunak, mendorong standar industri, dan membangun komunitas
+                    profesional yang terampil.</p>
+                <button class="container btnHoverBlue px-4 py-2 my-2 rounded-5 mb-5" style="width: 40%;"> Pelajari Lebih
+                    lanjut </button>
+            </div>
+
+
+            <div class="col ms-3 d-lg-inline d-sm-none">
+                <h1 style="color: rgb(18, 2, 70); font-size: 70px;">Tentang Kami</h1>
+                <p class="ps-3 w-75" style="color: rgb(18, 2, 70); font-weight: 200; font-style: normal;">Indonesia
+                    Software Testing Board (IDSTB) adalah perkumpulan non-profit di bidang software testing di Indonesia
+                    yang bekerjasama dengan International Software Testing Qualification Board (ISTQB) dan Badan
+                    Standarisasi Nasional Indonesia (BSN). Kami berkomitmen untuk meningkatkan kualitas praktik
+                    pengujian perangkat lunak melalui sertifikasi yang diakui secara internasional dan program pelatihan
+                    yang komprehensif. Misi kami adalah memberdayakan individu, universitas, dan organisasi untuk unggul
+                    dalam jaminan kualitas perangkat lunak, mendorong standar industri, dan membangun komunitas
+                    profesional yang terampil.</p>
+                <button class="btnHoverBlue px-5 py-2 rounded-5 mb-5 ms-3"> Pelajari Lebih lanjut </button>
+            </div>
+
+
+            <div class="col d-flex justify-content-center p-5">
+                <img src="images/budapest1.jpg" alt="" width="700" style="padding: 5; margin: 5;">
+            </div>
+        </div>
     </div>
 
-    <!-- this About ME-->
-    <div class="bg-white">
-      <div
-        class="row d-flex flex-row-reverse justify-content-center align-items-center p-5"
-      >
-        <div
-          class="row d-md-flex d-lg-none justify-content-center align-items-center"
-        >
-          <h1
-            class="w-100 d-flex text-center justify-content-center"
-            style="text-align: center; color: rgb(18, 2, 70); font-size: 30px"
-          >
-            Tentang Kami
-          </h1>
-          <p
-            class="d-flex px-3 my-2 text-center"
-            style="
-              color: rgb(18, 2, 70);
-              width: 98%;
-              font-weight: 150;
-              font-size: 14px;
-              font-style: normal;
-            "
-          >
-            Indonesia Software Testing Board (IDSTB) adalah perkumpulan
-            non-profit di bidang software testing di Indonesia yang bekerjasama
-            dengan International Software Testing Qualification Board (ISTQB)
-            dan Badan Standarisasi Nasional Indonesia (BSN). Kami berkomitmen
-            untuk meningkatkan kualitas praktik pengujian perangkat lunak
-            melalui sertifikasi yang diakui secara internasional dan program
-            pelatihan yang komprehensif. Misi kami adalah memberdayakan
-            individu, universitas, dan organisasi untuk unggul dalam jaminan
-            kualitas perangkat lunak, mendorong standar industri, dan membangun
-            komunitas profesional yang terampil.
-          </p>
-          <button
-            class="container btnHoverBlue px-4 py-2 my-2 rounded-5 mb-5"
-            style="width: 40%"
-          >
-            Pelajari Lebih lanjut
-          </button>
-        </div>
+    <!-- BERITA ACARA -->
+    <div style="background-color: rgb(37, 37, 123); height: 100;">
 
-        <div class="col ms-3 d-lg-inline d-sm-none">
-          <h1 style="color: rgb(18, 2, 70); font-size: 70px">Tentang Kami</h1>
-          <p
-            class="ps-3 w-75"
-            style="color: rgb(18, 2, 70); font-weight: 200; font-style: normal"
-          >
-            Indonesia Software Testing Board (IDSTB) adalah perkumpulan
-            non-profit di bidang software testing di Indonesia yang bekerjasama
-            dengan International Software Testing Qualification Board (ISTQB)
-            dan Badan Standarisasi Nasional Indonesia (BSN). Kami berkomitmen
-            untuk meningkatkan kualitas praktik pengujian perangkat lunak
-            melalui sertifikasi yang diakui secara internasional dan program
-            pelatihan yang komprehensif. Misi kami adalah memberdayakan
-            individu, universitas, dan organisasi untuk unggul dalam jaminan
-            kualitas perangkat lunak, mendorong standar industri, dan membangun
-            komunitas profesional yang terampil.
-          </p>
-          <button class="btnHoverBlue px-5 py-2 rounded-5 mb-5 ms-3">
-            Pelajari Lebih lanjut
-          </button>
-        </div>
-
-        <div class="col d-flex justify-content-center p-5">
-          <img
-            src="Assets/images/IMG-TentangKami.jpg"
-            alt=""
-            width="700"
-            style="padding: 5; margin: 5; border-radius: 20px"
-          />
-        </div>
-      </div>
     </div>
 
-     <div class="justify-content-center align-items-center p-2 m-3">
+
+    <!-- PRODUK KAMI -->
+    <div class="justify-content-center align-items-center p-2 m-3">
         <div class="">
             <h1 class="w-100" style="text-align: center; color: rgb(21, 21, 66); font-weight: bold;">Produk Kami
             </h1>
@@ -311,7 +371,7 @@
                 <div class="card my-4">
                     <div class="row g-0">
                         <div class="col-md-4 d-lg-flex">
-                            <img src="Assets/images/Produk.png" class="img-fluid rounded-start w-100" alt="...">
+                            <img src="images/istqb-ctfl.png" class="img-fluid rounded-start w-100" alt="...">
                         </div>
 
                         <div class="col">
@@ -357,7 +417,7 @@
                 <div class="card my-4">
                     <div class="row g-0">
                         <div class="col-md-4 d-lg-flex">
-                            <img src="Assets/images/Produk.png" class="img-fluid rounded-start w-100" alt="...">
+                            <img src="images/CT_ATLaS-300x215.png" class="img-fluid rounded-start w-100" alt="...">
                         </div>
 
                         <div class="col">
@@ -403,7 +463,7 @@
                 <div class="card my-4">
                     <div class="row g-0">
                         <div class="col-md-4 d-lg-flex">
-                            <img src="Assets/images/Produk.png" class="img-fluid rounded-start w-100" alt="...">
+                            <img src="images/CTAL-ATT.png" class="img-fluid rounded-start w-100" alt="...">
                         </div>
 
                         <div class="col">
@@ -451,7 +511,7 @@
                 <div class="card my-4">
                     <div class="row g-0">
                         <div class="col-md-4 d-lg-flex">
-                            <img src="Assets/images/Produk.png" class="img-fluid rounded-start w-100" alt="...">
+                            <img src="images/CTFL-AT.png" class="img-fluid rounded-start w-100" alt="...">
                         </div>
 
                         <div class="col">
@@ -499,6 +559,7 @@
         </div>
     </div>
 
+
     <!-- Collaboration -->
     <div class="justify-content-center align-items-center py-5 ">
         <div class="">
@@ -510,19 +571,19 @@
 
                 <div class="py-5 d-flex m-5 justify-content-between align-items-center">
                     <div class="d-flex justify-content-center  mx-3">
-                        <img src="Assets/images/squadap.png" alt="" width="300" style="max-width: fit-content;">
+                        <img src="images/squadap.png" alt="" width="300" style="max-width: fit-content;">
                     </div>
 
                     <div class="d-flex justify-content-center  mx-3">
-                        <img src="Assets/images/gasq.png" alt="" width="300" style="max-width: fit-content;">
+                        <img src="images/gasq.png" alt="" width="300" style="max-width: fit-content;">
                     </div>
 
                     <div class="d-flex justify-content-center  mx-3">
-                        <img src="Assets/images/IDSTB-Logo.png" alt="" width="300" style="max-width: fit-content;">
+                        <img src="images/istqb-logo.png" alt="" width="300" style="max-width: fit-content;">
                     </div>
 
                     <div class="d-flex justify-content-center  mx-3">
-                        <img src="Assets/images/bsn_logo_master_res.png" width="300" alt="" style="max-width: fit-content;">
+                        <img src="images/bsn_logo_master_res.png" width="300" alt="" style="max-width: fit-content;">
                     </div>
 
 
@@ -534,10 +595,11 @@
         <div class=" bg-white">
             <div class="row d-flex flex-row-reverse justify-content-center align-items-center p-5">
 
-                <div class="col d-lg-flex d-md-none d-sm-none justify-content-center p-5 rounded-3">
-                    <img src="Assets/images/LogoMauSelesai.jpeg" alt="" width="700" style="padding: 5; margin: 5;">
+                <div class="col d-lg-flex d-md-none d-sm-none justify-content-center p-5">
+                    <img src="images/budapest1.jpg" alt="" width="700" style="padding: 5; margin: 5;">
                 </div>
 
+                <!-- KICIK -->
                 <div class="row d-md-flex d-lg-none justify-content-center align-items-center">
                     <h1 class="w-100 d-flex text-center justify-content-center"
                         style="text-align:center ;color: rgb(18, 2, 70); font-size: 30px;">Majukan Karier Anda dengan
@@ -550,6 +612,8 @@
                         Mulai Langkah Anda Sekarang </button>
                 </div>
 
+
+                <!-- BESAAA -->
                 <div class="col ms-3 d-lg-inline d-sm-none">
                     <h1 style="color: rgb(18, 2, 70); font-size: 70px;">Majukan Karier Anda dengan Sertifikasi yang
                         Diakui Internasional</h1>
@@ -560,14 +624,14 @@
                 </div>
 
 
-                <div class="col d-sm-flex d-md-flex d-lg-none justify-content-center p-5 rounded-3">
-                    <img src="Assets/images/LogoMauSelesai.jpeg" alt="" width="700" style="padding: 5; margin: 5;">
+                <div class="col d-sm-flex d-md-flex d-lg-none justify-content-center p-5">
+                    <img src="images/budapest1.jpg" alt="" width="700" style="padding: 5; margin: 5;">
                 </div>
             </div>
         </div>
     </div>
 
-     <!-- FOOTER -->
+    <!-- FOOTER -->
     <footer class="text-center pt-5">
 
         <!-- FOOTER LG -->
@@ -683,7 +747,7 @@
 
 
                 <div class=" bg-white text-start col-md-3 col-lg-3 col-xl-3 mx-auto mt-3 ">
-                    <img src="Assets/images/FooterLogo.png" height="40px" alt="">
+                    <img src="images/IDSTB-Logo.png" height="40px" alt="">
                     <p style="font-weight: 200;">
                         Established in November 2018 in Jakarta, Indonesia Software Testing Board (IDSTB) is the first
                         association in Indonesia to advocate Quality Assurance (QA) and software testing and obtain
@@ -706,16 +770,8 @@
             <p class="text-white" style="font-weight: 200;">© 2024 All Rights Reserved.</p>
         </div>
     </footer>
-    
-    <!-- Bootstrap Bundle with Popper -->
-    <script
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-      crossorigin="anonymous"
-    ></script>
-    <!-- Boostrap link etc, -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-  </body>
+
+
+</body>
+
 </html>

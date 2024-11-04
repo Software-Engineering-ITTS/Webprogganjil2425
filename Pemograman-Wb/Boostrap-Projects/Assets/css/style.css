@@ -7,194 +7,170 @@ body {
   flex-direction: column;
   position: relative;
   padding-top: 150px;
-  margin-bottom: 1000px;
-}
+  /* margin-bottom: 1000px;
+} */
 
-/* Navbar */
-.navbar {
-  position: sticky;
-  top: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10; /* Pastikan navbar berada di atas elemen lainnya */
-  background-color: #fff; /* Ganti warna sesuai keinginan Anda */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan agar lebih jelas */
-  /* margin-bottom: 50px; */
-}
+  /* Navbar */
+  .navbar {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10; /* Pastikan navbar berada di atas elemen lainnya */
+    background-color: #fff; /* Ganti warna sesuai keinginan Anda */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Tambahkan bayangan agar lebih jelas */
+    /* margin-bottom: 50px; */
+  }
 
-/* Fixed Header Container */
-.fixed-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  height: auto;
-  z-index: 10;
-  background-color: #fff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+  /* Fixed Header Container */
+  .fixed-header {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: auto;
+    z-index: 10;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
 
-header {
-  margin-bottom: 0;
-}
+  header {
+    margin-bottom: 0;
+  }
 
-.contact-container {
-  background-color: #161640;
-  display: flex;
-  flex-direction: row;
-  padding: 10px;
-  flex-wrap: wrap;
-  gap: 20px;
-  width: 100%;
-  height: auto;
-  justify-content: start;
-  align-items: flex-start;
-}
+  .contact-container {
+    background-color: #161640;
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+    height: auto;
+    justify-content: start;
+    align-items: flex-start;
+  }
 
-.judulAwal {
-  font-family: "Poppins", sans-serif; /* Atur font Montserrat */
-  font-size: 65px; /* Ubah ukuran sesuai kebutuhan */
-  font-weight: bold; /* Pilih ketebalan, bisa 400, 500, 700, dsb. */
-  color: #1b234a; /* Sesuaikan warna teks */
-  text-align: center; /* Ratakan teks ke tengah */
-  line-height: 1.4; /* Sesuaikan jarak antar baris */
-  border: none; /* Hilangkan border default */
-  /* border-top: 2px solid #333; Tambahkan garis horizontal sesuai gaya */
-  width: 60%; /* Sesuaikan lebar garis */
-  margin: 10px auto; /* Atur margin dan ratakan ke tengah */
-  margin-top: 90px;
-}
+  .judulAwal {
+    font-family: "Poppins", sans-serif; /* Atur font Montserrat */
+    font-size: 65px; /* Ubah ukuran sesuai kebutuhan */
+    font-weight: bold; /* Pilih ketebalan, bisa 400, 500, 700, dsb. */
+    color: #1b234a; /* Sesuaikan warna teks */
+    text-align: center; /* Ratakan teks ke tengah */
+    line-height: 1.4; /* Sesuaikan jarak antar baris */
+    border: none; /* Hilangkan border default */
+    /* border-top: 2px solid #333; Tambahkan garis horizontal sesuai gaya */
+    width: 60%; /* Sesuaikan lebar garis */
+    margin: 10px auto; /* Atur margin dan ratakan ke tengah */
+    margin-top: 90px;
+  }
 
-/* Button Container */
-.button-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-top: 20px;
-}
+  /* Styling Default Button */
+  .button-main {
+    font-family: "Poppins", sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    text-transform: capitalize;
+    color: #355bbf;
+    background-color: #fff;
+    border: 2px solid #355bbf;
+    border-radius: 50px;
+    padding: 15px 100px;
+    text-align: center;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease-in-out;
+  }
 
-/* Button Styling */
-.button-wrapper .button-main {
-  font-family: "Poppins", sans-serif;
-  font-size: 16px;
-  font-weight: 400;
-  text-transform: capitalize;
-  text-decoration: none;
-  line-height: 1em;
-  color: #ffffff;
-  background-color: #467ff7;
-  border: 1px solid #467ff7;
-  border-radius: 100px;
-  padding: 16px 55px;
-  text-align: center;
-  transition: background-color 0.3s, color 0.3s;
-}
+  /* Hover Effect for Button */
+  .button-main:hover {
+    background-color: #355bbf;
+    color: #fff;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+  }
 
-/* Hover Effect for Button */
-.button-wrapper .button-main:hover {
-  background-color: #355bbf;
-  color: #ffffff;
-}
+  /* Active State for Button */
+  .button-main:active {
+    background-color: #fff;
+    color: #355bbf;
+    box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
+    transform: translateY(2px);
+  }
 
-.button-wrapper .button-main {
-  background-color: #fff;
-  color: #355bbf;
-  border: 2px solid #355bbf;
-  padding: 15px 30px;
-  border-radius: 5px;
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: all 0.3s ease-in-out;
-}
+  .custom-geser {
+    margin-right: 40px;
+  }
 
-.button-wrapper .button-main:hover {
-  background-color: #355bbf;
-  color: #fff;
-  box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.2);
-  transform: translateY(-2px);
-}
+  .img-geser {
+    margin-left: 40px;
+  }
 
-.button-wrapper .button-main:active {
-  background-color: #fff;
-  color: #355bbf;
-  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transform: translateY(2px);
-}
+  /* caraousel image geser */
+  /* Set maximum width and horizontal margins for carousel */
+  #carouselExampleAutoplaying {
+    max-width: 80%; /* Atur lebar carousel, bisa disesuaikan */
+    margin: 0 auto; /* Menengahkan carousel */
+    padding: 0 40px; /* Jarak kanan dan kiri masing-masing 40px */
+  }
 
-.custom-geser {
-  margin-right: 40px;
-}
+  /* Optional: Adjust carousel images to fit within the container */
+  .carousel-inner img {
+    /* width: 100%; Memastikan gambar menyesuaikan dengan lebar carousel */
+    max-width: 100%; /* Set the max-width to 100% */
+    height: auto;
+    border-radius: 8px; /* Optional: tambah radius jika ingin rounded corners */
+    /* margin-top: 35px; */
+    margin: 0 auto; /* Center it horizontally if needed */
+  }
 
-.img-geser {
-  margin-left: 40px;
-}
+  /* untuk About me */
+  /* Custom styles */
+  /* Custom styles */
+  .cta-button {
+    transition: background-color 0.3s;
+  }
 
-/* caraousel image geser */
-/* Set maximum width and horizontal margins for carousel */
-#carouselExampleAutoplaying {
-  max-width: 80%; /* Atur lebar carousel, bisa disesuaikan */
-  margin: 0 auto; /* Menengahkan carousel */
-  padding: 0 40px; /* Jarak kanan dan kiri masing-masing 40px */
-}
+  .cta-button:hover {
+    background-color: #355bbf;
+  }
 
-/* Optional: Adjust carousel images to fit within the container */
-.carousel-inner img {
-  /* width: 100%; Memastikan gambar menyesuaikan dengan lebar carousel */
-  max-width: 100%; /* Set the max-width to 100% */
-  height: auto;
-  border-radius: 8px; /* Optional: tambah radius jika ingin rounded corners */
-  /* margin-top: 35px; */
-  margin: 0 auto; /* Center it horizontally if needed */
-}
+  .image-content img {
+    border-radius: 8px;
+  }
 
-/* untuk About me */
-/* Custom styles */
-/* Custom styles */
-.cta-button {
-  transition: background-color 0.3s;
-}
+  .contact-info-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-left: 40px;
+  }
 
-.cta-button:hover {
-  background-color: #355bbf;
-}
+  .contact-info {
+    display: flex;
+    align-items: center;
+  }
 
-.image-content img {
-  border-radius: 8px;
-}
+  .icon {
+    margin-right: 10px;
+  }
 
+  .social-icons {
+    position: absolute;
+    margin: 0 50px;
+    top: 20px;
+    right: 20px;
+    display: flex;
+  }
 
+  .social-icon a {
+    color: white;
+    margin: 0 25px;
+    margin-left: 10px;
+    font-size: 20px;
+    text-decoration: none;
+    transition: color 0.3s;
+  }
 
-.contact-info-group {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-left: 40px;
-} 
-
-.contact-info {
-  display: flex;
-  align-items: center;
-}
-
-.icon {
-  margin-right: 10px;
-}
-
-.social-icons {
-  position: absolute;
-  margin: 0 50px;
-  top: 20px;
-  right: 20px;
-  display: flex;
-}
-
-.social-icon a {
-  color: white;
-  margin: 0 25px;
-  margin-left: 10px;
-  font-size: 20px;
-  text-decoration: none;
-  transition: color 0.3s;
-}
-
-.social-icon a:hover {
-  color: #1e90ff; /* Change to a brighter blue on hover */
+  .social-icon a:hover {
+    color: #1e90ff; /* Change to a brighter blue on hover */
+  }
 }
