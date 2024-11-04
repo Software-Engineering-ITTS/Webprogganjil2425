@@ -1,6 +1,60 @@
-.ulul {
+header {
+   background-color: orange;
    display: flex;
-   flex: auto;
+   flex-direction: column;
+   justify-content: center;
 }
-.miniicon {
+
+body{
+   background-color: whitesmoke;
+}
+
+.h-a-kiri {
+   margin-left: 100px;
+   padding: auto;
+}
+
+.h-a-kanan {
+   margin-right: 100px;
+   padding: auto;
+}
+
+.h-b-kiri {
+   margin: 10px;
+   margin-left: 100px;
+   padding: auto;
+}
+
+.h-b-kiri {
+   padding: auto;
+}
+
+.h-b-kanan {
+   margin-right: 100px;
+   padding: auto;
+}
+
+.s-text {
+   font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+   font-size: x-small;
+}
+
+.s-img {
+   width: 10;
+   height: 10;
+}
+
+.cn {
+   background-color: tomato;
+}
+
+.judul {
+   justify-content: center;
+   align-items: center;
+}
+
+.judul h1 {
+   margin-top: 500;
+   
+   color: black;
 }
