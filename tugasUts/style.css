@@ -1,0 +1,23 @@
+.profile-header {
+    cursor: pointer;
+    transform: scale(1);
+    transition: 0.4s ease;
+
+}
+
+.profile-header:hover {
+    transform: scale(1.05);
+}
+
+.button-header {
+    background-color: #4A628A;
+    color: white;
+    transition: 0.4s ease;
+    border: 5px solid black;
+}
+
+.button-header:hover {
+    color: black;
+    background-color: white;
+    border: 5px solid #4A628A;
+}
