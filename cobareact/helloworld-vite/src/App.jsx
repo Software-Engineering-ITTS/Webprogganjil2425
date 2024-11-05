@@ -1,106 +1,64 @@
-// import { useState } from 'react'
+
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-// import './App.css'
+
+import { useState } from "react"
 
 function App() {
-  // const [count, setCount] = useState(0)
+    const [form, setForm] = useState({ username: "", password: "" });
+    const [errors, setError] = useState({})
 
-  return (
-    <>
-      <div className="container-fluid p-5">
-        <h1>htmlForM Inventaris Barang PT ABC</h1>
-        <htmlForm action="">
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="txtKodeBarang">Kode Barang</label>
-            <input type="text" id="txtKodeBarang" className="htmlForm-control" name="kodeBarang"
-              placeholder="masukkan kode barang"/>
-          </div>
+    const handleChange = (e) => {
+        const { name, value } = e.target
+        setForm({
+            ...form,
+            [name]: value
+        });
 
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="txtNamaBarang">Nama Barang</label>
-            <input type="text" name="namaBarang" id="txtNamaBarang" className="htmlForm-control"
-              placeholder="masukkan nama barang"/>
-          </div>
+    }
+    const OnSubmit = (e) => {
+        e.preventDefault();
+        const errors = validateForm(form);
+        console.log(form)
+    }
 
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="selectCategory">Kategori Barang</label>
-            <select name="category" id="selectCategory" className="htmlForm-control">
-              <option value="stationery">Stationery</option>
-              <option value="clothing">Clothing</option>
-              <option value="f&b">Food And Beverages</option>
-              <option value="furniture">Furniture</option>
-              <option value="electronics">Electronics</option>
-            </select>
-          </div>
+    const validateForm(form) => {
+        const errors = {};
 
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="inpDateDiterima">Tanggal Diterima</label>
-            <input type="date" name="" id="inpDateDiterima"/>
-          </div>
+        if (!form.username.trim()) {
+            errors.username = "required"
+        }
+        if (!form.password) {
+            errors.password = "required"
+        }else if( form.password.length < 8){
+            errors.password = "minimal password 8 karakter"
+        }
 
-          <div className="htmlForm-group my-4 px-5" id="tanggalExpiredhtmlForm" hidden={true}>
-            <label htmlFor="inpDateExp">Tanggal Expired</label>
-            <input type="date" name="" id="inpDateExp"/>
-          </div>
+        return errors
+    }
+    return (
+        <>
+            <form onSubmit={OnSubmit}>
+                <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
 
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="inpAvailability">Ketersediaan Barang</label>
-            <div className="htmlForm-check">
-            <label htmlFor="inpAvailability">In Stock</label>
-              <input type="radio" name="availability" id="inpAvailability" value="available"
-                className="htmlForm-check-input"/>
-              <br />
-              <label htmlFor="inpInAvailability">Out Of Stock</label>
-              <input type="radio" name="availability" id="inpInAvailability" value="unavailable"
-                className="htmlForm-check-input"/>
-            </div>
+                        <label htmlFor="" style={{ color: "red" }}>Username</label>
+                        <input type="text" name="username" id="username" onChange={handleChange} />
+                        <span>error</span>
+                    </div>
+                    <div style={{ display: "flex", flexDirection: "column" }}>
+                        <label htmlFor=""> Password </label>
+                        <input type="password" name="password" id="password" />
+                        <span>error</span>
+                    </div>
+                    <button type="submit" style={{ marginTop: "16px" }}>Login</button>
+                </div>
+            </form>
 
-            <div className="htmlForm-group " id="inpNewStock" hidden={true}>
-              <p>Stock Barang (Akumulasi)</p>
-              <input type="number" className="htmlForm-control" name="stockBarang" id="inpStockBarang"/>
-            </div>
-          </div>
-
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="gudang">Gudang Penyimpanan</label>
-            <div className="htmlForm-check">
-              <label htmlFor="gudangA">Gudang A</label>
-              <input type="checkbox" className="htmlForm-check-input" name="gudang" id="gudangA"/>
-              <br />
-              <label htmlFor="gudangB">Gudang B</label>
-              <input type="checkbox" name="gudang" className="htmlForm-check-input" id="gudangB"/>
-              <br />
-              <label htmlFor="gudangC">Gudang C</label>
-              <input type="checkbox" name="gudang" className="htmlForm-check-input" id="gudangC"/>
-            </div>
-          </div>
-
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="catatan-tambahan">Catatan Tambahan</label>
-            <textarea name="" id="catatan-tambahan" className="htmlForm-control" placeholder="catatan tambahan"/>
-          </div>
-
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="inpVerifikasiPegawai">No Verifikasi Pegawai</label>
-            <input type="password" name="" className="htmlForm-control" id="inpVerifikasiPegawai"
-              placeholder="Masukkan Nomor Verifikasi Pegawai"></input>
-              <label htmlFor="chkTogglePass">Tampilkan</label>
-            <input type="checkbox" name="toglePass" className="htmlForm-check-input" id="chkTogglePass"/>
-          </div>
-
-          <br />
-
-          <div className="d-flex gap-3 justify-content-end mx-5">
-            <input className="btn btn-outline-danger my-4 px-5" id="btnClear" type="button" value="clear"/>
-            <input id="btnSubmit" className="btn btn-primary my-4 px-5" type="button" value="submit"/>
-          </div>
+        </>
+    )
 
 
-        </htmlForm>
-      </div>
-    </>
-  )
 }
 
 export default App
