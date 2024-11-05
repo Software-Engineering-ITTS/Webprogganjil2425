@@ -1,12 +1,670 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>IDSTB Indonesian Software Testing Board</title>
-</head>
-<body>
-  <!-- Hero landing -->
-   <!-- Navbar -->
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>IDSTB Indonesian Software Testing Board</title>
+
+    <!-- Link Font Google Montserrat -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link Font Google Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Link FeatherIcon -->
+    <script src="https://unpkg.com/feather-icons"></script>
+
+    <!-- Link Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+
+    <!-- Link CSS eksternal -->
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <!-- Info Contact -->
+    <nav class="sticky-top navbar-expand-lg bg-custom">
+      <div
+        class="container-fluid bg-custom py-2 d-flex justify-content-between"
+      >
+        <div class="p-0 m-0 d-flex flex-column flex-md-row align-items-center">
+          <ul style="padding-top: 10px; margin-left: 130px">
+            <li>
+              <a
+                class="navbar-brand text-white"
+                style="font-size: 14px"
+                href="#"
+                ><span class="me-3"
+                  ><img src="icons/phone.svg" alt="noHP" /></span
+                >+62811-848-9947</a
+              >
+              <a
+                class="navbar-brand text-white ms-5"
+                style="font-size: 14px"
+                href="#"
+                ><span class="me-3"
+                  ><img src="icons/mail.svg" alt="Email" /></span
+                >support@idstb.org</a
+              >
+            </li>
+            <a class="navbar-brand text-white" style="font-size: 14px" href="#"
+              ><span class="me-3"
+                ><img src="icons/map-pin.svg" alt="Alamat" /></span
+              >Epiwalk Office Suite Level 5 Unit 529A, Jakarta, Indonesia</a
+            >
+          </ul>
+        </div>
+        <div
+          class="collapse navbar-collapse"
+          style="margin-right: 10px; padding-top: 23px; margin-left: 440px"
+        >
+          <ul class="d-flex align-items-center gap-3">
+            <li><img src="icons/search.svg" alt="" /></li>
+            <li><img src="icons/linkedin.svg" alt="" /></li>
+            <li><img src="icons/facebook.svg" alt="" /></li>
+            <li><img src="icons/instagram.svg" alt="" /></li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Navbar -->
+      <div
+        class="navbar sticky-top bg-body-tertiary shadow p-3 mb-5 bg-body-tertiary"
+        style="width: auto; height: 78px"
+      >
+        <div class="container-fluid align-items-center">
+          <img
+            src="image/IDSTB-Logo.png"
+            alt="Logo"
+            style="margin-left: 150px; width: 112px; height: auto"
+          />
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <ul
+            class="collapse navbar-collapse justify-content-center justify-content-center navbar-nav gap-5"
+          >
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                About Us
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="dropdown-item" href="#">Corporate Collabotarion</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="#"
+                role="button"
+                data-bs-toggle="dropdown"
+                aria-expanded="false"
+              >
+                Certification
+              </a>
+              <ul class="dropdown-menu">
+                <li class="nav-item">
+                  <a class="dropdown-item" href="#">ISTQB Certification</a>
+                </li>
+              </ul>
+            </li>
+
+            <li class="nav-item">
+              <a class="nav-link active" href="#">News & Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">QA Career Path</a>
+            </li>
+          </ul>
+          <div class="collapse navbar-collapse justify-content-center">
+            <button
+              type="button"
+              class="btn bg-custom3 btn-lg"
+              style="margin-right: 90px; border-radius: 0"
+            >
+              <span
+                class="text-light"
+                style="font-size: medium; padding: 20px 20px 11px 11px"
+                >Certify Now <span></span
+              ></span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Landing -->
+    <div class="m-0 p-0 row d-flex justify-content-center">
+      <div
+        class="col-md-8 col-12 d-flex justify-content-center align-items-center"
+      >
+        <h1
+          class="fw-semibold text-center"
+          style="
+            font-size: 60px;
+            padding-top: 20px;
+            margin-left: 100px;
+            margin-right: 110px;
+          "
+        >
+          Solusi Terdepan untuk Sertifikasi dan Pelatihan Software Testing
+        </h1>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-3">
+        <button type="button" class="btn bg-primary btn-lg rounded-pill">
+          <span class="text-light fs-6 px-4">Hubungi Kami</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- SLIDE -->
+    <div
+      id="carouselExampleIndicators"
+      class="carousel slide mt-5"
+      style="margin-bottom: 100px"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleIndicators"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active justify-content-center d-flex">
+          <img width="490px" src="image/Slideshow1.jpeg" alt="Slideshow1" />
+          <img width="490px" src="image/Slideshow2.jpeg" alt="Slideshow2" />
+          <img width="490px" src="image/Slideshow1.jpeg" alt="Slideshow1" />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleIndicators"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <!-- Tentang Kami -->
+    <div class="m-0 p-0 row d-flex flex-row-reverse" style="margin-top: 100px">
+      <div class="col-md-6 col-12 d-flex justify-content-center mt-md-0 mt-4">
+        <div class="ms-md-5 text-md-start text-center">
+          <h1 class="fw-semibold fs-1">Tentang Kami</h1>
+          <p class="px-md-0 mx-md-0 mx-3">
+            Indonesia Software Testing Board (IDSTB) adalah perkumpulan
+            non-profit di bidang software testing di Indonesia yang bekerjasama
+            dengan International Software Testing Qualification Board (ISTQB)
+            dan Badan Standarisasi Nasional Indonesia (BSN). Kami berkomitmen
+            untuk meningkatkan kualitas praktik pengujian perangkat lunak
+            melalui sertifikasi yang diakui secara internasional dan program
+            pelatihan yang komprehensif. Misi kami adalah memberdayakan
+            individu, universitas, dan organisasi untuk unggul dalam jaminan
+            kualitas perangkat lunak, mendorong standar industri, dan membangun
+            komunitas profesional yang terampil.
+          </p>
+          <div
+            class="d-flex justify-content-md-start justify-content-center mt-2"
+          >
+            <button type="button" class="btn bg-primary btn-lg rounded-pill">
+              <span class="text-light fs-6 px-5">Pelajari Lebih Lanjut</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 col-12 d-flex justify-content-center align-items-center mt-4 mt-md-0"
+      >
+        <img
+          style="max-width: 100%; height: auto"
+          src="image/IMG-TentangKami.jpg"
+          alt="tentangkami"
+        />
+      </div>
+    </div>
+
+    <!-- Produk Kami -->
+    <div class="m-0 p-0 row d-flex justify-content-center">
+      <div class="col-md-6 col-12 d-flex justify-content-center mb-4">
+        <h1
+          class="fw-semibold text-center"
+          style="font-size: 65px; padding-top: 100px"
+        >
+          Produk Kami
+        </h1>
+      </div>
+
+      <div class="col-12">
+        <div class="row justify-content-center">
+          <div
+            class="col-lg-10 col-md-12 p-5 bg-body-secondary d-flex flex-column align-items-center"
+          >
+            <!-- Produk Card 1 -->
+            <div
+              class="bg-white rounded shadow-sm p-4 mb-5"
+              style="max-width: 100%"
+            >
+              <div class="row g-4 align-items-center">
+                <div class="col-md-4 text-center">
+                  <img
+                    src="image/cart1.png"
+                    alt="cart1"
+                    class="img-fluid"
+                    style="max-height: 300px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <img src="icons/stars.png" alt="rating" class="me-2" />
+                    <img src="icons/ctfl.png" alt="certification" />
+                  </div>
+                  <h4 class="fw-semibold">
+                    ISTQB Certified Tester Foundation Level Syllabus 4.0 -
+                    Bahasa Indonesia
+                  </h4>
+                  <p>
+                    ISTQB Certified Tester Foundation Level Syllabus 4.0 -
+                    Bahasa Indonesia Version. The ISTQB® Certified Tester
+                    Foundation Level (CTFL) certification is the cornerstone of
+                    essential testing knowledge that can be applied...
+                  </p>
+                  <h3 class="fw-semibold">Rp3.300.000</h3>
+                  <div class="d-flex align-items-center mt-3">
+                    <button type="button" class="btn btn-success me-3">
+                      <img
+                        src="icons/shopping-cart.svg"
+                        alt="cart icon"
+                        class="me-1"
+                      />
+                      Add to cart
+                    </button>
+                    <p class="mb-0"><u>View Product</u></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Produk Card 2 -->
+            <div
+              class="bg-white rounded shadow-sm p-4 mb-5"
+              style="max-width: 100%"
+            >
+              <div class="row g-4 align-items-center">
+                <div class="col-md-4 text-center">
+                  <img
+                    src="image/cart2.png"
+                    alt="cart1"
+                    class="img-fluid"
+                    style="max-height: 300px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <img src="icons/stars.png" alt="rating" class="me-2" />
+                    <img src="icons/ctfl.png" alt="certification" />
+                  </div>
+                  <h4 class="fw-semibold">
+                    ISTQB - Certified Tester Agile Test Leadership at Scale
+                  </h4>
+                  <p>
+                    Overview The ISTQB® Agile Test Leadership at Scale
+                    (CT-ATLaS) certification focuses on how to organize and
+                    improve quality and testing across multiple teams in an
+                    agile organization. It also covers...
+                  </p>
+                  <h3 class="fw-semibold">Rp3.850.000</h3>
+                  <div class="d-flex align-items-center mt-3">
+                    <button type="button" class="btn btn-success me-3">
+                      <img
+                        src="icons/shopping-cart.svg"
+                        alt="cart icon"
+                        class="me-1"
+                      />
+                      Add to cart
+                    </button>
+                    <p class="mb-0"><u>View Product</u></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Produk Card 3 -->
+            <div
+              class="bg-white rounded shadow-sm p-4 mb-5"
+              style="max-width: 100%"
+            >
+              <div class="row g-4 align-items-center">
+                <div class="col-md-4 text-center">
+                  <img
+                    src="image/cart3.png"
+                    alt="cart1"
+                    class="img-fluid"
+                    style="max-height: 300px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <img src="icons/stars.png" alt="rating" class="me-2" />
+                    <img src="icons/ctfl.png" alt="certification" />
+                  </div>
+                  <h4 class="fw-semibold">
+                    ISTQB - Certified Tester Advanced Level Agile Technical
+                    Tester
+                  </h4>
+                  <p>
+                    Overview The ISTQB® Advanced Level Agile Technical Tester
+                    (CTAL-ATT) certification provides a thorough introduction to
+                    the technical testing skills which are fundamental in
+                    organizations using an Agile development approach. These...
+                  </p>
+                  <h3 class="fw-semibold">Rp3.850.000</h3>
+                  <div class="d-flex align-items-center mt-3">
+                    <button type="button" class="btn btn-success me-3">
+                      <img
+                        src="icons/shopping-cart.svg"
+                        alt="cart icon"
+                        class="me-1"
+                      />
+                      Add to cart
+                    </button>
+                    <p class="mb-0"><u>View Product</u></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Produk Card 4 -->
+            <div
+              class="bg-white rounded shadow-sm p-4 mb-5"
+              style="max-width: 100%"
+            >
+              <div class="row g-4 align-items-center">
+                <div class="col-md-4 text-center">
+                  <img
+                    src="image/cart4.png"
+                    alt="cart1"
+                    class="img-fluid"
+                    style="max-height: 300px"
+                  />
+                </div>
+                <div class="col-md-8">
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
+                  >
+                    <img src="icons/stars.png" alt="rating" class="me-2" />
+                    <img src="icons/ctfl.png" alt="certification" />
+                  </div>
+                  <h4 class="fw-semibold">
+                    ISTQB - Certified Tester Foundation Level Agile Tester
+                  </h4>
+                  <p>
+                    Overview The ISTQB® Foundation Level Agile Tester (CTFL-AT)
+                    certification provides the key testing skills necessary to
+                    successfully contribute to an Agile project. CTFL-AT covers
+                    agile testing in alignment with the...
+                  </p>
+                  <h3 class="fw-semibold">Rp3.300.000</h3>
+                  <div class="d-flex align-items-center mt-3">
+                    <button type="button" class="btn btn-success me-3">
+                      <img
+                        src="icons/shopping-cart.svg"
+                        alt="cart icon"
+                        class="me-1"
+                      />
+                      Add to cart
+                    </button>
+                    <p class="mb-0"><u>View Product</u></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Berkolaborasi Dengan -->
+    <div class="bg-body-secondary">
+      <div class="d-flex justify-content-center mt-5 mb-5">
+        <h1
+          class="fw-semibold text-center"
+          style="font-size: 65px; padding-top: 50px"
+        >
+          Berkolaborasi Dengan
+        </h1>
+      </div>
+      <div class="row m-0 p-0" style="height: auto">
+        <div
+          class="mb-5 d-flex flex-column justify-content-between align-items-center"
+        >
+          <div class="mb-5 gap-5 d-flex flex-wrap gap-2 justify-content-center">
+            <img
+              height="120"
+              width="200"
+              src="image/istqb-logoKolab.png"
+              alt=""
+            />
+            <img
+              class="mt-4"
+              height="60"
+              width="250"
+              src="image/bsn_logo_Kolab.png"
+              alt=""
+            />
+            <img
+              class="mt-2"
+              height="90"
+              width="250"
+              src="image/isqa-logo_Kolab.png"
+              alt=""
+            />
+            <img
+              class="mt-3"
+              height="70"
+              width="220"
+              src="image/squadap_Kolab.png"
+              alt=""
+            />
+            <img
+              class="mt-4"
+              height="50"
+              width="250"
+              src="image/gasq_Kolab.png"
+              alt=""
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Majukan Karier -->
+    <div
+      class="m-0 p-0 row d-flex flex-column-reverse flex-md-row align-items-center"
+      style="margin-top: 100px"
+    >
+      <div class="col-md-6 col-12 d-flex justify-content-center my-4">
+        <div class="ms-md-5 px-3 px-md-0">
+          <h1
+            class="fw-semibold text-center text-md-start"
+            style="font-size: 65px"
+          >
+            Majukan Karier Anda dengan Sertifikasi yang Diakui Internasional
+          </h1>
+          <p class="mt-4 text-center text-md-start">
+            Jangan Lewatkan Kesempatan Ini! Hubungi Kami Sekarang untuk Memulai
+            Langkah Pertama Menuju Sertifikasi yang Diakui Internasional dan
+            Tingkatkan Karier Anda di Dunia Software Testing.
+          </p>
+          <div
+            class="d-flex justify-content-center justify-content-md-start align-items-center mt-4"
+          >
+            <button type="button" class="btn bg-primary btn-lg rounded-pill">
+              <span class="text-light fs-6 px-4 px-md-5"
+                >Mulai Langkah Anda Sekarang!</span
+              >
+            </button>
+          </div>
+        </div>
+      </div>
+      <div
+        class="col-md-6 d-flex justify-content-center align-items-center my-4"
+      >
+        <img
+          class="img-fluid"
+          src="image/karir.jpeg"
+          alt="tentangkami"
+          style="max-height: 500px; width: 100%; max-width: 500px"
+        />
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="container-fluid p-5">
+        <div class="row justify-content-center">
+          <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+            <img
+              src="image/IDSTB-Logo.png"
+              alt="IDSTB-Logo"
+              width="50"
+              class="pb-3"
+            />
+            <p class="px-md-0 mx-md-0 mx-3" style="max-width: 370px">
+              Established in November 2018 in Jakarta, Indonesia Software
+              Testing Board (IDSTB) is the first association in Indonesia to
+              advocate Quality Assurance (QA) and software testing and obtain
+              ISTQB certification and provide QA training.
+            </p>
+            <div
+              class="d-flex justify-content-center justify-content-md-start gap-3 pt-4"
+            >
+              <img
+                height="28"
+                width="28"
+                src="icons/facebooknav.png"
+                alt="Facebook"
+              />
+              <img
+                height="28"
+                width="28"
+                src="icons/instagramnav.png"
+                alt="Instagram"
+              />
+              <img
+                height="28"
+                width="28"
+                src="icons/linkedinnav.png"
+                alt="LinkedIn"
+              />
+              <img
+                height="28"
+                width="28"
+                src="icons/wanav.png"
+                alt="WhatsApp"
+              />
+              <img
+                height="28"
+                width="28"
+                src="icons/telenav.png"
+                alt="Telegram"
+              />
+            </div>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4 text-center text-md-start">
+            <h4 class="fw-bold">Services</h4>
+            <p>ISTQB</p>
+            <p>ISO/IEC/IEEE 29119</p>
+          </div>
+
+          <div class="col-lg-2 col-md-6 mb-4 text-center text-md-start">
+            <h4 class="fw-bold">Quick Links</h4>
+            <p>About Us</p>
+            <p>Certification</p>
+            <p>News & Event</p>
+            <p>QA Career Path</p>
+          </div>
+
+          <div class="col-lg-3 col-md-6 mb-4 text-center text-md-start">
+            <h4 class="fw-bold">Get In Touch</h4>
+            <p>
+              Lenere Business Suite, Epiwalk Office Suite Level 5 Unit 529A,
+              Jakarta, Indonesia
+            </p>
+            <p>Email: support@idstb.org</p>
+            <p>Phone: +62811-848-9947</p>
+            <p>Hours: Mon-Fri 9:00 - 17:00</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="bg-custom text-center py-3">
+        <p class="text-white mb-0">© 2024 All Rights Reserved.</p>
+      </div>
+    </footer>
+  </body>
 </html>

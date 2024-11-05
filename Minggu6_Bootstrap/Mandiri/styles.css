@@ -1,0 +1,23 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+}
+
+h1{
+  font-family: "Poppins", sans-serif;
+  color: #16163f;
+}
+
+.bg-custom  {
+  background-color: #16163f;
+}
+
+.bg-custom2 {
+  background-color: #467FF7;
+}
+
+.bg-custom3 {
+  background-color: #fa4950;
+}
