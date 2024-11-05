@@ -1,0 +1,251 @@
+.top-header {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 300;
+}
+
+.navbar .navbar-collapse {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+}
+
+.navbar-collapse .nav-link{
+    color: #17163e;
+}
+
+.navbar-collapse .nav-link:hover {
+    color: #d3b674;
+}
+
+.navbar-collapse .btn-danger{
+    border: #17163e;
+    border-radius: 0%;
+}
+
+.navbar-collapse .btn-danger:hover {
+    background-color: #17163e;
+    border: #17163e;
+}
+
+.brand:hover {
+    color: #d3b674;
+}
+
+.content {
+    font-family: 'Poppins', sans-serif;
+}
+
+.content .judul {
+    font-weight: 600;
+    line-height: 78px;
+}
+
+.content .btn-custom {
+    font-weight: 400;
+    width: 220px;
+    height: 50px;
+    line-height: 16px;
+}
+
+.content .btn-custom:hover {
+    background-color: #ffffff;
+    color: #0d6efd;
+}
+
+.tentang .title{
+    color: #1c244b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 78px;
+    font-size: 65px;
+}
+
+.tentang .isi {
+    color: rgb(50, 74, 109);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.produk {
+    height: auto;
+}
+
+.produk h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1c244b;
+    text-align: center;
+    font-size: 65px;
+    line-height: 78px;
+}
+
+.produk .card {
+    width: 100%;
+    border: none;
+    padding: 48px;
+}
+
+.produk .card img {
+    width: 80%;
+}
+
+.produk .card .image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.produk .card .card-body .card-title {
+    font-family: 'Segoe UI';
+    font-weight: 500;
+    line-height: 34px;
+    font-size: 28px;
+    color: rgb(52, 52, 52);
+}
+
+.produk .card .card-body .card-text {
+    font-family: 'Segoe UI';
+    font-weight: 400;
+    line-height: 24px;
+    font-size: 16px;
+    color: rgb(95, 99, 104);
+    padding: 15px 15px 0 0;
+}
+
+.produk .card .card-body .card-number {
+    font-family: 'Segoe UI';
+    font-weight: 600;
+    line-height: 34px;
+    font-size: 28px;
+    color: rgb(52, 52, 52);
+}
+
+.produk .card .card-body .card-title:hover {
+    color: #75904d;
+}
+
+.produk .card .card-body .btn-success:hover {
+    background-color: #000000;
+}
+
+.colab {
+    background-color: #f4f5f9;
+    height: 65vh;
+    margin-top: 180px;
+}
+
+.colab h1{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: #1c244b;
+    text-align: center;
+    font-size: 65px;
+    line-height: 78px;
+    padding-top: 100px;
+}
+
+.colab img {
+    width:240px;
+    height: 90px;
+}
+
+.certify {
+    margin-top: 150px;
+}
+
+.certify .content .title {
+    color: #1c244b;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 78px;
+    font-size: 65px;    
+}
+
+.certify .content .isi {
+    color: rgb(50, 74, 109);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    line-height: 24px;
+    font-size: 16px;
+}
+
+.certify .content .btn-custom {
+    font-weight: 400;
+    width: 350px;
+    height: 50px;
+    line-height: 16px;
+}
+
+.certify .content .btn-custom:hover {
+    background-color: #ffffff;
+    color: #0d6efd;
+}
+
+.footer .container .row .idstb img{
+    width: 60px;
+}
+
+.footer .container .row .idstb .teks {
+    font-weight: 300;
+    font-family: 'Poppins', sans-serif;
+    line-height: 24px;
+    font-size: 16px;
+    color: rgb(50, 74, 109);
+}
+
+.footer .container .row .idstb .logo:hover{
+    color: rgb(200, 213, 220);
+}
+
+.footer .container .row h3 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    color: rgb(28, 36, 75);
+}
+
+.footer .container .row .list-unstyled a{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(50, 74, 109);
+    text-decoration: none;
+}
+
+.footer .container .row .list-unstyled a:hover {
+    color: rgb(200, 213, 220);
+}
+
+.footer .container .row .address {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(84, 89, 95);
+}
+
+.footer .container .row .list-unstyled li {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(50, 74, 109);
+    text-decoration: none;
+}
+
+.copyright {
+    background-color: #0b1d41;
+    color: #ffffff;
+    text-align: center;
+}
+
+.copyright p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: rgb(255, 255, 255);
+}

@@ -1,0 +1,11 @@
+// Import Bootstrap's functions and variables first
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+
+// Override variabel warna default
+$primary: #477ff8;
+$danger: #fa4951;
+$success : #75904d;
+
+// Impor Bootstrap setelah mengubah variabel
+@import "node_modules/bootstrap/scss/bootstrap";
