@@ -5,7 +5,7 @@ header {
    justify-content: center;
 }
 
-body{
+body {
    background-color: whitesmoke;
 }
 
@@ -44,8 +44,13 @@ body{
    height: 10;
 }
 
-.cn {
-   background-color: tomato;
+.h-b-kanan button {
+   padding: 5px;
+   padding-left: 20px;
+   padding-right: 20px;
+   border: 0px;
+   background-color: orangered;
+   color: white;
 }
 
 .judul {
@@ -53,8 +58,80 @@ body{
    align-items: center;
 }
 
-.judul h1 {
-   margin-top: 500;
-   
+.judul {
+   margin-top: 150px;
+   margin-left: 300px;
+   margin-right: 300px;
+   padding-left: 30px;
+   padding-right: 30px;
    color: black;
+   justify-content: center;
+   align-items: center;
+}
+
+.hub {
+   /* margin-top: 50px; */
+   justify-self: center;
+}
+
+.hub button {
+   background-color: blue;
+   border: 0px;
+   color: white;
+   padding: 10px;
+   padding-left: 30px;
+   padding-right: 30px;
+   border-radius: 50px;
+}
+
+.judul h1 {
+   margin-top: 150px;
+   text-align: center;
+   font-family: monospace bold;
+   font-size: 60px;
+   color: black;
+}
+
+.img-slide {
+   margin: auto;
+   margin-top: 50px;
+   max-width: 1240px;
+   align-items: center;
+   justify-self: center;
+   display: flex;
+   overflow: hidden;
+   background-color: red;
+}
+
+.img-container {
+   display: flex;
+   transition: transform 0.5s ease;
+   background-color: yellow;
+}
+
+.img-slide img {
+   width: 100%;
+   max-width: 400px
+}
+
+.img-slide button { background-color: white;
+    color: black;
+    border: none;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    cursor: pointer;
+    z-index: 10; /* Pastikan berada di atas gambar */
+}
+
+.tentang {
+   margin-top: 200px;
+   background-color: lime;
+}
+
+.kiri {
+   background-color: orange;
+}
+
+.kanan {
+   background-color: red;
 }

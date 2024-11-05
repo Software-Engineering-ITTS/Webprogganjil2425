@@ -1,43 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-   <meta charset="UTF-8">
-   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Simple Web Design</title>
-   <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Slider</title>
+    <style>
+        .img-slide {
+            display: flex;
+            align-items: center;
+            max-width: 600px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        .img-container {
+            display: flex;
+            transition: transform 0.5s ease;
+        }
+
+        .img-slide img {
+            width: 100%;
+            max-width: 200px; /* Tampilkan hanya 3 gambar per slide */
+        }
+
+        button {
+            background-color: #333;
+            color: white;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        button:disabled {
+            background-color: #aaa;
+            cursor: not-allowed;
+        }
+    </style>
 </head>
-
 <body>
-   <header>
-      <h1>My Website</h1>
-      <nav>
-         <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Services</a></li>
-            <li><a href="#">Contact</a></li>
-         </ul>
-      </nav>
-   </header>
 
-   <main>
-      <section class="hero">
-         <h2>Welcome to My Website</h2>
-         <button onclick="showAlert()">Click Me</button>
-      </section>
+<div class="img-slide">
+    <button id="prevBtn" onclick="slide(-1)">&lt;</button>
+    <div class="img-container" id="imgContainer">
+        <img src="https://idstb.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-26-at-20.58.55-2-1024x576.jpeg">
+        <img src="https://idstb.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-26-at-20.58.55-2-1024x576.jpeg">
+        <img src="https://idstb.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-26-at-20.58.55-2-1024x576.jpeg">
+        <img src="https://idstb.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-26-at-20.58.55-2-1024x576.jpeg">
+        <img src="https://idstb.org/wp-content/uploads/2024/05/WhatsApp-Image-2024-05-26-at-20.58.55-2-1024x576.jpeg">
+    </div>
+    <button id="nextBtn" onclick="slide(1)">&gt;</button>
+</div>
 
-      <section class="content">
-         <h3>About Us</h3>
-         <p>This is a simple website example built with HTML, CSS, and JavaScript.</p>
-      </section>
-   </main>
+<script>
+    let currentIndex = 0;
+    const imgContainer = document.getElementById('imgContainer');
+    const totalImages = imgContainer.children.length;
+    const imagesPerSlide = 3;
 
-   <footer>
-      <p>&copy; 2024 My Website. All rights reserved.</p>
-   </footer>
+    function slide(direction) {
+        currentIndex += direction;
+        
+        // Disable buttons if reached the beginning or end
+        document.getElementById('prevBtn').disabled = (currentIndex === 0);
+        document.getElementById('nextBtn').disabled = (currentIndex === totalImages - imagesPerSlide);
 
-   <script src="script.js"></script>
+        // Calculate new position
+        const offset = -currentIndex * 200; // width per image
+        imgContainer.style.transform = `translateX(${offset}px)`;
+    }
+
+    // Initialize buttons state
+    slide(0);
+</script>
+
 </body>
-
 </html>
