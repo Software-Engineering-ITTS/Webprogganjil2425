@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDSTB | Indonesia Software Testing Board – ISTQB Official Certification in Indonesia – Sertifikasi ISTQB
+        Indonesia</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+</head>
+
+<body>
+
+    <!-- header+navbar -->
+    <div class="sticky-top">
+        <div class="bg-dark text-light py-2">
+            <div class="container-fluid m-3">
+                <div class="row d-flex justify-content-between ">
+                    <div class="col-md-5 justify-content-between align-items-center">
+                        <!-- bi merujuk ke bootstrap icon (ada di head, instalasi pake cdn juga)-->
+                        <i class="bi bi-telephone"></i> +62811-848-9947
+                        <i class="bi bi-envelope ms-3 me-3"></i> support@idstb.org <br>
+                        <i class="bi bi-geo-alt "></i> Epiwalk Office Suite Level 5 Unit 529A, Jakarta, Indonesia
+                    </div>
+                    <div class="col-md-4 d-flex gap-5 justify-content-end align-items-center me-3 ">
+                        <a class="text-light "><i class="bi bi-search"></i> </a>
+                        <a class="text-light "><i class="bi bi-linkedin"></i></a>
+                        <a class="text-light "><i class="bi bi-facebook"></i></a>
+                        <a class="text-light "><i class="bi bi-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- navbar-expand-lg lgnya tu merujuk ke large jadi bakal nge expand ke layar yang besar, singkatnya untuk responsif -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-light " style="height: 80pt;">
+            <div class="container">
+
+                <a class="navbar-brand">
+                    <img src="IDSTBLogo.png" alt="IDSTB Logo" style="height: 40px">
+                    <!-- <span class="ml-2">IDSTB</span> -->
+                    <!-- <small>Indonesia Software Testing Board</small> -->
+                </a>
+
+
+                <!-- navbar collapse berungsi untuk membuat navbarnya lebih responsi ) -->
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <!-- ms merujuk pada margin sebelah kiri (margin start) soalny udh bs v5 -->
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item ">
+                            <!-- nav-link untuk memperjelas penggunaannya di navbar, dropdown-toggle berfungsi agar ada dropdownnya -->
+                            <a class="nav-link dropdown-toggle" role="button">
+                                About Us
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item ">
+                            <!-- role button berfungsi biar kursornya jadi telunjuk seperti di web aslinya -->
+                            <a class="nav-link dropdown-toggle" role="button">
+                                Certifications
+                            </a>
+
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button">News & Events</a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link" role="button">QA Career Path</a>
+                        </li>
+                    </ul>
+                    <!-- btn untuk memanggil class button btn-danger untuk menggunakan class yang menampilakn merah
+                     me-1 untuk margin end(sebelah knan) -->
+                    <a class="btn btn-danger me-1">Certify Now →</a>
+                </div>
+            </div>
+        </nav>
+    </div>
+    <!-- end of header + navbar -->
+
+    <!-- hub kamu -->
+    <div class="d-flex align-items-center flex-column justify-content-center">
+        <h1 class="container-fluid text-center" style="color:darkblue;font-size : 45pt ; width: 45%">Solusi Terdepan
+            untuk Sertifikasi dan Pelatihan Software Testing</h1>
+        <button class="btnHoverBlue px-5 py-2 rounded-5 text-white" style="background-color: rgb(77, 77, 232);">Hubungi
+            Kami</button>
+    </div>
+    <!-- end hub kami -->
+
+
+    <!-- carousel -->
+    <div id="carouselIDSTB" class="container carousel slide mt-5 ">
+
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+
+            <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+
+        </div>
+
+        <div class="carousel-inner ">
+            <div class="carousel-item active d-flex ">
+                <img src="Slideshow1.jpeg" style="height: 300px ; width:100%" class="d-flex" alt="rapat">
+                <img src="Slideshow2.jpeg" class="d-flex" style="height: 300px ; width:100%" alt="kerja">
+                <img src="Slideshow1.jpeg" style="height: 300px ; width:100%" class="d-flex" alt="rapat">
+            </div>|
+
+            <div class="carousel-item active d-flex">
+                <img src="Slideshow2.jpeg" style="height: 300px ; width:100%" class="d-flex" alt="rapat">
+                <img src="Slideshow1.jpeg" class="d-flex" style="height: 300px ; width:100%" alt="kerja">
+                <img src="Slideshow2.jpeg" style="height: 300px ; width:100%" class="d-flex" alt="rapat">
+            </div>
+
+        </div>
+
+        <!-- data-bs-target bertujuan untuk mematokkan carousel mana yang di jalankan makanya menembak ke idnya
+         lalu kemudian ada aria-hidden itu agar ketika pindah slide fotonya tetap terlihat rapi -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselIDSTB" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselIDSTB" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        </button>
+
+    </div>
+    <!-- end of carousel -->
+
+    <!-- tentang kami -->
+    <div class="container mt-5 d-flex">
+        <div class="col-md-8 py-5">
+            <img src="TentangKami.jpg" style="height: 500px " alt="tentang kami pict">
+        </div>
+
+        <div class="col-md-4" style="font-size: large;">
+            <h1 style="font-size:50pt;">Tentang Kami</h1>
+            <p class="mb-5">Indonesia Software Testing Board (IDSTB) adalah perkumpulan non-profit di bidang software
+                testing di Indonesia yang bekerjasama dengan International Software Testing Qualification Board (ISTQB)
+                dan Badan Standarisasi Nasional Indonesia (BSN). Kami berkomitmen untuk meningkatkan kualitas praktik
+                pengujian perangkat lunak melalui sertifikasi yang diakui secara internasional dan program pelatihan
+                yang komprehensif. Misi kami adalah memberdayakan individu, universitas, dan organisasi untuk unggul
+                dalam jaminan kualitas perangkat lunak, mendorong standar industri, dan membangun komunitas profesional
+                yang terampil.</p>
+            <button class="btnHoverBlue px-5 py-2 rounded-5  mt-5 text-white"
+                style="background-color:rgb(110, 110, 255);">
+                Pelajari Lebih lanjut </button>
+        </div>
+
+
+    </div>
+    <!-- end of tentang kami  -->
+
+    <!-- start produk kami -->
+    <div class="justify-content-center align-items-center p-2 m-3">
+        <h1 class="text-center" style="font-size: 65pt;">
+            Produk Kami
+        </h1>
+
+        <div class="container rounded-2 px-5 py-5 d-flex flex-column align-items-center gap-3 justify-content-center "
+            style="background-color: rgb(114, 114, 114);">
+
+            <div class="card my-4 d-flex flex-row">
+
+                <div class="row g-0 w-100">
+
+                    <div class="col d-flex align-items-center">
+                        <img src="cart1.png" class="img-fluid rounded-start w-100" alt="cart1">
+                    </div>
+
+                    <div class="col-md-1 card-body ">
+                        <div class="d-flex align-items-baseline justify-content-between my-2">
+                            <span class="p-1">
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                            </span>
+
+                            <span class="d-flex align-items-baseline ">
+                                <p class="bi bi-box2-fill " style="color: rgb(80, 128, 6) ;"></p>
+                                <p class="ms-2" style="color: rgb(80, 128, 6); font-weight: 100;">
+                                    agile </p>
+                            </span>
+                        </div>
+
+                        <h5 class="card-title">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                        </h5>
+                        <p class="card-text">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                            Version The ISTQB® Certified Tester Foundation Level (CTFL) certification is the cornerstone
+                            of essential testing knowledge that can be applied....</p>
+                        <h1>Rp3.850.000</h1>
+                        <div class="d-lg-flex d-sm-none">
+                            <br> <br> <br> <br> <br>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-2">
+                            <a class="btn text-white" style="background-color: olivedrab;">
+                                <i class="bi bi-cart-fill me-3"></i>add to cart
+                            </a>
+                            <p><u>view product</u></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card my-4 d-flex flex-row">
+
+                <div class="row g-0 w-100">
+
+                    <div class="col d-flex align-items-center">
+                        <img src="cart1.png" class="img-fluid rounded-start w-100" alt="cart1">
+                    </div>
+
+                    <div class="col-md-1 card-body ">
+                        <div class="d-flex align-items-baseline justify-content-between my-2">
+                            <span class="p-1">
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                            </span>
+
+                            <span class="d-flex align-items-baseline ">
+                                <p class="bi bi-box2-fill " style="color: rgb(80, 128, 6) ;"></p>
+                                <p class="ms-2" style="color: rgb(80, 128, 6); font-weight: 100;">
+                                    agile </p>
+                            </span>
+                        </div>
+
+                        <h5 class="card-title">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                        </h5>
+                        <p class="card-text">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                            Version The ISTQB® Certified Tester Foundation Level (CTFL) certification is the cornerstone
+                            of essential testing knowledge that can be applied....</p>
+                        <h1>Rp3.850.000</h1>
+                        <div class="d-lg-flex d-sm-none">
+                            <br> <br> <br> <br> <br>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-2">
+                            <a class="btn text-white" style="background-color: olivedrab;">
+                                <i class="bi bi-cart-fill me-3"></i>add to cart
+                            </a>
+                            <p><u>view product</u></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card my-4 d-flex flex-row">
+
+                <div class="row g-0 w-100">
+
+                    <div class="col d-flex align-items-center">
+                        <img src="cart1.png" class="img-fluid rounded-start w-100" alt="cart1">
+                    </div>
+
+                    <div class="col-md-1 card-body ">
+                        <div class="d-flex align-items-baseline justify-content-between my-2">
+                            <span class="p-1">
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                            </span>
+
+                            <span class="d-flex align-items-baseline ">
+                                <p class="bi bi-box2-fill " style="color: rgb(80, 128, 6) ;"></p>
+                                <p class="ms-2" style="color: rgb(80, 128, 6); font-weight: 100;">
+                                    agile </p>
+                            </span>
+                        </div>
+
+                        <h5 class="card-title">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                        </h5>
+                        <p class="card-text">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                            Version The ISTQB® Certified Tester Foundation Level (CTFL) certification is the cornerstone
+                            of essential testing knowledge that can be applied....</p>
+                        <h1>Rp3.850.000</h1>
+                        <div class="d-lg-flex d-sm-none">
+                            <br> <br> <br> <br> <br>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-2">
+                            <a class="btn text-white" style="background-color: olivedrab;">
+                                <i class="bi bi-cart-fill me-3"></i>add to cart
+                            </a>
+                            <p><u>view product</u></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="card my-4 d-flex flex-row">
+
+                <div class="row g-0 w-100">
+
+                    <div class="col d-flex align-items-center">
+                        <img src="cart1.png" class="img-fluid rounded-start w-100" alt="cart1">
+                    </div>
+
+                    <div class="col-md-1 card-body ">
+                        <div class="d-flex align-items-baseline justify-content-between my-2">
+                            <span class="p-1">
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                                <i class="bi bi-star" style="color: rgb(255, 170, 0);"></i>
+                            </span>
+
+                            <span class="d-flex align-items-baseline ">
+                                <p class="bi bi-box2-fill " style="color: rgb(80, 128, 6) ;"></p>
+                                <p class="ms-2" style="color: rgb(80, 128, 6); font-weight: 100;">
+                                    agile </p>
+                            </span>
+                        </div>
+
+                        <h5 class="card-title">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                        </h5>
+                        <p class="card-text">ISTQB Certified Tester Foundation Level Syllabus 4.0 - Bahasa Indonesia
+                            Version The ISTQB® Certified Tester Foundation Level (CTFL) certification is the cornerstone
+                            of essential testing knowledge that can be applied....</p>
+                        <h1>Rp3.850.000</h1>
+                        <div class="d-lg-flex d-sm-none">
+                            <br> <br> <br> <br> <br>
+                        </div>
+                        <div class="d-flex align-items-center gap-3 mt-2">
+                            <a class="btn text-white" style="background-color: olivedrab;">
+                                <i class="bi bi-cart-fill me-3"></i>add to cart
+                            </a>
+                            <p><u>view product</u></p>
+                        </div>
+
+
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+    <!-- end produk kami -->
+    <br> <br> <br> <br> <br>
+
+    <!-- berkolabroasi dengan -->
+    <div class="container-fluid mt-5 d-flex flex-column align-items-center justify-content-center gap-4 p-3"
+        style="background-color: rgb(219, 222, 222); height:450pt">
+
+        <div style="color: midnightblue" class="mb-5">
+            <h1 style="font-size: 65pt;">Berkolaborasi Dengan</h1>
+        </div>
+
+        <div class="d-flex justify-content-center align-items-center gap-5 ">
+            <img class="col-md-2" src="istqb.png" alt="logo istqb">
+            <img class="col-md-2" src="bsn.png" alt="logo badan standarisasi nasional">
+            <img src="isqa.png" class="col-md-2" alt="logo ISQA">
+            <img src="squadap.png" class="col-md-2" alt="logo SQUADAP">
+            <img src="gasq.png" alt="logo GASQ" class="col-md-2">
+        </div>
+
+    </div>
+    <!-- end beroklaborasi dengan -->
+
+    <br> <br> <br>
+    <!-- mulai langkah anda sekarang -->
+    <div class="container-fluid d-flex  mt-5" style="height: 720pt;">
+
+        <div class="col-md-4 ms-5 me-5" style=" color: rgb(7, 7, 96)">
+            <h1 style="font-size: 60pt;">Majukan Karier Anda dengan Sertifikasi yang Diakui Internasional</h1>
+            <br>
+            <p style="padding-right: 300px;">Jangan Lewatkan Kesempatan Ini! Hubungi Kami Sekarang untuk Memulai Langkah
+                Pertama Menuju Sertifikasi yang Diakui Internasional dan Tingkatkan Karier Anda di Dunia Software
+                Testing.</p>
+            <button class="btnHoverBlue px-5 py-2 rounded-5  mt-5 text-white"
+                style="background-color:rgb(110, 110, 255);">
+                mulai langkah anda sekarang </button>
+        </div>
+
+        <div class="col-md-8 ">
+            <br> <br> <br> <br> <br> <br>
+            <img src="rptfooter.png" style=" padding-left: 200px; height: 400pt;" alt="rapat yang di footer  ">
+        </div>
+    </div>
+    <!-- end mulai langkah anda sekarang -->
+
+    <!-- footer -->
+    <div class="container-fluid d-flex">
+        <div class="col-md-6" style="padding-left:100px ;">
+            <img src="IDSTBLogo.png" style="height:20px" alt="logo idstb"> <br> <br>
+            <p class="col-md-6">Established in November 2018 in Jakarta, Indonesia Software Testing Board (IDSTB) is
+                the first association in Indonesia to advocate Quality Assurance (QA) and software testing and obtain
+                ISTQB certification and provide QA training.</p>
+            <div>
+                <i class="bi bi-facebook " style="margin: 8px; color:deepskyblue"></i>
+                <i class="bi bi-instagram " style="margin: 8px; color:deepskyblue"></i>
+                <i class="bi bi-linkedin " style="margin: 8px; color:deepskyblue"></i>
+                <i class="bi bi-whatsapp " style="margin: 8px; color:deepskyblue"></i>
+                <i class="bi bi-telegram " style="margin: 8px; color:deepskyblue"></i>
+            </div>
+
+        </div>
+        <div class=" col-md-6 d-flex  jutify-content-center  ">
+            <div class="col-md-4 ">
+                <h2>Services</h2>
+                <p href="https://idstb.org/istqb/" style="font-size: 13pt;" class="text-black mt-4 mb-0">ISTQB</p> <br> 
+                <p style="font-size: 13pt;" >ISO/IEC/IEEE 29119</p>
+            </div>
+            
+            <div class="col-md-4">
+                <h2>Quick Links</h2>
+                <p  class="dropdown-toggle text-black  m-0 mt-4" style="font-size: 13pt;">About US</p> <br>
+                <p  class="dropdown-toggle text-black m-0" style="font-size: 13pt;">Certifications</p> <br>
+                <p  class="text-black m-0" style="font-size: 13pt;">News & Events</p> <br>
+                <p  class="text-black m-0" style="font-size: 13pt;">QA Career Path</p>
+            </div>
+
+            <div class="col-md-4">
+                <h2>Get In Touch</h2>
+                <p class="col-md-8 ms-3" style="font-size: 13pt;">Lenere Business Suite, Epiwalk Office Suite Level 5 Unit 529A, Jakarta, Indonesia</p>
+                
+                <p style="font-size: 16pt;">Email: support@idstb.org
+                    Phone: +62811-848-9947
+                    Hours: Mon-Fri 9:00 - 17:0</p>
+
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid align-items-center d-flex justify-content-center " style="background-color: darkblue; height:30pt">
+        <p class="text-center text-white mb-0">© 2024 All Rights Reserved.</p>
+    </div>
+    <!-- end of footer -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
