@@ -1,0 +1,87 @@
+/* Set font untuk seluruh elemen halaman */
+body {
+    font-family: 'Poppins', sans-serif; /* Mengatur font seluruh halaman menggunakan font Poppins */
+    padding-top: 120px; /* Memberikan padding di bagian atas untuk menghindari tumpang tindih dengan header */
+}
+
+/* Styling untuk Top Header agar tetap di atas */
+.top-header {
+    background-color: #15114c; /* Mengatur warna latar belakang Top Header */
+    padding: 10px 0; /* Memberikan padding vertikal pada Top Header */
+    z-index: 1030; /* Mengatur z-index agar Top Header berada di atas elemen lain */
+    width: 100%; /* Mengatur lebar Top Header agar memenuhi lebar layar */
+}
+
+/* Styling untuk Main Navbar agar tetap di bawah Top Header */
+.main-navbar {
+    background-color: #f8f9fa; /* Mengatur warna latar belakang Navbar */
+    top: 65px; /* Mengatur posisi Navbar agar berada tepat di bawah Top Header */
+    z-index: 1020; /* Mengatur z-index agar Navbar berada di bawah Top Header */
+    width: 100%; /* Mengatur lebar Navbar agar memenuhi lebar layar */
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Menambahkan bayangan pada Navbar untuk efek visual */
+}
+
+/* Efek hover pada dropdown */
+.show-on-hover:hover .dropdown-menu {
+    display: block; /* Menampilkan dropdown saat elemen di-hover */
+}
+
+/* Warna dan Transisi untuk icon social */
+.icons-linkedin:hover,
+.icons-facebook:hover,
+.icons-instagram:hover {
+    color: #FFD700; /* Mengubah warna ikon sosial saat di-hover menjadi kuning keemasan */
+    transition: 0.3s ease; /* Menambahkan transisi halus saat warna berubah */
+}
+
+/* Efek hover untuk mengubah warna dan border pada tombol kontak */
+.contact-button {
+    padding: 10px 30px; /* Mengatur padding tombol */
+    font-size: 1rem; /* Mengatur ukuran font tombol */
+    color: #ffffff; /* Mengatur warna teks tombol menjadi putih */
+    background-color: #007bff; /* Mengatur warna latar belakang tombol menjadi biru */
+    border: 2px solid #007bff; /* Mengatur border tombol dengan warna biru */
+    border-radius: 50px; /* Membuat sudut tombol menjadi bulat */
+    transition: all 0.3s ease; /* Menambahkan transisi halus untuk semua perubahan */
+    margin-top: 20px; /* Memberikan jarak di atas tombol */
+    margin-bottom: 20px; /* Memberikan jarak di bawah tombol */
+}
+
+/* Efek hover untuk tombol kontak */
+.contact-button:hover {
+    background-color: #ffffff; /* Mengubah latar belakang tombol menjadi putih saat di-hover */
+    color: #007bff; /* Mengubah warna teks tombol menjadi biru saat di-hover */
+    border: 2px solid #007bff; /* Mempertahankan border biru saat di-hover */
+}
+
+/* Efek Hover untuk Menu Header */
+.navbar-nav .nav-link:hover {
+    color: #FFD700; /* Mengubah warna teks menu menjadi kuning keemasan saat di-hover */
+    transition: color 0.3s ease; /* Menambahkan transisi halus saat warna berubah */
+}
+
+/* Carousel Styling */
+.carousel {
+    max-width: 1600px; /* Membatasi lebar carousel agar tidak terlalu lebar */
+    margin: 0 auto; /* Memusatkan carousel di tengah halaman */
+    margin-top: 2rem; /* Memberikan jarak di atas carousel */
+}
+
+.carousel-item img {
+    height: 400px; /* Mengatur tinggi gambar dalam carousel */
+    object-fit: cover; /* Memastikan gambar memenuhi area tanpa merusak rasio aspek */
+}
+
+/* Kustomisasi Footer */
+footer {
+    font-size: 14px; /* Mengatur ukuran font footer */
+}
+
+footer p {
+    margin: 0; /* Menghilangkan margin pada paragraf di footer */
+}
+
+footer h5 {
+    font-weight: bold; /* Mengatur teks h5 menjadi tebal */
+    font-size: 16px; /* Mengatur ukuran font h5 */
+}
