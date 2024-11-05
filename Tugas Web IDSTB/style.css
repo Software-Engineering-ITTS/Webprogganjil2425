@@ -64,10 +64,21 @@ p {
 .navbar-bottom {
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   padding: 20px;
   box-shadow: 0px 1px 3px #33333399;
   background-color: #fff;
+}
+
+.navbar-bottom img {
+  width: auto;
+  height: 50px;
+}
+
+.navbar-links {
+  display: flex;
+  align-items: center;
+  gap: 30px;
 }
 
 .navbar-links a {
@@ -80,11 +91,6 @@ p {
 .navbar-links a:hover {
   color: #b7bbc2;
   transition: ease-in-out 0.2s;
-}
-
-.navbar-bottom img {
-  width: 8%;
-  height: 8%;
 }
 
 .navbar-btn-certify {
@@ -101,6 +107,20 @@ p {
 .navbar-btn-certify:hover {
   background-color: #17163e;
   transition: ease-in-out 0.2s;
+}
+
+/* carousel section */
+.carousel-item img {
+  height: 300px;
+  object-fit: cover;
+}
+
+.carousel-inner .row {
+  margin: 0;
+}
+
+.carousel-inner .col-4 {
+  padding: 0;
 }
 
 /* Welcome Section */
@@ -249,6 +269,10 @@ p {
 .product-stars img {
   width: 20px;
   height: 20px;
+}
+
+.product-stars i {
+  color: rgb(237, 183, 19);
 }
 
 .product-type {
