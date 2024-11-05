@@ -19,10 +19,14 @@ function App() {
     const OnSubmit = (e) => {
         e.preventDefault();
         const errors = validateForm(form);
-        console.log(form)
+        setError(errors)
+
+        if(Object.keys(errors).length === 0){
+            console.log("Call API POST")
+        }
     }
 
-    const validateForm(form) => {
+    const validateForm = (form) => {
         const errors = {};
 
         if (!form.username.trim()) {
@@ -30,7 +34,7 @@ function App() {
         }
         if (!form.password) {
             errors.password = "required"
-        }else if( form.password.length < 8){
+        } else if( form.password.length < 8){
             errors.password = "minimal password 8 karakter"
         }
 
@@ -41,15 +45,15 @@ function App() {
             <form onSubmit={OnSubmit}>
                 <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
                     <div style={{ display: "flex", flexDirection: "column" }}>
-
-                        <label htmlFor="" style={{ color: "red" }}>Username</label>
+                        <label htmlFor="" >Username</label>
                         <input type="text" name="username" id="username" onChange={handleChange} />
-                        <span>error</span>
+                        <span style={{ color: "red" }}>{errors.username}</span>
                     </div>
+                    <br />
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <label htmlFor=""> Password </label>
-                        <input type="password" name="password" id="password" />
-                        <span>error</span>
+                        <input type="password" name="password" id="password" onChange={handleChange} />
+                        <span style={{ color: "red" }}>{errors.password}</span>
                     </div>
                     <button type="submit" style={{ marginTop: "16px" }}>Login</button>
                 </div>
