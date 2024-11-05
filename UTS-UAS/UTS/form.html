@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- boostrap -->
+     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">Sistem Penjualan Langsung</div>
+      <form action="#">
+        <div class="user-details">
+          <div class="input-box">
+            <span class="details">Nama Lengkap</span>
+            <input type="text" placeholder="Enter your name" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Alamat Produk</span>
+            <input type="text" placeholder="Enter product name" required />
+          </div>
+
+          <!-- Tanggal Penjualan -->
+          <div class="input-box">
+            <span class="details">Tanggal Penjualan</span>
+            <input type="date" required />
+          </div>
+
+          <!-- Metode Pembayaran -->
+          <div class="input-box">
+            <span class="details">Metode Pembayaran</span>
+            <select required>
+              <option value="tunai">Tunai</option>
+              <option value="transfer">Transfer Bank</option>
+              <option value="kartu-kredit">Kartu Kredit</option>
+            </select>
+          </div>
+
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" placeholder="Enter your password" required />
+          </div>
+          <div class="input-box">
+            <span class="details">Konfirmasi Password</span>
+            <input
+              type="password"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+
+          <!-- Pilihan Sales -->
+          <div class="gender-details">
+            <span class="gender-title"><br><strong>Pilihan Sales</strong></span>
+            <div class="category">
+              <label>
+                <input type="radio" name="sales" value="laki gondrong" />
+                <span class="dot"></span>
+                <span class="gender">Laki Gondrong</span>
+              </label>
+              <label>
+                <input type="radio" name="sales" value="perempuan baik" />
+                <span class="dot"></span>
+                <span class="gender">Perempuan Baik</span>
+              </label>
+              <label>
+                <input type="radio" name="sales" value="pelanggan setia" />
+                <span class="dot"></span>
+                <span class="gender">Pelanggan Setia</span>
+              </label>
+            </div>
+          </div>
+          
+          <!-- Checkbox Setuju -->
+          
+          <!-- Informasi Produk -->
+          <!-- <p><strong>Informasi Produk</strong></p> -->
+          <div class="input-box">
+              <label for="nama-produk" class="details">Nama Produk:</label>
+              <input type="text" id="nama-produk" name="nama-produk" required />
+            </div>
+            
+            <div class="input-box">
+                <label for="kode-produk" class="details">Kode Produk:</label>
+                <input type="number" id="kode-produk" name="kode-produk" required />
+            </div>
+            
+            <div class="input-box">
+                <label for="jumlah" class="details">Jumlah :</label>
+                <input type="number" id="jumlah" name="jumlah" required />
+            </div>
+            
+            <div class="input-box">
+                <label for="harga" class="details">Harga Satuan :</label>
+                <input type="number" id="harga" name="harga" required />
+            </div>
+        </div>
+
+        <div class="checkbox">
+            <span class="gender-title">Pilihan Pelanggan</span>
+            <label><input type="checkbox" value="Bike" />Setuju</label><br />
+            <label><input type="checkbox" value="Car" />Tidak Setuju</label><br />
+            <label><input type="checkbox" value="Boat" />Terserah Lah</label
+            ><br />
+        </div>
+        
+        <br />
+        <span><strong>catatan : </strong></span><strong></strong><br />
+        
+        masukkan saran anda pada kami?<br />
+        <textarea
+        rows="4"
+          cols="50"
+          placeholder="masuukan pesan anda apapun yang anda pikirkan ... "
+        ></textarea>
+
+        <!-- Button Submit -->
+        <div class="button">
+          <input type="submit" value="Daftarkan" />
+        </div>
+      </form>
+    </div>
+    <!-- boostrap cdn js -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script> -->
+  </body>
+  </body>
+</html>

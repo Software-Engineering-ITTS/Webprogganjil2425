@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+  <h2>Formulir Penjualan</h2>
+
+  <div>
+    <label for="nama">Nama Lengkap:</label>
+    <input type="text" id="nama" name="nama" required>
+  </div>
+  <div>
+    <label for="produk">Nama Produk:</label>
+    <input type="text" id="produk" name="produk" required>
+  </div>
+  <div>
+    <label for="tanggal">Tanggal Penjualan:</label>
+    <input type="date" id="tanggal" name="tanggal" required>
+  </div>
+  <div>
+    <label for="metode_pembayaran">Metode Pembayaran:</label>
+    <select id="metode_pembayaran" name="metode_pembayaran"    required>
+      <option value="tunai">Tunai</option>   
+      <option value="transfer">Transfer Bank</option>
+      </select>
+  </div>
+  <div>
+    <label for="catatan">Catatan:</label>
+    <textarea id="catatan" name="catatan"></textarea>
+  </div>
+
+  <button type="submit">Simpan</button>
+</form>
+
+</body>
+</html>
