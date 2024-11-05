@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sistem Pengiriman Barang</title>
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- text -->
+    <div class="Form1">
+      <div class="text1">
+        <h1>Belanja disini langsung dikirim!!</h1>
+      </div>
+      <div class="stk">
+        <h3>Stok Barang Tersedia</h3>
+      </div>
+      <!-- table -->
+      <div class="TableForm">
+        <table>
+          <tr>
+            <th>NO</th>
+            <th>Kode barang</th>
+            <th>Nama Barang</th>
+            <th>Harga</th>
+          </tr>
+          <tr>
+            <td>1</td>
+            <td>001</td>
+            <td>Apel</td>
+            <td>RP. 5000</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>002</td>
+            <td>Alpukat</td>
+            <td>RP. 10000</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>003</td>
+            <td>Jeruk</td>
+            <td>RP. 15000</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="Kartu">
+        <form action="">
+          <p>Kartu Member</p>
+          <label for="Nama :">Nama Pelanggan :</label><br />
+          <input type="text" /><br />
+          <label for="Nama :">Password :</label><br />
+          <input type="password" /><br />
+          <input type="button" value="Submit" />
+        </form>
+      </div>
+
+      <!-- checkbox -->
+      <div class="checkbox1">
+        <form action="">
+          <p>Pilih Barang yang ingin dibeli dan dikirim</p>
+          <input type="checkbox" />
+          <label for="Nama :">Apel</label>
+          <input type="checkbox" />
+          <label for="Nama :">alpukat</label>
+          <input type="checkbox" />
+          <label for="Nama :">jeruk</label>
+          <input type="button" value="Submit" />
+        </form>
+      </div>
+
+      <!-- radio -->
+      <div class="radio1">
+        <form action="">
+          <p>Pilih Bank Pembayaran</p>
+
+          <label for="Nama :">BCA</label>
+          <input type="radio" /><br />
+          <label for="Nama :">BRI</label>
+          <input type="radio" /><br />
+          <label for="Nama :">BSI</label>
+          <input type="radio" /><br />
+          <input type="button" value="Submit" />
+        </form>
+      </div>
+
+      <div class="pesan1">
+        <h1>Pesan Sekarang!!</h1>
+        <div class="pesan2">
+          <input type="button" value="Pesan!!" />
+        </div>
+      </div>
+
+      <!-- text area -->
+      <div class="drop1">
+        <!-- dropdown -->
+        <p>Pilih Barang untuk direview :</p>
+        <form action="">
+          <label for="cars"> Pilih barang:</label><br />
+          <select name="cars" id="cars">
+            <option value="apel">apel</option>
+            <option value="alpukat">alpukat</option>
+            <option value="jeruk">jeruk</option></select
+          ><br />
+          <input type="submit" value="Submit" />
+          <br />
+        </form>
+      </div>
+
+      <!-- Text area -->
+      <div class="area1">
+        <form action="">
+          <p><label for="">Kesan Pesan untuk Toko ini</label></p>
+          <textarea id="" name="" rows="4" cols="100"></textarea>
+          <br />
+          <input type="submit" value="Submit" />
+        </form>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
