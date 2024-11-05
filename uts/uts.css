@@ -1,0 +1,16 @@
+
+
+.form{
+    align-items: center;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1000px;
+    height: auto;
+    padding-left: 100px;
+}
+
+.title{
+    margin-top: 22px;
+    font-size: 43px;
+    
+}
