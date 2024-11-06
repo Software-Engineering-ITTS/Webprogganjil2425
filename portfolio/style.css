@@ -1,0 +1,12 @@
+.header-banner {
+    object-fit: none;
+    max-height: 500px;
+    width: 100%;
+    object-position: 20% 50% ;
+    filter:brightness(40%) saturate(110%) blur(4px);  
+}
+
+li{
+    padding: 0;
+    margin: 0;
+}
