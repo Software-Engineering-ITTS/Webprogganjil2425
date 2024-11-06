@@ -49,8 +49,18 @@ const ButtonExp = document.querySelector('a[href="#Exp"]')
 const ExpSection = document.getElementById('Exp')
 
 ButtonExp.addEventListener('click', () => {
-    console.log("halo")
-    AboutSection.scrollIntoView({behavior:'smooth'})
+    console.log("test exp")
+    ExpSection.scrollIntoView({behavior:'smooth'})
+})
+
+
+const ButtonProjects = document.querySelector('a[href="#Projects"]')
+const ProjectsSection = document.getElementById('Projects')
+
+ButtonProjects.addEventListener('click', () => {
+    console.log("test exp")
+    ProjectsSection.scrollIntoView({behavior:'smooth'})
+    
 })
 
 

@@ -31,3 +31,40 @@
     transform: scale(1.07);
     border: 5px solid #7360DF;
 }
+
+#card {
+    transform: scale(1);
+    transition: 0.5s ease;
+    color: white;
+    border: 3px solid black;
+    background-color: #7360DF;
+}
+
+#card:hover{
+    border: 3px solid #7360DF;
+    color: #7360DF;
+    transform: scale(1.05);
+    background-color: white;
+
+}
+
+.bulb-class{
+    cursor: pointer;
+    transition: 0.5s ease;
+    color: black;
+    font-size: 35px;
+}
+
+.bulb-class:hover{
+    color: #7360DF;
+}
+
+.gear-rotate{
+    cursor: pointer;
+    transform: rotate(0deg);
+    transition: 0.5s ease;
+}
+
+.gear-rotate:hover{
+    transform: rotate(180deg);
+}
