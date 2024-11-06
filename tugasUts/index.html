@@ -12,7 +12,7 @@
 <body data-bs-theme="dark">
 
     <!-- Nav -->
-    <nav class="sticky-top navbar navbar-expand-lg" style="background-color: #4A628A;" >
+    <nav class="sticky-top navbar navbar-expand-lg nav-class"  >
         <div class="container">
 
             <!-- Laptop Screen -->
@@ -21,12 +21,12 @@
                     <h1 class="fw-bold text-white">Ivan Sahmura</h1>
                 </div>
 
-                <ul class="navbar-nav gap-5 list-unstyled ">
-                    <li><a class="text-decoration-none text-white" href="#Home">Home</a></li>
-                    <li><a class="text-decoration-none text-white" href="#About">About</a></li>
-                    <li><a class="text-decoration-none text-white" href="#Exp">Experience</a></li>
-                    <li><a class="text-decoration-none text-white" href="#Projects">Projects</a></li>
-                    <li><a class="text-decoration-none text-white" href="#Contact">Contact</a></li>
+                <ul class="navbar-nav gap-5 list-unstyled " >
+                    <li ><a class="text-decoration-none text-white" href="#Home">Home</a></li>
+                    <li ><a class="text-decoration-none text-white" href="#About">About</a></li>
+                    <li ><a class="text-decoration-none text-white" href="#Exp">Experience</a></li>
+                    <li ><a class="text-decoration-none text-white" href="#Projects">Projects</a></li>
+                    <li ><a class="text-decoration-none text-white" href="#Contact">Contact</a></li>
                 </ul>
             </div>
 
@@ -70,8 +70,8 @@
             <div class="d-sm-grid  d-md-grid d-lg-flex gap-5  justify-content-center align-items-center flex-row-reverse  " >
                 <!-- Profile -->
                 <div class="profile-header">
-                    <img class="d-none d-sm-none d-md-flex d-lg-flex rounded-circle" src="assets/profile.jpeg" alt="" width="400" style="border: 10px solid #4A628A;">
-                    <img class=" d-sm-flex d-md-none d-lg-none rounded-circle" src="assets/profile.jpeg" alt="" width="200" style="border: 10px solid #4A628A;">
+                    <img class="d-none d-sm-none d-md-flex d-lg-flex rounded-circle" src="assets/profile.jpeg" alt="" width="400" style="border: 10px solid #7360DF;">
+                    <img class=" d-sm-flex d-md-none d-lg-none rounded-circle" src="assets/profile.jpeg" alt="" width="200" style="border: 10px solid #7360DF;">
                 </div>
                 <div class="d-flex flex-column gap-2 justify-content-start align-items-start" >
                     <h1 class="profile-header fw-bold " style="font-size: 4rem;">Welcome to My Profile!</h1>
@@ -91,54 +91,62 @@
 
     <!-- About Section -->
 
-    <div id="About" style="background-color: #4A628A; margin-top: 10rem; padding-bottom: 10rem;  padding-top: 10rem;  ">
+    <div id="About" style="background-color: white; margin-top: 10rem; padding-bottom: 10rem;  padding-top: 10rem;  ">
         <div class="px-5 p-5 d-sm-grid d-md-grid  d-lg-flex  gap-5 justify-content-center align-items-center">
             <div>
-                <img src="assets/profile-about.jpeg" alt="" class="position-relative img-fluid" width="500" style="border: 10px solid white;">
+                <img src="assets/profile-about.jpeg" alt="" class="position-relative img-fluid" width="500" style="border: 10px solid #7360DF;">
             </div>
-            <div class="position-relative d-flex mt-5 flex-column gap-5">
+            <div class="position-relative d-flex mt-5 flex-column gap-3 text-dark">
+                <h3 class="fw-bold " style="padding-right: 10px;">About Me</h3>
                 <h1 class="fw-bold display-3">Tentang Ivan Sahmura</h1>
-                <ul class="gap-3 list-unstyled d-flex flex-column"  style="font-size: 23px;">
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Ahmad Ivan Sahmura Soni adalah nama lengkap dari mahkluk prodi Rekayasa Perangkat Lunak ini.</li>
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Lahir di kota keren yang bernama Tuban pada tanggal 18 Januari 20025.</li>
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Beliau menghabiskan waktunya luangnya untuk mempelajari hal yang dirasanya menarik untuk diexplore.</li>
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Namun sering kali beliau menghabiskan waktunya untuk membusuk di atas kasur.</li>
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Hal yang disukai beliau adalah suasana dari musim hujan, beliau bisa terlarut menatapi air tetesan hujan atau sekadar menatap langit mendung berjam-jam.</li>
-                    <li><i class="fa-solid fa-arrow-right" style="margin-right: 10px;"></i>Mimpi beliau adalah untuk tinggal di suatu pedesaan dataran tinggi dengan finansial yang tinggi</li>
+                <ul class="gap-3 list-unstyled d-flex flex-column"  style="font-size: 23px; padding-right: 10px;">
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Ahmad Ivan Sahmura Soni adalah nama lengkap dari mahkluk prodi Rekayasa Perangkat Lunak ini.</li>
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Lahir di kota keren yang bernama Tuban pada tanggal 18 Januari 20025.</li>
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Beliau menghabiskan waktunya luangnya untuk mempelajari hal yang dirasanya menarik untuk diexplore.</li>
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Namun sering kali beliau menghabiskan waktunya untuk membusuk di atas kasur.</li>
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Hal yang disukai beliau adalah suasana dari musim hujan, beliau bisa terlarut menatapi air tetesan hujan.</li>
+                    <li><i class="fa-solid fa-arrow-right" style="padding-right: 10px; color: #7360DF;"></i>Mimpi beliau adalah untuk tinggal di suatu pedesaan dataran tinggi dengan finansial yang tinggi</li>
                 </ul>
             </div>
         </div>
     </div>
 
     <!-- Experience -->
-     <div>
+     <div class="text-dark" id="Exp" style="background-color: white;">
         <div class="d-flex flex-column justify-content-center align-items-center gap-5">
-            <div class="mt-5">
+            <div class="mt-5 text-center">
                 <h1 class="fw-bold display-5">EXPERIENCE</h1>
+                <h6>Pengalaman Beliau Dari SMK Hingga Dijenjang Kuliah Saat Ini</h6>
             </div>
 
             <div class="d-flex justify-content-center  align-items-center" style="gap: 5rem;">
-                <div class="card bg-white" style="width: 18rem;">
-                    <img class="card-img"  alt="" height="200" style="background-color: white;">
-                    <div class="card-body" style="background-color: #4A628A;">
+                <div class="card " style="width: 25rem; background-color: #7360DF; ">
+                    <div class="card-header pt-4">
+                        <i class="fa-solid fa-wifi " style="font-size: 2rem;"></i>
+                    </div>
+                    <div class="card-body pt-5" >
                         <h5 class="card-title fw-bold">STO Telkom Malang</h5>
                         <p class="">IT Support</p>
                         <p class="">2022 (Juni - November)</p>
                     </div>
                 </div>
 
-                <div class="card bg-white" style="width: 18rem;">
-                    <img class="card-img"  alt="" height="200" style="background-color: white;">
-                    <div class="card-body" style="background-color: #4A628A;">
+                <div class="card" style="width: 25rem; background-color: #7360DF;">
+                    <div class="card-header pt-4">
+                        <i class="fa-solid fa-code" style="font-size: 2rem;"></i>
+                    </div>
+                    <div class="card-body pt-5" >
                         <h5 class="card-title fw-bold">Alpha Project</h5>
                         <p class="">Front End Developer</p>
                         <p class="">2024 (Agustus - Present)</p>
                     </div>
                 </div>
 
-                <div class="card bg-white" style="width: 18rem;">
-                    <img class="card-img"  alt="" height="200" style="background-color: white;">
-                    <div class="card-body" style="background-color: #4A628A;">
+                <div class="card " style="width: 25rem; background-color: #7360DF;">
+                    <div class="card-header pt-4">
+                        <i class="fa-solid fa-laptop-code" style="font-size: 2rem;"></i>
+                    </div>
+                    <div class="card-body pt-5">
                         <h5 class="card-title fw-bold">PT.ide Kreatif Sejahtera</h5>
                         <p class="">Front End Developer</p>
                         <p class="">2024 (Oktober - Present)</p>
@@ -154,7 +162,7 @@
      <div>
         <div>
             <div>
-                
+
             </div>
 
             <div>

@@ -1,4 +1,13 @@
+.nav-class {
+    transition: 0.5s ease;
+}
+
+.navbar-scrolled {
+    background-color: #7360DF;
+}
+
 .profile-header {
+    
     cursor: pointer;
     transform: scale(1);
     transition: 0.4s ease;
@@ -10,7 +19,7 @@
 }
 
 .button-header {
-    background-color: #4A628A;
+    background-color: #7360DF;
     color: white;
     transition: 0.4s ease;
     border: 5px solid white;
@@ -20,5 +29,5 @@
     color: black;
     background-color: white;
     transform: scale(1.07);
-    border: 5px solid #4A628A;
+    border: 5px solid #7360DF;
 }

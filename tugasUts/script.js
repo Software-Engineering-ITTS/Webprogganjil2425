@@ -1,3 +1,15 @@
+const navBar = document.querySelector('.nav-class')
+window.addEventListener('scroll', () => {
+    if( window.scrollY >= 50){
+        navBar.classList.add('navbar-scrolled')
+    } else {
+        navBar.classList.remove('navbar-scrolled')
+
+    }
+})
+
+
+
 const toastr = document.getElementById('toastr')
 document.getElementById('close').hidden=true
 document.getElementById('onShow').hidden=true
@@ -31,4 +43,15 @@ ButtonAbout.addEventListener('click', () => {
     console.log("halo")
     AboutSection.scrollIntoView({behavior:'smooth'})
 })
+
+
+const ButtonExp = document.querySelector('a[href="#Exp"]')
+const ExpSection = document.getElementById('Exp')
+
+ButtonExp.addEventListener('click', () => {
+    console.log("halo")
+    AboutSection.scrollIntoView({behavior:'smooth'})
+})
+
+
 
