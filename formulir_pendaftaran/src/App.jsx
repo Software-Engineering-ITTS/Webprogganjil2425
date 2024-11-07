@@ -19,49 +19,9 @@ function App() {
                         <input type="text" />
                     </div>
 
-                    <div className="d-flex gap-4">
-                        <p>Jenis Kelamin : </p>
-                        <div>
-                            <div className="form-check">
-                                <input className="form-check-input" type="radio" name="flexRadioDefault" id="radioAduh" />
-                                <label className="form-check-label"  htmlFor="radioAduh" >
-                                    Laki Laki
-                                </label>
-                            </div>
+                    
 
-                            <div className="form-check">
-                                <input className="form-check-input" name="flexRadioDefault" type="radio" />
-                                <label  className="form-check-label"  htmlFor="radioAduh">
-                                    Perempuan
-                                </label>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>Asal Sekolah : </p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>NIK : </p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>No.Kartu Keluarga/KK : </p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>Tanggal Lahir : </p>
-                        <input type="datetime-local" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>Tempat Lahir : </p>
-                        <input type="text" name="" id="" />
-                    </div>
+                    
 
                     <div className="d-flex gap-4">
                         <p>Agama & Kepercayaan : </p>
@@ -80,30 +40,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="d-flex gap-4">
-                        <p>Alamat Jalan : </p>
-                        <textarea ></textarea>
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>RT : </p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>RW : </p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>Nama Dusun :</p>
-                        <input type="text" />
-                    </div>
-
-                    <div className="d-flex gap-4">
-                        <p>Nama Kelurahan / Desa :</p>
-                        <input type="text" />
-                    </div>
+                  
 
                     <div className="d-flex gap-4">
                         <p>Tempat Tinggal : </p>
@@ -145,15 +82,7 @@ function App() {
                         </div>
                     </div>
 
-                    <div className="d-flex gap-4">
-                        <p>Kode Pos :</p>
-                        <input type="number" />
-                    </div>
-
-                    <div className="d-flex gap-3">
-                        <input className="bg-danger text-white border-0 submit-btn" type="submit" />
-                        <button className="bg-white border-0">Cancel</button>
-                    </div>
+                    
 
                 </div>
             </div>
