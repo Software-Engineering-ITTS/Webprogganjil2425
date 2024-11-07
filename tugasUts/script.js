@@ -51,6 +51,7 @@ const ExpSection = document.getElementById('Exp')
 ButtonExp.addEventListener('click', () => {
     console.log("test exp")
     ExpSection.scrollIntoView({behavior:'smooth'})
+
 })
 
 
@@ -58,10 +59,8 @@ const ButtonProjects = document.querySelector('a[href="#Projects"]')
 const ProjectsSection = document.getElementById('Projects')
 
 ButtonProjects.addEventListener('click', () => {
-    console.log("test exp")
     ProjectsSection.scrollIntoView({behavior:'smooth'})
-    
 })
 
-
+// onLoad Animtaion
 
