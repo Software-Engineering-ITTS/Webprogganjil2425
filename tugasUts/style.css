@@ -7,11 +7,20 @@
 }
 
 .profile-header {
-    
     cursor: pointer;
     transform: scale(1);
     transition: 0.4s ease;
 
+}
+
+.logo {
+    cursor: pointer;
+    color: white;
+    transition: 0.4s ease;
+}
+
+.logo:hover {
+    color: #7360DF;
 }
 
 .profile-header:hover {
