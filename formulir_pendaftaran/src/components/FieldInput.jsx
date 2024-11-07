@@ -12,6 +12,7 @@ const [FieldName, setFieldName] = useState(
     dusun:'', kelurahan:'', tempatTinggal:'', kodePos:''
   }
 )
+const [error, setError] = useState({})
 
 useEffect(() => {
   const check = document.querySelector('.test-checkbox')
@@ -27,7 +28,6 @@ const updateValue = (e) => {
   })
 }
 
-const [error, setError] = useState({})
 
 const handleChange = (e) => {
     const {name, value} = e.target
