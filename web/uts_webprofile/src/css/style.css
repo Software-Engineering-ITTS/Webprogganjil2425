@@ -3,9 +3,7 @@ body {
   color: white;
 }
 
-
 .container-nav {
-  /* background-color: brown; */
   display: flex;
   justify-content: space-between;
 }
@@ -13,34 +11,32 @@ body {
 .logo-luffy {
   width: 17%;
   padding: 9px;
-  /* background-color: aqua; */
   margin-left: 33px;
 }
 
 .nav-ul {
-  /* background-color: blue; */
   list-style-type: none;
 }
 
 .nav-li {
   display: inline;
   /* background-color: green; */
-  padding: 9px;
-  margin-right: 17px;
-}
-
-.container-nav-left {
-  /*  */
 }
 
 .nav-a {
   color: white;
   text-decoration: none;
   /* background-color: aqua; */
+  padding: 9px;
+  margin-right: 17px;
+}
+
+.container-nav-left a:hover {
+  background-color: grey;
+  border-radius: 3px;
 }
 
 .container-header {
-  /* background-color: aqua; */
   display: flex;
   justify-content: center;
 }
