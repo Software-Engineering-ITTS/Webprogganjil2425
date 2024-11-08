@@ -110,34 +110,12 @@
     animation: fadein 0.5s ease ;
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .fade-in-delay {
     animation: fadein 1s ease ;
 
 }
 
-@keyframes fadein {
-    from {
-        opacity: 0;
-        transform: translateY(50px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 .fade-in-delay-2 {
     animation: fadein 1.5s ease ;
@@ -145,4 +123,18 @@
 }
 
 
+@keyframes zoomin {
+    from{
+        opacity: 0;
+        transform: scale(0);
+    } 
 
+    to {
+        opacity: 1;
+        transform: scale(50px);
+    }
+}
+
+.zoom-in{
+    animation: zoomin 1.5s ease;
+}

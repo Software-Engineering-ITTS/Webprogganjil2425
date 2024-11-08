@@ -1,6 +1,9 @@
 import React, { useEffect } from 'react'
 import { useState } from 'react'
 import { CHECKBOXITEM, DROPDOWNITEM } from '../constant/itemConstants'
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min";
+
 
 
 
@@ -118,8 +121,13 @@ const onSubmit = (e) => {
 }
     
   return (
-    <div>
-        <form className="d-flex gap-5 flex-column" onSubmit={onSubmit}>
+    
+    <div className="form mt-5 bg-body-tertiary p-5">
+      <div className=" fw-bold">
+            <h1>Pendaftaran Siswa Baru SMK Aduhai</h1>
+        </div>
+
+        <form className="d-flex gap-5 flex-column mt-5" onSubmit={onSubmit}>
             <div className="d-flex gap-4 align-items-center ">
                 <p className="">Nama Lengkap :</p> 
                 <input type="text" name='name' id='name' onChange={handleChange}/>
@@ -153,7 +161,7 @@ const onSubmit = (e) => {
   
             <div className="d-flex gap-4">
                 <p>NIK : </p>
-                <input type="number" name='nik' onChange={handleChange}/>
+                <input type="number" name='nik' onKeyDown={false} onWheel={false} onChange={handleChange}/>
                 <span className='text-danger '>{error.nik}</span>
 
             </div>
