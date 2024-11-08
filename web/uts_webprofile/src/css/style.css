@@ -1,6 +1,7 @@
 body {
   background-color: black;
   color: white;
+  /* font-family: monospace; */
 }
 
 .container-nav {
@@ -131,6 +132,22 @@ body {
   margin-right: 199px;
   text-align: justify;
   padding: 17px;
+}
+
+/*  */
+
+.container-home-main {
+  /* background-color: blue; */
+  margin-left: 99px;
+  margin-right: 99px;
+  padding: 17px;
+}
+
+.header-expertise {
+  display: flex;
+  justify-content: center;
+  /* background-color: red; */
+  margin-top: 99px;
 }
 
 /*  */
