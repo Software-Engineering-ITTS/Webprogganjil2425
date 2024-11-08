@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" href="/PunyaKu\assets\logoku.png" />
     <title>Portofolio | Raihan Aryo Wicakosono</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
@@ -11,11 +12,15 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="style.css">
+
+    <style>
+      
+  </style>
 </head>
 <body id="body">
-    <header>
+   
      <!-- Navbar Start -->
-    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background-color: #000000">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top shadow-sm" style="background-color: #000000"  >
         <div class="container">
           <a class="navbar-brand" href="#">Welcome to My Portofolio</a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
@@ -30,6 +35,8 @@
                 <a class="nav-link" href="#about">About</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#skill">Skill</a>
+              <li class="nav-item">
                 <a class="nav-link" href="#project">Project</a>
               </li>
               <li class="nav-item">
@@ -43,99 +50,154 @@
      <!---- tokyo Start -->
      <section class="tokyo text-center position-relative">
         <img src="/PunyaKu\assets\logoku.png" alt="Profile Picture" class="rounded-circle" width="250" />
-      <h1 class="display-2" style="color: rgb(255, 145, 0);">Raihan Aryo Wicaksono</h1>
-      <p class="lead" style="color: azure;">Mahasiswa | Web Developer</p>
+      <h1 class="display-2" style="color: rgb(255, 255, 255) ; font-size:x-large 200%;">Raihan Aryo Wicaksono</h1>
+      <p class="lead" style="color: azure;">Mahasiswa Telkom University Surabaya</p>
       <a class="btn btn-dark btn-sm" href="https://github.com/RaihanAryoWicaksono" target="_blank" role="button">Follow My Github <i class="fab fa-github"></i></a>
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,160L0,224L36.9,224L36.9,192L73.8,192L73.8,256L110.8,256L110.8,64L147.7,64L147.7,160L184.6,160L184.6,32L221.5,32L221.5,96L258.5,96L258.5,256L295.4,256L295.4,96L332.3,96L332.3,256L369.2,256L369.2,256L406.2,256L406.2,192L443.1,192L443.1,256L480,256L480,64L516.9,64L516.9,192L553.8,192L553.8,96L590.8,96L590.8,64L627.7,64L627.7,128L664.6,128L664.6,96L701.5,96L701.5,160L738.5,160L738.5,192L775.4,192L775.4,32L812.3,32L812.3,96L849.2,96L849.2,160L886.2,160L886.2,192L923.1,192L923.1,32L960,32L960,160L996.9,160L996.9,320L1033.8,320L1033.8,256L1070.8,256L1070.8,256L1107.7,256L1107.7,96L1144.6,96L1144.6,128L1181.5,128L1181.5,128L1218.5,128L1218.5,32L1255.4,32L1255.4,224L1292.3,224L1292.3,160L1329.2,160L1329.2,96L1366.2,96L1366.2,96L1403.1,96L1403.1,256L1440,256L1440,320L1403.1,320L1403.1,320L1366.2,320L1366.2,320L1329.2,320L1329.2,320L1292.3,320L1292.3,320L1255.4,320L1255.4,320L1218.5,320L1218.5,320L1181.5,320L1181.5,320L1144.6,320L1144.6,320L1107.7,320L1107.7,320L1070.8,320L1070.8,320L1033.8,320L1033.8,320L996.9,320L996.9,320L960,320L960,320L923.1,320L923.1,320L886.2,320L886.2,320L849.2,320L849.2,320L812.3,320L812.3,320L775.4,320L775.4,320L738.5,320L738.5,320L701.5,320L701.5,320L664.6,320L664.6,320L627.7,320L627.7,320L590.8,320L590.8,320L553.8,320L553.8,320L516.9,320L516.9,320L480,320L480,320L443.1,320L443.1,320L406.2,320L406.2,320L369.2,320L369.2,320L332.3,320L332.3,320L295.4,320L295.4,320L258.5,320L258.5,320L221.5,320L221.5,320L184.6,320L184.6,320L147.7,320L147.7,320L110.8,320L110.8,320L73.8,320L73.8,320L36.9,320L36.9,320L0,320L0,320Z"></path></svg>
-     </section>
+    </section>
      <!--tokyo end-->
+
+
      <!--Abot start-->
-     <section id="about">
-        <div class="container">
-          <div class="row">
-            <div class="col text-center" style="color: rgb(255, 255, 255); ">
-              <h3>About</h3>
+     <section id="about" class="about">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title" style="color: azure;">
+            About Me
+          </h1>
+          <div class="about-me">
+            <div data-aos="zoom-out-right" data-aos-delay="300" class="profile">
+              <div class="image-box">
+                <img src="assets/profile.png" alt="profile" />
+              </div>
             </div>
-          </div>
-          <div class="row justify-content-center fs-5 text-align" id="about-text">
-            <div class="about-text1" style="border: #000000 solid 5px; ">
+
+            <div
+              data-aos="zoom-in-left"
+              data-aos-delay="300"
+              class="description"
+            >
+              <div class="name-role">
+                <h1>Raihan Aryo Wicaksono</h1>
+                <div class="role">
+                  <h2>Front-End Developer</h2>
+                </div>
+              </div>
               <p>
                 Hi Saya adalah seorang mahasiswa semester 3 di Universitas Telkom Surabaya dengan jurusan Rekayasa Perangkat Lunak, 
-                dan saya programmer amatir yang ingin menjelajahi dan ingin meningkatkan skill coding lewat berbagai macam pengalaman dan kesempatan.
-                
+                dan saya programmer amatir yang ingin menjelajahi dan ingin meningkatkan skill coding lewat berbagai macam pengalaman dan kesempatan. <br />
+                <br />
+               
               </p>
-            
-              <div class="about-text2" style="border: #000000 solid 3px; ">
-                <p>
-                    <p>Skill yang biasa saya gunakan adalah: java, c++, html, css, javascript, dan mysql.</p>
-                
-                    <div class="about-image" style="position: center;">
-                      <img src="/PunyaKu\assets\java.png" alt="html" style="width: 100px; height: 100px;">
-                      <img src="/PunyaKu\assets\c-.png" alt="html" style="width: 100px; height: 100px;">
-                      <img src="/PunyaKu\assets\html.png" alt="html" style="width: 100px; height: 100px;">
-                      <img src="/PunyaKu\assets\css-3.png" alt="html" style="width: 100px; height: 100px;">
-                      <img src="/PunyaKu\assets\js.png" alt="html" style="width: 100px; height: 100px;">
-                      <img src="/PunyaKu\assets\mysql.png" alt="html" style="width: 100px; height: 100px;">
-                      
-                      
-                    </div>
-                  </div>
-
-                  <p></p>
-
             </div>
-              
           </div>
         </div>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,64L0,96L36.9,96L36.9,128L73.8,128L73.8,192L110.8,192L110.8,256L147.7,256L147.7,64L184.6,64L184.6,320L221.5,320L221.5,288L258.5,288L258.5,288L295.4,288L295.4,256L332.3,256L332.3,160L369.2,160L369.2,256L406.2,256L406.2,32L443.1,32L443.1,96L480,96L480,192L516.9,192L516.9,128L553.8,128L553.8,224L590.8,224L590.8,288L627.7,288L627.7,224L664.6,224L664.6,192L701.5,192L701.5,224L738.5,224L738.5,160L775.4,160L775.4,192L812.3,192L812.3,256L849.2,256L849.2,32L886.2,32L886.2,224L923.1,224L923.1,288L960,288L960,96L996.9,96L996.9,224L1033.8,224L1033.8,128L1070.8,128L1070.8,96L1107.7,96L1107.7,160L1144.6,160L1144.6,192L1181.5,192L1181.5,224L1218.5,224L1218.5,192L1255.4,192L1255.4,64L1292.3,64L1292.3,192L1329.2,192L1329.2,160L1366.2,160L1366.2,288L1403.1,288L1403.1,256L1440,256L1440,320L1403.1,320L1403.1,320L1366.2,320L1366.2,320L1329.2,320L1329.2,320L1292.3,320L1292.3,320L1255.4,320L1255.4,320L1218.5,320L1218.5,320L1181.5,320L1181.5,320L1144.6,320L1144.6,320L1107.7,320L1107.7,320L1070.8,320L1070.8,320L1033.8,320L1033.8,320L996.9,320L996.9,320L960,320L960,320L923.1,320L923.1,320L886.2,320L886.2,320L849.2,320L849.2,320L812.3,320L812.3,320L775.4,320L775.4,320L738.5,320L738.5,320L701.5,320L701.5,320L664.6,320L664.6,320L627.7,320L627.7,320L590.8,320L590.8,320L553.8,320L553.8,320L516.9,320L516.9,320L480,320L480,320L443.1,320L443.1,320L406.2,320L406.2,320L369.2,320L369.2,320L332.3,320L332.3,320L295.4,320L295.4,320L258.5,320L258.5,320L221.5,320L221.5,320L184.6,320L184.6,320L147.7,320L147.7,320L110.8,320L110.8,320L73.8,320L73.8,320L36.9,320L36.9,320L0,320L0,320Z"></path></svg>
+      </div>
+    </section>
 
 
      <!--Abot end-->
+
+     <!-- skill start -->
+     <section id="skill" class="skill">
+      <div class="container">
+        <div class="content">
+          <h1 data-aos="zoom-in-down" data-aos-delay="300" class="title" style="color: azure;">
+            Skill
+          </h1>
+
+          <div class="skills" data-aos-delay="500">
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\html.png" alt="html" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\css-3.png" alt="css" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\js.png" alt="javascript" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\typescript.png" alt="typescript" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\react.png" alt="react" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\mysql.png" alt="mysql" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\bootstrap.png" alt="bootstrap" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\wind.png" alt="tailwind" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\blender.png" alt="blender" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\adobe.png" alt="Adobe" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\figma.png" alt="figma" />
+            </div>
+            <div data-aos="zoom-in-down" class="skill-box">
+              <img src="/PunyaKu\assets\github.png" alt="github" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+      <!-- skill end -->
 
      <!-- project start -->
      <section id="project">
       <div class="container">
         <div class="row">
-          <div class="col text-center">
-            <h3>Project</h3>
+          <div>
+            <h3 data-aos="zoom-in-down" data-aos-delay="300" class="project-title" style="color: azure;">
+              New Project</h3>
           </div>
         </div>
         <div class="row">
           <div class="col-xl-4 mb-3">
             <div class="card">
-              <img src="kalkulator.png" class="card-img-top" alt="Project Image" />
+              <img src="/PunyaKu\assets\kalkulator.png" class="card-img-top" alt="Project Image" />
               <div class="card-body text-center">
-                <h5 class="card-title">Kalkulator</h5>
-                <p class="card-text">Kalkulator ini adalah tugas dari matkul perancangan dan pemograman web, referensi pengerjaannya berasal dari youtube</p>
+                <h5 class="card-title">.Kalkulator.</h5>
+                <p class="card-text" style="font-family: 'Courier New', Courier, monospace;"">Kalkulator ini adalah tugas dari matkul perancangan dan pemograman web, referensi pengerjaannya berasal dari youtube.</p>
                 <a href="https://github.com/RaihanAryoWicaksono/Kalkulator" class="btn btn-dark">View More</a>
               </div>
             </div>
           </div>
           <div class="col-xl-4 mb-3">
             <div class="card">
-              <img src="" class="card-img-top" alt="Project Image" />
+              <img src="/PunyaKu\assets\sistem pembayaran.png" class="card-img-top" alt="Project Image" />
               <div class="card-body text-center">
-                <h5 class="card-title">laba</h5>
-                <p class="card-text">.</p>
-                <a href="" class="btn btn-dark">View More</a>
+                <h5 class="card-title" >.Sistem Pembayaran Tagihan.</h5>
+                <p class="card-text" style="font-family: 'Courier New', Courier, monospace;">Sistem ini bertujuan untuk mencatat dan memproses pembayaran tagihan pelanggan.</p>
+                   </p>
+                <a href="https://github.com/RaihanAryoWicaksono/Sistem-pembayaran-pelanggan" class="btn btn-dark">View More</a>
               </div>
             </div>
           </div>
           <div class="col-xl-4">
             <div class="card">
-              <img src="" class="card-img-top" alt="Project Image" />
+              <img src="/PunyaKu\assets\idstb.png" class="card-img-top" alt="Project Image" />
               <div class="card-body text-center">
-                <h5 class="card-title"></h5>
-                <p class="card-text"></p>
+                <h5 class="card-title">.Website Idstb.</h5>
+                <p class="card-text" style="font-family: 'Courier New', Courier, monospace;">Ini adalah tugas membuat website idstb menggunakan bootstrap</p>
                 <a href="" class="btn btn-dark">View More</a>
               </div>
             </div>
           </div>
         </div>
+        
       </div>
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#f3f4f5" fill-opacity="1" d="M0,64L0,128L36.9,128L36.9,32L73.8,32L73.8,96L110.8,96L110.8,128L147.7,128L147.7,160L184.6,160L184.6,128L221.5,128L221.5,160L258.5,160L258.5,64L295.4,64L295.4,64L332.3,64L332.3,256L369.2,256L369.2,224L406.2,224L406.2,256L443.1,256L443.1,96L480,96L480,96L516.9,96L516.9,32L553.8,32L553.8,160L590.8,160L590.8,64L627.7,64L627.7,128L664.6,128L664.6,128L701.5,128L701.5,320L738.5,320L738.5,160L775.4,160L775.4,96L812.3,96L812.3,128L849.2,128L849.2,256L886.2,256L886.2,192L923.1,192L923.1,64L960,64L960,0L996.9,0L996.9,160L1033.8,160L1033.8,64L1070.8,64L1070.8,128L1107.7,128L1107.7,256L1144.6,256L1144.6,192L1181.5,192L1181.5,288L1218.5,288L1218.5,192L1255.4,192L1255.4,64L1292.3,64L1292.3,160L1329.2,160L1329.2,192L1366.2,192L1366.2,64L1403.1,64L1403.1,224L1440,224L1440,320L1403.1,320L1403.1,320L1366.2,320L1366.2,320L1329.2,320L1329.2,320L1292.3,320L1292.3,320L1255.4,320L1255.4,320L1218.5,320L1218.5,320L1181.5,320L1181.5,320L1144.6,320L1144.6,320L1107.7,320L1107.7,320L1070.8,320L1070.8,320L1033.8,320L1033.8,320L996.9,320L996.9,320L960,320L960,320L923.1,320L923.1,320L886.2,320L886.2,320L849.2,320L849.2,320L812.3,320L812.3,320L775.4,320L775.4,320L738.5,320L738.5,320L701.5,320L701.5,320L664.6,320L664.6,320L627.7,320L627.7,320L590.8,320L590.8,320L553.8,320L553.8,320L516.9,320L516.9,320L480,320L480,320L443.1,320L443.1,320L406.2,320L406.2,320L369.2,320L369.2,320L332.3,320L332.3,320L295.4,320L295.4,320L258.5,320L258.5,320L221.5,320L221.5,320L184.6,320L184.6,320L147.7,320L147.7,320L110.8,320L110.8,320L73.8,320L73.8,320L36.9,320L36.9,320L0,320L0,320Z"></path></svg>
-      <!-- project end -->
 
+      <!-- project end -->
+      <!-- contact start -->
+       
+       <!-- contact end -->
 
 
 
@@ -155,5 +217,6 @@
     integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
     crossorigin="anonymous"
   ></script>
+  <script src="script.js"></script>
 </body>
 </html>
