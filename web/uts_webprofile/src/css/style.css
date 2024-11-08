@@ -150,6 +150,24 @@ body {
   margin-top: 99px;
 }
 
+.content-expertise {
+  display: flex;
+  justify-content: center;
+}
+
+.content-expertise-ul {
+  list-style-type: none;
+  display: flex;
+}
+
+.content-expertise-li {
+  background-color: blue;
+  margin-right: 17px;
+  padding: 17px;
+}
+
+
+
 /*  */
 
 .container-footer {
