@@ -61,9 +61,7 @@ body {
 }
 
 /*  */
-.container-blog-main {
-  /*  */
-}
+
 
 .container-each-blog {
   background-color: rgb(33, 33, 33);
@@ -122,6 +120,17 @@ body {
   background-color: grey;
   border-radius: 9px;
   font-size: large;
+}
+
+/*  */
+.container-each-project {
+  background-color: rgb(33, 33, 33);
+  border-radius: 9px;
+  margin-top: 33px;
+  margin-left: 199px;
+  margin-right: 199px;
+  text-align: justify;
+  padding: 17px;
 }
 
 /*  */
