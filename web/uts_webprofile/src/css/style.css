@@ -32,11 +32,29 @@ body {
 }
 
 .container-nav-left a:hover {
-  background-color: grey;
+  background-color: rgb(33, 33, 33);
   border-radius: 3px;
 }
 
 .container-header {
   display: flex;
   justify-content: center;
+}
+
+.aboutme-container-main {
+  /* background-color: blue; */
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-image {
+  /* background-color: aqua; */
+  margin-left: 99px;
+}
+
+.container-description {
+  /* background-color: aquamarine; */
+  margin-left: 33px;
+  margin-right: 99px;
+  padding: 17px;
 }
