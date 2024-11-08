@@ -1,3 +1,9 @@
+body {
+  background-color: black;
+  color: white;
+}
+
+
 .container-nav {
   /* background-color: brown; */
   display: flex;
@@ -28,7 +34,7 @@
 }
 
 .nav-a {
-  color: black;
+  color: white;
   text-decoration: none;
   /* background-color: aqua; */
 }
