@@ -4,52 +4,78 @@ import viteLogo from '/vite.svg'
 // import './App.css'
 
 function App() {
-  const [form, setForm] = useState({username: "", password: ""});
-  const [errors, setError] = useState({});
-
-  const handleChange = (e) => {
-    const {name, value} = e.target
-    setForm({...form, [name]: value});
-  }
-
-
-  const OnSubmit = (e) =>{
-    e.preventDefault();
-    const errors = validateForm(form);
-    console.log(errors);
-    // console.log(form);
-  }
-
-  const validateForm = (form) => {
-    const errors = {};
-    if(!form.username.trim()) {
-      errors.username = "Username is required";
-    }
-    if (!form.password) {
-      errors.password = "Password is required";
-    }else if (form.password.length < 8) {
-      errors.password = "Password must be at least 8 characters";
-    }
-    return errors;
-  }
 
   return (
    <>
-  <form onSubmit={OnSubmit}>
-    <div style={{display:"flex", flexDirection: "column",width: "400px"}}>
-      <div style={{display: 'flex', flexDirection: "column"}}>
-        <label htmlFor="">username</label>
-        <input type="text" name='username' id='username' onChange={handleChange} />
-        <span>error</span>
+  <div className="container">
+      <div className="py-5 text-center">
+        <h1>Sistem Keanggotaan</h1>
       </div>
-      <div style={{display: 'flex', flexDirection: 'column'}}>
-        <label htmlFor="">password</label>
-        <input type="text" name='password' id='password' onChange={handleChange} />
-        <span>error</span>
+
+      {/* <!-- avatar --> */}
+      <div className="container-fluid row">
+        <div className="col d-flex justify-content-center align-items-center">
+          <img
+            style="width: 100%; max-width: 450px"
+            src="https://www.w3schools.com/howto/img_avatar.png"
+            className="img-thumbnail rounded-circle"
+            alt=""
+          />
+        </div>
+        {/* <!-- avatar --> */}
+
+        <div className="col py-4">
+          <form action="">
+            <div className="mb-3">
+              <label>Nama : </label>
+              <input type="text" />
+            </div>
+
+            <div className="mb-3">
+              <label>Tanggal Lahir :</label>
+              <input type="date" />
+            </div>
+
+            <div className="mb-3">
+              <label>Gender : </label> <br />
+              <input type="radio" name="gender" value="Laki-Laki" />
+              <label>Laki - Laki</label> <br />
+              <input type="radio" name="gender" value="perempuan" />
+              <label>Perempuan</label>
+            </div>
+
+            <div className="mb-3">
+              <p>Alamat :</p>
+              <div>
+                <select>
+                    <option value="">Provinsi</option>
+                  </select>
+                  <select>
+                    <option value="">Kabupaten</option>
+                  </select>
+                  <select>
+                    <option value="">Kecamatan</option>
+                  </select>
+                  <select>
+                    <option value="">Kelurahan</option>
+                  </select>
+              </div>
+            </div>
+
+            <div className="mb-3">
+              <p>Catatan</p>
+              <textarea></textarea>
+            </div>
+
+            <div className="mb-3">
+              <label>Sudah membayar iuran :</label>
+              <input type="checkbox" />
+            </div>
+          </form>
+          <input type="submit" />
+        </div>
       </div>
-      <button type='submit' style={{marginTop: "16px"}}>Login</button>
     </div>
-    </form>
    </>
   )
 }
