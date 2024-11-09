@@ -164,6 +164,17 @@ body {
   /* padding: 17px; */
 }
 
+.content-interest {
+  display: flex;
+  justify-content: center;
+  /* background-color: blue; */
+}
+
+.content-interest-ul {
+  list-style-type: none;
+  display: flex;
+}
+
 
 
 /*  */
