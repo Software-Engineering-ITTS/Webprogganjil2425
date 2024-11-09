@@ -5,12 +5,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact</title>
   <link rel="stylesheet" href="/web/uts_webprofile/src/css/style.css">
+  <!-- Link to external JavaScript file -->
+  <script src="/web/uts_webprofile/src/js/contact.js" defer></script>
 </head>
 <body>
   <nav>
     <div class="container-nav">
       <div class="container-nav-right">
-        <img src="/web/uts_webprofile/assets/images/luffylogo.png" alt="" class="logo-luffy">
+        <img src="/web/uts_webprofile/assets/images/luffylogo.png" alt="Logo" class="logo-luffy">
       </div>
       <div class="container-nav-left">
         <ul class="nav-ul">
@@ -23,27 +25,36 @@
       </div>
     </div>
   </nav>
+
   <header>
     <div class="container-header">
       <h1>Contact</h1>
     </div>
   </header>
+
   <main>
     <div class="container-contact-main">
-      <h3>Send me an Email &#128640</h3>
-      <form action="" class="contact-form">
+      <h3>Send me an Email &#128640;</h3>
+      
+      <form id="contactForm" action="YOUR_FORM_HANDLER_URL" method="POST" class="contact-form">
         <label for="name" class="contact-label">Name</label>
-        <input type="text" name="name" id="name" class="label-input">
+        <input type="text" name="name" id="name" class="label-input" required>
+        
         <label for="email" class="contact-label">Email</label>
-        <input type="email" name="email" id="email" class="label-input">
+        <input type="email" name="email" id="email" class="label-input" required>
+        
         <label for="textarea" class="contact-label">Message</label>
-        <textarea name="textarea" id="textarea" placeholder="drop your message here" class="label-textarea"></textarea>
+        <textarea name="message" id="textarea" placeholder="Drop your message here" class="label-textarea" required></textarea>
+        
+        <div class="container-submit-button">
+          <button type="submit" class="contact-button-submit">Submit</button>
+        </div>
       </form>
-      <div class="container-submit-button">
-        <button type="button" class="contact-button-submit">Submit</button>
-      </div>
+      <p id="responseMessage" style="display:none; color: green;">Thank you for your message!</p>
+      <p id="errorMessage" style="display:none; color: red;">Oops! There was an issue with your submission.</p>
     </div>
   </main>
+
   <footer>
     <div class="container-footer">
       <p><strong>©iamjustzero</strong></p>
