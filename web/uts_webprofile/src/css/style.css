@@ -144,8 +144,7 @@ body {
 }
 
 .header-expertise {
-  display: flex;
-  justify-content: center;
+  text-align: center;
   /* background-color: red; */
   margin-top: 99px;
 }
@@ -161,9 +160,8 @@ body {
 }
 
 .content-expertise-li {
-  background-color: blue;
-  margin-right: 17px;
-  padding: 17px;
+  /* background-color: blue; */
+  /* padding: 17px; */
 }
 
 
