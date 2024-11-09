@@ -1,7 +1,10 @@
 // import { useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
+import 'bootstrap/dist/css/bootstrap.min.css'; 
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+// import './App.css'
 
 function App() {
   // const [count, setCount] = useState(0)
@@ -9,13 +12,13 @@ function App() {
   return (
     <>
       <div className="container-fluid p-5">
-        <h1>lForm Inventaris Barang PT ABC</h1>
-        <htmlForm action="">
-          <div className="htmlForm-group my-4 px-5">
-            <label htmlFor="txtKodeBarang">Kode Barang</label>
-            <input type="text" id="txtKodeBarang" className="htmlForm-control" name="kodeBarang"
+        <h1>Form Inventaris Barang PT ABC</h1>
+        <Form action="">
+          <Form.Group className="htmlForm-group my-4 px-5">
+            <Form.Label htmlFor="txtKodeBarang">Kode Barang</Form.Label>
+            <Form.Control type="text" id="txtKodeBarang" className="htmlForm-control" name="kodeBarang"
               placeholder="masukkan kode barang" />
-          </div>
+          </Form.Group>
 
           <div className="htmlForm-group my-4 px-5">
             <label htmlFor="txtNamaBarang">Nama Barang</label>
@@ -97,7 +100,7 @@ function App() {
           </div>
 
 
-        </htmlForm>
+        </Form>
       </div>
     </>
   )
