@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ZIA'S Portfolio</title>
+    <link rel="icon" type="image/x-icon" href="Assets/me1.jpeg" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+    <script
+      src="https://kit.fontawesome.com/6ab6405bc9.js"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      body {
+        font-family: sans-serif;
+        overflow-x: hidden;
+      }
+      section {
+        margin-top: 12rem;
+      }
+      img {
+        max-width: 100%;
+      }
+      a {
+        text-decoration: none;
+      }
+      h1 {
+        font-size: 4rem;
+        font-weight: 600;
+      }
+      .main-header .navbar {
+        padding: 15px 0;
+      }
+      .main-header .navbar-nav > li {
+        padding: 0 10px;
+      }
+      .main-header .navbar-nav > li > .nav-link {
+        padding: 0 5px;
+        line-height: 35px;
+        font-weight: 600;
+        font-size: 14px;
+        color: #b686ff;
+        letter-spacing: 3px;
+        position: relative;
+      }
+      .main-header .navbar-nav > li > .nav-link:after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: auto;
+        width: 0;
+        height: 2px;
+        background: linear-gradient(90deg, #b686ff, #ff90da);
+        transition: ease 0.5s;
+      }
+      .main-header .navbar-nav > li > .nav-link:hover {
+        background: linear-gradient(90deg, #b686ff, #ff90da);
+        color: transparent;
+        background-clip: text;
+      }
+      .main-header .navbar-nav > li > .nav-link:hover:after {
+        left: 0;
+        right: auto;
+        width: 100%;
+      }
+      @media (max-width: 800px) {
+        .main-header .navbar-collapse {
+          border-bottom: 1px solid black;
+          border-top: 1px solid black;
+          position: absolute;
+          top: 100%;
+          left: 0;
+          right: 0;
+          background: linear-gradient(90deg, #b686ff, #ff90da);
+          color: transparent;
+          background-clip: text;
+        }
+        .main-header .navbar-nav > li {
+          border-top: 0.1px solid grey;
+          background-color: white;
+        }
+        .main-header .navbar-nav > li > .nav-link {
+          line-height: 60px;
+        }
+        .main-header .navbar-nav > li > .nav-link:after {
+          display: none;
+        }
+      }
+      #title {
+        margin-bottom: 4rem;
+      }
+      .btn {
+        color: #ff90da;
+        text-decoration: none;
+        border: 1px solid #b686ff;
+        border-radius: 30px;
+        padding: 8px 30px;
+        box-shadow: 0px 2px 5px #ff90da;
+      }
+      .btn:hover {
+        color: white;
+        text-decoration: none;
+        background-image: linear-gradient(45deg, #b686ff, #ff90da);
+      }
+      .myname {
+        background-image: linear-gradient(45deg, #b686ff, #ff90da);
+        color: transparent;
+        background-clip: text;
+      }
+      #card-container {
+        max-width: 500px;
+      }
+      #card {
+        border: 1px solid black;
+        border-radius: 3rem;
+        padding: 2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: baseline;
+        justify-content: left;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+      #card:hover {
+        transform: scale(1.01);
+        background-color: black;
+        color: white;
+      }
+      #card i {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+      #card span {
+        font-size: 1.5rem;
+        font-weight: 500;
+        background: linear-gradient(90deg, #b686ff, #ff90da);
+        color: transparent;
+        background-clip: text;
+      }
+      .timeline {
+        position: relative;
+        max-width: 1200px;
+        margin: 100px auto;
+      }
+      .timeline:after {
+        content: "";
+        position: absolute;
+        width: 2px;
+        height: 100%;
+        background: black;
+        top: 0;
+        left: 50%;
+      }
+      #edu-right {
+        background: black;
+        border: none;
+        border-radius: 0px 20px 20px 0px;
+        position: relative;
+        left: 50%;
+      }
+      #edu-left {
+        background: black;
+        border: none;
+        border-radius: 20px 0px 0px 20px;
+        position: relative;
+        left: 50%;
+        transform: translateX(-100%);
+      }
+      .box {
+        padding: 20px 50px;
+        position: relative;
+        width: 50%;
+      }
+      .text-box {
+        padding: 20px 30px;
+        background: white;
+        position: relative;
+        border: 1px solid black;
+        border-radius: 30px;
+        font-size: 15px;
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+      }
+      .text-box:hover {
+        transform: scale(1.03);
+        background: black;
+        color: white;
+      }
+      .left-box {
+        left: 0;
+      }
+      .right-box {
+        left: 50%;
+      }
+      .card-img-top {
+        border-radius: 25px;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+      }
+      .input {
+        width: 100%;
+        line-height: 1cm;
+        min-height: 1.4cm;
+        padding: 5px 20px;
+        margin-bottom: 20px;
+        border: 1px solid #b686ff;
+        border-radius: 30px;
+        transition: transform 0.2s ease-in-out;
+      }
+      .input:hover {
+        transform: scale(1.02);
+      }
+      #brand {
+        text-decoration: none;
+        color: black;
+      }
+      #brand:hover {
+        transform: scale(1.1);
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header class="main-header justify-content-center align-items-center">
+      <!-- NAVBAR -->
+      <nav
+        class="navbar header-nav navbar-expand-lg fixed-top px-4"
+        style="background-color: white"
+      >
+        <div class="container">
+          <a class="navbar-brand" href="#"
+            ><h4 class="myname"><b>ZIA</b></h4></a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNav"
+            aria-controls="navbarNav"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse text-center" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">HOME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#aboutme">ABOUT ME</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#experience">EXPERIENCE</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="#projects">PROJECTS</a>
+              </li>
+            </ul>
+          </div>
+          <div class="ms-auto d-none d-lg-block">
+            <a href="#reach" class="btn">Reach Me</a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <!-- MAIN -->
+    <main>
+      <!-- INTRODUCTION -->
+      <section id="top">
+        <div
+          class="justify-content-center align-items-center"
+          style="margin-top: 18rem; margin-bottom: 18rem"
+        >
+          <div
+            class="d-flex flex-column justify-content-center align-items-center text-center gap-3"
+          >
+            <div>
+              <h3 style="font-size: 1.5rem; font-weight: 500">Hi, I'm</h3>
+              <h1>ZIA 🎀</h1>
+              <span
+                id="role"
+                style="
+                  background-image: linear-gradient(45deg, #b686ff, #ff90da);
+                  color: transparent;
+                  background-clip: text;
+                  font-size: 30px;
+                "
+                >Software Engineering Enthusiast</span
+              >
+            </div>
+            <div class="d-flex gap-3">
+              <a
+                href="https://drive.google.com/file/d/1HaVsUrMoVSwn1idUZvw-FYgAi5Bv3Ejy/view?usp=sharing"
+                class="btn"
+                target="_blank"
+                >Professional CV</a
+              >
+              <a
+                href="https://www.canva.com/design/DAGS4aU4kN4/L6CD5moVNN-jai9v_1yaIw/edit?utm_content=DAGS4aU4kN4&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton"
+                class="btn"
+                target="_blank"
+                >Design Portfolio</a
+              >
+            </div>
+            <div class="d-flex gap-3" style="font-size: 30px">
+              <a href="https://github.com/nafi-36" id="brand" target="_blank"
+                ><i class="fa-brands fa-github"></i
+              ></a>
+              <a href="https://www.linkedin.com/in/sitinafiatulfauziah/" id="brand" target="_blank"
+                ><i class="fa-brands fa-linkedin"></i
+              ></a>
+              <a href="https://www.instagram.com/zhyhya/" id="brand" target="_blank"
+                ><i class="fa-brands fa-instagram"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ABOUT ME & EDUCATION -->
+      <section id="aboutme">
+        <h1 class="text-center" id="title">ABOUT ME</h1>
+        <div class="row d-flex">
+          <div
+            class="col-md-6 col-12 d-flex justify-content-center align-items-center"
+          >
+            <img
+              id="img"
+              src="Assets/me1.jpeg"
+              class="img-fluid"
+              alt=""
+              style="
+                width: 30vw;
+                height: 30vw;
+                border-radius: 500%;
+                object-fit: cover;
+              "
+            />
+          </div>
+          <div
+            class="col-md-5 col-12 d-flex justify-content-center align-items-center text-center text-md-start py-5 px-5"
+          >
+            <p style="font-weight: 300">
+              <span
+                style="
+                  background-image: linear-gradient(45deg, #b686ff, #ff90da);
+                  color: transparent;
+                  background-clip: text;
+                  font-size: 30px;
+                  font-weight: 600;
+                "
+                >I'm Siti Nafiatul Fauziah</span
+              ><br /><br />
+              I'm currently studying Software Engineering at Telkom University
+              Surabaya. I have a strong interest in how technology is developing
+              and how it may improve people's lives and entire industries. I'm
+              passionate about software engineering and learn about the
+              complexities of software development, problem-solving, and coming
+              up with new ideas. I'm eager to apply my knowledge to real-world
+              challenges and contribute to the growth of the tech industry. I'm
+              open to networking opportunities, teamwork, and experiences that
+              will deepen my knowledge of software engineering. Let's explore
+              the amazing world of technology!
+            </p>
+          </div>
+        </div>
+        <div class="timeline">
+          <!-- <h2 id="edu" class="text-center">EDUCATION</h2> -->
+          <!-- box 1 -->
+          <button id="edu-right" class="btn"><b>Sep 2023 – Present</b></button>
+          <div class="box right-box mt-4">
+            <div class="text-box">
+              <h5 style="font-weight: 800">Telkom University Surabaya</h5>
+              <small>Software Engineering ──★ ˙🧷 ̟ !!</small>
+              <p>
+                Focusing on studying software development methods, including
+                creation, maintenance, software development organization
+                management, and quality management.
+              </p>
+            </div>
+          </div>
+          <!-- box 2 -->
+          <button id="edu-left" class="btn"><b>Jun 2020 – Jun 2023</b></button>
+          <div class="box left-box mt-4">
+            <div class="text-box">
+              <h5 style="font-weight: 800">
+                Telkom Vocational High School Malang
+              </h5>
+              <small>Software Engineering ──★ ˙🧷 ̟ !!</small>
+              <p>
+                Focused on full-stack web development, specializing in Node.js
+                and React.js, covering both front-end and back-end aspects to
+                build dynamic and efficient web applications.
+              </p>
+            </div>
+          </div>
+          <!-- box 3 -->
+          <button id="edu-right" class="btn"><b>Dec 2022</b></button>
+          <div class="box right-box mt-4">
+            <div class="text-box">
+              <h5 style="font-weight: 800">Telkom DigiUp Bootcamp</h5>
+              <small>Junior Graphic Design ──★ ˙🧷 ̟ !!</small>
+              <p>
+                Learned basic design principles and managed to complete daily
+                projects by creating posters using Adobe Photosho.
+              </p>
+            </div>
+          </div>
+          <!-- box 4 -->
+          <button id="edu-left" class="btn"><b>Sep – Nov 2022</b></button>
+          <div class="box left-box mt-4">
+            <div class="text-box">
+              <h5 style="font-weight: 800">Dicoding Bootcamp</h5>
+              <small>JavaScript Fundamentals ──★ ˙🧷 ̟ !!</small>
+              <p>
+                Learned basic JavaScript programming, data structure, function,
+                oop, functional programming, module, error handling,
+                concurrency, npm, and JavaScript testing.
+              </p>
+            </div>
+          </div>
+          <!-- box 5 -->
+          <button id="edu-right" class="btn"><b>Sep 2022</b></button>
+          <div class="box right-box mt-4">
+            <div class="text-box">
+              <h5 style="font-weight: 800">Harisenin Bootcamp</h5>
+              <small>Digital Marketing ──★ ˙🧷 ̟ !!</small>
+              <p>
+                Learned basic digital marketing and managed to complete the
+                final project by making a landing page using WordPress.
+              </p>
+            </div>
+          </div>
+          <button id="edu-left" class="btn"><b>🎀</b></button>
+        </div>
+      </section>
+
+      <!-- EXPERIENCE -->
+      <section id="experience" class="experience">
+        <h1 class="text-center" id="title">EXPERIENCE</h1>
+        <div class="container">
+          <div class="row justify-content-center g-4">
+            <!-- first card -->
+            <div id="card-container" class="col-lg-5 col-md-12">
+              <div id="card" class="p-5 h-100">
+                <i class="fa-solid fa-file-code"></i>
+                <span>Mobile App Development</span>
+                <h3>
+                  3 Month <span style="font-size: 15px">at Ezy Industries</span>
+                </h3>
+                <p>
+                  As the leader, I was responsible for guiding and managing
+                  projects, and developed a mobile application using Flutter and
+                  Firebase.
+                </p>
+              </div>
+            </div>
+            <!-- second card -->
+            <div id="card-container" class="col-lg-5 col-md-12">
+              <div id="card" class="p-5 h-100">
+                <i class="fa-solid fa-calendar-days fa-3x mb-3"></i>
+                <span>Event Organizer</span>
+                <h3>
+                  3 Month <span style="font-size: 15px">at Ezy Industries</span>
+                </h3>
+                <p>
+                  Together with the team managed to organize several online and
+                  offline events which had an impact on increasing the Utter
+                  Academy community.
+                </p>
+              </div>
+            </div>
+            <!-- third card -->
+            <div id="card-container" class="col-lg-5 col-md-12">
+              <div id="card" class="p-5 h-100">
+                <i class="fa-solid fa-pen-nib fa-3x mb-3"></i>
+                <span>Graphic Design</span>
+                <h3>
+                  10 Month
+                  <span style="font-size: 15px"
+                    >at Telkom University Surabaya</span
+                  >
+                </h3>
+                <p>
+                  As a graphic designer, I created content and designs for
+                  Instagram feeds and stories, ensuring visually appealing and
+                  engaging social media presence.
+                </p>
+              </div>
+            </div>
+            <!-- fourth card -->
+            <div id="card-container" class="col-lg-5 col-md-12">
+              <div id="card" class="p-5 h-100">
+                <i class="fa-solid fa-headset fa-3x mb-3"></i>
+                <span>Live Streaming & Operator</span>
+                <h3>
+                  5 Month
+                  <span style="font-size: 15px"
+                    >at Telkom University Surabaya</span
+                  >
+                </h3>
+                <p>
+                  I supported multiple campus events, handling technical
+                  operations to ensure smooth and successful execution.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- PROJECTS -->
+      <section id="projects">
+        <h1 class="text-center" id="title">PROJECTS</h1>
+        <div class="container">
+          <!-- project 1 -->
+          <div
+            class="row d-flex justify-content-center align-items-center px-5 g-4"
+          >
+            <div
+              class="col-12 col-md-6 col-lg-4 justify-content-center align-items-center"
+            >
+              <div class="card text-center h-100" id="card">
+                <img
+                  src="Assets/laundry_pj.png"
+                  class="card-img-top"
+                  alt="project1"
+                />
+                <div class="card-body">
+                  <h4 class="card-title mt-2"><b>Laundry App Project</b></h4>
+                  <p class="card-text mt-3">
+                    Built a mobile laundry application using Flutter and
+                    Firebase, enhancing skills in cross-platform development and
+                    backend integration.
+                  </p>
+                  <a href="https://github.com/nafi-36/Laundry-Flutter" class="btn" target="_blank">Github Repo</a>
+                </div>
+              </div>
+            </div>
+            <!-- project 2 -->
+            <div
+              class="col-12 col-md-6 col-lg-4 justify-content-center align-items-center"
+            >
+              <div class="card text-center h-100" id="card">
+                <img
+                  src="Assets/css_pj.png"
+                  class="card-img-top"
+                  alt="project2"
+                />
+                <div class="card-body">
+                  <h4 class="card-title mt-2"><b>Brand Interface Design</b></h4>
+                  <p class="card-text mt-3">
+                    Created a brand's (Baskin Robbins) web interface using only
+                    HTML and CSS, attention to visual appeal and design quality.
+                  </p>
+                  <a href="https://github.com/Software-Engineering-ITTS/Webprogganjil2425/tree/1201230017_Zia/week%203" class="btn" target="_blank">Github Repo</a>
+                </div>
+              </div>
+            </div>
+            <!-- project 3 -->
+            <div
+              class="col-12 col-md-6 col-lg-4 justify-content-center align-items-center"
+            >
+              <div class="card text-center h-100" id="card">
+                <img
+                  src="Assets/idstb_pj.png"
+                  class="card-img-top"
+                  alt="project3"
+                />
+                <div class="card-body">
+                  <h4 class="card-title mt-2"><b>IDSTB-inspired Website</b></h4>
+                  <p class="card-text mt-3">
+                    Developed a website similar to IDSTB using HTML, CSS, and
+                    Bootstrap, prioritizing layout accuracy and responsiveness.
+                  </p>
+                  <a href="https://github.com/Software-Engineering-ITTS/Webprogganjil2425/tree/1201230017_Zia/week%206/IDSTB" class="btn" target="_blank">Github Repo</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- REACH -->
+      <section
+        id="reach"
+        class="d-flex flex-column align-items-center justify-content-center"
+      >
+        <h1 class="text-center" id="title">REACH ME</h1>
+        <div class="row justify-content-center w-100">
+          <div class="col-6">
+            <input class="input" id="name" type="text" placeholder="Name" />
+            <input class="input" id="email" type="email" placeholder="Email" />
+            <input
+              class="input"
+              id="subject"
+              type="text"
+              placeholder="Subject"
+            />
+            <textarea
+              class="input"
+              id="message"
+              placeholder="Your Message"
+            ></textarea>
+            <div class="text-center">
+              <button id="send" class="btn" onclick="validate()">
+                Send Message
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer
+      class="container-fluid d-flex justify-content-center align-items-center mt-5"
+      style="height: 50px; background-color: black"
+    >
+      <p style="color: white; font-weight: 200; font-size: 15px; margin: 0">
+        © 2024 Made with 🩷 by ZIA
+      </p>
+    </footer>
+    <script src="script.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>
