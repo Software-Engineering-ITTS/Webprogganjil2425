@@ -1,0 +1,28 @@
+.achievmentB{
+    background-color: rgb(152, 193, 246);
+    border-radius: 20px;
+}
+
+.profile{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top:120px;
+}
+.profileimage{
+    width: 200px;
+    height:200px;
+}
+.profile h2{
+    color:rgb(235, 239, 244) ;
+    transform: translateY(-10px);
+}
+.profile h4{
+    color:rgb(235, 239, 244) ;
+    transform: translateY(-20px);
+}
+.biodata{
+    background:linear-gradient(#f2f4f6 0%,#f2f0f0 40%,#cadef2 100%);
+    padding-bottom:100px;
+}
