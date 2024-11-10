@@ -1,0 +1,10 @@
+.therest {
+    display: none;
+}
+.therest.show-more {
+    display: inline;
+}
+.button1 {
+    border: none;
+    outline: none;
+}
