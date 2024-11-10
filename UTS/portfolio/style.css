@@ -1,0 +1,80 @@
+.header-banner {
+    object-fit: none;
+    max-height: 400px;
+    width: 100%;
+    object-position: 20% 50%;
+    filter: brightness(40%) saturate(110%) blur(0.2px) opacity(95%);
+}
+
+li {
+    padding: 0;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+.hover-zoom{
+    margin: auto;
+    transition: transform .5s;
+}
+
+.hover-zoom:hover{
+    transition: transform .5s;
+    transform: scale(1.3);
+}
+
+.hover-zoom-sm{
+
+    margin: auto;
+    transition: transform .5s;
+}
+
+.hover-zoom-sm:hover{
+    transition: transform .5s;
+    transform: scale(0.9);
+}
+.carousel-photo {
+    width: 400px;
+    margin: auto;
+    transition: transform .5s;
+}
+
+.carousel-photo:hover {
+    transition: transform .5s;
+    transform: scale(1.2);
+}
+
+.project-animation {
+    opacity: 0;
+    translate: 0 0.75rem;
+    transition: 1000ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.project-animation.show {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.header-animation {
+    opacity: 0;
+    translate: 0 0.75rem;
+    transition: 300ms cubic-bezier(0, 0, 0.3, 1);
+}
+
+.header-animation.show {
+    opacity: 1;
+    translate: 0 0;
+}
+
+.profile-animation {
+    opacity: 0;
+    translate: 0 0.75rem;
+    transition: 800ms cubic-bezier(0, 0.1, 0.3, 1);
+}
+
+.profile-animation.show {
+    opacity: 1;
+    translate: 0 0;
+}
