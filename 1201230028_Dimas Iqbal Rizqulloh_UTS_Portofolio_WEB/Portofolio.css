@@ -1,0 +1,55 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+nav {
+  background-color: #C7F860;
+}
+
+li:hover {
+  font-style: italic;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.bg-custom {
+  color: #C7F860;
+}
+
+.bg-custom2, .myProject {
+  background-color: #C7F860;
+}
+
+.hero-section{
+  background-color: #2C2C2A;
+  width: auto;
+  height: auto;
+}
+
+.hero-img {
+  margin: 100px;
+  border-radius: 5%;
+}
+
+.Portofolio, .Achievements {
+  background-color: #2C2C2A;
+  width: auto;
+  height: auto;
+}
+
+footer {
+  background-color: #C7F860;
+}
+
+#muncul, #muncul2 {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: opacity 1.2s ease-out, transform 1.2s ease-out;
+}
+
+#muncul.show, #muncul2.show {
+  opacity: 1;
+  transform: translateY(0);
+}
