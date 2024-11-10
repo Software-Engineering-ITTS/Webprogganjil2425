@@ -1,0 +1,379 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Gaya default untuk mode terang */
+body {
+    font-family: 'Inter', sans-serif;
+    background: #f8f9fa;
+    color: #333;
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(10px);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+}
+
+.navbar .logo img {
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+}
+
+.nav-links a:hover {
+    background: rgba(0, 0, 0, 0.05);
+    transform: translateY(-2px);
+}
+
+.navbar {
+    background: rgba(255, 255, 255, 0.8); 
+    color: #333; 
+    transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Elemen-elemen lain untuk mode terang */
+.about, .skills, .portfolio, .contact-section {
+    transition: background 0.3s ease;
+    background: #fff; 
+    color: #333;  
+}
+
+/* Mode gelap */
+body.dark-mode {
+    background: #121212; 
+    color: white;
+}
+
+/* Navbar pada mode gelap */
+body.dark-mode .navbar {
+    background: rgba(18, 18, 18, 0.9); 
+    color: white; 
+    transition: all 0.3s ease;
+}
+
+/* Navbar dalam mode terang */
+body .navbar {
+    background: rgba(255, 255, 255, 0.8); 
+    color: #333; 
+}
+
+/* Navbar saat scroll dalam mode terang */
+body .navbar.scrolled {
+    background: rgba(255, 255, 255, 0.95); 
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1); 
+}
+
+/* Navbar dengan efek scroll */
+body.dark-mode .navbar.scrolled {
+    background: rgba(18, 18, 18, 1); 
+}
+
+/* Bagian Skills pada mode gelap */
+body.dark-mode .skills {
+    background: #1c1c1c; 
+    color: white;  
+}
+
+/* Bagian Skills Card pada mode gelap */
+body.dark-mode .skill-card {
+    background: #2a2a2a; 
+    color: white;  
+}
+
+body.dark-mode .skill-card:hover {
+    background: #444444; 
+}
+
+/* Elemen-elemen lain untuk mode gelap */
+body.dark-mode .about, 
+body.dark-mode .skills, 
+body.dark-mode .portfolio, 
+body.dark-mode .contact-section {
+    background: #1c1c1c; 
+    color: white;  
+}
+
+/* Tombol Dark Mode */
+.dark-mode-btn {
+    background: transparent;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+body.dark-mode .dark-mode-btn {
+    color: #fff;  
+}
+
+.about {
+    padding: 120px 2rem 5rem;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.about-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.about-image {
+    position: relative;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.about-image img {
+    width: 100%;
+    height: 550px;
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover img {
+    transform: scale(1.05);
+}
+
+.about-content {
+    padding: 2rem;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #333;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1.5rem;
+}
+
+.skills {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.skills-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.skill-card {
+    text-align: center;
+    padding: 2rem;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    transition: all 0.3s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+}
+
+.skill-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #6366f1;
+}
+
+.skill-card h3 {
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.portfolio {
+    padding: 5rem 2rem;
+    background: #f8f9fa;
+}
+
+.portfolio h2, .contact h2 {
+    text-align: center;
+    margin-bottom: 3rem;
+    font-size: 2.5rem;
+    color: #333;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.portfolio-item {
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+}
+
+.portfolio-item:hover {
+    transform: translateY(-10px);
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover img {
+    transform: scale(1.1);
+}
+
+.portfolio-item-content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 2rem;
+    background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+    color: white;
+    transform: translateY(100%);
+    transition: transform 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-item-content {
+    transform: translateY(0);
+}
+
+/* New Contact Section Styles */
+.contact-section {
+    padding: 5rem 2rem;
+    background: white;
+}
+
+.contact-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.contact-grid {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.contact-item {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    font-size: 1.5rem;
+    text-decoration: none;
+}
+
+.contact-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.contact-item.email { background: #ea4335; color: white; }
+.contact-item.github { background: #333; color: white; }
+.contact-item.linkedin { background: #0077b5; color: white; }
+.contact-item.instagram { background: #b0364c; color: white; }
+.contact-item.discord { background: #3540b7; color: rgb(255, 255, 255); }
+
+@media (max-width: 768px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .contact-grid {
+        flex-wrap: wrap;
+    }
+}
+
+.animate-fade-up {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeUp 0.6s ease forwards;
+}
+
+.animate-delay-100 {
+    animation-delay: 0.1s;
+}
+
+.animate-delay-200 {
+    animation-delay: 0.2s;
+}
+
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.6s ease;
+}
+
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/jpg" href="asset/icon.jpg">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Logo_Telkom_University_potrait.png/1200px-Logo_Telkom_University_potrait.png" width="50" height="60" alt="Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#portfolio">Portfolio</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>       
+        <button id="darkModeToggle" class="dark-mode-btn">🌙</button>
+    </nav>
+
+    <section id="about" class="about">
+        <div class="about-container" animate-fade-up>
+            <div class="about-image">
+                <img src="asset/profil.png" alt="">
+            </div>
+            <div class="about-content">
+                <h2>Rizky Putra</h2>
+                <p>Web Developer & UI/UX Designer</p>
+                <p>I develop and design websites with a focus on optimizing user experience. As a Web Developer, I create the functionality of the site using technologies like HTML, CSS, and JavaScript.</p>
+                <p> As a UI/UX Designer, I ensure the site design is visually appealing, user-friendly, and responsive across different devices, providing a pleasant and efficient user experience.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="skills-container">
+            <h2>Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card hidden">
+                    <i class="skill-icon fab fa-html5"></i>
+                    <h3>HTML</h3>
+                </div>
+                <div class="skill-card hidden animate-delay-100">
+                    <i class="skill-icon fab fa-css3-alt"></i>
+                    <h3>CSS</h3>
+                </div>
+                <div class="skill-card hidden animate-delay-200">
+                    <i class="skill-icon fab fa-js"></i>
+                    <h3>JavaScript</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="portfolio" class="portfolio">
+        <h2>Portfolio</h2>
+        <div class="portfolio-grid">
+            <div class="portfolio-item hidden">
+                <img src="asset/idstb.png" alt="Project 1">
+                <div class="portfolio-item-content">
+                    <h3>Project Dublikat</h3>
+                    <p>idstb</p>
+                </div>
+            </div>
+            <div class="portfolio-item hidden animate-delay-100">
+                <img src="asset/daerah.png" alt="Project 2">
+                <div class="portfolio-item-content">
+                    <h3>Promisejs</h3>
+                    <p>Form pemilihan kawasan</p>
+                </div>
+            </div>
+            <div class="portfolio-item hidden animate-delay-200">
+                <img src="asset/kalkulator.png" alt="Project 3">
+                <div class="portfolio-item-content">
+                    <h3>Kalkulator</h3>
+                    <p>Membuat kalkulator</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <div class="contact-container">
+            <h2>Contact Me</h2>
+            <div class="contact-grid">
+                <a href="" class="contact-item email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+                <a href="" target="_blank" class="contact-item github">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="" target="_blank" class="contact-item linkedin">
+                    <i class="fab fa-linkedin-in"></i>
+                </a>
+                <a href="" target="_blank" class="contact-item instagram">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="" target="_blank" class="contact-item discord">
+                    <i class="fab fa-discord"></i>
+                </a>
+
+            </div>
+        </div>
+    </section>
+
+    
+    <script src="main.js"></script>
+</body>
+</html>
