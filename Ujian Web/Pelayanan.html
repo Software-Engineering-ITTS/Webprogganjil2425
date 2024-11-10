@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form | Pendataan Konsultasi Online</title>
+    
+    <link rel="stylesheet" href="Pelayanan.css">
+    <script src="Pelayanan.js" defer></script>
+</head>
+
+<body>
+
+    <div class="container my-5">
+        <div class="row justify-content-center">
+
+            <div class="custom-card">
+                <img src="ft.doctor-team.png" alt="tim-dokter" class="icon-kiri">
+                <h1 class="welcome">Welcome To PekkaMed</h1>
+                <img src="ft-medical.png" alt="medis" class="icon-kanan">
+
+                <img src="ft-stt.png" class="img-st">
+                <h2 class="title-2">Formulir Pendataan Konsultasi Online</h2>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <!-- text -->
+                <b class="nm">Nama Lengkap</b>
+                <input type="text" class="nama">
+                <br>
+
+                <!-- text area -->
+                <b class="almt">Alamat / Domisili</b>
+                <textarea id="almt" rows="3" class="txt-almt"></textarea>
+                <br>
+                <br>
+
+                <!-- text area -->
+                <b class="t-ttl">Tempat Kelahiran</b>
+                <textarea id="ttl" rows="2" class="ttl"></textarea>
+                <br>
+                <br>
+                <br>
+
+                <!-- radio -->
+                <b class="t-gender">Gender</b>
+                <input type="radio" name="gender" class="gender-l"> Laki Laki </input>
+                <input type="radio" name="gender" class="gender-p"> Perempuan </input>
+                <br>
+                <br>
+
+                <!-- dropdown-select -->
+                <b class="t-umur"> Rentang Usia </b>
+                <select name="" id="" class="umur">
+                    <option value="">1-5 Tahun</option>
+                    <option value="">6-10 Tahun</option>
+                    <option value="">11-15 Tahun</option>
+                    <option value="">16-20 Tahun</option>
+                    <option value="">21-25 Tahun</option>
+                    <option value="">26-30 Tahun</option>
+                    <option value="">31-35 Tahun</option>
+                    <option value="">36-40 Tahun</option>
+                    <option value="">41-45 Tahun</option>
+                    <option value="">46-50 Tahun</option>
+                    <option value="">51-55 Tahun</option>
+                    <option value="">56-60 Tahun</option>
+                    <option value="">60++ Tahun</option>
+                </select>
+                <br>
+                <br>
+                <!-- text area -->
+                <b class="t-keluhan">Keluhan</b>
+                <textarea id="keluhan" rows="6" class="keluhan"></textarea>
+                <br>
+                <br>
+
+                <!-- checkbox -->
+                <b class="t-sikon">Kondisi Saat Ini</b>
+                <br>
+                <div class="situasi" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="check" id="btncheck1" autocomplete="off" name="kondisi"
+                        onclick="hanyaSatu(this)">
+                    <label class="btn btn-outline-primary" for="btncheck1">Rentang Normal</label> <br>
+
+                    <input type="checkbox" class="check" id="btncheck2" autocomplete="off" name="kondisi"
+                        onclick="hanyaSatu(this)">
+                    <label class="btn btn-outline-primary" for="btncheck2">Merasakan Sakit</label> <br>
+
+                    <input type="checkbox" class="check" id="btncheck3" autocomplete="off" name="kondisi"
+                        onclick="hanyaSatu(this)">
+                    <label class="btn btn-outline-primary" for="btncheck3">Sakit Berlebihan</label>
+                </div>
+                <br>
+
+
+                <!-- radio -->
+                <b class="t-konsul">Butuh Konsultasi Secara Langsung?</b>
+                <br>
+                <input type="radio" name="pilih" id="ya" class="pilihan-konsul"> Ya </input>
+                <input type="radio" name="pilih" id="tidak" class="pilihan-konsul"> Tidak </input>
+                <br>
+                <br>
+
+                <!-- button -->
+                <b class="t-antri">Ambil Antrean</b>
+                <br>
+                <div class="antrian" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="Normal" autocomplete="off" disabled>
+                    <label class="btn btn-outline-primary" for="Normal">Normal</label>
+
+                    <input type="checkbox" class="btn-check" id="Slight Emergency" autocomplete="off" disabled>
+                    <label class="btn btn-outline-primary" for="Slight Emergency">Slight Emergency</label>
+
+                    <input type="checkbox" class="btn-check" id="Emergency" autocomplete="off" disabled>
+                    <label class="btn btn-outline-primary" for="Emergency">Emergency</label>
+                </div>
+                <br>
+                <br>
+
+                <!-- button -->
+                <input class="submit" type="submit" value="Submit" onclick="thnks()">
+                <br>
+                <br><br>
+                <br>
+
+
+            </div>
+
+        </div>
+
+    </div>
+
+    </div>
+
+
+</body>
+
+</html>
