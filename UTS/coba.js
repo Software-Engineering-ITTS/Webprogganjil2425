@@ -1,0 +1,1 @@
+const sectionToShow = document.getElementById()
