@@ -1,0 +1,173 @@
+#containertengah {
+    border-left: 2px solid transparent;
+    border-radius: 15px;
+    border-image: linear-gradient(#6531b8, rgb(7, 212, 248)) 1;
+    animation: slideInLeft 1s ease-out;
+}
+
+#lastbot {
+    border-top: 2px solid transparent;
+    border-radius: 15px;
+    border-image: linear-gradient(#6531b8, rgb(7, 212, 248)) 1;
+    animation: fadeInUp 1s ease-out;
+}
+
+#abmcontainer {
+    border-right: 2px solid transparent;
+    border-image: linear-gradient(#6531b8, rgb(7, 212, 248)) 1;
+    animation: slideInRight 1s ease-out;
+}
+
+#welcmtext {
+    min-height: 1.5em;
+    animation: fadeInDown 1s ease-out;
+}
+
+.bio-text {
+    animation: fadeIn 1.5s ease-out;
+}
+
+.button {
+    background-color: transparent;
+    color: white;
+    border-color: transparent;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    animation: slideInRight 1s ease-out;
+}
+
+.button:hover {
+    border-bottom: 2px solid #6531b8;
+    transform: translateY(-2px);
+}
+
+.button.active {
+    background-color: #6531b8;
+    color: white;
+}
+
+#abmimg {
+    animation: scaleIn 1s ease-out;
+}
+
+#abmimg img {
+    transition: transform 0.3s ease;
+}
+
+#abmimg img:hover {
+    transform: scale(1.05);
+}
+
+#lastbot img {
+    transition: all 0.3s ease;
+    animation: bounceIn 1s ease-out;
+}
+
+#lastbot img:hover {
+    transform: scale(1.2) rotate(5deg);
+}
+
+#tugas {
+    animation: fadeIn 0.5s ease-out;
+}
+
+#uas {
+    animation: fadeIn 0.5s ease-out;
+}
+
+#Education {
+    animation: fadeIn 0.5s ease-out;
+}
+
+#aboutme {
+    animation: fadeIn 0.5s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes bounceIn {
+    0% {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.1);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(0.89);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+body {
+    animation: fadeIn 1s ease-out;
+}
