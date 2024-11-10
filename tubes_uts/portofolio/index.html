@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tubes UTS - Portofolio</title>
+
+    <!-- Fonts Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Font Awessome-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- Font Google-->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <!-- Style -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="position-sticky top-0" style="z-index: 2;">
+        <!-- Navbar untuk layar kecil -->
+        <nav class="navbar navbar-expand-lg bg-body-tertiary d-lg-none">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Navbar</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Portfolio</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <div class="container-fluid p-0">
+        <div class="sidebar d-none d-lg-block z-1 bg-body-tertiary">
+            <div class="sidebar-img d-flex justify-content-center align-items-center py-4">
+                <img class="rounded-circle" src="image/profile.jpg" width="150px" height="150px" alt="Profile">
+            </div>
+            <h4>Muhammad Dliyaaul</h4>
+            <p><span class="text-primary">Web Developer</span> in Indonesia</p>
+            <ul>
+                <li class="py-2 active"><a href="#home">Home</a></li>
+                <li class="py-2"><a href="#about">About</a></li>
+                <li class="py-2"><a href="#skills">Skills</a></li>
+                <li class="py-2"><a href="#portfolio">Portfolio</a></li>
+                <li class="py-2"><a href="#contact">Contact</a></li>
+            </ul>
+
+            <p class="copyright">&copy; 2024 All rights reserved | <br> made with <a
+                    href="https://www.instagram.com/muhammad_dliyaaul/" class="text-decoration-none">Muhammad
+                    Dliyaaul</a>
+            </p>
+        </div>
+
+        <div class="content">
+            <header class="position-sticky top-0 z-2">
+                <nav class="navbar bg-body-tertiary">
+                    <div class="container-fluid">
+                        <a class="navbar-brand" href="#">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="text-center">My Portfolio</span>
+                        </a>
+                        <div class="">
+                            <form class="d-flex" role="search">
+                                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success" type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </nav>
+            </header>
+            <div class="home row d-flex align-items-center mx-0 my-3" id="home">
+                <div class="col-md-6 col-12 d-flex flex-column align-items-sm-start">
+                    <h1 style="font-size: 36px; font-weight: bold;">Hi!<br>Saya Muhammad Dliyaaul</h1>
+                    <p>Sekarang Saya Berkuliah di <a href="https://surabaya.telkomuniversity.ac.id/"
+                            class="text-decoration-none text-danger">Telkom University
+                            Surabaya</a></p>
+                    <a href="#" class="download-btn">My Portfolio</a>
+                </div>
+
+                <!-- <div class="col-md-6 col-12 d-flex justify-content-center align-items-center">
+                    <img src="image/tel-u.png" width="70%" alt="">
+                </div> -->
+            </div>
+
+            <div class="about" id="about">
+                <h5 class="mt-5">ABOUT US</h5>
+
+                <h3 class="mb-5">WHO AM I?</h3>
+
+                <p><span class="fw-bold">Halo Saya Muhammad Dliyaaul</span>, seorang mahasiswa yang saat ini sedang
+                    menempuh pendidikan di Telkom University Surabaya dengan fokus pada bidang Rekayasa Perangkat Lunak
+                    (RPL). Saya memiliki ketertarikan yang mendalam dalam bidang atau topik khusus seperti,
+                    Teknologi Informasi dan Pengembangan aplikasi, dan berusaha untuk selalu memperdalam pengetahuan
+                    serta keterampilan di
+                    bidang ini. Dalam
+                    perjalanan akademik saya, saya telah terlibat dalam berbagai proyek yang memperkaya wawasan saya dan
+                    memberikan
+                    pengalaman nyata di lapangan.</p>
+                <br>
+
+                <p>Selain fokus dalam perkuliahan, saya juga aktif mengikuti kegiatan organisasi dan komunitas yang
+                    mendukung pengembangan
+                    keahlian serta membangun jaringan profesional. Saya percaya bahwa pengalaman di luar kelas, seperti
+                    berkolaborasi dalam
+                    tim dan menghadapi tantangan dunia nyata, adalah bagian penting dari pembelajaran. Pengalaman ini
+                    tidak hanya membantu
+                    saya dalam mengasah kemampuan teknis, tetapi juga kemampuan komunikasi dan manajemen waktu, yang
+                    menjadi bekal penting
+                    untuk berkarier di masa depan.
+                </p>
+
+                <div class="ini-card container d-flex justify-content-center align-items-center">
+                    <div class="row justify-content-center mt-4">
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="card" style="border-bottom: 3px solid #0d6efd; color: #0d6efd;">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-calendar-days"></i>
+                                    <p class="card-text py-2">Surabaya, 20 Maret 2005</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="card" style="border-bottom: 3px solid #198754;color: #198754;">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-venus-mars"></i>
+                                    <p class="card-text py-2">Jenis Kelamin Laki-laki</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="card" style="border-bottom: 3px solid #dc3545; color: #dc3545;">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-star-and-crescent"></i>
+                                    <p class="card-text py-2">Agama Islam</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="col-lg-3 col-md-4 col-sm-6 col-12">
+                            <div class="card" style="border-bottom: 3px solid 	#ffc107; color: #ffc107;">
+                                <div class="card-body">
+                                    <i class="fa-solid fa-map-location-dot"></i>
+                                    <p class="card-text py-2">Jojoran 3A blok 7 , Mojo, Gubeng</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="skills mb-5" id="skills">
+                <h5 class="mt-5">MY SPECIALITY</h5>
+
+                <h3 class="mb-5">MY SKILLS</h3>
+
+                <p>Di bawah ini adalah beberapa keterampilan utama yang saya kuasai dalam
+                    pengembangan aplikasi
+                    dan teknologi informasi. Saya terus meningkatkan kemampuan ini untuk mendukung karier saya di bidang
+                    Rekayasa
+                    Perangkat Lunak.</p>
+
+
+                <div class="row justify-content-center">
+                    <div class="col-md-6 mb-4">
+                        <h6>HTML</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 90%;"
+                                aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <h6>CSS</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-success" role="progressbar" style="width: 85%;"
+                                aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <h6>PHP</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-info" role="progressbar" style="width: 75%;" aria-valuenow="75"
+                                aria-valuemin="0" aria-valuemax="100">75%</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <h6>Java</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 80%;"
+                                aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 mb-4">
+                        <h6>JavaScript</h6>
+                        <div class="progress">
+                            <div class="progress-bar bg-danger" role="progressbar" style="width: 70%;"
+                                aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio mb-5" id="portfolio">
+                <h5 class="mt-5">READ PORTFOLIO</h5>
+
+                <h3 class="mb-5">MY PROJECT</h3>
+
+                <div class="row gap-2 d-flex justify-content-center align-items-center project">
+                    <div class="card col-md-4" style="width: 18rem;">
+                        <picture class="d-block overflow-hidden">
+                            <a href="https://www.alhanafiyah-annahdliyah.com/"><img src="image/image.png"
+                                    class="card-img-top" alt="..."></a>
+                        </picture>
+                        <div class="card-body">
+                            <h5 class="card-title py-3"><a href="https://www.alhanafiyah-annahdliyah.com/"
+                                    class="text-decoration-none text-black">Website
+                                    Musholla Al-Hanafiyah</a></h5>
+                            <p class="card-text">Ini adalah salah satu dari sekian banyak projek saya yang berhasil saya
+                                hosting. Website ini menampilkan informasi dari Musholla Al-Hanafiyah yang bertempat di
+                                Jojoran 3A blok 7, Mojo, Gubeng, Surabaya.</p>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-4" style="width: 18rem;">
+                        <picture class="d-block overflow-hidden">
+                            <a href=""><img src="image/bg2.jpg" class="card-img-top" alt="..."></a>
+                        </picture>
+                        <div class="card-body">
+                            <h5 class="card-title py-3"><a href="" class="text-decoration-none text-black">Card
+                                    title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-4" style="width: 18rem;">
+                        <picture class="d-block overflow-hidden">
+                            <a href=""><img src="image/bg2.jpg" class="card-img-top" alt="..."></a>
+                        </picture>
+                        <div class="card-body">
+                            <h5 class="card-title py-3"><a href="" class="text-decoration-none text-black">Card
+                                    title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                        </div>
+                    </div>
+
+                    <div class="card col-md-4" style="width: 18rem;">
+                        <picture class="d-block overflow-hidden">
+                            <a href=""><img src="image/bg2.jpg" class="card-img-top" alt="..."></a>
+                        </picture>
+                        <div class="card-body">
+                            <h5 class="card-title py-3"><a href="" class="text-decoration-none text-black">Card
+                                    title</a></h5>
+                            <p class="card-text">Some quick example text to build on the card title and make up the bulk
+                                of the card's
+                                content.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="contact mb-5" id="contact">
+                <h5 class="mt-5">GET IN TOUCH</h5>
+
+                <h3 class="mb-5">CONTACT</h3>
+
+                <div class="row">
+                    <!-- Contact Info -->
+                    <div class="col-md-6 contact-info">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-envelope"></i>
+                            <div>
+                                <a href="bakun8580@gmail.com"
+                                    class="text-decoration-none text-dark">bakun8580@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fa-solid fa-map-marker-alt"></i>
+                            <div>Jojoran 3A blok 7, Mojo, Gubeng, Surabaya </div>
+                        </div>
+                        <div class="icon-box">
+                            <i class="fa-solid fa-phone"></i>
+                            <div>
+                                <a href="" class="text-decoration-none text-dark">+62 82143663964</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contact Form -->
+                    <div class="col-md-6">
+                        <form>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Name">
+                            </div>
+                            <div class="mb-3">
+                                <input type="email" class="form-control" placeholder="Email">
+                            </div>
+                            <div class="mb-3">
+                                <input type="text" class="form-control" placeholder="Subject">
+                            </div>
+                            <div class="mb-3">
+                                <textarea class="form-control" rows="4" placeholder="Message"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">SEND MESSAGE</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="copyright-bottom bg-body-tertiary">
+        <p class="mb-0 py-2 my-5">&copy; 2024 All Rights Reserved.</p>
+    </div>
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

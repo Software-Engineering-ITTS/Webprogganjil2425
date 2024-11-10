@@ -1,0 +1,356 @@
+body {
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.container {
+    display: flex;
+}
+
+.sidebar {
+    width: 20%;
+    padding: 20px;
+    position: fixed;
+    height: 100vh;
+    padding-top: 80px;
+    overflow-y: auto;
+}
+
+.sidebar h4 {
+    text-align: center;
+    font-family: "Playfair Display", serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 28px;
+    line-height: 16px;
+}
+
+.sidebar p {
+    text-align: center;
+    font-size: 14px;
+    font-weight: 300;
+    color: #535357;
+    text-transform: uppercase;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sidebar ul li a {
+    color: #535357;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 14px;
+}
+
+.sidebar ul li a:hover {
+    text-decoration: underline;
+    color: #000;
+    transition-duration: 1s;
+}
+
+.sidebar .copyright {
+    font-size: 12px;
+    text-align: center;
+}
+
+.content {
+    margin-left: 20%;
+    width: 80%;
+    padding: 20px;
+    text-align: start;
+    background-color: #fff;
+}
+
+.content .home {
+    position: relative;
+    height: 90vh;
+    color: #f8f9fb;
+    background-image: url("image/Tel-U-Surabaya.webp");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.content .home .overlay {
+    position: absolute;
+}
+
+.content .home .download-btn {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 20px;
+    border: 1px solid;
+    text-decoration: none;
+    color: #f8f9fb;
+    font-weight: bold;
+}
+
+.content .home .download-btn:hover {
+    background-color: white;
+    color: #000;
+    text-decoration: none;
+    transition-duration: 0.5s;
+}
+
+.content .about {
+    margin-top: 150px;
+}
+
+.about h5 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.about h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.about p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.about .ini-card {
+    margin-bottom: 100px;
+}
+
+.about .card {
+    width: 100%;
+    margin-top: 20px;
+    border: none;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    font-size: 24px;
+    min-height: 150px;
+}
+
+.content .skills {
+    margin-top: 200px;
+}
+
+.skills h5 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.skills h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.skills p {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+    margin-bottom: 80px;
+}
+
+.content .portfolio {
+    margin-top: 200px;
+}
+
+.portfolio h5 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.portfolio h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.portfolio .project {
+    margin-top: 100px;
+}
+
+.project .card {
+    border: none;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.35);
+    min-height: 380px;
+}
+
+.project .card img:hover{
+    scale: 1.25;
+    transition: ease-in;
+    transition-duration: 150ms;
+}
+
+.project .card .card-body {
+    text-align: start;
+    margin: 0;
+    padding: 0;
+}
+
+.project .card .card-title {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #000;
+    font-size: 24px;
+    line-height: 32px;
+}
+
+.project .card .card-text {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.content .contact {
+    margin-top: 200px;
+}
+
+.contact h5 {
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #535357;
+    font-size: 14px;
+}
+
+.contact h3 {
+    font-family: "Playfair Display", serif;
+    font-weight: 600;
+    color: #000;
+    font-size: 28px;
+    line-height: 32px;
+}
+
+.contact .row {
+    margin-top: 100px;
+}
+
+.contact .contact-info .icon-box {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.contact .contact-info .icon-box i {
+    font-size: 24px;
+    color: #007bff;
+    margin-right: 15px;
+}
+
+.contact .contact-info a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.contact .contact-info a:hover {
+    text-decoration: underline;
+}
+
+.copyright-bottom {
+    color: #535357;
+    text-align: center;
+}
+
+.copyright-bottom p {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 24px;
+    color: #535357;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+    .sidebar {
+        display: none;
+    }
+
+    .navbar {
+        display: block;
+    }
+
+    .content {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .content .home {
+        align-items: center;
+    }
+
+    .content .navbar {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .content {
+        text-align: center;
+        padding: 20px;
+        margin: auto;
+    }
+
+    .content h1 {
+        font-size: 36px;
+    }
+
+    .content p {
+        font-size: 16px;
+    }
+
+    .content .home {
+        background-size: cover;
+        background-position: top;
+        /* Menyusun ulang posisi background untuk tampilan lebih kecil */
+        height: 70vh;
+        /* Tinggi diatur agar lebih kecil */
+    }
+
+    .about .ini-card {
+        margin-bottom: 50px;
+    }
+}
+
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 24px;
+    }
+
+    .content p {
+        font-size: 14px;
+    }
+
+    /* Responsif untuk background image di tampilan mobile */
+    .content .home {
+        background-size: contain;
+        /* Menggunakan 'contain' agar gambar tetap proporsional di layar kecil */
+        background-position: center;
+        height: 60vh;
+    }
+}
