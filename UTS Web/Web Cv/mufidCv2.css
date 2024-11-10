@@ -1,0 +1,631 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+/* bagian dasar */
+
+* {
+    padding: 0;
+    margin: 0; 
+}
+
+:root {
+    --warna-satu: #a3ff05;
+    --warna-dua: #b6e3df;
+    --warna-tiga: #d3fc03;
+    --warna-bg1: #000f0b;
+    --warna-bg2: #00302e;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Barlow, sans-serif;
+    background-color: var(--warna-bg1);
+    color: var(--warna-dua);
+}
+
+a, .tombol {
+    transition: all 300ms ease;
+}
+
+section {
+    padding-top: 4vh;
+    height: 96vh;
+    margin: 0 10rem;
+    box-sizing: border-box;
+    min-height: fit-content;
+}
+
+/* bagian navbar */
+
+nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 12vh;
+    background: var(--warna-bg2);
+}
+
+.link_navbar {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+    font-size: 1.2rem;
+}
+
+nav a {
+    color: var(--warna-dua);
+    text-decoration: none;
+    text-decoration-color: white;
+}
+
+nav a:hover {
+    color: var(--warna-tiga);
+    text-decoration: underline;
+    text-underline-offset: 0.5rem;
+}
+
+.logo_navbar {
+    font-size: 1.4rem;
+    color: var(--warna-satu);
+}
+
+.logo:hover {
+    cursor: default;
+}
+
+/* navbar menu */
+
+.mobile_navbar {
+    display: none;
+}
+
+.menu_navbar {
+    position: relative;
+    display: inline-block;
+}
+
+.ikon_navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 24px;
+    width: 30px;
+    cursor: pointer;
+}
+
+.ikon_navbar span {
+    width: 100%;
+    height: 2px;
+    background-color: var(--warna-satu);
+    transition: all 0.3 ease-in-out;
+}
+
+.link_menu {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: var(--warna-bg1);
+    width: fit-content;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.3 ease-in-out;
+}
+
+.link_menu a {
+    display: block;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.5rem;
+    color: var(--warna-dua);
+    text-decoration: none;
+    transition: all 0.3 ease-in-out;
+}
+
+.link_menu li {
+    list-style: none; 
+}
+
+.link_menu.open {
+    max-height: 300px;
+}
+
+.ikon_navbar.open span:first-child {
+    transform: rotate(45deg) translate(10px, 5px);
+}
+
+.ikon_navbar.open span:nth-child(2) {
+    opacity: 0;
+}
+
+.ikon_navbar.open span:last-child {
+    transform: rotate(-45deg) translate(10px, -5px);
+}
+
+.ikon_navbar span:first-child {
+    transform: none;
+}
+
+.ikon_navbar span:first-child {
+    opacity: 1;
+}
+
+.ikon_navbar span:first-child {
+    transform: none;
+}
+
+/* bagian profil */
+
+#profil {
+    display: flex;
+    justify-content: center;
+    gap: 8rem;
+    height: 85vh;
+}
+
+.gambar_profil{
+    display: flex;
+    width: 400px;
+    height: 400px;
+    margin: auto 0;
+    border: var(--warna-satu) 3px solid;
+    border-radius: 50%;
+}
+
+.bagian_profil {
+    align-self: center;
+    text-align: center;
+}
+
+.bagian_profil p {
+    font-weight: 600;
+}
+
+.profil_p1 {
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.profil_p2 {
+    font-size: 1.75rem;
+    margin: 1rem auto 2rem;
+}
+
+.judul {
+    font-size: 3rem;
+    text-align: center;
+    color: var(--warna-satu);
+}
+
+.bagian_sosial {
+    display: flex;
+    justify-content: center;
+    margin-top: 1rem;
+    gap: 2rem;
+}
+
+.bagian_sosial .icon {
+    cursor: pointer;
+    font-size: 2rem;
+}
+
+.bagian_sosial .icon:hover {
+    color: var(--warna-tiga);
+}
+
+.tombol_profil {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.tombol_profil .tombol {
+    font-weight: 600;
+    transition: all 300ms ease;
+    padding: 1rem;
+    width: 8rem;
+    border-radius: 2rem;
+}
+
+.tombol_profil1, .tombol_profil2 {
+    border: #00302e 0.1rem solid;
+    background: var(--warna-bg2);
+    color: white;
+}
+
+.tombol_profil1:hover, .tombol_profil2:hover {
+    cursor: pointer;
+    background-color: var(--warna-tiga);
+    color: var(--warna-bg1);
+}
+
+/* bagian edukasi */
+
+#edukasi {
+    position: relative;
+}
+
+.edukasi_p1 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.penjelasan_edukasi .icon {
+    font-size: 3rem;
+}
+
+.bagian_edukasi {
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.daftar_edukasi1, .daftar_edukasi2 {
+    padding: 1.5rem;
+    flex: 1;
+    background-color: var(--warna-bg2);
+    border-radius: 2rem;
+    border: var(--warna-satu) 0.1rem solid;
+}
+
+.jenjang_edukasi {
+    font-size: 1.2rem;
+    margin: 0.5rem;
+}
+
+.nama_sekolah {
+    font-size: 1.7rem;
+    margin: 0.5rem;
+}
+
+.tahun_edukasi {
+    font-size: 1.3rem;
+    margin-bottom: 0.5rem;
+}
+
+.bi-caret-down-square-fill {
+    position: absolute;
+    font-size: 2rem;
+    right: -5rem;
+    bottom: 2.5rem;
+}
+
+.bi-caret-down-square-fill:hover {
+    cursor: pointer;
+}
+
+/* bagian skill */
+
+#skill {
+    position: relative;
+}
+
+.daftar_skill {
+    gap: 7rem;
+    display: flex;
+    margin-bottom: 2rem;
+    margin-top: 3rem;
+}
+
+.bagian_skill {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.penjelasan_skill {
+    padding: 1.5rem;
+    flex: 1;
+    background: var(--warna-bg2);
+    border-radius: 2rem;
+    border: var(--warna-satu) 0.1rem solid;
+    text-align: center;
+}
+
+.judul2_skill {
+    color: var(--warna-satu);
+    font-weight: 600;
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+}
+
+.bagian_artikel {
+    display: flex;
+    text-align: initial;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 2.5rem;
+    justify-content: space-around;
+}
+
+article {
+    display: flex;
+    width: 10rem;
+    justify-content: space-around;
+    gap: 0.5rem;
+}
+
+article i {
+    cursor: default;
+    font-size: 1.5rem;
+}
+
+article h3 {
+    font-size: 1.3rem;
+}
+
+/* bagian pengalaman */
+
+#pengalaman {
+    position: relative;
+}
+
+.pengalaman_p1 {
+    justify-self: center;
+    font-size: 1.2rem;
+}
+
+.bagian_pengalaman {
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.daftar_pengalaman {
+    padding: 1.5rem;
+    flex: 1;
+    background: var(--warna-bg2);
+    border-radius: 2rem;
+    border: var(--warna-satu) 0.1rem solid;
+}
+
+.penjelasan_pengalaman {
+    margin-bottom: 2rem;
+}
+
+.penjelasan_pengalaman h3 {
+    font-size: 1.5rem;
+    color: var(--warna-satu);
+    margin-top: 0.5rem;
+}
+
+.penjelasan_pengalaman h4 {
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.penjelasan_pengalaman p {
+    font-size: 1.1rem;
+}
+
+/* bagian proyek */
+
+#proyek {
+    position: relative;
+}
+
+.proyek_p1 {
+    justify-self: center;
+    font-size: 1.2rem;
+}
+
+.bagian_proyek {
+    gap: 7rem;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    text-align: left;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.daftar_proyek {
+    padding: 1.5rem;
+    flex: 1;
+    background: var(--warna-bg2);
+    border-radius: 2rem;
+    border: var(--warna-satu) 0.1rem solid;
+}
+
+.penjelasan_proyek {
+    margin-bottom: 2rem;
+}
+
+.penjelasan_proyek .gambar_1 {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.penjelasan_proyek .gambar_2 {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.penjelasan_proyek .gambar_3 {
+    border-radius: 1rem;
+    width: 100%;
+    height: 100%;
+}
+
+.sub_judul_proyek {
+    font-size: 1.6rem;
+    color: var(--warna-satu);
+    margin-bottom: 1rem;
+}
+
+.deskripsi_proyek {
+    font-size: 1.1rem;
+}
+
+/* bagian Informasi Uas */
+
+#proyek_uas {
+    position: relative;
+}
+
+.penjelasan_uas img {
+    border: 1rem;
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+
+/* bagian kontak */
+
+#kontak {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    height: 70vh;
+}
+
+.kontak_p1 {
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.bagian_kontak {
+    display: flex;
+    justify-content: center;
+    border-radius: 2rem;
+    border: var(--warna-satu) 0.1rem solid;
+    border-color: #a3ff05;
+    background: var(--warna-bg2);
+    margin: 2rem auto;
+    padding: 0.5rem;
+}
+
+.info_kontak {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin: 1rem;
+}
+
+.info_kontak p {
+    font-size: larger;
+}
+
+.info_kontak a {
+    color: var(--warna-dua);
+}
+
+.info_kontak .icon {
+    cursor: default;
+    font-size: 2rem;
+}
+
+/* bagian footer */
+
+footer {
+    height: 25vh;
+    margin: 0.1rem;
+}
+
+footer p {
+    text-align: center;
+}
+
+/* bagian responsif */
+
+@media screen and (max-width: 1400px) {
+
+   #profile {
+    height: 83vh;
+    margin-bottom: 6rem;
+   }
+
+   .bagian_edukasi, .bagian_skill, .bagian_pengalaman, .bagian_proyek .bagian_artikel .daftar_pengalaman, .daftar_proyek, .daftar_skill {
+    flex-wrap: wrap;
+   }
+
+   #kontak, .bagian_kontak {
+    display: block;
+   }
+}
+
+@media screen and (max-width: 1200px) {
+   .navbar {
+        display: none;
+   }
+
+   .mobile_navbar {
+        display: flex;
+   }
+
+   #skill, .bagian_skill {
+    margin-top: 2rem;
+   }
+
+   #profil, .bagian_edukasi .bagian_skill, .bagian_pengalaman, .bagian_proyek .bagian_artikel, .daftar_pengalaman, .daftar_proyek, .daftar_skill {
+    display: block;
+   }
+   
+   .bi-caret-down-square-fill {
+    display: none;
+   }
+
+   section {
+    height: fit-content;
+   }
+
+   section {
+    margin: 0 5%;
+   }
+
+   .gambar_profil {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   .navbar {
+        display: none;
+   }
+
+   .mobile_navbar {
+        display: flex;
+   }
+
+   #skill, .bagian_skill {
+    margin-top: 2rem;
+   }
+
+   #profil, .bagian_edukasi .bagian_skill, .bagian_pengalaman, .bagian_proyek .bagian_artikel, .daftar_pengalaman, .daftar_proyek, .daftar_skill {
+    display: block;
+   }
+   
+   .bi-caret-down-square-fill {
+    display: none;
+   }
+
+   section {
+    height: fit-content;
+   }
+
+   section {
+    margin: 0 5%;
+   }
+
+   .gambar_profil {
+    width: 275px;
+    height: 275px;
+    margin: 0 auto 2rem;
+   }
+}
