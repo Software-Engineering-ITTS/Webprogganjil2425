@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Example</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="stylePorto.css">
+  </head>
+
+    <body>
+      <header>
+        
+        <nav class="navbar sticky-top navbar-expand-lg navbar-light bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand" href="ProfilePage.html">Digidaw</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+            </ul>
+        </div>
+        <div class="right-text">
+          <span class="navbar-text">
+            <a class="intro" href="ProfilePage.html">Introduction</a>
+          </span>
+        <span class="navbar-text">
+            <a class="resume" href="aboutMePage.html">About Me</a>
+          </span>
+          <span class="navbar-text">
+              <a class="portfolio" href="portoPage.html">Portofolio</a>  
+          </span>
+          <span class="navbar-text">
+            <a class="portfolio" href="uasPage.html">UAS</a>  
+        </span>
+
+          <button id="musicToggleBtn" class="btn btn-outline-dark">
+            <i id="musicIcon" class="fas fa-volume-up">❚❚/▶</i> 
+          </button>
+          
+          <button id="volumeDownBtn" class="btn btn-outline-dark">
+            <i class="fas fa-volume-down">🔉</i>
+          </button>
+          <button id="volumeUpBtn" class="btn btn-outline-dark">
+            <i class="fas fa-volume-up">🔊</i>
+          </button>
+        </span>
+        </div>
+          </nav>
+    </header>
+        <audio id="backgroundMusic" loop>
+            <source src="popola devola.mp3" type="audio/mp3">
+        </audio>
+
+      <div class="top1">
+        <div class="col-md-6 col-12">
+          <span class="dot"></span>
+          <h1 class="name">Maulana</h1>
+          <h2 class="job">Editor & Frontend WebDev</h2>
+        </div>
+
+      </div>
+      
+
+      <h1 class="d-flex justify-content-center align-content-center">Portfolio</h1>
+      <div class="content" style="width: 100vw; height: auto;">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-6 col-12">
+              <h2>Portfolio 1</h2>
+            </div>
+            <div class="col-md-6 col-12">
+                <iframe src="portfolio/latihan.html" width="100%" height="350%" frameborder="0"></iframe>
+            </div>
+          </div>  
+        </div>  
+
+        <div class="container  ">
+            <div class="row2 ">
+              <div class="col-md-6 ">
+              <h2>Portfolio 2</h2>
+            </div>
+            <div class="col-md-6 ">
+                <iframe class="port1" src="portfolio/week4/Kalkulator.html" width="100%" height="350%" frameborder="0"></iframe>
+            </div>
+            </div>  
+          </div>
+      </div>
+      
+
+
+    <footer>
+
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+</html>

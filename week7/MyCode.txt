@@ -1,0 +1,111 @@
+<label htmlFor="" style={{color: "red"}}></label>
+    <div className="adada"></div>
+    
+    <div className="asdada"></div>
+    {/* {} */}
+    <div className="row">
+        <div className="col-75">
+          <div className="container">
+            
+              <div className="row">
+                <div className="col-50">
+                  <h3>Form Absensi</h3>
+                  <label htmlFor="fname"><i className="fa fa-user"></i> Username</label>
+                  <input type="text" id="fname" name="firstname" placeholder="Username"/>
+                  
+                  <label htmlFor="email"><i className="fa fa-envelope"></i> Password</label>
+                  <input type="password" id="Password" name="email" placeholder="password"/>
+
+                  <label htmlFor="city"><i className="fa fa-institution"></i> Absensi</label>
+                  <label className="absensi d-flex gap-3">
+                    <input type="checkbox" checked="checked" name="sameadr"/> Pagi 
+                    <input type="checkbox" checked="checked" name="sameadr"/> Siang
+                    <input type="checkbox" checked="checked" name="sameadr"/> Sore 
+                    <input type="checkbox" checked="checked" name="sameadr"/> Malam
+                  </label>  
+                  <label htmlFor="city"><i className="fa fa-institution"></i> Kehadiran</label>
+                  <div className="dropdown">
+                    <a className="btn btn-secondary dropdown-toggle"  href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                      Kehadiran
+                    </a>
+                  
+                    <ul className="dropdown-menu">
+                      <li><a className="dropdown-item" href="#">Hadir</a></li>
+                      <li><a className="dropdown-item" href="#">Izin</a></li>
+                      <li><a className="dropdown-item" href="#">Tidak Masuk</a></li>
+                    </ul>
+                  </div>
+                  <label htmlFor="adr"><i className="fa fa-address-card-o"></i> Alasan</label>
+                  <input type="text" id="adr" name="address" placeholder="Alasan"/>
+                      
+                </div>
+                <div>
+                  <label htmlFor="city"><i className="fa fa-institution"></i>Lembur</label>
+                  <div className="form-check">
+                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1"/>
+                    <label className="form-check-label" htmlFor="flexRadioDefault1">
+                      Iya
+                    </label>
+                  </div>
+                  <div className="form-check">
+                    <input className="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked/>
+                    <label className="form-check-label" htmlFor="flexRadioDefault2">
+                      Tidak
+                    </label>
+                  </div>
+                </div>
+                <div className="row">
+                <div className="col-6">
+                  <input type="reset" value="Reset" className="btn-danger"/>
+                </div>
+                <div className="col-6">
+                  <input type="submit" value="Submit" className="btn btn-submit"/>
+                </div>
+
+                <div className="mounth">
+                  <ul>
+                    <li className="Prev" />
+                    <li className="next" />
+                    <li>August<span style="font-size: 18px;">2024</span></li>
+                  </ul>
+                </div>
+
+                <ul className="weekdays">
+                  <li>Mon</li>
+                  <li>Tue</li>
+                  <li>Wed</li>
+                  <li>Thu</li>
+                  <li>Fri</li>
+                  <li>Sat</li>
+                  <li>Sun</li>
+                </ul>
+
+                <ul className="days">
+                  <li>1</li>
+                  <li>2</li>
+                  <li>3</li>
+                  <li>4</li>
+                  <li>5</li>
+                  <li>6</li>
+                  <li>7</li>
+                  <li>8</li>
+                  <li>9</li>
+                  <li>10</li>
+                  <li><span className="active">10</span></li>
+                  <li>11</li>
+                  <li>12</li>
+                  <li>13</li>
+                  <li>14</li>
+                  <li>15</li>
+                </ul>
+
+              </div>
+          </div>
+        </div>
+      </div>
+      
+      </div>  
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossOrigin="anonymous"></script>
+    <script src="script.js"></script>
+
+    
