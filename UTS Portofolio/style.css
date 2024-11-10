@@ -1,0 +1,155 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Playfair Display', serif;
+    background: linear-gradient(135deg, #f3e6d4, #e9d0b2, #d1a77f);
+    color: #333;
+    line-height: 1.6;
+    width: 1000px;
+    margin: 0 auto;
+    overflow-x: hidden;
+}
+
+header {
+    background-color: rgba(47, 47, 47, 0.9);
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+header.scrolled {
+    background-color: rgba(47, 47, 47, 1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #f8f5f0;
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 10px 15px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #bfa980;
+    border-bottom: 2px solid #bfa980;
+}
+
+.section {
+    padding: 70px 20px;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.home {
+    background: linear-gradient(135deg, rgba(75, 56, 50, 0.7), rgba(167, 156, 142, 0.7), rgba(215, 201, 170, 0.7)), url('img/elegant-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #f8f5f0;
+    padding: 100px 20px;
+    position: relative;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;
+    border: 5px solid #bfa980;
+    margin-bottom: 30px;
+}
+
+h1 {
+    font-size: 3.5rem;
+    letter-spacing: 2px;
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.card img {
+    width: 100%;
+    border-radius: 15px;
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #bfa980;
+    margin: 15px 0;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form input,
+#contact-form textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: inherit;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #bfa980;
+    outline: none;
+}
+
+#contact-form button {
+    padding: 12px 30px;
+    background-color: #2f2f2f;
+    color: #f8f5f0;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1.1rem;
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #bfa980;
+    color: #2f2f2f;
+}
+
+footer {
+    background-color: #2f2f2f;
+    color: #bfa980;
+    padding: 20px;
+    text-align: center;
+}
