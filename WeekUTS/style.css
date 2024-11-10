@@ -1,0 +1,33 @@
+.therest {
+    display: none;
+}
+
+.therest2 {
+    display: none;
+}
+
+.therest3 {
+    display: none;
+}
+
+.therest.show-more{
+    display: inline;
+}
+
+.therest2.show-more{
+    display: inline;
+}
+
+.therest3.show-more{
+    display: inline;
+}
+
+.button1 {
+    border: none;
+    outline: none;
+}
+
+.button2 {
+    border: none;
+    outline: none;
+}

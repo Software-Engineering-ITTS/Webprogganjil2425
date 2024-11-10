@@ -1,0 +1,68 @@
+import { useState } from 'react'
+import reactLogo from './assets/react.svg'
+import viteLogo from '/vite.svg'
+// import './App.css'
+
+
+function App() {
+
+  return (
+    <form id="form" style={{alignItems: 'center', textAlign: 'center'}}>
+      <h1>Sistem Perizinan Mahasiswa</h1>
+      <p>Input NIM</p>
+      <input id="inputNIM" type="text"></input>
+      <p>Input Nama</p>
+      <input id="inputNama" type="text"></input>
+      <p>Input Password</p>x
+      <input type="password"></input>
+      <p id="alasan" >Alasan</p>
+      <textarea id="inputAlasan"></textarea>
+      <p id="alamat">Alamat</p>
+      <textarea id="inputAlamat"></textarea>
+
+
+      <div style={{alignItems: 'center', textAlign: 'center'}}>
+        <p>Tipe</p>
+        <input type="checkbox"> <span>Izin</span> </input>
+        <input type="checkbox"> <span>Sakit</span> </input>
+        <input type="checkbox"> <span>Dispen</span> </input>
+      </div>
+
+
+      <div style={{alignItems: 'center', textAlign: 'center'}}>
+        <p>Gender</p>
+        <input type="radio" name="gender">Laki-Laki</input>
+        <input type="radio" name="gender">Perempuan</input>
+      </div>
+
+
+      <div style={{alignItems: 'center', textAlign: 'center', paddingTop: 20}}>
+        <select name="" id="">
+          <option value="">Prodi</option>
+          <option value="">Rekayasa Perangkat Lunak</option>
+          <option value="">Teknologi Informasi</option>
+          <option value="">Teknik Elektro</option>
+          <option value="">Sistem Informasi</option>
+        </select>
+      </div>
+
+
+      <div style={{alignItems: 'center', textAlign: 'center', paddingTop: 20}}>
+        <button id="btn" type="button">Submit</button>
+        <div id="showing" style={{paddingTop: 20, display: 'none'}}>
+          <p>Hasil</p>
+          NIM : <span id="showNIM"></span>
+          <br/>
+          NAMA : <span id="showNama"></span>
+          <br/>
+          Alasan : <span id="showAlasan"></span>
+          <br/>
+          Alamat : <span id="showAlamat"></span>
+        </div>
+        <input id="btn2" type="reset" value="Reset"></input>
+      </div>
+    </form>
+  )
+}
+
+export default App
