@@ -1,0 +1,373 @@
+/* General Styling */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #edf2fc;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+span {
+  color: #e63946;
+}
+
+/* navbar section */
+
+nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.174);
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.094);
+  backdrop-filter: blur(10px);
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+nav img {
+  width: 100px;
+  height: 100px;
+}
+
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 100px;
+}
+
+nav ul a {
+  text-decoration: none;
+  font-size: 20px;
+  color: #606163;
+}
+
+nav ul a:hover {
+  color: #e63946;
+  transition: ease-in-out 0.4s;
+}
+
+#about-me,
+#project,
+#skills {
+  scroll-margin-top: 200px;
+}
+
+/* Button Dark Mode */
+
+.toggleSwitch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#checkboxInput {
+  display: none;
+}
+
+.toggleSwitch::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 20px;
+  height: 20px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+
+#checkboxInput:checked + .toggleSwitch {
+  background-color: #e63946;
+}
+
+#checkboxInput:checked + .toggleSwitch::before {
+  transform: translateX(24px);
+}
+
+/* welcome section */
+
+.welcome-content {
+  width: 80%;
+  margin: 0px 0 100px 0;
+  /* border: 3px solid black; */
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+
+.left-content {
+  width: 50%;
+}
+
+.left-content h1 {
+  font-size: 50px;
+  color: #212121;
+  margin-bottom: 15px;
+}
+
+.left-content button {
+  margin-top: 20px;
+  border: 3px solid #e63946;
+  color: #e63946;
+  border-radius: 20px;
+  background-color: transparent;
+  padding: 8px 20px;
+  cursor: pointer;
+}
+
+p {
+  color: #606163;
+  line-height: 25px;
+}
+
+.right-content {
+  width: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.right-content img {
+  width: 600px;
+}
+
+/* About Me Section */
+
+.about-me {
+  width: 56%;
+  margin: 200px;
+  /* border: 3px solid #212121; */
+}
+
+.about-me h1 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.about-me p {
+  margin: 30px;
+  font-size: 18px;
+  line-height: 30px;
+}
+
+/* Skills Section */
+.skills-section {
+  width: 80%;
+  /* border: 3px solid black; */
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.skills-title {
+  text-align: center;
+  font-size: 50px;
+  margin-bottom: 50px;
+}
+
+.skills-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  /* border: 3px solid black; */
+  padding: 20px;
+}
+
+.skill-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  /* border: 3px solid black; */
+}
+
+.icon-circle {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+  height: 100px;
+  /* border: 3px solid black; */
+  border-radius: 50%;
+  box-shadow: 6px 6px 12px #c5c5c5, -6px -6px 12px #ffffff;
+  margin-bottom: 15px;
+}
+
+.icon-circle img {
+  width: 60%;
+  height: auto;
+  object-fit: cover;
+}
+
+.skill-name {
+  font-size: 20px;
+  color: #3c3c40;
+}
+
+/* Project section */
+.project-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 80%;
+  /* border: 3px solid black; */
+  margin: 100px 0;
+}
+
+.project-container h1 {
+  font-size: 50px;
+  margin: 50px;
+}
+
+.card-project {
+  width: 60%;
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  background: rgb(255, 255, 255);
+  border-radius: 10px;
+  margin: 50px;
+  box-shadow: 5px 5px 10px #b8b8b8, -5px -5px 10px #ffffff;
+  transition: all 0.3s ease;
+}
+
+.left-card {
+  width: 50%;
+}
+
+.left-card h2 {
+  font-size: 38px;
+}
+
+.left-card p {
+  margin: 10px 0;
+}
+
+.left-card button {
+  padding: 8px 15px;
+  background-color: #e63946;
+  color: #fff;
+  border-radius: 25px;
+  border: none;
+}
+
+.left-card button:hover {
+  background-color: #212121;
+  color: #fff;
+  transition: ease-in-out 0.2s;
+}
+
+.right-card {
+  width: 50%;
+}
+
+.right-card img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+}
+
+/* Dark Mode */
+body.dark-mode {
+  background-color: #1a1a1a;
+  color: #f0f0f0;
+}
+
+body.dark-mode nav {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+body.dark-mode nav ul a {
+  color: #f0f0f0;
+}
+
+body.dark-mode .welcome-content .left-content h1 {
+  color: #f0f0f0;
+}
+
+body.dark-mode .welcome-content p,
+body.dark-mode .about-me p,
+body.dark-mode .skills-title,
+body.dark-mode .skill-name {
+  color: #dcdcdc;
+}
+
+body.dark-mode .icon-circle {
+  background-color: #fff;
+  box-shadow: 5px 5px 10px #111111, -5px -5px 10px #1f1d1d;
+}
+
+body.dark-mode .card-project {
+  background-color: #181717;
+  box-shadow: 5px 5px 10px #111111, -5px -5px 10px #1f1d1d;
+}
+
+body.dark-mode .left-card button {
+  background-color: #e63946;
+  color: #f0f0f0;
+}
+
+body.dark-mode .left-card button:hover {
+  background-color: #555;
+  color: #ffffff;
+}
+
+@media (max-width: 1280px) {
+  /* Welcome Section */
+  .welcome-content {
+    flex-direction: column-reverse;
+  }
+  /* Product card Section */
+  .card-project {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+    padding: 20px;
+  }
+
+  .left-card,
+  .right-card {
+    width: 100%;
+  }
+
+  .left-card {
+    text-align: center;
+    margin-top: 15px;
+  }
+
+  .left-card h2 {
+    font-size: 28px;
+  }
+
+  .right-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .right-card img {
+    width: 90%;
+    height: auto;
+    border-radius: 8px;
+  }
+}
