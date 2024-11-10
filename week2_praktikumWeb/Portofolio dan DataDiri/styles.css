@@ -1,0 +1,222 @@
+/* Menghilangkan margin, padding, dan scrollbar dari halaman */
+body,
+html {
+    overflow: hidden;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header {
+    display: flex;
+}
+
+nav {
+    z-index: 10;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    padding: 12px 0 12px 0;
+    font-family: 'Montserrat', sans-serif;
+    background-color: rgba(51, 51, 51, 0.8);
+    /* Warna latar dengan opacity 0.8 */
+    justify-content: center;
+}
+
+nav img {}
+
+
+
+.parallax-layer {
+    opacity: 0;
+    transition: all ease 0.7s;
+}
+
+.parallax-layer.active {
+    opacity: 1;
+    
+}
+
+.oot{
+    position: absolute;
+    top: 9999px;
+    
+}
+
+.parallax-layer.active .parallax-content {
+    z-index: 10;
+    text-align: center;
+    color: white;
+    font-family: "Barrio", system-ui;
+    will-change: transform;
+    
+}
+
+.parallax-layer.active .parallax-contentty {
+    margin-top: 130px;
+    z-index: 10;
+    text-align: center;
+    color: whitesmoke;
+    font-family: "Barrio", system-ui;
+    will-change: transform;
+    font-size: 27px;
+    
+}
+
+.parallax-layer.active .data-diri {
+    z-index: 10;
+    text-align: center;
+    color: white;
+    font-family: "Barrio", system-ui;
+    will-change: transform;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 25px;
+    border-left: 2px solid whitesmoke;
+    padding-left: 30px;
+}
+
+.parallax-layer.active .data-diri .ppp {
+    display: flex;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.parallax-layer.active .data-diri h2 {
+    margin-bottom: 62px;
+}
+
+.parallax-layer.active .data-diri .ppp p {
+    margin: 0;
+    font-family: "Sour Gummy", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+}
+
+.parallax-layer.active .uio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 80px;
+    margin-top: 200px;
+
+}
+
+.parallax-layer.active .layer1-image {
+    height: 240px;
+    width: auto;
+    z-index: 10;
+    gap: -20px;
+    
+}
+
+.parallax-layer.active .layer2-image {
+    height: 240px;
+    width: auto;
+    z-index: 10;
+    gap: 20px;
+    
+}
+
+.parallax-layer.active .layer2-image:hover {
+    filter: drop-shadow(5px 5px 10px black);
+    transition: all ease 0.3s;
+}
+
+.parallax-layer.active .layer1-image img.aess {
+    margin-left: -90px;
+    transform: rotate(20deg);
+}
+
+.parallax-layer.active .layer1-image:hover {
+    filter: drop-shadow(5px 5px 10px black);
+    transition: all ease 0.3s;
+}
+
+.parallax-layer.active .content-sl1 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+   
+    background-color: transparent;
+    z-index: 10;
+}
+
+.parallax-layer.active .content-sl2 {
+    display: flex;
+    flex-direction: column-reverse;
+    align-content: center;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 30px;
+    gap: 20px;
+    background-color: transparent;
+    z-index: 10;
+}
+
+
+.parallax-layer img.bgr {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+.parallax-content {}
+
+.slider-buttons {
+    position: absolute;
+    bottom: 20px;
+    left: 600px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+}
+
+.slider-buttons button {
+    padding: 10px 20px;
+    font-size: 1em;
+    cursor: pointer;
+    fill: white;
+
+
+    border-color: transparent;
+    transition: all ease 0.3s;
+    background-color: transparent;
+}
+
+.slider-buttons button.btn2 {
+    border-width: 0.1px;
+    border-left-color: white;
+}
+
+
+.slider-buttons button:hover {
+    fill: rgb(113, 143, 143);
+}
+
+.footer {
+    display: flex;
+}
+
+.icon-sosmed {
+    position: absolute;
+    bottom: 34px;
+    right: 600px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    z-index: 10;
+    fill: white;
+}
