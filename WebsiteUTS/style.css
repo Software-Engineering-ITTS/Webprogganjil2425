@@ -1,0 +1,28 @@
+.banner{
+    background: url("https://c4.wallpaperflare.com/wallpaper/792/766/446/nissan-turbo-white-wheels-wallpaper-preview.jpg") 
+    no-repeat center center;
+    background-size: cover;
+    padding-top: 20%;
+    padding-bottom: 20%;
+    color: #fff;
+}
+
+/* Ganti warna background */
+body {
+    background-color: #135513; /* Warna latar belakang biru gelap */
+    color: #ffffff; /* Warna teks putih */
+}
+
+/* bacgorund kotak foto tugas */
+.project-card {
+    background-color: #963434; /* Warna kartu */
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.project-card img {
+    width: 100%;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
