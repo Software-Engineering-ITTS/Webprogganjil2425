@@ -1,0 +1,80 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #6ea7e0; /* Light background color */
+    margin: 0;
+    padding: 20px;
+}
+
+.title {
+    margin-bottom: 20px;
+    color: #343a40; /* Darker text color */
+}
+
+/* .imgcontainer {
+    margin-bottom: 20px;
+} */
+
+.container {
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+label {
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"],
+textarea {
+    width: 100%; /* Full width */
+    padding: 10px;
+    margin: 8px 0; /* Spacing between inputs */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    background-color: #007bff; /* Bootstrap primary color */
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer;
+    margin-right: 10px; /* Space between buttons */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+.cancelbtn {
+    background-color: #dc3545; /* Bootstrap danger color */
+}
+
+.cancelbtn:hover {
+    background-color: #c82333; /* Darker red on hover */
+}
+
+.password {
+    text-align: center;
+    margin-top: 10px;
+}
+
+.Bidang {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+.card {
+    margin-top: 20px;
+}
+
+.form-select {
+    width: 100%; /* Full width for select elements */
+    padding: 10px;
+    margin: 8px 0; /* Spacing between selects */
+    border: 1px solid #ced4da; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+}
