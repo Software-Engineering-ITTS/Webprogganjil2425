@@ -1,0 +1,669 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+body {
+  background-color: #f8f9fa;
+}
+
+.sub-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: #2c7b68;
+  position: relative;
+}
+
+/* Garis di bawah sub-title */
+.sub-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Menurunkan garis sedikit agar tepat di bawah teks */
+  left: 50%; /* Menempatkan garis di tengah elemen */
+  transform: translateX(
+    -50%
+  ); /* Menggeser garis ke kiri sebanyak 50% dari lebar garis, agar rata tengah */
+  width: 25%; /* Mengatur panjang garis */
+  height: 3px;
+  background: #ffbd59;
+  border-radius: 3px;
+}
+
+/* Gaya untuk menu samping */
+.sidemenu {
+  position: fixed;
+  top: 0;
+  right: -200px; /* Memulai posisi menu di luar layar */
+  width: 200px;
+  height: 100%;
+  background: #ffffff;
+  box-shadow: -2px 0px 5px rgba(0, 0, 0, 0.5);
+  transition: right 0.3s ease;
+}
+
+.sidemenu.open {
+  right: 0; /* Menampilkan menu */
+}
+
+.sidemenu a {
+  display: block;
+  padding: 8px;
+  color: #000;
+  text-decoration: none;
+}
+
+.sidemenu a:hover {
+  background: #f0f0f0;
+}
+
+body {
+  background: #4a492c;
+  color: white;
+}
+
+.header {
+  position: relative;
+  overflow: hidden;
+}
+
+.background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menutupi seluruh area header secara proporsional */
+  z-index: -1; /* Menempatkan gambar di belakang konten */
+  filter: blur(5px); /* Menambahkan efek blur */
+  opacity: 0.8; /* Opsional: Membuat gambar sedikit transparan */
+}
+
+.container {
+  padding: 10px 10%;
+}
+
+.nav-container {
+  padding: 10px 10%;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  /* background-color: #ffbd59; */
+}
+
+.logo {
+  width: 140px;
+  /* margin-right: 600px; */
+}
+
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+  /* background-color: #96abb5; Warna dengan transparansi */
+  /* border-radius: 15px; */
+  padding: 8px 16px;
+  display: inline-block;
+  backdrop-filter: blur(5px); /* Efek blur */
+  -webkit-backdrop-filter: blur(5px); /* Untuk dukungan di Safari */
+}
+
+nav ul li a::after {
+  content: " ";
+  width: 0;
+  height: 3px;
+  background: #ffbd59;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after {
+  width: 100%;
+}
+
+.header-text {
+  margin-top: 17%;
+  font-size: 30px;
+}
+
+.header-text h1 {
+  font-size: 60px;
+  margin-top: 20px;
+}
+
+.header-text h1 span {
+  color: #ffbd59;
+}
+
+/* about */
+#about {
+  padding-top: 99px; /* Ubah sesuai kebutuhan */
+  padding-bottom: 80px; /* Ubah sesuai kebutuhan */
+  color: #ababab;
+  background-color: #4a492c;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  transform: translateY(-50px);
+}
+
+.about-col-1 {
+  flex-basis: 35%;
+}
+
+.about-col-1 img {
+  flex-basis: 60%;
+  border-radius: 15px;
+}
+
+.about-col-2 {
+  flex-basis: 60%;
+}
+
+.sub-title {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  position: relative; /* Menambahkan posisi relatif agar ::after dapat diposisikan dengan benar */
+}
+
+.sub-title::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Menurunkan garis sedikit agar tepat di bawah teks */
+  left: 13%; /* Menempatkan garis di tengah elemen */
+  transform: translateX(
+    -50%
+  ); /* Menggeser garis ke kiri sebanyak 50% dari lebar garis, agar rata tengah */
+  width: 25%; /* Mengatur panjang garis (60% dari lebar teks) */
+  height: 3px;
+  background: #ffbd59;
+  border-radius: 3px;
+}
+
+.sub-projectLine {
+  font-family: "Poppins", sans-serif;
+  font-size: 50px;
+  font-weight: 600;
+  color: #fff;
+  position: relative;
+}
+
+.sub-projectLine::after {
+  content: "";
+  position: absolute;
+  bottom: -5px; /* Menurunkan garis sedikit agar tepat di bawah teks */
+  left: 15%; /* Menempatkan garis di tengah elemen */
+  transform: translateX(
+    -100%
+  ); /* Menggeser garis ke kiri sebanyak 50% dari lebar garis, agar rata tengah */
+  width: 15%; /* Mengatur panjang garis (60% dari lebar teks) */
+  height: 3px;
+  background: yellow;
+  border-radius: 3px;
+}
+
+/* service */
+.service {
+  /* background-color: red; */
+  margin-top: 100px;
+  margin-bottom: 145px;
+  padding: 10px 10%;
+}
+
+.service-title {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.service-list {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Menampilkan dua kolom */
+  gap: 20px;
+  list-style-type: none; /* Menghilangkan titik pada list */
+  padding: 0; /* Menghilangkan padding bawaan ul */
+  margin: 0; /* Menghilangkan margin bawaan ul */
+  margin-top: 30px;
+}
+
+/* Responsive setting for smaller screens */
+@media (max-width: 768px) {
+  .service-list {
+    grid-template-columns: 1fr; /* Menampilkan satu kolom pada layar kecil */
+  }
+}
+
+.service-item {
+  position: relative;
+  background: #2c7b68;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* .service-item::before {
+  content: "";
+  position: absolute;
+  inset: 1px;
+  background: #2c7b68;
+  border-radius: inherit;
+  z-index: -1;
+  transition: transform 0.6s ease;
+  } */
+
+.service-item:hover {
+  transition: transform 0.6s eas e;
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.service-item:hover::before {
+  transform: scale(0.95);
+}
+
+.service-icon-box {
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.service-content-box {
+  text-align: center;
+}
+
+.service-item-title {
+  margin-bottom: 7px;
+}
+
+.service-item-text {
+  color: #fff;
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* aku sendiri yang ini */
+#teks-about {
+  color: #fff;
+  margin-top: 20px;
+}
+
+.gifUbah {
+  margin-top: 40px;
+}
+
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+  justify-content: center;
+}
+
+.tab-links {
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+  background-color: #2c7a68; 
+  color: #fff; 
+  padding: 10px 20px; 
+  border: none; 
+  border-radius: 25px; 
+  transition: background-color 0.3s ease; 
+}
+
+.tab-links:hover {
+  background-color: #fab957; 
+}
+
+
+
+.tab-links::after {
+  content: " ";
+  width: 0;
+  height: 3px;
+  background: #ffbd59;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after {
+  width: 100%;
+  /* Ukuran pada line bawah dari UI nya list about me */
+}
+
+.tab-contents ul li {
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tab-contents ul li span {
+  color: #ffbd59;
+  font-size: 20px;
+}
+
+.tab-contents {
+  display: none;
+}
+
+.tab-contents.active-tab {
+  display: block;
+}
+
+/* -----------services--------------- */
+#services {
+  padding: 30px 0;
+}
+.services-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.services-list div {
+  background: #262626;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 300;
+  border-radius: 10px;
+  transition: background 0.5s, transorm 0.5s;
+}
+
+.services-list div i {
+  font-size: 50px;
+  margin-bottom: 30px;
+}
+.services-list div h2 {
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 15px;
+}
+
+.services-list div a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 12x;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.services-list div:hover {
+  background: #ffbd59;
+  transform: translateY(-10px);
+}
+
+/* ------------portofolio-------------- */
+
+#portofolio {
+  padding: 50px 50px;
+}
+
+.Work-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+.Work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.Work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #2c7a68);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 14px;
+  transition: height 0.5s;
+}
+
+.layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+
+.layer a {
+  margin-top: 20px;
+  color: #ffbd59;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #fff;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.Work:hover img {
+  transform: scale(1.1);
+}
+
+.Work:hover img {
+  transform: scale(1.1);
+}
+
+.Work:hover .layer {
+  height: 100%;
+}
+.btn {
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ffbd59;
+  padding: 14px 50px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: #fff;
+}
+
+.btn:hover {
+  background: #ffbd59;
+}
+
+---------------contact------------------------ 
+
+/* row-footer */
+.row-footer {
+  margin-bottom: 50px;
+}
+
+.contact-left {
+  flex-basis: 35%;
+}
+
+.coltact-right {
+  flex-basis: 60%;
+  color: white;
+}
+
+.contact-left p {
+  margin-top: 30px;
+}
+
+.contact-left p i {
+  color: #ffbd59;
+  margin-right: 15px;
+  font-size: 25px;
+}
+
+.social-icon {
+  margin-top: 30px;
+}
+
+.social-icon a {
+  text-decoration: none;
+  font-size: 30px;
+  display: inline-block;
+  margin-right: 15px;
+  color: white;
+}
+
+.social-icon a:hover {
+  color: #ffbd59;
+  transform: translateY(-5px);
+}
+
+.btn.btn2 {
+  display: inline-block;
+  background: #ffbd59;
+  text-decoration: none;
+  margin-top: 20px;
+}
+.coltact-right form {
+  width: 100%;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  border: 0;
+  outline: none;
+  background: #2c7a68;
+  padding: 15px;
+  margin: 15px 0;
+  color: #fff;
+  font-size: 18px;
+  border-radius: 6px;
+}
+
+form .btn2 {
+  padding: 14px 60px;
+  font-size: 18px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.copyright {
+  width: 100%;
+  text-align: center;
+  padding: 25px 0;
+  background: #262626;
+  font-weight: 300;
+  margin-top: 20px;
+}
+.copyright i {
+  color: #fff;
+}
+
+/* css for small screen */
+nav .fa-solid {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  #header {
+    background-image: url(potongOK.jpg);
+  }
+  .header-text {
+    margin-top: 100%;
+    font-size: 16px;
+  }
+  .header-text h1 {
+    font-size: 30px;
+  }
+  nav .fa-solid {
+    display: block;
+    font-size: 25px;
+  }
+  nav ul {
+    background: #ffbd59;
+    position: fixed;
+    top: 0;
+    right: -200px;
+    width: 200px;
+    height: 100vh;
+    padding-top: 50px;
+    z-index: 2;
+    transition: right 0.5s;
+  }
+  nav ul li {
+    display: block;
+    margin: 25px;
+  }
+  nav ul .fa-solid {
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    cursor: pointer;
+  }
+  .sub-title {
+    font-size: 40px;
+  }
+  .about-col-1,
+  .about-col-2 {
+    flex-basis: 100%;
+  }
+  .about-col-1 {
+    margin-bottom: 30px;
+  }
+  .about-col-2 {
+    font-size: 14px;
+  }
+  .tab-links {
+    font-size: 16px;
+    margin-right: 20px;
+  }
+  .contact-left,
+  .coltact-right {
+    flex-basis: 100%;
+  }
+  .copyright {
+    font-size: 14px;
+  }
+}
+
+#msg {
+  color: rgb(0, 0, 0);
+  margin-top: -10;
+  display: block;
+}

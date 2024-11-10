@@ -1,4 +1,7 @@
 import { useState } from "react";
+// import reactLogo from './assets/react.svg'
+// import viteLogo from '/vite.svg'
+// import './App.css'
 import "./styleMe.css";
 
 function App() {
@@ -38,7 +41,9 @@ function App() {
   return (
     <div className="form-container">
       <form onSubmit={onSubmit}>
-        <h2 style={{marginBottom: "20px"}}>Tak EDit dikit ga ngaruh kan mas 😊 </h2>
+        <h2 style={{ marginBottom: "20px" }}>
+          Tak EDit dikit ga ngaruh kan mas 😊{" "}
+        </h2>
         <div className="form-content">
           <div className="form-group">
             <label htmlFor="username">Username:</label>
@@ -49,7 +54,9 @@ function App() {
               onChange={handleChange}
             />
             {errors.username && (
-              <span className="error-message">{errors.username}</span>
+              <span className="error-message" >
+                {errors.username}
+              </span>
             )}
           </div>
           <div className="form-group">
