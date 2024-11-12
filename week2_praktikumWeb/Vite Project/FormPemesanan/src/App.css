@@ -1,0 +1,176 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  flex-direction: column;
+  align-items: center;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), /* Warna overlay dengan opasitas 50% */
+    url(https://bootstrapmade.com/content/demo/Green/assets/img/hero-carousel/hero-carousel-3.jpg); /* Gambar latar */
+  background-size: cover;
+}
+
+.logo {
+  height: 10em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+:root {
+  --vite-blue: #646cff;
+  --vite-yellow: #facc15;
+  --bg-color: #f4f5f7;
+  --text-color: #333;
+}
+
+.form-container {
+  max-width: 500px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-container:hover {
+  background-color: rgba(255, 255, 255);
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  transform: scale(1.05);
+}
+
+.form-container h2 {
+  color: var(--vite-blue);
+  margin-bottom: 20px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+.form-group2 {
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+.form-group2 label {
+  margin-bottom: 5px;
+  color: var(--text-color);
+  font-weight: bold;
+}
+
+
+.form-group input[type="text"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid var(--vite-blue);
+  border-radius: 4px;
+  font-size: 1rem;
+}
+
+.form-group input[type="radio"],
+.form-group input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: var(--vite-yellow);
+  outline: none;
+}
+
+.form-group textarea {
+  resize: vertical;
+  height: 80px;
+}
+
+.submit-btn,
+.secondary-btn {
+  width: calc(50% - 5px);
+  padding: 12px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.submit-btn {
+  background-color: var(--vite-blue);
+  color: #fff;
+}
+
+.submit-btn:hover {
+  background-color: var(--vite-yellow);
+}
+
+.secondary-btn {
+  background-color: var(--vite-yellow);
+  color: #333;
+  margin-right: 10px;
+}
+
+.secondary-btn:hover {
+  background-color: var(--vite-blue);
+  color: #fff;
+}
