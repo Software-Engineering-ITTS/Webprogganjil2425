@@ -1,5 +1,7 @@
 <?php
+
 include("DbConnection.php"); 
+include("header.php");
 
 $nim = $_POST['txt_nim'];
 $nama = $_POST['txt_nama'];
@@ -18,5 +20,5 @@ if($statement -> execute([$nim, $nama, $status])){
 }else{
     echo "data gagal tersimpan!";
 }
-
+include("footer.php");
 ?>

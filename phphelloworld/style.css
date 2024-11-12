@@ -1,0 +1,12 @@
+ul {
+    list-style: none;
+    list-style-position: inside;
+}
+
+li{
+    list-style: none;
+    float: left;
+    width: 100px;
+    margin: 10px;
+    
+}
