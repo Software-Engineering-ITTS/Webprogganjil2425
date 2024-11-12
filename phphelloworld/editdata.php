@@ -28,8 +28,9 @@ $data = $statement->fetch();
         <input type="text" name="txt_nama" id="" value="<?=$data['nama']?>"/>
 
         <br>
+        <input type="text" name="txt_id" hidden="true" value="<?=$userid?>">
         <input type="reset" name="" id="" value="reset" />
-        <input type="submit" name="" id="" value="simpan" />
+        <input type="submit" name="" id="" value="<?=($userid? 'update' : 'simpan')?>" />
 
 
     </form>

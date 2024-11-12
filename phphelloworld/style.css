@@ -11,6 +11,9 @@ ul {
     gap: 5rem;
 }
 
+li a:hover{
+    color: gold;
+}
 li a {
     
     text-decoration: none;
@@ -22,6 +25,5 @@ li a {
 li {
     text-align: center;
     text-decoration: none;
-    
-    width: 100px;
+
 }

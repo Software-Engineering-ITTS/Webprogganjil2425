@@ -3,6 +3,7 @@
 include("DbConnection.php"); 
 include("header.php");
 
+$userid = $_POST['txt_id'];
 $nim = $_POST['txt_nim'];
 $nama = $_POST['txt_nama'];
 $status = 'AKTIF';
@@ -12,13 +13,30 @@ $status = 'AKTIF';
 // echo "<br/>";
 // var_dump($pdo)
 
-$sql = 'insert into user ( nim, nama, status) values(?, ?, ?)';
-$statement = $pdo->prepare($sql);
-
-if($statement -> execute([$nim, $nama, $status])){
-    echo "data tersimpan!";
+if($userid == ''){
+    $sql = 'insert into user ( nim, nama, status) values(?, ?, ?)';
+    $statement = $pdo->prepare($sql);
+    
+    if($statement -> execute([$nim, $nama, $status])){
+        echo "data tersimpan!";
+    }else{
+        echo "data gagal tersimpan!";
+    }
 }else{
-    echo "data gagal tersimpan!";
+    $sql = 'UPDATE user SET `nim`=:nim, `nama`=:nama WHERE userid=:id';
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':id', $userid, PDO::PARAM_INT);
+    $statement->bindParam(':nim', $nim, PDO::PARAM_STR);
+    $statement->bindParam(':nama', $nama, PDO::PARAM_STR);
+
+    if($statement -> execute()){
+        echo "data terupdate!";
+    }else{
+        echo "data gagal terupdate!";
+    }
+    // update
 }
+
+
 include("footer.php");
 ?>
