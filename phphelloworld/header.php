@@ -2,4 +2,5 @@
     <head>
         <title>PHP CRUD PROJECT</title>
     </head>
-    <body>
+<body>
+     <a href="index.php">Home</a>
