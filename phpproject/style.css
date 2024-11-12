@@ -1,0 +1,24 @@
+body {
+  margin: 0;
+  font-family: monospace;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 5rem;
+  background: black;
+  padding: 20px;
+}
+
+li > a {
+  text-decoration: none;
+  color: yellow;
+}
+
+li > a:hover {
+  color: white;
+  border: 1px solid yellow;
+  border-radius: 30px;
+  padding: 8px;
+}
