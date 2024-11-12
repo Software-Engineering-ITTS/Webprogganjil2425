@@ -1,12 +1,27 @@
+body{
+    margin: 0;
+}
 ul {
+    
+    margin: 0px;
     list-style: none;
-    list-style-position: inside;
+    display: flex;
+    background-color: black;
+    padding: 20px;
+    gap: 5rem;
 }
 
-li{
-    list-style: none;
-    float: left;
-    width: 100px;
-    margin: 10px;
+li a {
     
+    text-decoration: none;
+    margin-left: 0px;
+    color: white;
+
+}
+
+li {
+    text-align: center;
+    text-decoration: none;
+    
+    width: 100px;
 }
