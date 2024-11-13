@@ -12,10 +12,10 @@ header {
    z-index: 10000;
    line-height: 1;
    font-family: helvetica;
-   
+
 }
 
-header a{
+header a {
    font-size: 2rem;
    letter-spacing: 0.05em;
    font-weight: normal;
@@ -31,16 +31,16 @@ header a{
       0 0 40px cyan,
       0 0 50px cyan,
       0 0 60px cyan;
-} 
+}
 
 header a:hover {
    color: cyan;
    text-shadow:
-       0 0 5px #fff,
-       0 0 10px #fff,
-       0 0 20px cyan,
-       0 0 30px cyan,
-       0 0 40px cyan;
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px cyan,
+      0 0 30px cyan,
+      0 0 40px cyan;
 }
 
 nav {
@@ -77,7 +77,8 @@ nav ul li a {
    font-weight: normal;
    line-height: 0.6;
    color: #fff;
-   transition: color 0.3s ease, text-shadow 0.3s ease; /* Efek transisi */
+   transition: color 0.3s ease, text-shadow 0.3s ease;
+   /* Efek transisi */
    text-decoration: none;
 }
 
@@ -89,4 +90,47 @@ nav ul li a:hover {
       0 0 20px cyan,
       0 0 30px cyan,
       0 0 40px cyan;
+}
+
+.kurung {
+   position: relative;
+   text-align: center;
+   color: white;
+}
+
+.kurung .in-text {
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   text-shadow: 
+   0 0 5px rgba(0, 0, 0, 0.5),
+   0 0 10px rgba(0, 0, 0, 0.5),
+   0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+.kurung .in-text h1{
+   font-size: 4rem;
+   font-weight: bold;
+   color: white;
+}
+
+
+.kurung img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+/* Bayangan di bagian bawah gambar */
+.kurung::after {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 30%;
+   /* Sesuaikan tinggi shadow */
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
+   pointer-events: none;
 }
