@@ -5,24 +5,14 @@ body {
    color: #fff;
 }
 
-header {
+nav .kiri {
+   width: 50%;
+   top: 4vh;
    position: fixed;
    left: 3vw;
-   top: 4vh;
    z-index: 10000;
-   line-height: 1;
+   transform: translate(0, 0);
    font-family: helvetica;
-   
-}
-
-header a{
-   font-size: 2rem;
-   letter-spacing: 0.05em;
-   font-weight: normal;
-   text-align: left;
-   color: #fff;
-   transition: color 0.3s ease, text-shadow 0.3s ease;
-   text-decoration: none;
    text-shadow:
       0 0 5px #fff,
       0 0 10px #fff,
@@ -31,20 +21,41 @@ header a{
       0 0 40px cyan,
       0 0 50px cyan,
       0 0 60px cyan;
-} 
-
-header a:hover {
-   color: cyan;
-   text-shadow:
-       0 0 5px #fff,
-       0 0 10px #fff,
-       0 0 20px cyan,
-       0 0 30px cyan,
-       0 0 40px cyan;
 }
 
-nav {
-   width: 100%;
+nav .kiri ul {
+   display: flex;
+   justify-content: start;
+}
+
+nav .kiri ul li {
+   margin-left: 30px;
+   display: flex;
+}
+
+nav .kiri ul li a {
+   font-size: 2rem;
+   letter-spacing: 0.05em;
+   font-weight: normal;
+   line-height: 0.6;
+   color: #fff;
+   transition: color 0.3s ease, text-shadow 0.3s ease;
+   /* Efek transisi */
+   text-decoration: none;
+}
+
+nav .kiri ul li a:hover {
+   color: cyan;
+   text-shadow:
+      0 0 5px #fff,
+      0 0 10px #fff,
+      0 0 20px cyan,
+      0 0 30px cyan,
+      0 0 40px cyan;
+}
+
+nav .kanan {
+   width: 50%;
    top: 4vh;
    position: fixed;
    right: 3vw;
@@ -61,27 +72,27 @@ nav {
       0 0 60px cyan;
 }
 
-nav ul {
+nav .kanan ul {
    display: flex;
    justify-content: end;
 }
 
-nav ul li {
+nav .kanan ul li {
    margin-left: 30px;
    display: flex;
 }
 
-nav ul li a {
+nav .kanan ul li a {
    font-size: 2rem;
    letter-spacing: 0.05em;
    font-weight: normal;
    line-height: 0.6;
    color: #fff;
-   transition: color 0.3s ease, text-shadow 0.3s ease; /* Efek transisi */
+   transition: color 0.3s ease, text-shadow 0.3s ease;
    text-decoration: none;
 }
 
-nav ul li a:hover {
+nav .kanan ul li a:hover {
    color: cyan;
    text-shadow:
       0 0 5px #fff,
@@ -91,7 +102,102 @@ nav ul li a:hover {
       0 0 40px cyan;
 }
 
-.kurung h1 {
+header {
+   position: relative;
+   text-align: center;
+   color: white;
+   text-shadow:
+      0 0 5px rgba(0, 0, 0, 0.7),
+      0 0 10px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+header img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+header::after {
+   content: "";
    position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 30%;
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #032b23 100%);
+   pointer-events: none;
+}
+
+header h1 {
+   position: absolute;
+   top: 40%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 5rem;
+   font-weight: bold;
+}
+
+header h1:hover {
+   position: absolute;
+   top: 39%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 6rem;
+   font-weight: bold;
+   text-shadow:
+      0 0 5px white,
+      0 0 10px white,
+      0 0 30px violet,
+      0 0 40px violet,
+      0 0 50px violet;
+}
+
+header h2 {
+   position: absolute;
+   top: 48%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 2rem;
+   font-weight: bold;
+
+}
+
+header h2:hover {
+   position: absolute;
+   top: 48.5%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   font-size: 2.5rem;
+   font-weight: bold;
+   text-shadow:
+      0 0 5px white,
+      0 0 10px white,
+      0 0 30px violet,
+      0 0 40px violet,
+      0 0 50px violet;
+}
+
+.profil .kiri {
    
+}
+
+.profil .kiri img{
+
+}
+
+.profil .kanan {
+
+}
+
+.profil .kanan img{
+   position: relative;
+   width: 75%;  
+   background-color: white;
+   text-shadow:
+      0 0 5px white,
+      0 0 10px white,
+      0 0 30px violet,
+      0 0 40px violet,
+      0 0 50px violet;
 }
