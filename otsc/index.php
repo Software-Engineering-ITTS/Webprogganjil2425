@@ -7,7 +7,7 @@ include("header.php");
 
 <body data-bs-theme="dark" class="bg-black">
     <h1>Data Barang</h1>
-    <a href="form.php">Tambah Barang</a>
+    <a href="form.php?id=-1">Tambah Barang</a>
     <?php
     // var_dump($pdo);
     $sql = 'select * from InventarisBarang';
@@ -17,24 +17,28 @@ include("header.php");
     ?>
 
     <!-- id	kode_barang	nama_barang	kategori_barang	tanggal_diterima	tanggal_expired	status_available	stock	gudang_penyimpanan	catatan -->
-    <table>
-        <tr>
-            <th>ID</th>
-            <th>Kode Barang</th>
-            <th>Nama Barang</th>
-            <th>Kategori Barang</th>
-            <th>Tanggal Diterima</th>
-            <th>Tanggal Expired</th>
-            <th>Status</th>
-            <th>Stock</th>
-            <th>Gudang Penyimpanan</th>
-            <th>Catatan</th>
-            <th>Aksi</th>
-        </tr>
+    <table class="table table-stripped">
+        <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th>Kode Barang</th>
+                <th>Nama Barang</th>
+                <th>Kategori Barang</th>
+                <th>Tanggal Diterima</th>
+                <th>Tanggal Expired</th>
+                <th>Status</th>
+                <th>Stock</th>
+                <th>Gudang Penyimpanan</th>
+                <th>Catatan</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
 
+
+        <tbody>
         <?php
         foreach ($data as $row) {
-            echo "<tr>";
+            echo "<tr scope='row'>";
             echo "<td>" . htmlspecialchars($row['id']) . "</td>";
             echo "<td>" . htmlspecialchars($row['kode_barang']) . "</td>";
             echo "<td>" . htmlspecialchars($row['nama_barang']) . "</td>";
@@ -52,6 +56,8 @@ include("header.php");
             echo "</tr>";
         }
         ?>
+        </tbody>
+        
     </table>
 </body>
 

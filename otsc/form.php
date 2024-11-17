@@ -3,30 +3,42 @@
 
 <?php
 include("header.php");
-
 include("DbConnection.php");
-include("header.php");
-$id = intval($_GET['id']);
 
+$id = $_GET['id'];
 
-$sql = "SELECT * FROM InventarisBarang WHERE id = ?";
-$statement = $pdo->prepare($sql);
-$statement->execute([$id]);
-$data = $statement->fetch(PDO::FETCH_ASSOC);
+$kode_barang = '';
+$nama_barang = '';
+$kategori_barang = '';
+$tanggal_diterima = '';
+$tanggal_expired = '';
+$status_available = '';
+$stock = '';
+$gudang_penyimpanan = '';
+$catatan = '';
+$verification = '';
 
-if ($data) {
-    // Bind data to variables
-    $kode_barang = $data['kode_barang'];
-    $nama_barang = $data['nama_barang'];
-    $kategori_barang = $data['kategori_barang'];
-    $tanggal_diterima = $data['tanggal_diterima'];
-    $tanggal_expired = $data['tanggal_expired'];
-    $status_available = $data['status_available'];
-    $stock = $data['stock'];
-    $gudang_penyimpanan = $data['gudang_penyimpanan'];
-    $catatan = $data['catatan'];
-    $verification = $data['no_verifikasi_pegawai'];
+if ($id != -1) {
+    $sql = "SELECT * FROM InventarisBarang WHERE id = ?";
+    $statement = $pdo->prepare($sql);
+    $statement->execute([$id]);
+    $data = $statement->fetch(PDO::FETCH_ASSOC);
+
+    if ($data) {
+        // Bind data to variables
+        $kode_barang = $data['kode_barang'];
+        $nama_barang = $data['nama_barang'];
+        $kategori_barang = $data['kategori_barang'];
+        $tanggal_diterima = $data['tanggal_diterima'];
+        $tanggal_expired = $data['tanggal_expired'];
+        $status_available = $data['status_available'];
+        $stock = $data['stock'];
+        $gudang_penyimpanan = $data['gudang_penyimpanan'];
+        $catatan = $data['catatan'];
+        $verification = $data['no_verifikasi_pegawai'];
+    }
 }
+
 
 ?>
 
@@ -55,7 +67,7 @@ if ($data) {
                 <select name="category" id="selectCategory" class="form-control">
                     <option value="" selected>Pilih Kategori</option>
                     <option value="stationery" <?= $kategori_barang === 'stationery' ? 'selected' : '' ?>>Stationery</option>
-                    <option value="clothing"<?= $kategori_barang === 'clothing' ? 'selected' : '' ?>>Clothing</option>
+                    <option value="clothing" <?= $kategori_barang === 'clothing' ? 'selected' : '' ?>>Clothing</option>
                     <option value="f&b" <?= $kategori_barang === 'f&b' ? 'selected' : '' ?>>Food And Beverages</option>
                     <option value="furniture" <?= $kategori_barang === 'furniture' ? 'selected' : '' ?>>Furniture</option>
                     <option value="electronics" <?= $kategori_barang === 'electronics' ? 'selected' : '' ?>>Electronics</option>
@@ -67,12 +79,12 @@ if ($data) {
                 <input type="date" name="inpDateDiterima" id="inpDateDiterima" value="<?= htmlspecialchars($tanggal_diterima) ?>>
             </div>
 
-            <div class="form-group my-4 px-5" id="tanggalExpiredForm" hidden="true">
+            <div class=" form-group my-4 px-5" id="tanggalExpiredForm" hidden="true">
                 <label for="inpDateExp">Tanggal Expired</label>
                 <input type="date" name="inpDateExp" id="inpDateExp" value="<?= htmlspecialchars($tanggal_expired) ?>>
             </div>
 
-            <div class="form-group my-4 px-5">
+            <div class=" form-group my-4 px-5">
                 <label for="inpAvailability">Ketersediaan Barang</label>
                 <div class="form-check">
                     <input type="radio" name="availability" id="inpAvailability" value="available"
@@ -84,7 +96,7 @@ if ($data) {
 
                 <div class="form-group " id="inpNewStock" hidden="true">
                     <p>Stock Barang (Akumulasi)</p>
-                    <input type="number" class="form-control" name="stockBarang" id="inpStockBarang" value="<?=$stock?>">
+                    <input type="number" class="form-control" name="stockBarang" id="inpStockBarang" value="<?= $stock ?>">
                 </div>
             </div>
 
@@ -94,9 +106,9 @@ if ($data) {
                     <?php
                     $gudang_array = explode(';', $gudang_penyimpanan);
                     ?>
-                    <input type="checkbox" class="form-check-input" name="gudang[]" id="gudangA" value="Gudang A"  <?= in_array('Gudang A', $gudang_array) ? 'checked' : '' ?>>Gudang A
+                    <input type="checkbox" class="form-check-input" name="gudang[]" id="gudangA" value="Gudang A" <?= in_array('Gudang A', $gudang_array) ? 'checked' : '' ?>>Gudang A
                     <br>
-                    <input type="checkbox" name="gudang[]" class="form-check-input" id="gudangB" value="Gudang B"  <?= in_array('Gudang B', $gudang_array) ? 'checked' : '' ?>>Gudang B
+                    <input type="checkbox" name="gudang[]" class="form-check-input" id="gudangB" value="Gudang B" <?= in_array('Gudang B', $gudang_array) ? 'checked' : '' ?>>Gudang B
                     <br>
                     <input type="checkbox" name="gudang[]" class="form-check-input" id="gudangC" value="Gudang C" <?= in_array('Gudang C', $gudang_array) ? 'checked' : '' ?>>Gudang C
                 </div>
