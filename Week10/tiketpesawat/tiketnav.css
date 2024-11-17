@@ -1,0 +1,17 @@
+ul {
+    display: flex;
+    background-color: #001716;
+    gap: 1rem;
+    padding: 1rem;
+    margin-bottom: 1rem;
+}
+
+li {
+    margin-left: 2rem;
+}
+
+li > a{
+    text-decoration: none;
+    color: #a3ff05;
+    font-size: 2rem;  
+}

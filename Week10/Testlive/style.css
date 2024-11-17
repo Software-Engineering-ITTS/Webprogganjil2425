@@ -1,0 +1,25 @@
+ul {
+    align-items: center;
+    border: orange solid 3px;
+    width: 250px;
+    height: 50px;
+    list-style: none;
+    gap: 1rem;
+    display: flex;
+    background-color: black;
+}
+
+ul a {
+    color: orange;
+}
+
+table {
+    border: orange solid 3px;
+    color: orange;
+    background-color: black;
+}
+
+li {
+    list-style: none;
+    display: flex;
+}

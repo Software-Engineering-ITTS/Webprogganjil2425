@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan Tiket</title>
+    <link rel="stylesheet" href="tiket2.css">
+</head>
+<body>
+    <form action="tiket4.php" method="POST">
+        <section class="box_list" style="
+            display: flex;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+            background-color: darkgreen;
+            ">
+            <div class="list_atas" style="
+            width: 800px;
+            justify-content: center;
+            align-items: center;
+            border: 2px solid black;
+            font-size: 2rem;
+            background-color: #001716;
+            padding: 2rem;">
+                <ul style="list-style: none; display: flex; gap: 2rem;">
+                <li><a href="tiket1.html" style="text-decoration: none; color: #a3ff05;">Isi Form</a></li>
+                <li><a href="cektiket.php" style="text-decoration: none; color: #a3ff05;">Cek Data Pemesan</a></li>
+                </ul>
+            </div>
+        </section>
+        <section class="box_luar">
+            <div class="box_utama">
+                <h1 class="judul_aplikasi">Form Penjualan Tiket Pesawat</h1>
+                <div class="pemesan">
+                    <label for="nama">Nama :</label>
+                    <input type="text" id="nama" name="nama_pemesan" placeholder="Masukkan Nama Lengkap Anda">
+                </div>
+                <br>
+                <div class="gender">
+                    <p>Silahkan Pilih Gender Anda :</p>
+                    <input type="radio" id="g_laki" name="tipe_gender" value="Laki-laki">
+                    <label for="g_laki"> Laki-laki</label><br>
+
+                    <input type="radio" id="g_perempuan" name="tipe_gender" value="Perempuan">  
+                    <label for="g_perempuan"> Perempuan</label><br>
+                </div>
+                <br>
+                <div class="terbang">
+                    <p>Jenis Penerbangan :</p>
+                    <input type="radio" id="p_domestik" name="tipe_terbang" value="Domestik">
+                    <label for="p_domestik"> Domestik</label><br>
+
+                    <input type="radio" id="p_internasional" name="tipe_terbang" value="Internasional">
+                    <label for="p_internasional"> Internasional</label><br>
+                </div>
+                <br>
+                <div class="waktu">
+                    <p>Pilih Waktu Penerbangan :</p>
+                    <input type="radio" id="pagi" name="tipe_waktu" value="Pagi">
+                    <label for="pagi">Pagi</label>
+                    <input type="radio" id="siang" name="tipe_waktu" value="Siang">
+                    <label for="siang">Siang</label>
+                    <input type="radio" id="sore" name="tipe_waktu" value="Sore">
+                    <label for="sore">Sore</label>
+                    <input type="radio" id="malam" name="tipe_waktu" value="Malam">
+                    <label for="malam">Malam</label>
+                </div>
+                <br>
+                <div class="bandaraA">
+                    <label for="asal">Pilih Bandara Asal :</label>
+                    <select name="bandara_asal" id="asal">
+                        <option value="Jakarta">Jakarta</option>
+                        <option value="Surabaya">Surabaya</option>
+                        <option value="Yogyakarta">Yogyakarta</option>
+                        <option value="Semarang">Semarang</option>
+                        <option value="Serang">Serang</option>
+                    </select>
+                </div>
+                <br>
+                <div class="bandaraT">
+                    <label for="tujuan">Pilih Bandara Tujuan :</label>
+                    <select name="bandara_tujuan" id="tujuan">
+                        <option value="Kuala">Kuala Lumpur</option>
+                        <option value="Manila">Manila</option>
+                        <option value="Singapura">Singapura</option>
+                        <option value="Bangkok">Bangkok</option>
+                        <option value="Sydney">Sydney</option>
+                        <option value="Jakarta">Jakarta</option>
+                        <option value="Surabaya">Surabaya</option>
+                        <option value="Yogyakarta">Yogyakarta</option>
+                        <option value="Semarang">Semarang</option>
+                        <option value="Serang">Serang</option>
+                    </select>
+                </div>
+                <br>
+                <div class="maskapai">
+                    <label for="p_maskapai">Maskapai :</label>
+                    <input type="text" id="p_maskapai" name="nama_maskapai" placeholder="Masukkan Nama Maskapai">
+                </div>
+                <br>
+                <div class="harga">
+                    <label for="p_harga">Harga :</label>
+                    <input type="text" id="p_harga" name="jumlah_harga" placeholder="Masukkan Harga Tiket">
+                </div>
+                <br>
+                <div class="jKursi">
+                    <p>Pilih Jumlah Kursi :</p>
+                    <input type="radio" id="k1" name="jumlah_kursi" value="1">
+                    <label for="k1">1</label>
+                    <input type="radio" id="k2" name="jumlah_kursi" value="2">
+                    <label for="k2">2</label>
+                    <input type="radio" id="k3" name="jumlah_kursi" value="3">
+                    <label for="k3">3</label>
+                    <input type="radio" id="k4" name="jumlah_kursi" value="4">
+                    <label for="k4">4</label>
+                    <input type="radio" id="k5" name="jumlah_kursi" value="5">
+                    <label for="k5">5</label>
+                </div>
+                <br>
+                <div class="nKursi">
+                    <p>Pilih Nomor Kursi :</p>
+                    <input type="checkbox" id="kursi1" name="nomor_kursi[]" value="1">
+                    <label for="kursi1">Kursi 1</label>
+
+                    <input type="checkbox" id="kursi2" name="nomor_kursi[]" value="2">
+                    <label for="kursi2">Kursi 2</label>
+
+                    <input type="checkbox" id="kursi3" name="nomor_kursi[]" value="3">
+                    <label for="kursi3">Kursi 3</label>
+
+                    <input type="checkbox" id="kursi4" name="nomor_kursi[]" value="4">
+                    <label for="kursi4">Kursi 4</label>
+
+                    <input type="checkbox" id="kursi5" name="nomor_kursi[]" value="5">
+                    <label for="kursi5">Kursi 5</label>
+                </div>
+                <br>
+                <div class="tambahan">
+                    <p><label for="tambah">Kebutuhan Tambahan :</label></p>
+                    <textarea id="tambah" name="kebutuhan_tambahan" cols="40" rows="5" placeholder="Tuliskan Kebutuhan Tambahan Anda"></textarea>
+                </div>
+                <br>
+                <div class="password">
+                    <p>Pin Password Anda :</p>
+                    <label for="pin">PIN</label>
+                    <input type="text" id="pin" name="pin_password">
+                </div>
+                <button class="submit" id="submit" type="submit">Submit</button>
+            </div>
+        </section>
+    </form>
+    <!-- <script src="tiket3.js"></script> -->
+</body>
+</html>
