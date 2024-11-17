@@ -1,0 +1,20 @@
+ul{
+  background-color: rgb(92, 92, 91);
+  padding: 30px;
+  border: solid black 1px;
+  margin-left: 0px;
+  list-style: none;
+  display: flex;
+  gap: 10px;
+}
+
+li {
+  margin-left: 0px;
+}
+
+li > a {
+  padding: 15px;
+  background-color: azure;
+  text-decoration: none;
+  width: 100px;
+}
