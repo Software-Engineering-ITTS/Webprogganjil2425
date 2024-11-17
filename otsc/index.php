@@ -29,15 +29,27 @@ include("header.php");
             <th>Stock</th>
             <th>Gudang Penyimpanan</th>
             <th>Catatan</th>
+            <th>Aksi</th>
         </tr>
 
         <?php
         foreach ($data as $row) {
-            // echo "<tr><td>".$row['nim']." </td> ";
-            // echo "<td>".$row['nama']." </td> ";
-            // echo "<td> ".$row['status']."</td>";
-            // echo "<td><a href='editdata.php?userid=".$row["userid"]."'>Edit</a></td>";
-            // echo "<td><a href='hapusdata.php?userid=".$row["userid"]."'>Hapus</a></td></tr>";
+            echo "<tr>";
+            echo "<td>" . htmlspecialchars($row['id']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['kode_barang']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['nama_barang']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['kategori_barang']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['tanggal_diterima']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['tanggal_expired']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['status_available']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['stock']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['gudang_penyimpanan']) . "</td>";
+            echo "<td>" . htmlspecialchars($row['catatan']) . "</td>";
+            echo "<td>";
+            echo "<a href='form.php?id=" . $row['id'] . "'>Edit</a> | ";
+            echo "<a href='hapusdata.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to delete this item?');\">Delete</a>";
+            echo "</td>";
+            echo "</tr>";
         }
         ?>
     </table>
