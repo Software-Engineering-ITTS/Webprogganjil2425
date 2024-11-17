@@ -38,12 +38,12 @@ include("header.php");
 
             <div class="form-group my-4 px-5">
                 <label for="inpDateDiterima">Tanggal Diterima</label>
-                <input type="date" name="" id="inpDateDiterima">
+                <input type="date" name="inpDateDiterima" id="inpDateDiterima">
             </div>
 
             <div class="form-group my-4 px-5" id="tanggalExpiredForm" hidden="true">
                 <label for="inpDateExp">Tanggal Expired</label>
-                <input type="date" name="" id="inpDateExp">
+                <input type="date" name="inpDateExp" id="inpDateExp">
             </div>
 
             <div class="form-group my-4 px-5">
