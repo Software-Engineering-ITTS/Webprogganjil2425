@@ -60,14 +60,74 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("inpInAvailability").checked =false
         }
     })
-
     document.getElementById("btnSubmit").addEventListener('click', function (event) {
-        const noVerif = document.getElementById("inpVerifikasiPegawai")
-        if(noVerif.value === ''){
-            alert("Masukkan No Verifikasi dulu")
-            return
-        }
-        // TODO SEMUA DATA HARUS TERISI dulu
+            console.log("Submit is clicked")
+    
+            const noVerif = document.getElementById("inpVerifikasiPegawai")
+            if(noVerif.value === ''){
+                alert("Masukkan Kode Verifikasi dulu")
+            }
     })
+    // document.getElementById("btnSubmit").addEventListener('click', function (event) {
+    //     console.log("Submit is clicked")
+
+    //     const noVerif = document.getElementById("inpVerifikasiPegawai")
+    //     if(noVerif.value === ''){
+    //         alert("Masukkan Kode Verifikasi dulu")
+    //         return
+    //     }else{
+            
+    //         // SEND THE FORM DATA INTO simpandata.php 
+            
+
+    //         // ambil form data
+    //         const formData = new FormData();
+    //         formData.append("id_barang", document.getElementById("id_barang").value);
+    //         formData.append("kode_barang", document.getElementById("txtKodeBarang").value);
+    //         formData.append("nama_barang", document.getElementById("txtNamaBarang").value);
+    //         formData.append("kategori_barang", document.getElementById("selectCategory").value);
+    //         formData.append("tanggal_diterima", document.getElementById("inpDateDiterima").value);
+    //         formData.append("tanggal_expired", document.getElementById("inpDateExp").value);
+        
+    //         // getting radio buttons data for availability
+    //         const availability = document.querySelector('input[name="availability"]:checked');
+    //         formData.append("status_available", availability ? availability.value : "");
+        
+    //         const stockBarangInput = document.getElementById("inpStockBarang");
+    //         formData.append("stock", stockBarangInput ? stockBarangInput.value : "0");
+        
+    //         // getting checkboxes data for gudang
+    //         const gudangs = document.querySelectorAll('input[name="gudang"]:checked');
+    //         const gudangValues = Array.from(gudangs).map(input => input.id); // Get the IDs of checked gudangs
+    //         formData.append("gudang_penyimpanan", JSON.stringify(gudangValues));
+        
+            
+    //         formData.append("catatan_tambahan", document.getElementById("catatan-tambahan").value);
+        
+    //         // Employee verification number
+    //         formData.append("verifikasi_pegawai", document.getElementById("inpVerifikasiPegawai").value);
+        
+            
+    //         const formRequest = new XMLHttpRequest();
+
+    //         console.log("Send Data");
+    //         console.log(formRequest);
+
+    //         // // open request to simpandata.php
+    //         // formRequest.open("POST", "simpandata.php", true);
+        
+    //         // // create callback here
+    //         // formRequest.onreadystatechange = function () {
+    //         //     if (xhr.readyState === 4 && xhr.status === 200) {
+    //         //         alert("Response from server: " + xhr.responseText);
+    //         //     }
+    //         // };
+
+    //         // // initiate send data
+    //         // xhr.send(formData);
+
+    //     }
+        
+    // })
 
 })
