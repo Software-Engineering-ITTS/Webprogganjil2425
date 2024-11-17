@@ -60,14 +60,14 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("inpInAvailability").checked =false
         }
     })
-    document.getElementById("btnSubmit").addEventListener('click', function (event) {
-            console.log("Submit is clicked")
+    // document.getElementById("btnSubmit").addEventListener('click', function (event) {
+    //         console.log("Submit is clicked")
     
-            const noVerif = document.getElementById("inpVerifikasiPegawai")
-            if(noVerif.value === ''){
-                alert("Masukkan Kode Verifikasi dulu")
-            }
-    })
+    //         const noVerif = document.getElementById("inpVerifikasiPegawai")
+    //         if(noVerif.value === ''){
+    //             alert("Masukkan Kode Verifikasi dulu")
+    //         }
+    // })
     // document.getElementById("btnSubmit").addEventListener('click', function (event) {
     //     console.log("Submit is clicked")
 

@@ -47,7 +47,7 @@ include("header.php");
             echo "<td>" . htmlspecialchars($row['catatan']) . "</td>";
             echo "<td>";
             echo "<a href='form.php?id=" . $row['id'] . "'>Edit</a> | ";
-            echo "<a href='hapusdata.php?id=" . $row['id'] . "' onclick=\"return confirm('Are you sure you want to delete this item?');\">Delete</a>";
+            echo "<a href='hapusdata.php?id=" . $row['id'] . "' onclick=\"return confirm('Apakah Anda Yakin Ingin Menghapus Barang Ini?');\">Delete</a>";
             echo "</td>";
             echo "</tr>";
         }
