@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pemantauan Proyek</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      background-color: green;
+      max-width: 600px;
+      margin: auto;
+      padding: 20px;
+    }
+    .header {
+      background-color: red;
+      text-align: center;
+      color: white;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    .label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+    .input,
+    .textarea,
+    .select {
+      width: 100%;
+      padding: 8px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+    .button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    .notification {
+      background-color: #28a745;
+      color: white;
+      padding: 10px;
+      border-radius: 4px;
+      text-align: center;
+      margin-bottom: 15px;
+    }
+    .change-history {
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .history-list {
+      list-style-type: none;
+      padding: 0;
+    }
+    .history-item {
+      padding: 5px 0;
+      border-bottom: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <form action="index.php" method="POST">      
+  <div class="container">
+    <h1 class="header">Pemantauan Proyek</h1>
+
+    <div class="notification" style="display: none;">
+      Proyek telah disimpan.
+    </div>
+      <div class="form-group">
+        <label for="project-name" class="label">Nama Proyek:</label>
+        <input type="text" id="project-name" name="namaproyek" placeholder="Masukkan nama proyek" class="input" />
+      </div>
+
+      <div class="form-group">
+        <label for="password" class="label">Kata Sandi:</label>
+        <input type="password" id="password" name="katasandi" placeholder="Masukkan kata sandi" class="input" />
+      </div>
+
+      <div class="form-group">
+        <label class="label">Status Proyek:</label>
+        <input type="radio" id="ongoing" name="status" value="Ongoing" />
+        <label for="ongoing">Sedang Berjalan</label>
+        <input type="radio" id="completed" name="status" value="Completed" />
+        <label for="completed">Selesai</label>
+      </div>
+
+      <div class="form-group">
+        <label class="label">Fitur Tambahan:</label>
+        <input type="checkbox" id="feature1" name="fitur" value="Report" />
+        <label for="feature1">Laporan Harian</label>
+        <input type="checkbox" id="feature2" name="fitur" value="Notification" />
+        <label for="feature2">Notifikasi Otomatis</label>
+        <input type="checkbox" id="feature3" name="fitur" value="Tracking" />
+        <label for="feature3">Pelacakan</label>
+      </div>
+
+      <div class="form-group">
+        <label for="deskripsi" class="label">Deskripsi Proyek:</label>
+        <textarea id="deskripsi" name="deskripsi" rows="4" placeholder="Deskripsikan proyek di sini" class="textarea"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="tingkatnnya" class="label">Prioritas Proyek:</label>
+        <select id="tingkatnnya" name="prioritas" class="select">
+          <option value="low">Rendah</option>
+          <option value="medium">Sedang</option>
+          <option value="high">Tinggi</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="startDate" class="label">Tanggal Mulai:</label>
+        <input type="date" id="startDate" name="tanggalmulaii" class="input" />
+      </div>
+
+      <div class="form-group">
+        <label for="endDate" class="label">Tanggal Selesai:</label>
+        <input type="date" id="endDate" name="tanggalakhir" class="input" />
+      </div>
+
+      <div class="form-group">
+        <label for="budget" class="label">Anggaran:</label>
+        <input type="number" id="budget" name="budget" placeholder="Masukkan anggaran" class="input" />
+      </div>
+
+   
+      <div class="form-group">
+        <button type="submit" id="submit" class="submit">Simpan Proyek</button>
+      </div>
+    </div>
+    </form>
+
+   
+</body>
+</html>
