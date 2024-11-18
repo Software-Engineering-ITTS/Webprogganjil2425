@@ -9,7 +9,7 @@
       $rows = []; 
       // lalu ketika wadahnya diambil menggunakan looping
       while ($row = mysqli_fetch_assoc($result) ) { //baju yang diambil setiap looping nya
-         $rows[] = $row; //menambahkan elemen baru di akhir setiap array
+         $rows[] = $row; //menambahkan elemen baru di akhir setiap arrayy
       }
       return $rows;
     }
