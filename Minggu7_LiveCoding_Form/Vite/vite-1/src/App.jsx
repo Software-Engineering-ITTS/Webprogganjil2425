@@ -1,12 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 // import './App.css'
 // import "./index.css";
 
 function App() {
-  const [form, setForm] = useState({ username: "", password: "" });
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ nama: "", nim: "" });
   const [errors, setError] = useState({});
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -16,13 +18,44 @@ function App() {
   };
   // const name = e.targer.name
   // const value = e.targer.value
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
-  const onSubmit = (e) => {
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost/phpproject/backend/lihatdata.php"
+      );
+      const data = await response.json();
+      setUsers(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onSubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm(form);
     setError(errors);
-    if(Object.keys(error).length === 0) {
-      console.log("call api post")
+    if (Object.keys(errors).length === 0) {
+      // console.log("call api post");
+      const url = "http://localhost/phpproject/backend/simpandata.php";
+
+      try {
+        const response = await fetch(url,{
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json", 
+          },
+          body: JSON.stringify(form)
+          });
+          fetchUser();
+          setForm({userid: null, nim: "", nama: ""})
+      } catch(error) {
+        console.log(error);
+      }
     }
     //console.log(errors);
     //console.log(form);
@@ -30,13 +63,11 @@ function App() {
 
   const validateForm = (form) => {
     const errors = {};
-    if (!form.username.trim()) {
-      errors.username = "username is required";
+    if (!form.nim) {
+      errors.nim = "nim is required";
     }
-    if (!form.password) {
-      errors.password = "password is required";
-    } else if (form.password.length < 8) {
-      errors.password = "minimal password 8 karakter";
+    if (!form.nama.trim()) {
+      errors.nama = "nama is required";
     }
     return errors;
   };
@@ -48,30 +79,52 @@ function App() {
           style={{ display: "flex", flexDirection: "column", width: "400px" }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label htmlFor="">userame</label>
+            <label htmlFor="">Nim</label>
             <input
               type="text"
-              name="username"
-              id="username"
+              name="nim"
+              id="nim"
               onChange={handleChange}
             />
-            <span>{errors.username}</span>
+            <span>{errors.nim}</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label htmlFor="">password</label>
+            <label htmlFor="">Nama</label>
             <input
               type="text"
-              name="password"
-              id="password"
+              name="nama"
+              id="nama"
               onChange={handleChange}
             />
-            <span>{errors.password}</span>
+            <span>{errors.nama}</span>
           </div>
           <button type="submit" style={{ marginTop: "16px" }}>
             Login
           </button>
         </div>
       </form>
+
+      <h2>Data User</h2>
+      <table border={1}>
+        <thead>
+        <tr>
+          <td>NIM</td>
+          <td>NAMA</td>
+          <td>ACTIONS</td>
+        </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.userid}>
+              <td>{user.nim}</td>
+              <td>{user.nama}</td>
+              <td>
+                <button>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
     </>
   );
 }
