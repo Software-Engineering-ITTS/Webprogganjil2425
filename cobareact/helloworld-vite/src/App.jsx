@@ -2,9 +2,10 @@
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function App() {
+    const [users, setUsers] = useState([]);
     const [form, setForm] = useState({ username: "", password: "" });
     const [errors, setError] = useState({})
 
@@ -14,14 +15,29 @@ function App() {
             ...form,
             [name]: value
         });
-
     }
+
+    useEffect(() => {
+        fetchUser()
+    }, []);
+
+    const fetchUser = async () => {
+        try {
+            const response = await fetch("http://localhost:8080/Webprogganjil2425/phphelloworld/backend/lihatdata.php");
+            const data = await response.json();
+            setUsers(data);
+            console.log(data);
+        } catch (error) {
+            console.log(error);
+        }
+    }
+
     const OnSubmit = (e) => {
         e.preventDefault();
         const errors = validateForm(form);
         setError(errors)
 
-        if(Object.keys(errors).length === 0){
+        if (Object.keys(errors).length === 0) {
             console.log("Call API POST")
         }
     }
@@ -34,7 +50,7 @@ function App() {
         }
         if (!form.password) {
             errors.password = "required"
-        } else if( form.password.length < 8){
+        } else if (form.password.length < 8) {
             errors.password = "minimal password 8 karakter"
         }
 
@@ -58,6 +74,32 @@ function App() {
                     <button type="submit" style={{ marginTop: "16px" }}>Login</button>
                 </div>
             </form>
+
+            <h2> Data User</h2>
+            <table>
+                <thead>
+                    <tr>
+                    <td>NIM</td>
+                    <td>Nama</td>
+                    <td>Actions</td>
+                    </tr>
+                    
+                </thead>
+                <tbody>
+                    {users.map((user) => (
+                        <tr key={user.id}>
+                            <td>{user.nim}</td>
+                            <td>{user.nama}</td>
+                            <td>
+                                
+                                <button>Delete</button>
+                            </td>
+                        </tr>
+
+                    ))}
+
+                </tbody>
+            </table>
 
         </>
     )

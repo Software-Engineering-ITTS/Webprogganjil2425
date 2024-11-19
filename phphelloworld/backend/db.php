@@ -7,6 +7,7 @@ define('DB_NAME', 'phpproject');
 $dsn = "mysql:host=".DB_HOST.";dbname=".DB_NAME.";charset=UTF8";
 try{
     $pdo = new PDO($dsn, DB_USER, DB_PWD);
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 }catch(PDOException $e){
     echo $e -> getMessage();
     die("Tidak Dapat tersambung :".$e->getMessage());
