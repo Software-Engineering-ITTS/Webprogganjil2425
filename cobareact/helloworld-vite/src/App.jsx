@@ -6,7 +6,7 @@ import { useEffect, useState } from "react"
 
 function App() {
     const [users, setUsers] = useState([]);
-    const [form, setForm] = useState({ username: "", password: "" });
+    const [form, setForm] = useState({ nim: "", nama: "" });
     const [errors, setError] = useState({})
 
     const handleChange = (e) => {
@@ -32,26 +32,40 @@ function App() {
         }
     }
 
-    const OnSubmit = (e) => {
+    const OnSubmit = async (e) => {
         e.preventDefault();
         const errors = validateForm(form);
         setError(errors)
 
         if (Object.keys(errors).length === 0) {
-            console.log("Call API POST")
+            // console.log("Call API POST")
+            const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/simpandata.php";
+            try {
+                const response = await fetch(url,
+                    {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify(form)
+                    }
+                );
+                fetchUser();
+                setForm({id: "null", nim:"", nama:""});
+            } catch (error) {
+                console.log(error);
+            }
         }
     }
 
     const validateForm = (form) => {
         const errors = {};
 
-        if (!form.username.trim()) {
-            errors.username = "required"
+        if (!form.nim.trim()) {
+            errors.nim = "required"
         }
-        if (!form.password) {
-            errors.password = "required"
-        } else if (form.password.length < 8) {
-            errors.password = "minimal password 8 karakter"
+        if (!form.nama) {
+            errors.nama = "required"
         }
 
         return errors
@@ -61,17 +75,17 @@ function App() {
             <form onSubmit={OnSubmit}>
                 <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                        <label htmlFor="" >Username</label>
-                        <input type="text" name="username" id="username" onChange={handleChange} />
-                        <span style={{ color: "red" }}>{errors.username}</span>
+                        <label htmlFor="" >nim</label>
+                        <input type="text" name="nim" id="nim" onChange={handleChange} />
+                        <span style={{ color: "red" }}>{errors.nim}</span>
                     </div>
                     <br />
                     <div style={{ display: "flex", flexDirection: "column" }}>
-                        <label htmlFor=""> Password </label>
-                        <input type="password" name="password" id="password" onChange={handleChange} />
-                        <span style={{ color: "red" }}>{errors.password}</span>
+                        <label htmlFor=""> nama </label>
+                        <input type="text" name="nama" id="nama" onChange={handleChange} />
+                        <span style={{ color: "red" }}>{errors.nama}</span>
                     </div>
-                    <button type="submit" style={{ marginTop: "16px" }}>Login</button>
+                    <button type="submit" style={{ marginTop: "16px" }}>Simpan</button>
                 </div>
             </form>
 
@@ -79,11 +93,11 @@ function App() {
             <table>
                 <thead>
                     <tr>
-                    <td>NIM</td>
-                    <td>Nama</td>
-                    <td>Actions</td>
+                        <td>NIM</td>
+                        <td>Nama</td>
+                        <td>Actions</td>
                     </tr>
-                    
+
                 </thead>
                 <tbody>
                     {users.map((user) => (
@@ -91,7 +105,7 @@ function App() {
                             <td>{user.nim}</td>
                             <td>{user.nama}</td>
                             <td>
-                                
+
                                 <button>Delete</button>
                             </td>
                         </tr>
