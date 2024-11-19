@@ -1,0 +1,49 @@
+* {
+  padding : 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Courier, monospace;
+}
+
+h1 {
+  margin-bottom: 40px;
+}
+
+p {
+  display: flex;
+  justify-content: center;
+}
+
+button {
+  display: inline;
+  justify-content: center;
+}
+
+.Form1{
+  border: 2px solid orange ;
+  justify-content: center;
+  margin: 100px;
+  background-color: green ;
+  border-radius: 30px;
+}
+
+.pesan1,.pesan2,.stk, .text1, .Kartu, .checkbox1 , .radio1, .TableForm, .drop1, .area1{
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: greenyellow;
+}
+
+.text1{
+  border-radius: 30px;
+  border: solid ;
+}
+
+.TableForm {
+  align-items: center;
+}
+
+table, th, td {
+  border:  1px solid black;
+  padding: 5px;
+}
