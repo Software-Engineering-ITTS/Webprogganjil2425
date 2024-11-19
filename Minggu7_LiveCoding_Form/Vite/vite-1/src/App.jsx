@@ -44,21 +44,38 @@ function App() {
       const url = "http://localhost/phpproject/backend/simpandata.php";
 
       try {
-        const response = await fetch(url,{
+        await fetch(url, {
           method: "POST",
           headers: {
-            "Content-Type":"application/json", 
+            "Content-Type": "application/json",
           },
-          body: JSON.stringify(form)
-          });
-          fetchUser();
-          setForm({userid: null, nim: "", nama: ""})
-      } catch(error) {
+          body: JSON.stringify(form),
+        });
+        fetchUser();
+        setForm({ userid: null, nim: "", nama: "" });
+      } catch (error) {
         console.log(error);
       }
     }
     //console.log(errors);
     //console.log(form);
+  };
+  
+  const deleteData = async (userid) => {
+    const url = "http://localhost/phpproject/backend/hapusdata.php";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userid }),
+      });
+      const data = await response.json();
+      fetchUser();
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   const validateForm = (form) => {
@@ -80,22 +97,12 @@ function App() {
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor="">Nim</label>
-            <input
-              type="text"
-              name="nim"
-              id="nim"
-              onChange={handleChange}
-            />
+            <input type="text" name="nim" id="nim" onChange={handleChange} />
             <span>{errors.nim}</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor="">Nama</label>
-            <input
-              type="text"
-              name="nama"
-              id="nama"
-              onChange={handleChange}
-            />
+            <input type="text" name="nama" id="nama" onChange={handleChange} />
             <span>{errors.nama}</span>
           </div>
           <button type="submit" style={{ marginTop: "16px" }}>
@@ -107,11 +114,11 @@ function App() {
       <h2>Data User</h2>
       <table border={1}>
         <thead>
-        <tr>
-          <td>NIM</td>
-          <td>NAMA</td>
-          <td>ACTIONS</td>
-        </tr>
+          <tr>
+            <td>NIM</td>
+            <td>NAMA</td>
+            <td>ACTIONS</td>
+          </tr>
         </thead>
         <tbody>
           {users.map((user) => (
@@ -119,7 +126,13 @@ function App() {
               <td>{user.nim}</td>
               <td>{user.nama}</td>
               <td>
-                <button>Delete</button>
+                <button
+                  onClick={() => {
+                    deleteData(user.userid);
+                  }}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
