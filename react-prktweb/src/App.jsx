@@ -70,27 +70,29 @@ function App() {
   return (
     <div className="container">
       <form onSubmit={onSubmit}>
+        {/* ini untuk judul */}
         <h2 className="title">Sistem Penjualan Langsung</h2>
-
+        {/* isi dari form saya */}
         <div className="user-details">
+          {/* nama lengkap */}
           <div className="input-box">
-            <label className="details">Nama Lengkap:</label>
+            <label className="details">Nama Lengkap : </label>
             <input type="text" name="namaLengkap" onChange={handleChange} />
             {errors.namaLengkap && (
               <span className="error-message">{errors.namaLengkap}</span>
             )}
           </div>
-
+            {/* ini untuk alamat */}
           <div className="input-box">
-            <label className="details">Alamat Produk:</label>
+            <label className="details">Alamat Produk : </label>
             <input type="text" name="alamatProduk" onChange={handleChange} />
             {errors.alamatProduk && (
               <span className="error-message" style={{color: "red"}}>{errors.alamatProduk}</span>
             )}
           </div>
-
+            {/* ini untuk tanggal penjualan */}
           <div className="input-box">
-            <label className="details">Tanggal Penjualan:</label>
+            <label className="details">Tanggal Penjualan : </label>
             <input
               type="date"
               name="tanggalPenjualan"
@@ -100,9 +102,9 @@ function App() {
               <span className="error-message">{errors.tanggalPenjualan}</span>
             )}
           </div>
-
+            {/* ini untuk metode pembayaran */}
           <div className="input-box">
-            <label className="details">Metode Pembayaran:</label>
+            <label className="details">Metode Pembayaran : </label>
             <select name="metodePembayaran" onChange={handleChange}>
               <option value="">Pilih metode pembayaran</option>
               <option value="tunai">Tunai</option>
