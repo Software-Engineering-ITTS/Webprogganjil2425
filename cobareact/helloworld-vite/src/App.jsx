@@ -17,6 +17,26 @@ function App() {
         });
     }
 
+    const deleteData = async (userid) => {
+         // console.log("Call API POST")
+         const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/hapusdata.php";
+         try {
+             const response = await fetch(url,
+                 {
+                     method: "POST",
+                     headers: {
+                         "Content-Type": "application/json",
+                     },
+                     body: JSON.stringify({userid})
+                 }
+             );
+             fetchUser();
+             
+         } catch (error) {
+             console.log(error);
+         }
+    }
+
     useEffect(() => {
         fetchUser()
     }, []);
@@ -101,12 +121,12 @@ function App() {
                 </thead>
                 <tbody>
                     {users.map((user) => (
-                        <tr key={user.id}>
+                        <tr key={user.userid}>
                             <td>{user.nim}</td>
                             <td>{user.nama}</td>
                             <td>
 
-                                <button>Delete</button>
+                                <button onClick={() => deleteData(user.userid)}>Delete</button>
                             </td>
                         </tr>
 
