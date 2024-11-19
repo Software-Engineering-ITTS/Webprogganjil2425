@@ -3,19 +3,15 @@ header("Access-Control-Allow-Origin: http://localhost:5173");
 header("Access-Control-Allow-Methods: GET, POST, PUT, DELETE, OPTIONS");
 header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Accept");
 
-
-
 include('db.php');
 
 $data = json_decode(file_get_contents("php://input"));
-$nim = $data->nim;
-$nama = $data->nama;
-$status = "AKTIF";
+$userid = $data->userid;
 
-$sql = 'insert into user ( nim, nama, status) values(?, ?, ?)';
+$sql = 'DELETE FROM user WHERE userid = :id';
 $statement = $pdo->prepare($sql);
+$statement->bindParam(':id', $userid, PDO::PARAM_INT);
+$statement->execute();
+echo json_encode(['message' => "Hapus Data Berhasil"]);
 
-$statement->execute([$nim, $nama, $status]);
-
-echo json_encode(['message' => "Tambah Data Berhasil"]);
 ?>
