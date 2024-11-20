@@ -1,24 +1,13 @@
-import { useState } from "react";
-import "./styleMe.css";
+import { useState, useEffect } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+// import './App.css'
+// import "./index.css";
 
 function App() {
-  const [users, setUsers] = useState([]); 
-  const [form, setForm] = useState({ username: "", password: "" });
-  const [errors, setErrors] = useState({}); 
-
-  //ini dibuat untuk nyambungin ke database yaa | 
-  const fetchUser = async () => {
-    try {
-      const response = await fetch(
-        "http://localhost/phpproject/Database/viewData.php"
-      ); // Ganti dengan URL API valid
-      const data = await response.json(); 
-      setUsers(data);
-      console.log(data);
-    } catch (error) {
-      console.error("Error fetching users:", error);
-    }
-  };
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ nama: "", nim: "" });
+  const [errors, setError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -27,89 +16,129 @@ function App() {
       [name]: value,
     });
   };
+  // const name = e.targer.name
+  // const value = e.targer.value
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
-  const onSubmit = (e) => {
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost/phpproject/backend/lihatdata.php"
+      );
+      const data = await response.json();
+      setUsers(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const onSubmit = async (e) => {
     e.preventDefault();
-    const validationErrors = validateForm(form);
-    setErrors(validationErrors);
-    if (Object.keys(validationErrors).length === 0) {
-      console.log("Call API POST with:", form);
+    const errors = validateForm(form);
+    setError(errors);
+    if (Object.keys(errors).length === 0) {
+      // console.log("call api post");
+      const url = "http://localhost/phpproject/backend/simpandata.php";
+
+      try {
+        await fetch(url, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(form),
+        });
+        fetchUser();
+        setForm({ userid: null, nim: "", nama: "" });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    //console.log(errors);
+    //console.log(form);
+  };
+
+  const deleteData = async (userid) => {
+    const url = "http://localhost/phpproject/backend/hapusdata.php";
+    try {
+      const response = await fetch(url, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ userid }),
+      });
+      const data = await response.json();
+      fetchUser();
+    } catch (error) {
+      console.log(error);
     }
   };
 
   const validateForm = (form) => {
     const errors = {};
-    if (!form.username.trim()) {
-      errors.username = "Username is required";
+    if (!form.nim) {
+      errors.nim = "nim is required";
     }
-    if (!form.password) {
-      errors.password = "Password is required";
-    } else if (form.password.length < 8) {
-      errors.password = "Minimal password 8 karakter";
+    if (!form.nama.trim()) {
+      errors.nama = "nama is required";
     }
     return errors;
   };
 
   return (
-    <div className="form-container">
+    <>
       <form onSubmit={onSubmit}>
-        <h2 style={{ marginBottom: "20px" }}>
-          Tak Edit dikit ga ngaruh kan mas 😊
-        </h2>
-        <div className="form-content">
-          <div className="form-group">
-            <label htmlFor="username">Username : </label>
-            <input
-              type="text"
-              name="username"
-              id="username"
-              onChange={handleChange}
-            />
-            {errors.username && (
-              <span className="error-message">{errors.username}</span>
-            )}
+        <div
+          style={{ display: "flex", flexDirection: "column", width: "400px" }}
+        >
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="">Nim</label>
+            <input type="text" name="nim" id="nim" onChange={handleChange} />
+            <span>{errors.nim}</span>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password :</label>
-            <input
-              type="password"
-              name="password"
-              id="password"
-              onChange={handleChange}
-            />
-            {errors.password && (
-              <span className="error-message">{errors.password}</span>
-            )}
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="">Nama</label>
+            <input type="text" name="nama" id="nama" onChange={handleChange} />
+            <span>{errors.nama}</span>
           </div>
           <button type="submit" style={{ marginTop: "16px" }}>
             Login
           </button>
         </div>
       </form>
-      {/* Table buat nampilin database */}
+
       <h2>Data User</h2>
-      <table>
+      <table border={1}>
         <thead>
           <tr>
-            <th>Nim</th>
-            <th>Nama</th>
-            <th>Actions</th>
+            <td>NIM</td>
+            <td>NAMA</td>
+            <td>ACTIONS</td>
           </tr>
         </thead>
         <tbody>
           {users.map((user) => (
-            <tr key={user.id}>
-              <td>{user.id}</td> {/* Ganti `nim` dengan properti yang ada */}
-              <td>{user.name}</td> {/* Ganti `nama` dengan properti yang ada */}
+            <tr key={user.userid}>
+              <td>{user.nim}</td>
+              <td>{user.nama}</td>
               <td>
-                <button>Edit</button>
-                <button>Delete</button>
+                <button
+                  onClick={() => {
+                    deleteData(user.userid);
+                  }}
+                >
+                  Delete
+                </button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
-    </div>
+    </>
   );
 }
 
