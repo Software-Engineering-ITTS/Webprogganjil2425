@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
+// import viteLogo from "/vite.svg";
 // import './App.css'
 // import "./index.css";
 
@@ -25,7 +25,7 @@ function App() {
   const fetchUser = async () => {
     try {
       const response = await fetch(
-        "http://localhost/phpproject/backend/lihatdata.php"
+        "http://localhost/phpproject/database/lihatdata.php"
       );
       const data = await response.json();
       setUsers(data);
@@ -41,7 +41,7 @@ function App() {
     setError(errors);
     if (Object.keys(errors).length === 0) {
       // console.log("call api post");
-      const url = "http://localhost/phpproject/backend/simpandata.php";
+      const url = "http://localhost/phpproject/database/simpandata.php";
 
       try {
         await fetch(url, {
@@ -62,7 +62,7 @@ function App() {
   };
 
   const deleteData = async (userid) => {
-    const url = "http://localhost/phpproject/backend/hapusdata.php";
+    const url = "http://localhost/phpproject/database/hapusdata.php";
     try {
       const response = await fetch(url, {
         method: "POST",
