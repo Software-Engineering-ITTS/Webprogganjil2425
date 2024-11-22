@@ -1,0 +1,25 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #c9d6ff;
+    background: linear-gradient(to right,#e2e2e2,#c9d6ff);
+}
+
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 20px 35px rgba(0,0,0,0.4);
+}
+
+h4 {
+    font-family: cursive;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 1rem;
+}
