@@ -37,6 +37,32 @@ function App() {
          }
     }
 
+    const selectUser = async (userid) => {
+        // console.log("Call API Select User " + userid)
+        const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/getuser.php";
+        try {
+            const response = await fetch(url,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({userid})
+                }
+            );
+            // console.log("response");
+            // console.log(response);
+            const data = await response.json();
+            // console.log("data");
+            // console.log(data);
+            // fetchUser();
+            setForm({id: userid, nim:data['nim'], nama:data['nama']});
+            
+        } catch (error) {
+            console.log(error);
+        }
+   }
+
     useEffect(() => {
         fetchUser()
     }, []);
@@ -58,9 +84,10 @@ function App() {
         setError(errors)
 
         if (Object.keys(errors).length === 0) {
-            // console.log("Call API POST")
-            const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/simpandata.php";
+
             try {
+                
+                const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/simpandata.php";
                 const response = await fetch(url,
                     {
                         method: "POST",
@@ -70,8 +97,11 @@ function App() {
                         body: JSON.stringify(form)
                     }
                 );
+                // setUsers(null)
+
                 fetchUser();
                 setForm({id: "null", nim:"", nama:""});
+                e.target.reset();
             } catch (error) {
                 console.log(error);
             }
@@ -96,16 +126,17 @@ function App() {
                 <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <label htmlFor="" >nim</label>
-                        <input type="text" name="nim" id="nim" onChange={handleChange} />
+                        <input type="text" name="nim" id="nim" onChange={handleChange} value={form.nim}/>
                         <span style={{ color: "red" }}>{errors.nim}</span>
                     </div>
                     <br />
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <label htmlFor=""> nama </label>
-                        <input type="text" name="nama" id="nama" onChange={handleChange} />
+                        <input type="text" name="nama" id="nama" onChange={handleChange} value={form.nama}/>
                         <span style={{ color: "red" }}>{errors.nama}</span>
                     </div>
                     <button type="submit" style={{ marginTop: "16px" }}>Simpan</button>
+                    <button type="clear" style={{ marginTop: "16px" }}>Clear</button>
                 </div>
             </form>
 
@@ -127,6 +158,7 @@ function App() {
                             <td>
 
                                 <button onClick={() => deleteData(user.userid)}>Delete</button>
+                                <button onClick={() => selectUser(user.userid)}>Edit</button>
                             </td>
                         </tr>
 
