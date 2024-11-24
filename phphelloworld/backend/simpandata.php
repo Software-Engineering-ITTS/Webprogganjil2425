@@ -8,14 +8,26 @@ header("Access-Control-Allow-Headers: Origin, X-Requested-With, Content-Type, Ac
 include('db.php');
 
 $data = json_decode(file_get_contents("php://input"));
+
+$userid = $data->userid;
 $nim = $data->nim;
 $nama = $data->nama;
 $status = "AKTIF";
 
-$sql = 'insert into user ( nim, nama, status) values(?, ?, ?)';
-$statement = $pdo->prepare($sql);
+if($userid != null){
+    $sql = 'UPDATE user SET `nim`=:nim, `nama`=:nama WHERE userid=:id';
+    $statement = $pdo->prepare($sql);
+    $statement->bindParam(':id', $userid, PDO::PARAM_INT);
+    $statement->bindParam(':nim', $nim, PDO::PARAM_STR);
+    $statement->bindParam(':nama', $nama, PDO::PARAM_STR);
 
-$statement->execute([$nim, $nama, $status]);
+    $statement -> execute();
+}else{
+    $sql = 'insert into user ( nim, nama, status) values(?, ?, ?)';
+    $statement = $pdo->prepare($sql);
+    $statement->execute([$nim, $nama, $status]);
+}
+
 
 echo json_encode(['message' => "Tambah Data Berhasil"]);
 ?>

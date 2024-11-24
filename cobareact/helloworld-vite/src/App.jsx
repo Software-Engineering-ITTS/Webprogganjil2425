@@ -6,10 +6,15 @@ import { useEffect, useState } from "react"
 
 function App() {
     const [users, setUsers] = useState([]);
-    const [form, setForm] = useState({ nim: "", nama: "" });
+    const [form, setForm] = useState({ userid: "", nim: "", nama: "" });
+    // const [selectedId, setUserId] = useState();
     const [errors, setError] = useState({})
 
     const handleChange = (e) => {
+        // setForm({
+        //     nim: e.target.nim,
+        //     nama: e.target.nama,
+        // });
         const { name, value } = e.target
         setForm({
             ...form,
@@ -18,23 +23,23 @@ function App() {
     }
 
     const deleteData = async (userid) => {
-         // console.log("Call API POST")
-         const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/hapusdata.php";
-         try {
-             const response = await fetch(url,
-                 {
-                     method: "POST",
-                     headers: {
-                         "Content-Type": "application/json",
-                     },
-                     body: JSON.stringify({userid})
-                 }
-             );
-             fetchUser();
-             
-         } catch (error) {
-             console.log(error);
-         }
+        // console.log("Call API POST")
+        const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/hapusdata.php";
+        try {
+            const response = await fetch(url,
+                {
+                    method: "POST",
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                    body: JSON.stringify({ userid })
+                }
+            );
+            fetchUser();
+
+        } catch (error) {
+            console.log(error);
+        }
     }
 
     const selectUser = async (userid) => {
@@ -47,7 +52,7 @@ function App() {
                     headers: {
                         "Content-Type": "application/json",
                     },
-                    body: JSON.stringify({userid})
+                    body: JSON.stringify({ userid })
                 }
             );
             // console.log("response");
@@ -56,12 +61,13 @@ function App() {
             // console.log("data");
             // console.log(data);
             // fetchUser();
-            setForm({id: userid, nim:data['nim'], nama:data['nama']});
-            
+            // setUserId(userid);
+            setForm({ userid: userid, nim: data['nim'], nama: data['nama'] });
+
         } catch (error) {
             console.log(error);
         }
-   }
+    }
 
     useEffect(() => {
         fetchUser()
@@ -86,6 +92,10 @@ function App() {
         if (Object.keys(errors).length === 0) {
 
             try {
+
+                // if(e.target[userid] === "null"){
+
+                // }
                 
                 const url = "http://localhost:8080/Webprogganjil2425/phphelloworld/backend/simpandata.php";
                 const response = await fetch(url,
@@ -97,14 +107,17 @@ function App() {
                         body: JSON.stringify(form)
                     }
                 );
+
                 // setUsers(null)
 
-                fetchUser();
-                setForm({id: "null", nim:"", nama:""});
-                e.target.reset();
             } catch (error) {
                 console.log(error);
+            } finally {
+                fetchUser();
+                setForm({ id: "null", nim: "", nama: "" });
+                e.target.reset();
             }
+
         }
     }
 
@@ -124,15 +137,16 @@ function App() {
         <>
             <form onSubmit={OnSubmit}>
                 <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
+                <input type="text" name="userid" id="userid" onChange={handleChange} value={form.userid} hidden={true}/>
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <label htmlFor="" >nim</label>
-                        <input type="text" name="nim" id="nim" onChange={handleChange} value={form.nim}/>
+                        <input type="text" name="nim" id="nim" onChange={handleChange} value={form.nim} />
                         <span style={{ color: "red" }}>{errors.nim}</span>
                     </div>
                     <br />
                     <div style={{ display: "flex", flexDirection: "column" }}>
                         <label htmlFor=""> nama </label>
-                        <input type="text" name="nama" id="nama" onChange={handleChange} value={form.nama}/>
+                        <input type="text" name="nama" id="nama" onChange={handleChange} value={form.nama} />
                         <span style={{ color: "red" }}>{errors.nama}</span>
                     </div>
                     <button type="submit" style={{ marginTop: "16px" }}>Simpan</button>
