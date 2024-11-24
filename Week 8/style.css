@@ -1,0 +1,28 @@
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  background: aquamarine;
+}
+
+li > a {
+  text-decoration: none;
+}
+
+li > a:hover {
+  color: brown;
+}
+
+/* 
+li {
+  width: 70px;
+  list-style: none;
+  text-decoration: none;
+  float: left;
+  width: 100;
+  margin: 10px;
+} */
