@@ -21,8 +21,8 @@ function App() {
   useEffect(() => {
     fetchUser();
   }, []);
-
-  const fetchUser = async () => {
+  
+  const fetchUser = async () => { //ini untuk menampilkan data nya dari database connection
     try {
       const response = await fetch(
         "http://localhost/phpproject/database/lihatdata.php"
@@ -35,7 +35,7 @@ function App() {
     }
   };
 
-  const onSubmit = async (e) => {
+  const onSubmit = async (e) => { //ini untuk menyimpan data nya dari database connection
     e.preventDefault();
     const errors = validateForm(form);
     setError(errors);
@@ -61,7 +61,7 @@ function App() {
     //console.log(form);
   };
 
-  const deleteData = async (userid) => {
+  const deleteData = async (userid) => { //ini untuk menghapus data nya dari database connection
     const url = "http://localhost/phpproject/database/hapusdata.php";
     try {
       const response = await fetch(url, {
@@ -77,6 +77,10 @@ function App() {
       console.log(error);
     }
   };
+
+  //ini untuk edit data
+  
+
 
   const validateForm = (form) => {
     const errors = {};
