@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container-fluid p-5" style="background-color: aqua;">
+        <div class="row mb-4">
+            <div class="col text-center">
+                <h1 class="text-light bg-dark py-3">Gaji Karyawan</h1>
+            </div>
+        </div>
+        
+        <form class="bg-white p-4 rounded shadow-sm">
+            <div class="mb-3">
+                <label for="Username" class="form-label">Username</label>
+                <input type="text" id="Username" name="Username" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="pwd" class="form-label">Password</label>
+                <input type="password" id="pwd" name="pwd" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Nama</label>
+                <input type="text" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Tanggal</label>
+                <input type="text" class="form-control">
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Gender</label><br>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="male" name="Gender" class="form-check-input">
+                    <label for="male" class="form-check-label">Laki laki</label>
+                </div>
+                <div class="form-check form-check-inline">
+                    <input type="radio" id="female" name="Gender" class="form-check-input">
+                    <label for="female" class="form-check-label">Perempuan</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Jabatan</label>
+                <div class="dropdown">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Pilih Jabatan
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="#">CEO</a></li>
+                        <li><a class="dropdown-item" href="#">Direktur</a></li>
+                        <li><a class="dropdown-item" href="#">Manager</a></li>
+                        <li><a class="dropdown-item" href="#">Karyawan</a></li>
+                        <li><a class="dropdown-item" href="#">OB</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label class="form-label">Kendaraan</label><br>
+                <div class="form-check">
+                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike" class="form-check-input">
+                    <label for="vehicle1" class="form-check-label">Mobil</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car" class="form-check-input">
+                    <label for="vehicle2" class="form-check-label">Motor</label>
+                </div>
+                <div class="form-check">
+                    <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat" class="form-check-input">
+                    <label for="vehicle3" class="form-check-label">Sepeda</label>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="floatingTextarea" class="form-label">Note</label>
+                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea"></textarea>
+            </div>
+
+            <div class="text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</body>
+</html>
