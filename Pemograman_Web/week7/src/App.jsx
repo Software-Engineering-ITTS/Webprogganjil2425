@@ -1,61 +1,100 @@
-// eslint-disable-next-line no-unused-vars
-import React from 'react'
+import { useEffect, useState } from 'react'
 // import reactLogo from './assets/react.svg'
 // import viteLogo from '/vite.svg'
-import './App.css'
-
+// import './App.css'
 
 function App() {
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    if (window.confirm("Simpan data?")) {
-      alert("Data disimpan");
-    } else {
-      alert("You pressed Cancel!");
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ username: "", password: "" });
+  const [errors, setError] = useState({});
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setForm({ ...form, [name]: value });
+  }
+
+  useEffect(() => {
+    fetchUser()
+  }, [])
+
+  const fetchUser = async () => {
+    try {
+      const response = await fetch("http://localhost/week8/connectDB/viewdata.php")
+      const data = await response.json();
+      setUsers(data);
+      //console.log(users);
+    } catch (error) {
+      console.log(error)
     }
   };
 
+
+  const OnSubmit = (e) => {
+    e.preventDefault();
+    const errors = validateForm(form);
+    //console.log(errors);
+    setError(errors);
+    if (Object.keys(errors).length === 0) {
+      console.log("call api post")
+    }
+    // console.log(form);
+  }
+
+  const validateForm = (form) => {
+    const errors = {};
+    if (!form.username.trim()) {
+      errors.username = "Username is required";
+    }
+    if (!form.password) {
+      errors.password = "Password is required";
+    } else if (form.password.length < 8) {
+      errors.password = "Password must be at least 8 characters";
+    }
+    return errors;
+  }
+
   return (
-    <div className="container">
-      <h1>Form Pengaduan Akun</h1>
-      <form onSubmit={handleSubmit} id="myForm">
-        <label>Nama Lengkap</label> <br />
-        <input className="ak3" type="text" placeholder="  masukkan nama lengkap" /> <br /><br />
-
-        <label>Nickname</label> <br />
-        <input className="ak3" type="text" placeholder="  masukkan nickname" /> <br /><br />
-
-        <label>Email</label> <br />
-        <input className="ak3" type="email" placeholder="  masukkan email" /> <br /><br />
-
-        <label>Password</label> <br />
-        <input className="ak3" type="password" placeholder="  masukkan password" /> <br /><br />
-
-        <label>No Telpon</label> <br />
-        <input className="ak3" type="tel" placeholder="  masukkan notlp" /> <br /><br />
-
-        <input type="radio" id="pria" name="gender" value="Pria" />
-        <label htmlFor="pria">Pria</label>
-        <input type="radio" id="wanita" name="gender" value="Wanita" />
-        <label htmlFor="wanita">Wanita</label> <br /><br />
-
-        <label htmlFor="masalah">Masalah dihadapi</label><br />
-        <select name="tipe_keluhan">
-          <option value="akun error">akun error</option>
-          <option value="akun tidak bisa login">akun tidak bisa login</option>
-          <option value="akun kena ban">akun kena ban</option>
-        </select> <br /><br />
-
-        <label>Jelaskan Masalah</label> <br />
-        <textarea name="Alamat" placeholder="  tulis masalah"></textarea> <br /><br />
-
-        <label htmlFor="cek">Setuju</label>
-        <input type="checkbox" id="cek" /> <br /><br />
-
-        <input className="button" type="submit" value="Submit" />
+    <>
+      <form onSubmit={OnSubmit}>
+        <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
+          <div style={{ display: 'flex', flexDirection: "column" }}>
+            <label htmlFor="">username</label>
+            <input type="text" name='username' id='username' onChange={handleChange} />
+            <span>{errors.username}</span>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'column' }}>
+            <label htmlFor="">password</label>
+            <input type="text" name='password' id='password' onChange={handleChange} />
+            <span>{errors.password}</span>
+          </div>
+          <button type='submit' style={{ marginTop: "16px" }}>Login</button>
+        </div>
       </form>
-    </div>
-  );
+
+      <h2>Data User</h2>
+      <table border="1">
+        <thead>
+          <tr>
+            <td>NIM</td>
+            <td>Nama</td>
+            <td>Actions</td>
+          </tr>
+        </thead>
+        <tbody>
+          {console.log(users)}
+          {users.map((user) => (
+            <tr key={user.userID}>
+              <td>{user.Nim}</td>
+              <td>{user.Nama}</td>
+              <td>
+                <button>Delete</button>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  )
 }
 
 export default App;

@@ -1,0 +1,202 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #333;
+  color: #fff;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 1px solid black;
+  height: 60px;
+}
+
+nav .logo a {
+  font-size: 26px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+nav .logo a:hover {
+  color: #db2777;
+  transition: 0.5s;
+}
+
+nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5rem;
+  margin-right: 5rem;
+  list-style: none;
+}
+
+nav ul li a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+nav ul li a:hover {
+  color: #db2777;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.container-home, .container-about {
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+
+.container-home .box-1 {
+  flex: 50%;
+  text-align: center;
+}
+
+.container-home img {
+  border-radius: 50% 10% 50% 10%;
+  width: 300px;
+  object-fit: cover;
+  filter: grayscale(1);
+  cursor: pointer;
+}
+
+.container-home img:hover {
+  transform: rotate(1deg) scale(1.01);
+  filter: grayscale(0);
+  width: 330px;
+  transition: 0.7s;
+}
+
+.container-home .box-2 {
+  flex: 50%;
+  padding-right: 2rem;
+}
+
+.container-home h1 {
+  font-size: 70px;
+}
+
+.container-home h1:hover {
+  color: #db2777;
+  text-decoration: underline;
+  transition: 0.5s;
+}
+
+.container-home p {
+  font-size: 30px;
+}
+  
+.container-about .box-1 {
+  flex: 50%;
+  text-align: center;
+}
+
+.container-about img {
+  width: 300px;
+  object-fit: cover;
+  filter: grayscale(1);
+  border-radius: 50% 10% 50% 10% / 10% 50% 10% 50%;
+}
+
+.container-about img:hover {
+  width: 330px;
+  filter: grayscale(0);
+  border-radius: 10% 50% 10% 50% / 50% 10% 50% 10%;
+  transition: 0.7s;
+}
+
+.container-about .box-2 {
+  flex: 50%;
+  text-align: justify;
+  padding-right: 5rem;
+}
+
+.container-about h1 {
+  font-size: 70px;
+}
+
+.container-about h1:hover {
+  color: #db2777;
+  transition: 0.5s;
+}
+
+.container-about p {
+  font-size: 17px;
+}
+
+
+#projek {
+  padding: 2rem;
+  text-align: center;
+  height: 100vh;
+}
+
+#projek h2 {
+  margin-bottom: 3rem;
+  font-size: 50px;
+}
+
+.slideshow-container {
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  border: 1px solid white;
+}
+
+.slideshow-container:hover {
+  max-width: 650px;
+  box-shadow: 1px 1px 20px white;
+  transition: 0.7s;
+}
+
+.slide {
+  display: none;
+}
+
+.slide img {
+  width: 100%;
+}
+
+.caption {
+  padding: 1rem;
+  text-align: center;
+}
+
+.scroll-to-dasbord {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  font-size: 10px;
+  background-color: #555;
+  border: none;
+  border-radius: 50%;
+  cursor: pointer;
+  display: none; 
+  align-items: center;
+  justify-content: center;
+}
+
+.scroll-to-dasbord:hover {
+  background-color: #333;
+  transition: 0.3s;
+}
+
+
+footer {
+  border-top: 1px solid black;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 1rem;
+}

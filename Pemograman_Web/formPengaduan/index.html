@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemrosesan Pengaduan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>Form Pengaduan Akun</h1>
+        <form action="/action_page.php" id="myForm">
+            <label for="">Nama Lengkap</label> <br>
+            <input class="ak3" type="text" placeholder="  masukkan nama lengkap"> <br><br>
+            <label for="">Nickname</label> <br>
+            <input class="ak3" type="text" placeholder="  masukkan nickname"> <br><br>
+            <label for="">Email</label> <br>
+            <input class="ak3" type="email" placeholder="  masukkan email"> <br><br>
+            <label for="">Password</label> <br>
+            <input class="ak3" type="password" placeholder="  masukkan password"> <br><br>
+            <label for="">No Telpon</label> <br>
+            <input class="ak3" type="tel" placeholder="  masukkan notlp"> <br><br>
+            <input type="radio" id="pria" name="gender" value="Pria">
+            <label for="pria">Pria</label>
+            <input type="radio" id="wanita" name="gender" value="Wanita">
+            <label for="wanita">Wanita</label> <br> <br>
+            <label for="masalah">Masalah dihadapi</label><br>
+            <select name="tipe keluhan" id="">
+                <option value="akun error">akun error</option>
+                <option value="akun tidak bisa login">akun tidak bisa login</option>
+                <option value="akun kena ban">akun kena ban</option>
+            </select> <br><br>
+            <label for="">Jelaskan Masalah</label> <br>
+            <textarea name="Alamat" id="" placeholder="  tulis masalah"></textarea> <br><br>
+            <label for="cek">Setuju</label>
+            <input type="checkbox" id="cek"> <br> <br>
+            <input class="button" onclick="myFunction()" type="submit" value="Submit">
+        </form>
+    </div>
+
+    <script>
+        function myFunction() {
+            var txt;
+            if (confirm("Simpan data")) {
+                txt = "Data disimpan";
+            } else {
+                txt = "You pressed Cancel!";
+            }
+            document.getElementById("demo").innerHTML = txt;
+        }
+    </script>
+
+</body>
+
+</html>
