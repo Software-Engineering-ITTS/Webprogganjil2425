@@ -1,14 +1,11 @@
 import { useState, useEffect } from "react";
-import reactLogo from "./assets/react.svg";
-// import viteLogo from "/vite.svg";
-// import './App.css'
-// import "./index.css";
 
 function App() {
-  const [users, setUsers] = useState([]);
-  const [form, setForm] = useState({ nama: "", nim: "" });
-  const [errors, setError] = useState({});
+  const [users, setUsers] = useState([]); // Data pengguna dari database
+  const [form, setForm] = useState({ userid: null, nama: "", nim: "" }); // Data form
+  const [errors, setError] = useState({}); // Error validasi
 
+  // Handle perubahan input
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
@@ -16,112 +13,133 @@ function App() {
       [name]: value,
     });
   };
-  // const name = e.targer.name
-  // const value = e.targer.value
+
+  // Fetch data pengguna dari database
   useEffect(() => {
     fetchUser();
   }, []);
-  
-  const fetchUser = async () => { //ini untuk menampilkan data nya dari database connection
+
+  const fetchUser = async () => {
     try {
       const response = await fetch(
         "http://localhost/phpproject/database/lihatdata.php"
       );
       const data = await response.json();
       setUsers(data);
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
   };
 
-  const onSubmit = async (e) => { //ini untuk menyimpan data nya dari database connection
+  // Fungsi untuk menyimpan (tambah/edit) data
+  const onSubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm(form);
     setError(errors);
+
     if (Object.keys(errors).length === 0) {
-      // console.log("call api post");
-      const url = "http://localhost/phpproject/database/simpandata.php";
+      const url = form.userid
+        ? "http://localhost/phpproject/database/editData.php" // Edit data
+        : "http://localhost/phpproject/database/simpandata.php"; // Tambah data
 
       try {
-        await fetch(url, {
+        const response = await fetch(url, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
           },
           body: JSON.stringify(form),
         });
+        if (!response.ok) throw new Error("Failed to save data");
+
+        // Perbarui data pengguna setelah berhasil tambah/edit
         fetchUser();
-        setForm({ userid: null, nim: "", nama: "" });
       } catch (error) {
         console.log(error);
+      } finally {
+        // Reset form setelah berhasil submit
+        setForm({ userid: null, nim: "", nama: "" });
       }
     }
-    //console.log(errors);
-    //console.log(form);
   };
 
-  const deleteData = async (userid) => { //ini untuk menghapus data nya dari database connection
+  // Fungsi untuk menghapus data
+  const deleteData = async (userid) => {
     const url = "http://localhost/phpproject/database/hapusdata.php";
     try {
-      const response = await fetch(url, {
+      await fetch(url, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({ userid }),
       });
-      const data = await response.json();
       fetchUser();
     } catch (error) {
       console.log(error);
     }
   };
 
-  //ini untuk edit data
-  
+  // Fungsi untuk memuat data pengguna ke form (edit)
+  const loadDataToForm = (user) => {
+    setForm(user);
+  };
 
-
+  // Validasi form
   const validateForm = (form) => {
     const errors = {};
     if (!form.nim) {
-      errors.nim = "nim is required";
+      errors.nim = "NIM is required";
     }
     if (!form.nama.trim()) {
-      errors.nama = "nama is required";
+      errors.nama = "Nama is required";
     }
     return errors;
   };
 
   return (
     <>
+      {/* Form untuk tambah/edit data */}
       <form onSubmit={onSubmit}>
         <div
           style={{ display: "flex", flexDirection: "column", width: "400px" }}
         >
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label htmlFor="">Nim</label>
-            <input type="text" name="nim" id="nim" onChange={handleChange} />
+            <label htmlFor="nim">NIM</label>
+            <input
+              type="text"
+              name="nim"
+              id="nim"
+              value={form.nim}
+              onChange={handleChange}
+            />
             <span>{errors.nim}</span>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
-            <label htmlFor="">Nama</label>
-            <input type="text" name="nama" id="nama" onChange={handleChange} />
+            <label htmlFor="nama">Nama</label>
+            <input
+              type="text"
+              name="nama"
+              id="nama"
+              value={form.nama}
+              onChange={handleChange}
+            />
             <span>{errors.nama}</span>
           </div>
           <button type="submit" style={{ marginTop: "16px" }}>
-            Login
+            {form.userid ? "Update" : "Submit"}
           </button>
         </div>
       </form>
 
+      {/* Tabel data pengguna */}
       <h2>Data User</h2>
       <table border={1}>
         <thead>
           <tr>
             <td>NIM</td>
-            <td>NAMA</td>
-            <td>ACTIONS</td>
+            <td>Nama</td>
+            <td>Aksi</td>
           </tr>
         </thead>
         <tbody>
@@ -136,6 +154,13 @@ function App() {
                   }}
                 >
                   Delete
+                </button>
+                <button
+                  onClick={() => {
+                    loadDataToForm(user); // Memuat data ke form untuk di-edit
+                  }}
+                > 
+                  Edit
                 </button>
               </td>
             </tr>
