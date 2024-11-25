@@ -1,0 +1,25 @@
+body{
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+ul{
+    background: black;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+li{
+    margin-left: 0px;
+}
+
+li > a{
+    text-decoration: none;
+    color:orange;
+    
+}
+
+li > a:hover{
+    color:mistyrose;
+}
