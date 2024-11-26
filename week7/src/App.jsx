@@ -1,200 +1,179 @@
-import { useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-import './App.css'
+import { useState, useEffect } from "react";
+// import './App.css'
+// import "./index.css";
 
 function App() {
-  const [form, setForm] = useState({
-    username: "",
-    password: "",
-    confirmPassword: "",
-    kehadiran: "",
-    alasan: "",
-    lembur: "",
-    date: ""
-  });
-  const [notification, setNotification] = useState("");
-  const [errors, setErrors] = useState({});
+  const [users, setUsers] = useState([]);
+  const [form, setForm] = useState({ nama: "", nim: "" });
+  const [errors, setError] = useState({});
 
   const handleChange = (e) => {
     const { name, value } = e.target;
     setForm({
       ...form,
-      [name]: value
+      [name]: value,
     });
   };
-  const validateForm = () => {
-    const newErrors = {};
-    if (!form.username.trim()) newErrors.username = 'username is required';
-    if (!form.password) newErrors.password = 'password is required';
-    else if (form.password.length < 8)
-      newErrors.password = 'Password harus 8 karakter';
-    if (form.password !== form.confirmPassword)
-      newErrors.confirmPassword = 'Password harus sama';
-    if (!form.kehadiran) newErrors.kehadiran = 'harap isi kehadiran';
-    if (!form.kehadiran) newErrors.buktiKehadiran = 'harap isi bukti kehadiran';
-    if (!form.alasan) newErrors.alasan = 'harap isi alasan';
-    if (!form.lembur) newErrors.lembur = 'harap isi lembur';
-    if (!form.date) newErrors.date = 'harap isi tanggal';
-    setErrors(newErrors);
-    return Object.keys(newErrors).length === 0;
-  };
+  // const name = e.targer.name
+  // const value = e.targer.value
+  useEffect(() => {
+    fetchUser();
+  }, []);
 
-const onSubmit = (e) => {
-  e.preventDefault();
-  if (validateForm()){
-      setNotification("Form berhasil disubmit!");
-      setForm({
-        username: "",
-        password: "",
-        confirmPassword: "",
-        kehadiran: "",
-        alasan: "",
-        lembur: "",
-        date: ""
-      });
-    }else{
-      setNotification('form gagal di submit, cek jika ada error');
+  const fetchUser = async () => {
+    try {
+      const response = await fetch(
+        "http://localhost/week8_phpproject/backend/lihatdata.php"
+      );
+      const data = await response.json();
+      setUsers(data);
+      console.log(data);
+    } catch (error) {
+      console.log(error);
     }
   };
 
+  const deleteData = async (userid) => {
+    const url = "http://localhost/week8_phpproject/backend/hapusdata.php";
+      try {
+        const response = await fetch(url,{
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json", 
+          },
+          body: JSON.stringify({userid})
+          });
+          const data = await response.json()
+          fetchUser();
+         } 
+      catch (error) {
+        console.log(error)
+    }
+  }
+
+
+  const editData = async (userid, nim, nama) => {
+    console.log("Mengirim data ke backend " , {userid, nim, nama})
+    const url = "http://localhost/week8_phpproject/backend/editdata.php"
+    setForm({userid, nim, nama})
+    try {
+      e.preventDefault()
+      const response = await fetch(url,{
+        method: "POST",
+        headers: {
+          "Content-Type":"application/json", 
+        },
+        body: JSON.stringify({userid, nim, nama})
+        });
+        const data = await response.json()
+        console.log("response ke :",data)
+        fetchUser();
+        setForm({userid:null, nim:'', nama:''})
+
+       }    
+      catch (error) {
+      console.log(error)
+    }
+  }
+
+  const onSubmit = async (e) => {
+    e.preventDefault();
+    const errors = validateForm(form);
+    setError(errors);
+    if (Object.keys(errors).length === 0) {
+      // console.log("call api post");
+      const url = form.userid ? "http://localhost/week8_phpproject/backend/editdata.php" : "http://localhost/week8_phpproject/backend/simpandata.php";
+
+      try {
+        await fetch(url,{
+          method: "POST",
+          headers: {
+            "Content-Type":"application/json", 
+          },
+          body: JSON.stringify(form)
+          });
+          fetchUser();
+          setForm({userid: null, nim: "", nama: ""})
+      } catch(error) {
+        console.log(error);
+      }
+    }
+    //console.log(errors);
+    //console.log(form);
+  };
+
+  const validateForm = (form) => {
+    const errors = {};
+    if (!form.nim) {
+      errors.nim = "nim is required";
+    }
+    if (!form.nama.trim()) {
+      errors.nama = "nama is required";
+    }
+    return errors;
+  };
+
   return (
-    <div className="container mt-5">
+    <>
       <form onSubmit={onSubmit}>
-        <h3 className="mb-3">Form Absensi</h3>
-        
-        <div className="mb-3">
-          <label htmlFor="username" className="form-label">Username</label>
-          <input
-            type="text"
-            id="username"
-            name="username"
-            className="form-control"
-            placeholder="Username"
-            required
-            onChange={handleChange}/>
-            <span>{errors.username}</span>
-        </div>
-
-        <div className="mb-3">
-          <label htmlFor="password" className="form-label">Password</label>
-          <input
-            type="password"
-            id="password"
-            name="password"
-            className="form-control"
-            placeholder="Password"
-            required
-            onChange={handleChange}/>
-            <span>{errors.password}</span>
-        </div>
-        <div className="mb-3">
-          <label htmlFor="confirmPassword" className="form-label">Konfirmasi Password</label>
-          <input
-            type="password"
-            id="confirm-password"
-            name="confirmPassword"
-            className="form-control"
-            placeholder="Konfirmasi Password"
-            required
-            onChange={handleChange}/>
-            <span>{errors.confirmPassword}</span>
-    </div>
-
-        <div className="mb-3">
-          <label htmlFor="kehadiran" className="form-label">Kehadiran</label>
-          <select
-            className="form-select"
-            id="kehadiran"
-            name="kehadiran"
-            value={form.kehadiran}
-            onChange={handleChange}
-            required
-          >
-            <option value="">Select Kehadiran</option>
-            <option value="Hadir">&#128522; Hadir</option>
-            <option value="Izin">&#128679; Izin</option>
-            <option value="Tidak Masuk">&#10060; Tidak Masuk</option>
-          </select>
-          <span>{errors.kehadiran}</span>
-  </div>
-        
-
-        <div className="mb-3">
-          <label htmlFor="buktiKehadiran" className="form-label">Bukti Kehadiran</label>
-          <input
-            type="file"
-            id="buktiKehadiran"
-            name="buktiKehadiran"
-            className="form-control"
-            onChange={handleChange}
-            required
-          />
-          <span>{errors.buktiKehadiran}</span>
-      </div>
-
-        <div className="mb-3">
-          <label htmlFor="alasan" className="form-label">Alasan / Pekerjaan Hari ini </label>
-          <textarea
-            id="alasan"
-            name="alasan"
-            rows="3"
-            className="form-control"
-            placeholder="Alasan"
-            required
-            onChange={handleChange}/>
-            <span>{errors.alasan}</span>
-      </div>
-
-
-        <div className="mb-3">
-          <label className="form-label">Lembur</label>
-          <div className="d-flex">
+        <div
+          style={{ display: "flex", flexDirection: "column", width: "400px" }}
+        >
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="">Nim</label>
             <input
-              type="radio"
-              id="lembur-yes"
-              name="lembur"
-              value="Iya"
-              required
-              onChange={handleChange}/>
-         <label htmlFor="lembur-yes" className="me-3">Iya</label>
-            
+              type="text"
+              name="nim"
+              id="nim"
+              value={form.nim}
+              onChange={handleChange}
+            />
+            <span>{errors.nim}</span>
+          </div>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="">Nama</label>
             <input
-              type="radio"
-              id="lembur-no"
-              name="lembur"
-              value="Tidak"
-              required
-              onChange={handleChange}/>
-            <label htmlFor="lembur-no">Tidak</label>
+              type="text"
+              name="nama"
+              id="nama"
+              value={form.nama}
+              onChange={handleChange}
+            />
+            <span>{errors.nama}</span>
           </div>
-          <span>{errors.lembur}</span>
-    </div>
-
-        <div className="mb-3">
-          <label htmlFor="datepicker" className="form-label">Tanggal Kehadiran</label>
-          <input
-            type="date"
-            id="datepicker"
-            name="date"
-            className="form-control"
-            required
-            onChange={handleChange} />
-            <span>{errors.date}</span>
-     </div>
-
-        {notification && (
-          <div className={`alert ${errors.length > 0 ? `alert-danger` : `alert-success`}`}>
-            {notification}
-          </div>
-     )}
-
-        <div className="d-flex justify-content-between mt-4">
-          <button type="reset" className="btn btn-danger" onClick={() => setForm({})}>Reset</button>
-          <button type="submit" className="btn btn-submit">Submit</button>
-     </div>
+          <button type="submit" style={{ marginTop: "16px" }}>
+            Login
+          </button>
+        </div>
       </form>
-    </div>
+
+      <h2>Data User</h2>
+      <table border={1}>
+        <thead>
+        <tr>
+          <td>NIM</td>
+          <td>NAMA</td>
+          <td>ACTIONS</td>
+        </tr>
+        </thead>
+        <tbody>
+          {users.map((user) => (
+            <tr key={user.userid}>
+              <td>{user.nim}</td>
+              <td>{user.nama}</td>
+              <td>
+                <button 
+                onClick={() => {
+                  deleteData(user.userid);
+                }}>Delete</button>
+                <button onClick={() =>  {editData(user.userid, user.nim, user.nama);}}>Edit</button>
+
+              </td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
   );
 }
 
