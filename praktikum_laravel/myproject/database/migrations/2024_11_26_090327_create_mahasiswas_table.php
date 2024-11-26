@@ -17,8 +17,8 @@ return new class extends Migration
             $table->string('NAMA');
             $table->string('PRODI');
             $table->text('ALAMAT');
-            // $table->foreignId('id_fakultas');
-            $table->foreignId('id_fakultas')->references('id')->on('fakultas')->onDelete('cascade');
+            $table->unsignedBigInteger('id_fakultas');
+            $table->foreign('id_fakultas')->references('id')->on('fakultas')->onDelete('cascade');
             // $table->foreignId('id_fakultas')->index()->constrained()
             $table->timestamps();
         });
