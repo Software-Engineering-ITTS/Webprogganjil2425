@@ -7,8 +7,14 @@
 </head>
 <body>
     <h1>Form Mahasiswa</h1>
-    <form action="/mahasiswa" method="post">
+    <form action="/mahasiswa" method="post" enctype="multipart/form-data">
         @csrf
+
+        <div class="mb-3">
+            <label for="fotoktm">FOTO KTM</label>
+            <input type="file" name="fotoktm" accept="image/png, image/jpeg" id="fotoktm">
+        </div>
+
         <div class="mb-3">
             <label for="NIM">NIM</label>
             <input type="text" name="NIM" id="NIM">
@@ -31,6 +37,7 @@
         <input type="id_fakultas" name="id_fakultas" id="" value="1" hidden>
         <button type="submit"> Submit </button>
         
+        <p>{{ $pesan }}</p>
         
     </form>
 </body>

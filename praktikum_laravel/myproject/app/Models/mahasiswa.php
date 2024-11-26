@@ -12,7 +12,7 @@ class mahasiswa extends Model
     protected $table = 'mahasiswas';
 
     protected $fillable = [
-        'NIM', 'NAMA', "PRODI", "ALAMAT", 'id_fakultas'
+        'NIM', 'NAMA', "PRODI", "ALAMAT", 'id_fakultas', "fotoktm"
     ];
 
     protected $guarded = ['id'];

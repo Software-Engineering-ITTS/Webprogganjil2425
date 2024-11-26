@@ -16,8 +16,7 @@ use App\Http\Controllers\MahasiswaController;
 
 Route::get('/', function () {
     return view('index', [
-        'nama' => "Muhammad Asthi Seta Ari Yuwana",
-        'kota' => "Surabaya"
+        'pesan' => ''
     ]);
 });
 
