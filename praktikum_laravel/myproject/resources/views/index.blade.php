@@ -6,6 +6,32 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>{{$nama}}, {{$kota}}</h1>
+    <h1>Form Mahasiswa</h1>
+    <form action="/mahasiswa" method="post">
+        @csrf
+        <div class="mb-3">
+            <label for="NIM">NIM</label>
+            <input type="text" name="NIM" id="NIM">
+        </div>
+
+        <div class="mb-3">
+            <label for="NAMA">NAMA</label>
+            <input type="text" name="NAMA" id="NAMA">
+        </div>
+
+        <div class="mb-3">
+            <label for="PRODI">PRODI</label>
+            <input type="text" name="PRODI" id="PRODI">
+        </div>
+
+        <div class="mb-3">
+            <label for="ALAMAT">ALAMAT</label>
+            <input type="text" name="ALAMAT" id="ALAMAT">
+        </div>
+        <input type="id_fakultas" name="id_fakultas" id="" value="1" hidden>
+        <button type="submit"> Submit </button>
+        
+        
+    </form>
 </body>
 </html>

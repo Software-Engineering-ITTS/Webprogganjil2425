@@ -1,8 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\MahasiswaController;
 /*
+
 |--------------------------------------------------------------------------
 | Web Routes
 |--------------------------------------------------------------------------
@@ -19,6 +20,8 @@ Route::get('/', function () {
         'kota' => "Surabaya"
     ]);
 });
+
+Route::resource('/mahasiswa', MahasiswaController::class);
 
 
 // Route::get('/index', function () {
