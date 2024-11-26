@@ -6,6 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Muhammad Asthi Seta Ari Yuwana</h1>
+    <h1>{{$nama}}, {{$kota}}</h1>
 </body>
 </html>

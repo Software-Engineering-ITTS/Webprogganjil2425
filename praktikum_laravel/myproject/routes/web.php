@@ -14,10 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index', [
+        'nama' => "Muhammad Asthi Seta Ari Yuwana",
+        'kota' => "Surabaya"
+    ]);
 });
 
 
-Route::get('/index', function () {
-    return view('index');
-});
+// Route::get('/index', function () {
+//     return view('index');
+// });
