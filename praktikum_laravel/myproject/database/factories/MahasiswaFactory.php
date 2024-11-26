@@ -17,7 +17,10 @@ class MahasiswaFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'NIM' =>fake()->sentence(1),
+            'NAMA' =>fake()->sentence(3),
+            'PRODI' =>fake()->sentence(2),
+            'ALAMAT' => fake()->paragraph(mt_rand(5, 10)),
         ];
     }
 }
