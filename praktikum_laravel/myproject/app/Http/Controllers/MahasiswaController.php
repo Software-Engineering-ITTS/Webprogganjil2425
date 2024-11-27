@@ -6,13 +6,16 @@ use Illuminate\Http\Request;
 use App\Models\mahasiswa;
 use Illuminate\Support\Facades\Validator;
 use File;
+use Illuminate\Support\Facades\Storage;
 
 class MahasiswaController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         return view('alldata');
     }
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // $validator = Validator::make($req->all(),[
         //     'nama_customer'=>'required',
@@ -48,13 +51,13 @@ class MahasiswaController extends Controller
         ]);
 
 
-        if($val_data->fails()){
+        if ($val_data->fails()) {
             return redirect('/', [
                 'pesan' => "Validasi gagal"
             ]);
         }
         // $request->validate([
-            
+
         //     'fotoktm' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048',
         // ]);
 
@@ -62,26 +65,31 @@ class MahasiswaController extends Controller
         // $mahasiswa->fill($val_data);
         $filename = '';
 
-        
+
 
         // var_dump("Checking file");
-        // if ($request->hasFile('fotoktm')) {
+        if ($request->hasFile('fotoktm')) {
             $image = $request->file('fotoktm'); //->getClientOriginalName();
-            
             // $image = $request->file('fotoktm');
-            $filename = $image->getClientOriginalName();//time() . '.' . $image->getClientOriginalExtension();
+            $filename = $image->hashName(); //.$fileName; //time() . '.' . $image->getClientOriginalExtension();
+            $path = $image->store('public/uploads');
+            // $filename = Storage::disk('public')->store($image);
 
-            $path = $request->file('fotoktm')->store('public/files');
             $file = new File;
             $file->name = $filename;
             $file->path = $path;
 
-            
-            // $image->move(public_path('/public/files/'), $filename);
-            // $filename = $request->getSchemeAndHttpHost() . '/public/files/' . $filename;
+            // $contents = //Storage::disk('public')->get('uploads/'.$filename);
+            // echo $contents;
+            echo asset('storage/uploads/'.$filename);
+
+
+            // $file->move(public_path('/public/files/'), $filename);
+            // full path and filename to store to database
+            // $filename = $;//$request->getSchemeAndHttpHost() . '/public/files/' . $filename;
             // var_dump($filename . " File is present");
             // $mahasiswa->fotoktm = $filename;
-        // }
+        }
 
         $save = mahasiswa::Create([
             'NIM' => $request->get('NIM'),
@@ -91,31 +99,28 @@ class MahasiswaController extends Controller
             'id_fakultas' => $request->get('id_fakultas'),
             'fotoktm' => $filename,
         ]);
-        
-        if($save){
+
+        if ($save) {
+            // how to show the image
+            // echo "<img src=\"{{ asset('storage/uploads/'.$filename) }}\" />";
+            // asset('storage/uploads/'.$filename);
             return redirect('/');
-        }else{
+        } else {
             // return redirect('/',{{ 'pesan' => "Insert gagal" }});
         }
 
         // $mahasiswa->save();
 
-        
+
         // Mahasiswa::create($val_data);
 
 
-        
-    }
-
-    public function edit(){
 
     }
 
-    public function update(Request $request){
+    public function edit() {}
 
-    }
+    public function update(Request $request) {}
 
-    public function destroy(Request $request){
-
-    }
+    public function destroy(Request $request) {}
 }
