@@ -1,44 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-    <h1>Form Mahasiswa</h1>
-    <form action="/mahasiswa" method="post" enctype="multipart/form-data">
-        @csrf
+    <h1>List Data Mahasiswa</h1>
+    <div class="table-responsive">
 
-        <div class="mb-3">
-            <label for="fotoktm">FOTO KTM</label>
-            <input type="file" name="fotoktm" accept="image/png, image/jpeg" id="fotoktm">
-        </div>
+        <table class="table table-striped table-hover table-condensed">
+            <thead>
+                <tr>
+                    <th hidden><strong>Id</strong></th>
+                    <th><strong>NIM</strong></th>
+                    <th><strong>NAMA</strong></th>
+                    <th><strong>PRODI</strong></th>
+                    <th><strong>Alamat</strong></th>
+                    <th hidden><strong>id fakultas</strong></th>
+                    <th><strong>fakultas</strong></th>
+                    <th><strong>foto</strong></th>
+                    <th><strong>Aksi</strong></th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach($mahasiswas as $key => $data)
+                <tr>
+                    <td hidden>{{$data->id}}</td>
+                    <td>{{$data->NIM}}</td>
+                    <td>{{$data->NAMA}}</td>
+                    <td>{{$data->PRODI}}</td>
+                    <td>{{$data->ALAMAT}}</td>
+                    <td hidden>{{$data->id_fakultas}}</td>
+                    <td>{{$data->nama_fakultas}}</td>
+                    <td>
+                    <img height="50" src={{ asset('storage/uploads/'.$data->fotoktm) }} />    
+                    </td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Hapus</button>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
 
-        <div class="mb-3">
-            <label for="NIM">NIM</label>
-            <input type="text" name="NIM" id="NIM">
-        </div>
-
-        <div class="mb-3">
-            <label for="NAMA">NAMA</label>
-            <input type="text" name="NAMA" id="NAMA">
-        </div>
-
-        <div class="mb-3">
-            <label for="PRODI">PRODI</label>
-            <input type="text" name="PRODI" id="PRODI">
-        </div>
-
-        <div class="mb-3">
-            <label for="ALAMAT">ALAMAT</label>
-            <input type="text" name="ALAMAT" id="ALAMAT">
-        </div>
-        <input type="id_fakultas" name="id_fakultas" id="" value="1" hidden>
-        <button type="submit"> Submit </button>
-        
-        <p>{{ $pesan }}</p>
-        
-    </form>
 </body>
+
 </html>

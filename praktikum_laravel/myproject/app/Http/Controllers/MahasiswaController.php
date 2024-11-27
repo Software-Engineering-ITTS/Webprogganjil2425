@@ -6,14 +6,23 @@ use Illuminate\Http\Request;
 use App\Models\mahasiswa;
 use Illuminate\Support\Facades\Validator;
 use File;
+use DB;
 use Illuminate\Support\Facades\Storage;
 
 class MahasiswaController extends Controller
 {
     public function index()
     {
-        return view('alldata');
+        $mahasiswas = DB::table('mahasiswas')->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id')
+        ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id')
+        ->get();
+
+
+        return view('index', [
+            'mahasiswas' => $mahasiswas
+        ]);
     }
+
     public function store(Request $request)
     {
 
@@ -81,7 +90,7 @@ class MahasiswaController extends Controller
 
             // $contents = //Storage::disk('public')->get('uploads/'.$filename);
             // echo $contents;
-            echo asset('storage/uploads/'.$filename);
+            echo asset('storage/uploads/' . $filename);
 
 
             // $file->move(public_path('/public/files/'), $filename);
