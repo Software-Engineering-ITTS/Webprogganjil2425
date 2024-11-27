@@ -13,7 +13,7 @@ class MahasiswaController extends Controller
 {
     public function index()
     {
-        $mahasiswas = DB::table('mahasiswas')->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id')
+        $mahasiswas = DB::table('mahasiswas')->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id_fakultas')
         ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id_fakultas')
         ->get();
 

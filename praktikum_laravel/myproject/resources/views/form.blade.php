@@ -6,6 +6,7 @@
     <title>Document</title>
 </head>
 <body>
+    <a href="{{route('index')}}">Lihat Data</a>
     <h1>Form Mahasiswa</h1>
     <form action="/mahasiswa" method="post" enctype="multipart/form-data">
         @csrf
@@ -38,6 +39,6 @@
         <button type="submit"> Submit </button>
             
     </form>
-    <p>{{ $pesan }}</p>
+    <p>{{ $param }}</p>
 </body>
 </html>

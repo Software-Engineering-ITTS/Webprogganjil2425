@@ -15,6 +15,7 @@
 
 <body>
     <h1>List Data Mahasiswa</h1>
+    <a href="{{route('form')}}">Form data Mahasiswa</a>
     <div class="table-responsive">
 
         <table class="table table-striped table-hover table-condensed">

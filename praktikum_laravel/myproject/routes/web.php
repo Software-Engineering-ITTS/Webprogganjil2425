@@ -16,9 +16,9 @@ use App\Http\Controllers\MahasiswaController;
 
 Route::get('/form', function () {
     return view('form', [
-        'pesan' => ''
+        'param' => ''
     ]);
-});
+})->name('form');
 
 // Route::get('/', function () {
 //     return view('index');
@@ -31,7 +31,7 @@ Route::get('/form', function () {
 // });
 
 // view all data
-Route::get('/', [MahasiswaController::class, 'index']);
+Route::get('/', [MahasiswaController::class, 'index'])->name('index');
 
 // Input new data mahasiswa
 Route::resource('/mahasiswa', MahasiswaController::class);
