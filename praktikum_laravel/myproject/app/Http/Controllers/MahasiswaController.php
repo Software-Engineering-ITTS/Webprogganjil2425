@@ -14,8 +14,8 @@ class MahasiswaController extends Controller
     public function index()
     {
         $mahasiswas = DB::table('mahasiswas')->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id_fakultas')
-        ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id_fakultas')
-        ->get();
+            ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id_fakultas')
+            ->get();
 
 
         return view('index', [
@@ -62,7 +62,7 @@ class MahasiswaController extends Controller
 
         if ($val_data->fails()) {
             return redirect('/', [
-                'pesan' => "Validasi gagal"
+                'param' => "Validasi gagal"
             ]);
         }
         // $request->validate([
@@ -90,7 +90,7 @@ class MahasiswaController extends Controller
 
             // $contents = //Storage::disk('public')->get('uploads/'.$filename);
             // echo $contents;
-            echo asset('storage/uploads/' . $filename);
+            // echo asset('storage/uploads/' . $filename); 
 
 
             // $file->move(public_path('/public/files/'), $filename);
@@ -127,19 +127,75 @@ class MahasiswaController extends Controller
 
     }
 
-    public function edit() {}
+    public function edit($id)
+    {
+        // Fetch the specific mahasiswa record and the fakultas id
+        $mahasiswa = DB::table('mahasiswas')
+            ->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id_fakultas')
+            ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id_fakultas')
+            ->where('mahasiswas.id', $id)
+            ->first();
 
-    public function update(Request $request) {}
+        //pas the data to the form page
+        return view('form', [
+            'param' => $id, 
+            'mahasiswa' => $mahasiswa, // passing the whole data
+        ]);
+    }
 
-    public function destroy(Request $request) {
+    public function update(Request $request, $id)
+    {
+        // Validate the input
+        $validated = $request->validate([
+            'NIM' => 'required',
+            'NAMA' => 'required',
+            'PRODI' => 'required',
+            'ALAMAT' => 'required',
+           'fotoktm' => 'nullable|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+    
+        // handle foto baru wak
+        $fotoktm = $request->file('fotoktm');
+        if ($fotoktm) {
+
+            $image = $request->file('fotoktm'); //->getClientOriginalName();
+            // $image = $request->file('fotoktm');
+            $filename = $image->hashName(); //.$fileName; //time() . '.' . $image->getClientOriginalExtension();
+            $path = $image->store('public/uploads');
+            // $filename = Storage::disk('public')->store($image);
+
+            $file = new File;
+            $file->name = $filename;
+            $file->path = $path;
+
+            // $contents = //Storage::disk('public')->get('uploads/'.$filename);
+            // echo $contents;
+            // echo asset('storage/uploads/' . $filename);
+
+
+            // $path = $fotoktm->store('uploads', 'public');
+            $validated['fotoktm'] = $filename;
+        }
+    
+        // update the mahasiswa record in the database wak
+        DB::table('mahasiswas')
+            ->where('id', $id)
+            ->update(array_merge($validated, [
+                'id_fakultas' => $request->input('id_fakultas'),
+            ]));
+    
+        return redirect('/')->with('success', 'Data Mahasiswa berhasil di update!');
+    }
+
+    public function destroy($id)
+    {
         // dump($request->all()); // cek request data wak
-        $id = $request->input('id'); 
+        // $id = $request->input('id'); 
 
-        
+
         DB::table('mahasiswas')->where('id', $id)->delete();
-        dump($id); // cek request data wak
-        
+        // dump($id); // cek request data wak
+
         return redirect('/')->with('success', 'Data Mahasiswa berhasil dihapus!');
-        
     }
 }

@@ -21,7 +21,7 @@
         <table class="table table-striped table-hover table-condensed">
             <thead>
                 <tr>
-                    <th ><strong>Id</strong></th>
+                    <th hidden><strong>Id</strong></th>
                     <th><strong>NIM</strong></th>
                     <th><strong>NAMA</strong></th>
                     <th><strong>PRODI</strong></th>
@@ -35,7 +35,7 @@
             <tbody>
                 @foreach($mahasiswas as $key => $data)
                 <tr>
-                    <td >{{$data->id}}</td>
+                    <td hidden>{{$data->id}}</td>
                     <td>{{$data->NIM}}</td>
                     <td>{{$data->NAMA}}</td>
                     <td>{{$data->PRODI}}</td>
@@ -47,12 +47,9 @@
                     </td>
                     <td>
                         <!-- TODO -->
-                        <form action="" method="POST" onsubmit="">
+                        <a href="{{ route('mahasiswa.edit', $data->id) }}" class="btn btn-primary">Edit</a>
 
-                            @csrf
-                            <!-- @method('DELETE') -->
-                            <button type="submit" class="btn btn-danger">Edit</button>
-                        </form>
+
                         <form action="{{ route('mahasiswa.destroy', $data->id) }}" method="POST" onsubmit="return confirm('Apakah anda yakin ingin menghapus item ini?');">
                             @csrf
                             @method('DELETE')

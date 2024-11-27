@@ -24,7 +24,7 @@ Route::get('/form', function () {
 //     return view('index');
 //     // $mahasiswas = DB::table('mahasiswas')->get();
 
-    
+
 //     // return view('index', [
 //     //     'mahasiswas' => $mahasiswas
 //     // ]);
@@ -38,6 +38,9 @@ Route::resource('/mahasiswa', MahasiswaController::class);
 
 // destroy
 Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+
+Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit'); // Edit page
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update'); // Update data
 
 
 // Route::get('/index', function () {
