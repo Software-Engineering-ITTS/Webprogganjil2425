@@ -1,100 +1,145 @@
-import { useEffect, useState } from 'react'
-// import reactLogo from './assets/react.svg'
-// import viteLogo from '/vite.svg'
-// import './App.css'
+import { useState, useEffect } from "react";
 
 function App() {
   const [users, setUsers] = useState([]);
-  const [form, setForm] = useState({ username: "", password: "" });
-  const [errors, setError] = useState({});
+  const [form, setForm] = useState({ userid: null, nim: "", name: "" });
+  const [errors, setErrors] = useState({});
+  const [isEdit, setIsEdit] = useState(false);
 
-  const handleChange = (e) => {
-    const { name, value } = e.target
-    setForm({ ...form, [name]: value });
-  }
+  const handledChange = (e) => {
+    const { name, value } = e.target;
+    setForm({
+      ...form,
+      [name]: value,
+    });
+  };
 
   useEffect(() => {
-    fetchUser()
-  }, [])
+    fetchUser();
+  }, []);
 
   const fetchUser = async () => {
     try {
-      const response = await fetch("http://localhost/week8/connectDB/viewdata.php")
+      const response = await fetch(
+        "http://localhost/week7/bakcend/lihatdata.php"
+      );
       const data = await response.json();
       setUsers(data);
-      //console.log(users);
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
+  const deleteData = async (userid) => {
+    try {
+      await fetch("http://localhost/week7/bakcend/delete.php", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ userid }),
+      });
+      fetchUser();
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-  const OnSubmit = (e) => {
+  const editData = (user) => {
+    setForm({ userid: user.userid, nim: user.nim, name: user.name }); // Isi form
+    setIsEdit(true); // Aktifkan mode edit
+  };
+
+  const onsubmit = async (e) => {
     e.preventDefault();
     const errors = validateForm(form);
-    //console.log(errors);
-    setError(errors);
+    setErrors(errors);
+
     if (Object.keys(errors).length === 0) {
-      console.log("call api post")
+      const url = isEdit
+        ? "http://localhost/week7/bakcend/edit.php"
+        : "http://localhost/week7/bakcend/simpandata.php";
+
+      try {
+        await fetch(url, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(form),
+        });
+        fetchUser();
+        setForm({ userid: null, nim: "", name: "" });
+        setIsEdit(false);
+      } catch (error) {
+        console.log(error);
+      }
     }
-    // console.log(form);
-  }
+  };
 
   const validateForm = (form) => {
     const errors = {};
-    if (!form.username.trim()) {
-      errors.username = "Username is required";
-    }
-    if (!form.password) {
-      errors.password = "Password is required";
-    } else if (form.password.length < 8) {
-      errors.password = "Password must be at least 8 characters";
-    }
+    if (!form.nim) errors.nim = "NIM is required";
+    if (!form.name.trim()) errors.name = "name is required";
     return errors;
-  }
+  };
 
   return (
     <>
-      <form onSubmit={OnSubmit}>
-        <div style={{ display: "flex", flexDirection: "column", width: "400px" }}>
-          <div style={{ display: 'flex', flexDirection: "column" }}>
-            <label htmlFor="">username</label>
-            <input type="text" name='username' id='username' onChange={handleChange} />
-            <span>{errors.username}</span>
+      <form onSubmit={onsubmit}>
+        <div
+          style={{ display: "flex", flexDirection: "column", width: "400px" }}
+        >
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="nim" style={{ color: "red" }}>
+              NIM
+            </label>
+            <input
+              type="text"
+              name="nim"
+              id="nim"
+              value={form.nim}
+              onChange={handledChange}
+            />
+            <span>{errors.nim}</span>
           </div>
-          <div style={{ display: 'flex', flexDirection: 'column' }}>
-            <label htmlFor="">password</label>
-            <input type="text" name='password' id='password' onChange={handleChange} />
-            <span>{errors.password}</span>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            <label htmlFor="name">name</label>
+            <input
+              type="text"
+              name="name"
+              id="name"
+              value={form.name}
+              onChange={handledChange}
+            />
+            <span>{errors.name}</span>
           </div>
-          <button type='submit' style={{ marginTop: "16px" }}>Login</button>
+          <button type="submit" style={{ marginTop: "16px" }}>
+            {isEdit ? "Update" : "Save"}
+          </button>
         </div>
       </form>
 
       <h2>Data User</h2>
-      <table border="1">
+      <table border={1}>
         <thead>
           <tr>
-            <td>NIM</td>
-            <td>Nama</td>
-            <td>Actions</td>
+            <th>NIM</th>
+            <th>name</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
-          {console.log(users)}
           {users.map((user) => (
-            <tr key={user.userID}>
-              <td>{user.Nim}</td>
-              <td>{user.Nama}</td>
+            <tr key={user.userid}>
+              <td>{user.nim}</td>
+              <td>{user.name}</td>
               <td>
-                <button>Delete</button>
+                <button onClick={() => deleteData(user.userid)}>Delete</button>
+                <button onClick={() => editData(user)}>Edit</button>
               </td>
             </tr>
           ))}
         </tbody>
       </table>
     </>
-  )
+  );
 }
 
 export default App;
