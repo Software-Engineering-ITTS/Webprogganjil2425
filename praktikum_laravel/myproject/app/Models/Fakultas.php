@@ -15,6 +15,6 @@ class Fakultas extends Model
         'nama_fakultas', 'deskripsi'
     ];
 
-    protected $guarded = ['id'];
+    protected $guarded = ['id_fakultas'];
     
 }

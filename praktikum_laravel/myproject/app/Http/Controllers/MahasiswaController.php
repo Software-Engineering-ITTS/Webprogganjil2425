@@ -14,7 +14,7 @@ class MahasiswaController extends Controller
     public function index()
     {
         $mahasiswas = DB::table('mahasiswas')->join('fakultas', 'mahasiswas.id_fakultas', '=', 'fakultas.id')
-        ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id')
+        ->select('mahasiswas.*', 'fakultas.nama_fakultas', 'fakultas.id_fakultas')
         ->get();
 
 
@@ -131,5 +131,15 @@ class MahasiswaController extends Controller
 
     public function update(Request $request) {}
 
-    public function destroy(Request $request) {}
+    public function destroy(Request $request) {
+        // dump($request->all()); // cek request data wak
+        $id = $request->input('id'); 
+
+        
+        DB::table('mahasiswas')->where('id', $id)->delete();
+        dump($id); // cek request data wak
+        
+        return redirect('/')->with('success', 'Data Mahasiswa berhasil dihapus!');
+        
+    }
 }

@@ -19,7 +19,7 @@ return new class extends Migration
             $table->text('ALAMAT');
             $table->text('fotoktm')->nullable();
             $table->unsignedBigInteger('id_fakultas');
-            $table->foreign('id_fakultas')->references('id')->on('fakultas')->onDelete('cascade');
+            $table->foreign('id_fakultas')->references('id_fakultas')->on('fakultas')->onDelete('cascade');
             // $table->foreignId('id_fakultas')->index()->constrained()
             $table->timestamps();
         });

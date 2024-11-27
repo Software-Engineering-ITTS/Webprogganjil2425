@@ -30,9 +30,14 @@ Route::get('/form', function () {
 //     // ]);
 // });
 
+// view all data
 Route::get('/', [MahasiswaController::class, 'index']);
 
+// Input new data mahasiswa
 Route::resource('/mahasiswa', MahasiswaController::class);
+
+// destroy
+Route::delete('/mahasiswa/{id}', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 
 
 // Route::get('/index', function () {
