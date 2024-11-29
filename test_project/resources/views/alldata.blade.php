@@ -32,6 +32,7 @@
         </div>  
         <input type="id_fakultas" name="id_fakultas" id="" value="1" hidden>
         <button class="btn" type="submit">Submit</button>
+        <button type="reset">Reset</button>
     </form>
 
     <h2>Data Mahasiswa</h2>
@@ -57,6 +58,10 @@
                     <td>{{ $mahasiswa->prodi }}</td>
                     <td>{{ $mahasiswa->alamat }}</td>
                     <td>{{ $mahasiswa->id_fakultas }}</td>
+                    <td>
+                        <button>Edit</button>
+                        <button>Delete</button>
+                    </td>
                 </tr>
             @endforeach
         </tbody>
