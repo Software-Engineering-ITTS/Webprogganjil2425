@@ -60,7 +60,12 @@
                     <td>{{ $mahasiswa->id_fakultas }}</td>
                     <td>
                         <button>Edit</button>
-                        <button>Delete</button>
+                        <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST">
+                            @csrf
+                            @method('DELETE')
+                            <input type="hidden" name="id" value="{{ $mahasiswa->id }}">
+                            <button type="submit">Delete</button>
+                        </form>
                     </td>
                 </tr>
             @endforeach

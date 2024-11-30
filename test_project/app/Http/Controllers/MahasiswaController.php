@@ -32,7 +32,15 @@ class MahasiswaController extends Controller
     }
     public function edit(){}
     public function update(Request $request){}
-    public function destroy(Request $request){}
+    public function destroy(Request $request){
+        $id = $request->input('id');
+
+        $mahasiswa = Mahasiswa::find($id);
+        
+        $mahasiswa->delete();
+
+        return redirect('/');   
+    }
 
     public function show(Request $request){
         return redirect("/");
