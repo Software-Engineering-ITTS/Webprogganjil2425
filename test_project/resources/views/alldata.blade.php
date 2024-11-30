@@ -59,7 +59,8 @@
                     <td>{{ $mahasiswa->alamat }}</td>
                     <td>{{ $mahasiswa->id_fakultas }}</td>
                     <td>
-                        <button>Edit</button>
+                        
+                        <a href="{{ route('mahasiswa.edit', $mahasiswa->id) }}">Edit</a>
                         <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST">
                             @csrf
                             @method('DELETE')
@@ -71,5 +72,6 @@
             @endforeach
         </tbody>
     </table>
+    
 </body>
 </html>

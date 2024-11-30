@@ -30,8 +30,25 @@ class MahasiswaController extends Controller
 
         return redirect('/');
     }
-    public function edit(){}
-    public function update(Request $request){}
+    public function edit($id){
+        $mahasiswa = Mahasiswa::find($id);
+        return view('edit', compact('mahasiswa'));
+    }
+    public function update(Request $request, $id){
+        $val_data = $request->validate([
+            'ktm' => 'required',
+            'nim' => 'required',
+            'nama' => 'required',
+            'prodi' => 'required',
+            'alamat' => 'required',
+            'id_fakultas' => 'required',
+        ]);
+
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->update($val_data);
+
+        return redirect('/');
+    }
     public function destroy(Request $request){
         $id = $request->input('id');
 

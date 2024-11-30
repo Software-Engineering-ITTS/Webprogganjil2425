@@ -16,7 +16,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [MahasiswaController::class, 'index']);
-Route::delete('/', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');;
+Route::delete('/', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
+Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
+Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');
 Route::resource('/Mahasiswa', MahasiswaController::class);
 
 
