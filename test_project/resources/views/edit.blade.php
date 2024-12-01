@@ -7,36 +7,31 @@
     <title>Edit</title>
 </head>
 <body>
-    <form action="{{ route('mahasiswa.update', $mahasiswa->id) }}" method="POST">
+    <form action="{{ route('mahasiswa.update', $mahasiswas->id) }}" method="POST">
         @csrf
         @method('PUT')
         
         <div>
-            <label>KTM</label>
-            <input type="file" name="ktm" value="{{ $mahasiswa->ktm }}">
-        </div>
-        
-        <div>
             <label>NIM</label>
-            <input type="text" name="nim" value="{{ $mahasiswa->nim }}">
+            <input type="text" name="nim" value="{{ $mahasiswas->nim }}">
         </div>
         
         <div>
             <label>Nama</label>
-            <input type="text" name="nama" value="{{ $mahasiswa->nama }}">
+            <input type="text" name="nama" value="{{ $mahasiswas->nama }}">
         </div>
         
         <div>
             <label>Prodi</label>
-            <input type="text" name="prodi" value="{{ $mahasiswa->prodi }}">
+            <input type="text" name="prodi" value="{{ $mahasiswas->prodi }}">
         </div>
         
         <div>
             <label>Alamat</label>
-            <input type="text" name="alamat" value="{{ $mahasiswa->alamat }}">
+            <input type="text" name="alamat" value="{{ $mahasiswas->alamat }}">
         </div>
         
-        <input type="hidden" name="id_fakultas" value="{{ $mahasiswa->id_fakultas }}">
+        <input type="hidden" name="id_fakultas" value="{{ $mahasiswas->id_fakultas }}">
         
         <button type="submit">Update</button>
     </form>

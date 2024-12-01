@@ -31,12 +31,11 @@ class MahasiswaController extends Controller
         return redirect('/');
     }
     public function edit($id){
-        $mahasiswa = Mahasiswa::find($id);
-        return view('edit', compact('mahasiswa'));
+        $mahasiswas = Mahasiswa::find($id);
+        return view('edit', compact('mahasiswas'));
     }
     public function update(Request $request, $id){
         $val_data = $request->validate([
-            'ktm' => 'required',
             'nim' => 'required',
             'nama' => 'required',
             'prodi' => 'required',
@@ -44,8 +43,8 @@ class MahasiswaController extends Controller
             'id_fakultas' => 'required',
         ]);
 
-        $mahasiswa = Mahasiswa::find($id);
-        $mahasiswa->update($val_data);
+        $mahasiswas = Mahasiswa::find($id);
+        $mahasiswas->update($val_data);
 
         return redirect('/');
     }
