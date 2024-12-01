@@ -84,8 +84,7 @@ function App() {
     <>
       <form onSubmit={onsubmit}>
         <div
-          style={{ display: "flex", flexDirection: "column", width: "400px" }}
-        >
+          style={{ display: "flex", flexDirection: "column", width: "400px" }}>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor="nim" style={{ color: "red" }}>
               NIM
