@@ -7,24 +7,48 @@ use Illuminate\Http\Request;
 class MahasiswaController extends Controller
 {
     public function index(){
-        $alldata = Mahasiswa::all();
-        return view('alldata', ['mahasiswa' => $alldata]);
+        $mahasiswas = Mahasiswa::all();
+        return view('index', compact('mahasiswas'));
+    }
+    
+
+    public function store(Request $request)
+{
+    $val_data = $request->validate([
+        'nim' => 'required',
+        'nama' => 'required',
+        'prodi' => 'required',
+        'alamat' => 'required',
+        'id_fakultas' => 'required',
+    ]);
+
+    Mahasiswa::create($val_data);
+
+    return redirect('/');
+}
+
+    public function edit($id){
+        $mahasiswas = Mahasiswa::findOrFail($id);
+        return view('edit', compact('mahasiswas'));
     }
 
-    public function store(Request $request){
+    public function update(Request $request, $id){
         $val_data = $request->validate([
-            'NIM' => 'required',
-            'NAMA' => 'required',
-            'PRODI' => 'required',
-            'ALAMAT' => 'required',
+            'nim' => 'required',
+            'nama' => 'required',
+            'prodi' => 'required',
+            'alamat' => 'required',
             'id_fakultas' => 'required',
         ]);
+        $mahasiswas = Mahasiswa::findOrFail($id);
+        $mahasiswas->update($val_data);
 
-         Mahasiswa::create($val_data);
-
-        return redirect('/');
+        return redirect('/' );
+   
     }
-    public function edit(){}
-    public function update(Request $request){}
-    public function destroy(Request $request){}
+    public function destroy($id){
+        $mahasiswa = Mahasiswa::findOrFail($id);
+        $mahasiswa->delete();
+        return redirect('/')->with('success', 'Mahasiswa berhasil dihapus');
+    }
 }
