@@ -12,10 +12,14 @@ class MahasiswaController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
         $data = Mahasiswa::paginate(5);
         $fakultas = Fakultas::all();
+        if ($request->ajax()) {
+            return view('table', compact('data', 'fakultas'))->render();
+        }
+
         return view('index', compact('data', 'fakultas'));
     }
 
