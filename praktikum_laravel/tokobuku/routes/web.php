@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\BookController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +20,11 @@ use Illuminate\Support\Facades\Route;
 //     return view('books.index');
 // });
 
-Route::get('/', [BookController::class, 'index'])->name('index');
+// BOOKS ROUTES
+Route::get('/', [BookController::class, 'index'])->name('books.index');
+
+// USER ROUTES
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
+
+// TRANSACTION ROUTES
+Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');

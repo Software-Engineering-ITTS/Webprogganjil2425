@@ -3,9 +3,9 @@
     <h1 class="text-lg font-semibold">Toko Buku</h1>
     <nav class="flex space-x-6">
 
-      <a class="hover:text-gray-400">Books</a>
-      <a class="hover:text-gray-400">User</a>
-      <a class="hover:text-gray-400">Transaction</a>
+      <a href="{{route('books.index')}}" class="hover:text-gray-400">Books</a>
+      <a href="{{route('users.index')}}" class="hover:text-gray-400">User</a>
+      <a href="{{route('transactions.index')}}" class="hover:text-gray-400">Transaction</a>
       
     </nav>
   </div>

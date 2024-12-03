@@ -12,7 +12,7 @@ class Transaction extends Model
 
     protected $table = 'transactions';
     protected $guarded = ['id'];
-    
+
     protected $fillable = ['user_id', 'total_amount'];
 
     public function user()
@@ -24,5 +24,15 @@ class Transaction extends Model
     public function transactionLists()
     {
         return $this->hasMany(TransactionList::class);
+    }
+
+    public function getTotalAmountFormattedAttribute()
+    {
+        return number_format($this->total_amount, 0, ',', '.');
+    }
+
+    public function getCreatedAtFormattedAttribute()
+    {
+        return $this->created_at->format('d-m-Y');
     }
 }
