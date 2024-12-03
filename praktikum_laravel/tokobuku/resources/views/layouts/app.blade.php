@@ -14,6 +14,7 @@
 <body>
     <div id="app">
         <div class="main-wrapper">
+            @include('shared.header')
             <div class="main-content">
                 @yield('content')
             </div>
