@@ -22,6 +22,7 @@ return new class extends Migration
             $table->bigInteger('harga');
             $table->text('cover')->nullable();
             $table->timestamps();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 

@@ -13,7 +13,7 @@ class Book extends Model
     protected $table = 'books';
 
     protected $fillable = [
-        'NIM', 'NAMA', "PRODI", "ALAMAT", 'id_fakultas', "fotoktm"
+        'judul', 'nama', "penulis", "tahun_terbit", 'stock', "harga", "cover"
     ];
 
     protected $guarded = ['id'];

@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBookRequest;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
+use File;
+use DB;
 
 class BookController extends Controller
 {
@@ -13,7 +15,15 @@ class BookController extends Controller
      */
     public function index()
     {
-        //
+        $books = Book::paginate(6); // Fetch 10 records per page
+        // return view('books.index', compact('books'));
+        // $books = DB::table('books')
+        //     ->select('*')
+        //     ->get();
+
+        return view('books.index', [
+            'books' => $books
+        ]);
     }
 
     /**

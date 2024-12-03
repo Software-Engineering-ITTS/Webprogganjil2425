@@ -13,7 +13,7 @@
 
 <body>
     <div id="app">
-        <div class="main-wrapper">
+        <div class="main-wrapper bg-white dark:bg-slate-700 h-screen">
             @include('shared.header')
             <div class="main-content">
                 @yield('content')
