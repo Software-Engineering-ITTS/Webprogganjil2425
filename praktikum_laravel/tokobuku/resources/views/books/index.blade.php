@@ -1,12 +1,14 @@
 @extends('layouts.app')
 
-
 @section('content')
 <div class="m-4 ">
   <p class="text-4xl text-white dark:text-white font-extrabold">Data Buku</p>
-  <button class=" dark:text-gray-700 dark:bg-white text-white font-bold py-2 px-4 rounded my-4">
-    Tambah Data
-  </button>
+  <a href="{{route('books.create')}}">
+    <button class=" dark:text-gray-700 dark:bg-white text-white font-bold py-2 px-4 rounded my-4">
+      Tambah Data
+    </button>
+  </a>
+
   <div class="relative ">
     <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400 rounded">
       <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
@@ -27,7 +29,7 @@
             Stok
           </th>
           <th scope="col" class="px-6 py-3">
-            harga
+            Harga
           </th>
           <th scope="col" class="px-6 py-3">
             Cover

@@ -22,6 +22,7 @@ use Illuminate\Support\Facades\Route;
 
 // BOOKS ROUTES
 Route::get('/', [BookController::class, 'index'])->name('books.index');
+Route::get('/create-book', [BookController::class, 'create'])->name('books.create');
 
 // USER ROUTES
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
