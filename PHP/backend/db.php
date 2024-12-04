@@ -1,1 +1,0 @@
-<!-- Bikin koeneksi sekaligus inisiasi -->

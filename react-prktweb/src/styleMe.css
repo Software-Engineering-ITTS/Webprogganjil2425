@@ -1,0 +1,154 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', Courier, monospace;
+}
+
+h1 {
+  margin-bottom: 40px;
+  justify-content: center;
+}
+
+p {
+  display: flex;
+}
+
+button {
+  display: inline;
+  justify-content: center;
+}
+
+/* Container utama untuk memusatkan form di tengah layar */
+.form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f4f4f4;
+}
+
+/* Konten form */
+.form-content {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  border: 2px solid orange;
+  border-radius: 30px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  /* background-color: green; */
+}
+
+/* Grup input dan label */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 20px;
+}
+
+/* Input teks */
+.text1 {
+  border-radius: 30px;
+  border: solid 1px #ccc;
+  padding: 10px;
+}
+
+/* Pesan error */
+.error-message {
+  color: red;
+  font-size: 0.9em;
+  margin-top: 4px;
+}
+
+/* Tabel dan elemen lainnya */
+.TableForm, table, th, td {
+  border: 1px solid black;
+  padding: 5px;
+}
+
+.pesan1, .pesan2, .stk, .text1, .Kartu, .checkbox1, .radio1, .TableForm, .drop1, .area1 {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: center;
+  background-color: greenyellow;
+}
+
+/* Tambahan gaya untuk Data User */
+.data-user {
+  margin-top: 40px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.table-container {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.user-table {
+  border-collapse: collapse;
+  width: 80%;
+  background-color: #ffffff;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.user-table th,
+.user-table td {
+  border: 1px solid #ddd;
+  text-align: center;
+  padding: 8px;
+}
+
+.user-table th {
+  background-color: orange;
+  color: white;
+  font-weight: bold;
+}
+
+.user-table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.user-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+/* Tombol aksi */
+.edit-button {
+  padding: 5px 10px;
+  margin-right: 5px;
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-button {
+  padding: 5px 10px;
+  background-color: #f44336;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-button:hover {
+  background-color: #45a049;
+}
+
+.delete-button:hover {
+  background-color: #e53935;
+}
+
+.no-data {
+  text-align: center;
+  font-style: italic;
+  color: gray;
+}
