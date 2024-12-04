@@ -5,6 +5,10 @@
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Buku</p>
     <form class="max-w-sm mx-auto" action="{{ isset($book) ? route('books.update', $id) : route('books.store') }}" method="post" method="POST" enctype="multipart/form-data" id="bookForm">
         @csrf
+        @if(isset($book))
+            @method('PUT')
+        @endif
+
         <input type="hidden" name="id" id="id" value="{{ isset($book) ? $book->id : old('id') }}">
 
         <div class="mb-5">

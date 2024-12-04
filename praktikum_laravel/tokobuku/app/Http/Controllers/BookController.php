@@ -94,24 +94,21 @@ class BookController extends Controller
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit($id)
     {
-        var_dump("edit wak ".$id);
-        // TODO Get the data first
         $book = DB::table('books')->where('id', $id)->first();
+
         return view('books.form', [
             'id' => $id,
             'book' => $book
         ]);
     }
 
+
     /**
      * Update the specified resource in storage.
      */
-    public function update(UpdateBookRequest $request, Book $book)
+    public function update(Request $request)
     {
         //
     }

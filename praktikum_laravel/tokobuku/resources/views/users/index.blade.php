@@ -3,7 +3,7 @@
 
 @section('content')
 <div class="m-4 ">
-  <p class="text-4xl text-white dark:text-white font-extrabold">Data User</p>
+  <p class="text-4xl text-white dark:text-white font-extrabold">Data Pelanggan</p>
   <a href="{{route('users.create')}}">
   <button class=" dark:text-gray-700 dark:bg-white text-white font-bold py-2 px-4 rounded my-4">
     Tambah Data
@@ -45,6 +45,7 @@
             <div class="flex space-x-2">
               <!-- Edit Button -->
               <a
+              href="{{route('users.edit', $data->id)}}"
                 class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Edit
               </a>
