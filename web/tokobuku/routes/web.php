@@ -10,11 +10,11 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/tampilkan', function () {
+Route::get('/show', function () {
     return view('show');
 });
 
-Route::get('/tambah', function () {
+Route::get('/add', function () {
     return view('add');
 });
 

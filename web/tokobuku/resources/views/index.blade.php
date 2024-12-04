@@ -23,10 +23,10 @@
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
                         <a href="/"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-                        <a href="/tambah"
+                        <a href="/add"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add
                             Book</a>
-                        <a href="/tampilkan"
+                        <a href="/show"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Show
                             Book</a>
                         <a href="/edit"
