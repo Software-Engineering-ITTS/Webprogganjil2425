@@ -22,13 +22,20 @@ use Illuminate\Support\Facades\Route;
 
 // BOOKS ROUTES
 Route::get('/', [BookController::class, 'index'])->name('books.index');
-
 // ke halaman form untuk create
 Route::get('/create-book', [BookController::class, 'create'])->name('books.create');
 // post untuk ngirim datanya wak
 Route::post('/store-book', [BookController::class, 'store'])->name('books.store');
+
+// ke halaman form untuk update
+Route::get('/edit-book/{$id}', [BookController::class, 'edit'])->name('books.edit');
+
 // untuk update
 Route::post('/update-book', [BookController::class, 'update'])->name('books.update');
+
+// untuk delete
+Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('books.destroy');
+
 
 // USER ROUTES
 Route::get('/users', [UserController::class, 'index'])->name('users.index');

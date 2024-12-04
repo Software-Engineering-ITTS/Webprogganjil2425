@@ -6,6 +6,7 @@ use App\Http\Requests\StoreBookRequest;
 use Illuminate\Http\Request;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
+use Storage;
 use File;
 use DB;
 use Illuminate\Support\Facades\Validator;
@@ -42,7 +43,7 @@ class BookController extends Controller
         $val_data = Validator::make($request->all(), [
             'judul' => 'required',
             'penulis' => 'required',
-            'tahun_terbit' => 'required',        
+            'tahun_terbit' => 'required',
             'stock' => 'required',
             'harga' => 'required',
         ]);
@@ -56,11 +57,11 @@ class BookController extends Controller
 
 
         if ($request->hasFile('cover')) {
-            $image = $request->file('cover'); 
-        
+            $image = $request->file('cover');
+
             $filename = $image->hashName();
             $path = $image->store('public/uploads');
-        
+
 
             $file = new File;
             $file->name = $filename;
@@ -96,9 +97,10 @@ class BookController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(Book $book)
+    public function edit($id)
     {
-        //
+        // TODO Get the data first
+        return view('books.form');
     }
 
     /**
@@ -112,8 +114,23 @@ class BookController extends Controller
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(Book $book)
+    public function destroy($id)
     {
-        //
+        // get data buku sesuai id
+        $book = DB::table('books')->where('id', $id)->first();
+
+        if ($book) {
+            // cek gambar yg di upload
+            if ($book->cover && Storage::exists('public/uploads/' . $book->cover)) {
+                Storage::delete('public/uploads/' . $book->cover);
+            }
+
+            // Baru delete buku yg di db
+            DB::table('books')->where('id', $id)->delete();
+
+            return redirect('/')->with('success', 'Data Buku berhasil dihapus!');
+        }
+
+        return redirect('/')->with('error', 'Data Buku tidak ditemukan!');
     }
 }
