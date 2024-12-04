@@ -62,7 +62,7 @@
             {{ $data->harga }}
           </td>
           <td class="px-6 py-4">
-            <img height="50" src={{ asset('storage/uploads/'.$data->cover) }} />
+            <img width="50" src={{ asset('storage/uploads/'.$data->cover) }} />
           </td>
           <td class="px-6 py-4">
             <div class="flex space-x-2">
@@ -89,7 +89,6 @@
       </tbody>
     </table>
     <div class="mt-4 text-white dark:text-white">
-      
       {{ $books->links('vendor.pagination.tailwind') }}
     </div>
   </div>

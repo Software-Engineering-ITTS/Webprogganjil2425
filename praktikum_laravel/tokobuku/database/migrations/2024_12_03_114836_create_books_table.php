@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('judul');
             $table->string('penulis');      
-            $table->string('tahun_terbit');
+            $table->integer('tahun_terbit');
             $table->integer('stock');
             $table->bigInteger('harga');
             $table->text('cover')->nullable();

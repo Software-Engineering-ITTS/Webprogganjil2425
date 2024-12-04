@@ -18,7 +18,6 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::paginate(6); // Fetch 10 records per page
-    
 
         return view('books.index', [
             'books' => $books
@@ -38,20 +37,21 @@ class BookController extends Controller
      */
     public function store(Request $request)
     {
+        // var_dump($request->get('judul'));
+
         $val_data = Validator::make($request->all(), [
             'judul' => 'required',
             'penulis' => 'required',
-            'tahun_terbit' => 'required',
-            'penulis' => 'required',
+            'tahun_terbit' => 'required',        
             'stock' => 'required',
             'harga' => 'required',
         ]);
 
 
         if ($val_data->fails()) {
-            return redirect('/', [
-                'param' => "Validasi gagal"
-            ]);
+            var_dump($val_data->fails());
+            return redirect()->route('books.create');
+            // return route('books.create');
         }
 
 
@@ -69,17 +69,19 @@ class BookController extends Controller
 
         $save = Book::Create([
             'judul' => $request->get('judul'),
-            'NAMA' => $request->get('NAMA'),
-            'ALAMAT' => $request->get('ALAMAT'),
-            'PRODI' => $request->get('PRODI'),
-            'id_fakultas' => $request->get('id_fakultas'),
-            'fotoktm' => $filename,
+            'penulis' => $request->get('penulis'),
+            'tahun_terbit' => $request->get('tahun_terbit'),
+            'stock' => $request->get('stock'),
+            'harga' => $request->get('harga'),
+            'cover' => $filename,
         ]);
 
         if ($save) {
-            return redirect('books.index');
+            return redirect()->route('books.index');
+            // return view('books.index');
         } else {
-            return redirect('books.create');
+            // var_dump($save);
+            return redirect()->route('books.create');
         }
     }
 

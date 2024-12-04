@@ -3,7 +3,7 @@
 @section('content')
 <div class="m-4 ">
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Buku</p>
-    <form class="max-w-sm mx-auto" action="#" method="POST" enctype="multipart/form-data" id="bookForm">
+    <form class="max-w-sm mx-auto" action="{{ isset($book) ? route('books.update', $param) : route('books.store') }}" method="post" method="POST" enctype="multipart/form-data" id="bookForm">
         @csrf
         <input type="hidden" name="id" id="id" value="{{ old('id') }}">
 
@@ -12,6 +12,7 @@
             <input
                 type="text"
                 id="judul"
+                name="judul"
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="judul"
                 required />
