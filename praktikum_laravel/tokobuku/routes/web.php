@@ -32,15 +32,14 @@ Route::get('/edit-book/{$id}', [BookController::class, 'edit'])->name('book.edit
 // untuk update data wak
 Route::post('/update-book', [BookController::class, 'update'])->name('books.update');
 
-
-// Route::resource('/book', BookController::class);
-
 // untuk delete
 Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('book.destroy');
 
 
 // USER ROUTES
 Route::get('/users', [UserController::class, 'index'])->name('users.index');
+Route::get('/create-users', [UserController::class, 'create'])->name('users.create');
+Route::post('/store-users', [UserController::class, 'store'])->name('users.store');
 
 // TRANSACTION ROUTES
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
