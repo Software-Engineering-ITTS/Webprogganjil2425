@@ -3,10 +3,12 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreBookRequest;
+use Illuminate\Http\Request;
 use App\Http\Requests\UpdateBookRequest;
 use App\Models\Book;
 use File;
 use DB;
+use Illuminate\Support\Facades\Validator;
 
 class BookController extends Controller
 {
@@ -16,10 +18,7 @@ class BookController extends Controller
     public function index()
     {
         $books = Book::paginate(6); // Fetch 10 records per page
-        // return view('books.index', compact('books'));
-        // $books = DB::table('books')
-        //     ->select('*')
-        //     ->get();
+    
 
         return view('books.index', [
             'books' => $books
@@ -37,9 +36,51 @@ class BookController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StoreBookRequest $request)
+    public function store(Request $request)
     {
-        //
+        $val_data = Validator::make($request->all(), [
+            'judul' => 'required',
+            'penulis' => 'required',
+            'tahun_terbit' => 'required',
+            'penulis' => 'required',
+            'stock' => 'required',
+            'harga' => 'required',
+        ]);
+
+
+        if ($val_data->fails()) {
+            return redirect('/', [
+                'param' => "Validasi gagal"
+            ]);
+        }
+
+
+        if ($request->hasFile('cover')) {
+            $image = $request->file('cover'); 
+        
+            $filename = $image->hashName();
+            $path = $image->store('public/uploads');
+        
+
+            $file = new File;
+            $file->name = $filename;
+            $file->path = $path;
+        }
+
+        $save = Book::Create([
+            'judul' => $request->get('judul'),
+            'NAMA' => $request->get('NAMA'),
+            'ALAMAT' => $request->get('ALAMAT'),
+            'PRODI' => $request->get('PRODI'),
+            'id_fakultas' => $request->get('id_fakultas'),
+            'fotoktm' => $filename,
+        ]);
+
+        if ($save) {
+            return redirect('books.index');
+        } else {
+            return redirect('books.create');
+        }
     }
 
     /**

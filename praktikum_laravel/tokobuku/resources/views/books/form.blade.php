@@ -5,7 +5,7 @@
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Buku</p>
     <form class="max-w-sm mx-auto" action="#" method="POST" enctype="multipart/form-data" id="bookForm">
         @csrf
-        <input type="hidden" name="id" id="id" value="">
+        <input type="hidden" name="id" id="id" value="{{ old('id') }}">
 
         <div class="mb-5">
             <label for="judul" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Judul</label>
@@ -81,20 +81,20 @@
 
 
         <div class="flex justify-between">
-            <button
-                type="submit"
-                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex-1">
-                Submit
-            </button>
-
-            <div class="mx-3"></div>
-
+            
             <button
                 type="button"
                 onclick="document.getElementById('bookForm').reset();"
                 class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg">
                 Clear
             </button>
+            <div class="mx-3"></div>
+            <button
+                type="submit"
+                class="bg-blue-600 hover:bg-blue-700 text-white font-medium py-2 px-4 rounded-lg flex-1">
+                Submit
+            </button>
+            
         </div>
     </form>
 </div>
