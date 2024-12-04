@@ -50,12 +50,12 @@
                 Edit
               </a>
               <!-- Delete Button -->
-              <form method="POST" class="inline" action="{{ route('users.destroy', $data->id) }}">
+              <form method="POST" class="inline" action="{{ route('users.destroy', $data->id) }}" onsubmit="return confirm('Are you sure you want to delete this customer?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit"
                   class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600"
-                  onclick="return confirm('Are you sure you want to delete this customer?')">
+                  >
                   Delete
                 </button>
               </form>
