@@ -36,46 +36,93 @@ class TransactionController extends Controller
     
 
     public function store(Request $request){
-        $request->validate([
+
+        $validatedData = $request->validate([
             'user_id' => 'required|exists:users,id',
-            'books' => 'required|array',
-            'books.*.id' => 'required|exists:books,id',
-            'books.*.quantity' => 'required|integer|min:1',
+            'cart' => 'required|array|min:1',
         ]);
     
-        DB::transaction(function () use ($request) {
+        $userId = $validatedData['user_id'];
+        $cart = $validatedData['cart'];
+    
+        DB::beginTransaction();
+    
+        try {
+    
             $transaction = Transaction::create([
-                'user_id' => $request->user_id,
-                'total_amount' => 0, 
+                'user_id' => $userId,
+                'total_amount' => collect($cart)->sum(function ($item) {
+                    return $item['price'] * $item['quantity'];
+                }),
             ]);
     
-            $totalAmount = 0;
-    
-            // Loop di setiap buku yg dipilih
-            // untuk buat setiap item transaction_list
-            foreach ($request->books as $bookData) {
-                $book = Book::findOrFail($bookData['id']);
-                $subtotal = $book->harga * $bookData['quantity'];
-    
-                TransactionList::create([
-                    'transaction_id' => $transaction->id,
-                    'book_id' => $book->id,
-                    'quantity' => $bookData['quantity'],
-                    'total_price' => $subtotal,
+            foreach ($cart as $item) {
+                $transaction->transactionLists()->create([
+                    'book_id' => $item['id'],
+                    'quantity' => $item['quantity'],
+                    'total_price' => $item['price'] * $item['quantity'],
                 ]);
     
-                $book->update([
-                    'stock' => $book->stock - $bookData['quantity'],
-                ]);
-    
-                $totalAmount += $subtotal;
+                $book = Book::find($item['id']);
+                $book->stock -= $item['quantity']; /// buat ngurangin stock di buku
+                $book->save();
             }
     
-            $transaction->update([
-                'total_amount' => $totalAmount,
-            ]);
-        });
     
-        return redirect()->route('transactions.index')->with('success', 'Transaksi Berhasil Dibuat');
+            DB::commit();
+    
+            return response()->json(['success' => true], 200);
+        } catch (\Exception $e) {
+            DB::rollBack();
+            return response()->json(['success' => false, 'message' => $e->getMessage()], 500);
+        }
+
+        // $request->validate([
+        //     'user_id' => 'required|exists:users,id',
+        //     'books' => 'required|array',
+        //     'books.*.id' => 'required|exists:books,id',
+        //     'books.*.quantity' => 'required|integer|min:1',
+        // ]);
+    
+        // DB::transaction(function () use ($request) {
+        //     $transaction = Transaction::create([
+        //         'user_id' => $request->user_id,
+        //         'total_amount' => 0, 
+        //     ]);
+    
+        //     $totalAmount = 0;
+    
+        //     // Loop di setiap buku yg dipilih
+        //     // untuk buat setiap item transaction_list
+        //     foreach ($request->books as $bookData) {
+        //         $book = Book::findOrFail($bookData['id']);
+        //         $subtotal = $book->harga * $bookData['quantity'];
+    
+        //         TransactionList::create([
+        //             'transaction_id' => $transaction->id,
+        //             'book_id' => $book->id,
+        //             'quantity' => $bookData['quantity'],
+        //             'total_price' => $subtotal,
+        //         ]);
+    
+        //         $book->update([
+        //             'stock' => $book->stock - $bookData['quantity'],
+        //         ]);
+    
+        //         $totalAmount += $subtotal;
+        //     }
+    
+        //     $transaction->update([
+        //         'total_amount' => $totalAmount,
+        //     ]);
+        // });
+    
+        // return redirect()->route('transactions.index')->with('success', 'Transaksi Berhasil Dibuat');
+    }
+
+    public function show($id){
+        $transaction = Transaction::with(['user', 'transactionLists.book'])->findOrFail($id);
+
+        return response()->json($transaction);
     }
 }

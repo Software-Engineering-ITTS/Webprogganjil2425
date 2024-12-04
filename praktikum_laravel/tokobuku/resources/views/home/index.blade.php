@@ -32,7 +32,7 @@
                 @foreach ($books as $book)
                 <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                     <td class="px-6 py-4">
-                        <input type="checkbox" data-id="{{ $book->id }}" data-title="{{ $book->judul }}" data-price="{{ $book->harga }}" class="book-checkbox">
+                        <input type="checkbox" data-id="{{ $book->id }}" data-title="{{ $book->judul }}" data-price="{{ $book->harga }}" data-stock="{{$book->stock}}" class="book-checkbox">
                     </td>
                     <td class="px-6 py-4">{{ $book->judul }}</td>
                     <td class="px-6 py-4">{{ $book->penulis }}</td>
@@ -81,19 +81,32 @@
                 const id = e.target.dataset.id;
                 const title = e.target.dataset.title;
                 const price = e.target.dataset.price;
-                const quantity = document.querySelector(`.quantity-input[data-id="${id}"]`).value || 1;
+                const stock = e.target.dataset.stock;
+                const quantityInput = document.querySelector(`.quantity-input[data-id="${id}"]`);
+                const quantity = quantityInput.value || 1;
 
                 if (e.target.checked) {
+
+                    if (parseInt(quantity) > parseInt(stock)) {
+                        alert("Jumlah Melebihi Stock");
+                        return
+                    }
+
                     cart.push({
                         id,
                         title,
                         price,
                         quantity
                     });
+
+                    quantityInput.disabled = true;
                 } else {
+                    quantityInput.disabled = false;
                     const index = cart.findIndex(item => item.id === id);
                     if (index !== -1) cart.splice(index, 1);
+
                 }
+
                 updateCart();
             });
         });
@@ -116,18 +129,22 @@
                 alert('Please select a user and add items to the cart.');
                 return;
             }
-
             try {
+                console.log("{{ route('transactions.store') }}");
                 const response = await fetch("{{ route('transactions.store') }}", {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
                         'X-CSRF-TOKEN': '{{ csrf_token() }}',
                     },
-                    body: JSON.stringify({ user_id: userId, cart })
+                    body: JSON.stringify({
+                        user_id: userId,
+                        cart
+                    })
                 });
 
                 if (response.ok) {
+                    console.log(await response.json()) 
                     window.location.href = "{{ route('transactions.index') }}";
                 } else {
                     alert('Failed to save transaction.');

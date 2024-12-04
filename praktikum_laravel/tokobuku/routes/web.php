@@ -37,5 +37,5 @@ Route::put('/update-users', [UserController::class, 'update'])->name('users.upda
 // TRANSACTION ROUTES
 Route::get('/', [TransactionController::class, 'hometransaction'])->name('home.index');
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
-// Route::get('/transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
+Route::get('/transactions/{id}', [TransactionController::class, 'show'])->name('transactions.show');
 Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
