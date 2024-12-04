@@ -37,4 +37,6 @@ class Transaction extends Model
     {
         return $this->created_at->format('d-m-Y');
     }
+
+    protected $hidden = ['pivot'];
 }

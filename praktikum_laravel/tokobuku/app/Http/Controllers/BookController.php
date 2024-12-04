@@ -108,7 +108,7 @@ class BookController extends Controller
      */
     public function update(Request $request)
     {
-        
+
         $val_data = Validator::make($request->all(), [
             'id' => 'required',
             'judul' => 'required',
@@ -116,7 +116,7 @@ class BookController extends Controller
             'tahun_terbit' => 'required',
             'stock' => 'required',
             'harga' => 'required',
-            
+
         ]);
 
         $id = $request->get('id');
@@ -128,9 +128,9 @@ class BookController extends Controller
         }
 
         $book = Book::findOrFail($id);
-        
+
         if ($request->hasFile('cover')) {
-            
+
             if ($book->cover && Storage::exists('public/uploads/' . $book->cover)) {
                 Storage::delete('public/uploads/' . $book->cover);
             }
@@ -142,7 +142,7 @@ class BookController extends Controller
             $book->cover = $filename;
         }
 
-        
+
         $book->judul = $request->get('judul');
         $book->penulis = $request->get('penulis');
         $book->tahun_terbit = $request->get('tahun_terbit');
@@ -151,7 +151,7 @@ class BookController extends Controller
 
 
         if ($book->save()) {
-            return redirect()->route('books.index'); 
+            return redirect()->route('books.index');
         } else {
             return redirect()->route('books.edit', $id);
         }
@@ -174,6 +174,24 @@ class BookController extends Controller
             // Baru delete buku yg di db
             // DB::table('books')->where('id', $id)->delete();
             // Soft Delete
+
+            // search for the all transaction list containing id buku
+            // access the transaction
+            // set deleted_at on transction
+            // Find all transaction lists containing the book
+            $transactionLists = DB::table('transaction_lists')->where('book_id', $id)->get();
+
+            foreach ($transactionLists as $transactionList) {
+                // Soft delete the transaction list
+                DB::table('transaction_lists')->where('id', $transactionList->id)->update([
+                    'deleted_at' => now()
+                ]);
+
+                DB::table('transactions')->where('id', $transactionList->transaction_id)->update([
+                    'deleted_at' => now()
+                ]);   
+            }
+
             DB::table('books')->where('id', $id)->update([
                 'deleted_at' => now()
             ]);

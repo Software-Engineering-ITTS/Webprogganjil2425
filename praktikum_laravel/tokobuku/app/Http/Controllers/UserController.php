@@ -61,6 +61,7 @@ class UserController extends Controller
     }
 
     public function update(Request $request){
+        try{
         $val_data = Validator::make($request->all(), [
             'id' => 'required',
             'name' => 'required',
@@ -81,11 +82,21 @@ class UserController extends Controller
         $user->email = $request->get('email');
 
 
-        if ($user->save()) {
-            return redirect()->route('users.index'); 
-        } else {
-            return redirect()->route('users.edit', $id);
-        }
+    $user->save();
+    // if ($user->save()) {
+    return redirect()->route('users.index'); 
+    // } else {
+    //     return redirect()->route('users.edit', $id);
+    // }
+
+        // if ($user->save()) {
+        //     return redirect()->route('users.index'); 
+        // } else {
+        //     return redirect()->route('users.edit', $id);
+        // }
+    }catch(\Exception $e){
+        return redirect()->route('users.edit', $id);
+    }
     }
     
 

@@ -30,8 +30,10 @@
       </thead>
       <tbody>
         @foreach($transactions as $key => $data)
+
         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
-          <td hidden="px-6 py-4">
+          
+          <td hidden class="px-6 py-4">
             {{ $data->id }}
           </td>
           <td class="px-6 py-4">
@@ -63,36 +65,36 @@
 
     <!-- MODAL -->
     <div id="transactionModal" class="fixed inset-0 bg-black bg-opacity-50 flex hidden justify-center items-center ">
-        <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-1/2 justify-center content-center ">
-            <div class="flex justify-between items-center">
-                <h2 class="text-xl font-bold text-gray-800 dark:text-white">Detail Transaksi</h2>
-                <button id="closeModal" class="text-gray-500 hover:text-gray-800 dark:hover:text-gray-300">&times;</button>
-            </div>
-            <div id="transactionDetails" class="mt-4 text-gray-800 dark:text-white">
-                <!-- TEMPAT UNTUK NARUH TRANSAKSI DETAIL NANTI -->
-            </div>
+      <div class="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-lg w-1/2 justify-center content-center ">
+        <div class="flex justify-between items-center">
+          <h2 class="text-xl font-bold text-gray-800 dark:text-white">Detail Transaksi</h2>
+          <button id="closeModal" class="text-gray-500 hover:text-gray-800 dark:hover:text-gray-300">&times;</button>
         </div>
+        <div id="transactionDetails" class="mt-4 text-gray-800 dark:text-white">
+          <!-- TEMPAT UNTUK NARUH TRANSAKSI DETAIL NANTI -->
+        </div>
+      </div>
     </div>
   </div>
 </div>
 
 <!-- SKRIP BUAT NAMPILIN MODAL WLEAOKAKW -->
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        const modal = document.getElementById('transactionModal');
-        const closeModal = document.getElementById('closeModal');
-        const transactionDetails = document.getElementById('transactionDetails');
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('transactionModal');
+    const closeModal = document.getElementById('closeModal');
+    const transactionDetails = document.getElementById('transactionDetails');
 
-        document.querySelectorAll('.show-transaction-btn').forEach(button => {
-            button.addEventListener('click', async () => {
-                const transactionId = button.getAttribute('data-id');
+    document.querySelectorAll('.show-transaction-btn').forEach(button => {
+      button.addEventListener('click', async () => {
+        const transactionId = button.getAttribute('data-id');
 
-                try {
-                    const response = await fetch(`/transactions/${transactionId}`);
-                    const data = await response.json();
+        try {
+          const response = await fetch(`/transactions/${transactionId}`);
+          const data = await response.json();
 
-                    if (response.ok) {
-                        transactionDetails.innerHTML = `
+          if (response.ok) {
+            transactionDetails.innerHTML = `
                             <p><strong>Transaction ID:</strong> ${data.id}</p>
                             <p><strong>Customer:</strong> ${data.user.name}</p>
                             <p><strong>Total Amount:</strong> Rp${new Intl.NumberFormat('id-ID').format(data.total_amount)}</p>
@@ -105,20 +107,20 @@
                                 `).join('')}
                             </ul>
                         `;
-                        modal.classList.remove('hidden');
-                    } else {
-                        alert('Failed to load transaction details.');
-                    }
-                } catch (error) {
-                    console.error(error);
-                    alert('An error occurred.');
-                }
-            });
-        });
-
-        closeModal.addEventListener('click', () => {
-            modal.classList.add('hidden');
-        });
+            modal.classList.remove('hidden');
+          } else {
+            alert('Failed to load transaction details.');
+          }
+        } catch (error) {
+          console.error(error);
+          alert('An error occurred.');
+        }
+      });
     });
+
+    closeModal.addEventListener('click', () => {
+      modal.classList.add('hidden');
+    });
+  });
 </script>
 @endsection

@@ -15,8 +15,8 @@ return new class extends Migration
             $table->id();
             $table->foreignId('transaction_id')->constrained('transactions')->onDelete('cascade'); // FK to transactions
             $table->foreignId('book_id')->constrained('books')->onDelete('cascade'); // FK to books
-            $table->integer('quantity'); // Quantity of books in the transaction
-            $table->bigInteger('total_price'); // Total price for the quantity of this book
+            $table->integer('quantity');
+            $table->bigInteger('total_price');
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });

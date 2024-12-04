@@ -31,10 +31,15 @@ class TransactionController extends Controller
         $transactions = Transaction::whereHas('user', function ($query) {
             $query->whereNull('deleted_at'); 
         })
-        ->with(['transactionLists.book' => function ($query) {
-            $query->whereNull('deleted_at'); 
-        }]) 
+        ->with(['transactionLists' => function ($query) {
+            $query->whereHas('book', function ($query) {
+                $query->whereNull('deleted_at');
+            });
+        }])
         ->paginate(6); 
+        // ->with(['transactionLists.book' => function ($query) {
+        //     $query->whereNull('deleted_at'); 
+        // }]) 
         return view('transactions.index', [
             'transactions' => $transactions
         ]);

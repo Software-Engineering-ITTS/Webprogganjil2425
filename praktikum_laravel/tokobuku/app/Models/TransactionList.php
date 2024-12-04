@@ -26,5 +26,7 @@ class TransactionList extends Model
         return $this->belongsTo(Book::class);
     }
 
+    protected $hidden = ['pivot'];
+
 
 }
