@@ -20,17 +20,19 @@
         <nav class="bg-gray-800 mb-7 rounded-xl">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
-                  <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
-                    <a href="/"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-                    <a href="/tambah"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add
-                        Book</a>
-                    <a href="/tampilkan"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Show Book</a>
-                    <a href="/edit"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Edit Book</a>
-                </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+                        <a href="/"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                        <a href="/tambah"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add
+                            Book</a>
+                        <a href="/tampilkan"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Show
+                            Book</a>
+                        <a href="/edit"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Edit
+                            Book</a>
+                    </div>
                 </div>
             </div>
         </nav>

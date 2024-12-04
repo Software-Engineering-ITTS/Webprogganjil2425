@@ -20,41 +20,47 @@
         <nav class="bg-gray-800 mb-7 rounded-xl">
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
-                  <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
-                    <a href="/"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
-                    <a href="/tambah"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add
-                        Book</a>
-                    <a href="/tampilkan"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Show Book</a>
-                    <a href="/edit"
-                        class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Edit Book</a>
-                </div>
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+                        <a href="/"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Home</a>
+                        <a href="/tambah"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Add
+                            Book</a>
+                        <a href="/tampilkan"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Show
+                            Book</a>
+                        <a href="/edit"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Edit
+                            Book</a>
+                    </div>
                 </div>
             </div>
         </nav>
 
         {{--  --}}
         <main>
-            {{-- container action  --}}
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
-                <h3 class="text-3xl text-center mb-5">Show Buku</h3>
-                <label for="judulbuku">Judul Buku</label>
-                <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Nama Pengarang</label>
-                <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Tahun Terbit</label> <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Sinopsis</label> <br>
-                <input type="text" name="" id="judulbuku">
-                <br>
-                <p>Cover Book</p>
+                <h3 class="text-3xl text-center mb-5">Show Book</h3>
+                <div class="flex flex-col">
+                    <label for="judulbuku" class="mb-1 mt-3">Book Title</label>
+                    <input type="text" name="" id="book-title" class="rounded-md">
+                </div>
+                <div class="flex flex-col">
+                    <label for="judulbuku" class="mb-1 mt-3 ">Author Name</label>
+                    <input type="text" name="" id="author-name" class="rounded-md">
+                </div>
+                <div class="flex flex-col">
+                    <label for="judulbuku" class="mb-1 mt-3 ">Publication Year</label>
+                    <input type="text" name="" id="publication-year" class="rounded-md">
+                </div>
+                <div class="flex flex-col">
+                    <label for="judulbuku" class="mb-1 mt-3">Synopsis</label>
+                    <input type="text" name="" id="synopsis" class="rounded-md">
+                </div>
+                <div class="flex flex-col">
+                    <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
+                    <input type="file" name="" id="cover-photo">
+                </div>
             </div>
         </main>
         <footer>
