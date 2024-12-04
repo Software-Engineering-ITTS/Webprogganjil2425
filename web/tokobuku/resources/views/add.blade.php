@@ -58,25 +58,6 @@
                 <br><br>
                 <input type="file" name="" id="">
             </div>
-            {{-- container action  --}}
-            <div class="container bg-slate-500 p-5 rounded-lg mt-5">
-                <h3 class="text-3xl text-center mb-5">Tampilkan Buku</h3>
-                <label for="judulbuku">Judul Buku</label>
-                <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Nama Pengarang</label>
-                <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Tahun Terbit</label> <br>
-                <input type="text" name="" id="judulbuku">
-                <br> <br>
-                <label for="judulbuku">Sinopsis</label> <br>
-                <input type="text" name="" id="judulbuku">
-                <br>
-                <p>Cover Book</p>
-            </div>
         </main>
         <footer>
             {{--  --}}

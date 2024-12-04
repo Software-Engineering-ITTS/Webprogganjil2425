@@ -11,11 +11,11 @@ Route::get('/', function () {
 });
 
 Route::get('/tampilkan', function () {
-    return view('tampilkan');
+    return view('show');
 });
 
 Route::get('/tambah', function () {
-    return view('tambah');
+    return view('add');
 });
 
 Route::get('/edit', function () {
