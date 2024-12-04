@@ -39,29 +39,35 @@
 
         {{--  --}}
         <main>
-            <div class="container bg-slate-500 p-5 rounded-lg mt-5">
-                <h3 class="text-3xl text-center mb-5">Add Book</h3>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3">Book Title</label>
-                    <input type="text" name="" id="book-title" class="rounded-md">
+            <form action="" method="POST">
+                <div class="container bg-slate-500 p-5 rounded-lg mt-5">
+                    <h3 class="text-3xl text-center mb-5">Add Book</h3>
+                    <div class="flex flex-col">
+                        <label for="judulbuku" class="mb-1 mt-3">Book Title</label>
+                        <input type="text" name="" id="book-title" class="rounded-md">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="judulbuku" class="mb-1 mt-3 ">Author Name</label>
+                        <input type="text" name="" id="author-name" class="rounded-md">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="judulbuku" class="mb-1 mt-3 ">Publication Year</label>
+                        <input type="text" name="" id="publication-year" class="rounded-md">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="judulbuku" class="mb-1 mt-3">Synopsis</label>
+                        <input type="text" name="" id="synopsis" class="rounded-md">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
+                        <input type="file" name="" id="cover-photo">
+                    </div>
+                    <div class="flex justify-center">
+                        <button class="bg-blue-700 p-2 rounded-xl font-bold text-white hover:bg-blue-500">Add
+                            Book</button>
+                    </div>
                 </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3 ">Author Name</label>
-                    <input type="text" name="" id="author-name" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3 ">Publication Year</label>
-                    <input type="text" name="" id="publication-year" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3">Synopsis</label>
-                    <input type="text" name="" id="synopsis" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
-                    <input type="file" name="" id="cover-photo">
-                </div>
-            </div>
+            </form>
         </main>
         <footer>
             {{--  --}}

@@ -41,7 +41,7 @@
         <main>
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
                 <h3 class="text-3xl text-center mb-5">Show Book</h3>
-                <div class="flex flex-col">
+                {{-- <div class="flex flex-col">
                     <label for="judulbuku" class="mb-1 mt-3">Book Title</label>
                     <input type="text" name="" id="book-title" class="rounded-md">
                 </div>
@@ -60,7 +60,7 @@
                 <div class="flex flex-col">
                     <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
                     <input type="file" name="" id="cover-photo">
-                </div>
+                </div> --}}
             </div>
         </main>
         <footer>
