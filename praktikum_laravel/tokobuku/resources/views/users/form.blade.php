@@ -3,8 +3,12 @@
 @section('content')
 <div class="m-4 ">
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Pelanggan</p>
-    <form class="max-w-sm mx-auto" action="{{ isset($user) ? route('users.update', $id) : route('users.store') }}" method="post" method="POST" enctype="multipart/form-data" id="userForm">
+    <form class="max-w-sm mx-auto" action="{{ isset($user) ? route('users.update', $id) : route('users.store') }}" method="POST" enctype="multipart/form-data" id="userForm">
         @csrf
+        @if(isset($user))
+            @method('PUT')
+        @endif
+
         <input type="hidden" name="id" id="id" value="{{ isset($user) ? $user->id : old('id') }}">
 
         <div class="mb-5">

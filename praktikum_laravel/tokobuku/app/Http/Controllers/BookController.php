@@ -79,9 +79,7 @@ class BookController extends Controller
 
         if ($save) {
             return redirect()->route('books.index');
-            // return view('books.index');
         } else {
-            // var_dump($save);
             return redirect()->route('books.create');
         }
     }
@@ -110,7 +108,53 @@ class BookController extends Controller
      */
     public function update(Request $request)
     {
-        //
+        
+        $val_data = Validator::make($request->all(), [
+            'id' => 'required',
+            'judul' => 'required',
+            'penulis' => 'required',
+            'tahun_terbit' => 'required',
+            'stock' => 'required',
+            'harga' => 'required',
+            
+        ]);
+
+        $id = $request->get('id');
+
+        if ($val_data->fails()) {
+            return redirect()->route('books.edit', $id)
+                ->withErrors($val_data)
+                ->withInput();
+        }
+
+        $book = Book::findOrFail($id);
+        
+        if ($request->hasFile('cover')) {
+            
+            if ($book->cover && Storage::exists('public/uploads/' . $book->cover)) {
+                Storage::delete('public/uploads/' . $book->cover);
+            }
+
+            $image = $request->file('cover');
+            $filename = $image->hashName();
+            $path = $image->store('public/uploads');
+
+            $book->cover = $filename;
+        }
+
+        
+        $book->judul = $request->get('judul');
+        $book->penulis = $request->get('penulis');
+        $book->tahun_terbit = $request->get('tahun_terbit');
+        $book->stock = $request->get('stock');
+        $book->harga = $request->get('harga');
+
+
+        if ($book->save()) {
+            return redirect()->route('books.index'); 
+        } else {
+            return redirect()->route('books.edit', $id);
+        }
     }
 
     /**

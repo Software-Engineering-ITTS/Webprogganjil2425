@@ -22,9 +22,9 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [BookController::class, 'index'])->name('books.index');
 Route::get('/create-book', [BookController::class, 'create'])->name('books.create');
 Route::post('/store-book', [BookController::class, 'store'])->name('books.store');
-Route::get('/edit-book/{id}', [BookController::class, 'edit'])->name('book.edit');
-Route::post('/update-book', [BookController::class, 'update'])->name('books.update');
-Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('book.destroy');
+Route::get('/edit-book/{id}', [BookController::class, 'edit'])->name('books.edit');
+Route::put('/update-book', [BookController::class, 'update'])->name('books.update');
+Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('books.destroy');
 
 
 // USER ROUTES
@@ -32,7 +32,7 @@ Route::get('/users', [UserController::class, 'index'])->name('users.index');
 Route::get('/create-users', [UserController::class, 'create'])->name('users.create');
 Route::post('/store-users', [UserController::class, 'store'])->name('users.store');
 Route::get('/edit-users/{id}', [UserController::class, 'edit'])->name('users.edit');
-Route::post('/update-users', [UserController::class, 'update'])->name('users.update');
+Route::put('/update-users', [UserController::class, 'update'])->name('users.update');
 
 // TRANSACTION ROUTES
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
