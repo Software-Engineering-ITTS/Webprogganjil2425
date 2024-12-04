@@ -99,8 +99,13 @@ class BookController extends Controller
      */
     public function edit($id)
     {
+        var_dump("edit wak ".$id);
         // TODO Get the data first
-        return view('books.form');
+        $book = DB::table('books')->where('id', $id)->first();
+        return view('books.form', [
+            'id' => $id,
+            'book' => $book
+        ]);
     }
 
     /**

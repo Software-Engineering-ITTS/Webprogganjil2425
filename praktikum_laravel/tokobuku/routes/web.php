@@ -28,13 +28,15 @@ Route::get('/create-book', [BookController::class, 'create'])->name('books.creat
 Route::post('/store-book', [BookController::class, 'store'])->name('books.store');
 
 // ke halaman form untuk update
-Route::get('/edit-book/{$id}', [BookController::class, 'edit'])->name('books.edit');
-
-// untuk update
+Route::get('/edit-book/{$id}', [BookController::class, 'edit'])->name('book.edit');
+// untuk update data wak
 Route::post('/update-book', [BookController::class, 'update'])->name('books.update');
 
+
+// Route::resource('/book', BookController::class);
+
 // untuk delete
-Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('books.destroy');
+Route::delete('/delete-book/{id}', [BookController::class, 'destroy'])->name('book.destroy');
 
 
 // USER ROUTES

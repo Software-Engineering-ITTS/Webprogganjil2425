@@ -68,12 +68,12 @@
             <div class="flex space-x-2">
               <!-- Edit Button -->
               <a
-                href="{{ route('books.edit', $data->id) }}"
+                href="{{ route('book.edit', $data->id) }}"
                 class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Edit
               </a>
               <!-- Delete Button -->
-              <form method="POST" class="inline" action="{{ route('books.destroy', $data->id) }}">
+              <form method="POST" class="inline" action="{{ route('book.destroy', $data->id) }}">
                 @csrf
                 @method('DELETE')
                 <button type="submit"
