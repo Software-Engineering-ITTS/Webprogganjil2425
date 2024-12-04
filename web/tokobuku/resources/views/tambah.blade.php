@@ -21,10 +21,10 @@
             <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
                 <div class="relative flex h-16 items-center justify-between">
                     <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
-                        <a href="#"
+                        <a href="/index.blade.php"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tambah
                             Buku</a>
-                        <a href=""
+                        <a href="/tampilkan.blade.php"
                             class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tampilkan
                             Buku</a>
                         <a href="#"
@@ -37,6 +37,27 @@
 
         {{--  --}}
         <main>
+            {{-- container action  --}}
+            <div class="container bg-slate-500 p-5 rounded-lg mt-5">
+                <h3 class="text-3xl text-center mb-5">Tambah Buku</h3>
+                <label for="judulbuku">Judul Buku</label>
+                <br>
+                <input type="text" name="" id="judulbuku">
+                <br> <br>
+                <label for="judulbuku">Nama Pengarang</label>
+                <br>
+                <input type="text" name="" id="judulbuku">
+                <br> <br>
+                <label for="judulbuku">Tahun Terbit</label> <br>
+                <input type="text" name="" id="judulbuku">
+                <br> <br>
+                <label for="judulbuku">Sinopsis</label> <br>
+                <input type="text" name="" id="judulbuku">
+                <br>
+                <label for="cover-photo">Cover Book</label>
+                <br><br>
+                <input type="file" name="" id="">
+            </div>
             {{-- container action  --}}
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
                 <h3 class="text-3xl text-center mb-5">Tampilkan Buku</h3>
