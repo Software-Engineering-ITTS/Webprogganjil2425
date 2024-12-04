@@ -2,12 +2,14 @@
 
 @section('content')
 <div class="m-4">
-    <p class="text-4xl text-white dark:text-white font-extrabold">Admin Transaksi</p>
+    <p class="text-4xl text-white dark:text-white font-extrabold">Toko Buku Marchella</p>
 
     <!-- User Selection -->
     <div class="mt-4">
         <label for="countries" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Pilih Pelanggan</label>
-        <select id="user_id" class=" bg-transparent appearance-none w-1/2 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+        <select
+            id="user_id"
+            class=" bg-slate-500 appearance-none w-1/2 bg-black-500 border border-white text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-slate-800 dark:border-white-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
             <option selected>Pilih Pelanggan</option>
             @foreach ($users as $user)
             <option value="{{ $user->id }}">{{ $user->name }}</option>
@@ -144,7 +146,7 @@
                 });
 
                 if (response.ok) {
-                    console.log(await response.json()) 
+                    console.log(await response.json())
                     window.location.href = "{{ route('transactions.index') }}";
                 } else {
                     alert('Failed to save transaction.');

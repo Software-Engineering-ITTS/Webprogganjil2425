@@ -25,4 +25,6 @@ class User extends Model
     {
         return $this->hasMany(Transaction::class);
     }
+
+    protected $dates = ['deleted_at']; 
 }

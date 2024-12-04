@@ -28,4 +28,6 @@ class Book extends Model
     {
         return $this->hasMany(TransactionList::class);
     }
+
+    protected $dates = ['deleted_at']; 
 }

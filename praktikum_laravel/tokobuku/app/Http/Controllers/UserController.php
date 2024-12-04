@@ -52,11 +52,11 @@ class UserController extends Controller
     }
 
     public function edit($id){
-        $book = DB::table('users')->where('id', $id)->first();
+        $users = DB::table('users')->where('id', $id)->first();
 
         return view('users.form', [
             'id' => $id,
-            'user' => $book
+            'user' => $users
         ]);
     }
 
@@ -86,6 +86,28 @@ class UserController extends Controller
         } else {
             return redirect()->route('users.edit', $id);
         }
+    }
+    
+
+    public function destroy($id)
+    {
+        // get data buku sesuai id
+        $users = DB::table('users')->where('id', $id)->first();
+
+        if ($users) {
+            
+            // kalau ini hard delete
+            // DB::table('users')->where('id', $id)->delete();
+
+            // kalau ini Soft Delete
+            DB::table('users')->where('id', $id)->update([
+                'deleted_at' => now()
+            ]);
+
+            return redirect()->route('users.index')->with('success', 'Data User berhasil dihapus!');
+        }
+
+        return redirect()->route('users.index')->with('error', 'Data User tidak ditemukan!');
     }
 
 }

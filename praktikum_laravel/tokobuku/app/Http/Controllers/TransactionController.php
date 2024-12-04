@@ -26,8 +26,15 @@ class TransactionController extends Controller
     // to list transaction page
     public function index()
     {
-        $transactions = Transaction::paginate(6); 
-        
+        // $transactions = Transaction::paginate(6); 
+
+        $transactions = Transaction::whereHas('user', function ($query) {
+            $query->whereNull('deleted_at'); 
+        })
+        ->with(['transactionLists.book' => function ($query) {
+            $query->whereNull('deleted_at'); 
+        }]) 
+        ->paginate(6); 
         return view('transactions.index', [
             'transactions' => $transactions
         ]);

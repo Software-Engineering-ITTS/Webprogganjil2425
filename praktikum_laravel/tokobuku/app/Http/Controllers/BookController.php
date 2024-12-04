@@ -172,11 +172,15 @@ class BookController extends Controller
             }
 
             // Baru delete buku yg di db
-            DB::table('books')->where('id', $id)->delete();
+            // DB::table('books')->where('id', $id)->delete();
+            // Soft Delete
+            DB::table('books')->where('id', $id)->update([
+                'deleted_at' => now()
+            ]);
 
-            return redirect('/')->with('success', 'Data Buku berhasil dihapus!');
+            return redirect()->route('books.index')->with('success', 'Data Buku berhasil dihapus!');
         }
 
-        return redirect('/')->with('error', 'Data Buku tidak ditemukan!');
+        return redirect()->route('books.index')->with('error', 'Data Buku tidak ditemukan!');
     }
 }

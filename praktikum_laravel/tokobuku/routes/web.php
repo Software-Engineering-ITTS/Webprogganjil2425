@@ -33,6 +33,7 @@ Route::get('/create-users', [UserController::class, 'create'])->name('users.crea
 Route::post('/store-users', [UserController::class, 'store'])->name('users.store');
 Route::get('/edit-users/{id}', [UserController::class, 'edit'])->name('users.edit');
 Route::put('/update-users', [UserController::class, 'update'])->name('users.update');
+Route::delete('/delete-users/{id}', [UserController::class, 'destroy'])->name('users.destroy');
 
 // TRANSACTION ROUTES
 Route::get('/', [TransactionController::class, 'hometransaction'])->name('home.index');
