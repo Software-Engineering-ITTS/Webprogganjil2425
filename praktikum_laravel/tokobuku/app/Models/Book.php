@@ -13,8 +13,19 @@ class Book extends Model
     protected $table = 'books';
 
     protected $fillable = [
-        'judul', 'nama', "penulis", "tahun_terbit", 'stock', "harga", "cover"
+        'judul',
+        'nama',
+        "penulis",
+        "tahun_terbit",
+        'stock',
+        "harga",
+        "cover"
     ];
 
     protected $guarded = ['id'];
+
+    public function transactionLists()
+    {
+        return $this->hasMany(TransactionList::class);
+    }
 }

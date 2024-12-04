@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BookController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\TransactionController;
 use Illuminate\Support\Facades\Route;
 
@@ -17,9 +18,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-
 // BOOKS ROUTES
-Route::get('/', [BookController::class, 'index'])->name('books.index');
+Route::get('/books', [BookController::class, 'index'])->name('books.index');
 Route::get('/create-book', [BookController::class, 'create'])->name('books.create');
 Route::post('/store-book', [BookController::class, 'store'])->name('books.store');
 Route::get('/edit-book/{id}', [BookController::class, 'edit'])->name('books.edit');
@@ -35,4 +35,7 @@ Route::get('/edit-users/{id}', [UserController::class, 'edit'])->name('users.edi
 Route::put('/update-users', [UserController::class, 'update'])->name('users.update');
 
 // TRANSACTION ROUTES
+Route::get('/', [TransactionController::class, 'hometransaction'])->name('home.index');
 Route::get('/transactions', [TransactionController::class, 'index'])->name('transactions.index');
+// Route::get('/transactions/create', [TransactionController::class, 'create'])->name('transactions.create');
+Route::post('/transactions', [TransactionController::class, 'store'])->name('transactions.store');
