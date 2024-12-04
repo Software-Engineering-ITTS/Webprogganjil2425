@@ -12,13 +12,30 @@
 <body class="bg-black">
     {{-- page container --}}
     <div class="container mx-auto bg-slate-700 p-7 m-9 rounded-lg">
-        <nav>
-            {{--  --}}
-        </nav>
         <header>
             {{--  --}}
             <h1 class="bg-slate-400 text-7xl text-center rounded-lg p-5 mb-11">Toko Buku</h1>
         </header>
+        {{--  --}}
+        <nav class="bg-gray-800 mb-7 rounded-xl">
+            <div class="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
+                <div class="relative flex h-16 items-center justify-between">
+                    <div class="flex flex-1 items-center justify-center sm:items-stretch sm:justify-center">
+                        <a href="#"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tambah
+                            Buku</a>
+                        <a href="#"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Tampilkan
+                            Buku</a>
+                        <a href="#"
+                            class="rounded-md px-3 py-2 text-sm font-medium text-gray-300 hover:bg-gray-700 hover:text-white">Edit
+                            Buku</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+
+        {{--  --}}
         <main>
             {{-- container action  --}}
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
