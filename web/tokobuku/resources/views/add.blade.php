@@ -39,6 +39,11 @@
 
         {{--  --}}
         <main>
+            @if (session('success'))
+                <div class="bg-green-500 text-white p-4 rounded-lg mb-5">
+                    {{ session('success') }}
+                </div>
+            @endif
             <form action="/add" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="container bg-slate-500 p-5 rounded-lg mt-5">
