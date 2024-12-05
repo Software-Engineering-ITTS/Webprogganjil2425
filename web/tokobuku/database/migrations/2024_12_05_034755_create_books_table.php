@@ -16,7 +16,7 @@ return new class extends Migration
             $table->string('book_title');
             $table->string('author_name');
             $table->integer('publication_year');
-            $table->string('synopsis');
+            $table->text('synopsis');
             $table->integer('price');
             $table->timestamps();
         });

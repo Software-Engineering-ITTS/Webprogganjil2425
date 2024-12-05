@@ -29,14 +29,20 @@ class BukuController extends Controller
         ]);
 
         // upload cover image
-        $coverpath = $request->file('cover_photo')->store('covers');
+        if ($request->hasFile('cover_photo') && $request->file('cover_photo')->isValid()) {
+            // Menyimpan gambar ke folder 'covers' di storage
+            $coverpath = $request->file('cover_photo')->store('covers');
+        } else {
+            // Atau bisa mengatur default atau error jika file tidak ada
+            $coverpath = null;
+        }
 
         // save book data to db
         Buku::create([
-            'book_title' => $request->title,
-            'author_name' => $request->authorname,
-            'publication_year' => $request->publicationyear,
-            'synopsis' => 'required',
+            'book_title' => $request->book_title,
+            'author_name' => $request->author_name,
+            'publication_year' => $request->publication_year,
+            'synopsis' => $request ->synopsis,
             'price' => $request->price,
             'cover_photo' => $coverpath,
         ]);
