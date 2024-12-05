@@ -44,16 +44,16 @@
                 <div class="container bg-slate-500 p-5 rounded-lg mt-5">
                     <h3 class="text-3xl text-center mb-5">Edit Book</h3>
                     <div class="flex flex-col">
-                        <label for="book-title" class="mb-1 mt-3">Book Title</label>
-                        <input type="text" name="book-title" id="book-title" class="rounded-md">
+                        <label for="book_title" class="mb-1 mt-3">Book Title</label>
+                        <input type="text" name="book_title" id="book_title" class="rounded-md">
                     </div>
                     <div class="flex flex-col">
-                        <label for="author-name" class="mb-1 mt-3 ">Author Name</label>
-                        <input type="text" name="author-name" id="author-name" class="rounded-md">
+                        <label for="author_name" class="mb-1 mt-3 ">Author Name</label>
+                        <input type="text" name="author_name" id="author_name" class="rounded-md">
                     </div>
                     <div class="flex flex-col">
-                        <label for="publication-year" class="mb-1 mt-3 ">Publication Year</label>
-                        <input type="text" name="publication-year" id="publication-year" class="rounded-md">
+                        <label for="publication_year" class="mb-1 mt-3 ">Publication Year</label>
+                        <input type="text" name="publication_year" id="publication_year" class="rounded-md">
                     </div>
                     <div class="flex flex-col">
                         <label for="synopsis" class="mb-1 mt-3">Synopsis</label>
@@ -64,8 +64,8 @@
                         <input type="text" name="price" id="price" class="rounded-md">
                     </div>
                     <div class="flex flex-col">
-                        <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
-                        <input type="file" name="cover-photo" id="cover-photo">
+                        <label for="cover_photo" class="mb-1 mt-3">Cover Book</label>
+                        <input type="file" name="cover_photo" id="cover_photo">
                     </div>
                     <div class="flex justify-center">
                         <button class="bg-blue-700 p-2 rounded-xl font-bold text-white hover:bg-blue-500">Edit
