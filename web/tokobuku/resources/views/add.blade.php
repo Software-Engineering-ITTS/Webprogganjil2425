@@ -40,6 +40,7 @@
         {{--  --}}
         <main>
             <form action="/add" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="container bg-slate-500 p-5 rounded-lg mt-5">
                     <h3 class="text-3xl text-center mb-5">Add Book</h3>
                     <div class="flex flex-col">
