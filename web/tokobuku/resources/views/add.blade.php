@@ -59,6 +59,10 @@
                         <input type="text" name="" id="synopsis" class="rounded-md">
                     </div>
                     <div class="flex flex-col">
+                        <label for="price" class="mb-1 mt-3">Price</label>
+                        <input type="text" name="" id="price" class="rounded-md">
+                    </div>
+                    <div class="flex flex-col">
                         <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
                         <input type="file" name="" id="cover-photo">
                     </div>
