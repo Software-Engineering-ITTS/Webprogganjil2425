@@ -14,7 +14,7 @@
     <div class="container mx-auto bg-slate-700 p-7 m-9 rounded-lg">
         <header>
             {{--  --}}
-            <h1 class="bg-slate-400 text-7xl text-center rounded-lg p-5 mb-11">Toko Buku</h1>
+            <h1 class="bg-slate-400 text-7xl text-center rounded-lg p-5 mb-11">Book Store</h1>
         </header>
         {{--  --}}
         <nav class="bg-gray-800 mb-7 rounded-xl">
