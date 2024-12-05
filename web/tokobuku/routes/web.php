@@ -18,6 +18,8 @@ Route::get('/add', function () {
     return view('add');
 });
 
+Route::post('/add', [BukuController::class, 'store']);
+
 Route::get('/edit', function () {
     return view('edit');
 });
