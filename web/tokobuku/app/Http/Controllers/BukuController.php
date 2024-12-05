@@ -31,7 +31,7 @@ class BukuController extends Controller
         // upload cover image
         if ($request->hasFile('cover_photo') && $request->file('cover_photo')->isValid()) {
             // Menyimpan gambar ke folder 'covers' di storage
-            $coverpath = $request->file('cover_photo')->store('covers');
+            $coverpath = $request->file('cover_photo')->store('public/covers');
         } else {
             // Atau bisa mengatur default atau error jika file tidak ada
             $coverpath = null;
