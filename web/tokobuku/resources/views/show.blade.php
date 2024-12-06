@@ -41,19 +41,19 @@
         <main>
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
                 <h3 class="text-3xl text-center mb-5 text-white">Available Books</h3>
-                {{-- Loop through books --}}
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="grid grid-cols-3">
                     @foreach ($books as $book)
-                        <div class="bg-gray-800 text-white p-5 rounded-lg">
+                        {{-- container each book --}}
+                        <div class="container w-64 bg-slate-700 rounded-md p-7 m-7 text-white">
                             <h3 class="text-2xl font-bold mb-2">{{ $book->book_title }}</h3>
                             <p class="mb-2"><strong>Author:</strong> {{ $book->author_name }}</p>
                             <p class="mb-2"><strong>Year:</strong> {{ $book->publication_year }}</p>
                             <p class="mb-2"><strong>Price:</strong> Rp.{{ $book->price }}</p>
                             <img src="{{ asset(str_replace('public/', 'storage/', $book->cover_photo)) }}"
-                                alt="{{ $book->book_title }}" class="w-full h-99 rounded-md mb-3">
+                                alt="{{ $book->book_title }}" class="object-contain w-full rounded-md mb-3">
+                        </div>
                     @endforeach
                 </div>
-            </div>
         </main>
     </div>
     <footer>
