@@ -48,9 +48,9 @@
                             <h3 class="text-2xl font-bold mb-2">{{ $book->book_title }}</h3>
                             <p class="mb-2"><strong>Author:</strong> {{ $book->author_name }}</p>
                             <p class="mb-2"><strong>Year:</strong> {{ $book->publication_year }}</p>
-                            <p class="mb-2"><strong>Price:</strong> ${{ $book->price }}</p>
+                            <p class="mb-2"><strong>Price:</strong> Rp.{{ $book->price }}</p>
                             <img src="{{ asset(str_replace('public/', 'storage/', $book->cover_photo)) }}"
-                                alt="{{ $book->book_title }}" class="w-full h-48 object-cover rounded-md mb-3">
+                                alt="{{ $book->book_title }}" class="w-full h-99 rounded-md mb-3">
                     @endforeach
                 </div>
             </div>
