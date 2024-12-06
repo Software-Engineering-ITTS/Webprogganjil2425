@@ -1,4 +1,4 @@
-<?php
+ <?php
 
 use App\Http\Controllers\MahasiswaController;
 use App\Models\Mahasiswa;
@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', [MahasiswaController::class, 'index']);
+Route::get('/', [MahasiswaController::class, 'index'])->name('mahasiswa.home');
 Route::delete('/', [MahasiswaController::class, 'destroy'])->name('mahasiswa.destroy');
 Route::get('/mahasiswa/{id}/edit', [MahasiswaController::class, 'edit'])->name('mahasiswa.edit');
 Route::put('/mahasiswa/{id}', [MahasiswaController::class, 'update'])->name('mahasiswa.update');

@@ -58,9 +58,9 @@
                     <td>{{ $mahasiswa->prodi }}</td>
                     <td>{{ $mahasiswa->alamat }}</td>
                     <td>{{ $mahasiswa->id_fakultas }}</td>
-                    <td>
+                    <td>mahasiswa
                         
-                        <a href="{{ route('mahasiswa.edit', $mahasiswa->id) }}">Edit</a>
+                        <a href="{{ route('.edit', $mahasiswa->id) }}">Edit</a>
                         <form action="{{ route('mahasiswa.destroy', $mahasiswa->id) }}" method="POST">
                             @csrf
                             @method('DELETE')

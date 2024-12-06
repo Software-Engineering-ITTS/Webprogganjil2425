@@ -21,9 +21,14 @@ class MahasiswaController extends Controller
             'id_fakultas' => 'required',
         ]);
 
-        // if($request->hasFile('ktm')){
-        //     $ktmPath = $request->file('ktm')->store('ktm', 'public');
-        //     $val_data['ktm'] = $ktmPath;
+        // if ($request->hasFile('ktm')) {
+        //     $file = $request->file('ktm');
+        //     $filename = $request->ktm . '.' . $file->getClientOriginalExtension();
+        //     $filePath = $file->storeAs('ktm', $filename, 'public');
+        //     $val_data['ktm'] = $filePath;
+        // } else {
+        //     $isnull = 'null';
+        //     $val_data['ktm'] = $isnull;
         // }
 
         Mahasiswa::create($val_data);
@@ -42,6 +47,7 @@ class MahasiswaController extends Controller
             'alamat' => 'required',
             'id_fakultas' => 'required',
         ]);
+        
 
         $mahasiswas = Mahasiswa::find($id);
         $mahasiswas->update($val_data);
@@ -58,7 +64,7 @@ class MahasiswaController extends Controller
         return redirect('/');   
     }
 
-    public function show(Request $request){
+    public function show(){
         return redirect("/");
     }
 }
