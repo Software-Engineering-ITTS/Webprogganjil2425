@@ -9,6 +9,9 @@
     @vite('resources/css/app.css')
 </head>
 
+{{-- form edit can't acces directly form navbar. it will be error. 
+but the function is when on show, click up the edit. it wil go on /edit --}}
+
 <body class="bg-black">
     {{-- page container --}}
     <div class="container mx-auto bg-slate-700 p-7 m-9 rounded-lg">
@@ -41,7 +44,7 @@
         <main>
             <form action="/edit/{{ $book->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                @method('PUT')            
+                @method('PUT')
                 <div class="mb-4">
                     <label for="book_title" class="text-white">Book Title</label>
                     <input type="text" name="book_title" id="book_title"
