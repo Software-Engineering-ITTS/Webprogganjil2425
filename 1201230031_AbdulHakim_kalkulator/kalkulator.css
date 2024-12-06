@@ -1,0 +1,35 @@
+.body {
+    background-color: aquamarine;
+    width: 140px;
+    height: 140px;
+    margin: 100px;
+    padding-top: 5px;
+}
+.field .hasil{
+    background-color: white;
+    margin: 5px;
+    width: 120px;
+}
+.nol{
+    padding-right: 30px;
+}
+.baris1{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.baris2{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.baris3{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}
+.baris4{
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 5px;
+}

@@ -1,0 +1,32 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.card {
+    width: 400px;
+    height: 600px;
+    display: flex;
+    justify-content: space-around;
+}
+
+button {
+    border: none;
+    padding: 5px;
+    color: white;
+    background-color: cadetblue;
+    border-radius: 5px;
+}
+
+button:hover {
+    color: rgba(207, 208, 208, 0.549);
+}
