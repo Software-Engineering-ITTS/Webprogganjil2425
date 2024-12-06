@@ -1,0 +1,12 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+.bu{
+    @apply text-blue-500 ;
+}
+.menu-bar{
+    @apply flex flex-row bg-red-500 justify-around;
+}
+.logo{
+    @apply text-blue-500;
+}
