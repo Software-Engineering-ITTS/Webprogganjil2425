@@ -59,11 +59,12 @@ class BukuController extends Controller
 
     public function index()
     {
-        $books = Buku::all(); 
-        return view('show', compact('books')); 
+        $books = Buku::all();
+        return view('show', compact('books'));
     }
 
-    public function edit($id) {
+    public function edit($id)
+    {
         $book = Buku::findOrFail($id);
         return view('edit', compact('book'));
     }
@@ -82,7 +83,7 @@ class BukuController extends Controller
         $book = Buku::findOrFail($id);
 
         if ($request->hasFile('cover_photo') && $request->file('cover_photo')->isValid()) {
-            
+
             if ($book->cover_photo) {
                 Storage::delete($book->cover_photo);
             }
@@ -101,4 +102,13 @@ class BukuController extends Controller
         return redirect('/show')->with('success', 'Book updated successfully!');
     }
 
+    public function destroy($id)
+    {
+        $book = Buku::findOrFail($id);
+        if ($book->cover_photo) {
+            Storage::delete($book->cover_photo);
+        }
+        $book->delete();
+        return redirect('/show')->with('success', 'Book deleted successfully.');
+    }
 }

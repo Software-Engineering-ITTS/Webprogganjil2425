@@ -51,9 +51,19 @@
                             <p class="mb-2"><strong>Price:</strong> Rp.{{ $book->price }}</p>
                             <img src="{{ asset(str_replace('public/', 'storage/', $book->cover_photo)) }}"
                                 alt="{{ $book->book_title }}" class="object-contain w-full rounded-md mb-3">
+                            {{--  --}}
                             <a href="/edit/{{ $book->id }}" class="text-blue-500 hover:text-blue-700">
                                 <i class=""> Edit</i>
                             </a>
+                            {{--  --}}
+                            <form action="{{ route('books.destroy', $book->id) }}" method="POST"
+                                onsubmit="return confirm('Are you sure want to delete this book?')">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="text-red-500 hover:text-red-700 mt-3">
+                                    <i>Delete</i>
+                                </button>
+                            </form>
                         </div>
                     @endforeach
                 </div>
