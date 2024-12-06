@@ -8,10 +8,10 @@
 </head>
 
 <body>
-    <section>
+    <section class="bg-gradient-to-br from-purple-600 to-blue-500">
         <div class="flex flex-col items-center justify-center h-screen">
             <div class="mb-3">
-                <a href="{{ url('/') }}" class="flex items-center">
+                <a href="{{ url('/') }}" class="flex items-center text-white">
                     <img class="w-16 h-16"
                         src="https://png.pngtree.com/png-clipart/20220909/original/pngtree-books-vectro-illustration-png-image_8522264.png"
                         alt="">
@@ -19,24 +19,25 @@
                 </a>
             </div>
 
-            <div class="w-full space-y-2 sm:max-w-md md:mt-0 xl:p-0 border rounded-lg">
+            <div class="w-full space-y-2 sm:max-w-md md:mt-0 xl:p-0 border rounded-lg bg-white">
                 <h1 class="ml-5 mt-3 font-bold text-3xl">Daftarkan Bang...</h1>
                 <div class="pb-10">
-                    <form action="" class="space-y-3">
+                    <form action="{{route('signup')}}" method="POST" class="space-y-3">
+                        @csrf
                         <div class="m-5">
                             <label for="" class="block font-medium">Username</label>
-                            <input type="text"
+                            <input type="text" name="name"
                                 class="w-full p-2 mt-1 rounded-lg border hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500"
                                 placeholder="Username" required>
                         </div>
                         <div class="m-5">
                             <label for="" class="block font-medium">Password</label>
-                            <input type="Password" class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500" placeholder="Password"
+                            <input type="password" name="password" class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500" placeholder="Password"
                                 required>
                         </div>
                         <div class="m-5">
-                            <label for="" class="block font-medium">Confirm Password</label>
-                            <input type="Password" class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500" placeholder="Password"
+                            <label for="" class="block font-medium">Email</label>
+                            <input type="email" name="email" class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500" placeholder="name@example.com"
                                 required>
                         </div>
                         <div class="m-5 flex items-center">
@@ -49,7 +50,7 @@
                                 Akun</button>
                         </div>
                         <div class="m-5">
-                            <p class="font-medium">Sudah punya akun ? <a href="{{ url('/login') }}"
+                            <p class="font-medium">Sudah punya akun ? <a href="{{ url('login') }}"
                                     class="font-medium text-blue-700 hover:underline">Login</a></p>
                         </div>
                     </form>
