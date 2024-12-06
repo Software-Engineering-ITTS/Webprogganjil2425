@@ -42,12 +42,24 @@ class BukuController extends Controller
             'book_title' => $request->book_title,
             'author_name' => $request->author_name,
             'publication_year' => $request->publication_year,
-            'synopsis' => $request ->synopsis,
+            'synopsis' => $request->synopsis,
             'price' => $request->price,
             'cover_photo' => $coverpath,
         ]);
 
         // if got it
         return redirect('/add')->with('success', 'Book has been added');
+    }
+
+    public function show($id)
+    {
+        $book = Buku::findOrFail($id);
+        return view('show', compact('book'));
+    }
+
+    public function index()
+    {
+        $books = Buku::all(); // Ambil semua buku dari database
+        return view('show', compact('books')); // Kirim ke view books.blade.php
     }
 }

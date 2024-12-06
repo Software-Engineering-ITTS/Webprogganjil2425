@@ -40,27 +40,25 @@
         {{--  --}}
         <main>
             <div class="container bg-slate-500 p-5 rounded-lg mt-5">
-                <h3 class="text-3xl text-center mb-5">Show Book</h3>
-                {{-- <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3">Book Title</label>
-                    <input type="text" name="" id="book-title" class="rounded-md">
+                <h3 class="text-3xl text-center mb-5 text-white">Available Books</h3>
+                {{-- Loop through books --}}
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    @foreach ($books as $book)
+                        <div class="bg-gray-800 text-white p-5 rounded-lg">
+                            <h3 class="text-2xl font-bold mb-2">{{ $book->book_title }}</h3>
+                            <p class="mb-2"><strong>Author:</strong> {{ $book->author_name }}</p>
+                            <p class="mb-2"><strong>Year:</strong> {{ $book->publication_year }}</p>
+                            <p class="mb-2"><strong>Price:</strong> ${{ $book->price }}</p>
+                            <img src="{{ asset('storage/' . $book->cover_photo) }}" 
+                                 alt="{{ $book->book_title }}" 
+                                 class="w-full h-48 object-cover rounded-md mb-3">
+                            <a href="/show/{{ $book->id }}" 
+                               class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-center">
+                                View Details
+                            </a>
+                        </div>
+                    @endforeach
                 </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3 ">Author Name</label>
-                    <input type="text" name="" id="author-name" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3 ">Publication Year</label>
-                    <input type="text" name="" id="publication-year" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="judulbuku" class="mb-1 mt-3">Synopsis</label>
-                    <input type="text" name="" id="synopsis" class="rounded-md">
-                </div>
-                <div class="flex flex-col">
-                    <label for="cover-photo" class="mb-1 mt-3">Cover Book</label>
-                    <input type="file" name="" id="cover-photo">
-                </div> --}}
             </div>
         </main>
     </div>
