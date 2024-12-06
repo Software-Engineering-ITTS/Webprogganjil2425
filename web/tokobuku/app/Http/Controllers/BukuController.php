@@ -59,7 +59,46 @@ class BukuController extends Controller
 
     public function index()
     {
-        $books = Buku::all(); // Ambil semua buku dari database
-        return view('show', compact('books')); // Kirim ke view books.blade.php
+        $books = Buku::all(); 
+        return view('show', compact('books')); 
     }
+
+    public function edit($id) {
+        $book = Buku::findOrFail($id);
+        return view('edit', compact('book'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'book_title' => 'required',
+            'author_name' => 'required',
+            'publication_year' => 'required|integer',
+            'synopsis' => 'required',
+            'price' => 'required|integer',
+            'cover_photo' => 'nullable|image|mimes:jpeg,jpg,png',
+        ]);
+
+        $book = Buku::findOrFail($id);
+
+        if ($request->hasFile('cover_photo') && $request->file('cover_photo')->isValid()) {
+            
+            if ($book->cover_photo) {
+                Storage::delete($book->cover_photo);
+            }
+
+            $book->cover_photo = $request->file('cover_photo')->store('public/covers');
+        }
+
+        $book->update([
+            'book_title' => $request->book_title,
+            'author_name' => $request->author_name,
+            'publication_year' => $request->publication_year,
+            'synopsis' => $request->synopsis,
+            'price' => $request->price,
+        ]);
+
+        return redirect('/show')->with('success', 'Book updated successfully!');
+    }
+
 }

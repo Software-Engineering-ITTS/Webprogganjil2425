@@ -39,38 +39,39 @@
 
         {{--  --}}
         <main>
-            <form action="" method="POST">
+            <form action="/edit/{{ $book->id }}" method="POST" enctype="multipart/form-data">
                 @csrf
-                <div class="container bg-slate-500 p-5 rounded-lg mt-5">
-                    <h3 class="text-3xl text-center mb-5">Edit Book</h3>
-                    <div class="flex flex-col">
-                        <label for="book_title" class="mb-1 mt-3">Book Title</label>
-                        <input type="text" name="book_title" id="book_title" class="rounded-md">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="author_name" class="mb-1 mt-3 ">Author Name</label>
-                        <input type="text" name="author_name" id="author_name" class="rounded-md">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="publication_year" class="mb-1 mt-3 ">Publication Year</label>
-                        <input type="text" name="publication_year" id="publication_year" class="rounded-md">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="synopsis" class="mb-1 mt-3">Synopsis</label>
-                        <input type="text" name="synopsis" id="synopsis" class="rounded-md">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="price" class="mb-1 mt-3">Price</label>
-                        <input type="text" name="price" id="price" class="rounded-md">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="cover_photo" class="mb-1 mt-3">Cover Book</label>
-                        <input type="file" name="cover_photo" id="cover_photo">
-                    </div>
-                    <div class="flex justify-center">
-                        <button class="bg-blue-700 p-2 rounded-xl font-bold text-white hover:bg-blue-500">Edit
-                            Book</button>
-                    </div>
+                @method('PUT')            
+                <div class="mb-4">
+                    <label for="book_title" class="text-white">Book Title</label>
+                    <input type="text" name="book_title" id="book_title"
+                        value="{{ old('book_title', $book->book_title) }}" class="w-full p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="author_name" class="text-white">Author Name</label>
+                    <input type="text" name="author_name" id="author_name"
+                        value="{{ old('author_name', $book->author_name) }}" class="w-full p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="publication_year" class="text-white">Publication Year</label>
+                    <input type="number" name="publication_year" id="publication_year"
+                        value="{{ old('publication_year', $book->publication_year) }}" class="w-full p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="synopsis" class="text-white">Synopsis</label>
+                    <textarea name="synopsis" id="synopsis" rows="3" class="w-full p-2 rounded">{{ old('synopsis', $book->synopsis) }}</textarea>
+                </div>
+                <div class="mb-4">
+                    <label for="price" class="text-white">Price</label>
+                    <input type="number" name="price" id="price" value="{{ old('price', $book->price) }}"
+                        class="w-full p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <label for="cover_photo" class="text-white">Cover Photo</label>
+                    <input type="file" name="cover_photo" id="cover_photo" class="w-full p-2 rounded">
+                </div>
+                <div class="mb-4">
+                    <button type="submit" class="bg-blue-500 p-2 rounded text-white">Update Book</button>
                 </div>
             </form>
         </main>

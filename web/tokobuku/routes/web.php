@@ -23,3 +23,5 @@ Route::get('/edit', function () {
 });
 
 Route::get('/show', [BukuController::class, 'index']);
+Route::get('/edit/{id}', [BukuController::class, 'edit'])->name('books.edit');
+Route::put('/edit/{id}', [BukuController::class, 'update'])->name('books.update');
