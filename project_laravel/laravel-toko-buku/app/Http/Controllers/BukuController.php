@@ -8,8 +8,25 @@ use Illuminate\Http\Request;
 class BukuController extends Controller
 {
     public function index () {
-        $bukus = Buku::all();
 
-        return view('bukus.index', compact('bukus'));
+        $dataBuku = Buku::all();
+        return view('components.databuku', ['dataBuku' => $dataBuku]);
     }
+
+    public function store (Request $request) {
+
+        $buku = new Buku();
+
+        $buku->cover = $request->cover;
+        $buku->judul = $request->judul;
+        $buku->penulis = $request->penulis;
+        $buku->kategori = $request->kategori;
+        $buku->harga = $request->harga;
+        $buku->deskripsi = $request->deskripsi;
+
+        $buku->save();
+        
+        return redirect()->route('index')->with('success', 'Buku berhasil ditambahkan');;
+    }
+
 }

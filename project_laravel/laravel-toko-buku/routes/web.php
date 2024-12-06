@@ -1,6 +1,8 @@
 <?php
 
+use RealRashid\SweetAlert\Facades\Alert;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\BukuController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Auth\Events\Login;
@@ -22,25 +24,28 @@ use Spatie\FlareClient\View;
 //     return view('welcome');
 // });
 
-// Route::get('/', function () {
-//     return redirect('/home');
-// });
+Route::get('/', function () {
+    return redirect('/home');
+});
 
 Route::get('/dashboard', function () {
     return view('layouts.dashboard');
 });
 
-Route::get('/data-pengguna', function () {
-    return view('components.DataPengguna');
+Route::get('/kategori', function () {
+    return view('components.kategori');
 });
 
-Route::get('/data-buku', function () {
-    return view('components.DataBuku');
+Route::get('/databuku', function () {
+    return view('components.databuku');
 });
 
-Route::get('/history-transaksi', function () {
-    return view('components.HistoryTransaksi');
+Route::get('/transaksi', function () {
+    return view('components.transaksi');
 });
+
+Route::get('/databuku', [BukuController::class, 'index'])->middleware('guest')->name('index');
+Route::get('/tambahbuku',[BukuController::class, 'store'])->middleware('guest')->name('store');
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/home', [HomeController::class, 'index'])->middleware('guest')->name('home');

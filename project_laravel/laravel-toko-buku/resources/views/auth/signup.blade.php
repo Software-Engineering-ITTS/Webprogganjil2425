@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <section class="bg-gradient-to-br from-purple-600 to-blue-500">
+    <section class="bg-gradient-to-br from-green-400 to-blue-600">
         <div class="flex flex-col items-center justify-center h-screen">
             <div class="mb-3">
                 <a href="{{ url('/') }}" class="flex items-center text-white">

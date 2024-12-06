@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html>
 
@@ -8,7 +9,7 @@
 </head>
 
 <body>
-    <section class="bg-gradient-to-br from-purple-600 to-blue-500">
+    <section class="bg-gradient-to-br from-green-400 to-blue-600">
         <div class="flex flex-col items-center justify-center h-screen">
             <div class="mb-3">
                 <a href="{{url('/')}}" class="flex items-center text-white">
@@ -20,7 +21,7 @@
             </div>
 
             <div class="w-full space-y-2 sm:max-w-md md:mt-0 xl:p-0 border rounded-lg bg-white">
-                <h1 class="ml-5 mt-3 font-bold text-3xl">Loginkan Bang...</h1>
+                <h1 class="ml-5 mt-3 font-bold text-3xl">Khusus Admin !</h1>
                 <div class="pb-10">
                     <form action="{{route('login')}}" method="POST" class="space-y-3">
                         @csrf
@@ -33,10 +34,6 @@
                             <label for="" class="block font-medium">Password</label>
                             <input type="Password" name="password" class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500" placeholder="Password"
                                 required>
-                        </div>
-                        <div class="m-5">
-                            <a href=""class="text-sm font-medium text-blue-700 hover:underline">Forgot Password
-                                ?</a>
                         </div>
                         <div class="m-5 py-2">
                             <button type="submit"
@@ -52,6 +49,8 @@
             </div>
         </div>
     </section>
+    @include('sweetalert::alert')
+
 </body>
 
 </html>

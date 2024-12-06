@@ -13,12 +13,12 @@ return new class extends Migration
     {
         Schema::create('bukus', function (Blueprint $table) {
             $table->id();
-            $table->string('foto')->default('noimage.png');
+            $table->string('cover')->nullable();
             $table->string('judul');
             $table->string('penulis');
             $table->string('kategori');
             $table->integer('harga');
-            $table->string('deskripsi');
+            $table->string('deskripsi')->nullable();
             $table->timestamps();
         });
     }
