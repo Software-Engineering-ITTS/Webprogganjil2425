@@ -49,14 +49,8 @@
                             <p class="mb-2"><strong>Author:</strong> {{ $book->author_name }}</p>
                             <p class="mb-2"><strong>Year:</strong> {{ $book->publication_year }}</p>
                             <p class="mb-2"><strong>Price:</strong> ${{ $book->price }}</p>
-                            <img src="{{ asset('storage/' . $book->cover_photo) }}" 
-                                 alt="{{ $book->book_title }}" 
-                                 class="w-full h-48 object-cover rounded-md mb-3">
-                            <a href="/show/{{ $book->id }}" 
-                               class="bg-blue-500 hover:bg-blue-700 text-white py-2 px-4 rounded-lg text-center">
-                                View Details
-                            </a>
-                        </div>
+                            <img src="{{ asset(str_replace('public/', 'storage/', $book->cover_photo)) }}"
+                                alt="{{ $book->book_title }}" class="w-full h-48 object-cover rounded-md mb-3">
                     @endforeach
                 </div>
             </div>
