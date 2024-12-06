@@ -11,7 +11,7 @@ class BukuController extends Controller
 
     // public function store(Request $request)
     // {
-    //     dd($request->all()); // Ini akan menampilkan semua data yang diterima dari form
+    //     dd($request->all()); // this will show all data from form
     // }
 
 

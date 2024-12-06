@@ -39,7 +39,6 @@
 
         {{--  --}}
         <main>
-            {{-- container action  --}}
             <div class="container size-max mx-auto bg-slate-500 p-5 rounded-lg mt-5">
                 <h3 class="text-3xl text-center mb-5">Welcome to My Book Store</h3>
             </div>
