@@ -1,0 +1,124 @@
+/* Navbar Styling */
+.navbar {
+  background-color: #1a1a1a;
+}
+
+.navbar-nav .nav-link {
+  /* color: #fff; */
+}
+
+/* .navbar .nav-link:hover {
+  color: #fff;
+}
+
+.navbar .nav-link::after {
+  /* content: '';
+  display: block;
+  border-bottom: 0.1rem solid #fff;
+  transform: scaleX(0);
+  transition: transform 0.2s linear; */
+/* } 
+
+.navbar .nav-link:hover::after {
+  transform: scaleX(0.5);
+} */
+
+.navbar-nav .nav-link.active {
+  font-weight: bold;
+}
+
+/* Hero Section Styling */
+.hero {
+  min-height: 100vh;
+  /* background-color: #1a1a1a; */
+  /* color: #fff; */
+  padding-top: 100px;
+  padding-bottom: 50px;
+}
+
+.hero .content h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  /* color: #fff; */
+}
+
+/* .hero .content .highlight {
+  color: #ffc107;
+} */
+
+/* .hero .content .text-muted {
+  color: #a5a5a5;
+  font-weight: 500;
+} */
+
+/* .hero .content .experience {
+  font-weight: 500;
+  color: #a5a5a5;
+} */
+
+.hero .btn-primary {
+  background-color: #d3d3d3;
+  border: none;
+}
+
+/* Profile Image Styling */
+.profile-img img {
+  width: 250px;
+  height: 250px;
+}
+
+/* About Me Section Styling */
+.about-section {
+  /* background-color: #1a1a1a; */
+  /* color: #fff; */
+}
+
+.about-section .section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  /* color: #fff; */
+  margin-bottom: 1rem;
+}
+
+.about-section .description {
+  font-size: 1rem;
+  /* color: #d3d3d3; */
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+#projects {
+  /* background-color: #1a1a1a; */
+}
+
+.section-title {
+  font-size: 2rem;
+  font-weight: 700;
+  /* color: #fff; */
+  margin-bottom: 1.5rem;
+}
+
+.project-card {
+  background-color: #2a2a2a;
+  border: none;
+}
+
+.project-card .card-title {
+  /* color: #fff; */
+  font-weight: bold;
+}
+
+.project-card .card-text {
+  /* color: #d3d3d3; */
+}
+
+.project-card .btn-primary {
+  background-color: #d3d3d3;
+  border: none;
+}
+
+.project-card img {
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+}

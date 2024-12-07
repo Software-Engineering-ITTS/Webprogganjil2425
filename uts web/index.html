@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body style="background-color: white; color: black">
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+
+        <a class="navbar-brand fw-bold" href="#">Bangkit Hardiyanto</a>
+        <button id="ubahwarna" class="btn btn-dark" >Ubah Warna</button>
+      
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav" style="padding-left: 30%">
+            <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero d-flex align-items-center">
+      <div
+        class="container text-center text-lg-start d-flex flex-column flex-lg-row align-items-center"
+      >
+        <div class="content">
+          <h1>
+            Hello, <br />
+            I Am <span class="highlight">Bangkit Hardiyanto</span>
+          </h1>
+
+          <h1 class="experience mb-4 fw-light">
+            Undergraduate Software Engineering Student at Telkom University
+            Surabaya
+          </h1>
+          <a href="#contact" class="btn btn-primary me-3 mb-2"
+            >Let's Talk <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+        <div class="profile-img ms-auto style=" justify-content: end;>
+          <img
+            src="img/foto formal.jpg"
+            alt="Bangkit Hardiyanto"
+            class="img-fluid rounded-2"
+            style="justify-content: end"
+          />
+        </div>
+      </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about-section py-5">
+      <div class="container text-center">
+        <h2 class="section-title mb-4">About Me</h2>
+        <p class="description">
+          hai Nama saya <strong>Bangkit Hardiyanto </strong> saya lahir dan
+          tinggal di batang, jawa tengah, sekarang Saya Mahasiswa Telkom
+          University Surabaya Prodi Rekayasa Perangkat Lunak Tahun 2023,Saya
+          mampu bekerja secara individu maupun berkolaborasi dengan tim, Dan
+          komunikasi yang baik. Saat ini saya berusia 20 tahun, Saya sangat suka
+          belajar tentang teknologi, apalagi untuk dunia software engineering
+          maka dari itu saya belajar
+        </p>
+      </div>
+    </section>
+
+    <section id="projects" class="py-5">
+      <div class="container">
+        <h2 class="text-center mb-4 section-title">Projects</h2>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+              <img src="img/3.png" class="card-img-top" alt="Project 1" />
+              <div class="card-body">
+                <h5 class="card-title">Project One</h5>
+                <p class="card-text">
+                  ini ada projek pribadi saya, jadi saya membuat website kopi
+                  yang bernama kenangan senja, disini saya membuat website
+                  tersebut dengan html, css, js saja .
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+              <img src="img/2.png" class="card-img-top" alt="Project 2" />
+              <div class="card-body">
+                <h5 class="card-title">Project Two</h5>
+                <p class="card-text">
+                  ini ada project pertawa saya belajar front-end dan disini saya
+                  belajar membuat slider dengan native.
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card project-card shadow-sm">
+              <img src="img/1.png" class="card-img-top" alt="Project 3" />
+              <div class="card-body">
+                <h5 class="card-title">Project Three</h5>
+                <p class="card-text">
+                  saya membuat website ini karna terispirasi video dari tiktok
+                  jadi saya belajar dan penasaran.
+                </p>
+                <a href="#" class="btn btn-primary">View Project</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="contact-section bg-dark text-white py-5">
+      <div class="container">
+        <h2 class="text-center mb-4">Contact Me</h2>
+        <div class="social-icons mt-5 text-center">
+          <a
+            href="https://www.linkedin.com/feed/"
+            class="text-white me-5"
+            target="_blank"
+          >
+            <i class="fab fa-linkedin fa-2x"></i>
+          </a>
+          <a
+            href="https://github.com/yantoww"
+            class="text-white me-5"
+            target="_blank"
+          >
+            <i class="fab fa-github fa-2x"></i>
+          </a>
+          <a
+            href="https://www.instagram.com/_hardiaanz/"
+            class="text-white"
+            target="_blank"
+          >
+            <i class="fab fa-instagram fa-2x"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+    <script src="bebas.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+ /* .contact-footer {
+    background-color: #1b1a3b; 
+    color: #fff;
+    padding: 20px 0;
+  } */
+  .contact-footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  /* .contact-footer a:hover {
+    color: #f0c040; 
+  } */
+   .social-icons a:hover {
+    font-size: 1.2rem;
+    margin-right: 15px;
+    color: #f0c040; 
+  }  
