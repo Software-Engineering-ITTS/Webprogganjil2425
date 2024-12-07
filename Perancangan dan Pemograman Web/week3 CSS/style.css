@@ -1,0 +1,160 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+.header {
+  display: flex;
+  align-items: center;
+  padding: 10px 20px;
+}
+.header img {
+  height: 50px;
+}
+.header h1 {
+  margin: 0;
+  font-size: 24px;
+  color: #007bff;
+}
+.header h1 span {
+  color: #f0ad4e;
+}
+
+.nav {
+  background-color: #007bff;
+  overflow: hidden;
+}
+.nav a {
+  float: left;
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+.nav a:hover {
+  background-color: #0056b3;
+}
+.content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+.welcome {
+  display: flex;
+  width: 150x;
+  height: 150px;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0ad4e;
+  color: white;
+  padding: 20px;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+  margin-right: 20px;
+  margin-bottom: 20px;
+  position: absolute;
+  top: 25%;
+  right: 60%;
+}
+.welcome h1 {
+  font-size: 24px;
+  margin: 0;
+}
+
+.welcome p {
+  font-size: 18px;
+  margin: 10px 0;
+}
+
+.message-box {
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  flex: 1;
+}
+.character {
+  width: 400px;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  right: 80%;
+}
+.services {
+  display: grid;
+  gap: 10px;
+  max-width: 600px;
+  width: 100%;
+}
+.service {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  color: white;
+  border-radius: 5px;
+  font-size: 18px;
+  text-align: center;
+}
+.service i {
+  padding: 20px;
+  font-size: 36px;
+  margin-bottom: 10px;
+}
+
+.service.analytic {
+  background-color: #28a745;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  right: 25%;
+}
+
+.service.creative {
+  background-color: #fd7e14;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 20%;
+  right: 10%;
+}
+
+.service.development {
+  background-color: #dc3545;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  right: 25%;
+}
+
+.service.marketing {
+  background-color: #17a2b8;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 40%;
+  right: 10%;
+}
+
+.service.media {
+  background-color: #ffc107;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 60%;
+  right: 25%;
+}
+
+.service.optimitation {
+  background-color: #6f42c1;
+  width: 200px;
+  height: 100px;
+  position: absolute;
+  top: 60%;
+  right: 10%;
+}
