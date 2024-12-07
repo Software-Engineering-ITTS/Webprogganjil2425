@@ -46,6 +46,7 @@ Route::get('/transaksi', function () {
 
 Route::get('/databuku', [BukuController::class, 'index'])->middleware('guest')->name('index');
 Route::get('/tambahbuku',[BukuController::class, 'store'])->middleware('guest')->name('store');
+Route::delete('/databuku',[BukuController::class, 'destroy'])->middleware('guest')->name('destroy');
 
 Route::group(['middleware' => 'guest'], function () {
     Route::get('/home', [HomeController::class, 'index'])->middleware('guest')->name('home');

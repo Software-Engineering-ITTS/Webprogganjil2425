@@ -19,18 +19,20 @@
                 <table class="table-auto w-full text-md">
                     <thead class="uppercase bg-slate-100">
                         <tr class="border">
+                            <th class="p-3 border-r-2">No</th>
                             <th class="p-3 border-r-2">Cover Buku</th>
                             <th class="p-3 border-r-2">Judul</th>
                             <th class="p-3 border-r-2">Penulis</th>
                             <th class="p-3 border-r-2">Kategori</th>
                             <th class="p-3 border-r-2">Harga</th>
                             <th class="p-3 border-r-2">Deskripsi</th>
-                            <th class="p-3 border-r-2">Edit</th>
+                            <th class="p-3 border-r-2">Aksi</th>
                         </tr>
                     </thead>
                     <tbody class="">
                         @foreach ($dataBuku as $items)
                             <tr class="border">
+                                <td class="p-3 border-r-2">{{ $items->id }}</td>
                                 <td class="p-3 border-r-2"><img class="size-8" src="{{ Storage::url($items->cover) }}"
                                         alt=""></td>
                                 <td class="p-3 border-r-2">{{ $items->judul }}</td>
@@ -39,8 +41,12 @@
                                 <td class="p-3 border-r-2">{{ $items->harga }}</td>
                                 <td class="p-3 border-r-2">{{ $items->deskripsi }}</td>
                                 <td class="p-3 w-56">
-                                    <button class="w-20 bg-blue-600 text-white rounded-lg p-2 m-2">Edit</button>
-                                    <button class="w-20 bg-red-600 text-white rounded-lg p-2 m-2">Delete</button>
+                                    <button class="w-20 bg-blue-600 text-white rounded-lg p-2 m-2 hover:bg-blue-800">Edit</button>
+                                    <form action="{{ route('destroy', $items->id) }}">
+                                        @method('DELETE')
+                                        @csrf
+                                        <button class="w-20 inline bg-red-600 text-white rounded-lg p-2 m-2 hover:bg-red-800">Delete</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach

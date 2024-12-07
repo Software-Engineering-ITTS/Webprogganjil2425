@@ -22,7 +22,7 @@
                 </button>
             </div>
             <div class="p-5 bg-white">
-                <form action="{{route('store')}}">
+                <form action="{{route('store')}}" enctype="multipart/form-data">
                     @csrf
                     <div class="mb-4">
                         <label for="cover" class="block mb-2 text-sm font-medium">Cover Buku</label>

@@ -20,7 +20,7 @@
             </div>
 
             <div class="w-full space-y-2 sm:max-w-md md:mt-0 xl:p-0 border rounded-lg bg-white">
-                <h1 class="ml-5 mt-3 font-bold text-3xl">Daftarkan Bang...</h1>
+                <h1 class="ml-5 mt-3 font-bold text-3xl">Daftarkan Karyawan</h1>
                 <div class="pb-10">
                     <form action="{{route('signup')}}" method="POST" class="space-y-3">
                         @csrf
