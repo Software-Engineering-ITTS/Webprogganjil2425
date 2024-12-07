@@ -1,4 +1,5 @@
 @extends('layouts.app')
+@section('title', 'Pembelian Buku')
 
 @section('content')
 <div class="container mx-auto mt-4">

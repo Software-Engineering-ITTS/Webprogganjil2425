@@ -13,7 +13,7 @@ class BukuController extends Controller
     //Index
     public function index(){
         
-        $bukus = Buku::all();
+        $bukus = buku::all();
 
         return view('bukus.index', compact('bukus'));
     }
