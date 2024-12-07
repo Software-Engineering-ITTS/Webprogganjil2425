@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laporan Keuangan Bisnis Kecil</title>
+    <!-- Link ke Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Laporan Keuangan Bisnis Kecil</h2>
+        <form id="financialReportForm">
+            <!-- Input Teks: Nama Bisnis -->
+            <div class="form-group">
+                <label for="businessName">Nama Bisnis</label>
+                <input type="text" class="form-control" id="businessName" placeholder="Masukkan Nama Bisnis" required>
+            </div>
+
+            <!-- Input Teks: Nomor Telepon -->
+            <div class="form-group">
+                <label for="phoneNumber">Nomor Telepon</label>
+                <input type="text" class="form-control" id="phoneNumber" placeholder="Masukkan Nomor Telepon" required>
+            </div>
+
+            <!-- Input Teks: Email -->
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" class="form-control" id="email" placeholder="Masukkan Email" required>
+            </div>
+
+            <!-- Input Password: Kata Sandi Akun -->
+            <div class="form-group">
+                <label for="password">Kata Sandi Akun</label>
+                <input type="password" class="form-control" id="password" placeholder="Masukkan Kata Sandi" required>
+            </div>
+
+            <!-- Radio Button: Status Keuangan -->
+            <div class="form-group">
+                <label>Status Keuangan</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="financialStatus" value="Stabil"> Stabil
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="financialStatus" value="Tidak Stabil"> Tidak Stabil
+                    </label>
+                </div>
+            </div>
+
+            <!-- Checkbox: Pengeluaran Bulanan -->
+            <div class="form-group">
+                <label>Pengeluaran Bulanan</label>
+                <div>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="expenses" value="Sewa"> Sewa
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="expenses" value="Gaji Pegawai"> Gaji Pegawai
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="expenses" value="Bahan Baku"> Bahan Baku
+                    </label>
+                    <label class="checkbox-inline">
+                        <input type="checkbox" name="expenses" value="Listrik & Air"> Listrik & Air
+                    </label>
+                </div>
+            </div>
+
+            <!-- Textarea: Deskripsi Bisnis -->
+            <div class="form-group">
+                <label for="businessDescription">Deskripsi Bisnis</label>
+                <textarea class="form-control" id="businessDescription" rows="4" placeholder="Jelaskan Deskripsi Bisnis Anda" required></textarea>
+            </div>
+
+            <!-- Input Number: Pendapatan Bulanan -->
+            <div class="form-group">
+                <label for="monthlyRevenue">Pendapatan Bulanan (Rp)</label>
+                <input type="number" class="form-control" id="monthlyRevenue" placeholder="Masukkan Pendapatan Bulanan" required>
+            </div>
+
+            <!-- Input Number: Total Pengeluaran Bulanan -->
+            <div class="form-group">
+                <label for="monthlyExpenses">Total Pengeluaran Bulanan (Rp)</label>
+                <input type="number" class="form-control" id="monthlyExpenses" placeholder="Masukkan Total Pengeluaran Bulanan" required>
+            </div>
+
+            <!-- Dropdown (Select): Jenis Usaha -->
+            <div class="form-group">
+                <label for="businessType">Pilih Jenis Usaha</label>
+                <select class="form-control" id="businessType" required>
+                    <option value="">Pilih Jenis Usaha</option>
+                    <option value="Makanan">Makanan</option>
+                    <option value="Retail">Retail</option>
+                    <option value="Jasa">Jasa</option>
+                    <option value="Teknologi">Teknologi</option>
+                </select>
+            </div>
+
+            <!-- Input Teks: Alamat Bisnis -->
+            <div class="form-group">
+                <label for="businessAddress">Alamat Bisnis</label>
+                <input type="text" class="form-control" id="businessAddress" placeholder="Masukkan Alamat Bisnis" required>
+            </div>
+
+            <!-- Tombol Kirim -->
+            <button type="submit" class="btn btn-primary btn-block">Kirim Laporan</button>
+        </form>
+    </div>
+
+    <!-- Link ke JS Bootstrap dan JQuery -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <!-- JavaScript untuk validasi dan pengiriman form -->
+    <script>
+        // Menangani event submit form
+        document.getElementById('financialReportForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Mencegah form untuk submit secara default
+
+            // Menangkap nilai input form
+            const businessName = document.getElementById('businessName').value;
+            const phoneNumber = document.getElementById('phoneNumber').value;
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const financialStatus = document.querySelector('input[name="financialStatus"]:checked')?.value;
+            const expenses = Array.from(document.querySelectorAll('input[name="expenses"]:checked')).map(input => input.value);
+            const businessDescription = document.getElementById('businessDescription').value;
+            const monthlyRevenue = document.getElementById('monthlyRevenue').value;
+            const monthlyExpenses = document.getElementById('monthlyExpenses').value;
+            const businessType = document.getElementById('businessType').value;
+            const businessAddress = document.getElementById('businessAddress').value;
+
+            // Validasi input
+            if (!businessName || !phoneNumber || !email || !password || !financialStatus || !businessDescription || !monthlyRevenue || !monthlyExpenses || !businessType || !businessAddress) {
+                alert("Semua kolom harus diisi!");
+                return;
+            }
+
+            // Menampilkan hasil input di console (sebagai contoh)
+            console.log({
+                businessName,
+                phoneNumber,
+                email,
+                password,
+                financialStatus,
+                expenses,
+                businessDescription,
+                monthlyRevenue,
+                monthlyExpenses,
+                businessType,
+                businessAddress
+            });
+
+            // Menampilkan alert sukses
+            alert("Laporan Keuangan Berhasil Dikirim!");
+        });
+    </script>
+
+</body>
+</html>
