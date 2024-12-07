@@ -1,0 +1,331 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-image: url(assets/task-light.png);
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e1e1e;
+  padding: 10px 40px;
+  color: white;
+  height: 65px;
+  position: fixed;
+  width: 100%;
+}
+
+.navbar-kanan {
+  display: flex;
+  justify-content: center;
+  margin-left: 40px
+}
+
+.navbar-tengah,
+.navbar-kiri {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-tengah .nav-item {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  border-radius: 30px;
+  padding: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease, padding 0.3s ease;
+}
+
+.navbar-tengah .nav-item:hover {
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  padding: 5px;
+  transition: background-color 0.3s, color 0.3s, padding 0.3s;
+
+}
+
+.navbar-tengah .nav-item.active {
+  color: black;
+  background-color: white;
+  border-radius: 30px;
+  padding: 5px;
+}
+
+.navbar-kanan .logo {
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-decoration: none;
+  background: #000;
+  padding: 5px 10px;
+}
+
+.navbar-kiri {
+  display: flex;
+  justify-content: center;
+  margin-right: 40px;
+}
+
+.navbar-kiri .click-button {
+  background-color: #d7ff03;
+  color: #1e1e1e;
+  padding: 8px 12px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-right: 15px;
+}
+
+.navbar-kiri .click-button:hover {
+  background-color: #b6e202;
+}
+
+#judul-judul {
+  margin-top: 230px;
+}
+
+#judul-judul h1 {
+  color: lightseagreen;
+  font-size: 64px;
+  font-weight: 500;
+}
+
+.profile-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.profile-photo {
+  margin-top: 65px;
+  margin-right: 50px;
+}
+
+.profile-text {
+  background: #efc3a4;
+  margin-left: 50px;
+  margin-top: 65px;
+  border-radius: 30px;
+}
+
+.text-isi {
+  margin: 20px;
+}
+
+#projects-slide1,
+#projects-slide2 {
+  background-color: #be7656;
+  gap: 5rem;
+}
+
+#carouselExampleAutoplaying {
+  width: 550px;
+  height: 300px;
+}
+
+#carouselExampleAutoplaying2 {
+  width: 550px;
+  height: 230px;
+}
+
+#bungkus-text{
+  background-color: beige;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    padding: 15px 20px;
+    height: auto;
+  }
+
+  .navbar-kanan {
+    margin-left: 0;
+  }
+
+  .navbar-tengah,
+  .navbar-kiri {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .navbar-tengah .nav-item {
+    margin-right: 10px;
+    padding: 8px;
+  }
+
+  .navbar-kiri {
+    margin-top: 10px;
+  }
+
+  .navbar-kiri .download-button {
+    margin-right: 10px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-photo {
+    margin-top: 20px;
+    margin-right: 0;
+  }
+
+  .profile-text {
+    margin-left: 0;
+    width: 80%;
+    padding: 15px;
+  }
+
+  #projects-slide1,
+  #projects-slide2 {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 10px;
+  }
+
+  #carouselExampleAutoplaying,
+  #carouselExampleAutoplaying2 {
+    width: 100%;
+    height: auto;
+    max-width: 350px;
+  }
+
+  #text1,
+  #text2 {
+    text-align: center;
+    padding: 10px;
+    margin: 0;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .navbar {
+    flex-direction: row;
+    padding: 10px 20px;
+  }
+
+  .navbar-kanan {
+    margin-left: 0;
+    flex-grow: 1;
+    justify-content: center;
+  }
+
+  .navbar-tengah,
+  .navbar-kiri {
+    justify-content: flex-start;
+    margin-right: 10px;
+  }
+
+  .navbar-tengah .nav-item {
+    margin-right: 15px;
+  }
+
+  .navbar-kiri .download-button {
+    margin-right: 10px;
+  }
+
+  .profile-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .profile-photo {
+    margin-right: 30px;
+    width: 40%;
+  }
+
+  .profile-text {
+    width: 55%;
+    padding: 15px;
+  }
+
+  #projects-slide1,
+  #projects-slide2 {
+    gap: 3rem;
+  }
+
+  #carouselExampleAutoplaying,
+  #carouselExampleAutoplaying2 {
+    width: 450px;
+    height: auto;
+  }
+
+  #text1,
+  #text2 {
+    text-align: left;
+    padding: 10px;
+    margin: 0;
+  }
+
+}
+
+@media (max-width: 480px) {
+  .navbar-kanan .logo {
+    font-size: 20px;
+    padding: 5px 8px;
+  }
+
+  .navbar-tengah .nav-item {
+    padding: 10px;
+  }
+
+  .navbar-kiri .download-button {
+    padding: 10px 14px;
+  }
+
+  .profile-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .profile-photo {
+    margin-top: 10px;
+    width: 80%;
+  }
+
+  .profile-text {
+    width: 90%;
+    margin-top: 20px;
+    padding: 10px;
+  }
+
+  #projects-slide1,
+  #projects-slide2 {
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 5px;
+  }
+
+  #carouselExampleAutoplaying,
+  #carouselExampleAutoplaying2 {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+  }
+
+  #text1,
+  #text2 {
+    text-align: center;
+    padding: 5px;
+    margin: 0;
+  }
+}
