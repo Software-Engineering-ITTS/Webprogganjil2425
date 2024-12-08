@@ -13,15 +13,15 @@ class transaksi extends Model
 
     protected $fillable = [
         'nama',
-        'telepon',
-        'alamat',
+        'telepon', 
+        'alamat', 
         'status',
-        'books_id'
+        'toko_id'
     ];
 
     protected $guarded = ['id'];
-    public function book()
+    public function toko()
     {
-        return $this->belongsTo(book::class);
+        return $this->belongsTo(toko::class);
     }
 }

@@ -5,7 +5,7 @@ namespace Database\Factories;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\transaksi>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Transaksi>
  */
 class TransaksiFactory extends Factory
 {

@@ -1,9 +1,10 @@
 <?php
 
-use App\Http\Controllers\BookController;
 use App\Http\Controllers\TransaksiController;
-use App\Models\book;
+use App\Http\Controllers\TokoController;
 use Illuminate\Support\Facades\Route;
+use App\Models\toko;
+use App\Models\transaksi;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,19 +17,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/riwayat', [TransaksiController::class, 'db']);
+
+Route::get('/history', [TransaksiController::class, 'db']);
 
 Route::get('/', function () {
-    return view('index',['book'=>book::all()]);
+    return view('index',['data'=>toko::all()]);
 });
 
-Route::get('/sidebar', function () {
-    return view('sidebar');
-});
+Route::get('/create', [TokoController::class, 'store'])->name('store');
 
-Route::get('/update', function () {
-    return view('update');
-});
-
-Route::get('/create',[BookController::class, 'store'])->middleware('guest')->name('store');
-Route::delete('/books/{id}', [BookController::class, 'destroy'])->name('destroy');
+Route::resource('toko',TokoController::class);
+Route::resource('transaksi',TransaksiController::class);

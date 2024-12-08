@@ -1,59 +1,54 @@
 @include('sidebar')
 
 <main class="ml-64 p-6">
-    <div class="m-5 space-y-5">
-        <h1 class="font-medium text-2xl">Daftar List Buku</h1>
-        <div class="">
-            <button type="button" data-modal-target="tambah-buku-form" data-modal-toggle="tambah-buku-form"
-                class="bg-teal-300 font-medium border rounded-lg p-2 hover:text-white">Tambah
-                Buku</button>
-        </div>
+    <div class="container mx-auto py-6">
+        <button type="button" data-modal-target="tambah-buku-form" data-modal-toggle="tambah-buku-form"
+        class="bg-teal-300 font-medium border rounded-lg p-2 hover:text-white">Tambah
+        Buku</button>
 
         @include('create')
 
-        <div>
-            <div class="p-2 rounded-t-lg bg-teal-300">
-                <h1 class="text-2xl">Buku</h1>
-            </div>
-            <div class="border rounded-b-md">
-                <table class="table-auto w-full text-md">
-                    <thead class="uppercase bg-slate-100">
-                        <tr class="border">
-                            <th class="p-3 border-r-2">No</th>
-                            <th class="p-3 border-r-2">Cover Buku</th>
-                            <th class="p-3 border-r-2">Judul</th>
-                            <th class="p-3 border-r-2">Penulis</th>
-                            <th class="p-3 border-r-2">Harga</th>
-                            <th class="p-3 border-r-2">Deskripsi</th>
-                            <th class="p-3 border-r-2">Action</th>
-                        </tr>
-                    </thead>
-                    <tbody class="">
-                        @foreach ($book as $items)
-                            <tr class="border">
-                                <td class="p-3 border-r-2">{{ $items->id }}</td>
-                                <td class="p-3 border-r-2"><img class="size-8" src="img/{{ $items->img }}"
-                                        alt=""></td>
-                                <td class="p-3 border-r-2">{{ $items->judul }}</td>
-                                <td class="p-3 border-r-2">{{ $items->penulis }}</td>
-                                <td class="p-3 border-r-2">{{ $items->harga }}</td>
-                                <td class="p-3 border-r-2">{{ $items->deskripsi }}</td>
-                                <td class="p-3 flex justify-center">
-                                    <button
-                                        class="w-20 bg-blue-600 text-white rounded-lg p-2 m-2 hover:bg-blue-800">Edit</button>
-                                    <form action="{{ route('destroy', $items->id) }}" method="POST">
-                                        @method('DELETE')
-                                        @csrf
-                                        <button type="submit"
-                                            class="w-20 bg-red-600 text-white rounded-lg p-2 m-2 hover:bg-red-800" data-confirm-delete="true">Delete</button>
-                                    </form>
-                                </td>
-                            </tr>
-                        @endforeach
-                    </tbody>
-                </table>
-            </div>
-        </div>
+        <h2 class="text-2xl font-bold mt-4">List Buku</h2>
+        <table class="table-auto w-full border-collapse border border-gray-300 mt-4">
+            <thead class="bg-gray-200 uppercase">
+                <tr>
+                    <th class="border border-gray-300 px-4 py-2">judul</th>
+                    <th class="border border-gray-300 px-4 py-2">penulis</th>
+                    <th class="border border-gray-300 px-4 py-2">harga</th>
+                    <th class="border border-gray-300 px-4 py-2">deskripsi</th>
+                    <th class="border border-gray-300 px-4 py-2">actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($data as $items)
+                <tr class="text-center odd:bg-white even:bg-gray-100">
+                    <td class="border border-gray-300 px-4 py-2">{{ $items->judul }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $items->penulis }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $items->harga }}</td>
+                    <td class="border border-gray-300 px-4 py-2">{{ $items->deskripsi }}</td>
+                    <td class="border border-gray-300 px-4 py-2 space-x-2">
+                        <a href="/transaksi/{{ $items->id }}/edit" 
+                           class="bg-green-500 text-white py-1 px-2 rounded hover:bg-green-600">
+                            Beli
+                        </a>
+                        <a href="/toko/{{ $items->id }}/edit" 
+                           class="bg-yellow-500 text-white py-1 px-2 rounded hover:bg-yellow-600">
+                            Edit
+                        </a>
+                        <form method="POST" action="/toko/{{ $items->id }}" class="inline">
+                            @method('delete')
+                            @csrf
+                            <button type="submit" 
+                                    class="bg-red-500 text-white py-1 px-2 rounded hover:bg-red-600">
+                                Delete
+                            </button>
+                        </form>
+                    </td>
+                </tr>
+                @endforeach
+            </tbody>
+        </table>
     </div>
     @include('sweetalert::alert')
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </main>

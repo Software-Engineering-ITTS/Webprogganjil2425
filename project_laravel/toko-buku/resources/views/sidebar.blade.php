@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -33,21 +32,7 @@
                     </div>
                 </li>
                 <li>
-                    <a href=""
-                        class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">
-                        <svg class="h-8 w-8 text-teal-400 group-hover:text-white" width="24" height="24" viewBox="0 0 24 24"
-                            stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                            stroke-linejoin="round">
-                            <path stroke="none" d="M0 0h24v24H0z" />
-                            <polyline points="12 4 4 8 12 12 20 8 12 4" />
-                            <polyline points="4 12 12 16 20 12" />
-                            <polyline points="4 16 12 20 20 16" />
-                        </svg>
-                        <span class="ms-2 text-teal-400 group-hover:text-white">Kategori</span>
-                    </a>
-                </li>
-                <li>
-                    <a href=""
+                    <a href="{{ url('/') }}"
                         class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">
                         <svg class="h-8 w-8 text-teal-400 group-hover:text-white" viewBox="0 0 24 24" fill="none"
                             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
@@ -58,7 +43,7 @@
                     </a>
                 </li>
                 <li>
-                    <a href="{{route('history')}}"
+                    <a href="{{ url('history') }}"
                         class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">
                         <svg class="h-8 w-8 text-teal-400 group-hover:text-white" width="24" height="24"
                             viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"
@@ -69,24 +54,6 @@
                         </svg>
                         <span class="ms-2 text-teal-400 group-hover:text-white">History Transaksi</span>
                     </a>
-                </li>
-                <li>
-                    <form method="POST" action="">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                            class="px-3 py-1 w-full text-sm bg-white flex border rounded-lg items-center justify-center">
-                            <svg class="h-8 w-8 text-teal-400" width="24" height="24" viewBox="0 0 24 24"
-                                stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                                stroke-linejoin="round">
-                                <path stroke="none" d="M0 0h24v24H0z" />
-                                <path
-                                    d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" />
-                                <path d="M7 12h14l-3 -3m0 6l3 -3" />
-                            </svg>
-                            <span class="ms-2 text-teal-400">Logout</span>
-                        </button>
-                    </form>
                 </li>
             </ul>
         </div>

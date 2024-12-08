@@ -4,7 +4,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    @vite(['resources/css/app.css', 'resources/js/app.js'])
     @vite('resources/css/app.css')
 </head>
 
@@ -27,13 +26,8 @@
                 </button>
             </div>
             <div class="p-5 bg-white w-96">
-                <form action="{{route('store')}}" enctype="multipart/form-data">
+                <form action="{{route('store')}}"
                     @csrf
-                    <div class="mb-4">
-                        <label for="img" class="block mb-2 text-sm font-medium">Cover Buku</label>
-                        <input type="file" accept=".png, .jpg, .jpeg" name="img" id="img"
-                            class="border text-sm rounded-lg w-full">
-                    </div>
                     <div class="mb-4">
                         <label for="judul" class="block mb-2 text-sm font-medium">Judul</label>
                         <input type="text" name="judul" id="judul" class="border text-sm rounded-lg w-full"
@@ -67,6 +61,7 @@
         </div>
     </div>
     @include('sweetalert::alert')
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 </body>
 
 </html>
