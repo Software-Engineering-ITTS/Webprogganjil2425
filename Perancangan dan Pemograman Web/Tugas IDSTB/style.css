@@ -1,0 +1,277 @@
+*{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+  
+  
+  /*Button-certify*/
+  #button-certify{
+      background-color: rgb(213, 54, 54); 
+      padding-inline: 40px;
+      width: 165px;
+      height: 50px;
+      text-align:left;
+      font-size: 13px;
+      border-radius: 10px;
+      border-color: black;
+  
+  }
+  
+  /*Dropdown Navbar*/
+  .dropdown:hover .dropdown-menu {
+      display: block;
+      animation: slide-down 0.3s ease-in-out;
+    }
+  
+    .dropdown-menu a {
+      color: rgb(25, 22, 225);
+      text-decoration: none;
+      text-decoration-line: underline;
+    }
+  
+    .dropdown-menu a:hover {
+      color: rgb(225, 8, 8);
+    }
+    
+    #navbarNavDropdown{
+      font-size: 18px;
+    }
+  
+    /*icon sosmed*/
+    #icon-sosmed {
+      padding-right: 33px;
+      font-size: 23px;
+    }
+  
+    /*konten selamat datang*/
+    #konten-welcome h1 {
+      margin-top: 90px;
+      font-size: 50px;
+    }
+  
+    /*Button hubungi kami*/
+    #button-hubungi {
+      background-color: rgb(27, 122, 211);
+      color: white;
+      border-radius: 30px;
+      padding: 13px;
+      padding-inline: 40px;
+      border-color: rgb(27, 122, 211);
+    }
+  
+    /*Carousel*/
+    .carousel-container {
+      max-width: 100%;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+  }
+  
+  .carousel-inner {
+      overflow: hidden;
+      margin-bottom: 40px; /* Memberi ruang untuk indicators */
+  }
+  
+  .carousel-item {
+      height: auto;
+  }
+  
+  /* Styling untuk grid gambar */
+  .image-grid {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+  }
+  
+  .image-grid img {
+      width: 500px; 
+      height: auto; 
+      object-fit: cover;
+  }
+  
+  /* Styling untuk indicators */
+  .carousel-indicators {
+      position: absolute;
+      bottom: -30px;
+      left: 50%;
+      transform: translateX(-50%);
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 10px;
+  }
+  
+  /* Responsive styling */
+  @media (max-width: 1200px) {
+      .image-grid img {
+          width: 300px;
+          height: 200px;
+      }
+  }
+  
+  @media (max-width: 992px) {
+      .image-grid {
+          flex-wrap: wrap;
+      }
+      
+      .image-grid img {
+          width: 45%;
+          height: 200px;
+      }
+  }
+  
+  @media (max-width: 576px) {
+      .image-grid img {
+          width: 100%;
+          height: 200px;
+      }
+  }  
+  
+  /*Tentang Kami*/
+  #button-pelajari {
+    background-color: rgb(27, 122, 211);
+    color: white;
+    border-radius: 30px;
+    padding: 13px;
+    padding-inline: 40px;
+    border-color: rgb(27, 122, 211);
+    
+  }
+  
+  /*Section-News*/
+  .news-events {
+    background-color:rgb(53, 119, 205);
+  }
+  
+  .card {
+    border: 1px solid #eee;
+  }
+  
+  .card-title {
+    font-size: 0.9rem;
+    line-height: 1.3;
+  }
+  
+  .news-list img {
+    width: 100%;
+    height: 100px;
+    object-fit: cover;
+  }
+  
+  .card {
+    transition: transform 0.2s;
+    border: none;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+  }
+  
+  .product-section {
+    background-color: #fff;
+  }
+  
+  .product-list {
+    background-color: #f8f9fa;
+  }
+  
+  .card {
+    border: none;
+    background-color: #fff;
+    transition: transform 0.2s;
+  }
+  
+  .card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  }
+  
+  /*Section-Product*/
+  .stars {
+    color: #ffd700;
+  }
+  
+  .badge {
+    padding: 0.5em 1em;
+    font-weight: normal;
+  }
+  
+  .btn-success {
+    background-color: #116530;
+    border-color: #116530;
+  }
+  
+  .btn-success:hover {
+    background-color: #0d4f25;
+    border-color: #0d4f25;
+  }
+  
+  .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .card-text.fw-bold {
+    color: #333;
+  }
+  
+  .img-fluid {
+    max-height: 200px;
+    object-fit: contain;
+  }
+  
+  @media (max-width: 768px) {
+    .col-md-3 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    
+    .img-fluid {
+      max-height: 150px;
+    }
+  }
+  
+  .image-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; 
+  }
+  
+  .collab-img {
+    width: calc(100% / 3 - 20px); 
+    height: auto;
+    object-fit: cover; 
+  }
+  
+  
+  .social-icons a {
+    margin-right: 15px;
+    font-size: 20px;
+    color: #4267B2;
+    text-decoration: none;
+  }
+  .footer-links {
+    list-style: none;
+    padding-left: 0;
+  }
+  .footer-links li {
+    margin-bottom: 10px;
+  }
+  .footer-links a {
+    color: #666;
+    text-decoration: none;
+  }
+  .copyright {
+    background-color: #0a1428;
+    color: white;
+    padding: 15px 0;
+    text-align: center;
+  }
