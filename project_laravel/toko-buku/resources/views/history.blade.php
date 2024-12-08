@@ -6,19 +6,19 @@
         <table class="table-auto w-full border-collapse border border-gray-300 mt-4">
             <thead class="bg-gray-200 uppercase">
                 <tr>
-                    <th class="border border-gray-300 px-4 py-2">judul</th>
-                    <th class="border border-gray-300 px-4 py-2">nama customer</th>
-                    <th class="border border-gray-300 px-4 py-2">nomor telepon</th>
-                    <th class="border border-gray-300 px-4 py-2">status</th>
+                    <th class="border p-4">judul</th>
+                    <th class="border p-4">nama customer</th>
+                    <th class="border p-4">nomor telepon</th>
+                    <th class="border p-4">status</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($data as $items)
                 <tr class="text-center odd:bg-white even:bg-gray-100">
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->judul }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->nama }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->telepon }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->status }}</td>
+                    <td class="border p-4">{{ $items->judul }}</td>
+                    <td class="border p-4">{{ $items->nama }}</td>
+                    <td class="border p-4">{{ $items->telepon }}</td>
+                    <td class="border p-4">{{ $items->status }}</td>
                     </td>
                 </tr>
                 @endforeach

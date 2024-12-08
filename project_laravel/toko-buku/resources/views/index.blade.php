@@ -12,27 +12,27 @@
         <table class="table-auto w-full border-collapse border border-gray-300 mt-4">
             <thead class="bg-gray-200 uppercase">
                 <tr>
-                    <th class="border border-gray-300 px-4 py-2">judul</th>
-                    <th class="border border-gray-300 px-4 py-2">penulis</th>
-                    <th class="border border-gray-300 px-4 py-2">harga</th>
-                    <th class="border border-gray-300 px-4 py-2">deskripsi</th>
-                    <th class="border border-gray-300 px-4 py-2">actions</th>
+                    <th class="border border-r-gray-300 p-4">judul</th>
+                    <th class="border border-r-gray-300 p-4">penulis</th>
+                    <th class="border border-r-gray-300 p-4">harga</th>
+                    <th class="border border-r-gray-300 p-4">deskripsi</th>
+                    <th class="border border-r-gray-300 p-4">actions</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($data as $items)
                 <tr class="text-center odd:bg-white even:bg-gray-100">
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->judul }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->penulis }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->harga }}</td>
-                    <td class="border border-gray-300 px-4 py-2">{{ $items->deskripsi }}</td>
-                    <td class="border border-gray-300 px-4 py-2 space-x-2">
+                    <td class="border p-4">{{ $items->judul }}</td>
+                    <td class="border p-4">{{ $items->penulis }}</td>
+                    <td class="border p-4">{{ $items->harga }}</td>
+                    <td class="border p-4">{{ $items->deskripsi }}</td>
+                    <td class="text-center border p-4 space-x-2">
                         <a href="/transaksi/{{ $items->id }}/edit" 
-                           class="bg-green-500 text-white py-1 px-2 rounded hover:bg-green-600">
+                           class="bg-lime-500 text-white py-1 px-2 rounded hover:bg-lime-600">
                             Beli
                         </a>
                         <a href="/toko/{{ $items->id }}/edit" 
-                           class="bg-yellow-500 text-white py-1 px-2 rounded hover:bg-yellow-600">
+                           class="bg-blue-500 text-white py-1 px-2 rounded hover:bg-blue-700">
                             Edit
                         </a>
                         <form method="POST" action="/toko/{{ $items->id }}" class="inline">

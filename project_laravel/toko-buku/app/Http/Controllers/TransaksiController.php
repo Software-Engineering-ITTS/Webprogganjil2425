@@ -9,13 +9,12 @@ use App\Models\toko;
 
 class TransaksiController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         return view('index');
     }
 
-    public function db()
-    {
+    public function db() {
+
         $posts = DB::table('transaksis')
             ->join('tokos', 'transaksis.toko_id', '=', 'tokos.id')
             ->select(
@@ -24,14 +23,15 @@ class TransaksiController extends Controller
                 'transaksis.Nama as Nama',
                 'transaksis.telepon as NomorTelepon', 
                 'transaksis.Alamat as Alamat', 
-                'transaksis.Status as Status' )
+                'transaksis.Status as Status' 
+                )
             ->get();
     
         return view('history', ['data' => $posts]);
     }
     
-    public function store(Request $request)
-    {
+    public function store(Request $request) {
+
         $val_data = $request->validate([
             "nama" => "required",
             "telepon" => "required",
@@ -41,18 +41,20 @@ class TransaksiController extends Controller
         ]);
         Transaksi::create($val_data);
 
-        return redirect('/');
+        return redirect('/')->with('success', 'Pembelian Berhasil');
     }
-    public function edit($id)
-    {
+
+    public function edit($id) {
+
         $data = toko::where('id', $id)->get();
         if ($data->isEmpty()) {
             return redirect('/')->with('error', 'Data tidak ditemukan');
         }
         return view('customer', ['data' => $data]);
     }
-    public function update(Request $request, Transaksi $transaksi)
-    {
+
+    public function update(Request $request, Transaksi $transaksi) {
+
         $val_data = $request->validate([
             "nama" => "required",
             "telepon" => "required",
@@ -63,8 +65,9 @@ class TransaksiController extends Controller
         $transaksi->update($val_data);
         return redirect('/');
     }
-    public function destroy(Transaksi $transaksi)
-    {
+
+    public function destroy(Transaksi $transaksi) {
+
         Transaksi::destroy($transaksi->idTransaksi);
         return redirect('/');
     }

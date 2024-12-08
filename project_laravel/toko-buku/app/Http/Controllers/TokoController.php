@@ -7,14 +7,13 @@ use App\Models\toko;
 
 class TokoController extends Controller
 {
-    public function index()
-    {
+    public function index() {
         $tokos = toko::latest()->get();
 
         return view('index', compact('toko'));
     }
-    public function store(Request $request)
-    {
+
+    public function store(Request $request) {
         $val_data = $request->validate([
             "judul" => "required",
             "penulis" => "required",
@@ -25,14 +24,14 @@ class TokoController extends Controller
 
         return redirect('/')->with('success', 'Buku berhasil ditambahkan');
     }
-    public function edit(toko $toko)
-    {
+
+    public function edit(toko $toko) {
         return view('Update', [
             'data' => $toko
         ]);
     }
-    public function update(Request $request, toko $toko)
-    {
+
+    public function update(Request $request, toko $toko) {
         $val_data = $request->validate([
             "judul" => "required",
             "penulis" => "required",
@@ -43,8 +42,8 @@ class TokoController extends Controller
         $toko->update($val_data);
         return redirect('/')->with('success', 'Buku berhasil diupdate');
     }
-    public function destroy(toko $toko)
-    {
+
+    public function destroy(toko $toko) {
         toko::destroy($toko->id);
         return redirect('/')->with('success', 'Buku berhasil dihapus');
     }

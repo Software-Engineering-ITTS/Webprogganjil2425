@@ -53,7 +53,7 @@
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="4" class="border text-sm rounded-lg w-full"
                             placeholder="Sinopsi atau Deskripsi sebuah buku"></textarea>
                     </div>
-                    <button type="submit" class="p-2 font-medium text-base border rounded-lg bg-teal-300 items-center">
+                    <button type="submit" class="p-2 font-medium text-base border rounded-lg bg-teal-300 items-center hover:text-white">
                         Tambah Buku
                     </button>
                 </form>
