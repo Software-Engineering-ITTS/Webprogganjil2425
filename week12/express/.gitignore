@@ -1,0 +1,3 @@
+# ketika kita bikin repo di github nama file/folder yang ditulis di gitignore maka tidak akan ter push
+.env 
+node_modules
