@@ -18,7 +18,8 @@ mongoose
     app.listen(PORT, () => {
       console.log(`Server berjalan di port ${PORT}`);
     });
-  }).catch((e) => console.log(e));
+  })
+  .catch((e) => console.log(e));
 
 app.get("/buku", async (req, res) => {
   try {
@@ -34,35 +35,45 @@ app.post("/buku", async (req, res) => {
     const buku = await Buku.create(req.body);
     res.status(200).json({ message: "Post Success", buku });
   } catch (error) {
-    console.log(error)
+    console.log(error);
     res.status(500).json({ message: "Gagal" });
   }
 });
 
 app.put("/buku/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const buku = await Buku.findByIdAndUpdate(id, req.body);
-      if (!buku) {
-        res.status(404).json({ message: "Data Not Found" });
-      }
-      const updateBuku = await Buku.findById(id);
-      res.status(200).json({ message: "Update Success", updateBuku });
-    } catch (error) {
-      console.log(error);
-      res.status(500).json({ message: "Fetch Failed" });
+  try {
+    const { id } = req.params;
+    const buku = await Buku.findByIdAndUpdate(id, req.body);
+    if (!buku) {
+      res.status(404).json({ message: "Data Not Found" });
     }
-  });
+    const updateBuku = await Buku.findById(id);
+    res.status(200).json({ message: "Update Success", updateBuku });
+  } catch (error) {
+    console.log(error);
+    res.status(500).json({ message: "Fetch Failed" });
+  }
+});
 
-  app.delete("/buku/:id", async (req, res) => {
-    try {
-      const { id } = req.params;
-      const buku = await Buku.findByIdAndDelete(id, req.body);
-      if (!buku) {
-        res.status(404).json({ message: "Data Not Found" });
-      }
-      res.status(200).json({ message: "Delete Success"});
-    } catch (error) {
-      res.status(500).json({ message: "Fetch Failed" });
+app.delete("/buku/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const buku = await Buku.findByIdAndDelete(id, req.body);
+    if (!buku) {
+      res.status(404).json({ message: "Data Not Found" });
     }
-  });
+    res.status(200).json({ message: "Delete Success" });
+  } catch (error) {
+    res.status(500).json({ message: "Fetch Failed" });
+  }
+});
+
+app.get("/buku/:id", async (req, res) => {
+  try {
+    const { id } = req.params;
+    const Books = await Buku.findById(id);
+    res.status(200).json({ message: "Detail buku : ", Books });
+  } catch (e) {
+    res.status(500).json({ message: "Fetch gagal" });
+  }
+});
