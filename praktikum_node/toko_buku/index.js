@@ -68,3 +68,15 @@ app.delete("/buku/:id", async(req, res)=>{
         res.status(500).json(`Fetch Failed :  ${e}`);
     }
 });
+app.get("/buku/:id", async(req, res)=>{
+    try{
+        const {id} = req.params
+        const buku = await Buku.findById(id);
+        if(!buku){
+            return res.status(404).json("Data Not Found")
+        }
+        res.status(200).json(buku);
+    }catch(e){
+        res.status(500).json(`Fetch Failed :  ${e}`);
+    }
+});
