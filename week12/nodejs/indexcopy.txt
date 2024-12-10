@@ -1,0 +1,8 @@
+app.get("/buku", async(req, res) => {
+    try {
+        const Books = await Buku.find();
+        res.status(200).json(Books);
+    } catch (e) {
+        res.status(500).json({ message: "Fetch Failed" });
+    }
+});
