@@ -1,0 +1,3 @@
+.env
+node_modules
+# fungsi dari gitignore saat push github, nama file disini ga akan ke push
