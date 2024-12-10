@@ -76,5 +76,4 @@ app.delete("/bukuku/:id", async (req, res) => {
   }
 });
 
-// kenapa menggunakan async soalnya javascript adalah
-// single thread (initnya jalan lurus)
+
