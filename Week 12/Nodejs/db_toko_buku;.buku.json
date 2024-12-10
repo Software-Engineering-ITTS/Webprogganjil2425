@@ -1,0 +1,32 @@
+[{
+  "_id": {
+    "$oid": "67583a60b6d04b6b451f245c"
+  },
+  "title": "buku tutorial coding",
+  "writer": "ziah",
+  "genre": "software engineering",
+  "price": 23000,
+  "createdAt": {
+    "$date": "2024-12-10T12:56:00.119Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-10T12:56:45.435Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "67583edb50042dd49dd5db1f"
+  },
+  "title": "buku dongeng",
+  "writer": "dita",
+  "genre": "Horror",
+  "price": 18000,
+  "createdAt": {
+    "$date": "2024-12-10T13:15:07.798Z"
+  },
+  "updatedAt": {
+    "$date": "2024-12-10T13:15:07.798Z"
+  },
+  "__v": 0
+}]
