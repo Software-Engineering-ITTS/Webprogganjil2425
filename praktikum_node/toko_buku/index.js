@@ -40,3 +40,31 @@ app.post("/buku", async(req, res)=>{
         res.status(500).json(`Fetch Failed :  ${e}`);
     }
 });
+
+app.put("/buku/:id", async(req, res)=>{
+    try{
+        const {id} = req.params
+        const buku = await Buku.findByIdAndUpdate(id, req.body);
+        if(!buku){
+            return res.status(404).json("Data Not Found")
+        }
+        const updateBuku = await Buku.findById(id);
+
+        res.status(200).json("Update Succss");
+    }catch(e){
+        res.status(500).json(`Fetch Failed :  ${e}`);
+    }
+});
+
+app.delete("/buku/:id", async(req, res)=>{
+    try{
+        const {id} = req.params
+        const buku = await Buku.findByIdAndDelete(id);
+        if(!buku){
+            return res.status(404).json("Data Not Found")
+        }
+        res.status(200).json("Delete Succss");
+    }catch(e){
+        res.status(500).json(`Fetch Failed :  ${e}`);
+    }
+});
