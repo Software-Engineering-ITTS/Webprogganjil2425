@@ -13,6 +13,7 @@
     </header>
     <main>
         {{--  --}}
+        <h1 class="bg-slate-800">Aircraft Store</h1>
     </main>
     <footer>
         {{--  --}}
