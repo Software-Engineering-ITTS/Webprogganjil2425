@@ -7,13 +7,15 @@
     @vite('resources/css/app.css')
 </head>
 
-<body>
+<body class="bg-black text-white ">
     <header>
         {{--  --}}
     </header>
     <main>
-        {{--  --}}
-        <h1 class="bg-slate-800">Aircraft Store</h1>
+        <div class="mt-64">
+            <h1 class="text-8xl text-center">Aircraft Store</h1>
+            <h3 class="text-3xl text-center">Best Place to Buy Your Aircraft</h3>
+        </div>
     </main>
     <footer>
         {{--  --}}
