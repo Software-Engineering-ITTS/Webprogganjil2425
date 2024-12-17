@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Pemesanan Online</title>
+    <link rel="stylesheet" href="sistemPO.css">
+</head>
+<body>
+    <div class="wrapper">
+        <form id="pemesananForm" onsubmit="return validateForm()">
+            <h1>ORDER</h1>
+            
+            <!-- Input Teks: Nama Lengkap -->
+            <div class="input-box">
+                <h2>Nama</h2>
+                <input type="text" placeholder="Nama Lengkap" required>
+            </div>
+
+            <!-- Input Teks Baru: Email -->
+            <div class="input-box">
+                <h2>Email</h2>
+                <input type="text" placeholder="Email" required>
+            </div>
+
+            <!-- Input Password: untuk kata sandi -->
+            <div class="input-box">
+                <h2>Password</h2>
+                <input type="password" placeholder="Password" required>
+            </div>
+
+            <!-- Input Teks: Alamat -->
+            <div class="input-box">
+                <h2>Alamat</h2>
+                <input type="text" placeholder="Alamat" required>
+            </div>
+
+            <!-- Input Teks: No Telepon -->
+            <div class="input-box">
+                <h2>No Telp</h2>
+                <input type="text" placeholder="No Telepon" required>
+            </div>
+
+            <!-- Radio Buttons: Ukuran Kertas -->
+            <h2>Ukuran Kertas</h2>
+            <div class="radio-group">
+                <input type="radio" id="a4" name="paper-size" value="a4">
+                <label for="a4">A4</label><br>
+                <input type="radio" id="f4" name="paper-size" value="f4">
+                <label for="f4">F4</label>
+            </div>
+
+            <!-- Checkboxes: Jenis Kertas -->
+            <h2>Jenis Kertas</h2>
+            <div class="jenis-kertas">
+                <label><input type="checkbox"> HVS</label>
+                <label><input type="checkbox"> Linen</label>
+                <label><input type="checkbox"> BC</label>
+            </div>
+
+            <!-- Textarea: Keterangan Tambahan -->
+            <div class="input-box">
+                <h2>Keterangan Tambahan</h2>
+                <textarea id="keterangan" name="keterangan" rows="4" cols="50" placeholder="Tambahkan keterangan tambahan..."></textarea>
+            </div>
+
+            <!-- Dropdown (Select): Jenis Pengiriman -->
+            <h2>Pengiriman</h2>
+            <label for="pengiriman">Jenis Pengiriman:</label>
+            <select name="pengiriman" id="pengiriman">
+                <option value="JNE">JNE</option>
+                <option value="POSIndonesia">Pos Indonesia</option>
+                <option value="GrabExpress">Grab Express</option>
+                <option value="GoSend">Go Send</option>
+            </select>
+
+            <!-- Button Section: Submit dan Reset -->
+            <div class="button-container">
+                <button type="submit" class="btn">Kirim</button>
+                <button type="reset" class="btn-reset">Reset</button>
+            </div>
+        </form>
+    </div>
+</body>
+<script src = "sistemPO.js"></script>
+</html>

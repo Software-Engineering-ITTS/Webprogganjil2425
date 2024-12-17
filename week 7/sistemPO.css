@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://as2.ftcdn.net/v2/jpg/01/80/65/83/1000_F_180658303_1Oi0eh1fGwjTb3C6lpF6CoA55UcD1aPs.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(15px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    color: white;
+}
+
+.wrapper h1 {
+    text-align: center;
+    font-size: 32px;
+    color: #4c4e52;
+    margin-bottom: 20px;
+}
+
+.wrapper h2 {
+    color: #4c4e52;
+    margin: 15px 0 5px;
+}
+
+.input-box {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box input, .jenis-kertas label, textarea, select {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+textarea {
+    resize: none;
+}
+
+.radio-group, .jenis-kertas {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-group input[type="radio"] {
+    margin: 0 5px 0 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.btn {
+    width: 100%;
+    padding: 10px;
+    background-color: #4c4e52;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+    background-color: #3a3b3d;
+}
+
+.btn-reset {
+    width: 100%;
+    padding: 10px;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.btn-reset:hover {
+    background-color: #d32f2f;
+}
+
