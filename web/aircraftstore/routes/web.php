@@ -23,6 +23,10 @@ Route::get('/product', function () {
     return view('product');
 })->middleware(['auth', 'verified'])->name('product');
 
+Route::get('/customer', function () {
+    return view('customer');
+})->middleware(['auth', 'verified'])->name('customer');
+
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
