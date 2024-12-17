@@ -13,28 +13,25 @@
     </header>
     <main>
         <div class="mt-64">
-            <h1 class="text-8xl text-center">Aircraft Store</h1>
-            <h3 class="text-3xl text-center">Best Place to Buy Your Aircraft</h3>
+            <h1 class="text-8xl text-center"> Aircraft Store</h1>
+            <h3 class="text-3xl text-center"> Best Place to Buy Your Aircraft</h3>
         </div>
     </main>
-    {{-- bawaan breeze --}}
-    <nav class="flex justify-center">
-        {{-- jika pengguna sudah login maka akan langsung ke dashboard  --}}
+    {{--  breeze default --}}
+    <nav class="flex justify-center mt-7">
+        {{-- if has been login directly to dashboard --}}
         @auth
-            <a href="{{ url('/dashboard') }}"
-                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring">
+            <a href="{{ url('/dashboard') }}" class="bg-gray-700 p-2 rounded-lg mx-3 hover:bg-gray-500">
                 Dashboard
             </a>
-            {{-- jika belum harus login atau register --}}
+            {{-- if not, it should be login or register first --}}
         @else
-            <a href="{{ route('login') }}"
-                class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
-                Log in
+            <a href="{{ route('login') }}" class="bg-gray-700 p-2 rounded-lg mx-3 hover:bg-gray-500 font-semibold">
+                Login
             </a>
 
             @if (Route::has('register'))
-                <a href="{{ route('register') }}"
-                    class="rounded-md px-3 py-2 text-black ring-1 ring-transparent transition hover:text-black/70 focus:outline-none focus-visible:ring-[#FF2D20] dark:text-white dark:hover:text-white/80 dark:focus-visible:ring-white">
+                <a href="{{ route('register') }}" class="bg-gray-700 p-2 rounded-lg mx-3 hover:bg-gray-500 font-semibold">
                     Register
                 </a>
             @endif
