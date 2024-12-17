@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @vite('resources/css/app.css')
     <title>Aircraft Store</title>
-    <link href="{{ asset('img/logoheadtitle.png') }}">
+    <link rel="icon" href="{{ asset('img/logoheadtitle.png') }}">
 </head>
 
 <body class="bg-black text-white ">
