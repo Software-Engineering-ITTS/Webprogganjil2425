@@ -13,7 +13,12 @@ return new class extends Migration
     {
         Schema::create('transaksi_lists', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('transaksi_id')->constrained('transaksis')->onDelete('cascade'); // FK to transaksis
+            $table->foreignId('barang_id')->constrained('barangs')->onDelete('cascade'); // FK to barangs
+            $table->integer('quantity');
+            $table->bigInteger('subtotal');
             $table->timestamps();
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
     }
 

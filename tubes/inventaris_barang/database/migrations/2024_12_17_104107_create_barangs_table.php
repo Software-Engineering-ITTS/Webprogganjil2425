@@ -13,6 +13,15 @@ return new class extends Migration
     {
         Schema::create('barangs', function (Blueprint $table) {
             $table->id();
+            $table->string('kode_barang')->unique();
+            $table->string('nama_barang');
+            $table->string('kategori_barang');
+            $table->date('tanggal_diterima');
+            $table->date('tanggal_expired')->nullable();
+            $table->integer('stock');
+            $table->bigInteger('harga');
+            $table->string('catatan');
+            $table->softDeletes($column = 'deleted_at', $precision = 0);
             $table->timestamps();
         });
     }
