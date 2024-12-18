@@ -51,7 +51,9 @@
             </li>
         </ul>
         </p>
-
+        <div class="flex justify-center my-9">
+            <button class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Get Started</button>
+        </div>
     </div>
 
 </x-app-layout>
