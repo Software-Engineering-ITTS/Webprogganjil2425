@@ -38,6 +38,9 @@
                 <label for="  postal_code" class="block">Postal Code</label>
                 <input type="text" name="  postal_code" id="  postal_code" class="rounded-md w-full text-black">
             </div>
+            <div class="flex justify-center">
+                <button type="submit" class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Submit</button>
+            </div>
         </form>
     </div>
 
