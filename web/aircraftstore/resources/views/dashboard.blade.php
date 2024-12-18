@@ -4,7 +4,7 @@
             {{-- header --}}
             <div class="text-white">
                 <h1 class="text-3xl text-center my-3">Welcome to</h1>
-                <h1 class="text-5xl text-center my-3">Airforce Store</h1>
+                <h1 class="text-5xl text-center my-3"> <strong>Airforce</strong> Store</h1>
             </div>
         </div>
     </x-slot>
