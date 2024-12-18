@@ -8,7 +8,7 @@
         </div>
     </x-slot>
 
-    <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl">
+    <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl mb-11">
         {{-- all product container --}}
         <div class="grid grid-cols-3">
             {{-- container each product --}}

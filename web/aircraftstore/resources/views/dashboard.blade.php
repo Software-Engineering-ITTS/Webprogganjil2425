@@ -9,7 +9,7 @@
         </div>
     </x-slot>
     .
-    <div class="container mx-auto w-[799px] bg-gray-900 text-white p-9 rounded-xl m-11 mt-0">
+    <div class="container mx-auto w-[799px] bg-gray-900 text-white p-9 rounded-xl mb-11 mt-0">
         <h1 class="text-xl text-center my-3">Why buy Aircraft in Our Store? </h1>
         <p>
 
