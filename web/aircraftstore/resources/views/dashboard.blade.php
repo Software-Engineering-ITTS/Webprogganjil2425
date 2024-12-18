@@ -2,14 +2,14 @@
     <x-slot name="header">
         <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl">
             {{-- header --}}
-            <div class="text-white my-5">
+            <div class="text-white">
                 <h1 class="text-3xl text-center my-3">Welcome to</h1>
                 <h1 class="text-5xl text-center my-3">Airforce Store</h1>
             </div>
         </div>
     </x-slot>
     .
-    <div class="container mx-auto w-[799px] bg-gray-900 text-white p-9 rounded-xl">
+    <div class="container mx-auto w-[799px] bg-gray-900 text-white p-9 rounded-xl m-11 mt-0">
         <h1 class="text-xl text-center my-3">Why buy Aircraft in Our Store? </h1>
         <p>
 
@@ -51,7 +51,7 @@
             </li>
         </ul>
         </p>
-        <div class="flex justify-center my-9">
+        <div class="flex justify-center mt-9">
             <button class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Get Started</button>
         </div>
     </div>
