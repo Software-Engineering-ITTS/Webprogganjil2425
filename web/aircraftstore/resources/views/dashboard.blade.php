@@ -8,11 +8,12 @@
             </div>
         </div>
     </x-slot>
-    <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl">
-        <h1 class="text-xl text-center">Why buy Aircraft in Our Store? </h1>
+    .
+    <div class="container mx-auto w-[799px] bg-gray-900 text-white p-9 rounded-xl">
+        <h1 class="text-xl text-center my-3">Why buy Aircraft in Our Store? </h1>
         <p>
 
-        <ul class="list-decimal">
+        <ul class="list-decimal text-justify">
             <li>Guaranteed Security and Legality
                 <p>We ensure that all jets sold meet international standards, with complete documentation, guaranteed
                     legality,
