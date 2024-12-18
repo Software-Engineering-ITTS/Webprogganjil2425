@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Invoice extends Model
 {
@@ -13,18 +13,18 @@ class Invoice extends Model
     protected $fillable = [
         'invoice_number',
         'customer_id',
+        'invoice_date',
+        'due_date',
         'total_amount',
         'tax',
         'grand_total',
         'status',
-        'notes',
-        'invoice_date',
-        'due_date'
+        'notes'
     ];
 
-    protected $dates = [
-        'invoice_date',
-        'due_date'
+    protected $casts = [
+        'invoice_date' => 'datetime',
+        'due_date' => 'datetime'
     ];
 
     // Relasi ke Customer

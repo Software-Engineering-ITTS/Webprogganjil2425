@@ -2,9 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Payment extends Model
 {
@@ -20,8 +20,8 @@ class Payment extends Model
         'notes'
     ];
 
-    protected $dates = [
-        'payment_date'
+    protected $casts = [
+        'payment_date' => 'datetime'
     ];
 
     // Relasi ke Invoice

@@ -42,6 +42,7 @@ class CustomerController extends Controller
 
     public function edit(Customer $customer)
     {
+        $customer->load(['invoices.payments', 'invoices.customer']);
         return view('customers.edit', compact('customer'));
     }
 
