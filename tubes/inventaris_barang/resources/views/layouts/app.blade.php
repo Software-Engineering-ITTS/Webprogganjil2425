@@ -13,9 +13,9 @@
 
 <body>
     <div id="app">
-        <div class="main-wrapper dark:white dark:bg-gray-900 h-screen">
+        <div class="main-wrapper dark:white dark:bg-gray-900 h-screen overflow-hidden">
             @include('shared.header')
-            <div class="main-content">
+            <div class="main-content overflow-hidden">
                 @yield('content')
             </div>
 

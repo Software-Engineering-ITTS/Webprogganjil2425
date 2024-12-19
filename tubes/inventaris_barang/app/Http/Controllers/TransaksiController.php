@@ -13,7 +13,19 @@ class TransaksiController extends Controller
      */
     public function index()
     {
-        //
+        $transaksis = Transaksi::whereHas('user', function($query){
+            $query->whereNull('deleted_at'); 
+        })
+        ->with(['transaksiLists' => function ($query) {
+            $query->whereHas('barang', function ($query) {
+                $query->whereNull('deleted_at');
+            });
+        }])
+        ->paginate(6); 
+
+        return view('transaksi.index', [
+            'transaksi' => $transaksis
+        ]);
     }
 
     /**

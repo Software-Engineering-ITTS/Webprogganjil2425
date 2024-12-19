@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="relative h-screen bg-cover bg-center" style="background-image: url('https://cdn.wallpapersafari.com/7/99/D40f97.jpg');">
+<div class="relative h-screen bg-cover bg-center overflow-y-hidden" style="background-image: url('https://cdn.wallpapersafari.com/7/99/D40f97.jpg');">
     <div class="absolute inset-0 bg-black bg-opacity-50"></div>
     <div class="relative z-10 flex justify-center items-center h-full">
         <div class="bg-white dark:bg-gray-800 rounded-lg shadow-lg p-8 w-96 bg-opacity-60 dark:bg-opacity-60">
