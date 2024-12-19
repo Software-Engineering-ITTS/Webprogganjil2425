@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
-
+use App\Http\Controllers\BarangController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,6 +27,10 @@ Route::middleware(['auth'])->group(function () {
 
     // KARYWAN ROUTES
     Route::get('/karyawan', [UserController::class, 'index'])->middleware('admin')->name('karyawan');
+
+    // BARANG ROUTES
+    Route::get('/barang', [BarangController::class, 'index'])->middleware('admin')->name('barang');
+
     // Route::resource('karyawan', UserController::class)->middleware('admin');
     // Route::resource('stock', StockController::class)->middleware('admin');
     // Route::resource('transactions', TransactionController::class);

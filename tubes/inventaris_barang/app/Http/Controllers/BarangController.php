@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreBarangRequest;
 use App\Http\Requests\UpdateBarangRequest;
 use App\Models\Barang;
+use Illuminate\Routing\Controller;
+use App\Models\BarangCategory;
 
 class BarangController extends Controller
 {
@@ -13,7 +15,8 @@ class BarangController extends Controller
      */
     public function index()
     {
-        //
+        $barangs = Barang::active()->with('kategori')->paginate(6);
+        return view('barang.index', compact('barangs'));
     }
 
     /**

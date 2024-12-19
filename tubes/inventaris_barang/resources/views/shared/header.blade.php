@@ -6,7 +6,7 @@
     <nav class="flex space-x-6 items-center">
       @if(Auth::user()->role === 'admin')
       <a href="{{ route('karyawan') }}" class="hover:text-white">Karyawan</a>
-      <a href="#" class="hover:text-white">Pembelian Stock Barang</a>
+      <a href="{{ route('barang')}}" class="hover:text-white">Manajemen Stock Barang</a>
       @endif
     
       <a href="#" class="hover:text-white">Penjualan</a>
