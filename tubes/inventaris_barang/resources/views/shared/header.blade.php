@@ -1,6 +1,6 @@
 <header class="dark:bg-pink-300 text-gray-900 shadow">
   <div class="container mx-auto px-4 py-3 flex justify-between">
-    <a href="#" class="text-lg font-semibold hover:text-white">
+    <a href="{{route('home')}}" class="text-lg font-semibold hover:text-white">
       Inventaris Barang Toko Bu Sudjarmiati
     </a>
     <nav class="flex space-x-6 items-center">
