@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('nama_pelanggan');
             $table->bigInteger('total_transaksi');
+            $table->foreignId('user_id')->constrained('users')->onDelete('cascade'); // FK to users
             $table->timestamps();
             $table->softDeletes($column = 'deleted_at', $precision = 0);
         });
