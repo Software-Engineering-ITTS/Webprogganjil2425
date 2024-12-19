@@ -1,9 +1,14 @@
 <header class="dark:bg-pink-300 text-gray-900 shadow">
   <div class="container mx-auto px-4 py-3 flex justify-between">
-    <a href="#" <h1 class="text-lg text-gray-900 font-semibold hover:text-white">Inventaris Barang Toko Bu Sudjarmiati</h1></a>
+    <a href="#" class="text-lg font-semibold hover:text-white">
+      Inventaris Barang Toko Bu Sudjarmiati
+    </a>
     <nav class="flex space-x-6 items-center">
-      <a href="#" class="hover:text-white">Stock barang</a>
-      <a href="#" class="hover:text-white">Pembelian</a>
+      @if(Auth::user()->role === 'admin')
+      <a href="#" class="hover:text-white">Karyawan</a>
+      <a href="#" class="hover:text-white">Pembelian Stock Barang</a>
+      @endif
+    
       <a href="#" class="hover:text-white">Penjualan</a>
       <form method="POST" action="{{ route('logout') }}" class="">
         @csrf
