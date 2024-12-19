@@ -5,7 +5,7 @@
     </a>
     <nav class="flex space-x-6 items-center">
       @if(Auth::user()->role === 'admin')
-      <a href="#" class="hover:text-white">Karyawan</a>
+      <a href="{{ route('karyawan') }}" class="hover:text-white">Karyawan</a>
       <a href="#" class="hover:text-white">Pembelian Stock Barang</a>
       @endif
     

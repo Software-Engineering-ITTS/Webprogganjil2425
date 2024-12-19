@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 
 /*
@@ -24,6 +25,8 @@ Route::middleware(['auth'])->group(function () {
 
     // TODO ADD PROTECTED ROUTES HERE
 
+    // KARYWAN ROUTES
+    Route::get('/karyawan', [UserController::class, 'index'])->middleware('admin')->name('karyawan');
     // Route::resource('karyawan', UserController::class)->middleware('admin');
     // Route::resource('stock', StockController::class)->middleware('admin');
     // Route::resource('transactions', TransactionController::class);
