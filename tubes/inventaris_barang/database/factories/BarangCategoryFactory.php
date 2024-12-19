@@ -17,7 +17,9 @@ class BarangCategoryFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama_kategori' => $this->faker->words(2, true), // Example: "Makanan Ringan"
+            'created_at' => now(),
+            'updated_at' => now(),
         ];
     }
 }

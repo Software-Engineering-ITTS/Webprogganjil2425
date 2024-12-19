@@ -25,7 +25,7 @@ class DatabaseSeeder extends Seeder
         //     ],
 
 
-
+      
         // );
 
         User::create(
