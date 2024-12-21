@@ -28,7 +28,7 @@ Route::get('/customer', function () {
     return view('customer');
 })->middleware(['auth', 'verified'])->name('customer');
 
-Route::get('/admin', [AdminController::class, 'index']);
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -37,3 +37,4 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__ . '/auth.php';
+require __DIR__ . '/admin-auth.php';
