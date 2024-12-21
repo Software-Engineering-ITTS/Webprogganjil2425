@@ -1,5 +1,9 @@
 <?php
 
+namespace App\Http\Controllers\Admin\Auth;
+
+use App\Http\Controllers\Admin\Auth\RegisteredUserController as AdminRegisteredController;
+
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\LoginController;
@@ -14,7 +18,7 @@ Route::prefix('admin')->middleware('guest:admin')->group(function () {
     Route::post('login', [LoginController::class, 'store']);
 });
 
-Route::middleware('auth:admin')->group(function () {
+Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
     Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 });
