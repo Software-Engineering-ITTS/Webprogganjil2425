@@ -9,11 +9,11 @@ use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\LoginController;
 
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
-    Route::get('register', [RegisteredUserController::class, 'create'])->name('register');
+    Route::get('register', [RegisteredUserController::class, 'create'])->name('admin.register');
 
     Route::post('register', [RegisteredUserController::class, 'store']);
 
-    Route::get('login', [LoginController::class, 'create'])->name('login');
+    Route::get('login', [LoginController::class, 'create'])->name('admin.login');
 
     Route::post('login', [LoginController::class, 'store']);
 });
@@ -24,5 +24,5 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->middleware(['auth', 'verified'])->name('admin.dashboard');
 
-    Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
+    Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 });
