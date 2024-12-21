@@ -20,5 +20,9 @@ Route::prefix('admin')->middleware('guest:admin')->group(function () {
 
 Route::prefix('admin')->middleware('auth:admin')->group(function () {
 
+    Route::get('/admin.dashboard', function () {
+        return view('admin.dashboard');
+    })->middleware(['auth', 'verified'])->name('admin.dashboard');
+
     Route::post('logout', [LoginController::class, 'destroy'])->name('logout');
 });
