@@ -52,7 +52,9 @@
         </ul>
         </p>
         <div class="flex justify-center mt-9">
-            <button class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Get Started</button>
+            <a href="/customer">
+                <button class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Get Started</button>
+            </a>
         </div>
     </div>
 
