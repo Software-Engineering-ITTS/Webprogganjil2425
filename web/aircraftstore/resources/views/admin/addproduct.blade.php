@@ -28,7 +28,7 @@
     <header>
         {{-- Header Content --}}
         <div class="p-3 my-7">
-            <h1 class="text-center text-3xl">Dashboard</h1>
+            <h1 class="text-center text-3xl">Add Product</h1>
         </div>
     </header>
     <main>
