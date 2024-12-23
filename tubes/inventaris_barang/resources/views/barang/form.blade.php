@@ -1,13 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="m-4 ">
+<div class="m-4 overflow-y-hidden">
+    @if(session('success'))
+    <div class="bg-green-500 text-white p-3 rounded mb-4">
+        {{ session('success') }}
+    </div>
+    @endif
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Barang</p>
-    <form class="max-w-sm mx-auto" 
-          action="{{ isset($barang) ? route('barang.update', $barang->id) : route('barang.store') }}" 
-          method="POST" 
-          enctype="multipart/form-data" 
-          id="barangForm">
+    <form class="max-w-sm mx-auto"
+        action="{{ isset($barang) ? route('barang.update') : route('barang.store') }}"
+        method="POST"
+        enctype="multipart/form-data"
+        id="barangForm">
         @csrf
         @if(isset($barang))
         @method('PUT')
@@ -40,6 +45,8 @@
                 placeholder="Masukkan nama barang"
                 required />
         </div>
+
+
 
         <!-- KATEGORI -->
         <div class="mb-5">
@@ -77,17 +84,31 @@
                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5" />
         </div>
 
-        <!-- STOCK -->
-        <div class="mb-5">
-            <label for="stock" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
-            <input
-                type="number"
-                id="stock"
-                name="stock"
-                value="{{ isset($barang) ? $barang->stock : old('stock') }}"
-                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5"
-                placeholder="Masukkan jumlah stock"
-                required />
+
+        <div class="flex space-x-4 mb-5">
+            <div class="flex-1">
+                <label for="stock" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Stock</label>
+                <input
+                    type="number"
+                    id="stock"
+                    name="stock"
+                    value="{{ isset($barang) ? $barang->stock : old('stock') }}"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5"
+                    placeholder="Masukkan jumlah stock"
+                    required />
+            </div>
+
+            <div class="flex-1">
+                <label for="harga" class="block mb-2 text-sm font-medium text-gray-900 dark:text-white">Harga</label>
+                <input
+                    type="number"
+                    id="harga"
+                    name="harga"
+                    value="{{ isset($barang) ? $barang->harga : old('harga') }}"
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg w-full p-2.5"
+                    placeholder="Masukkan harga jual"
+                    required />
+            </div>
         </div>
 
         <!-- CATATAN -->

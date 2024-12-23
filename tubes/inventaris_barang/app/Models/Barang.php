@@ -59,6 +59,12 @@ class Barang extends Model
         return $query->whereNull('deleted_at');
     }
 
+
+    public function getHargaFormattedAttribute()
+    {
+        return number_format($this->harga, 0, ',', '.');
+    }
+
     public function scopeExpired($query)
     {
         return $query->where('tanggal_expired', '<', now());

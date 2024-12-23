@@ -51,6 +51,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/edit-barang-category/{id}', [BarangCategoryController::class, 'edit'])->middleware('admin')->name('barang-category.edit');
     Route::put('/update-barang-category', [BarangCategoryController::class, 'update'])->middleware('admin')->name('barang-category.update');
     Route::delete('/delete-barang-category/{id}', [BarangCategoryController::class, 'destroy'])->middleware('admin')->name('barang-category.destroy');
+    
     // TRANSAKSI ROUTES
     Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi-list');
 

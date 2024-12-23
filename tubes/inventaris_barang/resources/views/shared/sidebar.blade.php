@@ -63,6 +63,6 @@
 
 
 
-    window.addEventListener('resize', checkScreenWidth);
-    checkScreenWidth();
+    // window.addEventListener('resize', checkScreenWidth);
+
 </script>

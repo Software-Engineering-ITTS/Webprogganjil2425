@@ -42,10 +42,11 @@ class BarangController extends Controller
             'kategori_id' => 'required',
             'tanggal_diterima' => 'required|date',
             'stock' => 'required|integer',
+            'harga' =>  'required|integer',
         ]);
 
         Barang::create($request->all());
-        return redirect()->route('barangs.index')->with('success', 'Barang created successfully.');
+        return redirect()->route('barang.index')->with('success', 'Barang created successfully.');
     }
 
     /**
@@ -70,18 +71,27 @@ class BarangController extends Controller
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, Barang $barang)
+    public function update(Request $request)
     {
+        
         $request->validate([
-            'kode_barang' => 'required|unique:barangs,kode_barang,' . $barang->id,
+            'kode_barang' => 'required|unique:barangs,kode_barang',
             'nama_barang' => 'required',
             'kategori_id' => 'required',
             'tanggal_diterima' => 'required|date',
             'stock' => 'required|integer',
+            'harga' =>  'required|integer',
         ]);
 
-        $barang->update($request->all());
-        return redirect()->route('barangs.index')->with('success', 'Barang updated successfully.');
+        $barang = Barang::findOrFail($request->get('id'));
+        if ($barang) {
+            $barang->update($request->all());
+            return redirect()->route('barang.index')->with('success', 'Barang berhasil diperbarui!');
+        }
+
+        return redirect()->route('barang.index')->with('error', 'Barang tidak ditemukan!');
+        
+
     }
 
     /**
@@ -89,7 +99,6 @@ class BarangController extends Controller
      */
     public function destroy($id)
     {
-         // get data buku sesuai id
          $barang = DB::table('barangs')->where('id', $id)->first();
 
          if ($barang) {
