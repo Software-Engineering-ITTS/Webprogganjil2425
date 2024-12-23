@@ -127,7 +127,7 @@ class UserController extends Controller
 
         if ($karyawan) {
 
-            DB::table('karyawan')->where('id', $id)->update([
+            DB::table('users')->where('id', $id)->update([
                 'deleted_at' => now()
             ]);
 

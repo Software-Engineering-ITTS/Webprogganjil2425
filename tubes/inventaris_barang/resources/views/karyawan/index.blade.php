@@ -50,7 +50,7 @@
                 Edit
               </a>
               <!-- Delete Button -->
-              <form method="POST" class="inline" action="#" onsubmit="return confirm('Are you sure you want to delete this karyawan?')">
+              <form method="POST" class="inline" action="{{route('karyawan.destroy', $data->id)}}" onsubmit="return confirm('Are you sure you want to delete this karyawan?')">
                 @csrf
                 @method('DELETE')
                 <button type="submit"

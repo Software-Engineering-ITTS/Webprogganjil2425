@@ -86,14 +86,7 @@ class UserController extends Controller
     $user->save();
     // if ($user->save()) {
     return redirect()->route('users.index'); 
-    // } else {
-    //     return redirect()->route('users.edit', $id);
-    // }
-
-        // if ($user->save()) {
-        //     return redirect()->route('users.index'); 
-        // } else {
-        //     return redirect()->route('users.edit', $id);
+    
         // }
     }catch(\Exception $e){
         return redirect()->route('users.edit', $id);
