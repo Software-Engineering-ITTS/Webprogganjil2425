@@ -33,6 +33,37 @@
     </header>
     <main>
         {{-- Main Content --}}
+        <div class="container mx-auto max-w-xl">
+            <form action="">
+                <div class="">
+                    <label for="name" class="block mb-3 mt-1">Product Name</label>
+                    <input type="text" name="name" id="name" class="block w-full rounded-md" required>
+                </div>
+                <div class="">
+                    <label for="type" class="block mb-3 mt-1">Type</label>
+                    <input type="text" name="type" id="type" class="block w-full rounded-md" required>
+                </div>
+                <div class="">
+                    <label for="nationalorigin" class="block mb-3 mt-1">National Origin</label>
+                    <input type="text" name="nationalorigin" id="nationalorigin" class="block w-full rounded-md"
+                        required>
+                </div>
+                <div class="">
+                    <label for="manufactured" class="block mb-3 mt-1">Manufactured</label>
+                    <input type="text" name="manufactured" id="manufactured" class="block w-full rounded-md"
+                        required>
+                </div>
+                <div class="">
+                    <label for="price" class="block mb-3 mt-1">Price</label>
+                    <input type="text" name="price" id="price" class="block w-full rounded-md" required>
+                </div>
+                <div class="flex justify-center mt-9">
+                    <div class="w-fit bg-blue-500 p-2 rounded-md">
+                        <button type="submit" class="font-bold">Submit</button>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
     <footer>
         {{-- Footer Content --}}
