@@ -31,16 +31,10 @@
     <header>
         {{-- Header Content --}}
         <div class="p-3 my-7">
-            <h1 class="text-center text-3xl">Dashboard</h1>
+            <h1 class="text-center text-3xl">User Purchase History</h1>
         </div>
     </header>
     <main>
-        <div class="flex justify-center mt-36">
-            <p class="text-5xl">🚨</p>
-        </div>
-        <div class="flex justify-center my-3">
-            <h3 class="bg-yellow-300 p-3 rounded-lg text-black text-xl">You're an Admin. Do things carefully!</h3>
-        </div>
     </main>
     <footer>
         {{-- Footer Content --}}

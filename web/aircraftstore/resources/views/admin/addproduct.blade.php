@@ -18,6 +18,9 @@
             <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
         </div>
         <div class="mx-3">
+            <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
+        </div>
+        <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf
                 <a href="/" onclick="event.preventDefault(); this.closest('form').submit();"
