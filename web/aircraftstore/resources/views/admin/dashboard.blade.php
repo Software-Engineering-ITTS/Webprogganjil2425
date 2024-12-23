@@ -14,8 +14,8 @@
         <div class="">
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf
-                <a href="/"
-                    onclick="event.preventDefault(); this.closest('form').submit();">{{ __('Log Out') }}</a>
+                <a href="/" onclick="event.preventDefault(); this.closest('form').submit();"
+                    class="hover:bg-gray-700 p-2 rounded-md">{{ __('Log Out') }}</a>
             </form>
         </div>
         <div class="">
