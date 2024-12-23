@@ -45,7 +45,7 @@
             <div class="flex space-x-2">
               <!-- Edit Button -->
               <a
-                href="#"
+                href="{{route('karyawan.edit', $data->id)}}"
                 class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                 Edit
               </a>
