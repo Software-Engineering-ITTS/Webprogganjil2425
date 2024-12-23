@@ -12,19 +12,18 @@
 </head>
 
 <body class="bg-gray-50 dark:bg-gray-900">
-
     <div id="app">
         @include('shared.header')
-        <div class="flex h-screen overflow-hidden">
+        <div class="flex h-screen overflow-hidden w-full">
             @include('shared.sidebar')
-            <div class="flex-1 overflow-y-auto overflow-auto transition-all duration-300 ease-in-out ">
+            <!-- Main Content Area -->
+            <div id="mainContent" class="flex-1 overflow-y-auto transition-all duration-300 ease-in-out relative">
                 <div class="main-content">
                     @yield('content')
                 </div>
             </div>
         </div>
     </div>
-
 </body>
 
 </html>
