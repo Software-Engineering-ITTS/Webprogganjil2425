@@ -19,5 +19,11 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
+    Route::get('/addproduct', function () {
+        return view('admin.addproduct');
+    })->name('admin.addproduct');
+
+
+
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 });

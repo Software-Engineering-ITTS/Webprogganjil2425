@@ -15,7 +15,7 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/product" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
         </div>
         <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
