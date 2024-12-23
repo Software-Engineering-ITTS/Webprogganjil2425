@@ -75,7 +75,7 @@ class BarangController extends Controller
     {
         
         $request->validate([
-            'kode_barang' => 'required|unique:barangs,kode_barang',
+            'kode_barang' => 'required',
             'nama_barang' => 'required',
             'kategori_id' => 'required',
             'tanggal_diterima' => 'required|date',
