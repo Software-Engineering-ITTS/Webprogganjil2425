@@ -36,7 +36,7 @@
     </header>
     <main>
         {{-- Main Content --}}
-        <div class="container mx-auto max-w-xl">
+        <div class="container mx-auto max-w-xl mb-7">
             <form action="">
                 <div class="">
                     <label for="name" class="block mb-3 mt-1">Product Name</label>
@@ -59,6 +59,10 @@
                 <div class="">
                     <label for="price" class="block mb-3 mt-1">Price</label>
                     <input type="text" name="price" id="price" class="block w-full rounded-md" required>
+                </div>
+                <div class="">
+                    <label for="photo" class="block mb-3 mt-1">Upload Photo</label>
+                    <input type="file" name="photo" id="photo" class="block w-full rounded-md">
                 </div>
                 <div class="flex justify-center mt-9">
                     <div class="w-fit bg-blue-500 p-2 rounded-md">
