@@ -15,12 +15,12 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/', function () {
-    return view('/dashboard');
+Route::get('/home', function () {
+    return view('home');
 });
 
-// Route::get('/dashboard', function () {
-//     return view('layouts.sidebar');
+// Route::get('/dashboard/data-kegiatan-form', function() {
+//     return view('admin.tambahkegiatan');
 // });
 
 Route::middleware('auth')->group(function() {
@@ -31,7 +31,7 @@ Route::middleware('auth')->group(function() {
     Route::get('/dashboard/data-anggota', [AdminController::class, 'showDataAnggota']);
 
     Route::get('/dashboard/data-kegiatan', [AdminController::class, 'datakegiatan']);
-    Route::get('/dashboard/data-kegiatan-form', [AdminController::class, 'store']);
+    Route::get('/dashboard/data-kegiatan-form', [AdminController::class, 'store'])->name('store');
 
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });

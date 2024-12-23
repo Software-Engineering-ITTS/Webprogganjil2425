@@ -9,7 +9,17 @@ class Kegiatan extends Model
 {
     use HasFactory;
 
+    protected $table = 'kegiatans';
+
     protected $fillable = [
-        
+        'nama_kegiatan',
+        'tanggal_kegiatan',
+        'lokasi_kegiatan',
+        'deskripsi',
     ];
+
+    protected $guarded = ['id'];
+    public function kegiatan() {
+        return $this->belongsTo(kegiatan::class);
+    }
 }
