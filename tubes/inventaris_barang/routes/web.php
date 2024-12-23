@@ -37,6 +37,11 @@ Route::middleware(['auth'])->group(function () {
 
     // BARANG ROUTES
     Route::get('/barang', [BarangController::class, 'index'])->middleware('admin')->name('barang.index');
+    Route::get('/create-barang', [BarangController::class, 'create'])->middleware('admin')->name('barang.create');
+    Route::post('/store-barang', [BarangController::class, 'store'])->middleware('admin')->name('barang.store');
+    Route::get('/edit-barang/{id}', [BarangController::class, 'edit'])->middleware('admin')->name('barang.edit');
+    Route::put('/update-barang', [BarangController::class, 'update'])->middleware('admin')->name('barang.update');
+    Route::delete('/delete-barang/{id}', [BarangController::class, 'destroy'])->middleware('admin')->name('barang.destroy');
 
     // TRANSAKSI ROUTES
     Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi-list');
