@@ -4,7 +4,7 @@
 @section('content')
 <div class="m-4 ">
   <p class="text-4xl text-white dark:text-white font-extrabold">Data Karyawan</p>
-  <a href="#">
+  <a href="{{ route('karyawan.create')}}">
     <button class=" dark:text-white dark:bg-pink-600 text-white font-bold py-2 px-4 rounded my-4">
       Tambah Data
     </button>

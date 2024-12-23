@@ -28,10 +28,15 @@ Route::middleware(['auth'])->group(function () {
     // TODO ADD PROTECTED ROUTES HERE
 
     // KARYWAN ROUTES
-    Route::get('/karyawan', [UserController::class, 'index'])->middleware('admin')->name('karyawan');
+    Route::get('/karyawan', [UserController::class, 'index'])->middleware('admin')->name('karyawan.index');
+    Route::get('/create-karyawan', [UserController::class, 'create'])->middleware('admin')->name('karyawan.create');
+    Route::post('/store-karyawan', [UserController::class, 'store'])->middleware('admin')->name('karyawan.store');
+    Route::get('/edit-karyawan/{id}', [UserController::class, 'edit'])->middleware('admin')->name('karyawan.edit');
+    Route::put('/update-karyawan', [UserController::class, 'update'])->middleware('admin')->name('karyawan.update');
+    Route::delete('/delete-karyawan/{id}', [UserController::class, 'destroy'])->middleware('admin')->name('karyawan.destroy');
 
     // BARANG ROUTES
-    Route::get('/barang', [BarangController::class, 'index'])->middleware('admin')->name('barang');
+    Route::get('/barang', [BarangController::class, 'index'])->middleware('admin')->name('barang.index');
 
     // TRANSAKSI ROUTES
     Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi-list');

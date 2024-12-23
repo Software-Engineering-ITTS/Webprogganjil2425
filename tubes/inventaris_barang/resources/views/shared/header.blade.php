@@ -5,8 +5,8 @@
     </a>
     <nav class="flex space-x-6 items-center">
       @if(Auth::user()->role === 'admin')
-      <a href="{{ route('karyawan') }}" class="hover:text-white">Karyawan</a>
-      <a href="{{ route('barang')}}" class="hover:text-white">Manajemen Stock Barang</a>
+      <a href="{{ route('karyawan.index') }}" class="hover:text-white">Karyawan</a>
+      <a href="{{ route('barang.index')}}" class="hover:text-white">Manajemen Stock Barang</a>
       <a href="{{route('transaksi-list')}}" class="hover:text-white">History Penjualan</a>
       @endif
     
