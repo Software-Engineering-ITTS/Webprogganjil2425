@@ -3,7 +3,7 @@
 @section('content')
 <div class="m-4 ">
     <p class="text-4xl text-white dark:text-white font-extrabold text-center">Form Karyawan</p>
-    <form class="max-w-sm mx-auto" action="{{ isset($user) ? route('karyawan.update', $id) : route('karyawan.store') }}" method="POST" enctype="multipart/form-data" id="userForm">
+    <form class="max-w-sm mx-auto" action="{{ isset($user) ? route('karyawan.update', $id) : route('karyawan.store') }}" method="POST" enctype="multipart/form-data" id="karyawanForm">
         @csrf
         @if(isset($user))
         @method('PUT')
@@ -56,9 +56,8 @@
                     type="password"
                     id="password"
                     name="password"
-                    value="{{ isset($user) ? $user->username :old('username') }}"
-                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                    required />
+                    value=""
+                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" />
                 <button type="button"
                     id="togglePassword"
                     class="absolute right-3 top-3 text-gray-500 hover:text-gray-800 focus:outline-none">
@@ -73,7 +72,7 @@
 
             <button
                 type="button"
-                onclick="document.getElementById('userForm').reset();"
+                onclick="document.getElementById('karyawanForm').reset();"
                 class="bg-gray-500 hover:bg-gray-600 text-white font-medium py-2 px-4 rounded-lg">
                 Clear
             </button>
@@ -99,6 +98,21 @@
 
         passwordIcon.classList.toggle('fa-eye');
         passwordIcon.classList.toggle('fa-eye-slash');
+    });
+</script>
+
+
+<script>
+    document.getElementById('karyawanForm').addEventListener('submit', function (event) {
+        const passwordField = document.getElementById('password');
+        const usernameField = document.getElementById('username');
+
+        if (passwordField.value.trim() === '') {
+            const confirmation = confirm(`The password field is empty. The username "${usernameField.value}" will be used as the default password. Do you want to continue?`);
+            if (!confirmation) {
+                event.preventDefault(); // Stop form submission
+            }
+        }
     });
 </script>
 @endsection

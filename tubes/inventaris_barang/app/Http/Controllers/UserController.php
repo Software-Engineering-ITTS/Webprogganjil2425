@@ -13,7 +13,8 @@ use App\Models\User;
 
 class UserController extends Controller
 {
-    public function index(){
+    public function index()
+    {
         $karyawan = User::where('role', 'karyawan')->paginate(6);
         return view('karyawan.index', ['karyawan' => $karyawan]);
     }
@@ -21,18 +22,18 @@ class UserController extends Controller
     {
         return view('karyawan.form');
     }
-// TODO need to change and adjusted
+    // TODO need to change and adjusted
 
-    
+
 
     public function store(Request $request)
     {
-        
+
         $val_data = Validator::make($request->all(), [
             'name' => 'required',
             'email' => 'required',
             'username' => 'required',
-            'password' => 'required',
+            'password' => 'nullable'
         ]);
 
 
@@ -41,27 +42,36 @@ class UserController extends Controller
             return redirect()->route('karyawan.create');
         }
 
-        
+        $password = $request->filled('password')
+            ? $request->get('password')
+            : $request->get('username');
+        // USE USERNAME AS DEFAULT PASSWORD
 
-        $save = User::Create([
+
+        if (!$request->filled('password')) {
+            session()->flash('info', 'The password field is empty. The username will be used as the default password.');
+        }
+
+        $save = User::create([
             'username' => $request->get('username'),
             'name' => $request->get('name'),
             'email' => $request->get('email'),
-            'password' => bcrypt($request->get('password')),
-            'role' => "Karyawan",
-
+            'password' => bcrypt($password), // Hash the password
+            'role' => 'Karyawan',
         ]);
+
+
 
         if ($save) {
             return redirect()->route('karyawan.index');
-            
         } else {
             // var_dump($save);
             return redirect()->route('karyawan.create');
         }
     }
 
-    public function edit($id){
+    public function edit($id)
+    {
         $karyawan = DB::table('users')->where('id', $id)->first();
 
         return view('karyawan.form', [
@@ -70,37 +80,45 @@ class UserController extends Controller
         ]);
     }
 
-    public function update(Request $request){
-        try{
-        $val_data = Validator::make($request->all(), [
-            'id' => 'required',
-            'name' => 'required',
-            'email' => 'required',            
-        ]);
+    public function update(Request $request)
+    {
+        try {
+            // Validate incoming request
+            $val_data = Validator::make($request->all(), [
+                'id' => 'required',
+                'name' => 'required',
+                'email' => 'required|email',
+                'password' => 'nullable',
+            ]);
 
-        $id = $request->get('id');
+            $id = $request->get('id');
 
-        if ($val_data->fails()) {
+            if ($val_data->fails()) {
+                return redirect()->route('karyawan.edit', $id)
+                    ->withErrors($val_data)
+                    ->withInput();
+            }
+
+
+            $user = User::findOrFail($id);
+
+            $user->name = $request->get('name');
+            $user->email = $request->get('email');
+
+            if ($request->filled('password')) {
+                $user->password = bcrypt($request->get('password'));
+            }
+            $user->save();
+
+            return redirect()->route('karyawan.index')->with('success', 'User updated successfully!');
+        } catch (\Exception $e) {
             return redirect()->route('karyawan.edit', $id)
-                ->withErrors($val_data)
+                ->with('error', 'An error occurred while updating the user.')
                 ->withInput();
         }
-
-        $user = User::findOrFail($id);
-        
-        $user->name = $request->get('name');
-        $user->email = $request->get('email');
-
-
-    $user->save();
-
-    return redirect()->route('karyawan.index'); 
-
-    }catch(\Exception $e){
-        return redirect()->route('karyawan.edit', $id);
     }
-    }
-    
+
+
 
     public function destroy($id)
     {
@@ -108,7 +126,7 @@ class UserController extends Controller
         $karyawan = DB::table('users')->where('id', $id)->first();
 
         if ($karyawan) {
-            
+
             DB::table('karyawan')->where('id', $id)->update([
                 'deleted_at' => now()
             ]);
