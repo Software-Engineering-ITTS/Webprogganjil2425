@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="m-4">
-    <p class="text-4xl text-white dark:text-white font-extrabold my-10">Category Barang</p>
+    <p class="text-4xl text-white dark:text-white font-extrabold my-4">Kategori Barang</p>
 
     <!-- <!-- Display Success Message -->
     <!-- @if(session('success'))
@@ -24,9 +24,7 @@
                 <th hidden scope="col" class="px-6 py-3">
                     Id
                 </th>
-                <th scope="col" class="px-6 py-3">
-                    No
-                </th>
+           
                 <th scope="col" class="px-6 py-3">
                     Nama Kategori
                 </th>
@@ -38,7 +36,7 @@
         <tbody>
             @foreach($categories as $index => $category)
             <tr>
-                <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">{{ $index + 1 }}</td>
+             
                 <td class="px-6 py-4 text-sm text-gray-900 dark:text-white">{{ $category->nama_kategori }}</td>
                 <td class="px-6 py-4 text-sm">
                     <a href="{{ route('barang-category.edit', $category->id) }}"
