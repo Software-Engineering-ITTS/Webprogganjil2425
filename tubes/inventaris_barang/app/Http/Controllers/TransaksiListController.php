@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTransaksiListRequest;
 use App\Http\Requests\UpdateTransaksiListRequest;
 use App\Models\TransaksiList;
+use Illuminate\Routing\Controller;
 
 class TransaksiListController extends Controller
 {

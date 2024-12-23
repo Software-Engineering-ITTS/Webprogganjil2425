@@ -7,6 +7,7 @@
       @if(Auth::user()->role === 'admin')
       <a href="{{ route('karyawan') }}" class="hover:text-white">Karyawan</a>
       <a href="{{ route('barang')}}" class="hover:text-white">Manajemen Stock Barang</a>
+      <a href="{{route('transaksi-list')}}" class="hover:text-white">History Penjualan</a>
       @endif
     
       <a href="#" class="hover:text-white">Penjualan</a>

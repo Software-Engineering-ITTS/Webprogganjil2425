@@ -4,6 +4,8 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\TransaksiController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -30,6 +32,9 @@ Route::middleware(['auth'])->group(function () {
 
     // BARANG ROUTES
     Route::get('/barang', [BarangController::class, 'index'])->middleware('admin')->name('barang');
+
+    // TRANSAKSI ROUTES
+    Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi-list');
 
     // Route::resource('karyawan', UserController::class)->middleware('admin');
     // Route::resource('stock', StockController::class)->middleware('admin');

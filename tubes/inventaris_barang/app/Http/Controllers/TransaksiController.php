@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
 use App\Models\Transaksi;
+use Illuminate\Routing\Controller;
 
 class TransaksiController extends Controller
 {
@@ -23,8 +24,8 @@ class TransaksiController extends Controller
         }])
         ->paginate(6); 
 
-        return view('transaksi.index', [
-            'transaksi' => $transaksis
+        return view('penjualan.index', [
+            'transactions' => $transaksis
         ]);
     }
 
