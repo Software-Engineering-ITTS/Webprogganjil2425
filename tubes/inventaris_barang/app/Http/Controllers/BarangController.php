@@ -90,17 +90,17 @@ class BarangController extends Controller
     public function destroy($id)
     {
          // get data buku sesuai id
-         $karyawan = DB::table('barangs')->where('id', $id)->first();
+         $barang = DB::table('barangs')->where('id', $id)->first();
 
-         if ($karyawan) {
+         if ($barang) {
  
              DB::table('barangs')->where('id', $id)->update([
                  'deleted_at' => now()
              ]);
  
-             return redirect()->route('karyawan.index')->with('success', 'Data User berhasil dihapus!');
+             return redirect()->route('barang.index')->with('success', 'Data User berhasil dihapus!');
          }
  
-         return redirect()->route('karyawan.index')->with('error', 'Data User tidak ditemukan!');
+         return redirect()->route('barang.index')->with('error', 'Data User tidak ditemukan!');
     }
 }

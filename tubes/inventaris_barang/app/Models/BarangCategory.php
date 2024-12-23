@@ -29,6 +29,11 @@ class BarangCategory extends Model
         return $this->barangs()->count();
     }
 
+    public function scopeActive($query)
+    {
+        return $query->whereNull('deleted_at');
+    }
+
 
     public function scopeWithActiveProducts($query)
     {

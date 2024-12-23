@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\BarangController;
+use App\Http\Controllers\BarangCategoryController;
 use App\Http\Controllers\TransaksiController;
 
 /*
@@ -43,6 +44,13 @@ Route::middleware(['auth'])->group(function () {
     Route::put('/update-barang', [BarangController::class, 'update'])->middleware('admin')->name('barang.update');
     Route::delete('/delete-barang/{id}', [BarangController::class, 'destroy'])->middleware('admin')->name('barang.destroy');
 
+    // KATEGORI BARANG ROUTES
+    Route::get('/barang-category', [BarangCategoryController::class, 'index'])->middleware('admin')->name('barang-category.index');
+    Route::get('/create-barang-category', [BarangCategoryController::class, 'create'])->middleware('admin')->name('barang-category.create');
+    Route::post('/store-barang-category', [BarangCategoryController::class, 'store'])->middleware('admin')->name('barang-category.store');
+    Route::get('/edit-barang-category/{id}', [BarangCategoryController::class, 'edit'])->middleware('admin')->name('barang-category.edit');
+    Route::put('/update-barang-category', [BarangCategoryController::class, 'update'])->middleware('admin')->name('barang-category.update');
+    Route::delete('/delete-barang-category/{id}', [BarangCategoryController::class, 'destroy'])->middleware('admin')->name('barang-category.destroy');
     // TRANSAKSI ROUTES
     Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi-list');
 
