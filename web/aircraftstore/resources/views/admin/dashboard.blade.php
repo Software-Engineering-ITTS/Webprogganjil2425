@@ -11,15 +11,15 @@
 
 <body class="min-h-screen bg-black text-white">
     <nav class="flex justify-center bg-gray-900 p-4">
-        <div class="">
+        <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
                 @csrf
                 <a href="/" onclick="event.preventDefault(); this.closest('form').submit();"
                     class="hover:bg-gray-700 p-2 rounded-md">{{ __('Log Out') }}</a>
             </form>
         </div>
-        <div class="">
-            <a href=""></a>
+        <div class="mx-3">
+            <a href="/admin/product" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
         </div>
     </nav>
     <header>
