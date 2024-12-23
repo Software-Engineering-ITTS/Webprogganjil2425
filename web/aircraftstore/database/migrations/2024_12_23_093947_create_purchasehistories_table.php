@@ -13,6 +13,12 @@ return new class extends Migration
     {
         Schema::create('purchasehistories', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->string('type');
+            $table->string('nationalorigin');
+            $table->string('manufactured');
+            $table->string('price');
+            $table->string('purchasedate');
             $table->timestamps();
         });
     }
