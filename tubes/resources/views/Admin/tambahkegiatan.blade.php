@@ -26,36 +26,36 @@
                 </button>
             </div>
             <div class="p-5 bg-white w-96">
-                <form action="{{route('store')}}">
-                @csrf 
-                <div class="mb-4">
-                    <label for="nama_kegiatan" class="block mb-2 text-sm font-medium">Nama Kegiatan</label>
-                    <input type="text" name="nama_kegiatan" id="nama_kegiatan"
-                        class="border text-sm rounded-lg w-full"
-                        placeholder="Kegiatan Bersih - Bersih bersama Pandawara" required>
+                <form action="{{ route('store') }}" method="POST">
+                    @csrf
+                    <div class="mb-4">
+                        <label for="nama_kegiatan" class="block mb-2 text-sm font-medium">Nama Kegiatan</label>
+                        <input type="text" name="nama_kegiatan" id="nama_kegiatan"
+                            class="border text-sm rounded-lg w-full"
+                            placeholder="Kegiatan Bersih - Bersih bersama Pandawara" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="tanggal_kegiatan" class="block mb-2 text-sm font-medium">Tanggal Kegiatan</label>
+                        <input type="date" name="tanggal_kegiatan" id="tanggal_kegiatan"
+                            class="border text-sm rounded-lg w-full" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="lokasi_kegiatan" class="block mb-2 text-sm font-medium">Lokasi Kegiatan</label>
+                        <input type="text" name="lokasi_kegiatan" id="lokasi_kegiatan"
+                            class="border text-sm rounded-lg w-full" placeholder="Pantai Anyer" required>
+                    </div>
+                    <div class="mb-4">
+                        <label for="deskripsi" class="block mb-2 text-sm font-medium">Deskripsi atau Notes</label>
+                        <textarea name="deskripsi" id="deskripsi" cols="30" rows="4" class="border text-sm rounded-lg w-full"
+                            placeholder="Melakukan pembersihan pantai anyer"></textarea>
+                    </div>
+                    <button type="submit"
+                        class="p-2 font-medium text-base border rounded-lg bg-teal-300 items-center hover:text-white">
+                        Tambahkan
+                    </button>
+                </form>
             </div>
-            <div class="mb-4">
-                <label for="tanggal_kegiatan" class="block mb-2 text-sm font-medium">Tanggal Kegiatan</label>
-                <input type="date" name="tanggal_kegiatan" id="tanggal_kegiatan"
-                    class="border text-sm rounded-lg w-full" required>
-            </div>
-            <div class="mb-4">
-                <label for="lokasi_kegiatan" class="block mb-2 text-sm font-medium">Lokasi Kegiatan</label>
-                <input type="text" name="lokasi_kegiatan" id="lokasi_kegiatan"
-                    class="border text-sm rounded-lg w-full" placeholder="Pantai Anyer" required>
-            </div>
-            <div class="mb-4">
-                <label for="deskripsi" class="block mb-2 text-sm font-medium">Deskripsi atau Notes</label>
-                <textarea name="deskripsi" id="deskripsi" cols="30" rows="4" class="border text-sm rounded-lg w-full"
-                    placeholder="Melakukan pembersihan pantai anyer"></textarea>
-            </div>
-            <button type="submit"
-                class="p-2 font-medium text-base border rounded-lg bg-teal-300 items-center hover:text-white">
-                Tambahkan
-            </button>
-            </form>
         </div>
-    </div>
     </div>
     @include('sweetalert::alert')
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>

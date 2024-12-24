@@ -9,5 +9,7 @@
   <h1 class="text-3xl font-bold underline">
     Hello world!
   </h1>
+  <a href="{{url('login')}}">Login</a>
+  <a href="{{url('logout')}}" class="text-white font-bold hover:text-teal-700 px-9 py-3">Logout</a>
 </body>
 </html>

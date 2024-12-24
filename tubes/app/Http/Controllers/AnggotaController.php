@@ -7,9 +7,7 @@ use Illuminate\Http\Request;
 
 class AnggotaController extends Controller
 {
-    public function index() {
-        $users = User::all();
-
-        return view("admin.dataanggota", compact("users"));
+    public function profile() {
+        return view('anggota.profile');
     }
 }

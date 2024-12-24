@@ -11,7 +11,7 @@
     <aside class="fixed top-0 left-0 z-40 w-64 h-screen bg-teal-900">
         <div class="h-full px-3 py-4 overflow-y-auto">
             <div class="py-4 items-center">
-                <h1 class="text-center font-bold text-white">Admin</h1>
+                <h1 class="text-center font-bold text-white text-3xl">Dashboard Admin</h1>
             </div>
             <ul class="space-y-7 font-medium">
                 <li>
