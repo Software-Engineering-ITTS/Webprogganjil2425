@@ -22,9 +22,9 @@
 
                 <!-- TULISAN ATAU APALAH -->
                 <div class="mb-10 pt-0">
-                    <h1 class="text-4xl font-bold mb-4">Selamat Datang di Toko Bu Sudjarmiati</h1>
+                    <h1 class="text-4xl font-bold mb-4">Selamat Datang di Toko Marchella</h1>
                     <p class="text-lg mb-4">Tempat terpercaya untuk kebutuhan sehari-hari Anda sejak dulu.</p>
-                    <p class="text-md italic mb-8">"Dua Tiga Kucing Berlari, yaudah."</p>
+                    <p class="text-md italic mb-8">"Wuf U"</p>
                 </div>
 
 
