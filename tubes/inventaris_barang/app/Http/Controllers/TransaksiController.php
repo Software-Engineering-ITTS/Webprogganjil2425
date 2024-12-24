@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreTransaksiRequest;
 use App\Http\Requests\UpdateTransaksiRequest;
+use App\Models\Barang;
 use App\Models\Transaksi;
 use Illuminate\Routing\Controller;
 
@@ -33,8 +34,14 @@ class TransaksiController extends Controller
      * Show the form for creating a new resource.
      */
     public function create()
-    {
-        //
+    {   
+        
+        $barangs = Barang::where('stock', '>', 0)->paginate(5); 
+    
+        return view('penjualan.form', [
+            'barangs' => $barangs,
+        ]);
+
     }
 
     /**

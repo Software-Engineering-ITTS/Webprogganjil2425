@@ -1,5 +1,8 @@
 <div id="sidebar" class="lg:w-64 bg-pink-900 text-white shadow-md ease-in-out duration-300 fixed inset-0 lg:relative transform -translate-x-full lg:h-auto z-50">
     <nav id="sidebarnav" class="flex flex-col p-6 space-y-4">
+        <a href="{{ route('transaksi.create') }}" class="text-sm hover:text-pink-200">
+            <i class="fas fa-shopping-cart mr-3"></i> Penjualan
+        </a>
         @if(Auth::user()->role === 'admin')
         <a href="{{ route('karyawan.index') }}" class="text-sm hover:text-pink-200">
             <i class="fas fa-users mr-3"></i> Karyawan
@@ -10,13 +13,11 @@
         <a href="{{ route('barang-category.index') }}" class="text-sm hover:text-pink-200 ">
             <i class="fas fa-cogs mr-3"></i> Kategori Barang
         </a>
-        <a href="{{ route('transaksi-list') }}" class="text-sm hover:text-pink-200 ">
+        <a href="{{ route('transaksi.index') }}" class="text-sm hover:text-pink-200 ">
             <i class="fas fa-history mr-3"></i> History Penjualan
         </a>
         @endif
-        <a href="#" class="text-sm hover:text-pink-200">
-            <i class="fas fa-shopping-cart mr-3"></i> Penjualan
-        </a>
+
         <form method="POST" action="{{ route('logout') }}" class="mt-6">
             @csrf
             <button type="submit" class="bg-pink-700 hover:bg-pink-800 text-white py-2 px-4 rounded-lg w-full ">
@@ -64,5 +65,4 @@
 
 
     // window.addEventListener('resize', checkScreenWidth);
-
 </script>
