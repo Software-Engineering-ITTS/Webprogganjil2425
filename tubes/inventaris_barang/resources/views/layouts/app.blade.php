@@ -11,13 +11,13 @@
     @vite('resources/css/app.css')
 </head>
 
-<body class="bg-gray-50 dark:bg-gray-900">
+<body class="bg-gray-50 dark:bg-gray-900 overflow-hidden">
     <div id="app">
         @include('shared.header')
         <div class="flex h-screen overflow-hidden w-full">
             @include('shared.sidebar')
             <!-- Main Content Area -->
-            <div id="mainContent" class="flex-1 overflow-y-auto transition-all duration-300 ease-in-out relative">
+            <div id="mainContent" class="flex-1 overflow-hidden transition-all duration-300 ease-in-out relative">
                 <div class="main-content">
                     @yield('content')
                 </div>

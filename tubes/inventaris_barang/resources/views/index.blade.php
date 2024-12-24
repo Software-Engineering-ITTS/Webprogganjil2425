@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Inventaris Barang Toko Bu Sudjarmiati</title>
+    <title>Inventaris Barang Toko Marchella</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
 
     @vite('resources/css/app.css')
@@ -24,7 +24,7 @@
                 <div class="mb-10 pt-0">
                     <h1 class="text-4xl font-bold mb-4">Selamat Datang di Toko Marchella</h1>
                     <p class="text-lg mb-4">Tempat terpercaya untuk kebutuhan sehari-hari Anda sejak dulu.</p>
-                    <p class="text-md italic mb-8">"Wuf U"</p>
+                    <p class="text-md italic mb-8">Wuf Uuu</p>
                 </div>
 
 
