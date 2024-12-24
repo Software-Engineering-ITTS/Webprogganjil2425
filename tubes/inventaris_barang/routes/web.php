@@ -56,7 +56,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/transaksi-list', [TransaksiController::class, 'index'])->middleware('admin')->name('transaksi.index');
     Route::get('/create-transaksi', [TransaksiController::class, 'create'])->name('transaksi.create');
     Route::post('/store-transaksi', [TransaksiController::class, 'store'])->name('transaksi.store');
-    Route::get('/transaksi/{id}', [TransaksiController::class, 'show'])->name('transaksi.store');
+    Route::get('/transaksi/{id}', [TransaksiController::class, 'show'])->name('transaksi.show');
 
     // Route::resource('karyawan', UserController::class)->middleware('admin');
     // Route::resource('stock', StockController::class)->middleware('admin');

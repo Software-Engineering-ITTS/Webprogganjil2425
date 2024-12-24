@@ -15,7 +15,7 @@
             Nama Pelanggan
           </th>
           <th scope="col" class="px-6 py-3">
-            Nama Karyawan
+            Nama Kasir
           </th>
           <th scope="col" class="px-6 py-3">
             Total Transaksi
