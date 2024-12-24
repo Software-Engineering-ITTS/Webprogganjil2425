@@ -86,7 +86,7 @@
         const transactionId = button.getAttribute('data-id');
 
         try {
-          const response = await fetch(`/transactions/${transactionId}`);
+          const response = await fetch(`/transaksi/${transactionId}`);
           const data = await response.json();
 
           if (response.ok) {
@@ -98,7 +98,7 @@
               <hr class="my-4">
               <p><strong>Barang:</strong></p>
               <ul>
-                ${data.transaction_lists.map(item => `<li>${item.barang.nama_barang} - ${item.quantity} x Rp${new Intl.NumberFormat('id-ID').format(item.barang.harga)} = Rp${new Intl.NumberFormat('id-ID').format(item.total_price)}</li>`).join('')}
+                ${data.transaction_lists.map(item => `<li>${item.barang.nama_barang} - ${item.quantity} x Rp${new Intl.NumberFormat('id-ID').format(item.barang.harga)} = Rp${new Intl.NumberFormat('id-ID').format(item.subtotal)}</li>`).join('')}
               </ul>
             `;
             modal.classList.remove('hidden');

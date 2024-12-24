@@ -147,7 +147,7 @@
                     console.log(await response.json())
                     window.location.href = "{{ route('transaksi.index') }}";
                 } else {
-                    alert('Failed to save transaction.');
+                    alert('Failed to save transaction ' + response.message);
                 }
             } catch (error) {
                 console.error(error);
