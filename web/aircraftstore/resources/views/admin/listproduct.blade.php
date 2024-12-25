@@ -50,8 +50,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -63,8 +63,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -76,8 +76,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -89,8 +89,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -102,8 +102,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -115,8 +115,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -128,8 +128,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -141,8 +141,8 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-black p-2 w-auto rounded-md hover:bg-gray-900">
-                        <input type="button" value="Buy" class="font-bold">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                        <input type="button" value="Edit" class="font-bold">
                     </div>
                 </div>
             </div>
