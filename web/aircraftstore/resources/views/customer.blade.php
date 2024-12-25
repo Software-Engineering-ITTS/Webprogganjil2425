@@ -9,7 +9,8 @@
     </x-slot>
 
     <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl mb-11">
-        <form action="">
+        <form action="/customer" method = "POST" enctype="">
+            @csrf
             <div class="my-5">
                 <label for="fullname" class="block">Full Name</label>
                 <input type="text" name="fullname" id="fullname" class="rounded-md w-full text-black">
