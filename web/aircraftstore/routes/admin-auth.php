@@ -27,6 +27,10 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.history');
     })->name('admin.history');
 
+    Route::get('/listproduct', function () {
+        return view('admin.listproduct');
+    })->name('admin.listproduct');
+
 
 
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
