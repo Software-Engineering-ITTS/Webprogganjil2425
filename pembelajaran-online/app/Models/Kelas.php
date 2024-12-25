@@ -16,4 +16,10 @@ class Kelas extends Model
     {
         return $this->hasMany(Siswa::class);
     }
+    
+    // Relasi dengan Materi
+    public function materis()
+    {
+        return $this->hasMany(Materi::class);
+    }
 }

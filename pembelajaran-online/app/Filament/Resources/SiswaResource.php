@@ -11,6 +11,7 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Closure;
 
 class SiswaResource extends Resource
 {
@@ -25,21 +26,40 @@ class SiswaResource extends Resource
                 ->required()
                 ->label('Nama Lengkap')
                 ->placeholder('Masukkan nama lengkap siswa'),
+
             TextInput::make('email')
                 ->email()
                 ->required()
-                ->unique()
+                ->unique(ignoreRecord: true)
                 ->label('Email')
                 ->placeholder('Masukkan email siswa'),
+
             TextInput::make('no_telp')
                 ->tel()
                 ->label('Nomor Telepon')
                 ->placeholder('Masukkan nomor telepon siswa'),
+
+            // Select untuk Kelas
             Select::make('kelas_id')
                 ->relationship('kelas', 'nama')
                 ->label('Kelas')
                 ->required()
-                ->searchable(),
+                ->searchable()
+                ->reactive()
+                ->afterStateUpdated(fn ($set) => $set('materi_id', null)), 
+
+            // Select untuk Materi, relasi melalui kelas
+            Select::make('materi_id')
+                ->label('Materi')
+                ->relationship('kelas.materis', 'judul')
+                ->required()
+                ->searchable()
+                ->disabled(fn ($get) => empty($get('kelas_id')))
+                ->afterStateUpdated(function ($set, $get) {
+                    if (empty($get('kelas_id'))) {
+                        $set('materi_id', null);
+                    }
+                }),
         ]);
     }
 
@@ -60,6 +80,10 @@ class SiswaResource extends Resource
                     ->sortable(),
                 TextColumn::make('kelas.nama')
                     ->label('Nama Kelas')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('materi.judul')
+                    ->label('Materi')
                     ->sortable()
                     ->searchable(),
                 TextColumn::make('created_at')
