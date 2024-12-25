@@ -8,7 +8,7 @@
         </div>
     </x-slot>
 
-    <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl mb-11">
+    <div class="container mx-auto max-w-xl bg-gray-900 text-white p-9 rounded-xl mb-11">
         <form action="/customer" method = "POST" enctype="application/x-www-form-urlencoded">
             @csrf
             <div class="my-5">
