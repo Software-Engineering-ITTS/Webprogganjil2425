@@ -39,29 +39,29 @@
         <div class="container mx-auto max-w-xl mb-7">
             <form action="">
                 <div class="">
-                    <label for="name" class="block mb-3 mt-1">Product Name</label>
+                    <label for="name" class="block mb-1 mt-3">Product Name</label>
                     <input type="text" name="name" id="name" class="block w-full rounded-md" required>
                 </div>
                 <div class="">
-                    <label for="type" class="block mb-3 mt-1">Type</label>
+                    <label for="type" class="block mb-1 mt-3">Type</label>
                     <input type="text" name="type" id="type" class="block w-full rounded-md" required>
                 </div>
                 <div class="">
-                    <label for="nationalorigin" class="block mb-3 mt-1">National Origin</label>
+                    <label for="nationalorigin" class="block mb-1 mt-3">National Origin</label>
                     <input type="text" name="nationalorigin" id="nationalorigin" class="block w-full rounded-md"
                         required>
                 </div>
                 <div class="">
-                    <label for="manufactured" class="block mb-3 mt-1">Manufactured</label>
+                    <label for="manufactured" class="block mb-1 mt-3">Manufactured</label>
                     <input type="text" name="manufactured" id="manufactured" class="block w-full rounded-md"
                         required>
                 </div>
                 <div class="">
-                    <label for="price" class="block mb-3 mt-1">Price</label>
+                    <label for="price" class="block mb-1 mt-3">Price</label>
                     <input type="text" name="price" id="price" class="block w-full rounded-md" required>
                 </div>
                 <div class="">
-                    <label for="photo" class="block mb-3 mt-1">Upload Photo</label>
+                    <label for="photo" class="block mb-1 mt-3">Upload Photo</label>
                     <input type="file" name="photo" id="photo" class="block w-full rounded-md">
                 </div>
                 <div class="flex justify-center mt-9">
