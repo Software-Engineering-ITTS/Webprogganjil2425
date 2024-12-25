@@ -66,8 +66,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -79,8 +82,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -92,8 +98,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -105,8 +114,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -118,8 +130,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -131,8 +146,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
@@ -144,8 +162,11 @@
                 <p>Manufactured : 1988-Present </p>
                 <p>Price : $99.9999</p>
                 <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500">
+                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
+                    </div>
+                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                        <input type="button" value="Delete" class="font-bold">
                     </div>
                 </div>
             </div>
