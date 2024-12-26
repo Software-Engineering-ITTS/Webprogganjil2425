@@ -17,6 +17,9 @@ class KelasResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
+    // Menambahkan grup navigasi
+    protected static ?string $navigationGroup = 'Kelas Management';  // Nama grup navigasi
+
     public static function form(Form $form): Form
     {
         return $form->schema([
@@ -29,37 +32,30 @@ class KelasResource extends Resource
                 ->required(),
         ]);
     }
-    
 
-
-public static function table(Table $table): Table
-{
-    return $table
-        ->columns([
-            TextColumn::make('nama')
-                ->label('Nama Kelas')
-                ->sortable()
-                ->searchable(),
-            TextColumn::make('kode_kelas')
-                ->label('Kode Kelas')
-                ->sortable()
-                ->searchable(),
-            TextColumn::make('created_at')
-                ->label('Tanggal Dibuat')
-                ->dateTime()
-                ->sortable(),
-        ])
-        ->filters([
-            // Filter jika diperlukan
-        ])
-        ->actions([
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
-        ])
-        ->bulkActions([
-            Tables\Actions\DeleteBulkAction::make(),
-        ]);
-}
+    public static function table(Table $table): Table
+    {
+        return $table
+            ->columns([
+                TextColumn::make('nama')
+                    ->label('Nama Kelas')
+                    ->sortable()
+                    ->searchable(),
+                TextColumn::make('kode_kelas')
+                    ->label('Kode Kelas')
+                    ->sortable()
+                    ->searchable(),
+                
+            ])
+            ->filters([/* Filter jika diperlukan */])
+            ->actions([
+                Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+            ])
+            ->bulkActions([
+                Tables\Actions\DeleteBulkAction::make(),
+            ]);
+    }
 
     public static function getRelations(): array
     {

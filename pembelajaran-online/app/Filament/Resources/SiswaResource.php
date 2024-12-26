@@ -11,13 +11,15 @@ use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
-use Closure;
 
 class SiswaResource extends Resource
 {
     protected static ?string $model = Siswa::class;
 
     protected static ?string $navigationIcon = 'heroicon-o-users';
+
+    // Menambahkan grup navigasi
+    protected static ?string $navigationGroup = 'Siswa Management';  // Nama grup navigasi
 
     public static function form(Form $form): Form
     {
@@ -39,16 +41,14 @@ class SiswaResource extends Resource
                 ->label('Nomor Telepon')
                 ->placeholder('Masukkan nomor telepon siswa'),
 
-            // Select untuk Kelas
             Select::make('kelas_id')
                 ->relationship('kelas', 'nama')
                 ->label('Kelas')
                 ->required()
                 ->searchable()
                 ->reactive()
-                ->afterStateUpdated(fn ($set) => $set('materi_id', null)), 
+                ->afterStateUpdated(fn ($set) => $set('materi_id', null)),
 
-            // Select untuk Materi, relasi melalui kelas
             Select::make('materi_id')
                 ->label('Materi')
                 ->relationship('kelas.materis', 'judul')
