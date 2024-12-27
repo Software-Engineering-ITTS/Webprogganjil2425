@@ -8,6 +8,7 @@
         <h2 class="font-medium text-xl">Nama Kegiatan : {{ $kegiatans->nama_kegiatan }}</h2>
         <h2 class="font-medium text-xl">Jadwal Kegiatan : {{ $kegiatans->tanggal_kegiatan }}</h2>
         <h2 class="font-medium text-xl">Lokasi Kegiatan : {{ $kegiatans->lokasi_kegiatan }}</h2>
+        <h2 class="font-medium text-xl">Waktu Kegiatan : {{ $kegiatans->waktu_kegiatan }}</h2>
 
         <div class="mt-8">
             <h2 class="font-medium text-xl">Peserta Kegiatan :</h2>

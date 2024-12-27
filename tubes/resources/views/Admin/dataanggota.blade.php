@@ -34,7 +34,7 @@
                 @foreach ($users as $data)
                     <tr class="text-center border-b odd:bg-white even:bg-gray-100">
                         <td class="p-5">
-                            <a href=""
+                            <a href="/dashboard/data-anggota/infokegiatan{{$data->id}}"
                                 class="py-2 px-4 border rounded-full bg-green-500 text-white font-semibold hover:bg-green-700">i</a>
                         </td>
                         <td class="p-5">{{ $data->username }}</td>

@@ -45,6 +45,11 @@
                             class="border text-sm rounded-lg w-full" placeholder="Pantai Anyer" required>
                     </div>
                     <div class="mb-4">
+                        <label for="waktu_kegiatan" class="block mb-2 text-sm font-medium">Waktu Kegiatan</label>
+                        <input type="time" name="waktu_kegiatan" id="waktu_kegiatan"
+                            class="border text-sm rounded-lg w-full" required>
+                    </div>
+                    <div class="mb-4">
                         <label for="deskripsi" class="block mb-2 text-sm font-medium">Deskripsi atau Notes</label>
                         <textarea name="deskripsi" id="deskripsi" cols="30" rows="4" class="border text-sm rounded-lg w-full"
                             placeholder="Melakukan pembersihan pantai anyer"></textarea>

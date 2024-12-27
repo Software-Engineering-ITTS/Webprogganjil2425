@@ -58,6 +58,7 @@
                         <th class="p-3 ">nama kegiatan</th>
                         <th class="p-3 ">waktu</th>
                         <th class="p-3 ">lokasi</th>
+                        <th class="p-3 ">waktu</th>
                         <th class="p-3 ">deskripsi</th>
                         <th class="p-3 "></th>
                     </tr>
@@ -68,11 +69,12 @@
                             <td class="p-5 w-48 text-center">{{ $items->nama_kegiatan }}</td>
                             <td class="p-5 w-48 text-center">{{ $items->tanggal_kegiatan }}</td>
                             <td class="p-5 w-56 text-center">{{ $items->lokasi_kegiatan }}</td>
+                            <td class="p-5 w-56 text-center">{{ $items->waktu_kegiatan }}</td>
                             <td class="p-5 text-justify">{{ $items->deskripsi }}</td>
 
                             @auth
                                 <td class="p-3 text-center">
-                                    <button type="button" data-modal-target="iuran-form" data-modal-toggle="iuran-form"
+                                    {{-- <button type="button" data-modal-target="iuran-form" data-modal-toggle="iuran-form"
                                         class="py-1 px-2 bg-lime-400 rounded-lg font-semibold flex items-center hover:bg-lime-500 hover:text-white group"><svg
                                             class="w-[24px] h-[24px] text-gray-800 group-hover:text-white"
                                             aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
@@ -80,9 +82,10 @@
                                             <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
                                                 stroke-width="2" d="M5 12h14m-7 7V5" />
                                         </svg>
-                                    </button>
+                                    </button> --}}
+                                    <a href="/dashboard-anggota/{{$items->id}}" class="px-3 py-2 border rounded-lg bg-lime-300 font-medium">Ikuti</a>
 
-                                    @include('anggota.iuran')
+                                    {{-- @include('anggota.iuran') --}}
 
                                 </td>
                             @endauth

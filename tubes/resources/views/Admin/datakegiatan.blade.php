@@ -29,6 +29,7 @@
                 <th class="p-3">Nama Kegiatan</th>
                 <th class="p-3">Tanggal Kegiatan</th>
                 <th class="p-3">Lokasi</th>
+                <th class="p-3">Waktu</th>
                 <th class="p-3">Deskripsi</th>
                 <th class="p-3">Aksi</th>
             </tr>
@@ -39,6 +40,7 @@
                     <td class="p-5 w-48 text-center">{{ $items->nama_kegiatan }}</td>
                     <td class="p-5 w-48 text-center">{{ $items->tanggal_kegiatan }}</td>
                     <td class="p-5 w-56 text-center">{{ $items->lokasi_kegiatan }}</td>
+                    <td class="p-5 w-56 text-center">{{ $items->waktu_kegiatan }}</td>
                     <td class="p-5 text-justify">{{ $items->deskripsi }}</td>
                     <td class="p-5 w-64 text-center">
                         <a href="/dashboard/data-kegiatan/info{{$items->id}}"

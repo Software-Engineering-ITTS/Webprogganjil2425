@@ -9,25 +9,19 @@
 </head>
 
 <body>
-    <div id="iuran-form"
-        class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-50 h-screen items-center justify-center">
-        <div class="border rounded-lg">
-            <div class="border-b p-5 flex justify-between items-center bg-white">
+    <div class="h-screen flex items-center justify-center">
+        <div class="border rounded-lg w-80">
+            <div class="border-b-2 p-5 flex justify-between items-center bg-white">
                 <h2 class="font-medium text-2xl">Iuran</h2>
-                <button type="button" id="iuran-form"
-                    class="bg-transparent hover:bg-gray-200 hover:text-gray-900 rounded-lg text-sm"
-                    data-modal-toggle="iuran-form">
-                    <svg class="h-8 w-8 text-gray-500" width="24" height="24" viewBox="0 0 24 24"
-                        stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" />
-                        <line x1="18" y1="6" x2="6" y2="18" />
-                        <line x1="6" y1="6" x2="18" y2="18" />
-                    </svg>
-                </button>
+                <a href="{{url('/')}}"><svg class="w-[36px] h-[36px] text-purple-600" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        viewBox="0 0 24 24">
+                        <path
+                            d="M14.5 3 12 7.156 9.857 3H2l10 18L22 3h-7.5ZM4.486 4.5h2.4L12 13.8l5.107-9.3h2.4L12 18.021 4.486 4.5Z" />
+                    </svg></a>
             </div>
             <div class="p-20 bg-white">
-                <form action="{{ route('join', $items->id) }}" method="POST">
+                <form action="{{ route('join', $kegiatans->id) }}" method="POST">
                     @csrf
                     <div class="mb-2 space-y-3">
                         <label for="iuran" class="font-semibold text-xl block">Seikhlasnya</label>

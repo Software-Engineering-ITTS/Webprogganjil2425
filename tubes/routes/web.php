@@ -31,6 +31,7 @@ Route::middleware('auth', 'role:admin')->group(function () {
     // Route::get('/dashboard/data-anggota', [AdminController::class, 'dataanggota']);
     Route::get('/dashboard/data-anggota', [AdminController::class, 'showDataAnggota']);
     Route::get('/dashboard/data-anggota/search-user', [AdminController::class, 'search'])->name('search.anggota');
+    Route::get('/dashboard/data-anggota/infokegiatan{id}', [AdminController::class, 'showInfoAnggota']);
 
     // Route::get('/dashboard/data-kegiatan', [AdminController::class, 'datakegiatan']);
     Route::get('/dashboard/data-kegiatan', [AdminController::class, 'showDataKegiatan']);
@@ -48,7 +49,8 @@ Route::middleware('auth', 'role:anggota')->group(function () {
     Route::get('/dashboard-anggota/profile', [AnggotaController::class, 'profile']);
     Route::get('/dashboard-anggota/kegiatan', [AnggotaController::class, 'kegiatan']);
     Route::get('/dashboard/anggota/kegiatan-search', [AdminController::class, 'search'])->name('search.kegiatan');
-    Route::post('/dashboard-anggota/{kegiatanId}/join', [AnggotaController::class, 'join'])->name('join');
+    Route::get('/dashboard-anggota/{kegiatanId}', [AnggotaController::class, 'iuran'])->name('iuran');
+    Route::post('/dashboard-anggota/join{kegiatanId}', [AnggotaController::class, 'join'])->name('join');
 });
 
 Route::middleware(['auth'])->group(function () {

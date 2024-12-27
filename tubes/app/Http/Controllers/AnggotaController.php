@@ -25,7 +25,13 @@ class AnggotaController extends Controller
     public function kegiatan()
     {
         $users = Auth::user();
-        return view('anggota.kegiatan', compact('users'));
+        $kegiatans = $users->kegiatans;
+        return view('anggota.kegiatan', compact('users', 'kegiatans'));
+    }
+
+    public function iuran($id) {
+        $kegiatans = Kegiatan::find($id);
+        return view('anggota.iuran', compact('kegiatans'));
     }
 
     public function join(Request $request, $id)
@@ -37,8 +43,12 @@ class AnggotaController extends Controller
         $kegiatans = Kegiatan::find($id);
         $users = auth()->user();
 
+        if ($kegiatans->users()->wherePivot('user_id', $users->id)->exists()) {
+            return redirect('/')->with('error', 'Anda sudah bergabung dalam kegiatan ini.');
+        }
+
         $kegiatans->users()->attach($users->id, ['iuran' => $request->iuran]);
 
-        return redirect()->back()->with('success', 'Anda berhasil bergabung');
+        return redirect('/')->with('success', 'Anda berhasil bergabung');
     }
 }
