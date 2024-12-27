@@ -26,7 +26,8 @@ class AdminPanelProvider extends PanelProvider
             ->default() // Setting the default panel
             ->id('admin')
             ->path('admin')
-            ->brandName('Pusat Belajar Digital') // Ubah nama brand
+            ->brandLogoHeight('4rem')
+            ->brandLogo(asset('images/akademi-pl.png'))
             ->font('Roboto') // Ganti font
             ->login() // Pengaturan login standar
             ->colors([ // Mengubah warna tema

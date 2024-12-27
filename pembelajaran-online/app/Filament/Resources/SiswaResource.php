@@ -4,13 +4,17 @@ namespace App\Filament\Resources;
 
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Select;
+use Filament\Forms\Components\Textarea;
 use App\Filament\Resources\SiswaResource\Pages;
 use App\Models\Siswa;
+use App\Models\Kelas;
+use App\Models\Materi;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Filters\SelectFilter;
 
 class SiswaResource extends Resource
 {
@@ -38,6 +42,7 @@ class SiswaResource extends Resource
 
             TextInput::make('no_telp')
                 ->tel()
+                ->maxLength(15) // Menambahkan batas maksimal untuk panjang nomor telepon
                 ->label('Nomor Telepon')
                 ->placeholder('Masukkan nomor telepon siswa'),
 
@@ -90,6 +95,15 @@ class SiswaResource extends Resource
                     ->label('Tanggal Registrasi')
                     ->dateTime()
                     ->sortable(),
+            ])
+            ->filters([
+                // Menambahkan filter untuk kelas dan materi
+                SelectFilter::make('kelas_id')
+                    ->label('Kelas')
+                    ->options(Kelas::pluck('nama', 'id')->toArray()),  // Menampilkan daftar kelas
+                SelectFilter::make('materi_id')
+                    ->label('Materi')
+                    ->options(Materi::pluck('judul', 'id')->toArray()),  // Menampilkan daftar materi
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
