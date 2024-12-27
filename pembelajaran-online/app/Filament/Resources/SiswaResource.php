@@ -25,6 +25,8 @@ class SiswaResource extends Resource
     // Menambahkan grup navigasi
     protected static ?string $navigationGroup = 'Siswa Management';  // Nama grup navigasi
 
+    
+
     public static function form(Form $form): Form
     {
         return $form->schema([
@@ -106,11 +108,10 @@ class SiswaResource extends Resource
                     ->options(Materi::pluck('judul', 'id')->toArray()),  // Menampilkan daftar materi
             ])
             ->actions([
-                Tables\Actions\EditAction::make(),
-                Tables\Actions\DeleteAction::make(),
+               
             ])
             ->bulkActions([
-                Tables\Actions\DeleteBulkAction::make(),
+                
             ]);
     }
 

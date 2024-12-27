@@ -24,6 +24,15 @@ class MateriResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
        protected static ?string $navigationGroup = 'Kelas Management'; 
+
+       public static function shouldRegisterNavigation(): bool
+       {
+           if(auth()->user()->can('view-materi'))
+               return true;
+           else
+               return false;
+       }
+    
     public static function form(Form $form): Form
     {
         return $form

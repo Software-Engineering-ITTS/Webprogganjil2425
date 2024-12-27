@@ -20,6 +20,15 @@ class KelasResource extends Resource
     // Menambahkan grup navigasi
     protected static ?string $navigationGroup = 'Kelas Management';  // Nama grup navigasi
 
+    public static function shouldRegisterNavigation(): bool
+       {
+           if(auth()->user()->can('view-kelas'))
+               return true;
+           else
+               return false;
+       }
+
+   
     public static function form(Form $form): Form
     {
         return $form->schema([
@@ -63,6 +72,7 @@ class KelasResource extends Resource
             // Tambahkan relasi jika diperlukan
         ];
     }
+    
 
     public static function getPages(): array
     {
@@ -73,3 +83,5 @@ class KelasResource extends Resource
         ];
     }
 }
+
+

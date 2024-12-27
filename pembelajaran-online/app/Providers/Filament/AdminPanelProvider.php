@@ -17,33 +17,42 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugin;
+use App\Filament\Resources\KelasResource;
+use App\Filament\Resources\MateriResource;
+use App\Filament\Resources\SiswaResource;
+use Filament\Navigation\NavigationBuilder;
+use Filament\Navigation\NavigationGroup;
+use App\Filament\Resources\UserResource;
+use Filament\Navigation\NavigationItem;
+use Filament\Pages\Dashboard;
 
 class AdminPanelProvider extends PanelProvider
 {
     public function panel(Panel $panel): Panel
     {
         return $panel
-            ->default() // Setting the default panel
+            ->default()
             ->id('admin')
             ->path('admin')
             ->brandLogoHeight('4rem')
             ->brandLogo(asset('images/akademi-pl.png'))
-            ->font('Roboto') // Ganti font
-            ->login() // Pengaturan login standar
-            ->colors([ // Mengubah warna tema
-                'primary' => Color::Purple, // Mengganti warna utama ke ungu
-                'secondary' => Color::Teal, // Mengganti warna sekunder ke teal
+            ->font('Roboto')
+            ->login()
+            ->colors([
+                'primary' => Color::Purple,
+                'secondary' => Color::Teal,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
-            ->pages([ // Menambahkan halaman Dashboard atau lainnya
-                Pages\Dashboard::class, // Gunakan halaman dashboard Filament
+            ->pages([
+                Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
-            ->widgets([ // Menambahkan widget
-                Widgets\AccountWidget::class, // Menambahkan widget Akun pengguna
+            ->widgets([
+                Widgets\AccountWidget::class,
             ])
-            ->middleware([ // Pengaturan middleware
+            ->middleware([
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -54,8 +63,59 @@ class AdminPanelProvider extends PanelProvider
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
             ])
-            ->authMiddleware([ // Pengaturan autentikasi
+            ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
+            ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
+                return $builder->groups([
+                    NavigationGroup::make('Dashboard')
+                        ->items([
+                            NavigationItem::make('Dashboard')
+                                ->icon('heroicon-o-home')
+                                ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                                ->url(fn (): string => Dashboard::getUrl()),
+                        ]),
+                    NavigationGroup::make('Class')
+                        ->items([
+                            ...KelasResource::getNavigationItems(),
+                            ...MateriResource::getNavigationItems(),
+                        ]),
+                    NavigationGroup::make('Register Siswa')
+                        ->items([
+                            ...SiswaResource::getNavigationItems(),
+                        ]),
+                    NavigationGroup::make('Setting')
+                        ->items([
+                            NavigationItem::make('User')
+                                ->icon('heroicon-o-user-group')
+                                ->isActiveWhen(fn (): bool => request()->routeIs([
+                                    'filament.admin.resources.users.index',
+                                    'filament.admin.resources.users.create',
+                                    'filament.admin.resources.users.view',
+                                    'filament.admin.resources.users.edit',
+                                ]))
+                                ->url(fn (): string => UserResource::getUrl()),
+                            NavigationItem::make('Roles')
+                                ->icon('heroicon-o-user-group')
+                                ->isActiveWhen(fn (): bool => request()->routeIs([
+                                    'filament.admin.resources.roles.index',
+                                    'filament.admin.resources.roles.create',
+                                    'filament.admin.resources.roles.view',
+                                    'filament.admin.resources.roles.edit',
+                                ]))
+                                ->url(fn (): string => '/admin/roles'),
+                            NavigationItem::make('Permissions')
+                                ->icon('heroicon-o-lock-closed')
+                                ->isActiveWhen(fn (): bool => request()->routeIs([
+                                    'filament.admin.resources.permissions.index',
+                                    'filament.admin.resources.permissions.create',
+                                    'filament.admin.resources.permissions.view',
+                                    'filament.admin.resources.permissions.edit',
+                                ]))
+                                ->url(fn (): string => '/admin/permissions'),
+                        ]),
+                ]);
+            });
     }
 }
