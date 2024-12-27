@@ -13,6 +13,6 @@ class KegiatanSeeder extends Seeder
      */
     public function run(): void
     {
-        Kegiatan::factory(15)->create();
+        Kegiatan::factory(20)->create();
     }
 }

@@ -19,7 +19,11 @@ class Kegiatan extends Model
     ];
 
     protected $guarded = ['id'];
-    public function kegiatan() {
-        return $this->belongsTo(kegiatan::class);
+
+    public function users()
+    {
+        return $this->belongsToMany(User::class, 'kegiatan_anggotas', 'kegiatan_id', 'user_id')
+                    ->withPivot('iuran')
+                    ->withTimestamps();
     }
 }

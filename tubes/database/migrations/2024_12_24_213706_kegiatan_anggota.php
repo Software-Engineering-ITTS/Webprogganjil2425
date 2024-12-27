@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->foreignId('kegiatan_id')->constrained()->onDelete('cascade');
+            $table->string('iuran');
             $table->timestamps();
         });
     }
@@ -23,6 +24,6 @@ return new class extends Migration
      * Reverse the migrations.
      */
     public function down(): void {
-        Schema::dropIfExists('anggota_kegiatan');
+        Schema::dropIfExists('kegiatan_anggotas');
     }
 };

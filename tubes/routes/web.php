@@ -16,38 +16,46 @@ use App\Http\Controllers\AuthController;
 |
 */
 
-Route::get('/home', function () {
-    return view('home');
-});
+// Route::get('/', function () {
+//     return view('home');
+// });
 
-Route::middleware('auth','role:admin')->group(function() {
+Route::get('/', [AuthController::class, 'home'])->name('home');
+Route::get('/', [AuthController::class, 'search'])->name('search.home');
+
+Route::middleware('auth', 'role:admin')->group(function () {
 
     Route::view('/dashboard', [AdminController::class, 'layouts.sidebar'])->name('dashboard');
+    Route::get('/dashboard/admin', [AdminController::class, 'dashboardAdmin']);
 
     // Route::get('/dashboard/data-anggota', [AdminController::class, 'dataanggota']);
     Route::get('/dashboard/data-anggota', [AdminController::class, 'showDataAnggota']);
+    Route::get('/dashboard/data-anggota/search-user', [AdminController::class, 'search'])->name('search.anggota');
 
     // Route::get('/dashboard/data-kegiatan', [AdminController::class, 'datakegiatan']);
     Route::get('/dashboard/data-kegiatan', [AdminController::class, 'showDataKegiatan']);
+    Route::get('/dashboard/data-kegiatan/info{id}', [AdminController::class, 'infoKegiatan']);
+    Route::get('/dashboard/data-anggota/search-kegiatan', [AdminController::class, 'searchKegiatan'])->name('search.kegiatan');
     Route::post('/dashboard/data-kegiatan-form', [AdminController::class, 'store'])->name('store');
     Route::get('/dashboard/{id}/data-kegiatan-edit', [AdminController::class, 'edit'])->name('edit');
     Route::put('/dashboard/data-kegiatan/update-{id}', [AdminController::class, 'update'])->name('update');
     Route::delete('/dashboard/data-kegiatan/{id}', [AdminController::class, 'destroy'])->name('destroy');
-
-    // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::middleware('auth', 'role:anggota')->group(function() {
-    Route::get('/profile', [AnggotaController::class, 'profile']);
+Route::middleware('auth', 'role:anggota')->group(function () {
+    Route::view('/dashboard-anggota', [AnggotaController::class, 'dashboard'])->name('dashboard.anggota');
 
-    // Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
+    Route::get('/dashboard-anggota/profile', [AnggotaController::class, 'profile']);
+    Route::get('/dashboard-anggota/kegiatan', [AnggotaController::class, 'kegiatan']);
+    Route::get('/dashboard/anggota/kegiatan-search', [AdminController::class, 'search'])->name('search.kegiatan');
+    Route::post('/dashboard-anggota/{kegiatanId}/join', [AnggotaController::class, 'join'])->name('join');
 });
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
-Route::middleware('guest')->group(function() {
+Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'login'])->name('login');
     Route::post('/login', [AuthController::class, 'loginPost'])->name("login.post");
 

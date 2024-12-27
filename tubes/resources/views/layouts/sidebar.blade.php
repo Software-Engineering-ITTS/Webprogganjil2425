@@ -15,7 +15,7 @@
             </div>
             <ul class="space-y-7 font-medium">
                 <li>
-                    <a href="">
+                    <a href="{{url('/dashboard/admin')}}">
                         <div class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group ">
                             <svg class="h-8 w-8 text-teal-400 group-hover:text-white" width="24" height="24"
                                 viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none"

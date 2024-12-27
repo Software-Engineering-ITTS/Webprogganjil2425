@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Kegiatan;
 
 class AuthController extends Controller
 {
@@ -23,13 +24,12 @@ class AuthController extends Controller
 
         $credentials = $request->only('username', 'password');
         if (Auth::attempt($credentials)) {
-            $user = Auth::user(); // Mendapatkan data pengguna yang login
+            $user = Auth::user();
 
-            // Cek role pengguna
             if ($user->role === 'admin') {
-                return redirect('/dashboard')->with('success', 'Login Berhasil sebagai Admin');
+                return redirect('/dashboard/admin')->with('success', 'Login Berhasil sebagai Admin');
             } elseif ($user->role === 'anggota') {
-                return redirect('/profile')->with('success', 'Login Berhasil sebagai Anggota');
+                return redirect('/dashboard-anggota/profile')->with('success', 'Login Berhasil sebagai Anggota');
             }
         }
         return back()->with('error', 'Email atau Password salah');
@@ -70,5 +70,26 @@ class AuthController extends Controller
         Auth::logout();
 
         return redirect('/login');
+    }
+
+    public function home() {
+        $user = Auth::user();
+        $kegiatans = Kegiatan::latest()->paginate(10);
+
+        if ($user) {
+            return view('home', compact('kegiatans', 'user'));
+        }
+        return view('home', compact('kegiatans'));
+    }
+
+    public function search(Request $request)
+    {
+        $search = $request->input('search');
+
+        $kegiatans = Kegiatan::where('nama_kegiatan', 'like', "%$search%")
+            ->orWhere('lokasi_kegiatan', 'like', "%$search%")
+            ->paginate(10);
+
+        return view('home', compact('kegiatans', 'search'));
     }
 }

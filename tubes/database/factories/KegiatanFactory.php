@@ -20,7 +20,7 @@ class KegiatanFactory extends Factory
             'nama_kegiatan' => $this->faker->sentence(3),
             'tanggal_kegiatan' => $this->faker->date(),
             'lokasi_kegiatan' => $this->faker->address(),
-            'deskripsi' => $this->faker->paragraph(),
+            'deskripsi' => $this->faker->sentence(7),
         ];
     }
 }

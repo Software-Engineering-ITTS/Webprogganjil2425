@@ -27,6 +27,14 @@ class User extends Authenticatable
         'role'
     ];
 
+    protected $guarded = ['id'];
+
+    public function kegiatans()
+{
+    return $this->belongsToMany(Kegiatan::class, 'kegiatan_anggotas', 'user_id', 'kegiatan_id')
+                ->withPivot('iuran')
+                ->withTimestamps();
+}
     /**
      * The attributes that should be hidden for serialization.
      *
