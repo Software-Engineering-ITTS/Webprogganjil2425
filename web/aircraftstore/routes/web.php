@@ -3,6 +3,7 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CustomerController;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -27,6 +28,8 @@ Route::get('/product', function () {
 Route::get('/customer', function () {
     return view('customer');
 })->middleware(['auth', 'verified'])->name('customer');
+
+Route::post('/customer', [CustomerController::class, 'store'])->middleware(['auth', 'verified']);
 
 
 
