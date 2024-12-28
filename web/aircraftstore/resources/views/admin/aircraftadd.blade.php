@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Admin Dashboard</title>
+    <title>Add Aircraft</title>
 </head>
 
 <body class="min-h-screen bg-black text-white">
@@ -15,13 +15,13 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Product</a>
+            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Aircraft</a>
         </div>
         <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
@@ -34,7 +34,7 @@
     <header>
         {{-- Header Content --}}
         <div class="p-3 my-7">
-            <h1 class="text-center text-3xl">Add Product</h1>
+            <h1 class="text-center text-3xl">Add Aircraft</h1>
         </div>
     </header>
     <main>
@@ -42,7 +42,7 @@
         <div class="container mx-auto max-w-xl mb-7">
             <form action="">
                 <div class="">
-                    <label for="name" class="block mb-1 mt-3">Product Name</label>
+                    <label for="name" class="block mb-1 mt-3">Aircraft Name</label>
                     <input type="text" name="name" id="name" class="block w-full rounded-md" required>
                 </div>
                 <div class="">

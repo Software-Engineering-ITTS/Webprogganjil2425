@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Admin Dashboard</title>
+    <title>List Aircraft</title>
 </head>
 
 <body class="min-h-screen bg-black text-white">
@@ -15,13 +15,13 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Product</a>
+            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Aircraft</a>
         </div>
         <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
@@ -34,7 +34,7 @@
     <header>
         {{-- Header Content --}}
         <div class="p-3 my-7">
-            <h1 class="text-center text-3xl">List Product</h1>
+            <h1 class="text-center text-3xl">List Aircraft</h1>
         </div>
     </header>
     <main>
