@@ -17,8 +17,8 @@
         </header>
         <main>
             <div>
-                <h1 class="text-8xl text-center font-extrabold">Aircraft Store</h1>
-                <h3 class="text-3xl text-center font-bold ">Best Place to Buy Your Aircraft</h3>
+                <h1 class="text-8xl text-center font-extrabold hover:text-gray-700">Aircraft Store</h1>
+                <h3 class="text-3xl text-center font-bold hover:text-gray-700  ">Best Place to Buy Your Aircraft</h3>
             </div>
         </main>
         {{--  breeze default --}}
