@@ -40,7 +40,11 @@
     <main>
         {{-- Main Content --}}
         <div class="container mx-auto max-w-xl mb-7">
-            <form action="">
+            @if (@session('success'))
+                <p>{{ session ('success') }}</p>
+            @endif
+            <form action="{{ route('admin.addproduct') }}" method="POST" enctype="multipart/form-data">
+                @csrf
                 <div class="">
                     <label for="name" class="block mb-1 mt-3">Aircraft Name</label>
                     <input type="text" name="name" id="name" class="block w-full rounded-md" required>

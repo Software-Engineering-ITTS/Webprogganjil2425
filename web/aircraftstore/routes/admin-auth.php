@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\Auth\Admin\LoginController;
 use App\Http\Controllers\Auth\Admin\RegisteredController;
 use Illuminate\Support\Facades\Route;
@@ -31,7 +32,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.listproduct');
     })->name('admin.listproduct');
 
-
+    Route::post('/addproduct', [AircraftController::class, 'store'])->name('admin.addproduct');
 
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 });
