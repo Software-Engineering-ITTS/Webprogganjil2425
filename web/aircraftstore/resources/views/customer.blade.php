@@ -7,6 +7,12 @@
             </div>
         </div>
     </x-slot>
+    @if (session('success'))
+        <div class="container mx-auto max-w-xl bg-green-500 text-white p-4 rounded-xl mb-5">
+            <p>{{ session('success') }}</p>
+        </div>
+    @endif
+
 
     <div class="container mx-auto max-w-xl bg-gray-900 text-white p-9 rounded-xl mb-11">
         <form action="/customer" method = "POST" enctype="application/x-www-form-urlencoded">

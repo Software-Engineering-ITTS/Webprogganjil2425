@@ -30,6 +30,7 @@ class CustomerController extends Controller
             'postal_code'=> $validateData['postal_code'],
         ]);
 
+
         return redirect('/customer')->with('success', 'Customer has been added');
     }
 }
