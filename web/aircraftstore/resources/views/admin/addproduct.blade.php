@@ -43,7 +43,7 @@
             @if (@session('success'))
                 <p>{{ session ('success') }}</p>
             @endif
-            <form action="{{ route('admin.addproduct') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('admin.addproduct.submit') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="">
                     <label for="name" class="block mb-1 mt-3">Aircraft Name</label>

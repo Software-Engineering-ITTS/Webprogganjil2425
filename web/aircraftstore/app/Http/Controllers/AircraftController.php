@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use app\Models\Aircraft;
+use App\Models\Aircraft;
 
 class AircraftController extends Controller
 {
@@ -15,10 +15,20 @@ class AircraftController extends Controller
             'nationalorigin' => 'required',
             'manufactured' => 'required',
             'price' => 'required',
-            'photo' => 'required',
+            'photo' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
-        Aircraft::create($validate);
-        return redirect()->route('/addproduct')->with('success', 'Aircraft Added');
+        $path = $request->file('photo')->store('aircraft_photos', 'public');
+
+        Aircraft::create([
+            'name' => $validate['name'],
+            'type' => $validate['type'],
+            'nationalorigin' => $validate['nationalorigin'],
+            'manufactured' => $validate['manufactured'],
+            'price' => $validate['price'],
+            'photo' => $path,
+        ]);
+        return redirect()->route('admin.addproduct')->with('success', 'Aircraft Added');
+
     }
 }
