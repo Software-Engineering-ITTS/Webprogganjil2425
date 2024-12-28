@@ -15,13 +15,13 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Product</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Product</a>
+            <a href="/admin/listproduct" class="hover:bg-gray-700 p-2 rounded-md">List Aircraft</a>
         </div>
         <div class="mx-3">
             <form method="POST" action="{{ route('admin.logout') }}">
