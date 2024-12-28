@@ -24,20 +24,20 @@
                 <input type="text" name="address" id="address" class="rounded-md w-full text-black">
             </div>
             <div class="my-5">
-                <label for="  city" class="block">City</label>
-                <input type="text" name="  city" id="  city" class="rounded-md w-full text-black">
+                <label for="city" class="block">City</label>
+                <input type="text" name="city" id="city" class="rounded-md w-full text-black">
             </div>
             <div class="my-5">
-                <label for="  province" class="block"> Province</label>
-                <input type="text" name="  province" id="  province" class="rounded-md w-full text-black">
+                <label for="province" class="block"> Province</label>
+                <input type="text" name="province" id="province" class="rounded-md w-full text-black">
             </div>
             <div class="my-5">
-                <label for="  country" class="block"> Country</label>
-                <input type="text" name="  country" id="  country" class="rounded-md w-full text-black">
+                <label for="country" class="block"> Country</label>
+                <input type="text" name="country" id="country" class="rounded-md w-full text-black">
             </div>
             <div class="my-5">
-                <label for="  postal_code" class="block">Postal Code</label>
-                <input type="text" name="  postal_code" id="  postal_code" class="rounded-md w-full text-black">
+                <label for="postal_code" class="block">Postal Code</label>
+                <input type="text" name="postal_code" id="postal_code" class="rounded-md w-full text-black">
             </div>
             <div class="flex justify-center">
                 <button type="submit" class="bg-black p-2 rounded-md font-bold hover:bg-gray-500">Submit</button>
