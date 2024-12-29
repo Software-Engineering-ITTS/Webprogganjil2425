@@ -36,4 +36,41 @@ class AircraftController extends Controller
         $aircraft = Aircraft::findOrFail($id);
         return view('admin.listproduct', compact('aircraft'));
     }
+
+    public function edit($id)
+    {
+        $aircraft = Aircraft::findOrFail($id);
+        return view('admin.edit', compact('aircraft'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'name' => 'required',
+            'type' => 'required',
+            'nationalorigin' => 'required',
+            'manufactured' => 'required',
+            'price' => 'required',
+            'photo' => 'nullable|image',
+        ]);
+
+        $aircraft = Aircraft::findOrFail($id);
+
+        if ($request->hasFile('photo')) {
+            $path = $request->file('photo')->store('aircraft_photos', 'public');
+            $validated['photo'] = $path;
+        }
+
+        $aircraft->update($validated);
+
+        return redirect()->route('admin.listproduct')->with('success', 'Aircraft updated successfully!');
+    }
+
+    public function destroy($id)
+    {
+        $aircraft = Aircraft::findOrFail($id);
+        $aircraft->delete();
+
+        return redirect()->route('admin.listproduct')->with('success', 'Aircraft deleted successfully!');
+    }
 }

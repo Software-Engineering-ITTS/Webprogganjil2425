@@ -15,7 +15,7 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gra y-700 p-2 rounded-md">Add Aircraft</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
@@ -31,41 +31,64 @@
             </form>
         </div>
     </nav>
+
     <header>
-        {{-- Header Content --}}
         <div class="p-3 my-7">
             <h1 class="text-center text-3xl">Edit Aircraft</h1>
         </div>
     </header>
-    <main>
-        {{-- all product container --}}
-        <div class="grid grid-cols-3">
-            {{-- each container product --}}
-            @foreach ($aircrafts as $aircraft)
-                <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
-                    <h1 class="text-xl text-center"> <strong>{{ $aircraft->name }}</strong></h1>
-                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Aircraft Image"
-                        class="w-full h-64 object-cover rounded-md my-3">
-                    <p> <strong>Type :</strong> {{ $aircraft->type }}</p>
-                    <p> <strong>National Origin : </strong> {{ $aircraft->nationalorigin }}</p>
-                    <p> <strong>Manufactured :</strong>{{ $aircraft->manufactured }}</p>
-                    <p> <strong> Price :</strong> {{ $aircraft->price }}</p>
-                    <div class="flex justify-center">
-                        <div class="bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
-                            <input type="button" value="Edit" class="font-bold">
-                        </div>
-                        <div class="bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
-                            <input type="button" value="Delete" class="font-bold">
-                        </div>
-                    </div>
-                </div>
-            @endforeach
-        </div>
 
+    <main>
+        <form method="POST" action="{{ route('admin.aircraft.update', $aircraft->id) }}" enctype="multipart/form-data">
+            @csrf
+            @method('PUT')
+
+            <div class="mb-4">
+                <label for="name" class="block text-white">Name</label>
+                <input type="text" name="name" value="{{ $aircraft->name }}"
+                    class="w-full p-2 rounded-md text-black">
+            </div>
+
+            <div class="mb-4">
+                <label for="type" class="block text-white">Type</label>
+                <input type="text" name="type" value="{{ $aircraft->type }}"
+                    class="w-full p-2 rounded-md text-black">
+            </div>
+
+            <div class="mb-4">
+                <label for="nationalorigin" class="block text-white">National Origin</label>
+                <input type="text" name="nationalorigin" value="{{ $aircraft->nationalorigin }}"
+                    class="w-full p-2 rounded-md text-black">
+            </div>
+
+            <div class="mb-4">
+                <label for="manufactured" class="block text-white">Manufactured</label>
+                <input type="text" name="manufactured" value="{{ $aircraft->manufactured }}"
+                    class="w-full p-2 rounded-md text-black">
+            </div>
+
+            <div class="mb-4">
+                <label for="price" class="block text-white">Price</label>
+                <input type="text" name="price" value="{{ $aircraft->price }}"
+                    class="w-full p-2 rounded-md text-black">
+            </div>
+
+            <div class="mb-4">
+                <label for="photo" class="block text-white">Photo</label>
+                <input type="file" name="photo" class="w-full p-2 rounded-md">
+                @if ($aircraft->photo)
+                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Current Photo"
+                        class="w-32 mt-2 rounded-md text-black">
+                @endif
+            </div>
+
+            <div class="flex justify-between">
+                <button type="submit" class="bg-blue-700 hover:bg-blue-500 p-2 rounded-md">Save Changes</button>
+                <a href="{{ route('admin.listproduct') }}"
+                    class="bg-gray-600 hover:bg-gray-400 p-2 rounded-md">Cancel</a>
+            </div>
+        </form>
     </main>
-    <footer>
-        {{-- Footer Content --}}
-    </footer>
 </body>
 
 </html>

@@ -15,7 +15,7 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gra y-700 p-2 rounded-md">Add Aircraft</a>
+            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
@@ -32,12 +32,17 @@
         </div>
     </nav>
     <header>
-        {{-- Header Content --}}
         <div class="p-3 my-7">
             <h1 class="text-center text-3xl">List Aircraft</h1>
         </div>
     </header>
     <main>
+        @if (session('success'))
+            <div class="bg-green-500 p-4 rounded-md text-white mb-4">
+                {{ session('success') }}
+            </div>
+        @endif
+
         {{-- all product container --}}
         <div class="grid grid-cols-3">
             {{-- each container product --}}
@@ -51,12 +56,19 @@
                     <p> <strong>Manufactured :</strong>{{ $aircraft->manufactured }}</p>
                     <p> <strong> Price :</strong> {{ $aircraft->price }}</p>
                     <div class="flex justify-center">
+                        <!-- Edit Button -->
                         <div class="bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
-                            <input type="button" value="Edit" class="font-bold">
+                            <a href="{{ route('admin.aircraft.edit', $aircraft->id) }}" class="font-bold">Edit</a>
                         </div>
-                        <div class="bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
-                            <input type="button" value="Delete" class="font-bold">
-                        </div>
+
+                        <!-- Delete Button -->
+                        <form method="POST" action="{{ route('admin.aircraft.delete', $aircraft->id) }}"
+                            onsubmit="return confirm('Are you sure you want to delete this aircraft?');">
+                            @csrf
+                            @method('DELETE')
+                            <button type="submit"
+                                class="bg-red-700 p-2 w-auto rounded-md hover:bg-red-500 font-bold">Delete</button>
+                        </form>
                     </div>
                 </div>
             @endforeach

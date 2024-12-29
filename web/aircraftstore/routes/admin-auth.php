@@ -35,11 +35,11 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.history');
     })->name('admin.history');
 
+    // show all product
     Route::get('/listproduct', function () {
-        $aircrafts = Aircraft::all(); // Ambil semua data pesawat dari database
+        $aircrafts = Aircraft::all();
         return view('admin.listproduct', compact('aircrafts'));
     })->name('admin.listproduct');
-
 
     Route::get('/listproduct/{id?}', function ($id = null) {
         if ($id) {
@@ -51,6 +51,10 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         }
     })->name('admin.listproduct');
 
+    // edit product
+    Route::get('/admin/aircraft/edit/{id}', [AircraftController::class, 'edit'])->name('admin.aircraft.edit');
+    Route::put('/admin/aircraft/update/{id}', [AircraftController::class, 'update'])->name('admin.aircraft.update');
+    Route::delete('/admin/delete/{id}', [AircraftController::class, 'destroy'])->name('admin.aircraft.delete');
 
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 });
