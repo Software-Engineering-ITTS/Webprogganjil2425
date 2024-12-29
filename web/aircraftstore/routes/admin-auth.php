@@ -4,6 +4,7 @@ use App\Http\Controllers\AircraftController;
 use App\Http\Controllers\Auth\Admin\LoginController;
 use App\Http\Controllers\Auth\Admin\RegisteredController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Aircraft;
 
 // Grup route untuk admin tamu (belum login)
 Route::prefix('admin')->middleware('guest:admin')->group(function () {
@@ -35,9 +36,21 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
     })->name('admin.history');
 
     Route::get('/listproduct', function () {
-        return view('admin.listproduct');
+        $aircrafts = Aircraft::all(); // Ambil semua data pesawat dari database
+        return view('admin.listproduct', compact('aircrafts'));
     })->name('admin.listproduct');
 
-    // Logout admin
+
+    Route::get('/listproduct/{id?}', function ($id = null) {
+        if ($id) {
+            $aircraft = Aircraft::findOrFail($id);
+            return view('admin.listproduct', compact('aircraft'));
+        } else {
+            $aircrafts = Aircraft::all();
+            return view('admin.listproduct', compact('aircrafts'));
+        }
+    })->name('admin.listproduct');
+
+
     Route::post('logout', [LoginController::class, 'destroy'])->name('admin.logout');
 });

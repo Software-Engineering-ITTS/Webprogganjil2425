@@ -29,6 +29,11 @@ class AircraftController extends Controller
             'photo' => $path,
         ]);
         return redirect()->route('admin.addproduct')->with('success', 'Aircraft Added');
+    }
 
+    public function show($id)
+    {
+        $aircraft = Aircraft::findOrFail($id);
+        return view('admin.listproduct', compact('aircraft'));
     }
 }

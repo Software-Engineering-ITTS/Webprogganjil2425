@@ -15,7 +15,7 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
+            <a href="/admin/addproduct" class="hover:bg-gra y-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
@@ -38,27 +38,29 @@
         </div>
     </header>
     <main>
-        {{--  --}}
         {{-- all product container --}}
         <div class="grid grid-cols-3">
-            {{-- container each product --}}
-            <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
-                <h1 class="text-xl text-center"> <strong>Bell Boeing V-22 Osprey</strong></h1>
-                <img src="{{ asset('img/v22osprey.jpg') }}" alt="V22 Osprey" class="rounded-md my-3">
-                <p> <strong>Type :</strong> Tiltrotor military transport aircraft</p>
-                <p> <strong>National Origin : </strong> United States</p>
-                <p> <strong>Manufactured :</strong>1988-Present </p>
-                <p> <strong> Price :</strong> $99.9999</p>
-                <div class="flex justify-center">
-                    <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
-                        <input type="button" value="Edit" class="font-bold">
-                    </div>
-                    <div class=" bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
-                        <input type="button" value="Delete" class="font-bold">
+            {{-- each container product --}}
+            @foreach ($aircrafts as $aircraft)
+                <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
+                    <h1 class="text-xl text-center"> <strong>{{ $aircraft->name }}</strong></h1>
+                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Aircraft Image" class="rounded-md my-3">
+                    <p> <strong>Type :</strong> {{ $aircraft->type }}</p>
+                    <p> <strong>National Origin : </strong> {{ $aircraft->nationalorigin }}</p>
+                    <p> <strong>Manufactured :</strong>{{ $aircraft->manufactured }}</p>
+                    <p> <strong> Price :</strong> {{ $aircraft->price }}</p>
+                    <div class="flex justify-center">
+                        <div class="bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
+                            <input type="button" value="Edit" class="font-bold">
+                        </div>
+                        <div class="bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                            <input type="button" value="Delete" class="font-bold">
+                        </div>
                     </div>
                 </div>
-            </div>
+            @endforeach
         </div>
+
     </main>
     <footer>
         {{-- Footer Content --}}
