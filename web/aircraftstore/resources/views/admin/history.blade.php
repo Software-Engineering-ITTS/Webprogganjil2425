@@ -41,7 +41,7 @@
     <main>
         @if (isset($orders) && $orders->isNotEmpty())
             <div class="container mx-auto bg-gray-900 text-white p-9 rounded-xl">
-                <table class="w-full text-left bg-gray-800 rounded-xl overflow-hidden">
+                <table class="w-full text-center bg-gray-800 rounded-xl overflow-hidden">
                     <thead class="bg-gray-700">
                         <tr>
                             <th class="p-4">Order ID</th>
