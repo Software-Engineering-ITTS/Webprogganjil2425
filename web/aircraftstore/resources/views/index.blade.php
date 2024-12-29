@@ -41,9 +41,6 @@
                 @endif
             @endauth
         </nav>
-        <footer>
-            {{--  --}}
-        </footer>
     </div>
 </body>
 

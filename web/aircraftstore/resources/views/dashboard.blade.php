@@ -57,5 +57,9 @@
             </a>
         </div>
     </div>
-
+    <footer>
+        <div class="flex justify-center mb-9">
+            <p class="text-white">© iamjustzero</p>
+        </div>
+    </footer>
 </x-app-layout>
