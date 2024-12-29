@@ -6,7 +6,7 @@
         <h2 class="text-2xl font-bold text-gray-800">Edit Pembayaran</h2>
     </div>
 
-    <form action="{{ route('payments.update', $payment) }}" method="POST">
+    <form action="{{ route('payments.update', $payment->id) }}" method="POST">
         @csrf
         @method('PUT')
 

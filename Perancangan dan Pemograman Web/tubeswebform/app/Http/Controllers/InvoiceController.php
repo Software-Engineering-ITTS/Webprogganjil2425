@@ -13,8 +13,11 @@ class InvoiceController extends Controller
 {
     public function index()
     {
-        $invoices = Invoice::with('customer')->latest()->paginate(10);
-        return view('invoices.index', compact('invoices'));
+    $invoices = Invoice::with('customer')  // Eager loading untuk menghindari N+1 problem
+        ->latest()
+        ->paginate(10);
+
+    return view('invoices.index', compact('invoices'));
     }
 
     public function create()
@@ -76,7 +79,7 @@ class InvoiceController extends Controller
                 ->with('success', 'Invoice berhasil dibuat!');
 
         } catch (\Exception $e) {
-            \Log::error('Error creating invoice: ' . $e->getMessage());
+            ('Error creating invoice: ' . $e->getMessage());
             return back()
                 ->withInput()
                 ->withErrors(['error' => 'Terjadi kesalahan: ' . $e->getMessage()]);

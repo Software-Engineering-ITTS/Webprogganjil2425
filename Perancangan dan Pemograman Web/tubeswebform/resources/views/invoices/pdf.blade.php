@@ -52,10 +52,10 @@
             <tr>
                 <td width="50%">
                     <strong>Dari:</strong><br>
-                    Nama Perusahaan Anda<br>
-                    Alamat Perusahaan<br>
-                    Telepon: xxx-xxx-xxx<br>
-                    Email: info@perusahaan.com
+                    Nama Perusahaan: Medfam Apotik<br>
+                    Alamat: -<br>
+                    Telepon: 082223401519<br>
+                    Email: MedfamApotik@gmail.com
                 </td>
                 <td width="50%">
                     <strong>Kepada:</strong><br>

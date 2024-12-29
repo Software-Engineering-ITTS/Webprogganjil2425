@@ -6,6 +6,16 @@
         <h2 class="text-2xl font-bold text-gray-800">Daftar Customer</h2>
         <a href="{{ route('customers.create') }}" class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-600">
             Tambah Customer
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" class="inline-block ml-2">
+        <g fill="none" stroke="currentColor" stroke-dasharray="16" stroke-dashoffset="16" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+            <path d="M5 12h14">
+                <animate fill="freeze" attributeName="stroke-dashoffset" dur="0.4s" values="16;0"/>
+            </path>
+            <path d="M12 5v14">
+                <animate fill="freeze" attributeName="stroke-dashoffset" begin="0.4s" dur="0.4s" values="16;0"/>
+            </path>
+        </g>
+    </svg>
         </a>
     </div>
 
