@@ -22,12 +22,11 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.dashboard');
     })->name('admin.dashboard');
 
-    // Route untuk menampilkan form tambah produk
     Route::get('/addproduct', function () {
-        return view('admin.addproduct.form');
+        return view('admin.addproduct');
     })->name('admin.addproduct');
 
-    // Route untuk menyimpan data produk
+
     Route::post('/addproduct', [AircraftController::class, 'store'])
         ->name('admin.addproduct.submit');
 
