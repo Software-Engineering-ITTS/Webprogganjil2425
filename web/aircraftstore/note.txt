@@ -6,3 +6,6 @@ yeah know its back, thanks god
 back again to commit update page title and add favicon for Aircraft Store
 
 back again to commit id 053d6f825af0f3d9c946ca60bdcdb02485457077 Add success message display after customer creation
+
+on phase :
+add relation customer, with user. so register customer only can once time.
