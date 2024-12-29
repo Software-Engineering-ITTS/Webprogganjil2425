@@ -43,12 +43,12 @@
         <div class="grid grid-cols-3">
             {{-- container each product --}}
             <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
-                <h1 class="text-xl text-center">Bell Boeing V-22 Osprey</h1>
+                <h1 class="text-xl text-center"> <strong>Bell Boeing V-22 Osprey</strong></h1>
                 <img src="{{ asset('img/v22osprey.jpg') }}" alt="V22 Osprey" class="rounded-md my-3">
-                <p>Type : Tiltrotor military transport aircraft</p>
-                <p>National Origin : United States</p>
-                <p>Manufactured : 1988-Present </p>
-                <p>Price : $99.9999</p>
+                <p> <strong>Type :</strong> Tiltrotor military transport aircraft</p>
+                <p> <strong>National Origin : </strong> United States</p>
+                <p> <strong>Manufactured :</strong>1988-Present </p>
+                <p> <strong> Price :</strong> $99.9999</p>
                 <div class="flex justify-center">
                     <div class=" bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
                         <input type="button" value="Edit" class="font-bold">
