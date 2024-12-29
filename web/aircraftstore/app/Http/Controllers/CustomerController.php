@@ -11,6 +11,17 @@ class CustomerController extends Controller
 {
     public function store(Request $request)
     {
+
+        if (!Auth::check()) {
+            return redirect('/login')->with('error', 'You must be logged in to register as a customer.');
+        }
+
+        if (empty(Auth::id())) {
+            return redirect('/customer')->with('error', 'User is not authenticated.');
+        }
+
+        // dd(Auth::id()); debugging auth id
+
         if (Auth::user()->customer) {
             return redirect('/customer')->with('error', 'You can only register as a customer once.');
         }
@@ -33,8 +44,8 @@ class CustomerController extends Controller
             'province' => $validateData['province'],
             'country' => $validateData['country'],
             'postal_code' => $validateData['postal_code'],
+            'user_id' => Auth::id(),
         ]);
-
 
         return redirect('/customer')->with('success', 'Customer has been added');
     }
