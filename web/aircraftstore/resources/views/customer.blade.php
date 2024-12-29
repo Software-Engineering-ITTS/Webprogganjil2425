@@ -12,7 +12,11 @@
             <p>{{ session('success') }}</p>
         </div>
     @endif
-
+    @if (session('error'))
+        <div class="container mx-auto max-w-xl bg-red-500 text-white p-4 rounded-xl mb-5">
+            <p>{{ session('error') }}</p>
+        </div>
+    @endif
 
     <div class="container mx-auto max-w-xl bg-gray-900 text-white p-9 rounded-xl mb-11">
         <form action="/customer" method = "POST" enctype="application/x-www-form-urlencoded">
