@@ -41,31 +41,36 @@
         {{-- Main Content --}}
         <div class="container mx-auto max-w-xl mb-7">
             @if (@session('success'))
-                <p>{{ session ('success') }}</p>
+                <div class="bg-green-500 text-white p-4 rounded-xl mb-5">
+                    <p>{{ session('success') }}</p>
+                </div>
             @endif
             <form action="{{ route('admin.addproduct.submit') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="">
                     <label for="name" class="block mb-1 mt-3">Aircraft Name</label>
-                    <input type="text" name="name" id="name" class="block w-full rounded-md text-black" required>
+                    <input type="text" name="name" id="name" class="block w-full rounded-md text-black"
+                        required>
                 </div>
                 <div class="">
                     <label for="type" class="block mb-1 mt-3">Type</label>
-                    <input type="text" name="type" id="type" class="block w-full rounded-md text-black" required>
+                    <input type="text" name="type" id="type" class="block w-full rounded-md text-black"
+                        required>
                 </div>
                 <div class="">
                     <label for="nationalorigin" class="block mb-1 mt-3">National Origin</label>
-                    <input type="text" name="nationalorigin" id="nationalorigin" class="block w-full rounded-md text-black"
-                        required>
+                    <input type="text" name="nationalorigin" id="nationalorigin"
+                        class="block w-full rounded-md text-black" required>
                 </div>
                 <div class="">
                     <label for="manufactured" class="block mb-1 mt-3">Manufactured</label>
-                    <input type="text" name="manufactured" id="manufactured" class="block w-full rounded-md text-black"
-                        required>
+                    <input type="text" name="manufactured" id="manufactured"
+                        class="block w-full rounded-md text-black" required>
                 </div>
                 <div class="">
                     <label for="price" class="block mb-1 mt-3">Price</label>
-                    <input type="text" name="price" id="price" class="block w-full rounded-md text-black" required>
+                    <input type="text" name="price" id="price" class="block w-full rounded-md text-black"
+                        required>
                 </div>
                 <div class="">
                     <label for="photo" class="block mb-1 mt-3">Upload Photo</label>
