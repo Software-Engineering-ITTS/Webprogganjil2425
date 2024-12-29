@@ -35,7 +35,7 @@ Route::prefix('admin')->middleware('auth:admin')->group(function () {
         return view('admin.history');
     })->name('admin.history');
 
-    // show all product
+    // show
     Route::get('/listproduct', function () {
         $aircrafts = Aircraft::all();
         return view('admin.listproduct', compact('aircrafts'));

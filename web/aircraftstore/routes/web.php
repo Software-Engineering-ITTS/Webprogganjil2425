@@ -4,6 +4,7 @@ use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CustomerController;
+use App\Models\Aircraft;
 
 // Route::get('/', function () {
 //     return view('welcome');
@@ -30,6 +31,11 @@ Route::get('/customer', function () {
 })->middleware(['auth', 'verified'])->name('customer');
 
 Route::post('/customer', [CustomerController::class, 'store'])->middleware(['auth', 'verified']);
+
+Route::get('/product', function () {
+    $aircrafts = Aircraft::all();
+    return view('product', compact('aircrafts'));
+})->name('product');
 
 
 
