@@ -44,7 +44,8 @@
             @foreach ($aircrafts as $aircraft)
                 <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
                     <h1 class="text-xl text-center"> <strong>{{ $aircraft->name }}</strong></h1>
-                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Aircraft Image" class="rounded-md my-3">
+                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Aircraft Image"
+                        class="w-full h-64 object-cover rounded-md my-3">
                     <p> <strong>Type :</strong> {{ $aircraft->type }}</p>
                     <p> <strong>National Origin : </strong> {{ $aircraft->nationalorigin }}</p>
                     <p> <strong>Manufactured :</strong>{{ $aircraft->manufactured }}</p>
