@@ -76,7 +76,9 @@
 
     </main>
     <footer>
-        {{-- Footer Content --}}
+        <div class="flex justify-center mb-9">
+            <p class="text-white">© iamjustzero</p>
+        </div>
     </footer>
 </body>
 

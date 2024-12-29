@@ -101,6 +101,11 @@
             </form>
         </div>
     </main>
+    <footer>
+        <div class="flex justify-center mb-9">
+            <p class="text-white">© iamjustzero</p>
+        </div>
+    </footer>
 </body>
 
 </html>

@@ -45,9 +45,6 @@
             <h3 class="bg-yellow-300 p-3 rounded-lg text-black text-xl">You're an Admin. Do things carefully!</h3>
         </div>
     </main>
-    <footer>
-        {{-- Footer Content --}}
-    </footer>
 </body>
 
 </html>
