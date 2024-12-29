@@ -39,55 +39,67 @@
     </header>
 
     <main>
-        <form method="POST" action="{{ route('admin.aircraft.update', $aircraft->id) }}" enctype="multipart/form-data">
-            @csrf
-            @method('PUT')
+        <div class="container mx-auto max-w-xl mb-7">
+            @if (session('success'))
+                <div class="bg-green-500 text-white p-4 rounded-xl mb-5">
+                    <p>{{ session('success') }}</p>
+                </div>
+            @endif
 
-            <div class="mb-4">
-                <label for="name" class="block text-white">Name</label>
-                <input type="text" name="name" value="{{ $aircraft->name }}"
-                    class="w-full p-2 rounded-md text-black">
-            </div>
+            <form method="POST" action="{{ route('admin.aircraft.update', $aircraft->id) }}"
+                enctype="multipart/form-data">
+                @csrf
+                @method('PUT')
 
-            <div class="mb-4">
-                <label for="type" class="block text-white">Type</label>
-                <input type="text" name="type" value="{{ $aircraft->type }}"
-                    class="w-full p-2 rounded-md text-black">
-            </div>
+                <div class="mb-4">
+                    <label for="name" class="block mb-1">Aircraft Name</label>
+                    <input type="text" name="name" id="name" value="{{ $aircraft->name }}"
+                        class="block w-full rounded-md text-black" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="nationalorigin" class="block text-white">National Origin</label>
-                <input type="text" name="nationalorigin" value="{{ $aircraft->nationalorigin }}"
-                    class="w-full p-2 rounded-md text-black">
-            </div>
+                <div class="mb-4">
+                    <label for="type" class="block mb-1">Type</label>
+                    <input type="text" name="type" id="type" value="{{ $aircraft->type }}"
+                        class="block w-full rounded-md text-black" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="manufactured" class="block text-white">Manufactured</label>
-                <input type="text" name="manufactured" value="{{ $aircraft->manufactured }}"
-                    class="w-full p-2 rounded-md text-black">
-            </div>
+                <div class="mb-4">
+                    <label for="nationalorigin" class="block mb-1">National Origin</label>
+                    <input type="text" name="nationalorigin" id="nationalorigin"
+                        value="{{ $aircraft->nationalorigin }}" class="block w-full rounded-md text-black" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="price" class="block text-white">Price</label>
-                <input type="text" name="price" value="{{ $aircraft->price }}"
-                    class="w-full p-2 rounded-md text-black">
-            </div>
+                <div class="mb-4">
+                    <label for="manufactured" class="block mb-1">Manufactured</label>
+                    <input type="text" name="manufactured" id="manufactured" value="{{ $aircraft->manufactured }}"
+                        class="block w-full rounded-md text-black" required>
+                </div>
 
-            <div class="mb-4">
-                <label for="photo" class="block text-white">Photo</label>
-                <input type="file" name="photo" class="w-full p-2 rounded-md">
-                @if ($aircraft->photo)
-                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Current Photo"
-                        class="w-32 mt-2 rounded-md text-black">
-                @endif
-            </div>
+                <div class="mb-4">
+                    <label for="price" class="block mb-1">Price</label>
+                    <input type="text" name="price" id="price" value="{{ $aircraft->price }}"
+                        class="block w-full rounded-md text-black" required>
+                </div>
 
-            <div class="flex justify-between">
-                <button type="submit" class="bg-blue-700 hover:bg-blue-500 p-2 rounded-md">Save Changes</button>
-                <a href="{{ route('admin.listproduct') }}"
-                    class="bg-gray-600 hover:bg-gray-400 p-2 rounded-md">Cancel</a>
-            </div>
-        </form>
+                <div class="mb-4">
+                    <label for="photo" class="block mb-1">Upload Photo</label>
+                    <input type="file" name="photo" id="photo" class="block w-full rounded-md">
+                    @if ($aircraft->photo)
+                        <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Current Photo"
+                            class="w-32 mt-2 rounded-md">
+                    @endif
+                </div>
+
+                <div class="flex justify-center mt-9">
+                    <div class="w-fit bg-blue-500 p-2 rounded-md">
+                        <button type="submit" class="font-bold">Save Changes</button>
+                    </div>
+                    <div class="w-fit bg-gray-600 p-2 rounded-md ml-3">
+                        <a href="{{ route('admin.listproduct') }}" class="font-bold">Cancel</a>
+                    </div>
+                </div>
+            </form>
+        </div>
     </main>
 </body>
 
