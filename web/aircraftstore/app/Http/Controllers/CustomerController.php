@@ -5,11 +5,16 @@ namespace App\Http\Controllers;
 use App\Models\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CustomerController extends Controller
 {
-    public function store (Request $request)
+    public function store(Request $request)
     {
+        if (Auth::user()->customer) {
+            return redirect('/customer')->with('error', 'You can only register as a customer once.');
+        }
+
         $validateData = $request->validate([
             'fullname' => 'required',
             'phone_number' => 'required',
@@ -23,11 +28,11 @@ class CustomerController extends Controller
         $customer = Customer::create([
             'fullname' => $validateData['fullname'],
             'phone_number' => $validateData['phone_number'],
-            'address'=> $validateData['address'],
+            'address' => $validateData['address'],
             'city' => $validateData['city'],
             'province' => $validateData['province'],
-            'country'=> $validateData['country'],
-            'postal_code'=> $validateData['postal_code'],
+            'country' => $validateData['country'],
+            'postal_code' => $validateData['postal_code'],
         ]);
 
 
