@@ -10,7 +10,6 @@ class AdminController extends Controller
     {
         $orders = Order::with(['customer', 'aircraft'])->get();
 
-        // Kirim data orders ke view
         return view('admin.history', compact('orders'));
     }
 }
