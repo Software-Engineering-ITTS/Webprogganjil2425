@@ -15,7 +15,7 @@
             <a href="/admin/dashboard" class="hover:bg-gray-700 p-2 rounded-md">Dashboard</a>
         </div>
         <div class="mx-3">
-            <a href="/admin/addproduct" class="hover:bg-gray-700 p-2 rounded-md">Add Aircraft</a>
+            <a href="/admin/addproduct" class="hover:bg-gra y-700 p-2 rounded-md">Add Aircraft</a>
         </div>
         <div class="mx-3">
             <a href="/admin/history" class="hover:bg-gray-700 p-2 rounded-md">History</a>
@@ -38,42 +38,30 @@
         </div>
     </header>
     <main>
-        {{-- Main Content --}}
-        <div class="container mx-auto max-w-xl mb-7">
-            <form action="">
-                <div class="">
-                    <label for="name" class="block mb-1 mt-3">Product Name</label>
-                    <input type="text" name="name" id="name" class="block w-full rounded-md" required>
-                </div>
-                <div class="">
-                    <label for="type" class="block mb-1 mt-3">Type</label>
-                    <input type="text" name="type" id="type" class="block w-full rounded-md" required>
-                </div>
-                <div class="">
-                    <label for="nationalorigin" class="block mb-1 mt-3">National Origin</label>
-                    <input type="text" name="nationalorigin" id="nationalorigin" class="block w-full rounded-md"
-                        required>
-                </div>
-                <div class="">
-                    <label for="manufactured" class="block mb-1 mt-3">Manufactured</label>
-                    <input type="text" name="manufactured" id="manufactured" class="block w-full rounded-md"
-                        required>
-                </div>
-                <div class="">
-                    <label for="price" class="block mb-1 mt-3">Price</label>
-                    <input type="text" name="price" id="price" class="block w-full rounded-md" required>
-                </div>
-                <div class="">
-                    <label for="photo" class="block mb-1 mt-3">Upload Photo</label>
-                    <input type="file" name="photo" id="photo" class="block w-full rounded-md">
-                </div>
-                <div class="flex justify-center mt-9">
-                    <div class="w-fit bg-blue-500 p-2 rounded-md">
-                        <button type="submit" class="font-bold">Submit</button>
+        {{-- all product container --}}
+        <div class="grid grid-cols-3">
+            {{-- each container product --}}
+            @foreach ($aircrafts as $aircraft)
+                <div class="bg-gray-700 p-7 rounded-3xl mx-3 my-3">
+                    <h1 class="text-xl text-center"> <strong>{{ $aircraft->name }}</strong></h1>
+                    <img src="{{ asset('storage/' . $aircraft->photo) }}" alt="Aircraft Image"
+                        class="w-full h-64 object-cover rounded-md my-3">
+                    <p> <strong>Type :</strong> {{ $aircraft->type }}</p>
+                    <p> <strong>National Origin : </strong> {{ $aircraft->nationalorigin }}</p>
+                    <p> <strong>Manufactured :</strong>{{ $aircraft->manufactured }}</p>
+                    <p> <strong> Price :</strong> {{ $aircraft->price }}</p>
+                    <div class="flex justify-center">
+                        <div class="bg-blue-700 p-2 w-auto rounded-md hover:bg-blue-500 mx-3">
+                            <input type="button" value="Edit" class="font-bold">
+                        </div>
+                        <div class="bg-red-700 p-2 w-auto rounded-md hover:bg-red-500">
+                            <input type="button" value="Delete" class="font-bold">
+                        </div>
                     </div>
                 </div>
-            </form>
+            @endforeach
         </div>
+
     </main>
     <footer>
         {{-- Footer Content --}}
