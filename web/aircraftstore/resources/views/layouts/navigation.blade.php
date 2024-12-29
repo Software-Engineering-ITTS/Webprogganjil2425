@@ -27,6 +27,11 @@
                         {{ 'Product' }}
                     </x-nav-link>
                 </div>
+                <div class="my-4 mx-3">
+                    <x-nav-link :href="route('orders.index')" :active="request()->routeIs('orders.index')">
+                        {{ 'History' }}
+                    </x-nav-link>
+                </div>
 
             </div>
 

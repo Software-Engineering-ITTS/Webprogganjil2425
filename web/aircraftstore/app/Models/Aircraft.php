@@ -15,4 +15,9 @@ class Aircraft extends Model
         'price',
         'photo',
     ];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }

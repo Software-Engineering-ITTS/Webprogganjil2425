@@ -22,9 +22,13 @@
                     <p><strong>Manufactured:</strong> {{ $aircraft->manufactured }}</p>
                     <p><strong>Price:</strong> {{ $aircraft->price }}</p>
                     <div class="flex justify-center mt-4">
-                        <div class="bg-blue-700 p-2 rounded-md hover:bg-blue-500 mx-2">
-                            <a href="{{ route('', $aircraft->id) }}" class="font-bold">Buy</a>
-                        </div>
+                        <form action="{{ route('orders.store') }}" method="POST">
+                            @csrf
+                            <input type="hidden" name="aircraft_id" value="{{ $aircraft->id }}">
+                            <label for="quantity">Quantity:</label>
+                            <input type="number" name="quantity" id="quantity" min="1" required class="rounded-md w-16 text-black mx-2">
+                            <button type="submit" class="bg-green-600 p-2 rounded-md hover:bg-green-500 font-bold">Buy</button>
+                        </form>
                     </div>
                 </div>
             @endforeach
