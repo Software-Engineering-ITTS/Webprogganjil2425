@@ -11,10 +11,10 @@
         <table class="w-full text-white text-center border border-white">
             <thead class="bg-gray-500">
                 <tr>
-                    <th>Product</th>
-                    <th>Quantity</th>
-                    <th>Total Price</th>
-                    <th>Date</th>
+                    <th class="border border-white">Product</th>
+                    <th class="border border-white">Quantity</th>
+                    <th class="border border-white">Total Price</th>
+                    <th class="border border-white">Date</th>
                 </tr>
             </thead>
             <tbody>
