@@ -22,19 +22,9 @@
                     <p><strong>Manufactured:</strong> {{ $aircraft->manufactured }}</p>
                     <p><strong>Price:</strong> {{ $aircraft->price }}</p>
                     <div class="flex justify-center mt-4">
-                        <!-- Edit Button -->
                         <div class="bg-blue-700 p-2 rounded-md hover:bg-blue-500 mx-2">
-                            <a href="{{ route('admin.aircraft.edit', $aircraft->id) }}" class="font-bold">Edit</a>
+                            <a href="{{ route('', $aircraft->id) }}" class="font-bold">Buy</a>
                         </div>
-
-                        <!-- Delete Button -->
-                        <form method="POST" action="{{ route('admin.aircraft.delete', $aircraft->id) }}"
-                            onsubmit="return confirm('Are you sure you want to delete this aircraft?');">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit"
-                                class="bg-red-700 p-2 rounded-md hover:bg-red-500 font-bold">Delete</button>
-                        </form>
                     </div>
                 </div>
             @endforeach
