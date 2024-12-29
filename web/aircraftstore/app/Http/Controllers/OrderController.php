@@ -11,7 +11,9 @@ use Illuminate\Support\Facades\Auth;
 class OrderController extends Controller
 {
     public function store(Request $request)
+
     {
+
         $request->validate([
             'aircraft_id' => 'required|exists:aircraft,id',
             'quantity' => 'required|integer|min:1',
