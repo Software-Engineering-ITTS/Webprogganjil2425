@@ -31,6 +31,10 @@ Route::get('/customer', function () {
     return view('customer');
 })->middleware(['auth', 'verified'])->name('customer');
 
+Route::get('/location', function () {
+    return view('location');
+})->middleware(['auth', 'verified'])->name('location');
+
 Route::post('/customer', [CustomerController::class, 'store'])->middleware(['auth', 'verified']);
 
 Route::get('/product', function () {

@@ -32,6 +32,11 @@
                         {{ 'History' }}
                     </x-nav-link>
                 </div>
+                <div class="my-4 mx-3">
+                    <x-nav-link :href="route('location')" :active="request()->routeIs('location')">
+                        {{ 'location' }}
+                    </x-nav-link>
+                </div>
 
             </div>
 
