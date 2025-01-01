@@ -1,0 +1,37 @@
+composer require laravel/breeze --dev
+php artisan breeze:install
+npm install && npm run dev
+php artisan migrate
+
+php artisan route:clear
+php artisan config:clear
+php artisan cache:clear
+
+Untuk Admin:
+	•	Dashboard Admin:
+URL: http://localhost:8000/admin/dashboard
+Controller: AdminController@dashboard
+	•	Buat Event:
+URL: POST http://localhost:8000/admin/create-event
+Controller: AdminController@createEvent
+	•	Kelola Event:
+URL: http://localhost:8000/admin/manage-event/{event}
+Controller: AdminController@manageEvent
+	•	Konfirmasi Kehadiran:
+URL: POST http://localhost:8000/admin/confirm-attendance/{registration}
+Controller: AdminController@confirmAttendance
+
+Untuk User:
+	•	Dashboard User:
+URL: http://localhost:8000/user/dashboard
+Controller: UserController@dashboard
+	•	Daftar Event:
+URL: POST http://localhost:8000/user/register/{event}
+Controller: UserController@register
+	•	Konfirmasi Kehadiran:
+URL: POST http://localhost:8000/user/confirm-attendance
+Controller: UserController@confirmAttendance
+
+git add app/Http/Middleware/Kernel.php
+git add resources/views/admin/dashboard.blade.php
+git add resources/views/user/dashboard.blade.php

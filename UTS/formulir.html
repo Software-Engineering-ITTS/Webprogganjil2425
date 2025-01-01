@@ -13,7 +13,7 @@
         <h1 class="title">Formulir Pendaftaran Kegiatan Kampus</h1>
         <form action="action_page.php" method="post">
             <div class="imgcontainer">
-                <img src="/UTS/aset/pngtree-hello-vector-art-png-image_6434459-removebg-preview.png" alt="Avatar" class="avatar" style="height: 250px;">
+                <img src="/aset/pngtree-hello-vector-art-png-image_6434459-removebg-preview.png" alt="Avatar" class="avatar" style="height: 250px;">
             </div>
             <div class="container">
                 <label for="uname"><b>Username</b></label>
@@ -35,23 +35,23 @@
         </form>
     </div>
     <br><br><br>
-    <h2 class="Bidang">Bidang Kegiatan</h2>
+    <h2 class="Bidang">Nama Kegiatan</h2>
     <select name="bidang" id="Bidang">
         <option value="...">...</option>
-        <option value="Promosi Kampus">Promosi Kampus</option>
+        <option value="Kuliah Tamu">Kuliah Tamu</option>
         <option value="Edufair">Edufair</option>
         <option value="Campus Tour">Campus Tour</option>
         <option value="Triall Class">Triall Class</option>
     </select>
     <br><br>
-    <b>Pilih Jabatan</b>
+    <b>Mendaftar Sebagai Apa?</b>
     <form>
-        <input type="radio" id="Ketupel" name="Jabatan" value="Ketua Pelaksana">
-        <label for="Ketupel">Ketua Pelaksana</label><br>
-        <input type="radio" id="Staff" name="Jabatan" value="Staff Admisi">
-        <label for="Staff">Staff Admisi</label><br>
-        <input type="radio" id="Kaprodi" name="Jabatan" value="Kepala Program Studi">
-        <label for="Kaprodi">Kepala Program Studi</label><br>
+        <input type="radio" id="online" name="Jabatan" value="Peserta Online">
+        <label for="Ketupel">Peserta Online</label><br>
+        <input type="radio" id="offline" name="Jabatan" value="Peserta Offline">
+        <label for="Staff">Peserta Offline</label><br>
+        <input type="radio" id="dosen" name="Jabatan" value="Dosen">
+        <label for="Kaprodi">Dosen</label><br>
     </form>
     <br>
     <form action="/action_page.php">
@@ -61,25 +61,7 @@
         <input type="submit" value="Submit">
     </form>
     <br><br>
-    <div class="card mt-4 ms-4" style="width: 18rem;">
-        <div class="card-body">
-            <h4>Pilih Area Kegiatan</h4>
-            <select class="form-select mb-3" id="PROVINSI" name="provinsi">
-                <option value="">PROVINSI</option>
-            </select>
-            <br>
-            <select class="form-select mb-3" id="KABUPATEN" name="kabupaten">
-                <option value="">KABUPATEN</option>
-            </select>
-            <br>
-            <select class="form-select" id="KECAMATAN" name="kecamatan">
-                <option value="">KECAMATAN</option>
-            </select>
-            <br>
-            <select class="form-select" id="KELURAHAN" name="kelurahan">
-                <option value="">KELURAHAN</option>
-            </select>
-        </div>
+
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
