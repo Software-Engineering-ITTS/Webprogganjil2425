@@ -7,25 +7,27 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Jalankan migrasi untuk membuat tabel `siswas`
      */
     public function up(): void
     {
         Schema::create('siswas', function (Blueprint $table) {
-            $table->id();
-            $table->string('nama');
-            $table->string('email')->unique();
-            $table->string('no_telp')->nullable();
-            $table->foreignId('kelas_id')->constrained('kelas')->onDelete('cascade');
-            $table->timestamps();
+            $table->id(); // Primary key otomatis
+            $table->string('nama'); // Kolom untuk nama siswa
+            $table->string('email')->unique(); // Kolom email siswa dengan constraint unik
+            $table->string('no_telp')->nullable(); // Kolom nomor telepon bersifat opsional
+            $table->foreignId('kelas_id') // Kolom relasi ke tabel `kelas`
+                ->constrained('kelas') // Relasi ke tabel `kelas`
+                ->onDelete('cascade'); // Hapus siswa jika kelas terkait dihapus
+            $table->timestamps(); // Kolom created_at dan updated_at
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Membatalkan migrasi dengan menghapus tabel `siswas`
      */
     public function down(): void
     {
-        Schema::dropIfExists('siswas');
+        Schema::dropIfExists('siswas'); // Menghapus tabel jika ada
     }
 };

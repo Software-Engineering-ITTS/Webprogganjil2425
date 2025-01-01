@@ -20,65 +20,70 @@ use Filament\Pages\Page;
 
 class UserResource extends Resource
 {
+    // Model yang digunakan oleh resource ini
     protected static ?string $model = User::class;
 
+    // Ikon navigasi pada sidebar Filament
     protected static ?string $navigationIcon = 'heroicon-o-user';
 
-    protected static ?string $navigationGroup = 'User Management'; // Grup menu navigasi
+    // Grup menu navigasi di sidebar
+    protected static ?string $navigationGroup = 'User Management';
 
-    public static function shouldRegisterNavigation(): bool
+
+    // Konfigurasi form untuk CRUD
+    public static function form(Form $form): Form
     {
-        if(auth()->user()->can('view-permission'))
-            return true;
-        else
-            return false;
+        return $form
+            ->schema([
+                Card::make()
+                    ->schema([
+                        // Input untuk nama pengguna
+                        TextInput::make('name')
+                            ->required(),
+
+                        // Input untuk email pengguna
+                        TextInput::make('email')
+                            ->email()
+                            ->required(),
+
+                        // Input untuk password pengguna
+                        TextInput::make('password')
+                            ->password()
+                            ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
+                            ->dehydrated(fn (?string $state): bool => filled($state))
+                            ->required(fn (Page $livewire): bool => $livewire instanceof CreateRecord),
+
+                        // Dropdown untuk memilih role pengguna
+                        Select::make('roles')
+                            ->multiple()
+                            ->relationship('roles', 'name'),
+                    ]),
+            ]);
     }
 
-    public static function form(Form $form): Form
-{
-    return $form
-        ->schema([
-            Card::make()
-                ->schema([
-                    TextInput::make('name')
-                        ->required(),
-                    
-                    TextInput::make('email')
-                        ->email()
-                        ->required(),
-                    
-                    TextInput::make('password')
-                        ->password()
-                        ->dehydrateStateUsing(fn (string $state): string => Hash::make($state))
-                        ->dehydrated(fn (?string $state): bool => filled($state))
-                        ->required(fn (Page $livewire): bool => $livewire instanceof CreateRecord),
-                    
-                    Select::make('roles')
-                        ->multiple()
-                        ->relationship('roles', 'name'),
-                ]),
-        ]);
-}
-
-
+    // Konfigurasi tabel untuk daftar data pengguna
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
+                // Kolom untuk nama pengguna
                 TextColumn::make('name')
                     ->label('Name')
                     ->sortable()
                     ->searchable(),
-                
+
+                // Kolom untuk email pengguna
                 TextColumn::make('email')
                     ->label('Email')
                     ->sortable()
                     ->searchable(),
-                
+
+                // Kolom untuk role pengguna dengan badge
                 BadgeColumn::make('roles.name')
                     ->label('Roles')
                     ->color('primary'),
-                
+
+                // Kolom untuk tanggal pembuatan akun
                 TextColumn::make('created_at')
                     ->label('Created At')
                     ->dateTime(),
@@ -87,6 +92,7 @@ class UserResource extends Resource
                 // Tambahkan filter jika diperlukan
             ])
             ->actions([
+                // Aksi edit dan hapus
                 Tables\Actions\EditAction::make(),
                 Tables\Actions\DeleteAction::make(),
             ]);
@@ -94,13 +100,13 @@ class UserResource extends Resource
 
     public static function getRelations(): array
     {
-        return [
-            // Relasi tambahan jika ada
-        ];
+        // Relasi tambahan dapat ditambahkan di sini
+        return [];
     }
 
     public static function getPages(): array
     {
+        // Mendefinisikan rute untuk halaman-halaman resource ini
         return [
             'index' => Pages\ListUsers::route('/'),
             'create' => Pages\CreateUser::route('/create'),

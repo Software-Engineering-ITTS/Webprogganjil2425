@@ -9,18 +9,19 @@ class Siswa extends Model
 {
     use HasFactory;
 
+    // Mendefinisikan atribut yang dapat diisi secara massal
     protected $fillable = ['nama', 'email', 'no_telp', 'kelas_id', 'materi_id']; // Pastikan materi_id disertakan
 
-    // Relasi ke tabel `kelas`
+    // Relasi satu ke satu (Siswa terkait dengan satu Kelas)
     public function kelas()
     {
-        return $this->belongsTo(Kelas::class, 'kelas_id');
+        return $this->belongsTo(Kelas::class, 'kelas_id'); // Siswa ini termasuk dalam satu Kelas
     }
 
-    // Relasi ke tabel `materi`
+    // Relasi satu ke satu (Siswa terkait dengan satu Materi)
     public function materi()
     {
-        return $this->belongsTo(Materi::class); // Relasi Siswa ke Materi
+        return $this->belongsTo(Materi::class); // Siswa ini memiliki satu Materi
     }
 }
-
+    

@@ -9,18 +9,18 @@ class Materi extends Model
 {
     use HasFactory;
 
+    // Mendefinisikan atribut yang dapat diisi secara massal
     protected $fillable = ['judul', 'deskripsi', 'kelas_id'];
 
-    // Relasi ke kelas
+    // Relasi satu ke satu (banyak Materi terkait dengan satu Kelas)
     public function kelas()
     {
-        return $this->belongsTo(Kelas::class);
+        return $this->belongsTo(Kelas::class); // Materi ini dimiliki oleh satu Kelas
     }
 
-    // Relasi ke banyak siswa
+    // Relasi satu ke banyak dengan model Siswa
     public function siswas()
     {
-        return $this->hasMany(Siswa::class); // Relasi Materi ke Siswa
+        return $this->hasMany(Siswa::class); // Satu Materi dapat terkait dengan banyak Siswa
     }
 }
-

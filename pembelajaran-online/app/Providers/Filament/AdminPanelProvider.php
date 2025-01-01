@@ -29,30 +29,33 @@ use Filament\Pages\Dashboard;
 
 class AdminPanelProvider extends PanelProvider
 {
+    // Konfigurasi panel admin utama
     public function panel(Panel $panel): Panel
     {
         return $panel
             ->default()
-            ->id('admin')
-            ->path('admin')
-            ->brandLogoHeight('4rem')
-            ->brandLogo(asset('images/akademi-pl.png'))
-            ->font('Roboto')
-            ->login()
+            ->id('admin') // ID unik untuk panel admin
+            ->path('admin') // Path URL untuk panel admin
+            ->brandLogoHeight('4rem') // Tinggi logo pada navigasi
+            ->brandLogo(asset('images/akademi-pl.png')) // Path ke logo
+            ->font('Roboto') // Font yang digunakan di panel
+            ->login() // Konfigurasi halaman login
             ->colors([
-                'primary' => Color::Purple,
-                'secondary' => Color::Teal,
+                'primary' => Color::Purple, // Warna utama
+                'secondary' => Color::Teal, // Warna sekunder
             ])
+            // Auto-discover resources dan pages di direktori tertentu
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class,
+                Pages\Dashboard::class, // Menambahkan halaman Dashboard
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
+                Widgets\AccountWidget::class, // Widget akun untuk navigasi
             ])
             ->middleware([
+                // Middleware untuk pengelolaan session dan autentikasi
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -64,11 +67,12 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class,
+                Authenticate::class, // Middleware autentikasi utama
             ])
-            ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
+            ->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // Plugin untuk manajemen role dan permission
             ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
                 return $builder->groups([
+                    // Grup navigasi untuk dashboard
                     NavigationGroup::make('Dashboard')
                         ->items([
                             NavigationItem::make('Dashboard')
@@ -76,18 +80,25 @@ class AdminPanelProvider extends PanelProvider
                                 ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
                                 ->url(fn (): string => Dashboard::getUrl()),
                         ]),
+
+                    // Grup navigasi untuk resources Class
                     NavigationGroup::make('Class')
                         ->items([
                             ...KelasResource::getNavigationItems(),
                             ...MateriResource::getNavigationItems(),
                         ]),
+
+                    // Grup navigasi untuk pendaftaran siswa
                     NavigationGroup::make('Register Siswa')
                         ->items([
                             ...SiswaResource::getNavigationItems(),
                         ]),
+
+                    // Grup navigasi untuk pengaturan (Settings)
                     NavigationGroup::make('Setting')
-                        ->items([
-                            NavigationItem::make('User')
+                        ->items(array_filter([
+                            // Resource User hanya untuk admin
+                            auth()->user()->hasRole('admin') ? NavigationItem::make('User')
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([
                                     'filament.admin.resources.users.index',
@@ -95,8 +106,10 @@ class AdminPanelProvider extends PanelProvider
                                     'filament.admin.resources.users.view',
                                     'filament.admin.resources.users.edit',
                                 ]))
-                                ->url(fn (): string => UserResource::getUrl()),
-                            NavigationItem::make('Roles')
+                                ->url(fn (): string => UserResource::getUrl()) : null,
+
+                            // Resource Roles hanya untuk admin
+                            auth()->user()->hasRole('admin') ? NavigationItem::make('Roles')
                                 ->icon('heroicon-o-user-group')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([
                                     'filament.admin.resources.roles.index',
@@ -104,8 +117,10 @@ class AdminPanelProvider extends PanelProvider
                                     'filament.admin.resources.roles.view',
                                     'filament.admin.resources.roles.edit',
                                 ]))
-                                ->url(fn (): string => '/admin/roles'),
-                            NavigationItem::make('Permissions')
+                                ->url(fn (): string => '/admin/roles') : null,
+
+                            // Resource Permissions hanya untuk admin
+                            auth()->user()->hasRole('admin') ? NavigationItem::make('Permissions')
                                 ->icon('heroicon-o-lock-closed')
                                 ->isActiveWhen(fn (): bool => request()->routeIs([
                                     'filament.admin.resources.permissions.index',
@@ -113,8 +128,8 @@ class AdminPanelProvider extends PanelProvider
                                     'filament.admin.resources.permissions.view',
                                     'filament.admin.resources.permissions.edit',
                                 ]))
-                                ->url(fn (): string => '/admin/permissions'),
-                        ]),
+                                ->url(fn (): string => '/admin/permissions') : null,
+                        ])),
                 ]);
             });
     }
