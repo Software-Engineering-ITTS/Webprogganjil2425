@@ -57,6 +57,7 @@ class MateriResource extends Resource
                     ->relationship('kelas', 'nama')
                     ->label('Kelas')
                     ->required()
+                    ->preload()
                     ->searchable(),
             ]);
     }
