@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\EventUser;
 use Illuminate\Http\Request;
+use App\Models\Event;
 
 class AdminController extends Controller
 {

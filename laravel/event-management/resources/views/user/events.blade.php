@@ -3,10 +3,10 @@
 @section('title', 'Event List')
 
 @section('content')
-<h1 class="mb-4">Available Events</h1>
+<h3 class="mb-4">Available Events</h3>
 
 <!-- Form Daftar Event -->
-<div class="card mb-4">
+<div class="card ">
     <div class="card-header">Register for Event</div>
     <div class="card-body">
         <form action="{{ route('events.register') }}" method="POST">

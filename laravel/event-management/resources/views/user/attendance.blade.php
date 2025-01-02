@@ -1,9 +1,8 @@
 @extends('layouts.app')
 
 @section('title', 'Submit Attendance')
-
 @section('content')
-<h1 class="mb-4">Submit Attendance</h1>
+<h3 class="mb-4">Submit Attendance</h3>
 
 <div class="card">
     <div class="card-header">Upload Attendance Proof</div>

@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
 class Pendaftaran extends Model
 {
-    use HasFactory;
+    protected $fillable = ['name', 'email', 'kegiatan_id']; 
 
-    protected $fillable = ['name', 'email', 'activity_id']; // Sesuaikan dengan kolom Anda
-
-    public function activity()
+    public function kegiatan()
     {
-        return $this->belongsTo(Activity::class);
+        return $this->belongsTo(Kegiatan::class);
     }
 }

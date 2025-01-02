@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Kehadiran;
 use App\Models\Registration;
+use Auth;
+use DB;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 
@@ -25,6 +28,13 @@ class RegistrationController extends Controller
             'name' => $request->name,
             'nim' => $request->nim,
         ]);
+        
+        DB::table('event_user')->insert([
+            'event_id' => $request->event_id,
+            'user_id' => Auth::id(),
+            'created_at' => now(),
+            'updated_at' => now()
+        ]);
 
         return redirect()->route('events.list')->with('success', 'Registered successfully!');
     }
@@ -39,6 +49,11 @@ class RegistrationController extends Controller
         $registration->save();
 
         return redirect()->route('registrations.index')->with('success', 'Attendance verified!');
+    }
+
+    public function viewFormAttendance(){
+        $registrations = Registration::with('event');
+        return view('user.attendance', compact('registrations'));
     }
 
     public function submitAttendance(Request $request) {

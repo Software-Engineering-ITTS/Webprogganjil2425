@@ -1,21 +1,17 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin Dashboard</title>
-    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
-</head>
-<body>
+@extends('layouts.app')
+
+@section('title', 'Admin Dashboard')
+
+@section('content')
 <div class="container mt-5">
     <h1>Admin Dashboard</h1>
     <hr>
-    <h2>Create New Event</h2>
+    <h2 >Create New Event</h2>
     <form action="{{ route('admin.event.create') }}" method="POST" class="mt-4">
         @csrf
-        <div class="mb-3">
-            <label for="name" class="form-label">Event Name</label>
-            <input type="text" name="name" id="name" class="form-control" required>
+        <div class="mb-5">
+            <label for="title" class="form-label">Event Name</label>
+            <input type="text" name="title" id="title" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="description" class="form-label">Event Description</label>
@@ -23,11 +19,11 @@
         </div>
         <div class="mb-3">
             <label for="start_time" class="form-label">Start Time</label>
-            <input type="datetime-local" name="start_time" id="start_time" class="form-control" required>
+            <input type="datetime-local" name="start_date_time" id="start_date_time" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="end_time" class="form-label">End Time</label>
-            <input type="datetime-local" name="end_time" id="end_time" class="form-control" required>
+            <input type="datetime-local" name="end_date_time" id="end_date_time" class="form-control" required>
         </div>
         <div class="mb-3">
             <label for="location" class="form-label">Location</label>
@@ -41,12 +37,10 @@
     <ul class="list-group mt-4">
         @foreach ($events as $event)
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                {{ $event->name }}
-                <a href="{{ route('admin.event.participants', $event->id) }}" class="btn btn-info btn-sm">View Participants</a>
+                {{ $event->title }}
+                <a href="{{ route('registrations.index', $event->id) }}" class="btn btn-warning btn-sm">View Participants</a>
             </li>
         @endforeach
     </ul>
 </div>
-<script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
-</body>
-</html>
+@endsection
