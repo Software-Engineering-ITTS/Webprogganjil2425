@@ -11,15 +11,15 @@ class CreateKelasTable extends Migration
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id(); // Primary key otomatis
-            $table->string('nama'); // Kolom untuk nama kelas
+            $table->string('nama'); 
             $table->string('kode_kelas')->unique(); // Kolom kode kelas dengan constraint unik
-            $table->timestamps(); // Kolom created_at dan updated_at
+            $table->timestamps(); 
         });
     }
 
     // Method untuk menghapus tabel `kelas`
     public function down()
     {
-        Schema::dropIfExists('kelas'); // Menghapus tabel jika ada
+        Schema::dropIfExists('kelas');
     }
 }

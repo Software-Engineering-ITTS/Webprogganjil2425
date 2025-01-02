@@ -34,15 +34,15 @@ class AdminPanelProvider extends PanelProvider
     {
         return $panel
             ->default()
-            ->id('admin') // ID unik untuk panel admin
-            ->path('admin') // Path URL untuk panel admin
+            ->id('admin') 
+            ->path('akademi') 
             ->brandLogoHeight('4rem') 
             ->brandLogo(asset('images/akademi-pl.png')) 
             ->font('Roboto') 
-            ->login() // Konfigurasi halaman login
+            ->login()
             ->topNavigation()
             ->colors([
-                'primary' => Color::Purple, // Warna utama
+                'primary' => Color::Purple,
             ])
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')

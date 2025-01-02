@@ -13,7 +13,7 @@ return new class extends Migration {
         Schema::table('siswas', function (Blueprint $table) {
             // Menambahkan kolom `materi_id` sebagai foreign key
             $table->foreignId('materi_id')
-                ->nullable() // Kolom bersifat opsional
+                ->nullable()
                 ->constrained('materis') // Relasi ke tabel `materis`
                 ->onDelete('cascade'); // Hapus data terkait jika materi dihapus
         });

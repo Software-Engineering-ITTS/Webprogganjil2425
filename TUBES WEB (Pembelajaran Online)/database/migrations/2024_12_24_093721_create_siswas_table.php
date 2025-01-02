@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('siswas', function (Blueprint $table) {
+        Schema::create('siswa', function (Blueprint $table) {
             $table->id(); // Primary key otomatis
             $table->string('nama'); // Kolom untuk nama siswa
             $table->string('email')->unique(); // Kolom email siswa dengan constraint unik

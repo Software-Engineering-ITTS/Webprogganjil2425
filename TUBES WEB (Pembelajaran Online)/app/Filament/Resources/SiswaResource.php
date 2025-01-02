@@ -108,15 +108,7 @@ class SiswaResource extends Resource
                 TextColumn::make('created_at')->label('Tanggal Registrasi')->dateTime()->sortable(),
             ])
             ->filters([
-                // Filter berdasarkan kelas
-                SelectFilter::make('kelas_id')
-                    ->label('Kelas')
-                    ->options(Kelas::pluck('nama', 'id')->toArray()),
-
-                // Filter berdasarkan materi
-                SelectFilter::make('materi_id')
-                    ->label('Materi')
-                    ->options(Materi::pluck('judul', 'id')->toArray()),
+               
             ])
             ->actions([
                 // Aksi edit hanya untuk admin
