@@ -34,7 +34,7 @@
                     <select name="status" id="status" class="form-control">
                         <option value="lunas" {{ old('status') == '???' ? 'selected' : '' }}>=PILIH SALAH SATU=</option>
                         <option value="Lunas" {{ old('status') == 'Lunas' ? 'selected' : '' }}>Lunas</option>
-                        <option value="BelumLunas" {{ old('status') == 'Belum Lunas' ? 'selected' : '' }}>Belum Lunas</option>
+                        <option value="Belum Lunas" {{ old('status') == 'Belum Lunas' ? 'selected' : '' }}>Belum Lunas</option>
                     </select>
                 </div>
                 <button type="submit" class="btn btn-primary">Save</button>

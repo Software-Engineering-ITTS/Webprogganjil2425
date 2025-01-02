@@ -204,6 +204,7 @@ select option,
             <a class="navbar-brand" href="#">Pinjol Uhuy</a>
             <div class="container ms-1 d-flex justify-content-end align-items-end">
                 <a class="btn btn-primary ms-1" href="{{ route('customers.index') }}">Customers</a>
+                <a class="btn btn-primary ms-1" href="{{ route('bills.all') }}">Bills</a>
                 <form action="{{ route('logout') }}" method="POST" style="display:inline;">
                     @csrf
                     <button type="submit" class="btn btn-danger ms-1">Logout</button>

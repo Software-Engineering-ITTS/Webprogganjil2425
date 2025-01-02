@@ -69,6 +69,10 @@ class BillController extends Controller
             $query->whereMonth('due_date', $request->month);
         }
     
+        if ($request->has('status') && $request->status) {
+            $query->where('status', $request->status);
+        }
+    
         $bills = $query->get();
     
         return view('bills.index', compact('bills', 'customer'));
@@ -85,6 +89,9 @@ class BillController extends Controller
             $query->whereMonth('due_date', $request->month);
         }
     
+        if ($request->has('status') && $request->status) {
+            $query->where('status', $request->status);
+        }
         $bills = $query->get();
     
         return view('bills.index', compact('bills'));

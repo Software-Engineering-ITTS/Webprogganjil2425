@@ -13,6 +13,5 @@ class Admin extends Authenticatable
 
     protected $fillable = ['name', 'email', 'password'];
 
-    // Disable timestamps if not needed
     public $timestamps = true;
 }

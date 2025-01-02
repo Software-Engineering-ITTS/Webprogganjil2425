@@ -9,24 +9,31 @@
             <form method="GET" action="{{ isset($customer) ? route('bills.customer', $customer) : route('bills.all') }}" class="mb-3">
                 <a href="{{ route('bills.create') }}" class="btn btn-success">Add New Bill</a>
                 <div class="row">
-                    <div class="col-md-5">
-                        <select name="year" class="form-control">
+                    <label>Filter</label>
+                    <div class="col-md-5 mt-2">
+                        <select name="year" class="form-control" onchange="this.form.submit()">
                             <option value="">ALL</option>
-                            @foreach(range(now()->year, now()->year - 5) as $year)
+                            @foreach(range(now()->year, now()->year + 2) as $year)
                                 <option value="{{ $year }}" {{ request('year') == $year ? 'selected' : '' }}>{{ $year }}</option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-5">
-                        <select name="month" class="form-control">
+                    <div class="col-md-5 mt-2">
+                        <select name="month" class="form-control" onchange="this.form.submit()">
                             <option value="">ALL</option>
                             @foreach(range(1, 12) as $month)
-                                <option value="{{ $month }}" {{ request('month') == $month ? 'selected' : '' }}>{{ DateTime::createFromFormat('!m', $month)->format('F') }}</option>
+                                <option value="{{ $month }}" {{ request('month') == $month ? 'selected' : '' }}>
+                                    {{ DateTime::createFromFormat('!m', $month)->format('F') }}
+                                </option>
                             @endforeach
                         </select>
                     </div>
-                    <div class="col-md-5 mt-3" >
-                        <button type="submit" class="btn btn-primary">Filter</button>
+                    <div class="col-md-5 mt-2">
+                        <select name="status" class="form-control" onchange="this.form.submit()">
+                            <option value="">ALL</option>
+                            <option value="Lunas" {{ request('status') == 'Lunas' ? 'selected' : '' }}>Lunas</option>
+                            <option value="Belum Lunas" {{ request('status') == 'Belum Lunas' ? 'selected' : '' }}>Belum Lunas</option>
+                        </select>
                     </div>
                 </div>
             </form>
