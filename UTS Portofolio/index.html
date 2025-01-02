@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/7867/7867852.png"> 
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#project">Project</a></li>
+                <li><a href="#nextproject">Next Project</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="section home">
+        <img src="DSC_8333ab.jpg" alt="Profile Picture" class="profile-pic">
+        <h1>Hello, It's Me 'Yafeth'</h1>
+        <p>Let's dive in with me!</p>
+    </section>
+
+    <section id="about" class="section">
+        <h2>About Me</h2>
+        <p>Hola! I'm Yafeth (/Yaa-FEH-T/) Seno Armadanto, I was born</p>
+        <p>and raised in Surabaya, Indonesia. Currently studying at</p>
+        <p>Telkom University Surabaya. I am a second-year student majoring in software engineering.</p>
+        <p>I describe myself as a person who wants to explore more goals.</p>
+    </section>
+
+    <section id="project" class="section">
+        <h2>Project</h2>
+        <div class="portfolio-grid">
+            <div class="card">
+                <img src="Screenshot 2024-11-10 122656.png" alt="Project 1">
+                <h3>Kalkulator</h3>
+                <p>Using HTML, CSS, and JavaScript</p>
+                <p>This is my very first time building a project using HTML, CSS, and JavaScript. Thankfully, there's an assignment to do... and it's to build a Calculator!</p>
+            </div>
+            <div class="card">
+                <img src="Screenshot 2024-11-10 122444.png" alt="Project 2">
+                <h3>My List Movies</h3>
+                <p>Using HTML, CSS, and JavaScript.</p>
+                <p>My second project is an idea from me that came out of nowhere; since I like to watch Netflix, why not make a list of movies I have seen before?</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="nextproject" class="section">
+        <h2>Winery Management System</h2>
+        <p>This winery website offers a wide selection of premium wines and dessert wines tailored to customer preferences, as well as wine gift packages for special occasions.
+            In addition, exclusive services include both in-person and virtual wine tasting sessions, vineyard tours showcasing the winemaking process up close, and a wine subscription service.</p>
+        <ul>
+            <li>Available Wine Products</li>
+            <li>Services Offered</li>
+            <li>Accessories and Merchandise</li>
+        </ul>
+    </section>
+    
+    <section id="contact" class="section">
+        <h2>Contact Me</h2>
+        <form id="contact-form">
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Your Email" required>
+            <textarea id="message" rows="4" placeholder="Your Message"></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Yafeth. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
