@@ -31,38 +31,3 @@
 <div id="sidebarToggle" class="fixed top-1 left-4 z-50 bg-pink-900 text-white p-3 rounded-full">
     <i class="fas fa-bars"></i>
 </div>
-
-<script>
-    const sidebarToggle = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
-    const sidebarnav = document.getElementById('sidebarnav');
-    const isSidebarCollapsed = localStorage.getItem('sidebarCollapsed') === 'true';
-    if (isSidebarCollapsed) {
-        sidebar.classList.add('-translate-x-full');
-        sidebar.classList.add('lg:w-0');
-        sidebarnav.classList.add('hidden');
-    } else if (window.innerWidth >= 1024) {
-        sidebar.classList.remove('-translate-x-full');
-        sidebar.classList.remove('lg:w-0');
-        sidebarnav.classList.remove('hidden');
-    }
-
-    sidebarToggle.addEventListener('click', () => {
-        sidebar.classList.toggle('-translate-x-full');
-        const isCollapsed = sidebar.classList.contains('-translate-x-full');
-        localStorage.setItem('sidebarCollapsed', isCollapsed);
-
-
-        if (isCollapsed) {
-            sidebar.classList.add('lg:w-0');
-            sidebarnav.classList.add('hidden');
-        } else {
-            sidebar.classList.remove('lg:w-0');
-            sidebarnav.classList.remove('hidden');
-        }
-    });
-
-
-
-    // window.addEventListener('resize', checkScreenWidth);
-</script>
