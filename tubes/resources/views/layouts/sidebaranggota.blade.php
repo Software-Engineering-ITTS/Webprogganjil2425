@@ -40,7 +40,7 @@
                         <span class="ms-2 text-teal-400 group-hover:text-white">Kegiatan</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href=""
                         class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">
                         <svg class="w-[32px] h-[32px] text-teal-400 group-hover:text-white" aria-hidden="true"
@@ -55,7 +55,7 @@
                         </svg>
                         <span class="ms-2 text-teal-400 group-hover:text-white">Iuran</span>
                     </a>
-                </li>
+                </li> --}}
                 <li>
                     <a href="{{ url('/') }}"
                         class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">

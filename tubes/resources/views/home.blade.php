@@ -60,7 +60,9 @@
                         <th class="p-3 ">lokasi</th>
                         <th class="p-3 ">waktu</th>
                         <th class="p-3 ">deskripsi</th>
-                        <th class="p-3 "></th>
+                        @auth
+                            <th class="p-3 "></th>
+                        @endauth
                     </tr>
                 </thead>
                 <tbody class="">
@@ -83,7 +85,8 @@
                                                 stroke-width="2" d="M5 12h14m-7 7V5" />
                                         </svg>
                                     </button> --}}
-                                    <a href="/dashboard-anggota/{{$items->id}}" class="px-3 py-2 border rounded-lg bg-lime-300 font-medium">Ikuti</a>
+                                    <a href="/dashboard-anggota/{{ $items->id }}"
+                                        class="px-3 py-2 border rounded-lg bg-lime-300 font-medium">Ikuti</a>
 
                                     {{-- @include('anggota.iuran') --}}
 

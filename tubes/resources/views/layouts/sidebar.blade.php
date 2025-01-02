@@ -54,7 +54,7 @@
                         <span class="ms-2 text-teal-400 group-hover:text-white">Kegiatan</span>
                     </a>
                 </li>
-                <li>
+                {{-- <li>
                     <a href=""
                         class="m-3 flex items-center p-2 rounded-lg hover:bg-teal-500 hover:text-white group">
                         <svg class="h-8 w-8 text-teal-400 group-hover:text-white" width="24" height="24"
@@ -66,7 +66,7 @@
                         </svg>
                         <span class="ms-2 text-teal-400 group-hover:text-white">Iuran</span>
                     </a>
-                </li>
+                </li> --}}
                 <li class="">
                     <div class="p-2 ms-10 text-center border rounded-lg w-3/5 hover:bg-white">
                         <a href="{{url('logout')}}" class="text-white font-bold hover:text-teal-700 px-9 py-3">Logout</a>

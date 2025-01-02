@@ -37,7 +37,7 @@ function FormulirAnggotaBaru() {
                                 <div className='row mb-2'>
                                     <div className='col-md-6'>
                                         <label htmlFor="tgl" className='form-label fw-bold fs-4'>Tanggal Lahir</label>
-                                        <input type="date" className='form-control' id='tgl' required />
+                                        <input type="date" className='form-cont id='tgl' required />
                                     </div>
 
                                     <div className='col-md-6'>
