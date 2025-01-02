@@ -1,0 +1,144 @@
+/* Import Font */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  width: 900px;
+  height: 500px;
+  background: #fff;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.left-section {
+  flex: 1;
+  background: url("https://source.unsplash.com/600x600/?nature,leaf") no-repeat
+    center center/cover;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px;
+}
+
+.signup {
+  font-size: 0.9rem;
+  margin-left: 100px;
+}
+
+.signup a {
+  color: #32cd32;
+  text-decoration: none;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.signup span{
+  color: black;
+}
+
+.right-section {
+  flex: 1;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+}
+
+.logo img {
+  width: 50px;
+  margin-bottom: 10px;
+}
+
+.right-section h2 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+form {
+  width: 100%;
+  max-width: 300px;
+}
+
+label {
+  font-weight: 600;
+  color: #555;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.input-group {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.input-group .icon {
+  position: absolute;
+  top: 50%;
+  left: 12px;
+  transform: translateY(-50%);
+  color: #aaa;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 10px 10px 10px 36px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+}
+
+.input-group input:focus {
+  border-color: #32cd32;
+}
+
+.login-btn {
+  background-color: #32cd32;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+  padding: 12px;
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-btn:hover {
+  background-color: #2eb82e;
+}
+
+.forgot {
+  margin-top: 15px;
+  text-align: center;
+}
+
+.forgot a {
+  color: #555;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.forgot span {
+  color: #32cd32;
+  font-weight: 600;
+}

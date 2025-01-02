@@ -1,0 +1,54 @@
+.form-tambah {
+    margin-top: 20px;
+}
+
+.form-tambah label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.form-tambah input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.submit-button {
+    background-color: #27ae60;
+    color: white;
+    padding: 20px 60px;
+    border: none;
+    cursor: pointer;
+}
+
+.submit-button:hover {
+    background-color: #219150;
+}
+
+.departemen{
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    inline-size: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.waktu-penambahan-data{
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    font-size: large;
+}
+
+.Admin{
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    inline-size: 100px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+

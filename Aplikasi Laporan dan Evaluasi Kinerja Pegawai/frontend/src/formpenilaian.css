@@ -1,0 +1,62 @@
+.NamaDanID {
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+    inline-size: 300px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.radio-group {
+    display: flex;
+    /* Mengatur elemen anak sejajar secara horizontal */
+    gap: 5.8rem;
+    /* Memberi jarak antar elemen */
+    align-items: center;
+    /* Menyelaraskan elemen secara vertikal */
+}
+
+.radio-group1{
+    display: flex;
+    /* Mengatur elemen anak sejajar secara horizontal */
+    gap: 11.65rem;
+    /* Memberi jarak antar elemen */
+    align-items: center;
+    /* Menyelaraskan elemen secara vertikal */
+}
+
+.radio-group label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* Memberi jarak antara radio button dan teks label */
+}
+
+.rating-group {
+    margin-top: 1rem;
+}
+
+.rating-slider {
+    width: 100%;
+    /* Atur lebar slider */
+    margin-top: 0.5rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.rating-value {
+    font-weight: bold;
+    margin-left: 0.5rem;
+    color: #4f4f4f;
+    display: flex;
+    align-items: center;
+    gap: 20.5px;
+    margin-left: 1px;
+}
+
+.waktu-penilaian{
+    height: 40px;
+    width: 300px;
+    text-align: center;
+    font-size: large;
+}

@@ -1,0 +1,109 @@
+.register-container {
+    display: flex;
+    width: 900px;
+    height: 500px;
+    background: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .left-section {
+    flex: 1;
+    background: url("https://source.unsplash.com/600x600/?nature,green") no-repeat
+      center center/cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .left-section h1 {
+    font-size: 2rem;
+    font-weight: 700;
+  }
+  
+  .left-section p {
+    margin: 20px 0;
+  }
+  
+  .login-link {
+    font-size: 0.9rem;
+  }
+  
+  .login-link a {
+    color: #32cd32;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 5px;
+  }
+  
+  .right-section {
+    flex: 1;
+    background-color: #f8f9fa;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+  
+  .right-section h2 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+  }
+  
+  form {
+    width: 100%;
+    max-width: 300px;
+  }
+  
+  label {
+    font-weight: 600;
+    margin-bottom: 8px;
+    display: block;
+    color: #555;
+  }
+  
+  .input-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+  
+  .input-group .icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    color: #aaa;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px 10px 10px 36px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    outline: none;
+  }
+  
+  .input-group input:focus {
+    border-color: #32cd32;
+  }
+  
+  .register-btn {
+    background-color: #32cd32;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+    padding: 12px;
+    width: 100%;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .register-btn:hover {
+    background-color: #2eb82e;
+  }
+  

@@ -1,0 +1,24 @@
+.table-container {
+    margin: 20px auto;
+    text-align: center;
+}
+
+.evaluation-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.evaluation-table th {
+    background-color: #239133;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    text-transform: uppercase;
+    border: 1px solid #000;
+}
+
+.evaluation-table td {
+    border: 1px solid #000;
+    height: 50px;
+    padding: 5px;
+    background-color: white;
+}
