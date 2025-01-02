@@ -36,15 +36,14 @@ class AdminPanelProvider extends PanelProvider
             ->default()
             ->id('admin') // ID unik untuk panel admin
             ->path('admin') // Path URL untuk panel admin
-            ->brandLogoHeight('4rem') // Tinggi logo pada navigasi
-            ->brandLogo(asset('images/akademi-pl.png')) // Path ke logo
-            ->font('Roboto') // Font yang digunakan di panel
+            ->brandLogoHeight('4rem') 
+            ->brandLogo(asset('images/akademi-pl.png')) 
+            ->font('Roboto') 
             ->login() // Konfigurasi halaman login
+            ->topNavigation()
             ->colors([
                 'primary' => Color::Purple, // Warna utama
-                'secondary' => Color::Teal, // Warna sekunder
             ])
-            // Auto-discover resources dan pages di direktori tertentu
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
@@ -52,7 +51,7 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class, // Widget akun untuk navigasi
+                Widgets\AccountWidget::class, 
             ])
             ->middleware([
                 // Middleware untuk pengelolaan session dan autentikasi
