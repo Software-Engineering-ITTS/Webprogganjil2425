@@ -1,0 +1,20 @@
+// import './bootstrap';
+
+import { Calendar } from '@fullcalendar/core';
+import dayGridPlugin from '@fullcalendar/daygrid';
+import interactionPlugin from '@fullcalendar/interaction';
+
+document.addEventListener('DOMContentLoaded', function() {
+    var calendarEl = document.getElementById('calendar');
+
+    var calendar = new Calendar(calendarEl, {
+        plugins: [dayGridPlugin, interactionPlugin],
+        events: '/api/events',  // Mendapatkan event dari API yang akan kita buat
+        dateClick: function(info) {
+            alert('You clicked on ' + info.dateStr);
+        },
+    });
+
+    calendar.render();
+});
+
