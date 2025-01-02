@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+font-family: Georgia, 'Times New Roman', Times, serif;
+
+}
+.top{
+    padding: 5px;
+    background-color: aqua;
+}
+.Menu{
+    padding: 15px;
+    background-color: bisque;
+    text-align: center;
+}
+.Menu ul{
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+.Menu ul a{
+    text-decoration: none;
+    color: peru;
+}
+ .Menu-1{
+    display: none;
+}
+.semua{
+    background-color: aquamarine;
+}
+

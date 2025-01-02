@@ -35,7 +35,7 @@ body {
 }
 
 .Menu-bar {
-    text-align:center;
+    text-align: center;
     margin-left: 75px;
 }
 
@@ -90,21 +90,4 @@ body {
     justify-content: center;
     padding: 20px;
    font-family: Arial, Helvetica, sans-serif;
-}
-.carousel-inner{
-    max-width: 600px ;
-    margin: 0  auto;
-}
-.carousel-item img{
-    max-height: 400px;
-    object-fit: cover;
-    justify-content: center;
-    width: 100% ;
-}
-.carousel-control-prev-icon, .carousel-control-next-icon{
-    background-color:blanchedalmond;
-}
-.carousel-control-prev, .carousel-control-next{
-    
-
 }

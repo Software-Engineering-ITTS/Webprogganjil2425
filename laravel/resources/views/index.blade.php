@@ -26,6 +26,9 @@
         </ul>
     </div>
 
+        <H2>MAU NGAPAIN HARI INI?</H2>
+    
+
 
     <div class="container mx-auto mt-10">
         @yield('content') 

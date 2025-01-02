@@ -59,7 +59,7 @@ class StokbukuController extends Controller
             $buku->cover = $coverPath;
         }
 
-        $buku->judul = $validateData['judul'];
+        $penambahan->judul   = $validateData['judul'];
         $buku->penulis = $validateData['penulis'];
         $buku->harga = $validateData['harga'];
         $buku->tanggal = $validateData['tanggal'];

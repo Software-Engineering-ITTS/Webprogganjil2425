@@ -27,7 +27,7 @@
                     <img src="{{ asset('storage/' . $buku->cover) }}" alt="Cover Buku" width="100">
                 </td>
                 <td>{{ number_format($buku->harga, 2) }}</td>
-                <td>{{ $buku->stock }}</td>
+                <td >{{ $buku->stock }}</td>
                 <td>
                     
                     <button class="btn btn-warning" data-toggle="modal" data-target="#editModal-{{ $buku->id }}">Edit</button>
