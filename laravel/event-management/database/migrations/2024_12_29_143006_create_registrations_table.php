@@ -11,10 +11,13 @@ return new class extends Migration
      */
     public function up()
 {
-    Schema::create('pendaftarans', function (Blueprint $table) {
+    Schema::create('registrations', function (Blueprint $table) {
         $table->id();
-        $table->foreignId('user_id')->constrained()->onDelete('cascade');
-        $table->foreignId('kegiatan_id')->constrained()->onDelete('cascade');
+        $table->foreignId('event_id')->constrained();
+        $table->string('name');
+        $table->string('nim');
+        $table->string('verification_code')->nullable();
+        $table->string('proof_photo')->nullable();
         $table->timestamps();
     });
 }

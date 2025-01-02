@@ -20,5 +20,6 @@ class Kernel
     protected $routeMiddleware = [
         // Middleware lainnya
         'is_admin' => \App\Http\Middleware\IsAdmin::class,
+        'role' => \App\Http\Middleware\RoleMiddleware::class,
     ];
 }
