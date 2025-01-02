@@ -11,3 +11,4 @@ Berikut fitur yang dimiliki oleh setiap role
 - login/register/logout         
 - input matkul //create log
 - log matkul  // view log
+- view all matkul

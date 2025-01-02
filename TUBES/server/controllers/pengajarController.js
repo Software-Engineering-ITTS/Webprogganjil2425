@@ -48,13 +48,23 @@ export const createMatkul = async (req, res) => {
 
 export const fetchAllMatkul = async (req, res) => {
     try {
-        const matkul = await getAllMatkul();
-        res.status(200).json(matkul);
+        const matkul = await getAllMatkul(); // Ambil data matkul dari database
+        res.status(200).json({ matkul }); // Kirim response dengan key `matkul`
     } catch (error) {
-        console.log('eror di controller');
+        console.log('Error di controller:', error);
         res.status(500).json({ error: error.message });
     }
 };
+
+// export const fetchAllMatkul = async (req, res) => {
+//     try {
+//         const matkul = await getAllMatkul();
+//         res.status(200).json(matkul);
+//     } catch (error) {
+//         console.log('eror di controller');
+//         res.status(500).json({ error: error.message });
+//     }
+// };
 
 export const editMatkul = async (req, res) => {
     const { id } = req.params;

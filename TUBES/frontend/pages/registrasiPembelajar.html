@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Register Pembelajar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex items-center justify-center h-screen">
+  <form id="registerForm" class="bg-white p-8 rounded shadow-md space-y-4">
+    <h2 class="text-2xl font-semibold text-gray-700">Register Pembelajar</h2>
+    <input type="email" id="email" placeholder="Email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+    <input type="password" id="pass" placeholder="Password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500">
+    <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Daftar</button>
+  </form>
+
+  <script>
+    document.getElementById('registerForm').addEventListener('submit', async function(event) {
+      event.preventDefault(); 
+      const email = document.getElementById('email').value;
+      const pass = document.getElementById('pass').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/pembelajar/register', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({ email, pass }),
+        });
+
+        const result = await response.json();  // Mengambil response dalam format JSON
+
+        if (response.status === 201) {
+          alert('Registrasi berhasil!');
+          window.location.href = 'loginPembelajar.html';  // balik ke halaman login
+        } else {
+          alert('Registrasi gagal: ' + result.error);
+        }
+      } catch (error) {
+        console.error('Error during registration:', error);
+        alert('Terjadi kesalahan saat registrasi.');
+      }
+    });
+  </script>
+</body>
+</html>

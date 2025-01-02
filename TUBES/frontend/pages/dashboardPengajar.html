@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Pengajar</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 h-screen">
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="bg-green-600 text-white w-64 p-6">
+      <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
+      <div class="mt-4">
+        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-green-700">Create Matkul</a>
+        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-green-700">Update Matkul</a>
+        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
+        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-green-700">Delete Matkul</a>
+        <button id="logoutButton" class="block w-full mt-4 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8">
+      <h1 class="text-3xl font-semibold text-gray-800">Halo Pengajar!</h1>
+      <p class="mt-4 text-lg">Selamat datang di dashboard pengajar. Pilih opsi di sidebar untuk mengelola mata kuliah.</p>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi logout
+    document.getElementById('logoutButton').addEventListener('click', () => {
+      localStorage.removeItem('pengajar');
+      localStorage.removeItem('isLoggedIn');
+      // Redirect ke halaman login
+      window.location.href = 'loginPengajar.html';
+    });
+  </script>
+</body>
+</html>

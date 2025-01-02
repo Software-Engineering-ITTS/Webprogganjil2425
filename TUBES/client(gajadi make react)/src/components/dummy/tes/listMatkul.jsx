@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import api from "../services/api";
+import api from "../../../services/api";
 
 const ListMatkul = () => {
   const [matkul, setMatkul] = useState([]); // State untuk menyimpan data mata kuliah

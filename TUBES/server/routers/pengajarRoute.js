@@ -7,7 +7,7 @@ const router = express.Router();
 router.post('/addMK', createMatkul);
 router.get('/viewMK', fetchAllMatkul);
 router.put('/editMK/:id', editMatkul);
-router.delete('/dropMK/:id', StatusMatkul);
+router.put('/dropMK/:id', StatusMatkul);
 router.post('/login', loginPengajar);
 
 router.delete('/hapusMK!/:id', DeleteMatkul); 

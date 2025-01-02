@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Update Matkul</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 h-screen">
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="bg-green-600 text-white w-64 p-6">
+      <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
+      <div class="mt-4">
+        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-green-700">Create Matkul</a>
+        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-green-700">Update Matkul</a>
+        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
+        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-green-700">Delete Matkul</a>
+        <button id="logoutButton" class="block w-full mt-4 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8">
+      <h1 class="text-3xl font-semibold text-gray-800">Update Mata Kuliah</h1>
+      <form id="updateMatkulForm" class="mt-4">
+        <div class="mb-4">
+          <label for="matkulId" class="block text-lg font-semibold">ID Mata Kuliah</label>
+          <input type="text" id="matkulId" class="w-full px-4 py-2 border rounded mt-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="matkulName" class="block text-lg font-semibold">Nama Mata Kuliah</label>
+          <input type="text" id="matkulName" class="w-full px-4 py-2 border rounded mt-2" required>
+        </div>
+        <div class="mb-4">
+          <label for="matkulDesc" class="block text-lg font-semibold">Deskripsi Mata Kuliah</label>
+          <textarea id="matkulDesc" class="w-full px-4 py-2 border rounded mt-2" required></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Update Mata Kuliah</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const getMatkulData = async (id) => {
+      try {
+        const response = await fetch(`http://localhost:5000/pengajar/viewMatkul/${id}`);
+        const matkul = await response.json();
+
+        if (response.ok) {
+          document.getElementById('matkulId').value = matkul.id;
+          document.getElementById('matkulName').value = matkul.name;
+          document.getElementById('matkulDesc').value = matkul.description;
+        } else {
+          alert('Gagal mendapatkan data mata kuliah');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan!');
+      }
+    };
+
+    document.getElementById('updateMatkulForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const matkulId = document.getElementById('matkulId').value;
+      const name = document.getElementById('matkulName').value;
+      const description = document.getElementById('matkulDesc').value;
+
+      try {
+        const response = await fetch(`http://localhost:5000/pengajar/editMK/${matkulId}`, {
+          method: 'PUT',  // Update menggunakan PUT
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name,
+            description
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('Mata kuliah berhasil diperbarui!');
+          window.location.href = 'viewAllMatkul.html';
+        } else {
+          alert(result.error || 'Gagal memperbarui mata kuliah');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan!');
+      }
+    });
+
+    const urlParams = new URLSearchParams(window.location.search);
+    const matkulId = urlParams.get('id');  
+
+    if (matkulId) {
+      getMatkulData(matkulId);  
+    }
+
+    document.getElementById('logoutButton').addEventListener('click', () => {
+      localStorage.removeItem('pengajar');
+      localStorage.removeItem('isLoggedIn');
+      window.location.href = 'loginPengajar.html';
+    });
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Delete Matkul</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 h-screen">
+
+  <div class="flex">
+    <!-- Sidebar -->
+    <div class="bg-green-600 text-white w-64 p-6">
+      <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
+      <div class="mt-4">
+        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-green-700">Create Matkul</a>
+        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-green-700">Update Matkul</a>
+        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
+        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-green-700">Delete Matkul</a>
+        <button id="logoutButton" class="block w-full mt-4 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
+      </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="flex-1 p-8">
+      <h1 class="text-3xl font-semibold text-gray-800">Delete Mata Kuliah</h1>
+      <form id="deleteMatkulForm" class="mt-4">
+        <div class="mb-4">
+          <label for="matkulId" class="block text-lg font-semibold">ID Mata Kuliah</label>
+          <input type="text" id="matkulId" class="w-full px-4 py-2 border rounded mt-2" required>
+        </div>
+        <button type="submit" class="w-full bg-red-600 text-white p-2 rounded hover:bg-red-700">Delete Mata Kuliah</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Fungsi untuk menghapus mata kuliah berdasarkan ID
+    document.getElementById('deleteMatkulForm').addEventListener('submit', async (event) => {
+      event.preventDefault();
+
+      const matkulId = document.getElementById('matkulId').value;
+
+      try {
+        const response = await fetch(`http://localhost:5000/pengajar/dropMK/${matkulId}`, {
+          method: 'PUT',  
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+           matkulId
+          })
+        });
+
+        const result = await response.json();
+
+        if (response.ok) {
+          alert('Mata kuliah berhasil dihapus!');
+          window.location.href = 'viewAllMatkul.html'; 
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan!');
+      }
+    });
+
+    document.getElementById('logoutButton').addEventListener('click', () => {
+      localStorage.removeItem('pengajar');
+      localStorage.removeItem('isLoggedIn');
+      window.location.href = 'loginPengajar.html';
+    });
+  </script>
+
+</body>
+</html>

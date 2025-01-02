@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard Pembelajar</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body class="bg-gray-50">
+
+    <!-- Navbar -->
+    <div class="bg-blue-600 text-white p-4">
+        <div class="flex justify-between items-center">
+            <h1 class="text-lg font-semibold">Dashboard Pembelajar</h1>
+            <!-- <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</button> -->
+        </div>
+    </div>
+
+    <div class="container mx-auto my-8">
+        <!-- Halo Pembelajar -->
+        <h2 class="text-3xl font-semibold text-center mb-6">Halo Pembelajar!</h2>
+
+        <!-- Navigasi Bar -->
+        <div class="flex justify-center space-x-4 mb-8">
+            <button onclick="navigateTo('ambilMatkul')"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ambil Mata Kuliah</button>
+            <button onclick="navigateTo('viewAllMatkul')"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Semua Mata Kuliah</button>
+            <button onclick="navigateTo('viewMatkul')"
+                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Mata Kuliah yang
+                Diambil</button>
+        </div>
+    </div>
+
+    <script>
+        // Ambil data pembelajar yang sudah login
+        const pembelajar = JSON.parse(localStorage.getItem('pembelajar'));
+
+        // Jika tidak ada data pembelajar, arahkan ke halaman login
+        
+
+        // Fungsi logout
+        function logout() {
+            localStorage.removeItem('pembelajar');
+            window.location.href = 'index.html'; // Kembali ke halaman login
+        }
+
+        // Fungsi untuk mengarahkan ke halaman sesuai pilihan
+        function navigateTo(page) {
+            if (page === 'ambilMatkul') {
+                window.location.href = 'ambilMatkul.html'; // Halaman ambil mata kuliah
+            } else if (page === 'viewAllMatkul') {
+                window.location.href = 'viewAllMatkul.html'; // Halaman lihat semua mata kuliah
+            } else if (page === 'viewMatkul') {
+                window.location.href = 'viewMatkul.html'; // Halaman lihat mata kuliah yang sudah diambil
+            }
+        }
+    </script>
+
+</body>
+
+</html>

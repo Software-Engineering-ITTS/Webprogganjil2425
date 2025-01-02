@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lihat Mata Kuliah yang Diambil</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50">
+
+  <!-- Navbar -->
+  <div class="bg-blue-600 text-white p-4">
+    <div class="flex justify-between items-center">
+      <h1 class="text-lg font-semibold">Mata Kuliah yang Diambil</h1>
+      <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</button>
+    </div>
+  </div>
+
+  <div class="container mx-auto my-8">
+    <h2 class="text-2xl font-semibold text-center mb-6">Mata Kuliah yang Telah Diambil</h2>
+    <div id="matkul-list" class="space-y-4">
+      <!-- Mata kuliah yang telah diambil akan dimuat di sini -->
+    </div>
+  </div>
+
+  <script>
+    // Ambil data pembelajar yang sudah login
+    const pembelajar = JSON.parse(localStorage.getItem('pembelajar'));
+
+    // Jika tidak ada data pembelajar, arahkan ke halaman login
+    if (!pembelajar) {
+      window.location.href = 'loginPembelajar.html';
+    }
+
+    // Fungsi logout
+    function logout() {
+      localStorage.removeItem('pembelajar'); // Menghapus data pembelajar dari localStorage
+      window.location.href = 'index.html'; // Kembali ke halaman login
+    }
+
+    // Fungsi untuk menampilkan mata kuliah yang telah diambil
+    async function fetchTakenMatkul() {
+      try {
+        const response = await fetch(`http://localhost:5000/pembelajar/logs/${pembelajar.id}`);
+        const data = await response.json();
+
+        if (response.status === 200) {
+          const matkulList = document.getElementById('matkul-list');
+          data.matkul.forEach(item => {
+            const matkulItem = document.createElement('div');
+            matkulItem.classList.add('bg-white', 'p-4', 'rounded', 'shadow-md');
+            matkulItem.innerHTML = `
+              <h3 class="text-xl font-semibold">${item.nama}</h3>
+              <p class="text-gray-600">Deskripsi: ${item.deskripsi}</p>
+            `;
+            matkulList.appendChild(matkulItem);
+          });
+        } else {
+          console.error('Gagal mengambil data mata kuliah yang diambil:', data.error);
+        }
+      } catch (error) {
+        console.error('Terjadi kesalahan saat mengambil data mata kuliah yang diambil:', error);
+      }
+    }
+
+    // Memanggil fungsi fetchTakenMatkul untuk mendapatkan mata kuliah yang diambil
+    fetchTakenMatkul();
+  </script>
+
+</body>
+</html>
