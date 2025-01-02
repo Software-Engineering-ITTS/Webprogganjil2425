@@ -25,6 +25,9 @@
                         Kategori
                     </th>
                     <th scope="col" class="px-6 py-3">
+                        Tanggal Diterima
+                    </th>
+                    <th scope="col" class="px-6 py-3">
                         Expired Date
                     </th>
                     <th scope="col" class="px-6 py-3">
@@ -47,11 +50,16 @@
                     <td class="px-6 py-4">
                         {{ $data->kode_barang }}
                     </td>
+
                     <td class="px-6 py-4">
                         {{ $data->nama_barang }}
                     </td>
+
                     <td class="px-6 py-4">
                         {{ $data->kategori->nama_kategori ?? '-' }}
+                    </td>
+                    <td class="px-6 py-4">
+                        {{ $data->tanggal_diterima }}
                     </td>
                     <td class="px-6 py-4">
                         {{ $data->tanggal_expired ?? '-' }}
@@ -61,13 +69,13 @@
                     </td>
 
                     <td class="px-6 py-4">
-                       Rp {{ $data->harga_formatted }}
+                        Rp {{ $data->harga_formatted }}
                     </td>
                     <td class="px-6 py-4">
                         <div class="flex space-x-2">
                             <!-- Edit Button -->
-                            <a href="{{route('barang.edit', $data->id)}}" 
-                            class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
+                            <a href="{{route('barang.edit', $data->id)}}"
+                                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">
                                 Edit Barang
                             </a>
                             <!-- Delete Button -->
