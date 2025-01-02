@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.menu-bar{
+   @apply text-yellow-500;
+}
+.menu-bar{
+    @apply flex flex-row bg-red-500 justify-around;
+}
+
+.title{
+    @apply  flex flex-row bg-red-500 justify-around;
+}
