@@ -24,7 +24,7 @@
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown">
-                            <i class="fas fa-user-shield me-2"></i>
+                            <i class="fas fa-solid fa-user me-2"></i>
                             Customer User
                         </a>
                         <ul class="dropdown-menu dropdown-menu-end">

@@ -26,15 +26,18 @@ use Illuminate\Support\Facades\Route;
     
 // });
 
-        Route::get('/', [authController::class, 'index'])-> name('login');
-        Route::post('/', [authController::class, 'login'])-> name('login');
-        Route::get('/register', [authController::class, 'showRegistrationForm'])->name('register');
-        Route::post('/register', [authController::class, 'register'])->name('post.register');
-
 // Route::get('/home', function () {
 //     return redirect('/admin');
 // });
 
+
+        Route::get('/', [authController::class, 'index'])-> name('login');
+        Route::post('/', [authController::class, 'login'])-> name('login');
+
+        Route::get('/register', [authController::class, 'showRegistrationForm'])->name('register');
+        Route::post('/register', [authController::class, 'register'])->name('post.register');
+
+        Route::get('/logout', [authController::class, 'logout'])-> name('logout');
 
         Route::get('/admin', [adminController::class, 'index'])-> name('admin');
         Route::get('/ulasan',[adminController::class, 'user'])->name('ulasan');
@@ -42,8 +45,11 @@ use Illuminate\Support\Facades\Route;
 
         Route::get('/home', [userController::class, 'user'])-> name('home');
         Route::get('/user/home', [userController::class, 'home'])->name('user.home');
+
         Route::get('/feedback', [FeedbackController::class, 'index'])->name('feedback.index');
         Route::post('/feedback/store', [FeedbackController::class, 'store'])->name('feedback.store');
-        Route::post('/feedback', [FeedbackController::class, 'store'])->name('store');
+        // Route::post('/feedback', [FeedbackController::class, 'store'])->name('store');
+        Route::delete('/feedback/{id}', [FeedbackController::class, 'destroy'])->name('feedback.destroy');
 
-        Route::get('/logout', [authController::class, 'logout'])-> name('logout');
+
+        

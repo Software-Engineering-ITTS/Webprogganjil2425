@@ -70,7 +70,7 @@
                         <div class="card text-white bg-primary">
                             <div class="card-body">
                                 <h5>Total Feedback</h5>
-                                <h2>5</h2>
+                                <h2>{{ $totalFeedback }}</h2>
                             </div>
                         </div>
                     </div>
@@ -78,7 +78,7 @@
                         <div class="card text-white bg-success">
                             <div class="card-body">
                                 <h5>Average Rating</h5>
-                                <h2>4.5</h2>
+                                <h2>{{ number_format($averageRating, 1) }}</h2>
                             </div>
                         </div>
                     </div>
@@ -86,19 +86,10 @@
                         <div class="card text-white bg-warning">
                             <div class="card-body">
                                 <h5>New Today</h5>
-                                <h2>3</h2>
+                                <h2>{{ $newToday }}</h2>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card text-white bg-danger">
-                            <div class="card-body">
-                                <h5>Pending Review</h5>
-                                <h2>5</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
 
                 <!-- Recent Feedback -->
                 <div class="mt-5">
@@ -115,6 +106,7 @@
                                 <th>Rating</th>
                                 <th>Comment</th>
                                 <th>Image</th>
+                                <th>Delete</th>
                             </tr>
                         </thead>
                         <tbody>
@@ -131,6 +123,16 @@
                                         @else
                                             <span>No Image</span>
                                         @endif
+                                    </td>
+                                    <td>
+                                        <!-- Tombol Delete -->
+                                        <form action="{{ route('feedback.destroy', $feedback->id) }}" method="POST" onsubmit="return confirm('Are you sure you want to delete this feedback?');">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="btn btn-danger btn-sm">
+                                                <i class="fas fa-trash-alt"></i> Delete
+                                            </button>
+                                        </form>
                                     </td>
                                 </tr>
                             @empty

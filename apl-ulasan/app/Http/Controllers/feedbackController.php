@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use App\Models\feedback;
 
 class feedbackController extends Controller
@@ -42,4 +43,24 @@ class feedbackController extends Controller
 
     // Redirect kembali ke halaman dengan pesan sukses
     return redirect('/feedback')->with('success', 'Feedback berhasil dikirim!');
-}}
+
+    
+}
+
+public function destroy($id)
+{
+    $feedback = Feedback::findOrFail($id);
+
+    // Hapus gambar jika ada
+    if ($feedback->image && Storage::exists('public/' . $feedback->image)) {
+        Storage::delete('public/' . $feedback->image);
+    }
+
+    // Hapus feedback dari database
+    $feedback->delete();
+
+    return redirect()->back()->with('success', 'Feedback deleted successfully.');
+}
+
+
+}
