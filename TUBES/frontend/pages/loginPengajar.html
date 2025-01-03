@@ -20,7 +20,7 @@
 
   <script>
     document.getElementById('loginForm').addEventListener('submit', async function(event) {
-      event.preventDefault(); // Mencegah form reload saat submit
+      event.preventDefault(); 
 
       const email = document.getElementById('email').value;
       const pass = document.getElementById('pass').value;
@@ -34,15 +34,15 @@
           body: JSON.stringify({ email, pass }),
         });
 
-        const result = await response.json();  // Mengambil response dalam format JSON
+        const result = await response.json();  // ngambil response dalam format JSON
 
         if (response.status === 200) {
-            // Simpan data pengajar ke localStorage
-            localStorage.setItem('pengajar', JSON.stringify(result.data)); // Asumsikan response memiliki field `data`
-            localStorage.setItem('isLoggedIn', 'true'); // Tandai bahwa pengguna sudah login
+            // data pengajar nyimpen di localStorage
+            localStorage.setItem('pengajar', JSON.stringify(result.data)); 
+            localStorage.setItem('isLoggedIn', 'true'); 
         
             alert('Login berhasil!');
-            window.location.href = 'dashboardPengajar.html';  // Arahkan ke halaman dashboard pengajar
+            window.location.href = 'dashboardPengajar.html';  
         } else {
           alert('Login gagal: ' + result.error);
         }

@@ -19,7 +19,7 @@ const PORT = process.env.PORT;
 app.use(cors());
 app.use(express.json());
 
-app.use('/pengajar',pengajarRoute);
+app.use('/pengajar',pengajarRoute); //menggunakan prefix berdasarkan roldenya
 app.use('/pembelajar', pembelajarRouter);
 
 

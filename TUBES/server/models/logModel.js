@@ -1,6 +1,5 @@
 import db from '../konfig/db.js';
 
-// Log Mata Kuliah Model
 export const createLogTable = async () => {
     const query = `CREATE TABLE IF NOT EXISTS LogMatkul (
         id INT AUTO_INCREMENT PRIMARY KEY,
@@ -25,8 +24,7 @@ export const findLogByPembelajar = async (idPembelajar) => {
         JOIN matkul ON logmatkul.idMatkul = matkul.id
         WHERE logmatkul.idPembelajar = ?;
     `;
-    const results = await db.query(query, [idPembelajar]);
-    return results;
+    const [rows] = await db.query(query, [idPembelajar]); // Gunakan destructuring untuk mengambil rows
+    return rows; // Kembalikan hanya data yang diperlukan
 };
-
 

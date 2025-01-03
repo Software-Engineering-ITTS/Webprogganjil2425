@@ -9,7 +9,7 @@
 <body class="bg-gray-50 h-screen">
 
   <div class="flex">
-    <!-- Sidebar -->
+    <!-- bar pengajar -->
     <div class="bg-green-600 text-white w-64 p-6">
       <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
       <div class="mt-4">
@@ -21,7 +21,6 @@
       </div>
     </div>
 
-    <!-- Main Content -->
     <div class="flex-1 p-8">
       <h1 class="text-3xl font-semibold text-gray-800">Delete Mata Kuliah</h1>
       <form id="deleteMatkulForm" class="mt-4">
@@ -35,7 +34,7 @@
   </div>
 
   <script>
-    // Fungsi untuk menghapus mata kuliah berdasarkan ID
+    // hapus mata kuliah by ID
     document.getElementById('deleteMatkulForm').addEventListener('submit', async (event) => {
       event.preventDefault();
 

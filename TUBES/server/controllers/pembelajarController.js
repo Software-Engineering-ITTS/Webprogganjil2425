@@ -18,10 +18,8 @@ export const inputMatkul = async (req, res) => {
     const {  idMatkul } = req.body;
 
     try {
-        // Menambahkan log mata kuliah
         const result = await addLogMatkul(idPembelajar, idMatkul);
 
-        // Berikan respons sukses ke client
         res.status(200).json({ message: 'Mata kuliah berhasil diinput', result });
     } catch (error) {
         console.error(error);
@@ -41,6 +39,7 @@ export const viewLogMatkul = async (req, res) => {
 };
 
 export const registerPembelajar = async (req, res) => {
+    console.log("ini di controller backend")
     const { name, email, pass, prodi } = req.body;
 
     try {
@@ -57,15 +56,12 @@ export const loginPembelajar = async (req, res) => {
     const { email, pass } = req.body;
 
     try {
-        // Cari pembelajar berdasarkan email ngaksenya ke models
         const pembelajar = await findPembelajarByEmail(email);
 
-        // Jika pembelajar tidak ditemukan
         if (!pembelajar) {
             return res.status(401).json({ error: 'Email tidak ditemukan!' });
         }
 
-        // Bandingkan password yang diinput dengan password di database
         if (pembelajar.pass !== pass) {
             return res.status(401).json({ error: 'Password salah!' });
         }

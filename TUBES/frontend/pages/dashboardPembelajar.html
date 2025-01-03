@@ -10,53 +10,48 @@
 
 <body class="bg-gray-50">
 
-    <!-- Navbar -->
-    <div class="bg-blue-600 text-white p-4">
-        <div class="flex justify-between items-center">
-            <h1 class="text-lg font-semibold">Dashboard Pembelajar</h1>
-            <!-- <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</button> -->
+    <!-- bar pembelajar -->
+    <div class="bg-green-600 text-white w-64 p-6 fixed h-screen">
+        <h2 class="text-2xl font-semibold mb-4">Bar Pembelajar!</h2>
+        <div class="mt-6">
+            <a href="ambilMatkul.html" class="block p-2 text-lg hover:bg-green-700">Input Matkul</a>
+            <a href="viewMatkul.html" class="block p-2 text-lg hover:bg-green-700">View Matkul yang Diambil</a>
+            <a href="viewAllMatkulMHS.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
+            <button id="logoutButton"
+                class="block w-full mt-6 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
         </div>
     </div>
 
-    <div class="container mx-auto my-8">
-        <!-- Halo Pembelajar -->
-        <h2 class="text-3xl font-semibold text-center mb-6">Halo Pembelajar!</h2>
-
-        <!-- Navigasi Bar -->
-        <div class="flex justify-center space-x-4 mb-8">
-            <button onclick="navigateTo('ambilMatkul')"
-                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Ambil Mata Kuliah</button>
-            <button onclick="navigateTo('viewAllMatkul')"
-                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Semua Mata Kuliah</button>
-            <button onclick="navigateTo('viewMatkul')"
-                class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Lihat Mata Kuliah yang
-                Diambil</button>
-        </div>
+    <div class="ml-64 p-8">
+        <h2 class="text-3xl font-semibold text-center mb-6">Selamat Datang Pembelajar!</h2>
     </div>
 
     <script>
-        // Ambil data pembelajar yang sudah login
         const pembelajar = JSON.parse(localStorage.getItem('pembelajar'));
 
-        // Jika tidak ada data pembelajar, arahkan ke halaman login
-        
 
-        // Fungsi logout
+
         function logout() {
             localStorage.removeItem('pembelajar');
-            window.location.href = 'index.html'; // Kembali ke halaman login
+            window.location.href = 'index.html'; 
         }
 
-        // Fungsi untuk mengarahkan ke halaman sesuai pilihan
+        
         function navigateTo(page) {
             if (page === 'ambilMatkul') {
-                window.location.href = 'ambilMatkul.html'; // Halaman ambil mata kuliah
+                window.location.href = 'ambilMatkul.html'; 
             } else if (page === 'viewAllMatkul') {
-                window.location.href = 'viewAllMatkul.html'; // Halaman lihat semua mata kuliah
+                window.location.href = 'viewAllMatkul.html'; 
             } else if (page === 'viewMatkul') {
-                window.location.href = 'viewMatkul.html'; // Halaman lihat mata kuliah yang sudah diambil
+                window.location.href = 'viewMatkul.html'; 
             }
         }
+
+        document.getElementById('logoutButton').addEventListener('click', () => {
+            localStorage.removeItem('pembelajar');
+            localStorage.removeItem('isLoggedIn');
+            window.location.href = 'loginPembelajar.html';
+        });
     </script>
 
 </body>

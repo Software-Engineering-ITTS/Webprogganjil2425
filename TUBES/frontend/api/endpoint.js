@@ -1,5 +1,9 @@
 import api from "./apiconfig.js";
 
+
+// niatnya tadi ini endpoint biar enak pas make axios
+
+
 // Pengajar
 export const loginPengajar = (data) => api.post("/pengajar/login", data);
 export const addMK = (data) => api.post("/pengajar/addMK", data);

@@ -18,7 +18,10 @@ export const findPembelajarByEmail = async (email) => {
     return result[0]; //ngambil di index 0 bermaksud untuk mengambil 1 baris aja
 };
 
+
+
 export const insertPembelajar = async (name, email, pass, prodi) => {
+    console.log("ini di model insert");  //ini debugging, konek ke frontend nya bermasalah mas
     const query = `
         INSERT INTO pembelajar (name, email, pass, prodi) 
         VALUES (?, ?, ?, ?);

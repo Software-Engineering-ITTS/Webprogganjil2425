@@ -1,3 +1,7 @@
+
+
+// gajadi make axios, sebelumnya udah nyiba tapi eror
+
 import axios from "axios";
 
 const api = axios.create({

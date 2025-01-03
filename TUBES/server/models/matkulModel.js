@@ -1,7 +1,6 @@
 // models/courseModel.js
 import db from "../konfig/db.js";
 
-// Mata Kuliah Model
 export const createMatkulTable = async () => {
   const query = `CREATE TABLE IF NOT EXISTS Matkul (
         id INT AUTO_INCREMENT PRIMARY KEY,

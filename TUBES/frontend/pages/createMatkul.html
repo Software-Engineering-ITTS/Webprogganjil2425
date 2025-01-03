@@ -9,7 +9,7 @@
 <body class="bg-gray-50 h-screen">
 
   <div class="flex">
-    <!-- Sidebar -->
+    <!-- bar pengajar -->
     <div class="bg-green-600 text-white w-64 p-6">
       <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
       <div class="mt-4">
@@ -21,7 +21,6 @@
       </div>
     </div>
 
-    <!-- Main Content -->
     <div class="flex-1 p-8">
       <h1 class="text-3xl font-semibold text-gray-800">Buat Mata Kuliah</h1>
       <form id="createMatkulForm" class="mt-4">
@@ -58,22 +57,20 @@
                 })
             });
     
-            // Periksa apakah response valid
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
     
-            // Periksa apakah response memiliki body
             const text = await response.text();
             const result = text ? JSON.parse(text) : {};
     
             console.log('Response:', result);
     
             if (result.message) {
-                alert(result.message); // Tampilkan pesan sukses
+                alert(result.message); 
                 window.location.href = 'viewAllMatkul.html';
             } else {
-                alert(result.error || 'Gagal membuat mata kuliah'); // Tampilkan pesan error
+                alert(result.error || 'Gagal membuat mata kuliah');
             }
         } catch (error) {
             console.error('Error:', error);
