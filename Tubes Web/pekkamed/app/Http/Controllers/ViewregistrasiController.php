@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Illuminate\Support\Facades\Log;
 use App\Models\profile;
 use Illuminate\Http\Request;
 
@@ -13,24 +14,22 @@ class ViewregistrasiController extends Controller
     }
 
     public function store(Request $request){
-        $request->validate([
-            'nama' => 'required|string|max:100',
-            'email' => 'required|email|unique:profiles',
-            'telepon' => 'required|numeric',
+        $validatedData = $request->validate([
+            'nama' => 'required|string|max:200',
+            'email' => 'required|email',
+            'telepon' => 'required|string|max:20',
             'alamat' => 'required|string|max:200',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
 
-        $path = $request->file('foto') ? $request->file('foto')->store('foto_profile', 'public') : null;
 
-        Profile::create([
-        'nama' => $request->nama,
-        'email' => $request-> email,
-        'telepon' => $request->telepon,
-        'alamat' => $request->alamat,
-        'foto' => $path,
+        $file = $request->file('foto');
+        $fotopath=$file->store('foto_profile', 'public');
+        $validatedData['foto'] = $fotopath;
 
-        ]);
+        profile::create($validatedData);
+        //return redirect()->route('formregistrasi')->with('success', 'Registrasi Berhasil');
+    
 
         return redirect()->route('viewregistrasi')->with('success', 'Data Berhasil Disimpan');
     }

@@ -25,6 +25,7 @@
             position: absolute;
             top: 50%;
             left: 50%;
+            /* seperti absolute */
             transform: translate(-50%, -50%);
         }
         .bg-light-blue{
@@ -90,6 +91,10 @@
         <p>Pekkamed adalah solusi inovatif yang dirancang untuk memberikan layanan konsultasi kesehatan online terbaik. Kami siap melayani Anda 24/7 dengan dokter-dokter terpercaya yang siap membantu Anda kapan saja dan di mana saja.</p>
         <p>Jika anda mengalami kondisi darurat hubungi contact diatas</p>
     </div>
+
+
+
+    
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

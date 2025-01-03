@@ -16,8 +16,12 @@ class FormregistrasiController extends Controller
             'email' => 'required|email',
             'telepon' => 'required|string|max:20',
             'alamat' => 'required|string|max:200',
-            'foto' => 'nullable|image|mimes:jpg,png,jpeg|max:2048',
+            'foto' => 'required|image|mimes:jpg,png,jpeg|max:2048',
         ]);
+
+        $file = $request->file('foto');
+        $fotopath=$file->store('foto_profile', 'public');
+        $validatedData['foto'] = $fotopath;
 
         profile::create($validatedData);
         return redirect()->route('formregistrasi')->with('success', 'Registrasi Berhasil');

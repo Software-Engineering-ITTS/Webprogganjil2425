@@ -22,10 +22,10 @@ return new class extends Migration
             $table->enum('kondisi' , ['Rentang Normal', 'Merasakan Sakit',  'Sakit Berlebihan']);
             $table->boolean('konsultasi')->default(false);
             $table->enum('antrian', ['Normal', 'Slight Emergency', 'Emergency']);
-            $table->unsignedBigInteger('schedule_id');
+            $table->unsignedBigInteger('iddokter');
             $table->timestamps();
 
-            $table->foreign('schedule_id')->references('id')->on('schedules')->onDelete('cascade');
+            $table->foreign('iddokter')->references('id')->on('schedules')->onDelete('cascade');
         });
     }
 

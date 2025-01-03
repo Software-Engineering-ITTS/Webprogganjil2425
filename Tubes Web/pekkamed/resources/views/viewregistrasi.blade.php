@@ -64,11 +64,11 @@
                 @forelse ($profiles as $profile)
                     <tr>
                         <td>
-                             @if ($profile -> foto)
-                                <img src="{{ asset('storage/foto_profile/' . $profile->foto) }}" alt="Foto Profile" class="profile-photo"></td>
-                              @else
-                                 <img src="{{ asset('default_profile.png') }}" alt="foto default" class="profile-photo">
-                             @endif
+                             {{-- @if ($profile -> foto) --}}
+                                <img src="{{ asset('storage/' . $profile->foto) }}" alt="Foto Profile" class="profile-photo"></td>
+                              {{-- @else
+                                 <img src="{{ asset('/default_profile.png') }}" alt="foto default" class="profile-photo">
+                             @endif --}}
                         </td>
 
                         <td>{{ $profile->nama }}</td>

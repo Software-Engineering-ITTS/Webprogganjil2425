@@ -26,7 +26,8 @@ class FormkonsultasiController extends Controller
             'keluhan' => 'required|string|max:500',
             'kondisi' => 'required|string',
             'konsultasi' => 'required|string',
-            'id' => 'required|exists:schedule,id',
+            //'id' => 'required|exists:schedule,id',
+            'id' => 'required',
             'antrian' => 'nullable|string',
         ]);
 
@@ -42,7 +43,7 @@ class FormkonsultasiController extends Controller
             'keluhan' => $validatedData['keluhan'],
             'kondisi' => $validatedData['kondisi'],
             'konsultasi' => $validatedData['konsultasi'],
-            'dokter' => $validatedData['id'],
+            'iddokter' => $validatedData['id'],
            'antrian' => $validatedData['antrian'] ?? 'Normal',
 
         ]);
