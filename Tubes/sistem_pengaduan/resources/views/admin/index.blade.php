@@ -1,13 +1,23 @@
 <x-app-layout>
-    <div class="max-w-lg mx-auto p-6 bg-white rounded-lg shadow-md">
-        <h1 class="text-2xl font-bold">Laporan Pengaduan</h1>
-        <table class="min-w-full mt-4">
+    <div class="bg-white p-8 overflow-auto mt-8 h-screen">
+        <h1 class="text-2xl mb-4 text-center">Laporan Pengaduan</h1>
+        <div class="relative overflow-auto">
+            <div class="overflow-x-auto rounded-lg">
+            <table class="min-w-full bg-white border mb-20">
             <thead>
-                <tr>
-                    <th class="border px-4 py-2">Username</th>
-                    <th class="border px-4 py-2">Title</th>
-                    <th class="border px-4 py-2">Date</th>
-                    <th class="border px-4 py-2">Status</th>
+                <tr class="bg-[#2B4DC994] text-center text-xs md:text-sm font-thin text-white">
+                    <th class="p-0">
+                        <span class="block py-2 px-3 border-r border-gray-300">Username</span>
+                    </th>
+                    <th class="p-0">
+                        <span class="block py-2 px-3 border-r border-gray-300">Title</span>
+                    </th>
+                    <th class="p-0">
+                        <span class="block py-2 px-3 border-r border-gray-300">Date</span>
+                    </th>
+                    <th class="p-0">
+                        <span class="block py-2 px-3 border-r border-gray-300">Status</span>
+                    </th>
                 </tr>
             </thead>
             <tbody>
@@ -29,5 +39,7 @@
                 @endforeach
             </tbody>
         </table>
+        </div>
+    </div>
     </div>
 </x-app-layout>

@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="py-6">
+    <div class="py-6 bg-gray-100">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 text-gray-900">
@@ -79,12 +79,20 @@
                             <label for="message" class="block text-sm font-medium text-gray-700">Message:</label>
                             <textarea name="message" required class="mt-1 block w-full border border-gray-300 rounded-md shadow-sm p-2 focus:ring focus:ring-teal-300" rows="4" placeholder="Masukkan pesan Anda"></textarea>
                         </div>
-                        <button type="submit" class="w-full bg-gray-800 text-white font-extrabold py-2 rounded-md">Kirim</button>
+                        <button type="submit" class="w-full bg-[#2B4DC994] text-white font-extrabold py-2 rounded-md">Kirim</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-    @include('layouts.footer')
+    <footer class="bg-black text-white border-t border-gray-800 py-4">
+        <div class="max-w-7xl mx-auto text-center">
+            <p class="text-sm">© 2024 Indonesia Company. All rights reserved.</p>
+            <p class="text-sm">
+                <a href="#" class="text-white hover:underline">Kebijakan Privasi</a> |
+                <a href="#" class="text-white hover:underline">Kontak Kami</a>
+            </p>
+        </div>
+    </footer>
 </body>
 </html>

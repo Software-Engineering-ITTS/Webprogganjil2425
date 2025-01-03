@@ -1,16 +1,23 @@
 <x-app-layout>
-    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                <div class="p-6 text-gray-900">
-                    <strong class="text-2xl font-bold mb-4">Daftar Pengaduan</strong>
-                    <table class="min-w-full bg-white border border-gray-300">
+    <div class="bg-white p-8 overflow-auto mt-8 h-screen">
+        <h1 class="text-2xl mb-4 text-center">Daftar Tanggapan</h1>
+        <div class="relative overflow-auto">
+            <div class="overflow-x-auto rounded-lg">
+            <table class="min-w-full bg-white border mb-20">
                         <thead>
-                            <tr class="bg-gray-200 text-black">
-                                <th class="py-2 px-4 border-b">Name</th>
-                                <th class="py-2 px-4 border-b">Title</th>
-                                <th class="py-2 px-4 border-b">Status</th>
-                                <th class="py-2 px-4 border-b">Lihat Detail</th>
+                            <tr class="bg-[#2B4DC994] text-center text-xs md:text-sm font-thin text-white">
+                                <th class="p-0">
+                                    <span class="block py-2 px-3 border-r border-gray-300">Username</span>
+                                </th>
+                                <th class="p-0">
+                                    <span class="block py-2 px-3 border-r border-gray-300">Title</span>
+                                </th>
+                                <th class="p-0">
+                                    <span class="block py-2 px-3 border-r border-gray-300">Status</span>
+                                </th>
+                                <th class="p-0">
+                                    <span class="block py-2 px-3 border-r border-gray-300">Lihat Detail</span>
+                                </th>
                             </tr>
                         </thead>
                         <tbody>
@@ -31,5 +38,4 @@
                 </div>
             </div>
         </div>
-    </div>
 </x-app-layout>

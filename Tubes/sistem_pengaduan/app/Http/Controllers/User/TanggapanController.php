@@ -17,10 +17,7 @@ class TanggapanController extends Controller
 
     public function show($id)
     {
-        $complaint = Complaint::where('id', $id)
-            ->where('user_id', auth()->user()->id)
-            ->firstOrFail();
-
+        $complaint = Complaint::where('id', $id)->where('user_id', auth()->user()->id)->firstOrFail();
         return view('user.show', compact('complaint'));
     }
 
