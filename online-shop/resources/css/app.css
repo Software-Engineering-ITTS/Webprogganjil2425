@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.my-custom-button {
+    background-color: #f00;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease-in-out;
+}
+.my-custom-button:hover {
+    background-color: #c00;
+}

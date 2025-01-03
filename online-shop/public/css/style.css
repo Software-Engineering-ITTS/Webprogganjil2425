@@ -1,0 +1,153 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: url(https://blue.kumparan.com/image/upload/fl_progressive,fl_lossy,c_fill,q_auto:best,w_640/v1499746864/toko_online_spmylh.png) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.wrapper {
+    width: 400px;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    color: #333;
+}
+
+.wrapper h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #444;
+    margin-bottom: 20px;
+}
+
+.input-box {
+    margin: 20px 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.input-box input, 
+textarea, 
+select {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+    color: #333;
+    font-size: 14px;
+}
+
+.input-box input:focus, 
+textarea:focus, 
+select:focus {
+    border-color: #2575fc;
+    background: #e6f0ff;
+    outline: none;
+}
+
+textarea {
+    resize: none;
+}
+
+.radio-group, 
+.jenis-kertas {
+    margin: 10px 0;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+.button-container .btn, 
+.button-container .btn-reset {
+    width: 48%;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn {
+    background-color: #007bff;
+    color: white;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}
+
+.btn-reset {
+    background-color: #f44336;
+    color: white;
+}
+
+.btn-reset:hover {
+    background-color: #d32f2f;
+}
+
+.alert {
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    margin-bottom: 20px;
+    border-radius: 5px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.alert.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@media (max-width: 500px) {
+    .wrapper {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .button-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .button-container .btn, 
+    .button-container .btn-reset {
+        width: 100%;
+    }
+}
+
+/* Gaya untuk pesan error */
+.error-message {
+    color: #f44336;
+    font-size: 12px;
+    margin-top: 5px;
+    display: block;
+}
+
+.input-error {
+    border-color: #f44336;
+    background: #ffe6e6;
+}
+
