@@ -1,0 +1,120 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: olive;
+    text-align: center;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: papayawhip;
+    border-bottom: 2px solid #ddd;
+}
+
+.logo h1 {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.blue-text {
+    color: cornflowerblue;
+}
+
+.yellow-text {
+    color: yellow;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: maroon;
+    font-weight: bold;
+    padding: 10px;
+}
+
+nav ul li a:hover {
+    background-color: olive;
+    color: white;
+    border-radius: 5px;
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    background-color: whitesmoke;
+}
+
+.welcome-message {
+    background-color: indigo;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: left;
+    font-size: 18px;
+}
+
+.Cristianoronaldo7 img {
+    width: 250px;
+    max-width: 50%;
+}
+
+.services {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px;
+    max-width: 50%;
+}
+
+.service-box {
+    padding: 50px;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+}
+
+.green {
+    background-color: springgreen;
+}
+
+.orange {
+    background-color: darkgrey;
+}
+
+.red {
+    background-color: darkmagenta;
+}
+
+.blue {
+    background-color: bisque;
+}
+
+.yellow {
+    background-color: cadetblue;
+}
+
+.light-green {
+    background-color: crimson;
+}
+
