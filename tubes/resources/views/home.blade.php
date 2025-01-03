@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -56,7 +57,7 @@
                 <thead class="uppercase text-sm border-b-2">
                     <tr>
                         <th class="p-3 ">nama kegiatan</th>
-                        <th class="p-3 ">waktu</th>
+                        <th class="p-3 ">tanggal</th>
                         <th class="p-3 ">lokasi</th>
                         <th class="p-3 ">waktu</th>
                         <th class="p-3 ">deskripsi</th>

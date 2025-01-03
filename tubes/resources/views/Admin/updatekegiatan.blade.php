@@ -32,7 +32,7 @@
 
                         <div class="mb-3">
                             <label for="waktu_kegiatan" class="block font-medium">Waktu Kegiatan</label>
-                            <input type="text" name="waktu_kegiatan" id="waktu_kegiatan"
+                            <input type="time" name="waktu_kegiatan" id="waktu_kegiatan"
                                 class="w-full p-2 mt-1 rounded-lg border hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500"
                                 value="{{$kegiatans->waktu_kegiatan}}" required>
                         </div>

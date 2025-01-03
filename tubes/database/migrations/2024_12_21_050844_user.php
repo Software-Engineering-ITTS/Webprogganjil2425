@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('email')->unique();
             $table->string('telepon');
             $table->string('password');
+            $table->string('image')->nullable();
             $table->string('role')->default('anggota');
             $table->timestamps();
         });

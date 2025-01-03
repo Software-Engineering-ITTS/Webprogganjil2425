@@ -20,11 +20,12 @@ class UserFactory extends Factory
     {
         return [
             'username' => $this->faker->unique()->userName(),
-            'tanggal_lahir' => $this->faker->date('Y-m-d', '2005-12-31'), // Batasan usia hingga 2005
+            'tanggal_lahir' => $this->faker->date('Y-m-d', '2005-12-31'),
             'gender' => $this->faker->randomElement(['Laki - Laki', 'Perempuan']),
             'email' => $this->faker->unique()->safeEmail(),
             'telepon' => $this->faker->phoneNumber(),
-            'password' => Hash::make('aiueo'), // password
+            'password' => Hash::make($this->faker->password(8, 12)),
+            'image' => 'images/default.png'
         ];
     }
 

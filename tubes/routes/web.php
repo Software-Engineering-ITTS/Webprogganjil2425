@@ -48,7 +48,7 @@ Route::middleware('auth', 'role:anggota')->group(function () {
 
     Route::get('/dashboard-anggota/profile', [AnggotaController::class, 'profile']);
     Route::get('/dashboard-anggota/kegiatan', [AnggotaController::class, 'kegiatan']);
-    Route::get('/dashboard/anggota/kegiatan-search', [AdminController::class, 'search'])->name('search.kegiatan');
+    // Route::get('/dashboard/anggota/kegiatan-search', [AdminController::class, 'search'])->name('search.kegiatan');
     Route::get('/dashboard-anggota/{kegiatanId}', [AnggotaController::class, 'iuran'])->name('iuran');
     Route::post('/dashboard-anggota/join{kegiatanId}', [AnggotaController::class, 'join'])->name('join');
 });

@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Iuran</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -25,7 +26,7 @@
                     @csrf
                     <div class="mb-2 space-y-3">
                         <label for="iuran" class="font-semibold text-xl block">Seikhlasnya</label>
-                        <input type="text" name="iuran" id="iuran" class="rounded-lg w-full" placeholder="5000"
+                        <input type="number" name="iuran" id="iuran" class="rounded-lg w-full" placeholder="5000"
                             required min="5000">
                     </div>
                     <button type="submit"
@@ -37,6 +38,7 @@
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+    @include('sweetalert::alert')
 </body>
 
 </html>

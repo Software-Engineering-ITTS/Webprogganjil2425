@@ -46,9 +46,10 @@ class AuthController extends Controller
             "username" => "required",
             "tanggal_lahir" => "required",
             "gender" => "required",
-            "email" => "required",
-            "telepon" => "required",
-            "password" => "required",
+            "email" => "required|email",
+            "telepon" => "required|numeric",
+            "password" => "required|min:8",
+            "image" => "nullable|image|mimes:jpg,jpeg,png|max:2048"
         ]);
 
         $user = new User();
@@ -59,10 +60,16 @@ class AuthController extends Controller
         $user->telepon = $request->telepon;
         $user->password = Hash::make(value: $request->password);
 
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $path = $file->store('images', 'public');
+            $user->image = $path;
+        }
+
         if ($user->save()) {
             return redirect('/login')->with('success', 'Akun berhasil dibuat');
         }
-        return redirect('/register')->with('error', 'Email atau Password salah');
+        return redirect('/register')->with('error');
     }
 
     public function logout(Request $request)

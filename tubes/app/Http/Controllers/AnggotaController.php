@@ -7,6 +7,7 @@ use App\Models\KegiatanAnggota;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class AnggotaController extends Controller
 {
@@ -29,7 +30,8 @@ class AnggotaController extends Controller
         return view('anggota.kegiatan', compact('users', 'kegiatans'));
     }
 
-    public function iuran($id) {
+    public function iuran($id)
+    {
         $kegiatans = Kegiatan::find($id);
         return view('anggota.iuran', compact('kegiatans'));
     }

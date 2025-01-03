@@ -4,6 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
@@ -13,7 +14,8 @@
             <div class="w-3/5 space-y-2 border rounded-lg bg-white">
                 <h1 class="m-5 font-bold text-3xl">Daftar Langsung !</h1>
                 <div class="pb-10">
-                    <form action="{{route('register.post')}}" method="POST" class="space-y-3">
+                    <form action="{{ route('register.post') }}" method="POST" enctype="multipart/form-data"
+                        class="space-y-3">
                         @csrf
                         <div class="grid grid-cols-2 gap-6 m-10">
                             <div>
@@ -60,8 +62,14 @@
                                 <label for="" class="block font-medium">Password</label>
                                 <input type="password" name="password" id="password"
                                     class="w-full p-2 mt-1 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500"
-                                    placeholder="Password" required>
+                                    placeholder="Password" required min="8">
                             </div>
+                        </div>
+
+                        <div class="p-4">
+                            <label for="image" class="block font-medium ml-6">Avatar</label>
+                            <input type="file" name="image" id="image"
+                                class="w-[96%] mt-1 ml-5 border rounded-lg hover:ring-2 hover:ring-blue-500 focus:ring-2 focus:ring-blue-500 focus:outline-none focus:border-blue-500">
                         </div>
 
                         <div class="p-4 text-center">
@@ -86,6 +94,7 @@
             </div>
         </div>
     </section>
+    @include('sweetalert::alert')
 </body>
 
 </html>
