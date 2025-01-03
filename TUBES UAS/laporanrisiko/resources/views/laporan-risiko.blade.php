@@ -28,7 +28,7 @@
         }
         .btn-secondary {
             width: 100%;
-            text-align: center; 
+            text-align: center;
         }
         header img {
             border-radius: 50%;
@@ -116,7 +116,7 @@
 
     <footer class="bg-custom-green text-white py-3 mt-5">
         <div class="container text-center">
-            <p>&copy; 2025 Sistem Laporan Risiko | All Rights Reserved</p>
+            <p>&copy; 2025 Sistem Laporan Risiko . all rights reserved</p>
         </div>
     </footer>
 

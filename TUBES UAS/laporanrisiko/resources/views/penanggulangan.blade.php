@@ -10,10 +10,10 @@
             background-color: #28a745;
         }
         h1 {
-            font-size: 1.75rem; /* Ukuran font judul */
+            font-size: 1.75rem;
         }
         .container {
-            max-width: 800px; /* Membatasi lebar container */
+            max-width: 800px;
         }
         .btn-custom-green {
             background-color: #28a745;
@@ -21,7 +21,7 @@
             color: white;
             font-weight: bold;
             width: 100%;
-            text-align: left; /* Menempatkan teks di pinggir */
+            text-align: left;
         }
         .btn-custom-green:hover {
             background-color: #218838;
@@ -67,10 +67,10 @@
         </form>
     </div>
 
-    <!-- Footer dengan Background Hijau -->
+
     <footer class="bg-custom-green text-white py-3 mt-5">
         <div class="container text-center">
-            <p>&copy; 2025 Sistem Laporan Risiko | All Rights Reserved</p>
+            <p>&copy; 2025 Sistem Laporan Risiko . all rights reserved</p>
         </div>
     </footer>
 

@@ -10,7 +10,7 @@
 </head>
 
 <body class="bg-gray-50">
-    <!-- Header -->
+
     <header class="bg-white shadow-md">
         <div class="container mx-auto flex justify-between items-center p-4">
             <div class="flex justify-center items-center gap-4">
@@ -84,7 +84,7 @@
         </div>
       </div>
 
-            <!-- Buku 4 -->
+         
             <div class="bg-gradient-to-r from-green-600 to-white-400, flex bg-white shadow-lg rounded-lg overflow-hidden">
         <img src="https://image.gramedia.net/rs:fit:0:0/plain/https://cdn.gramedia.com/uploads/picture_meta/2023/6/7/dwpcvu5ujrsjc8ka7m95oc.jpg"
              alt="Buku 3" class="w-1/3 object-cover">

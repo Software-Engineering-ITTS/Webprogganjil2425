@@ -11,7 +11,7 @@
 
 <body class="bg-gray-50">
 
-    <!-- Header -->
+
     <header class="bg-white shadow-md">
         <div class="container mx-auto flex justify-between items-center p-4">
             <div class="flex justify-center items-center gap-4">
@@ -29,7 +29,7 @@
         </div>
     </header>
 
-    <!-- Hero Section -->
+
     <section class="bg-gradient-to-r from-green-600 to-white-400 text-white py-40">
         <div class="container mx-auto text-center">
             <h2 class="text-4xl font-bold mb-4">Holla! welcome to zoro's bookstore!</h2>
@@ -41,7 +41,7 @@
     </section>
 
 
-    <!-- Footer -->
+ 
     <footer class="bg-green-800 text-white py-6">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 zoro's bookstore. all rights reserved.</p>

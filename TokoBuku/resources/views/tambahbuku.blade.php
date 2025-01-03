@@ -11,7 +11,7 @@
 
 <body class="bg-gray-50">
 
-    <!-- Header -->
+  
     <header class="bg-white shadow-md">
         <div class="container mx-auto flex justify-between items-center p-4">
             <div class="flex justify-center items-center gap-4">
@@ -64,7 +64,7 @@
     </div>
 
 
-    <!-- Footer -->
+
     <footer class="bg-green-800 text-white py-6">
         <div class="container mx-auto text-center">
             <p>&copy; 2024 zoro's bookstore. all rights reserved.</p>
