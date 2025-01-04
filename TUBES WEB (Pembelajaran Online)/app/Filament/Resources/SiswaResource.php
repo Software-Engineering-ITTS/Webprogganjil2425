@@ -24,7 +24,7 @@ class SiswaResource extends Resource
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
     // Menentukan grup navigasi yang digunakan dalam panel admin
-    protected static ?string $navigationGroup = 'Siswa Management';
+    
 
     // Menentukan hak akses pada navigasi
     public static function canViewAny(): bool
@@ -39,14 +39,14 @@ class SiswaResource extends Resource
         return $form->schema([
             // Input untuk nama siswa
             TextInput::make('nama')
-                ->required() // Wajib diisi
+                ->required() 
                 ->label('Nama Lengkap')
                 ->placeholder('Masukkan nama lengkap siswa'),
 
             // Input untuk email siswa
             TextInput::make('email')
                 ->email() // Validasi format email
-                ->required() // Wajib diisi
+                ->required() 
                 ->unique(ignoreRecord: true) // Pastikan email unik
                 ->label('Email')
                 ->placeholder('Masukkan email siswa'),
@@ -62,9 +62,8 @@ class SiswaResource extends Resource
             Select::make('kelas_id')
                 ->relationship('kelas', 'nama') // Menampilkan relasi kelas dengan nama
                 ->label('Kelas')
-                ->required() // Wajib diisi
+                ->required() 
                 ->preload() // Memuat data sebelumnya untuk performa yang lebih baik
-                ->searchable() // Memungkinkan pencarian
                 ->reactive() // Membuat field materi bereaksi saat kelas diubah
                 ->afterStateUpdated(fn ($set) => $set('materi_id', null)), // Reset materi jika kelas diubah
 
@@ -72,9 +71,8 @@ class SiswaResource extends Resource
             Select::make('materi_id')
                 ->label('Materi')
                 ->relationship('kelas.materis', 'judul') // Menampilkan materi berdasarkan kelas
-                ->preload() // Memuat data materi sebelumnya
-                ->required() // Wajib diisi
-                ->searchable() // Memungkinkan pencarian
+                ->preload() 
+                ->required() 
                 ->disabled(fn ($get) => empty($get('kelas_id'))) // Disable jika kelas belum dipilih
                 ->afterStateUpdated(function ($set, $get) {
                     if (empty($get('kelas_id'))) {

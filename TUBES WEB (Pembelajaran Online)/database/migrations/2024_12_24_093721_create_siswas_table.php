@@ -12,14 +12,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('siswa', function (Blueprint $table) {
-            $table->id(); // Primary key otomatis
-            $table->string('nama'); // Kolom untuk nama siswa
-            $table->string('email')->unique(); // Kolom email siswa dengan constraint unik
-            $table->string('no_telp')->nullable(); // Kolom nomor telepon bersifat opsional
+            $table->id(); 
+            $table->string('nama'); 
+            $table->string('email')->unique();
+            $table->string('no_telp')->nullable(); 
             $table->foreignId('kelas_id') // Kolom relasi ke tabel `kelas`
                 ->constrained('kelas') // Relasi ke tabel `kelas`
                 ->onDelete('cascade'); // Hapus siswa jika kelas terkait dihapus
-            $table->timestamps(); // Kolom created_at dan updated_at
+            $table->timestamps(); 
         });
     }
 

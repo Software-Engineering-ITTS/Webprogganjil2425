@@ -21,15 +21,14 @@ use Althinect\FilamentSpatieRolesPermissions\FilamentSpatieRolesPermissionsPlugi
 use App\Filament\Resources\KelasResource;
 use App\Filament\Resources\MateriResource;
 use App\Filament\Resources\SiswaResource;
+use App\Filament\Resources\UserResource;
 use Filament\Navigation\NavigationBuilder;
 use Filament\Navigation\NavigationGroup;
-use App\Filament\Resources\UserResource;
 use Filament\Navigation\NavigationItem;
 use Filament\Pages\Dashboard;
 
 class AdminPanelProvider extends PanelProvider
 {
-    // Konfigurasi panel admin utama
     public function panel(Panel $panel): Panel
     {
         return $panel
@@ -47,14 +46,13 @@ class AdminPanelProvider extends PanelProvider
             ->discoverResources(in: app_path('Filament/Resources'), for: 'App\\Filament\\Resources')
             ->discoverPages(in: app_path('Filament/Pages'), for: 'App\\Filament\\Pages')
             ->pages([
-                Pages\Dashboard::class, // Menambahkan halaman Dashboard
+                Pages\Dashboard::class,
             ])
             ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
                 Widgets\AccountWidget::class, 
             ])
             ->middleware([
-                // Middleware untuk pengelolaan session dan autentikasi
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -66,69 +64,47 @@ class AdminPanelProvider extends PanelProvider
                 DispatchServingFilamentEvent::class,
             ])
             ->authMiddleware([
-                Authenticate::class, // Middleware autentikasi utama
+                Authenticate::class,
             ])
-            ->plugin(FilamentSpatieRolesPermissionsPlugin::make()) // Plugin untuk manajemen role dan permission
+            ->plugin(FilamentSpatieRolesPermissionsPlugin::make())
             ->navigation(function (NavigationBuilder $builder): NavigationBuilder {
-                return $builder->groups([
-                    // Grup navigasi untuk dashboard
-                    NavigationGroup::make('Dashboard')
-                        ->items([
-                            NavigationItem::make('Dashboard')
-                                ->icon('heroicon-o-home')
-                                ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
-                                ->url(fn (): string => Dashboard::getUrl()),
-                        ]),
+                return $builder->items([
+                    NavigationItem::make('Dashboard')
+                        ->icon('heroicon-o-home')
+                        ->isActiveWhen(fn (): bool => request()->routeIs('filament.admin.pages.dashboard'))
+                        ->url(fn (): string => Dashboard::getUrl()),
 
-                    // Grup navigasi untuk resources Class
-                    NavigationGroup::make('Class')
+                    ...SiswaResource::getNavigationItems(),
+                ])->groups([
+                    NavigationGroup::make('Class Management')
                         ->items([
                             ...KelasResource::getNavigationItems(),
                             ...MateriResource::getNavigationItems(),
                         ]),
 
-                    // Grup navigasi untuk pendaftaran siswa
-                    NavigationGroup::make('Register Siswa')
-                        ->items([
-                            ...SiswaResource::getNavigationItems(),
-                        ]),
+                    // NavigationGroup::make('Settings')
+                    //     ->items(array_filter([
+                    //         // Resource User untuk admin
+                    //         auth()->user()->hasRole('admin') ? NavigationItem::make('User')
+                    //             ->icon('heroicon-o-user-group')
+                    //             ->isActiveWhen(fn (): bool => request()->routeIs([
+                    //                 'filament.admin.resources.users.index',
+                    //                 'filament.admin.resources.users.create',
+                    //                 'filament.admin.resources.users.view',
+                    //                 'filament.admin.resources.users.edit',
+                    //             ]))
+                    //             ->url(fn (): string => UserResource::getUrl()) : null,
 
-                    // Grup navigasi untuk pengaturan (Settings)
-                    NavigationGroup::make('Setting')
-                        ->items(array_filter([
-                            // Resource User hanya untuk admin
-                            auth()->user()->hasRole('admin') ? NavigationItem::make('User')
-                                ->icon('heroicon-o-user-group')
-                                ->isActiveWhen(fn (): bool => request()->routeIs([
-                                    'filament.admin.resources.users.index',
-                                    'filament.admin.resources.users.create',
-                                    'filament.admin.resources.users.view',
-                                    'filament.admin.resources.users.edit',
-                                ]))
-                                ->url(fn (): string => UserResource::getUrl()) : null,
+                    //         // Roles untuk admin
+                    //         auth()->user()->hasRole('admin') ? NavigationItem::make('Roles')
+                    //             ->icon('heroicon-o-cog')
+                    //             ->url('/akademi/roles') : null,
 
-                            // Resource Roles hanya untuk admin
-                            // auth()->user()->hasRole('admin') ? NavigationItem::make('Roles')
-                            //     ->icon('heroicon-o-user-group')
-                            //     ->isActiveWhen(fn (): bool => request()->routeIs([
-                            //         'filament.admin.resources.roles.index',
-                            //         'filament.admin.resources.roles.create',
-                            //         'filament.admin.resources.roles.view',
-                            //         'filament.admin.resources.roles.edit',
-                            //     ]))
-                            //     ->url(fn (): string => '/admin/roles') : null,
-
-                            // // Resource Permissions hanya untuk admin
-                            // auth()->user()->hasRole('admin') ? NavigationItem::make('Permissions')
-                            //     ->icon('heroicon-o-lock-closed')
-                            //     ->isActiveWhen(fn (): bool => request()->routeIs([
-                            //         'filament.admin.resources.permissions.index',
-                            //         'filament.admin.resources.permissions.create',
-                            //         'filament.admin.resources.permissions.view',
-                            //         'filament.admin.resources.permissions.edit',
-                            //     ]))
-                            //     ->url(fn (): string => '/admin/permissions') : null,
-                        ])),
+                    //         // Permissions untuk admin
+                    //         auth()->user()->hasRole('admin') ? NavigationItem::make('Permissions')
+                    //             ->icon('heroicon-o-lock-closed')
+                    //             ->url('/akademi/permissions') : null,
+                        // ])),
                 ]);
             });
     }

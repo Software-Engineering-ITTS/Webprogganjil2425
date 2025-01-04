@@ -18,7 +18,7 @@ class User extends Authenticatable
 
 
     protected $hidden = [
-        'password', // Menyembunyikan password dari output
-        'remember_token', // Menyembunyikan token "remember me"
+        'password', 
+        'remember_token',
     ];
 }

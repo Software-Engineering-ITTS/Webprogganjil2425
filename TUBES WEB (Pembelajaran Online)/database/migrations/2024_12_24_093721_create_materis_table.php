@@ -10,8 +10,8 @@ return new class extends Migration
     public function up()
     {
         Schema::create('materi', function (Blueprint $table) {
-            $table->id(); // Primary key otomatis
-            $table->string('judul'); // Kolom untuk judul materi
+            $table->id(); 
+            $table->string('judul'); 
             $table->text('deskripsi')->nullable();
             $table->foreignId('kelas_id') 
                 ->constrained('kelas')  

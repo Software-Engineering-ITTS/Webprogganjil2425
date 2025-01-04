@@ -17,7 +17,7 @@ class KelasResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
-    protected static ?string $navigationGroup = 'Kelas Management';
+  
 
     public static function shouldRegisterNavigation(): bool
     {

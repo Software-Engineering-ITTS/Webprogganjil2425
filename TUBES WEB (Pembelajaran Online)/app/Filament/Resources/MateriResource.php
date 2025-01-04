@@ -7,15 +7,11 @@ use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
 use Filament\Tables\Columns\TextColumn;
 use App\Filament\Resources\MateriResource\Pages;
-use App\Filament\Resources\MateriResource\RelationManagers;
 use App\Models\Materi;
-use Filament\Forms;
 use Filament\Forms\Form;
 use Filament\Resources\Resource;
 use Filament\Tables;
 use Filament\Tables\Table;
-use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Database\Eloquent\SoftDeletingScope;
 
 class MateriResource extends Resource
 {
@@ -23,7 +19,7 @@ class MateriResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-    protected static ?string $navigationGroup = 'Kelas Management';
+  
 
     public static function shouldRegisterNavigation(): bool
     {
@@ -46,7 +42,6 @@ class MateriResource extends Resource
                 ->label('Kelas')
                 ->required()
                 ->preload()
-                ->searchable(),
         ]);
     }
 
