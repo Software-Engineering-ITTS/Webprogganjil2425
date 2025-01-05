@@ -8,7 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 flex items-center justify-center h-screen">
+<body class="bg-slate-800 flex items-center justify-center h-screen">
   <form id="registerForm" class="bg-white p-8 rounded shadow-md space-y-4">
     <h2 class="text-2xl font-semibold text-gray-700">Register Pembelajar</h2>
     <input type="text" id="name" placeholder="Nama"
@@ -20,6 +20,10 @@
     <input type="text" id="prodi" placeholder="Program Studi"
       class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" required>
     <button type="submit" class="w-full bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700">Daftar</button>
+    <div class="mt-4 text-center">
+      <button onclick="window.location.href='index.html'"
+        class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Kembali ke Homepage</button>
+    </div>
   </form>
 
   <script>
@@ -40,19 +44,19 @@
         });
 
         const result = await response.json();  // data format JSON
-        console.log('Response:', result); // debug soalnya tadi eror buat  response dari backend (di controller  udh ku log   )
+        console.log('Response:', result); // debug soalnya tadi eror buat  response dari backend (di controller  udh ku log)
 
-        if (response.status === 200) { 
-          alert(result.message || 'Registrasi berhasil!'); 
+        if (response.status === 200) {
+          alert(result.message || 'Registrasi berhasil!');
           window.location.href = 'loginPembelajar.html';  //jika ingin debug pas eror backenndya ini di komen 
         } else {
           const errorMessage = result.error || result.message || 'Registrasi gagal tanpa pesan error';
-          console.error('Registrasi gagal:', errorMessage); 
+          console.error('Registrasi gagal:', errorMessage);
           alert('Registrasi gagal: ' + errorMessage);
         }
       } catch (error) {
-        console.error('Error during registration:', error); 
-        alert('Terjadi kesalahan saat registrasi.');
+        console.error('Error during registration:', error);
+        alert('kayanya db/bacekdnnya belum nyaal');
       }
     });
   </script>

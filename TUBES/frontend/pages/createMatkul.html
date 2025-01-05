@@ -1,82 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Create Matkul</title>
+  <title>Create Mata Kuliah</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50 h-screen">
 
-  <div class="flex">
-    <!-- bar pengajar -->
-    <div class="bg-green-600 text-white w-64 p-6">
-      <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
-      <div class="mt-4">
-        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-green-700">Create Matkul</a>
-        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-green-700">Update Matkul</a>
-        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
-        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-green-700">Delete Matkul</a>
-        <button id="logoutButton" class="block w-full mt-4 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
-      </div>
-    </div>
+<body class="bg-blue-200 h-screen flex">
 
-    <div class="flex-1 p-8">
-      <h1 class="text-3xl font-semibold text-gray-800">Buat Mata Kuliah</h1>
-      <form id="createMatkulForm" class="mt-4">
-        <div class="mb-4">
-          <label for="matkulName" class="block text-lg font-semibold">Nama Mata Kuliah</label>
-          <input type="text" id="matkulName" class="w-full px-4 py-2 border rounded mt-2" required>
-        </div>
-        <div class="mb-4">
-          <label for="matkulDesc" class="block text-lg font-semibold">Deskripsi Mata Kuliah</label>
-          <textarea id="matkulDesc" class="w-full px-4 py-2 border rounded mt-2" required></textarea>
-        </div>
-        <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Buat Mata Kuliah</button>
-      </form>
-    </div>
+  <!-- Sidebar Pengajar -->
+  <div class="bg-slate-800 text-white w-64 p-6 fixed h-screen">
+    <h2 class="text-2xl font-semibold mb-4">Bar Pengajar</h2>
+    <nav class="mt-6 space-y-2">
+      <a href="createMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Input Matkul</a>
+      <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Update Matkul</a>
+      <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">View All Matkul</a>
+      <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Delete Matkul</a>
+    </nav>
+    <button id="logoutButton" class="block w-full mt-6 p-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded">
+      Logout
+    </button>
   </div>
 
+  <!-- Content Area -->
+  <main class="flex-1 ml-64 p-8">
+    <h1 class="text-3xl font-semibold text-gray-800 mb-6">Buat Mata Kuliah</h1>
+
+    <form id="createMatkulForm" class="bg-white p-6 rounded shadow-md space-y-4">
+      <div>
+        <label for="matkulName" class="block text-lg font-semibold">Nama Mata Kuliah</label>
+        <input type="text" id="matkulName" class="w-full px-4 py-2 border rounded mt-2" placeholder="Contoh: Pemrograman Web" required>
+      </div>
+      <div>
+        <label for="matkulDesc" class="block text-lg font-semibold">Deskripsi Mata Kuliah</label>
+        <textarea id="matkulDesc" class="w-full px-4 py-2 border rounded mt-2" placeholder="Deskripsi singkat mata kuliah" required></textarea>
+      </div>
+      <button type="submit" class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700">Buat Mata Kuliah</button>
+    </form>
+  </main>
+
   <script>
+    
     document.getElementById('createMatkulForm').addEventListener('submit', async (event) => {
-        event.preventDefault();
-        console.log("terbuat ges");
-    
-        const matkulName = document.getElementById('matkulName').value;
-        const matkulDesc = document.getElementById('matkulDesc').value;
-    
-        try {
-            const response = await fetch(`http://localhost:5000/pengajar/addMK`, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({
-                    name: matkulName,
-                    description: matkulDesc
-                })
-            });
-    
-            if (!response.ok) {
-                throw new Error(`HTTP error! Status: ${response.status}`);
-            }
-    
-            const text = await response.text();
-            const result = text ? JSON.parse(text) : {};
-    
-            console.log('Response:', result);
-    
-            if (result.message) {
-                alert(result.message); 
-                window.location.href = 'viewAllMatkul.html';
-            } else {
-                alert(result.error || 'Gagal membuat mata kuliah');
-            }
-        } catch (error) {
-            console.error('Error:', error);
-            alert('Terjadi kesalahan!');
+      event.preventDefault();
+      
+      const matkulName = document.getElementById('matkulName').value;
+      const matkulDesc = document.getElementById('matkulDesc').value;
+
+      try {
+        const response = await fetch('http://localhost:5000/pengajar/addMK', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            name: matkulName,
+            description: matkulDesc
+          })
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP error! Status: ${response.status}`);
         }
+
+        const result = await response.json();
+
+        if (result.message) {
+          alert(result.message);
+          window.location.href = 'viewAllMatkul.html';
+        } else {
+          alert(result.error || 'Gagal membuat mata kuliah');
+        }
+      } catch (error) {
+        console.error('Error:', error);
+        alert('Terjadi kesalahan!');
+      }
     });
+
     document.getElementById('logoutButton').addEventListener('click', () => {
       localStorage.removeItem('pengajar');
       localStorage.removeItem('isLoggedIn');
@@ -85,4 +87,5 @@
   </script>
 
 </body>
+
 </html>

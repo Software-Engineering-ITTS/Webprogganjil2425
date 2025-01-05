@@ -1,69 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lihat Mata Kuliah yang Diambil</title>
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body class="bg-gray-50">
 
-  <!-- Navbar -->
-  <div class="bg-blue-600 text-white p-4">
-    <div class="flex justify-between items-center">
-      <h1 class="text-lg font-semibold">Mata Kuliah yang Diambil</h1>
-      <button onclick="logout()" class="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700">Logout</button>
-    </div>
+<body class="bg-blue-200 flex">
+
+  <!-- Sidebar -->
+  <div class="bg-slate-800 text-white w-64 p-6 fixed h-screen">
+    <h2 class="text-2xl font-semibold mb-4">Bar Pembelajar!</h2>
+    <nav class="mt-6 space-y-2">
+      <a href="ambilMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Input Matkul</a>
+      <a href="viewMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">View Matkul yang Diambil</a>
+      <a href="viewAllMatkulMHS.html" class="block p-2 text-lg hover:bg-slate-400 rounded">View All Matkul</a>
+    </nav>
+    <button id="logoutButton" class="block w-full mt-6 p-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded">
+      Logout
+    </button>
   </div>
 
-  <div class="container mx-auto my-8">
-    <h2 class="text-2xl font-semibold text-center mb-6">Mata Kuliah yang Telah Diambil</h2>
-    <div id="matkul-list" class="space-y-4">
-  
-    </div>
-  </div>
+  <main class="ml-64 w-full">
+    <!-- Input ID Pembelajar -->
+    <section class="container mx-auto my-8 px-4">
+      <h2 class="text-2xl font-semibold text-center mb-6">Lihat Mata Kuliah yang Diambil</h2>
+      <div class="bg-white p-6 rounded-lg shadow-md max-w-md mx-auto">
+        <label for="idPembelajar" class="block text-lg font-medium mb-2">Masukkan ID Pembelajar:</label>
+        <input
+          type="number"
+          id="idPembelajar"
+          placeholder="Contoh: 1"
+          class="w-full p-2 border rounded mb-4"
+        />
+        <button
+          onclick="fetchTakenMatkul()"
+          class="w-full bg-blue-600 text-white p-2 rounded hover:bg-blue-700"
+        >
+          Cari Mata Kuliah
+        </button>
+      </div>
+    </section>
+
+    <!-- Daftar Mata Kuliah -->
+    <section class="container mx-auto my-8 px-4">
+      <div id="matkul-list" class="space-y-4">
+      </div>
+    </section>
+  </main>
 
   <script>
-    const pembelajar = JSON.parse(localStorage.getItem('pembelajar'));
-    
 
-    function logout() {
-      localStorage.removeItem('pembelajar'); 
+    document.getElementById('logoutButton').addEventListener('click', () => {
+      localStorage.removeItem('pembelajar');
       window.location.href = 'index.html'; 
-    }
+    });
 
     async function fetchTakenMatkul() {
-      try {
-          const url = `http://localhost:5000/pembelajar/logs/${pembelajar}`;
-          const response = await fetch(url);
-          const data = await response.json();
+      const idPembelajar = document.getElementById('idPembelajar').value;
 
-  
-          if (response.status === 200) {
-              const matkulList = document.getElementById('matkul-list');
-              if (Array.isArray(data.logs) && data.logs.length > 0) {
-                  data.logs.forEach(item => {
-                      const matkulItem = document.createElement('div');
-                      matkulItem.classList.add('bg-white', 'p-4', 'rounded', 'shadow-md');
-                      matkulItem.innerHTML = `
-                          <h3 class="text-xl font-semibold">${console.log(data), item.nama}</h3>
-                          <p class="text-gray-600">Deskripsi: ${item.deskripsi}</p>
-                      `;
-                      matkulList.appendChild(matkulItem);
-                  });
-              } else {
-                  console.warn('Tidak ada mata kuliah yang ditemukan.');
-                  matkulList.innerHTML = '<p class="text-gray-600">Tidak ada mata kuliah yang diambil.</p>';
-              }
-          } else {
-              console.error('Gagal mengambil data mata kuliah yang diambil:', data.error);
-          }
-      } catch (error) {
-          console.error('Terjadi kesalahan saat mengambil data mata kuliah yang diambil:', error);
+      // Validasi input
+      if (!idPembelajar) {
+        alert("Silakan masukkan ID Pembelajar!");
+        return;
       }
-  }
-    fetchTakenMatkul();
+
+      try {
+        const url = `http://localhost:5000/pembelajar/logs/${idPembelajar}`;
+        const response = await fetch(url);
+        const data = await response.json();
+
+        console.log("API Response:", data); // Debug: Lihat respons API
+
+        const matkulList = document.getElementById('matkul-list');
+        matkulList.innerHTML = '';
+
+        if (response.ok && Array.isArray(data.logs) && data.logs.length > 0) {
+          data.logs.forEach(item => {
+            const matkulItem = document.createElement('div');
+            matkulItem.classList.add('bg-white', 'p-4', 'rounded', 'shadow-md');
+            matkulItem.innerHTML = `
+              <h3 class="text-xl font-semibold">${item.matkul}</h3>
+              <p class="text-gray-600">Deskripsi: ${item.description}</p>
+            `;
+            matkulList.appendChild(matkulItem);
+          });
+        } else {
+          matkulList.innerHTML = '<p class="text-gray-600 text-center">Tidak ada mata kuliah yang diambil.</p>';
+        }
+      } catch (error) {
+        console.error('Terjadi kesalahan saat mengambil data:', error);
+        alert("Terjadi kesalahan saat mengambil data. Silakan coba lagi.");
+      }
+    }
   </script>
 
 </body>
+
 </html>

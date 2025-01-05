@@ -8,24 +8,25 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 
-<body class="bg-gray-50 h-screen">
+<body class="bg-blue-200 h-screen">
   <div class="flex">
     <!-- bar pengajar -->
-    <div class="bg-green-600 text-white w-64 p-6">
-      <h2 class="text-2xl font-semibold">Dashboard Pengajar</h2>
-      <div class="mt-4">
-        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-green-700">Create Matkul</a>
-        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-green-700">Update Matkul</a>
-        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-green-700">View All Matkul</a>
-        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-green-700">Delete Matkul</a>
-        <button id="logoutButton"
-          class="block w-full mt-4 p-2 text-lg bg-red-600 hover:bg-red-700 text-white">Logout</button>
-      </div>
+    <div class="bg-slate-800 text-white w-64 p-6 fixed h-screen">
+      <h2 class="text-2xl font-semibold mb-4">Bar Pengajar</h2>
+      <nav class="mt-6 space-y-2">
+        <a href="createMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Input Matkul</a>
+        <a href="updateMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Update Matkul</a>
+        <a href="viewAllMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">View All Matkul</a>
+        <a href="deleteMatkul.html" class="block p-2 text-lg hover:bg-slate-400 rounded">Delete Matkul</a>
+      </nav>
+      <button id="logoutButton" class="block w-full mt-6 p-2 text-lg bg-red-600 hover:bg-red-700 text-white rounded">
+        Logout
+      </button>
     </div>
 
     <div class="flex-1 p-8">
       <h1 class="text-3xl font-semibold text-gray-800">Halo Pengajar!</h1>
-      <p class="mt-4 text-lg">Selamat datang di dashboard pengajar. Pilih opsi di sidebar untuk mengelola mata kuliah.
+      <p class="mt-4 text-lg">Selamat datang di dashboard pengajar
       </p>
     </div>
   </div>
