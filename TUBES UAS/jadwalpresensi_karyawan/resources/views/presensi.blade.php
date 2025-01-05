@@ -25,7 +25,7 @@
         }
 
         window.onload = function() {
-            const currentTime = new Date().toTimeString().slice(0, 5); // Ambil format HH:MM
+            const currentTime = new Date().toTimeString().slice(0, 5);
             document.getElementById('jam_masuk').value = currentTime;
         }
     </script>
@@ -58,7 +58,7 @@
                 </div>
                 <div class="mb-3 mt-3">
                     <label for="jam_masuk">Jam Masuk</label>
-                    <input type="time" name="jam_masuk" id="jam_masuk" class="border rounded-md w-full text-base px-2 py-1" required readonly>
+                    <input type="time" name="jam_masuk" id="jam_masuk" class="border rounded-md w-full text-base px-2 py-1" required>
                 </div>
                 @if (session('error'))
                 <div class="p-4 rounded-md mb-4">

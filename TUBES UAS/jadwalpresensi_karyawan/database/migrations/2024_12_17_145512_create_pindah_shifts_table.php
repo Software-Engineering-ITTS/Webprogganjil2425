@@ -27,6 +27,8 @@ return new class extends Migration
 
             $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('cascade');
             $table->foreign('id_jadwal_kerja')->references('id')->on('jadwal_kerjas')->onDelete('cascade');
+            // $table->foreign('id_karyawan')->references('id')->on('karyawans')->onDelete('restrict');
+            // $table->foreign('id_jadwal_kerja')->references('id')->on('jadwal_kerjas')->onDelete('restrict');
         });
     }
 

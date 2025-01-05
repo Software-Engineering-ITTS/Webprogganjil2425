@@ -37,7 +37,7 @@ class JadwalKerjaController extends Controller
             $query->whereDate('tanggal', '<=', $endDate);
         }
 
-        $jadwal_kerja = $query->orderBy('tanggal', 'asc')->get();
+        $jadwal_kerja = $query->orderBy('tanggal', 'desc')->get();
 
         $karyawan = karyawan::findOrFail($id_karyawan);
 

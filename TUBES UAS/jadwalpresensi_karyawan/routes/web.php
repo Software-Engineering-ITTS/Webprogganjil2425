@@ -67,7 +67,7 @@ Route::delete('/karyawan/pindahshift/{id_shift}', [PindahShiftController::class,
 Route::get('/karyawan/presensi/{id_jadwal}', [PresensiController::class, 'presensi']);
 Route::post('/karyawan/presensi', [PresensiController::class, 'prosespresensi']);
 Route::get('/karyawan/riwayatpresensi', [PresensiController::class, 'riwayat']);
-Route::get('/karyawan/konfirmkeluar/{id_presensi}', [PresensiController::class, 'konfirmkeluar']);
+Route::post('/karyawan/konfirmkeluar/{id_presensi}', [PresensiController::class, 'konfirmkeluar']);
 
 // admin kelola pindah shift
 Route::get('/admin/reviewpengajuan', [PindahShiftController::class, 'review']);

@@ -56,9 +56,9 @@ class KaryawanController extends Controller
             'foto' => 'required|image|mimes:jpg,jpeg,png|max:2048'
         ]);
 
-        $file = $request->file('foto'); // mengambil file yang diupload
-        $fotoPath = $file->store('uploads', 'public');  // menyimpan file ke folder 'uploads' dan mengambil nama file yang unik
-        $val_data['foto'] = $fotoPath;  // menambahkan path foto ke dalam data yang akan disimpan di database
+        $file = $request->file('foto'); 
+        $fotoPath = $file->store('uploads', 'public');  
+        $val_data['foto'] = $fotoPath; 
 
         karyawan::create($val_data);
 

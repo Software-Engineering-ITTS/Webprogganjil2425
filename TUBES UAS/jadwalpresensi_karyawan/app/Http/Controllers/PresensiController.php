@@ -31,14 +31,14 @@ class PresensiController extends Controller
         $val_data = $request->validate([
             'status_hadir' => 'required',
             'tanggal' => 'required|date_format:Y-m-d',
-            'jam_masuk' => 'nullable|date_format:H:i', 
+            'jam_masuk' => 'required|date_format:H:i',
             'jam_keluar' => 'nullable|date_format:H:i',
             'id_karyawan' => 'required',
             'id_jadwal_kerja' => 'required'
         ]);
 
         if ($val_data['status_hadir'] == 'Hadir') {
-            $val_data['jam_keluar'] = null; 
+            $val_data['jam_keluar'] = null;
         } else {
             $val_data['jam_keluar'] = "00:00";
         }
@@ -58,7 +58,7 @@ class PresensiController extends Controller
             $statusWaktu = Carbon::parse($jamMasuk)->lte(Carbon::parse($shiftStartTime)) ? 'Tepat Waktu' : 'Terlambat';
         }
 
-        // Cek apakah pengajuan sudah ada untuk jadwal kerja ini
+        // cek apakah pengajuan sudah ada untuk jadwal kerja ini
         $existing_presensi = presensi::where('id_karyawan', $val_data['id_karyawan'])
             ->where('id_jadwal_kerja', $val_data['id_jadwal_kerja'])
             ->exists();
@@ -67,7 +67,7 @@ class PresensiController extends Controller
             return redirect()->back()->with('error', 'Anda sudah melakukan presensi.');
         }
 
-        $val_data['status_waktu'] = $statusWaktu; // Set status waktu berdasarkan jam masuk
+        $val_data['status_waktu'] = $statusWaktu; // set status waktu berdasarkan jam masuk
 
         presensi::create($val_data);
 
@@ -90,18 +90,36 @@ class PresensiController extends Controller
         return view('riwayatpresensi', compact('presensi'));
     }
 
-    public function konfirmkeluar($id)
+    // public function konfirmkeluar($id)
+    // {
+    //     $presensi = presensi::find($id);
+
+    //     if (!$presensi) {
+    //         return redirect()->back()->with('error', 'Data presensi tidak ditemukan.');
+    //     }
+
+    //     $presensi->jam_keluar = Carbon::now('Asia/Jakarta')->format('H:i');
+    //     $presensi->save();
+
+    //     return redirect()->back()->with('success', 'Jam keluar berhasil dikonfirmasi.');
+    // }
+
+    public function konfirmkeluar(Request $request, $id)
     {
-        $presensi = presensi::find($id);
+        // Validasi input waktu
+        $request->validate([
+            'jam_keluar' => 'required|date_format:H:i',
+        ]);
 
-        if (!$presensi) {
-            return redirect()->back()->with('error', 'Data presensi tidak ditemukan.');
-        }
+        // Cari data presensi berdasarkan ID
+        $presensi = presensi::findOrFail($id);
 
-        $presensi->jam_keluar = Carbon::now('Asia/Jakarta')->format('H:i');
+        // Update jam keluar
+        $presensi->jam_keluar = $request->input('jam_keluar');
         $presensi->save();
 
-        return redirect()->back()->with('success', 'Jam keluar berhasil dikonfirmasi.');
+        // Redirect kembali dengan pesan sukses
+        return redirect()->back()->with('success', 'Jam keluar berhasil diperbarui.');
     }
 
     // ADMIN
@@ -160,7 +178,7 @@ class PresensiController extends Controller
         $sakit = $presensi->where('status_hadir', 'Sakit')->count();
         $izin = $presensi->where('status_hadir', 'Izin')->count();
 
-        // hitung alpha dengan membandingkan jadwal dan presensi
+        // hitung alpha dengan membandingkan jadwal dan presensi, belum bisa
         $alphaKaryawan = $jadwalKaryawan->whereNotIn('karyawan_id', $presensi->pluck('karyawan_id'));
         $alpha = $alphaKaryawan->count();
 
@@ -168,7 +186,7 @@ class PresensiController extends Controller
             'hadir' => $hadir,
             'sakit' => $sakit,
             'izin'  => $izin,
-            'alpha' => $alpha,
+            'alpha' => $alpha, // belum bisa
         ];
 
         return view('reportpresensi', compact('presensi', 'summary', 'tanggalPresensi', 'alphaKaryawan'));

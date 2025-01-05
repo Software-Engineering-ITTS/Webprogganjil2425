@@ -47,6 +47,7 @@
                     <thead>
                         <tr class="bg-gray-200 text-gray-700">
                             <th class="px-4 py-2 border">Tanggal</th>
+                            <th class="px-4 py-2 border">Shift</th>
                             <th class="px-4 py-2 border">Status Hadir</th>
                             <th class="px-4 py-2 border">Jam Masuk</th>
                             <th class="px-4 py-2 border">Jam Keluar</th>
@@ -57,16 +58,39 @@
                         @foreach ($presensi as $pres)
                         <tr>
                             <td class="px-4 py-2 border">{{ $pres->tanggal }}</td>
+                            <td class="px-4 py-2 border">{{ $pres->jadwalKerja->shift }}</td>
                             <td class="px-4 py-2 border">{{ $pres->status_hadir }}</td>
                             <td class="px-4 py-2 border">{{ $pres->jam_masuk }}</td>
-                            <!-- <td class="px-4 py-2 border">{{ $pres->jam_keluar }}</td> -->
-                            <td class="px-4 py-2 border">
+                            <!-- <td class="px-4 py-2 border">
                                 @if ($pres->jam_keluar === null)
                                 <button
                                     onclick="confirmJamKeluar('{{ url('/karyawan/konfirmkeluar/'.$pres->id) }}')"
                                     class="px-3 py-1 bg-blue-400 text-white rounded-md hover:bg-blue-500">
                                     Konfirmasi Jam Keluar
                                 </button>
+                                @else
+                                {{ $pres->jam_keluar }}
+                                @endif
+                            </td> -->
+                            <td class="px-4 py-2 border">
+                                @if ($pres->jam_keluar === null && $pres->status_hadir === 'Hadir')
+                                <form method="POST" action="{{ url('/karyawan/konfirmkeluar/'.$pres->id) }}" class="flex items-center gap-2">
+                                    @csrf
+                                    <input type="time" name="jam_keluar" class="border border-gray-300 rounded-md px-2 py-1">
+                                    <button type="submit"
+                                        class="px-3 py-1 bg-blue-400 text-white rounded-md hover:bg-blue-500">
+                                        SET
+                                    </button>
+                                </form>
+                                @elseif ($pres->jam_keluar !== null && $pres->status_hadir === 'Hadir')
+                                <form method="POST" action="{{ url('/karyawan/konfirmkeluar/'.$pres->id) }}" class="flex items-center gap-2">
+                                    @csrf
+                                    <input type="time" name="jam_keluar" class="border border-gray-300 rounded-md px-2 py-1" value="{{ $pres->jam_keluar }}">
+                                    <button type="submit"
+                                        class="px-3 py-1 bg-blue-400 text-white rounded-md hover:bg-blue-500">
+                                        SET
+                                    </button>
+                                </form>
                                 @else
                                 {{ $pres->jam_keluar }}
                                 @endif
@@ -91,16 +115,22 @@
                     </tbody>
                 </table>
             </div>
+            @if (session('success'))
+            <div class="p-4 mb-4 text-green-700 bg-green-100 rounded-md">
+                {{ session('success') }}
+            </div>
+            @endif
+
         </div>
     </div>
 
-    <script>
+    <!-- <script>
         function confirmJamKeluar(url) {
             if (confirm('Apakah Anda yakin ingin mengonfirmasi jam keluar?')) {
                 window.location.href = url; // Lakukan redirect untuk konfirmasi jam keluar
             }
         }
-    </script>
+    </script> -->
 </body>
 
 </html>

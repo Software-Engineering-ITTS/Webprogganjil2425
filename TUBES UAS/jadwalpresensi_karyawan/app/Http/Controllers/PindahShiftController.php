@@ -93,7 +93,7 @@ class PindahShiftController extends Controller
         $id_karyawan = session('karyawan')->id ?? null;
 
         // Ambil jadwal kerja karyawan berdasarkan ID
-        $pindah_shift = pindah_shift::where('id_karyawan', $id_karyawan)->orderBy('tanggal_pengajuan', 'asc')->get();
+        $pindah_shift = pindah_shift::where('id_karyawan', $id_karyawan)->orderBy('tanggal_pengajuan', 'desc')->get();
 
         // Return ke view dengan data karyawan dan jadwal kerja
         return view('riwayatpindah', compact('pindah_shift'));
