@@ -17,122 +17,110 @@ use Filament\Tables\Filters\SelectFilter;
 
 class SiswaResource extends Resource
 {
-    // Menetapkan model yang digunakan oleh resource ini (Siswa)
     protected static ?string $model = Siswa::class;
-
-    // Menentukan ikon navigasi untuk resource ini
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    // Menentukan grup navigasi yang digunakan dalam panel admin
-    
-
-    // Menentukan hak akses pada navigasi
     public static function canViewAny(): bool
     {
-        // Memastikan hanya pengguna dengan role "user" dan "admin" yang dapat melihat resource ini
         return auth()->user()->hasRole(['user', 'admin']);
     }
 
-    // Form untuk membuat atau mengedit siswa
     public static function form(Form $form): Form
     {
         return $form->schema([
-            // Input untuk nama siswa
             TextInput::make('nama')
-                ->required() 
+                ->required()
                 ->label('Nama Lengkap')
                 ->placeholder('Masukkan nama lengkap siswa'),
 
-            // Input untuk email siswa
             TextInput::make('email')
-                ->email() // Validasi format email
-                ->required() 
-                ->unique(ignoreRecord: true) // Pastikan email unik
+                ->email()
+                ->required()
+                ->unique(ignoreRecord: true)
                 ->label('Email')
                 ->placeholder('Masukkan email siswa'),
 
-            // Input untuk nomor telepon siswa
             TextInput::make('no_telp')
-                ->tel() // Validasi nomor telepon
-                ->maxLength(15) // Batas panjang maksimal 15 karakter
+                ->tel()
+                ->maxLength(15)
                 ->label('Nomor Telepon')
                 ->placeholder('Masukkan nomor telepon siswa'),
 
-            // Select untuk memilih kelas
             Select::make('kelas_id')
-                ->relationship('kelas', 'nama') // Menampilkan relasi kelas dengan nama
+                ->relationship('kelas', 'nama')
                 ->label('Kelas')
-                ->required() 
-                ->preload() // Memuat data sebelumnya untuk performa yang lebih baik
-                ->reactive() // Membuat field materi bereaksi saat kelas diubah
-                ->afterStateUpdated(fn ($set) => $set('materi_id', null)), // Reset materi jika kelas diubah
+                ->required()
+                ->preload()
+                ->reactive()
+                ->afterStateUpdated(fn ($set) => $set('materi_id', null)),
 
-            // Select untuk memilih materi
-            Select::make('materi_id')
+                Select::make('materi_id')
                 ->label('Materi')
-                ->relationship('kelas.materis', 'judul') // Menampilkan materi berdasarkan kelas
-                ->preload() 
-                ->required() 
-                ->disabled(fn ($get) => empty($get('kelas_id'))) // Disable jika kelas belum dipilih
+                ->options(function ($get) {
+                    $kelasId = $get('kelas_id');
+                    if ($kelasId) {
+                        $materis = Materi::where('kelas_id', $kelasId)->pluck('judul', 'id');
+                        if ($materis->isEmpty()) {
+                            return ['' => 'Materi tidak tersedia'];
+                        }
+                        return $materis;
+                    }
+                    return ['' => 'Pilih kelas terlebih dahulu']; 
+                })
+                ->preload()
+                ->required()
+                ->disabled(fn ($get) => empty($get('kelas_id')))
                 ->afterStateUpdated(function ($set, $get) {
                     if (empty($get('kelas_id'))) {
-                        $set('materi_id', null); // Reset materi jika kelas kosong
+                        $set('materi_id', null);
                     }
                 }),
+            Select::make('jam_pembelajaran')
+                ->label('Jam Pembelajaran')
+                ->options([
+                    '08:00-09:30' => '08:00 - 09:30',
+                    '12:00-14:30' => '12:00 - 14:30',
+                    '15:00-17:30' => '15:00 - 17:30',
+                    '20:00-22:00' => '20:00 - 22:00',
+                ])
+                ->required()
+                ->placeholder('Pilih jam pembelajaran'),
         ]);
     }
 
-    // Menentukan tampilan tabel untuk menampilkan data siswa
     public static function table(Table $table): Table
     {
         return $table
             ->columns([
-                // Kolom untuk menampilkan nama siswa
                 TextColumn::make('nama')->label('Nama Siswa')->sortable()->searchable(),
-                
-                // Kolom untuk menampilkan email siswa
                 TextColumn::make('email')->label('Email')->sortable()->searchable(),
-                
-                // Kolom untuk menampilkan nomor telepon siswa
                 TextColumn::make('no_telp')->label('Nomor Telepon')->sortable(),
-                
-                // Kolom untuk menampilkan nama kelas
                 TextColumn::make('kelas.nama')->label('Nama Kelas')->sortable()->searchable(),
-                
-                // Kolom untuk menampilkan judul materi
                 TextColumn::make('materi.judul')->label('Materi')->sortable()->searchable(),
-                
-                // Kolom untuk menampilkan tanggal registrasi siswa
+                TextColumn::make('jam_pembelajaran')->label('Jam Pembelajaran')->sortable()->searchable(),
                 TextColumn::make('created_at')->label('Tanggal Registrasi')->dateTime()->sortable(),
             ])
             ->filters([
-               
             ])
             ->actions([
-                // Aksi edit hanya untuk admin
                 Tables\Actions\EditAction::make()
-                    ->visible(fn () => auth()->user()->hasRole('admin')), // Hanya admin yang bisa mengedit
-                
-                // Aksi hapus hanya untuk admin
+                    ->visible(fn () => auth()->user()->hasRole('admin')),
                 Tables\Actions\DeleteAction::make()
-                    ->visible(fn () => auth()->user()->hasRole('admin')), // Hanya admin yang bisa menghapus
+                    ->visible(fn () => auth()->user()->hasRole('admin')),
             ]);
     }
 
-    // Menentukan halaman-halaman yang tersedia dalam resource ini
     public static function getPages(): array
     {
         return [
-            'index' => Pages\ListSiswas::route('/'), // Halaman utama untuk daftar siswa
-            'create' => Pages\CreateSiswa::route('/create'), // Halaman untuk membuat siswa baru
-            'edit' => Pages\EditSiswa::route('/{record}/edit'), // Halaman untuk mengedit siswa
+            'index' => Pages\ListSiswas::route('/'),
+            'create' => Pages\CreateSiswa::route('/create'),
+            'edit' => Pages\EditSiswa::route('/{record}/edit'),
         ];
     }
 
-    // Menentukan apakah role tertentu dapat mengakses halaman create
     public static function canCreate(): bool
     {
-        // Hanya pengguna dengan role "user" yang dapat menambah siswa
         return auth()->user()->hasRole('user');
     }
 }
