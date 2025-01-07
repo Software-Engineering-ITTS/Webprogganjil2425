@@ -1,0 +1,336 @@
+body {
+  background-color: #0f024a;
+  font-family: Arial, sans-serif;
+}
+
+body.dark-mode {
+  background-color: #000000;
+  color: #ffffff;
+}
+
+#theme-toggle {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  padding: 0.5rem;
+  border: none;
+  background-color: #000000;
+}
+
+.nav-link {
+  text-decoration: none;
+  position: relative;
+  color: rgb(255, 245, 245);
+  padding: 0.5em 0;
+}
+
+.nav-link::after {
+  content: ""; /* Membuat elemen pseudo */
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background-color: rgb(255, 255, 255);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-link:hover::after {
+  transform: scaleX(1);
+}
+
+/* Gaya navbar */
+.container .navbar-brand {
+  font-variant: small-caps;
+  font-family: "times new roman";
+  font-size: 2em;
+  color: rgb(255, 255, 255);
+  padding: auto;
+}
+
+.container .navbar-nav .nav-link {
+  color: rgb(255, 255, 255);
+  font-size: 1.2em;
+  font-family: "Style Script";
+}
+
+.tokyo {
+  font-family: "Style Script", cursive;
+  cursor: default;
+  padding-top: 10rem;
+  min-height: 100vh;
+  padding: 10rem 0;
+}
+
+.tokyo .rounded-circle {
+  background-color: #000000;
+  position: relative;
+  transition: 1s;
+}
+
+.tokyo .rounded-circle:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.514);
+}
+
+.tokyo h1 {
+  padding-top: 2rem;
+  font-size: 5em;
+}
+
+.tokyo p {
+  font-size: 1.5em;
+  color: #333;
+}
+
+#about {
+  padding-top: 20rem;
+  font-size: 1.5em;
+  color: rgb(255, 255, 255);
+  min-height: 100vh;
+  padding: 5rem 0;
+}
+
+#about-text {
+  max-width: 1500px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  padding: 50px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  color: #000000;
+}
+
+.about {
+  min-height: 100vh;
+  padding: 1rem 0;
+  font-family: "Style Script", cursive;
+}
+
+.about h1 {
+  color: azure;
+}
+
+.about .container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+}
+
+.about .container .content .about-me {
+  display: flex;
+  gap: 12px;
+}
+
+.about .container .content .about-me .profile {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.about .container .content .about-me .profile .image-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px;
+  background-color: #191919;
+  border-radius: 16px;
+  width: 75%;
+  height: 75vh;
+}
+
+.about .container .content .about-me .profile .image-box img {
+  width: 90%;
+}
+
+.about .container .content .about-me .description {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.about .container .content .about-me .description .name-role {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.about .container .content .about-me .description .name-role .project-title h1 {
+  font-weight: bold;
+  font-size: 3rem;
+}
+
+.about .container .content .about-me .description .name-role .role {
+  width: 100%;
+  display: flex;
+}
+
+.about .container .content .about-me .description .name-role .role h2 {
+  font-weight: 500;
+  font-size: 2rem;
+  padding: 4px 6px;
+  background-color: #fff;
+  border-radius: 8px;
+  color: #000;
+}
+
+.about .container .content .about-me .description p {
+  font-size: 1.2rem;
+  text-align: justify;
+}
+
+.skill {
+  min-height: 100vh;
+  padding: 5rem 0;
+  font-family: "Style Script", cursive;
+}
+
+.skill .container .content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 64px;
+  width: 100%;
+}
+
+.skill .container .content .skills {
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  width: 50%;
+}
+
+.skill .container .content .skills .skill-box {
+  padding: 4px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  filter: grayscale(100);
+  transition: all 0.2s linear;
+}
+
+.skill .container .content .skills .skill-box:hover {
+  filter: grayscale(0);
+  transform: scale(1.02);
+  transition: all 0.2s linear;
+}
+
+.skill .container .content .skills .skill-box img {
+  width: 100%;
+  height: 75%;
+}
+
+.skill .container .content .skills .skill-box {
+  padding: 4px;
+  border: 2px solid #ffffff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+  filter: grayscale(100);
+  transition: all 0.2s linear;
+}
+
+.skill .container .content .skills .skill-box:hover {
+  filter: grayscale(0);
+  transform: scale(1.02);
+}
+
+/* Project Section Styles */
+.project-title {
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  font-size: 2.5rem;
+  font-family: "Style Script", cursive;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.514);
+  padding: 5.8rem;
+}
+
+.card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0rem;
+  border-radius: 8px;
+  transition: all 0.2s linear;
+  background: transparent;
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card-title,
+.card-text {
+  color: #727070;
+  text-align: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  transition: all 0.2s linear;
+}
+
+.card:hover .card-title,
+.card:hover .card-text {
+  color: #ffffff;
+}
+
+.card:hover .card-img-top {
+  filter: grayscale(0);
+  transition: all 0.2s linear;
+}
+
+.card-img-top {
+  width: 100%;
+  height: 40%;
+  object-fit: cover;
+  filter: grayscale(100);
+  transition: all 0.2s linear;
+}
+
+/* Footer Styles */
+footer {
+  background-color: #000000;
+  text-align: center;
+  padding: 20px 0;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-me {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .description {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .skills {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .skill-box {
+    width: 60px;
+  }
+}
