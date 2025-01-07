@@ -1,0 +1,233 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  box-sizing: border-box;
+  /* background-color: #000; */
+  color: white;
+}
+html {
+  scroll-behavior: smooth;
+}
+#header {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/photo-besar.png);
+  background-size: cover;
+  background-position: center;
+}
+.container {
+  padding: 15px 10%;
+}
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.logo {
+  width: 140px;
+}
+nav ul li {
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+nav ul li a {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  position: relative;
+}
+nav ul li a::after {
+  content: "";
+  width: 0;
+  height: 3px;
+  background: #ff004f;
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+nav ul li a:hover::after {
+  width: 100%;
+}
+.header-text {
+  margin-top: 20%;
+  font-size: 30px;
+}
+.header-text h1 {
+  font-size: 60px;
+  margin-top: 20px;
+}
+.header-text h1 span {
+  color: #ff004f;
+}
+/* ----------about---------- */
+#about {
+  background-color: #000;
+}
+.row {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.about-col-1 {
+  flex-basis: 35%;
+}
+.about-col-1 img {
+  margin-top: 100px;
+  margin-bottom: 100px;
+  width: 83%;
+  border-radius: 20px;
+}
+.about-col-2 {
+  margin-top: 100px;
+  flex-basis: 60%;
+}
+.sub-title {
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+.tab-titles {
+  display: flex;
+  margin: 20px 0 40px;
+}
+.title-about {
+  color: #ff004f;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+.tab-contents ul li {
+  list-style: none;
+  color: #ababab;
+}
+.tab-contents ul li span {
+  color: white;
+  font-size: 14px;
+}
+.social-icons {
+  margin-top: 20px;
+}
+.social-icons a {
+  text-decoration: none;
+  font-size: 30px;
+  margin-right: 15px;
+  color: #ababab;
+  display: inline-block;
+  transition: transform 0.5s;
+}
+.social-icons a:hover {
+  color: #ff004f;
+  transform: translateY(-5px);
+}
+p i {
+  color: #ff004f;
+  font-size: 25px;
+  margin-top: 15px;
+  margin-right: 10px;
+}
+/* ----------experience---------- */
+#experience {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/experience.png);
+  background-size: cover;
+  background-position: center;
+}
+.sub-title-experience {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+.card {
+  width: 25rem;
+}
+.card-text {
+  color: #000;
+}
+
+/* ----------portofolio---------- */
+#portofolio {
+  background-color: #000;
+}
+.sub-title-porto {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+.work {
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+.work img {
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+.layer {
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0, 0, 0, 0.6), #ff004f);
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  transition: height 0.5s;
+}
+.layer h3 {
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.work:hover img {
+  transform: scale(1.1);
+}
+.work:hover .layer {
+  height: 100%;
+}
+
+/* ----------next projek---------- */
+#nextproject {
+  width: 100%;
+  height: 100vh;
+  background-image: url(images/next.png);
+  background-size: cover;
+  background-position: center;
+}
+.sub-title-nextprojek {
+  text-align: center;
+  margin-top: 35px;
+  font-size: 60px;
+  font-weight: 600;
+  color: white;
+}
+.col-kanan img {
+  margin-top: 90px;
+  margin-bottom: 100px;
+  margin-left: 160px;
+  width: 60%;
+  border-radius: 20px;
+}
+.col-kiri h1 {
+  text-align: center;
+  margin-top: 90px;
+  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin-left: 30px;
+}
+.col-kiri p{
+  margin-left: 30px;
+  text-align: center;
+}
