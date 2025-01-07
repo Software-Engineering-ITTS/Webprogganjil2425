@@ -1,0 +1,158 @@
+body {
+    margin: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+ul {
+    background: black;
+    padding: 20px;
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+}
+
+li {
+    margin-left: 0px;
+}
+
+li>a {
+    text-decoration: none;
+    color: orange;
+
+}
+
+li>a:hover {
+    color: bisque;
+}
+
+
+
+
+
+/* punyaku */
+
+.custom-card {
+    padding: 5px;
+    background-color: rgb(239, 247, 255);
+    margin-right: 200px;
+    margin-left: 200px;
+    margin-top: 50px;
+    border-radius: 50px;
+
+}
+
+.welcome {
+    text-align: center;
+    margin-top: -100px;
+    font-size: xx-large;
+}
+
+.title-2 {
+    margin-left: 150px;
+    margin-top: 80px;
+    font-size: larger;
+}
+
+.icon-kiri {
+    width: 100px;
+    margin-top: 30px;
+    margin-left: 35px;
+}
+
+/* teks nama */
+.nm {
+    margin-left: 40px;
+}
+
+.nama {
+    margin-left: 90px;
+    height: 25px;
+    width: 246px;
+}
+
+.txt-almt {
+    margin-top: 50px;
+    margin-left: 60px;
+    width: 250px;
+}
+
+/* teks alamat */
+.almt {
+    margin-left: 40px;
+}
+
+/* teks Ttl */
+.t-ttl {
+    margin-left: 40px;
+}
+
+.ttl {
+    width: 250px;
+    margin-left: 55px;
+}
+
+.t-gender {
+    margin-left: 40px;
+}
+
+.genderr {
+    margin-left: 30px;
+}
+
+/* teks rentang usia */
+.t-umur {
+    margin-left: 40px;
+}
+
+.umur {
+    width: 256px;
+    height: 25px;
+    margin-left: 90px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* teks keluhan */
+.t-keluhan {
+    margin-left: 40px;
+}
+
+.keluhan {
+    margin-left: 126px;
+    width: 250px;
+}
+
+/* teks kondisi */
+.t-sikon {
+    margin-left: 40px;
+}
+
+.situasi {
+    margin-top: 15px;
+    margin-left: 100px;
+
+}
+
+/* teks konsultasi */
+.t-konsul {
+    margin-left: 40px;
+
+}
+
+.pilihan-konsul {
+    margin-left: 100px;
+    margin-top: 15px;
+}
+
+.submit {
+    background-color: transparent;
+    border-radius: 5px;
+    width: 75px;
+    height: 25px;
+    margin-left: 50px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.submit:hover {
+    background-color: rgba(169, 169, 169, 0.669);
+    transition: 7ms;
+}

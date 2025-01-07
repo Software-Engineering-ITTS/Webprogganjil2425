@@ -1,0 +1,37 @@
+Fortofolio Tugas Besar | Perancangan dan Pemrograman Web
+
+
+Sisi Kiri
+
+1. Foto sendiri (frame bulat)
+2. Nama : Ariana Hechalina Ardiansyah
+3. Prodi : Rekayasa Perangkat Lunak 
+4. Deskripsi : -
+5. Keahlian : Kepemimpinan, Kolaborasi, Manajemen Waktu, Mudah Beradaptasi
+6. Kontak : ikon WhatsApp + nomor, ikon lokasi + deskripsi, ikon GitHub + akun GitHub (bisa diklik langsung masuk ke github)
+
+Sisi Kanan
+
+1. Data Pribadi : Tempat Tanggal Lahir, Alamat, Nomor Telepon, Jenis Kelamin, Agama, Email, Status
+2. Pendidikan : SDN Sidojangkung (2012-2017)
+		UPT SMP 28 Gresik (2017-2020)
+		SMKS Sunan Giri Gresik (2020-2023)
+		Universitas Telkom Surabaya (2023-Sekarang)
+3. Pengalaman : Anggota paskibra 2017-2020
+		Juara 1 Lomba Tartil Sidojangkung Menganti, Gresik 2018
+		Juara 1 Lomba Puisi Sidojangkung Menganti, Gresik 2018
+		Juara 2 Lomba Pildacil Sidojangkung Menganti, Gresik 2018
+		Juara Caraka 1 paskibra tingkat provinsi Paspabratass janur 2019
+		Pemenang duta baca kategori Produktif kegiatan Reading Day 2019
+		Journalistic camp jawa Pos 2019
+		Launching Novelet Perdana oleh PT Penerbit Airlangga 2019
+		Anggota Osis SMKS Sunan Giri Menganti 2021-2022
+		PKL pt orrindhana digital marketing 2022
+		Tes sertifikasi Guru TPQ Tingkat Kecamatan
+		Anggota Komdis kepanitiaan PKKMB DM 24
+		Bendahara 2 Acara Novitas Aeternum Software Engineering 2024
+		Guru TPQ 2021- Sekarang 
+		Master of Ceremony Tahunan Desa Sidojangkung 2021 - Sekarang
+		Qasidah desa sidojangkung 2022 - Sekarang 
+4. Hobi : Baca Buku, Travelling, Menyanyi, Menulis
+			
