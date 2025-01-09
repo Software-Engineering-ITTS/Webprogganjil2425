@@ -17,12 +17,11 @@ class KelasResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-book-open';
 
-  
-
-    public static function shouldRegisterNavigation(): bool
+    public static function canCreate(): bool
     {
-        return auth()->user()->can('view-kelas');
+        return auth()->user()->hasRole('admin');
     }
+
 
     public static function form(Form $form): Form
     {
@@ -50,8 +49,10 @@ class KelasResource extends Resource
                 ->searchable(),
         ])
         ->actions([
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
+            Tables\Actions\EditAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
+            Tables\Actions\DeleteAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
         ])
         ->bulkActions([
             Tables\Actions\DeleteBulkAction::make(),

@@ -20,31 +20,26 @@ class SiswaResource extends Resource
     protected static ?string $model = Siswa::class;
     protected static ?string $navigationIcon = 'heroicon-o-users';
 
-    public static function canViewAny(): bool
-    {
-        return auth()->user()->hasRole(['user', 'admin']);
-    }
-
     public static function form(Form $form): Form
     {
         return $form->schema([
             TextInput::make('nama')
                 ->required()
                 ->label('Nama Lengkap')
-                ->placeholder('Masukkan nama lengkap siswa'),
+                ->placeholder('Masukkan nama lengkap'),
 
             TextInput::make('email')
                 ->email()
                 ->required()
                 ->unique(ignoreRecord: true)
                 ->label('Email')
-                ->placeholder('Masukkan email siswa'),
+                ->placeholder('Masukkan email'),
 
             TextInput::make('no_telp')
                 ->tel()
                 ->maxLength(15)
                 ->label('Nomor Telepon')
-                ->placeholder('Masukkan nomor telepon siswa'),
+                ->placeholder('Masukkan nomor telepon'),
 
             Select::make('kelas_id')
                 ->relationship('kelas', 'nama')
@@ -75,6 +70,10 @@ class SiswaResource extends Resource
                         $set('materi_id', null);
                     }
                 }),
+            \Filament\Forms\Components\DatePicker::make('tanggal_pembelajaran')
+                ->label('Tanggal Pembelajaran')
+                ->required()
+                ->placeholder('Pilih tanggal pembelajaran'),
             Select::make('jam_pembelajaran')
                 ->label('Jam Pembelajaran')
                 ->options([
@@ -89,26 +88,29 @@ class SiswaResource extends Resource
     }
 
     public static function table(Table $table): Table
-    {
-        return $table
-            ->columns([
-                TextColumn::make('nama')->label('Nama Siswa')->sortable()->searchable(),
-                TextColumn::make('email')->label('Email')->sortable()->searchable(),
-                TextColumn::make('no_telp')->label('Nomor Telepon')->sortable(),
-                TextColumn::make('kelas.nama')->label('Nama Kelas')->sortable()->searchable(),
-                TextColumn::make('materi.judul')->label('Materi')->sortable()->searchable(),
-                TextColumn::make('jam_pembelajaran')->label('Jam Pembelajaran')->sortable()->searchable(),
-                TextColumn::make('created_at')->label('Tanggal Registrasi')->dateTime()->sortable(),
-            ])
-            ->filters([
-            ])
-            ->actions([
-                Tables\Actions\EditAction::make()
-                    ->visible(fn () => auth()->user()->hasRole('admin')),
-                Tables\Actions\DeleteAction::make()
-                    ->visible(fn () => auth()->user()->hasRole('admin')),
-            ]);
-    }
+{
+    return $table
+        ->columns([
+            TextColumn::make('nama')->label('Nama')->sortable()->searchable(),
+            TextColumn::make('email')->label('Email')->sortable()->searchable(),
+            TextColumn::make('no_telp')->label('Nomor Telepon')->sortable(),
+            TextColumn::make('kelas.nama')->label('Nama Kelas')->sortable()->searchable(),
+            TextColumn::make('materi.judul')->label('Materi')->sortable()->searchable(),
+            TextColumn::make('materi.deskripsi')->label('Deskripsi Materi')->limit(60)->wrap(),
+            TextColumn::make('jam_pembelajaran')->label('Jam Pembelajaran')->sortable()->searchable(),
+            TextColumn::make('tanggal_pembelajaran')->label('Tanggal Pembelajaran')->date()->sortable()->searchable(),
+            TextColumn::make('created_at')->label('Tanggal Registrasi')->dateTime()->sortable(),
+        ])
+        ->filters([])
+        ->actions([
+            Tables\Actions\EditAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
+            Tables\Actions\DeleteAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
+        ]);
+}
+
+    
 
     public static function getPages(): array
     {

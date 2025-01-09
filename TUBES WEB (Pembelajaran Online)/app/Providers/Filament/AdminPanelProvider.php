@@ -82,6 +82,11 @@ class AdminPanelProvider extends PanelProvider
                             ...MateriResource::getNavigationItems(),
                         ]),
 
+
+
+                        //buka komen ini untuk menambahkan role, permission dan akun (sesuaikan permission dengan kode auth)
+
+                        
                     // NavigationGroup::make('Settings')
                     //     ->items(array_filter([
                     //         // Resource User untuk admin

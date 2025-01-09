@@ -19,12 +19,11 @@ class MateriResource extends Resource
 
     protected static ?string $navigationIcon = 'heroicon-o-document-text';
 
-  
-
-    public static function shouldRegisterNavigation(): bool
+    public static function canCreate(): bool
     {
-        return auth()->user()->can('view-materi');
+        return auth()->user()->hasRole('admin');
     }
+
 
     public static function form(Form $form): Form
     {
@@ -63,8 +62,10 @@ class MateriResource extends Resource
         ])
         ->filters([])
         ->actions([
-            Tables\Actions\EditAction::make(),
-            Tables\Actions\DeleteAction::make(),
+            Tables\Actions\EditAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
+            Tables\Actions\DeleteAction::make()
+                ->visible(fn () => auth()->user()->hasRole('admin')),
         ])
         ->bulkActions([
             Tables\Actions\DeleteBulkAction::make(),
