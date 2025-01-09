@@ -15,21 +15,40 @@ class AuthController extends Controller
         return view('login');
     }
 
+    // public function login(Request $request)
+    // {
+    //     $request->validate([
+    //         'email' => 'required|email',
+    //         'password' => 'required',
+    //     ]);
+
+    //     if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+    //         return redirect()->intended('/laporan-risiko');
+    //     }
+
+    //     return back()->withErrors([
+    //         'email' => 'The provided credentials do not match our records.',
+    //     ]);
+    // }
+
     public function login(Request $request)
-    {
-        $request->validate([
-            'email' => 'required|email',
-            'password' => 'required',
-        ]);
+{
+    $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
 
-        if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
-            return redirect()->intended('/laporan-risiko');
+    if (Auth::attempt($request->only('email', 'password'), $request->filled('remember'))) {
+        if (Auth::user()->email === 'admin@gmail.com') {
+            return redirect()->route('admin.dashboard');
         }
-
-        return back()->withErrors([
-            'email' => 'The provided credentials do not match our records.',
-        ]);
+        return redirect()->route('risiko.form');
     }
+
+    return back()->withErrors([
+        'email' => 'The provided credentials do not match our records.',
+    ]);
+}
 
     public function showRegisterForm()
     {

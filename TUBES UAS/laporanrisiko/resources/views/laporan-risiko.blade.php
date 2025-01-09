@@ -41,17 +41,25 @@
         <div class="container d-flex align-items-center">
             <img src="https://ih1.redbubble.net/image.5278499885.1380/flat,750x,075,f-pad,750x1000,f8f8f8.u1.jpg" alt="Logo" class="me-3" style="width: 50px; height: 50px;">
             <h1 class="m-0 flex-grow-1">Sistem Laporan Prioritas Risiko</h1>
+            <form action="{{ route('logout') }}" method="POST">
+                @csrf
+                <button type="submit" class="btn btn-warning ">Logout</button>
+            </form>
         </div>
     </header>
 
     <div class="container mt-5">
         <h1 class="text-center mb-4">Form Laporan Prioritas Risiko</h1>
+        @if(session('success'))
+        <div class="alert alert-success">
+            {{ session('success') }}
+        </div>
+        @endif
         <form action="{{ route('risiko.submit') }}" method="POST">
             @csrf
-
             <div class="mb-3">
-                <label for="namaPelapor" class="form-label">Nama Pelapor</label>
-                <input type="text" class="form-control" id="namaPelapor" name="namaPelapor" placeholder="Masukkan nama lengkap" required>
+                <label for="namaPelapor" class="form-label">Nama Pelapor:</label>
+                <input type="text" class="form-control" id="nama_pelapor" name="nama_pelapor" placeholder="Masukkan nama lengkap" required>
             </div>
             <div class="mb-3">
                 <label for="jabatan" class="form-label">Jabatan/Posisi</label>
@@ -64,11 +72,11 @@
 
             <div class="mb-3">
                 <label for="judulRisiko" class="form-label">Judul Risiko</label>
-                <input type="text" class="form-control" id="judulRisiko" name="judulRisiko" placeholder="Masukkan judul risiko" required>
+                <input type="text" class="form-control" id="judul_risiko" name="judul_risiko" placeholder="Masukkan judul risiko" required>
             </div>
             <div class="mb-3">
                 <label for="kategoriRisiko" class="form-label">Kategori Risiko</label>
-                <select class="form-select" id="kategoriRisiko" name="kategoriRisiko" required>
+                <select class="form-select" id="kategori_risiko" name="kategori_risiko" required>
                     <option value="">Pilih kategori...</option>
                     <option value="Operasional">Operasional</option>
                     <option value="Keuangan">Keuangan</option>
@@ -78,16 +86,16 @@
             </div>
             <div class="mb-3">
                 <label for="tanggalIdentifikasi" class="form-label">Tanggal Identifikasi</label>
-                <input type="date" class="form-control" id="tanggalIdentifikasi" name="tanggalIdentifikasi" required>
+                <input type="date" class="form-control" id="tanggal_identifikasi" name="tanggal_identifikasi" required>
             </div>
             <div class="mb-3">
                 <label for="lokasiRisiko" class="form-label">Lokasi Risiko</label>
-                <input type="text" class="form-control" id="lokasiRisiko" name="lokasiRisiko" placeholder="Masukkan lokasi risiko">
+                <input type="text" class="form-control" id="lokasi_risiko" name="lokasi_risiko" placeholder="Masukkan lokasi risiko">
             </div>
 
             <div class="mb-3">
                 <label for="deskripsiRisiko" class="form-label">Deskripsi Risiko</label>
-                <textarea class="form-control" id="deskripsiRisiko" name="deskripsiRisiko" rows="3" placeholder="Deskripsikan risiko secara rinci"></textarea>
+                <textarea class="form-control" id="deskripsi_risiko" name="deskripsi_risiko" rows="3" placeholder="Deskripsikan risiko secara rinci"></textarea>
             </div>
             <div class="mb-3">
                 <label for="kemungkinan" class="form-label">Kemungkinan Terjadi</label>
@@ -113,8 +121,9 @@
             <button type="reset" class="btn btn-secondary">Reset</button>
         </form>
     </div>
+    <br><br><br><br><br>
 
-    <footer class="bg-custom-green text-white py-3 mt-5">
+    <footer class="bg-custom-green text-white py-3 mt-5 fixed-bottom">
         <div class="container text-center">
             <p>&copy; 2025 Sistem Laporan Risiko . all rights reserved</p>
         </div>

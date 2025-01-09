@@ -18,19 +18,32 @@ Route::get('/', function () {
 });
 
 
-// routes/web.php
-
+use App\Http\Controllers\RisikoController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
+// Rute auth
 Route::get('login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('login', [AuthController::class, 'login']);
 Route::get('register', [AuthController::class, 'showRegisterForm'])->name('register');
 Route::post('register', [AuthController::class, 'register']);
 Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-use App\Http\Controllers\RisikoController;
 
 Route::get('/laporan-risiko', [RisikoController::class, 'showForm'])->name('risiko.form')->middleware('auth');
 Route::post('/laporan-risiko', [RisikoController::class, 'submitForm'])->name('risiko.submit')->middleware('auth');
-Route::get('/strategi-penanggulangan', [RisikoController::class, 'showStrategiForm'])->name('strategi.form');
-Route::post('/strategi-penanggulangan', [RisikoController::class, 'submitStrategiForm'])->name('submitStrat');
+Route::get('/penanggulangan', [RisikoController::class, 'showPenanggulanganForm'])->name('penanggulangan.form');
+Route::post('/penanggulangan', [RisikoController::class, 'submitPenanggulanganForm'])->name('risiko.submitPenanggulangan');
+
+// Rute admin
+Route::get('/admin/dashboard', [AdminController::class, 'dashboard'])->name('admin.dashboard')->middleware('auth');
+
+// Rute laporan
+Route::get('/admin/viewlaporan', [RisikoController::class, 'viewLaporan'])->name('admin.viewlaporan')->middleware('auth');
+
+// Rute penanggulangan
+Route::get('/admin/viewpenanggulangan', [RisikoController::class, 'viewPenanggulangan'])->name('admin.viewpenanggulangan')->middleware('auth');
+Route::get('/admin/beri-penanggulangan/{id}', [RisikoController::class, 'beriPenanggulangan'])->name('admin.beriPenanggulangan')->middleware('auth');
+
+
+

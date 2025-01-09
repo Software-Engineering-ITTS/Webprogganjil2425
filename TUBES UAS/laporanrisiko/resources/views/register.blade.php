@@ -11,7 +11,7 @@
             color: #fff;
         }
         .card {
-            background-color: #fff; 
+            background-color: #fff;
             color: #333;
             border-radius: 10px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -34,14 +34,14 @@
             <div class="col-md-6">
                 <div class="card p-4">
                     <div class="card-header text-center bg-success text-white">
-                        <h4>{{ __('Register') }}</h4>
+                        <h4>Register</h4>
                     </div>
                     <div class="card-body">
                         <form method="POST" action="{{ route('register') }}">
                             @csrf
 
                             <div class="form-group mb-3">
-                                <label for="name">{{ __('Name') }}</label>
+                                <label for="name">Name</label>
                                 <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autofocus>
                                 @error('name')
                                     <span class="invalid-feedback" role="alert">
@@ -51,7 +51,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="email">{{ __('Email Address') }}</label>
+                                <label for="email">Email </label>
                                 <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required>
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
@@ -61,7 +61,7 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="password">{{ __('Password') }}</label>
+                                <label for="password">Password</label>
                                 <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required>
                                 @error('password')
                                     <span class="invalid-feedback" role="alert">
@@ -71,13 +71,15 @@
                             </div>
 
                             <div class="form-group mb-3">
-                                <label for="password_confirmation">{{ __('Confirm Password') }}</label>
+                                <label for="password_confirmation">Confirm Password</label>
                                 <input id="password_confirmation" type="password" class="form-control" name="password_confirmation" required>
                             </div>
 
-                            <button type="submit" class="btn btn-primary w-100">
-                                {{ __('Register') }}
-                            </button>
+                            <div class="form-group mb-3">
+                                <p>Sudah punya akun? <a href="http://127.0.0.1:8000">Login</a></p>
+                            </div>
+
+                            <button type="submit" class="btn btn-primary w-100">Register</button>
                         </form>
                     </div>
                 </div>
