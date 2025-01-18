@@ -5,14 +5,26 @@ body {
    color: #fff;
 }
 
-nav .kiri {
+nav::before {
+   content: "";
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 30%;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #032b23 100%);
+   pointer-events: none;
+}
+
+nav {
    width: 50%;
    top: 4vh;
    position: fixed;
-   left: 3vw;
    z-index: 10000;
-   transform: translate(0, 0);
+   background-color: white;
+   /* transform: translate(0, 0); */
    font-family: helvetica;
+   /* z-index: 10000; */
    text-shadow:
       0 0 5px #fff,
       0 0 10px #fff,
@@ -21,6 +33,15 @@ nav .kiri {
       0 0 40px cyan,
       0 0 50px cyan,
       0 0 60px cyan;
+}
+
+nav .kiri {
+   width: 50%;
+   top: 4vh;
+   position: fixed;
+   left: 3vw;
+   
+   transform: translate(0, 0);
 }
 
 nav .kiri ul {
@@ -40,7 +61,6 @@ nav .kiri ul li a {
    line-height: 0.6;
    color: #fff;
    transition: color 0.3s ease, text-shadow 0.3s ease;
-   /* Efek transisi */
    text-decoration: none;
 }
 
@@ -59,17 +79,7 @@ nav .kanan {
    top: 4vh;
    position: fixed;
    right: 3vw;
-   z-index: 10000;
    transform: translate(0, 0);
-   font-family: helvetica;
-   text-shadow:
-      0 0 5px #fff,
-      0 0 10px #fff,
-      0 0 20px cyan,
-      0 0 30px cyan,
-      0 0 40px cyan,
-      0 0 50px cyan,
-      0 0 60px cyan;
 }
 
 nav .kanan ul {
@@ -178,22 +188,151 @@ header h2:hover {
       0 0 50px violet;
 }
 
-.profil .kiri {
-   
+.profil {
+   padding-top: 100px;
+   padding-bottom: 100px;
+   display: flex;
 }
 
-.profil .kiri img{
+.profil .kiri {
+   align-content: center;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   padding-left: 100px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: end;
+}
 
+.profil .kiri h1 {
+   text-align: end;
+}
+
+.profil .kiri h4 {
+   text-align: end;
+}
+
+.profil .kiri button {
+   padding-inline: 40px;
+   padding-block: 10px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 2rem;
+   background-color: rgb(27, 126, 247);
+   border-radius: 20px;
+   border-width: 5px;
+   border-color: rgb(7, 81, 171);
+}
+
+.profil .kiri button:hover {
+   padding-inline: 40px;
+   padding-block: 10px;
+   font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+   font-size: 2rem;
+   border-radius: 20px;
+   border-width: 5px;
+   border-color: rgb(70, 146, 238);
+   color: #fff;
+   text-shadow:
+      0 0 5px white,
+      0 0 10px white,
+      0 0 30px cyan,
+      0 0 40px cyan,
+      0 0 50px cyan;
 }
 
 .profil .kanan {
-
+   padding-right: 100px;
+   display: flex;
 }
 
-.profil .kanan img{
+.profil .kanan img {
    position: relative;
-   width: 75%;  
+   width: 80%;
    background-color: white;
+}
+
+.header2 {
+   position: relative;
+   text-align: center;
+   color: white;
+   text-shadow:
+      0 0 5px rgba(0, 0, 0, 0.7),
+      0 0 10px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.header2 img {
+   width: 100%;
+   height: auto;
+   display: block;
+}
+
+.header2::before {
+   content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 30%;
+   background: linear-gradient(to top, rgba(0, 0, 0, 0) 0%, #032b23 100%);
+   pointer-events: none;
+}
+
+.header2::after {
+   content: "";
+   position: absolute;
+   bottom: 0;
+   left: 0;
+   width: 100%;
+   height: 30%;
+   background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, #032b23 100%);
+   pointer-events: none;
+}
+
+.header2 .menu {
+   position: absolute;
+   display: flex;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   /* background-color: red; */
+}
+
+.header2 .menu .kiri {
+   align-items: center;
+   border-radius: 70px;
+   background-color: rgba(31, 31, 31, 0.39);
+}
+
+.header2 .menu .kanan {
+   background-color: rgba(31, 31, 31, 0.39);
+   border-radius: 70px;
+}
+
+.header2 .menu .kanan .row {
+   margin-left: 100px;
+   margin-right: 100px;
+}
+
+.footer {
+   padding-top: 50px;
+   padding-bottom: 50px;
+   margin-bottom: 100px;
+}
+
+.footer h1{
+   position: relative;
+   text-align: center;
+   color: white;
+   text-shadow:
+      0 0 5px rgba(0, 0, 0, 0.7),
+      0 0 10px rgba(0, 0, 0, 0.7),
+      0 0 20px rgba(0, 0, 0, 0.7);
+}
+
+.footer h1:hover {
+   position: relative;
+   font-size: 4rem;
+   font-weight: bold;
    text-shadow:
       0 0 5px white,
       0 0 10px white,
