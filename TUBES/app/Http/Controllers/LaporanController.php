@@ -39,7 +39,7 @@ public function filter(Request $request)
     $pengeluaran = pengeluaran::when($bulan, function ($query) use ($bulan) {
         $query->whereMonth('created_at', $bulan);
     })->when($tanggal, function ($query) use ($tanggal) {
-        $query->whereDay ('created_at', $tanggal);
+        $query->whereDay ('created_at', $tanggal);      
     })->get();
 
     return view('lihatdata', compact('laporan', 'pengeluaran'));
